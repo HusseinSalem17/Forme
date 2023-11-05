@@ -5,6 +5,7 @@ abstract class AppColors{
   static const secondaryColor = Color(0xffee9f2f);
   static const n900PrimaryTextColor = Color(0xff071225);
   static const n100Color = Color(0xff797f89);
+  static const splashBackground = Colors.white;
   static const n40BorderColor = Color(0xffd9d9d9);
   static const n80NavColor = Color(0xff979ba3);
   static const dropShadowColor = Color(0xffc1c4c9);
