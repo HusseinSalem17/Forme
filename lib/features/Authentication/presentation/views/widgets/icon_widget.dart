@@ -8,6 +8,6 @@ GestureDetector iconWidget(String iconName, void Function()? onTap) {
       child: SizedBox(
         width: 60.w,
         height: 60.w,
-        child: SvgPicture.asset("assets/image/Icon/$iconName.svg"),
+        child: Image.asset("assets/image/Icon/$iconName.png"),
       ));
 }

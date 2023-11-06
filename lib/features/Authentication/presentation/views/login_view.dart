@@ -32,21 +32,26 @@ class _SignInScreenState extends State<SignInScreen> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               //temp sized box
-              const Align(alignment: Alignment.centerRight,child: SizedBox(height: 40,child: Text("العربية"),)),
-              const Spacer(flex:1),
+              const Align(
+                  alignment: Alignment.centerRight,
+                  child: SizedBox(
+                    height: 40,
+                    child: Text("العربية"),
+                  )),
+              const Spacer(flex: 1),
               const Text(
                 'SignIn',
                 style: Styles.headerStyle,
               ),
               Padding(
-                padding: EdgeInsets.only(top:20.h),
+                padding: EdgeInsets.only(top: 20.h),
                 child: const Text(
                   "Hi! Welcome back, you’ve missed",
                   style: Styles.descriptionStyle,
                 ),
               ),
               Padding(
-                padding: EdgeInsets.symmetric(vertical:26.h),
+                padding: EdgeInsets.symmetric(vertical: 24.h),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
@@ -64,8 +69,12 @@ class _SignInScreenState extends State<SignInScreen> {
                   ],
                 ),
               ),
-              const CustomTextFormField(),
-              const CustomTextFormField(),
+              const CustomTextFormField(
+                  title: 'Email', hint: 'example@gmail.com', type: 'email'),
+              const CustomTextFormField(
+                  title: 'Password',
+                  hint: 'enter your password',
+                  type: 'password'),
               Align(
                   alignment: Alignment.centerRight,
                   child: TextButton(
@@ -80,11 +89,13 @@ class _SignInScreenState extends State<SignInScreen> {
               const CustomAuthButton(text: "Sign In"),
               const AuthDivider(),
               Padding(
-                padding: EdgeInsets.only(right:32.0.w,left: 32.w,top:26.h),
-                child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-                  iconWidget('facebook', () {}),
-                  iconWidget('facebook', () {}),
-                ]),
+                padding: EdgeInsets.only(right: 32.0.w, left: 32.w, top: 26.h),
+                child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      iconWidget('Google', () {}),
+                      iconWidget('Facebook', () {}),
+                    ]),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -107,7 +118,7 @@ class _SignInScreenState extends State<SignInScreen> {
                       )),
                 ],
               ),
-              const Spacer(flex:3),
+              const Spacer(flex: 3),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
