@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:forme_app/core/utils/image_assets.dart';
+import 'package:forme_app/features/Authentication/presentation/views/login_view.dart';
 import 'package:forme_app/features/splash/page_transition/page_slide.dart';
-import 'package:forme_app/testScrean.dart';
+
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -20,7 +21,7 @@ class _SplashScreenState extends State<SplashScreen>
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
     Future.delayed(const Duration(seconds: 2), () {
       Navigator.of(context).push(
-        PageSlideTransition(const TestScreen()),
+        PageSlideTransition(const SignInScreen()),
       );
     });
   }
