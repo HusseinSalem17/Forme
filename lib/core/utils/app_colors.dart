@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
-abstract class AppColors{
-  static const p300PrimaryColor = Color(0xff0065ff);
+abstract class AppColors {
+  static const p300PrimaryColor = Color(0xff0065FF);
+  static const p100PrimaryColor = Color(0xff6BA6FF);
   static const secondaryColor = Color(0xffee9f2f);
   static const n900PrimaryTextColor = Color(0xff071225);
   static const n100Color = Color(0xff797f89);
@@ -13,5 +14,4 @@ abstract class AppColors{
   static const n20FillBodyInBigCardColor = Color(0xfffafafb);
   static const n30StrokeColor = Color(0xffebecee);
   static const n800BodyInProgramsColor = Color(0xff131e30);
-  
 }

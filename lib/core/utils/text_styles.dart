@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
-
 
 abstract class Styles {
 //description style
@@ -15,14 +15,16 @@ abstract class Styles {
       color: AppColors.n100Color,
       fontWeight: FontWeight.bold);
 // headers styles
-  static const kHeaderStyle = TextStyle(
+  static TextStyle kHeaderStyle = TextStyle(
       fontFamily: 'RobotoBold',
-      fontSize: 32,
+      fontWeight: FontWeight.bold,
+      fontSize: 20.sp,
       color: AppColors.p300PrimaryColor);
-  static const headerStyle = TextStyle(
-    fontFamily: 'RobotoBold',
-    fontSize: 32,
-  );
+  static TextStyle headerStyle = TextStyle(
+      fontFamily: 'RobotoBold',
+      fontWeight: FontWeight.bold,
+      fontSize: 20.sp,
+      color: AppColors.n900PrimaryTextColor);
 //hint style
   static const hintStyle = TextStyle(
     fontFamily: 'RobotoLight',
