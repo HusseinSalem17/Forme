@@ -35,7 +35,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: EdgeInsets.only(bottom: 8.0.h),
+            padding: EdgeInsets.only(bottom: 10.0.h),
             child: Text(
               widget.title,
               style: Styles.textStyleBold14
@@ -56,13 +56,13 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
               filled: true,
               fillColor: AppColors.fillColor,
               contentPadding:
-                  const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                  EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
               hintText: widget.hint,
               hintStyle: Styles.hintStyle,
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(4.dg),
                 borderSide: const BorderSide(
-                  color: AppColors.n40BorderColor,
+                  color: AppColors.fillColor,
                 ),
               ),
               focusedBorder: OutlineInputBorder(

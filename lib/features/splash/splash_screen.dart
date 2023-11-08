@@ -1,7 +1,7 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:forme_app/features/Authentication/presentation/views/login_view.dart';
+import 'package:forme_app/features/Authentication/presentation/views/sing_in_view.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:forme_app/core/utils/image_assets.dart';
 
