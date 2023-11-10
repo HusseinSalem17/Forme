@@ -4,7 +4,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:forme_app/core/utils/app_theme.dart';
 import 'package:forme_app/pages/onboarding_screen/data/bloc/onboarding_blocs.dart';
 import 'package:forme_app/pages/onboarding_screen/views/onboarding_view.dart';
-import 'package:forme_app/pages/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());

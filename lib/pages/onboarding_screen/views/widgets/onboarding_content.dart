@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:forme_app/core/utils/text_styles.dart';
 import 'package:forme_app/pages/onboarding_screen/views/widgets/Skip_button.dart';
 
 class OnBoardingContent extends StatelessWidget {
@@ -20,72 +21,48 @@ class OnBoardingContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 24.sp),
-      margin: EdgeInsets.only(top: 34.w),
+      margin: EdgeInsets.only(top: 37.h, right: 24.w, left: 24.w),
       child: Column(
         children: [
+          const SkipButton(),
+          const Spacer(flex: 2),
           SizedBox(
             width: 345.w,
             height: 345.w,
-            child: SvgPicture.asset(image),
+            child: SvgPicture.asset(
+              image,
+              fit: BoxFit.cover,
+            ),
           ),
-          Center(
-            child: Column(
+          const Spacer(flex: 2),
+          RichText(
+            textAlign: TextAlign.center,
+            text: TextSpan(
               children: [
-                Container(
-                  padding: EdgeInsets.symmetric(horizontal: 29.5.sp),
-                  child: Center(
-                    child: Column(
-                      children: [
-                        RichText(
-                          textAlign: TextAlign.center,
-                          text: TextSpan(
-                            children: [
-                              TextSpan(
-                                text: title1,
-                                style: titleStyle1,
-                              ),
-                              TextSpan(
-                                text: title2,
-                                style: titleStyle2,
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
+                TextSpan(
+                  text: title1,
+                  style: titleStyle1,
                 ),
-                //Spacer(flex:1),
-                Container(
-                  padding: EdgeInsets.symmetric(horizontal: 13.sp),
-                  child: Center(
-                    child: Column(
-                      children: [
-                        RichText(
-                          textAlign: TextAlign.center,
-                          text: TextSpan(
-                            children: [
-                              TextSpan(
-                                text:
-                                    description,
-                                style: TextStyle(
-                                  color: Colors.grey,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 12.sp,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
+                TextSpan(
+                  text: title2,
+                  style: titleStyle2,
                 ),
-                
               ],
             ),
           ),
+          const Spacer(flex: 1),
+          RichText(
+            textAlign: TextAlign.center,
+            text: TextSpan(
+              children: [
+                TextSpan(
+                  text: description,
+                  style: Styles.textStyleMedium12,
+                ),
+              ],
+            ),
+          ),
+          const Spacer(flex: 5),
         ],
       ),
     );

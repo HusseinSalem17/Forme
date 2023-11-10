@@ -4,20 +4,23 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 
 class DotIndicator extends StatelessWidget {
-  final bool isActive;
-  const DotIndicator({super.key, this.isActive = false});
+  final int page;
+  //final bool isActive;
+  const DotIndicator({super.key, required this.page});
 
   @override
   Widget build(BuildContext context) {
-    return Positioned(
-      bottom: 100.h,
+    return SizedBox(
+      height: 80.h,
+      width: 80.w,
       child: DotsIndicator(
-        dotsCount:3,
+        position: page,
+        dotsCount: 3,
         decorator: DotsDecorator(
-          color: Colors.grey,
-          activeColor: Colors.blue,
-          size: Size.square(8.0),
-          activeSize: Size(10.0, 8.0),
+          color: AppColors.dropShadowColor,
+          activeColor: AppColors.p300PrimaryColor,
+          size: const Size.square(10.0),
+          activeSize: const Size(20.0, 10.0),
           activeShape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(5.0),
           ),
