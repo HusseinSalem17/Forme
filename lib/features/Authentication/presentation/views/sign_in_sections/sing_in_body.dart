@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
+import 'package:forme_app/features/Authentication/presentation/views/forgot_password.dart';
 import 'package:forme_app/features/Authentication/presentation/views/sign_up_view.dart';
 import 'package:forme_app/features/Authentication/presentation/views/widgets/auth_divider.dart';
 import 'package:forme_app/features/Authentication/presentation/views/widgets/custom_auth_button.dart';
@@ -34,7 +35,9 @@ class SignInBody extends StatelessWidget {
         child: Align(
             alignment: Alignment.centerRight,
             child: TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, ForgetPasswordScreen.routeName);
+                },
                 child: Text(
                   "Forget password",
                   style: Styles.textStyleRegular12.copyWith(
@@ -59,7 +62,7 @@ class SignInBody extends StatelessWidget {
         ]),
       ),
       Padding(
-        padding:  EdgeInsets.only(top:24.0.h),
+        padding: EdgeInsets.only(top: 24.0.h),
         child: RichText(
           text: TextSpan(
             children: <TextSpan>[
@@ -74,10 +77,7 @@ class SignInBody extends StatelessWidget {
                   ),
                   recognizer: TapGestureRecognizer()
                     ..onTap = () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) {
-                        return const SignUpView();
-                      }));
+                      Navigator.pushNamed(context, SignUpScreen.routeName);
                     }),
             ],
           ),

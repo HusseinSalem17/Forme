@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:forme_app/features/Authentication/presentation/views/sign_in_sections/sign_in_footer.dart';
 import 'package:forme_app/features/Authentication/presentation/views/sign_in_sections/sign_in_and_up_header.dart';
+import 'package:forme_app/features/Authentication/presentation/views/sign_in_sections/sign_in_footer.dart';
 import 'package:forme_app/features/Authentication/presentation/views/sign_in_sections/sing_in_body.dart';
 import 'package:forme_app/features/Authentication/presentation/views/widgets/language_icon.dart';
 
 class SignInScreen extends StatefulWidget {
   const SignInScreen({super.key});
-
+  static const routeName = '/Sing-in-view';
   @override
   State<SignInScreen> createState() => _SignInScreenState();
 }

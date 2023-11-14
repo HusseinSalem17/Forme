@@ -81,7 +81,7 @@ class _SignUpBodyState extends State<SignUpBody> {
       Padding(
         padding: EdgeInsets.only(top: 32.0.h),
         child: const CustomAuthButton(
-          text: "Sign In",
+          text: "Sign Up",
           isActive: false,
         ),
       ),
