@@ -1,7 +1,10 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
+import 'package:forme_app/features/Authentication/presentation/views/forgot_password.dart';
+import 'package:forme_app/features/Authentication/presentation/views/sign_up_view.dart';
 import 'package:forme_app/features/Authentication/presentation/views/widgets/auth_divider.dart';
 import 'package:forme_app/features/Authentication/presentation/views/widgets/custom_auth_button.dart';
 import 'package:forme_app/features/Authentication/presentation/views/widgets/custom_text_from_field.dart';
@@ -32,7 +35,9 @@ class SignInBody extends StatelessWidget {
         child: Align(
             alignment: Alignment.centerRight,
             child: TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, ForgetPasswordScreen.routeName);
+                },
                 child: Text(
                   "Forget password",
                   style: Styles.textStyleRegular12.copyWith(
@@ -57,21 +62,23 @@ class SignInBody extends StatelessWidget {
         ]),
       ),
       Padding(
-        padding: EdgeInsets.symmetric(vertical: 16.h),
+        padding: EdgeInsets.only(top: 24.0.h),
         child: RichText(
           text: TextSpan(
-            style: DefaultTextStyle.of(context).style,
             children: <TextSpan>[
               const TextSpan(
                   text: 'Don\'t have an account?',
                   style: Styles.textStyleRegular14),
               TextSpan(
-                text: 'Sign Up',
-                style: Styles.textStyleRegular14.copyWith(
-                  color: AppColors.p300PrimaryColor,
-                  decoration: TextDecoration.underline,
-                ),
-              ),
+                  text: 'Sign Up',
+                  style: Styles.textStyleRegular14.copyWith(
+                    color: AppColors.p300PrimaryColor,
+                    decoration: TextDecoration.underline,
+                  ),
+                  recognizer: TapGestureRecognizer()
+                    ..onTap = () {
+                      Navigator.pushNamed(context, SignUpScreen.routeName);
+                    }),
             ],
           ),
         ),

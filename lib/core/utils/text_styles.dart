@@ -13,7 +13,7 @@ abstract class Styles {
   );
   static const descriptionStyle = TextStyle(
     fontFamily: 'RobotoRegular',
-    fontSize: 17,
+    fontSize: 14,
     color: AppColors.n100Color,
   );
 // headers styles
