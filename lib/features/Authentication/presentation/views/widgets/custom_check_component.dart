@@ -18,17 +18,21 @@ class CustomCheckComponent extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
-      child: Row(
-        children: [
-          SvgPicture.asset(
-            url,
-            colorFilter: ColorFilter.mode(color, BlendMode.srcIn),
-          ),
-          const SizedBox(
-            width: 12,
-          ),
-          Text(title, style: Styles.textStyleBold12.copyWith(color: color))
-        ],
+      child: Container(
+        alignment: Alignment.bottomCenter,
+        height: 56,
+        child: Row(
+          children: [
+            SvgPicture.asset(
+              url,
+              colorFilter: ColorFilter.mode(color, BlendMode.srcIn),
+            ),
+            const SizedBox(
+              width: 12,
+            ),
+            Text(title, style: Styles.textStyleBold12.copyWith(color: color))
+          ],
+        ),
       ),
     );
   }

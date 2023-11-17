@@ -1,17 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:forme_app/core/transitions/page_slide.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
-import 'package:forme_app/features/Authentication/presentation/views/verify_code.dart';
 import 'package:forme_app/features/Authentication/presentation/views/widgets/custom_auth_button.dart';
 import 'package:forme_app/features/Authentication/presentation/views/widgets/custom_text_from_field.dart';
 import 'package:forme_app/features/Authentication/presentation/views/widgets/header_text.dart';
 
-class ForgetPasswordScreen extends StatelessWidget {
-  static const routeName = '/Forgot-password';
-  const ForgetPasswordScreen({super.key});
-
+class NewPasswordScreen extends StatelessWidget {
+  const NewPasswordScreen({super.key});
+  static const routeName = '/new-password-view';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,26 +26,27 @@ class ForgetPasswordScreen extends StatelessWidget {
             child: Column(
               children: [
                 const HeaderText(
-                    title: 'Forgot Password?',
+                    title: 'New Password',
                     subtitle:
-                        "Don’t worry! it occurs. Please enter the email address linked with your account"),
-                Padding(
-                  padding: EdgeInsets.only(top: 24.h),
-                  child: SvgPicture.asset("assets/image/Fitness.svg"),
+                        "Your new password must be different from previously used passwords"),
+                CustomTextFormField(
+                  title: 'Password',
+                  hint: 'enter the password',
+                  type: 'password',
+                  topPadding: 40.h,
                 ),
                 CustomTextFormField(
-                  title: 'Email',
-                  hint: 'example@gmail.com',
-                  type: 'email',
-                  topPadding: 32.h,
-                  bottomPadding: 24.h,
+                  title: 'Re-Enter Password',
+                  hint: 're-enter the password',
+                  type: 'password',
+                  topPadding: 16.h,
+                  bottomPadding: 40.h,
                 ),
                 CustomAuthButton(
-                  text: "Send Code",
+                  text: "Create New Password",
                   isActive: true,
                   onPressed: () {
-                    Navigator.of(context)
-                        .push(PageSlideTransition(const VerifyCodeScreen()));
+                    //create a new password
                   },
                 ),
               ],

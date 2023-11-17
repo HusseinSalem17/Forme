@@ -17,4 +17,5 @@ abstract class AppColors {
   static const n30StrokeColor = Color(0xffebecee);
   static const n800BodyInProgramsColor = Color(0xff131e30);
   static const n500Color = Color(0xff404957);
+  static const errorColor = Color(0xffF18181);
 }
