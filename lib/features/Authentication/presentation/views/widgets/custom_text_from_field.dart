@@ -5,7 +5,6 @@ import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
 
 class CustomTextFormField extends StatefulWidget {
-  
   final String title, hint, type;
   final String? error;
   final double topPadding, bottomPadding;
@@ -44,7 +43,8 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
           ),
           TextFormField(
             cursorColor: AppColors.p300PrimaryColor,
-            style: Styles.hintStyle,
+            style: Styles.textStyleRegular14
+                .copyWith(color: AppColors.n900PrimaryTextColor),
             keyboardType: widget.type == 'password'
                 ? TextInputType.visiblePassword
                 : TextInputType.emailAddress,

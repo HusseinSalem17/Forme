@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
 
-class CustomAuthButton extends StatelessWidget {
+class CustomAuthButton extends StatefulWidget {
   const CustomAuthButton({
     Key? key,
     required this.text,
@@ -15,27 +15,33 @@ class CustomAuthButton extends StatelessWidget {
   final void Function()? onPressed;
 
   @override
+  State<CustomAuthButton> createState() => _CustomAuthButtonState();
+}
+
+class _CustomAuthButtonState extends State<CustomAuthButton> {
+  @override
   Widget build(BuildContext context) {
     return SizedBox(
       width: MediaQuery.of(context).size.width,
       height: 45.h,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          backgroundColor: isActive
+          backgroundColor: widget.isActive
               ? AppColors.p300PrimaryColor
               : AppColors.p300PrimaryColor.withOpacity(0.4),
           padding: const EdgeInsets.symmetric(
             vertical: 15,
           ),
+          elevation: 0,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.all(
               Radius.circular(30.w),
             ),
           ),
         ),
-        onPressed: () {},
+        onPressed: widget.isActive ? widget.onPressed : null,
         child: Text(
-          text,
+          widget.text,
           style: Styles.textStyleMedium16.copyWith(color: AppColors.background),
         ),
       ),

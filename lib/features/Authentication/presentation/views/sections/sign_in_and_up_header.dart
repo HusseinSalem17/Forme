@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
-import 'package:forme_app/core/utils/text_styles.dart';
 import 'package:forme_app/features/Authentication/presentation/views/widgets/custom_check_component.dart';
+import 'package:forme_app/features/Authentication/presentation/views/widgets/header_text.dart';
 
 class SingInAndUpHeader extends StatefulWidget {
   final String header, description;
@@ -42,23 +42,9 @@ class _SingInAndUpHeader extends State<SingInAndUpHeader>
   Widget build(BuildContext context) {
     return Column(
       children: [
+        HeaderText(title: widget.header, subtitle: widget.description),
         Padding(
-          padding: EdgeInsets.only(bottom: 16.h),
-          child: Text(
-            widget.header,
-            style: Styles.headerStyle,
-          ),
-        ),
-        SizedBox(
-          width: 260,
-          child: Text(
-            widget.description,
-            textAlign: TextAlign.center,
-            style: Styles.descriptionStyle,
-          ),
-        ),
-        Padding(
-          padding: EdgeInsets.only(top: 24.h, bottom: 8.h),
+          padding: EdgeInsets.only(bottom: 8.h),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [

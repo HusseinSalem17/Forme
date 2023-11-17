@@ -1,34 +1,32 @@
 import 'package:flutter/material.dart';
 import 'package:forme_app/features/Authentication/presentation/views/forgot_password.dart';
+import 'package:forme_app/features/Authentication/presentation/views/new_password.dart';
 import 'package:forme_app/features/Authentication/presentation/views/sign_up_view.dart';
-import 'package:forme_app/features/Authentication/presentation/views/sing_in_view.dart';
+import 'package:forme_app/features/Authentication/presentation/views/sign_in_view.dart';
+import 'package:forme_app/features/Authentication/presentation/views/verify_code.dart';
 import 'package:forme_app/features/splash/splash_screen.dart';
 
 Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
   switch (settings.name) {
+//----- Splash Routing -----
+    case '/':
+      return splashRoute();
+
 //----- OnBoarding Routing -----
     // case OnBoardingView.routeName:
     //   return onBoardingRoute();
 
-//----- Main Routing -----
-    case '/':
-      return splashRoute();
-
-//Auth Routing
+//----- Auth Routing ------
     case SignInScreen.routeName:
       return signInRoute();
     case SignUpScreen.routeName:
       return signUpRoute();
     case ForgetPasswordScreen.routeName:
       return forgotPasswordRoute();
-
-//----- Verify Routing -----
-    // case VerifyView.routeName:
-    //   final List<dynamic> args = settings.arguments as List<dynamic>;
-    //   final int verifyId = args[0] as int;
-    //   final User user = args[1] as User;
-    //   return verifyRoute(verifyId, user);
-
+    case VerifyCodeScreen.routeName:
+      return verifyCodeRoute();
+    case NewPasswordScreen.routeName:
+      return newpasswordRoute();
     default:
       return notFound();
   }
@@ -74,6 +72,18 @@ MaterialPageRoute<dynamic> forgotPasswordRoute() {
   );
 }
 
+MaterialPageRoute<dynamic> verifyCodeRoute() {
+  return MaterialPageRoute(
+    builder: (context) => const VerifyCodeScreen(),
+  );
+}
+
+MaterialPageRoute<dynamic> newpasswordRoute() {
+  return MaterialPageRoute(
+    builder: (context) => const NewPasswordScreen(),
+  );
+}
+
 // MaterialPageRoute<dynamic> homeRoute() {
 //   return MaterialPageRoute(
 //     builder: (context) => const HomeScreen(),
@@ -90,3 +100,9 @@ MaterialPageRoute<dynamic> forgotPasswordRoute() {
 // }
 
 
+//----- Verify Routing -----
+    // case VerifyView.routeName:
+    //   final List<dynamic> args = settings.arguments as List<dynamic>;
+    //   final int verifyId = args[0] as int;
+    //   final User user = args[1] as User;
+    //   return verifyRoute(verifyId, user);

@@ -1,6 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:forme_app/core/transitions/page_slide.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
 import 'package:forme_app/features/Authentication/presentation/views/forgot_password.dart';
@@ -34,21 +35,27 @@ class SignInBody extends StatelessWidget {
         padding: EdgeInsets.only(bottom: 8.0.h),
         child: Align(
             alignment: Alignment.centerRight,
-            child: TextButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, ForgetPasswordScreen.routeName);
-                },
+            child: GestureDetector(
+              onTap: () {
+                Navigator.of(context)
+                    .push(PageSlideTransition(const ForgetPasswordScreen()));
+              },
+              child: Padding(
+                padding: EdgeInsets.only(top: 16.h, bottom: 24.h),
                 child: Text(
-                  "Forget password",
+                  "Forget password?",
                   style: Styles.textStyleRegular12.copyWith(
                     color: AppColors.p300PrimaryColor,
                     decoration: TextDecoration.underline,
                   ),
-                ))),
+                ),
+              ),
+            )),
       ),
-      const CustomAuthButton(
+      CustomAuthButton(
         text: "Sign In",
-        isActive: false,
+        isActive: true,
+        onPressed: () {},
       ),
       Padding(
         padding: EdgeInsets.symmetric(vertical: 16.h),
@@ -77,7 +84,8 @@ class SignInBody extends StatelessWidget {
                   ),
                   recognizer: TapGestureRecognizer()
                     ..onTap = () {
-                      Navigator.pushNamed(context, SignUpScreen.routeName);
+                      Navigator.of(context)
+                          .push(PageSlideTransition(const SignUpScreen()));
                     }),
             ],
           ),
