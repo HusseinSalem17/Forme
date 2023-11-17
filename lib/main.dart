@@ -4,6 +4,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:forme_app/core/utils/app_theme.dart';
 import 'package:forme_app/pages/onboarding_screen/data/bloc/onboarding_blocs.dart';
 import 'package:forme_app/pages/onboarding_screen/views/onboarding_view.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:forme_app/features/splash/splash_screen.dart';
+import 'package:forme_app/routes.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -14,6 +18,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return BlocProvider(
       create: (context) => OnboardingBloc(),
       child: ScreenUtilInit(
@@ -23,5 +28,6 @@ class MyApp extends StatelessWidget {
           home: const OnBoardingView(),
         ),
       ),);
+
   }
 }
