@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 
+
 //semibold equal bold with size less 2px
+
 
 abstract class Styles {
 //description style
@@ -17,14 +20,23 @@ abstract class Styles {
     color: AppColors.n100Color,
   );
 // headers styles
-  static const kHeaderStyle = TextStyle(
+  static TextStyle kHeaderStyle = TextStyle(
       fontFamily: 'RobotoBold',
-      fontSize: 24,
+      fontWeight: FontWeight.bold,
+      fontSize: 20.sp,
       color: AppColors.p300PrimaryColor);
+  
+  static TextStyle headerStyle = TextStyle(
+      fontFamily: 'RobotoBold',
+      fontWeight: FontWeight.bold,
+      fontSize: 20.sp,
+      color: AppColors.p300PrimaryColor);
+  
   static const headerStyle = TextStyle(
       fontFamily: 'RobotoBold',
       fontSize: 24,
       color: AppColors.n900PrimaryTextColor);
+  
 //hint style
   static const hintStyle = TextStyle(
     fontFamily: 'RobotoRegular',
