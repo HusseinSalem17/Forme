@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
-import 'package:forme_app/pages/onboarding_screen/views/widgets/Skip_button.dart';
+
+import 'buttons/skip_button.dart';
+
 
 class OnBoardingContent extends StatelessWidget {
   const OnBoardingContent({
