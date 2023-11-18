@@ -10,17 +10,11 @@ class IconRightArrowButton extends StatelessWidget {
     return SizedBox(
       height: 82.h,
       width: 80.w,
-      child: ClipRect(
-        child: Material(
-          color: Colors.transparent,
-          borderRadius: BorderRadius.circular(0),
-          child: Icon(
-            Icons.arrow_circle_right,
-            color: AppColors.p300PrimaryColor,
-            size: 55.w,
-            weight: 800,
-          ),
-        ),
+      child: Icon(
+        Icons.arrow_circle_right,
+        color: AppColors.p300PrimaryColor,
+        size: 55.w,
+        weight: 800,
       ),
     );
   }

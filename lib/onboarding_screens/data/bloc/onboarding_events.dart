@@ -1,3 +1,1 @@
-class OnboardingEvent{
-  
-}
+class OnBoardingEvent {}

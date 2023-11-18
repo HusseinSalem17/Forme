@@ -15,17 +15,11 @@ class _IconLeftArrowButtonState extends State<IconLeftArrowButton> {
     return SizedBox(
       height: 82.h,
       width: 80.w,
-      child: ClipRect(
-        child: Material(
-          color: Colors.transparent,
-          borderRadius: BorderRadius.circular(0),
-          child:  Icon(
-              Icons.arrow_circle_left_outlined,
-              color: AppColors.p300PrimaryColor,
-              size: 55.w,
-            ),
-          ),
-        ),
+      child: Icon(
+        Icons.arrow_circle_left_outlined,
+        color: AppColors.p300PrimaryColor,
+        size: 55.w,
+      ),
     );
   }
 }

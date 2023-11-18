@@ -3,9 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:forme_app/core/utils/app_theme.dart';
 import 'package:forme_app/onboarding_screens/data/bloc/onboarding_blocs.dart';
-
-import 'features/Authentication/presentation/views/sign_in_view.dart';
 import 'package:flutter/services.dart';
+import 'onboarding_screens/views/onboarding_screen.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(
@@ -22,12 +21,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => OnboardingBloc(),
+      create: (context) => OnBoardingBloc(),
       child: ScreenUtilInit(
         builder: (context, child) => MaterialApp(
           debugShowCheckedModeBanner: false,
           theme: Themes.customLightTheme,
-          home: const SignInScreen(),
+          home: const OnBoardingView(),
         ),
       ),
     );

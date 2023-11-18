@@ -1,5 +1,5 @@
-class OnboardingState {
+class OnBoardingState {
   int page;
-  
-  OnboardingState({this.page = 0});
+
+  OnBoardingState({this.page = 0});
 }
