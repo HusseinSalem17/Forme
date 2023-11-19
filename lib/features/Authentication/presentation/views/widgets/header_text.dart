@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
 
 class HeaderText extends StatelessWidget {
@@ -15,7 +16,8 @@ class HeaderText extends StatelessWidget {
           padding: EdgeInsets.only(bottom: 16.h),
           child: Text(
             title,
-            style: Styles.headerStyle,
+            style: Styles.headerStyle
+                .copyWith(color: AppColors.n900PrimaryTextColor),
           ),
         ),
         SizedBox(

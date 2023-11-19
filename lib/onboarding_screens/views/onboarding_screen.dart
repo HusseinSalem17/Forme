@@ -7,6 +7,7 @@ import 'package:forme_app/onboarding_screens/views/widgets/custom_pageview.dart'
 import 'package:forme_app/onboarding_screens/views/widgets/pageview_buttons_sections.dart';
 
 class OnBoardingView extends StatefulWidget {
+  static const routeName = '/on-boarding-view';
   const OnBoardingView({super.key});
 
   @override
