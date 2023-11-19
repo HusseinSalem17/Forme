@@ -5,6 +5,7 @@ import 'package:forme_app/features/Authentication/presentation/views/sign_up_vie
 import 'package:forme_app/features/Authentication/presentation/views/sign_in_view.dart';
 import 'package:forme_app/features/Authentication/presentation/views/verify_code.dart';
 import 'package:forme_app/features/splash/splash_screen.dart';
+import 'package:forme_app/onboarding_screens/views/onboarding_screen.dart';
 
 Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
   switch (settings.name) {
@@ -13,8 +14,8 @@ Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
       return splashRoute();
 
 //----- OnBoarding Routing -----
-    // case OnBoardingView.routeName:
-    //   return onBoardingRoute();
+    case OnBoardingView.routeName:
+      return onBoardingRoute();
 
 //----- Auth Routing ------
     case SignInScreen.routeName:
@@ -27,6 +28,8 @@ Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
       return verifyCodeRoute();
     case NewPasswordScreen.routeName:
       return newpasswordRoute();
+//----- Home Routing ------
+
     default:
       return notFound();
   }
@@ -48,11 +51,11 @@ MaterialPageRoute<dynamic> splashRoute() {
   );
 }
 
-// MaterialPageRoute<dynamic> onBoardingRoute() {
-//   return MaterialPageRoute(
-//     builder: (context) => const OnBoardingView(),
-//   );
-// }
+MaterialPageRoute<dynamic> onBoardingRoute() {
+  return MaterialPageRoute(
+    builder: (context) => const OnBoardingView(),
+  );
+}
 
 MaterialPageRoute<dynamic> signUpRoute() {
   return MaterialPageRoute(
