@@ -12,15 +12,15 @@ class DotIndicator extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: 80.h,
-      width: 80.w,
+      width: 100.w,
       child: DotsIndicator(
         position: page,
         dotsCount: 3,
         decorator: DotsDecorator(
           color: AppColors.dropShadowColor,
           activeColor: AppColors.p300PrimaryColor,
-          size: const Size.square(10.0),
-          activeSize: const Size(20.0, 10.0),
+          size: const Size.square(12.0),
+          activeSize: const Size(36.0, 12.0),
           activeShape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(5.0),
           ),

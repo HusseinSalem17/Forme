@@ -26,10 +26,11 @@ abstract class Styles {
       color: AppColors.p300PrimaryColor);
 
   static TextStyle headerStyle = TextStyle(
-      fontFamily: 'RobotoBold',
-      fontWeight: FontWeight.bold,
-      fontSize: 20.sp,
-      color: AppColors.p300PrimaryColor);
+    fontFamily: 'RobotoBold',
+    fontWeight: FontWeight.bold,
+    fontSize: 20.sp,
+    color: AppColors.p300PrimaryColor,
+  );
 
 //hint style
   static const hintStyle = TextStyle(

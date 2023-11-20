@@ -1,36 +1,69 @@
 import 'package:flutter/material.dart';
-
-import 'onboarding_content.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
+import '../../../core/utils/text_styles.dart';
+import 'buttons/skip_button.dart';
 
 class PageViewContent extends StatelessWidget {
   const PageViewContent({
     super.key,
     required this.image,
-    required this.title1,
-    required this.title2,
+    required this.blackText,
+    required this.blueText,
     required this.description,
-    required this.titleStyle1,
-    required this.titleStyle2,
-    required this.index,
+    required this.blackTextStyle,
+    required this.blueTextStyle,
     required this.context,
   });
 
-  final int index;
   final BuildContext context;
-  final String image, title1, title2, description;
-  final TextStyle titleStyle1, titleStyle2;
+  final String image, blackText, blueText, description;
+  final TextStyle blackTextStyle, blueTextStyle;
 
   @override
   Widget build(BuildContext context) {
-    return OnBoardingContent(
-        image: image,
-        title1: title1,
-        title2: title2,
-        description: description,
-        titleStyle1: titleStyle1,
-        titleStyle2: titleStyle2);
+    return Column(
+      children: [
+        const SkipButton(),
+        const Spacer(flex: 2),
+        SizedBox(
+          width: 345.w,
+          height: 345.w,
+          child: SvgPicture.asset(
+            image,
+            fit: BoxFit.cover,
+          ),
+        ),
+        const Spacer(flex: 2),
+        RichText(
+          textAlign: TextAlign.center,
+          text: TextSpan(
+            children: [
+              TextSpan(
+                text: blackText,
+                style: blackTextStyle,
+              ),
+              TextSpan(
+                text: blueText,
+                style: blueTextStyle,
+              ),
+            ],
+          ),
+        ),
+        const Spacer(flex: 1),
+        RichText(
+          textAlign: TextAlign.center,
+          text: TextSpan(
+            children: [
+              TextSpan(
+                text: description,
+                style: Styles.textStyleMedium12,
+              ),
+            ],
+          ),
+        ),
+        const Spacer(flex: 5),
+      ],
+    );
   }
 }
-
-/// don't delete this comment
-
