@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:forme_app/onboarding_screens/views/widgets/pageview_content.dart';
 
+import '../../../core/utils/app_colors.dart';
 import '../../../core/utils/image_assets.dart';
 import '../../../core/utils/text_styles.dart';
 import '../../data/bloc/onboarding_blocs.dart';
@@ -34,9 +35,10 @@ class CustomPageView extends StatelessWidget {
           context: context,
           image: AssetsImages.onBoardingScreen1,
           blackText: "Embrace Fitness at ",
-          blackTextStyle: Styles.headerStyle.copyWith(color: Colors.black),
+          blackTextStyle: Styles.headerStyle
+              .copyWith(color: AppColors.n900PrimaryTextColor),
           blueText: "Any Age \nand in Every Sport",
-          blueTextStyle: Styles.kHeaderStyle,
+          blueTextStyle: Styles.headerStyle,
           description:
               'Fitness without limits. Embrace any sport, any age.\nJoin us for a diverse range of training options.',
         ),
@@ -44,7 +46,8 @@ class CustomPageView extends StatelessWidget {
           context: context,
           image: AssetsImages.onBoardingScreen2,
           blackText: "Trainers, Programs, and Courses",
-          blackTextStyle: Styles.headerStyle.copyWith(color: Colors.black),
+          blackTextStyle: Styles.headerStyle
+              .copyWith(color: AppColors.n900PrimaryTextColor),
           blueText: "\nat Your Fingertips",
           blueTextStyle: Styles.headerStyle,
           description:
@@ -54,9 +57,10 @@ class CustomPageView extends StatelessWidget {
           context: context,
           image: AssetsImages.onBoardingScreen3,
           blackText: "Find Nearby",
-          blackTextStyle: Styles.headerStyle.copyWith(color: Colors.black),
+          blackTextStyle: Styles.headerStyle
+              .copyWith(color: AppColors.n900PrimaryTextColor),
           blueText: " Training Facilities, \nBook Memberships",
-          blueTextStyle: Styles.kHeaderStyle,
+          blueTextStyle: Styles.headerStyle,
           description:
               'Discover nearby training facilities in various sports \nfields. Elevate your fitness journey and easily book memberships at these places.',
         ),

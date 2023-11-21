@@ -9,11 +9,13 @@ class BackIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Align(
-        alignment: Alignment.centerLeft,
-        child: GestureDetector(
-            onTap: () {
-              Navigator.pop(context);
-            },
-            child: SvgPicture.asset('assets/image/Icon/arrowe.svg')));
+      alignment: Alignment.centerLeft,
+      child: GestureDetector(
+        onTap: () {
+          Navigator.pop(context);
+        },
+        child: SvgPicture.asset('assets/image/Icon/arrowe.svg'),
+      ),
+    );
   }
 }

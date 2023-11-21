@@ -6,12 +6,12 @@ abstract class AppColors {
   static const secondaryColor = Color(0xffee9f2f);
   static const n900PrimaryTextColor = Color(0xff071225);
   static const n100Color = Color(0xff797f89);
-  static const hintColor = Color(0xffA6AAB1);
+  static const n70HintColor = Color(0xffA6AAB1);
   static const fillColor = Color(0xffFAFAFB);
   static const background = Colors.white;
   static const n40BorderColor = Color(0xffd9d9d9);
   static const n80NavColor = Color(0xff979ba3);
-  static const dropShadowColor = Color(0xffc1c4c9);
+  static const n50dropShadowColor = Color(0xffc1c4c9);
   static const n200BodyContentColor = Color(0xff6a717c);
   static const n20FillBodyInSmallCardColor = Color(0xfff5f6f6);
   static const n20FillBodyInBigCardColor = Color(0xfffafafb);
@@ -19,4 +19,5 @@ abstract class AppColors {
   static const n800BodyInProgramsColor = Color(0xff131e30);
   static const n500Color = Color(0xff404957);
   static const errorColor = Color(0xffF18181);
+  static const neutralsN9 = Color(0xff071225);
 }
