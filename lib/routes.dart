@@ -9,6 +9,8 @@ import 'package:forme_app/splash/splash_screen.dart';
 
 import 'package:forme_app/onboarding_screens/views/onboarding_screen.dart';
 
+import 'features/preferences_feature/presentation/views/preferences_screen.dart';
+
 Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
   switch (settings.name) {
 //----- Splash Routing -----
@@ -30,7 +32,6 @@ Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
       return verifyCodeRoute();
     case NewPasswordScreen.routeName:
       return newpasswordRoute();
-
 
 //----- Preferences Routing -----
     case PreferencesScreen.routeName:
@@ -97,7 +98,7 @@ MaterialPageRoute<dynamic> newpasswordRoute() {
 
 MaterialPageRoute<dynamic> preferencesScreenRoute() {
   return MaterialPageRoute(
-    builder: (context) =>  PreferencesScreen(),
+    builder: (context) => PreferencesScreen(),
   );
 }
 

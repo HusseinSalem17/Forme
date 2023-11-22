@@ -13,6 +13,7 @@ class WeightSlider extends StatefulWidget {
 
 class _WeightSliderState extends State<WeightSlider> {
   int _weightValue = 65;
+
   @override
   Widget build(BuildContext context) {
     return Column(

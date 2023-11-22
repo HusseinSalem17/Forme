@@ -6,6 +6,10 @@ import 'package:forme_app/features/preferences_feature/presentation/manager/pref
 import 'package:forme_app/features/preferences_feature/presentation/views/widgets/pick_your_goal_screen_body.dart';
 import 'package:forme_app/features/preferences_feature/presentation/views/widgets/pick_your_level_screen_body.dart';
 
+import 'age_slider.dart';
+import 'height_slider.dart';
+import 'weight_slider.dart';
+
 class CustomPreferencesPageView extends StatelessWidget {
   final PageController pageViewController;
 
@@ -26,27 +30,12 @@ class CustomPreferencesPageView extends StatelessWidget {
               PreferencesEvent(),
             );
           },
-          children: [
-            Container(
-              color: Colors.white,
-              child: const Center(
-                child: Text('1'),
-              ),
-            ),
-            Container(
-              color: Colors.white,
-              child: const Center(
-                child: Text('2'),
-              ),
-            ),
-            Container(
-              color: Colors.white,
-              child: const Center(
-                child: Text('3'),
-              ),
-            ),
-            const PickYourGoalScreenBody(),
-            const PickYourLevelScreenBody(),
+          children: const [
+            AgeSlider(),
+            WeightSlider(),
+            HeightSlider(),
+            PickYourGoalScreenBody(),
+            PickYourLevelScreenBody(),
           ],
         );
       },
