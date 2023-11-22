@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:forme_app/features/preferences_feature/presentation/manager/preferences_bloc.dart';
-import 'package:forme_app/features/preferences_feature/presentation/views/preferencrs_screen.dart';
+import 'package:forme_app/features/preferences_feature/presentation/views/preferences_screen.dart';
 
 import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/utils/text_styles.dart';
