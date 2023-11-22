@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../core/utils/app_colors.dart';
 import '../../../features/Authentication/presentation/views/sign_in_view.dart';
+
 import '../../data/bloc/onboarding_states.dart';
 import 'buttons/left_arrow_button.dart';
 import 'buttons/right_arrow_button.dart';

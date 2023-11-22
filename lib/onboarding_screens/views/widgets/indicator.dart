@@ -17,7 +17,7 @@ class DotIndicator extends StatelessWidget {
         position: page,
         dotsCount: 3,
         decorator: DotsDecorator(
-          color: AppColors.dropShadowColor,
+          color: AppColors.n50dropShadowColor,
           activeColor: AppColors.p300PrimaryColor,
           size: const Size.square(12.0),
           activeSize: const Size(36.0, 12.0),
