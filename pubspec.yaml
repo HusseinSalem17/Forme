@@ -18,6 +18,10 @@ dependencies:
   page_transition: ^2.1.0
   flutter_screenutil: ^5.9.0
   pin_code_fields: ^8.0.1
+  country_code_picker: ^3.0.0
+  dropdown_button2: ^2.3.8
+  csc_picker: ^0.2.7
+  country_pickers: ^2.0.0
 
 dev_dependencies:
 

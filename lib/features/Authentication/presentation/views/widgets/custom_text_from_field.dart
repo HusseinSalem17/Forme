@@ -47,7 +47,9 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
                 .copyWith(color: AppColors.n900PrimaryTextColor),
             keyboardType: widget.type == 'password'
                 ? TextInputType.visiblePassword
-                : TextInputType.emailAddress,
+                : widget.type == 'email'
+                    ? TextInputType.emailAddress
+                    : TextInputType.text,
             obscureText: widget.type == 'password' && _obscureText,
             // obscureText: widget.keyboardType == TextInputType.visiblePassword &&
             //     _obscureText,
