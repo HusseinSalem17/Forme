@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:forme_app/core/transitions/page_slide.dart';
 import 'package:forme_app/features/Authentication/presentation/views/sign_in_view.dart';
 import '../../data/bloc/onboarding_states.dart';
 import 'buttons/left_arrow_button.dart';

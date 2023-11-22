@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:forme_app/core/utils/app_theme.dart';
-import 'package:forme_app/features/splash/splash_screen.dart';
 import 'package:forme_app/onboarding_screens/data/bloc/onboarding_blocs.dart';
 import 'package:flutter/services.dart';
+import 'package:forme_app/splash/splash_screen.dart';
 
 
 void main() {
@@ -27,6 +27,7 @@ class MyApp extends StatelessWidget {
         builder: (context, child) => MaterialApp(
           debugShowCheckedModeBanner: false,
           theme: Themes.customLightTheme,
+        
           home: const SplashScreen(),
         ),
       ),
