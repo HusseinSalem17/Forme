@@ -4,14 +4,16 @@ import 'package:forme_app/features/Authentication/presentation/views/new_passwor
 import 'package:forme_app/features/Authentication/presentation/views/sign_up_view.dart';
 import 'package:forme_app/features/Authentication/presentation/views/sign_in_view.dart';
 import 'package:forme_app/features/Authentication/presentation/views/verify_code.dart';
+
 import 'package:forme_app/splash/splash_screen.dart';
+
 import 'package:forme_app/onboarding_screens/views/onboarding_screen.dart';
 
 Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
   switch (settings.name) {
 //----- Splash Routing -----
     case '/':
-      return splashRoute();
+      return preferencesScreenRoute();
 
 //----- OnBoarding Routing -----
     case OnBoardingView.routeName:
@@ -28,9 +30,11 @@ Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
       return verifyCodeRoute();
     case NewPasswordScreen.routeName:
       return newpasswordRoute();
-      
-//----- preferences Routing ------
-   
+
+
+//----- Preferences Routing -----
+    case PreferencesScreen.routeName:
+      return preferencesScreenRoute();
 
 //----- Home Routing ------
 
@@ -91,6 +95,12 @@ MaterialPageRoute<dynamic> newpasswordRoute() {
   );
 }
 
+MaterialPageRoute<dynamic> preferencesScreenRoute() {
+  return MaterialPageRoute(
+    builder: (context) =>  PreferencesScreen(),
+  );
+}
+
 // MaterialPageRoute<dynamic> homeRoute() {
 //   return MaterialPageRoute(
 //     builder: (context) => const HomeScreen(),
@@ -106,10 +116,9 @@ MaterialPageRoute<dynamic> newpasswordRoute() {
 //   );
 // }
 
-
 //----- Verify Routing -----
-    // case VerifyView.routeName:
-    //   final List<dynamic> args = settings.arguments as List<dynamic>;
-    //   final int verifyId = args[0] as int;
-    //   final User user = args[1] as User;
-    //   return verifyRoute(verifyId, user);
+// case VerifyView.routeName:
+//   final List<dynamic> args = settings.arguments as List<dynamic>;
+//   final int verifyId = args[0] as int;
+//   final User user = args[1] as User;
+//   return verifyRoute(verifyId, user);

@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:forme_app/features/Authentication/presentation/views/sign_in_view.dart';
+
+import '../../../core/utils/app_colors.dart';
+import '../../../features/Authentication/presentation/views/sign_in_view.dart';
+
 import '../../data/bloc/onboarding_states.dart';
 import 'buttons/left_arrow_button.dart';
 import 'buttons/right_arrow_button.dart';
 import 'indicator.dart';
 
-class PageViewButtonsSections extends StatelessWidget {
+class PageViewButtonsSections extends StatefulWidget {
   const PageViewButtonsSections({
     super.key,
     required this.pageController,
@@ -17,35 +20,44 @@ class PageViewButtonsSections extends StatelessWidget {
   final OnBoardingState state;
 
   @override
+  State<PageViewButtonsSections> createState() =>
+      _PageViewButtonsSectionsState();
+}
+
+class _PageViewButtonsSectionsState extends State<PageViewButtonsSections> {
+  @override
+
+
+  @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.only(top: 660.w, right: 24.w, left: 24.w),
+    return Align(
+      alignment: Alignment.bottomCenter,
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          state.page > 0
+          widget.state.page > 0
               ? GestureDetector(
                   onTap: () {
-                    pageController.animateToPage(
-                      --state.page,
+                    widget.pageController.animateToPage(
+                      --widget.state.page,
                       duration: const Duration(
                         milliseconds: 500,
                       ),
-                      curve: Curves.easeOutBack,
+                      curve: Curves.easeIn,
                     );
                   },
-                  child: const IconLeftArrowButton(),
+                  child: const CustomBackButton(),
                 )
-              : SizedBox(
-                  height: 82.h,
-                  width: 80.w,
+              : CircleAvatar(
+                  backgroundColor: AppColors.background,
+                  radius: 21.w,
                 ),
-          DotIndicator(page: state.page),
+          DotIndicator(page: widget.state.page),
           GestureDetector(
             onTap: () {
-              if (state.page < 2) {
-                pageController.animateToPage(
-                  ++state.page,
+              if (widget.state.page < 2) {
+                widget.pageController.animateToPage(
+                  ++widget.state.page,
                   duration: const Duration(
                     milliseconds: 500,
                   ),
@@ -58,7 +70,7 @@ class PageViewButtonsSections extends StatelessWidget {
                 );
               }
             },
-            child: const IconRightArrowButton(),
+            child: const CustomNextButton(),
           ),
         ],
       ),

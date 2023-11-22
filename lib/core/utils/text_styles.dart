@@ -19,43 +19,35 @@ abstract class Styles {
   );
 
 // headers styles
-  static TextStyle kHeaderStyle = TextStyle(
-      fontFamily: 'RobotoBold',
-      fontWeight: FontWeight.bold,
-      fontSize: 20.sp,
-      color: AppColors.p300PrimaryColor);
+
 
   static TextStyle headerStyle = TextStyle(
-      fontFamily: 'RobotoBold',
-      fontWeight: FontWeight.bold,
-      fontSize: 20.sp,
-      color: AppColors.p300PrimaryColor);
+    fontFamily: 'RobotoBold',
+    fontWeight: FontWeight.bold,
+    fontSize: 22.sp,
+    color: AppColors.p300PrimaryColor,
+  );
 
 //hint style
   static const hintStyle = TextStyle(
     fontFamily: 'RobotoRegular',
     fontSize: 16,
-    color: AppColors.hintColor,
+    color: AppColors.n70HintColor,
   );
 
 //other styles
 //Regular
-  static const textStyleRegular10 = TextStyle(
-    fontFamily: 'RobotoRegular',
-    fontSize: 12,
-    color: AppColors.n100Color,
-  );
-  static const textStyleRegular12 = TextStyle(
+  static const textStyleRegular14 = TextStyle(
     fontFamily: 'RobotoRegular',
     fontSize: 14,
     color: AppColors.n100Color,
   );
-  static const textStyleRegular14 = TextStyle(
+  static const textStyleRegular16 = TextStyle(
     fontFamily: 'RobotoRegular',
     fontSize: 16,
     color: AppColors.n100Color,
   );
-  static const textStyleRegular16 = TextStyle(
+  static const textStyleRegular18 = TextStyle(
     fontFamily: 'RobotoRegular',
     fontSize: 18,
     color: AppColors.n100Color,
@@ -103,5 +95,12 @@ abstract class Styles {
     fontFamily: 'RobotoBold',
     fontSize: 18,
     color: AppColors.n100Color,
+  );
+
+  static const heading4Bold = TextStyle(
+  fontFamily: 'RobotoBold',
+  fontSize: 22,
+  color: AppColors.neutralsN9,
+    fontWeight: FontWeight.w700
   );
 }

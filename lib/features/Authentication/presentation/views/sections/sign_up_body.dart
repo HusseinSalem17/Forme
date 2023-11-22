@@ -46,7 +46,7 @@ class _SignUpBodyState extends State<SignUpBody> {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Checkbox(
-            focusColor: AppColors.hintColor,
+            focusColor: AppColors.n70HintColor,
             activeColor: AppColors.p300PrimaryColor,
             value: isChecked,
             onChanged: (bool? value) {
@@ -62,10 +62,10 @@ class _SignUpBodyState extends State<SignUpBody> {
                 children: <TextSpan>[
                   const TextSpan(
                       text: 'By continuing you accept our ',
-                      style: Styles.textStyleRegular12),
+                      style: Styles.textStyleRegular14),
                   TextSpan(
                       text: 'Privacy Policy and Term of Use',
-                      style: Styles.textStyleRegular12.copyWith(
+                      style: Styles.textStyleRegular14.copyWith(
                         color: AppColors.p300PrimaryColor,
                       ),
                       recognizer: TapGestureRecognizer()

@@ -18,19 +18,19 @@ class AuthDivider extends StatelessWidget {
           height: 1.h,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
-              color: AppColors.hintColor),
+              color: AppColors.n70HintColor),
         ),
         Text(
           "Or sign in with",
-          style: Styles.textStyleRegular12
-              .copyWith(color: AppColors.hintColor),
+          style: Styles.textStyleRegular14
+              .copyWith(color: AppColors.n70HintColor),
         ),
         Container(
           width: 80.w,
           height: 1.h,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
-              color: AppColors.hintColor),
+              color: AppColors.n70HintColor),
         ),
       ],
     );

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:forme_app/onboarding_screens/views/widgets/pageview_content.dart';
 
+import '../../../core/utils/app_colors.dart';
 import '../../../core/utils/image_assets.dart';
 import '../../../core/utils/text_styles.dart';
 import '../../data/bloc/onboarding_blocs.dart';
@@ -31,35 +32,35 @@ class CustomPageView extends StatelessWidget {
       },
       children: [
         PageViewContent(
-          index: 1,
           context: context,
           image: AssetsImages.onBoardingScreen1,
-          title1: "Embrace Fitness at ",
-          titleStyle1: Styles.headerStyle,
-          title2: "Any Age \nand in Every Sport",
-          titleStyle2: Styles.kHeaderStyle,
+          blackText: "Embrace Fitness at ",
+          blackTextStyle: Styles.headerStyle
+              .copyWith(color: AppColors.n900PrimaryTextColor),
+          blueText: "Any Age \nand in Every Sport",
+          blueTextStyle: Styles.headerStyle,
           description:
               'Fitness without limits. Embrace any sport, any age.\nJoin us for a diverse range of training options.',
         ),
         PageViewContent(
-          index: 2,
           context: context,
           image: AssetsImages.onBoardingScreen2,
-          title1: "Trainers, Programs, and Courses",
-          titleStyle1: Styles.kHeaderStyle,
-          title2: "\nat Your Fingertips",
-          titleStyle2: Styles.headerStyle,
+          blackText: "Trainers, Programs, and Courses",
+          blackTextStyle: Styles.headerStyle
+              .copyWith(color: AppColors.n900PrimaryTextColor),
+          blueText: "\nat Your Fingertips",
+          blueTextStyle: Styles.headerStyle,
           description:
               'Discover skilled trainers, connect, and enroll in personalized fitness programs and courses.',
         ),
         PageViewContent(
-          index: 3,
           context: context,
           image: AssetsImages.onBoardingScreen3,
-          title1: "Find Nearby",
-          titleStyle1: Styles.headerStyle,
-          title2: " Training Facilities, \nBook Memberships",
-          titleStyle2: Styles.kHeaderStyle,
+          blackText: "Find Nearby",
+          blackTextStyle: Styles.headerStyle
+              .copyWith(color: AppColors.n900PrimaryTextColor),
+          blueText: " Training Facilities, \nBook Memberships",
+          blueTextStyle: Styles.headerStyle,
           description:
               'Discover nearby training facilities in various sports \nfields. Elevate your fitness journey and easily book memberships at these places.',
         ),

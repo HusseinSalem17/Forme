@@ -18,26 +18,34 @@ class _WelcomeState extends State<OnBoardingView> {
   PageController pageController = PageController(initialPage: 0);
 
   @override
+  void dispose() {
+    pageController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: BlocBuilder<OnBoardingBloc, OnBoardingState>(
-        builder: (context, OnBoardingState state) {
-          return SizedBox(
-            width: 375.w,
-            child: Stack(
-              children: [
-                CustomPageView(
-                  pageController: pageController,
-                  state: state,
-                ),
-                PageViewButtonsSections(
-                  pageController: pageController,
-                  state: state,
-                ),
-              ],
-            ),
-          );
-        },
+    return SafeArea(
+      child: Scaffold(
+        body: BlocBuilder<OnBoardingBloc, OnBoardingState>(
+          builder: (context, OnBoardingState state) {
+            return SizedBox(
+              width: 375.w,
+              child: Stack(
+                children: [
+                  CustomPageView(
+                    pageController: pageController,
+                    state: state,
+                  ),
+                  PageViewButtonsSections(
+                    pageController: pageController,
+                    state: state,
+                  ),
+                ],
+              ),
+            );
+          },
+        ),
       ),
     );
   }

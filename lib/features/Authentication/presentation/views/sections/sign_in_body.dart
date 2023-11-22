@@ -44,7 +44,7 @@ class SignInBody extends StatelessWidget {
                 padding: EdgeInsets.only(top: 16.h, bottom: 24.h),
                 child: Text(
                   "Forget password?",
-                  style: Styles.textStyleRegular12.copyWith(
+                  style: Styles.textStyleRegular14.copyWith(
                     color: AppColors.p300PrimaryColor,
                     decoration: TextDecoration.underline,
                   ),
