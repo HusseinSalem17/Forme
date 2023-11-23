@@ -3,8 +3,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:forme_app/features/preferences_feature/presentation/manager/preferences_bloc.dart';
 import 'package:forme_app/features/preferences_feature/presentation/manager/preferences_event.dart';
 import 'package:forme_app/features/preferences_feature/presentation/manager/preferences_state.dart';
+import 'package:forme_app/features/preferences_feature/presentation/views/widgets/age_slider.dart';
+import 'package:forme_app/features/preferences_feature/presentation/views/widgets/height_slider.dart';
 import 'package:forme_app/features/preferences_feature/presentation/views/widgets/pick_your_goal_screen_body.dart';
 import 'package:forme_app/features/preferences_feature/presentation/views/widgets/pick_your_level_screen_body.dart';
+import 'package:forme_app/features/preferences_feature/presentation/views/widgets/weight_slider.dart';
 
 class CustomPreferencesPageView extends StatelessWidget {
   final PageController pageViewController;
@@ -30,19 +33,19 @@ class CustomPreferencesPageView extends StatelessWidget {
             Container(
               color: Colors.white,
               child: const Center(
-                child: Text('1'),
+                child: AgeSlider(),
               ),
             ),
             Container(
               color: Colors.white,
               child: const Center(
-                child: Text('2'),
+                child: WeightSlider(),
               ),
             ),
             Container(
               color: Colors.white,
               child: const Center(
-                child: Text('3'),
+                child: HeightSlider(),
               ),
             ),
             const PickYourGoalScreenBody(),

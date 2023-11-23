@@ -22,7 +22,6 @@ class _VerifyCodeScreenState extends State<VerifyCodeScreen> {
   @override
   void dispose() {
     super.dispose();
-    otpController.dispose();
   }
 
   @override

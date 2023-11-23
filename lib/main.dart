@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:forme_app/core/utils/app_theme.dart';
 
 import 'package:forme_app/features/preferences_feature/presentation/manager/preferences_bloc.dart';
-import 'package:forme_app/features/splash/splash_screen.dart';
+//import 'package:forme_app/features/splash/splash_screen.dart';
 import 'package:forme_app/onboarding_screens/data/bloc/onboarding_blocs.dart';
 import 'package:flutter/services.dart';
 import 'package:forme_app/routes.dart';
