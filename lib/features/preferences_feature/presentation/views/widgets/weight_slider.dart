@@ -13,46 +13,42 @@ class WeightSlider extends StatefulWidget {
 
 class _WeightSliderState extends State<WeightSlider> {
   int _weightValue = 65;
+
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 166.h,
-      width: MediaQuery.sizeOf(context).width,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.end,
-            children: [
-              Text(_weightValue.toString(),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
+            Text(_weightValue.toString(),
+                style: Styles.textStyleMedium16.copyWith(
+                    fontSize: 88.sp, color: AppColors.p300PrimaryColor)),
+            Padding(
+              padding: EdgeInsets.only(bottom: 22.h),
+              child: Text('kg',
+                  textAlign: TextAlign.end,
                   style: Styles.textStyleMedium16.copyWith(
-                      fontSize: 88.sp, color: AppColors.p300PrimaryColor)),
-              Padding(
-                padding: EdgeInsets.only(bottom: 22.h),
-                child: Text('kg',
-                    textAlign: TextAlign.end,
-                    style: Styles.textStyleMedium16.copyWith(
-                        fontSize: 14.sp, color: AppColors.p300PrimaryColor)),
-              ),
-            ],
-          ),
-          WheelSlider(
-            
-            totalCount: 500,
-            initValue: 65,
-            lineColor: AppColors.p300PrimaryColor,
-            onValueChanged: (val) {
-              setState(() {
-                _weightValue = val;
-              });
-              debugPrint(_weightValue.toString());
-            },
-            hapticFeedbackType: HapticFeedbackType.heavyImpact,
-            showPointer: false,
-          ),
-        ],
-      ),
+                      fontSize: 14.sp, color: AppColors.p300PrimaryColor)),
+            ),
+          ],
+        ),
+        WheelSlider(
+          totalCount: 500,
+          initValue: 65,
+          lineColor: AppColors.p300PrimaryColor,
+          onValueChanged: (val) {
+            setState(() {
+              _weightValue = val;
+            });
+            debugPrint(_weightValue.toString());
+          },
+          hapticFeedbackType: HapticFeedbackType.heavyImpact,
+          showPointer: false,
+        ),
+      ],
     );
   }
 }
