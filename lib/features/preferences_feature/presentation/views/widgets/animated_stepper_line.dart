@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:forme_app/features/preferences_feature/presentation/manager/preferences_bloc.dart';
+import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/features/preferences_feature/presentation/manager/preferences_state.dart';
-
-import '../../../../../core/utils/app_colors.dart';
 
 class AnimatedStepperLine extends StatelessWidget {
   final PreferencesState state;
