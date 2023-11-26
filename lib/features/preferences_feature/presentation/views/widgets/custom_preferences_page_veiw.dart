@@ -8,7 +8,6 @@ import 'package:forme_app/features/preferences_feature/presentation/views/widget
 import 'package:forme_app/features/preferences_feature/presentation/views/widgets/pick_your_goal_screen_body.dart';
 import 'package:forme_app/features/preferences_feature/presentation/views/widgets/pick_your_level_screen_body.dart';
 import 'package:forme_app/features/preferences_feature/presentation/views/widgets/weight_slider.dart';
-
 class CustomPreferencesPageView extends StatelessWidget {
   final PageController pageViewController;
 
