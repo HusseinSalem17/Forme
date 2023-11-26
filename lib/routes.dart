@@ -4,9 +4,8 @@ import 'package:forme_app/features/Authentication/presentation/views/new_passwor
 import 'package:forme_app/features/Authentication/presentation/views/sign_up_view.dart';
 import 'package:forme_app/features/Authentication/presentation/views/sign_in_view.dart';
 import 'package:forme_app/features/Authentication/presentation/views/verify_code.dart';
-
+//import 'package:forme_app/features/preferences_feature/presentation/views/preferencrs_screen.dart';
 import 'package:forme_app/splash/splash_screen.dart';
-
 import 'package:forme_app/onboarding_screens/views/onboarding_screen.dart';
 
 import 'features/preferences_feature/presentation/views/preferences_screen.dart';
@@ -15,7 +14,8 @@ Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
   switch (settings.name) {
 //----- Splash Routing -----
     case '/':
-      return preferencesScreenRoute();
+      return signInRoute();
+      //splashRoute();
 
 //----- OnBoarding Routing -----
     case OnBoardingView.routeName:

@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import '../../../../../core/utils/app_colors.dart';
-import '../../../../../core/utils/text_styles.dart';
+import 'package:forme_app/core/utils/app_colors.dart';
+import 'package:forme_app/core/utils/text_styles.dart';
 import 'custom_radio_list_tile.dart';
-import 'custom_shadow_button.dart';
+
 
 class PickYourGoalScreenBody extends StatefulWidget {
   const PickYourGoalScreenBody({Key? key}) : super(key: key);
