@@ -19,8 +19,8 @@ class CustomShadowButton extends StatelessWidget {
       height: 94,
       decoration: BoxDecoration(
         borderRadius: const BorderRadius.only(
-          topLeft: Radius.circular(15),
-          topRight: Radius.circular(15),
+          topLeft: Radius.circular(20),
+          topRight: Radius.circular(20),
         ),
         boxShadow: [
           BoxShadow(
@@ -35,8 +35,8 @@ class CustomShadowButton extends StatelessWidget {
         decoration: const BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(15),
-            topRight: Radius.circular(15),
+            topLeft: Radius.circular(20),
+            topRight: Radius.circular(20),
           ),
         ),
         child: Padding(
@@ -46,27 +46,29 @@ class CustomShadowButton extends StatelessWidget {
             right: 24,
             bottom: 36,
           ),
-          child: ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              elevation: 0,
-              backgroundColor: AppColors.p300PrimaryColor,
-              shape: const RoundedRectangleBorder(
-                borderRadius: BorderRadius.all(
-                  Radius.circular(30),
-                ),
-              ),
-              tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-            ),
-            onPressed: () {
+          child: InkWell(
+            onTap: () {
+              // Handle button press
               pageViewController.animateToPage(
                 BlocProvider.of<PreferencesBloc>(context).state.page + 1,
-                duration: const Duration(
-                  milliseconds: 700,
-                ),
+                duration: const Duration(milliseconds: 700),
                 curve: Curves.easeIn,
               );
             },
-            child: const Text('Next'),
+            splashColor: Colors.grey.withOpacity(1), // Add a splash color
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(30),
+                color: AppColors.p300PrimaryColor,
+              ),
+              padding: const EdgeInsets.all(16.0),
+              child: const Center(
+                child: Text(
+                  'Next',
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+            ),
           ),
         ),
       ),

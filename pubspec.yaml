@@ -20,6 +20,7 @@ dependencies:
   page_transition: ^2.1.0
   pin_code_fields: ^8.0.1
   wheel_slider: ^1.1.1
+  figma_squircle: ^0.5.3
 
 dev_dependencies:
   flutter_lints: ^2.0.0

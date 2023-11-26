@@ -20,7 +20,6 @@ abstract class Styles {
 
 // headers styles
 
-
   static TextStyle headerStyle = TextStyle(
     fontFamily: 'RobotoBold',
     fontWeight: FontWeight.bold,
@@ -38,9 +37,19 @@ abstract class Styles {
 //other styles
 //Regular
   static const textStyleRegular14 = TextStyle(
-    fontFamily: 'RobotoRegular',
-    fontSize: 14,
-    color: AppColors.n100Color,
+      fontFamily: 'RobotoRegular',
+      fontSize: 14,
+      color: AppColors.n100Color,
+      fontWeight: FontWeight.w400);
+  static const cardTextStyle = TextStyle(
+    color: AppColors.p300PrimaryColor,
+    fontWeight: FontWeight.w400,
+    fontSize: 8,
+  );
+  static const blackCardTextStyle = TextStyle(
+    color: AppColors.neutralsN9,
+    fontWeight: FontWeight.w600,
+    fontSize: 12,
   );
   static const textStyleRegular16 = TextStyle(
     fontFamily: 'RobotoRegular',
@@ -98,9 +107,8 @@ abstract class Styles {
   );
 
   static const heading4Bold = TextStyle(
-  fontFamily: 'RobotoBold',
-  fontSize: 22,
-  color: AppColors.neutralsN9,
-    fontWeight: FontWeight.w700
-  );
+      fontFamily: 'RobotoBold',
+      fontSize: 22,
+      color: AppColors.neutralsN9,
+      fontWeight: FontWeight.w700);
 }
