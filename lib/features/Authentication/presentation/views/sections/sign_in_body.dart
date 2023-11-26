@@ -10,7 +10,8 @@ import 'package:forme_app/features/Authentication/presentation/views/widgets/aut
 import 'package:forme_app/features/Authentication/presentation/views/widgets/custom_auth_button.dart';
 import 'package:forme_app/features/Authentication/presentation/views/widgets/custom_text_from_field.dart';
 import 'package:forme_app/features/Authentication/presentation/views/widgets/icon_widget.dart';
-import 'package:forme_app/features/preferences_feature/presentation/views/preferencrs_screen.dart';
+
+import '../../../../preferences_feature/presentation/views/preferences_screen.dart';
 
 class SignInBody extends StatelessWidget {
   const SignInBody({super.key});
@@ -57,8 +58,11 @@ class SignInBody extends StatelessWidget {
         text: "Sign In",
         isActive: true,
         onPressed: () {
-          Navigator.of(context)
-              .push(PageSlideTransition(const PreferencesScreen()));
+          Navigator.of(context).push(
+            PageSlideTransition(
+              const PreferencesScreen(),
+            ),
+          );
         },
       ),
       Padding(

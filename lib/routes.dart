@@ -99,7 +99,7 @@ MaterialPageRoute<dynamic> newpasswordRoute() {
 
 MaterialPageRoute<dynamic> preferencesScreenRoute() {
   return MaterialPageRoute(
-    builder: (context) => const HomeScreen(),
+    builder: (context) => const PreferencesScreen(),
   );
 }
 

@@ -23,7 +23,7 @@ abstract class Styles {
   static TextStyle headerStyle = TextStyle(
     fontFamily: 'RobotoBold',
     fontWeight: FontWeight.bold,
-    fontSize: 22.sp,
+    fontSize: 20.sp,
     color: AppColors.p300PrimaryColor,
   );
 
