@@ -20,22 +20,25 @@ class _SignInScreenState extends State<SignInScreen> {
         child: Center(
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 24.0.w),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                LanguageIcon(
-                  url: "assets/image/Icon/egypt-flag.svg",
-                  language: 'العربيه',
-                  onTap: () {},
-                ),
-                const SingInAndUpHeader(
-                  header: 'SignIn',
-                  description: 'Hi! Welcome back, you’ve missed',
-                ),
-                const SignInBody(),
-                const Spacer(),
-                const SignInFooter(),
-              ],
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  LanguageIcon(
+                    url: "assets/image/Icon/egypt-flag.svg",
+                    language: 'العربيه',
+                    onTap: () {},
+                  ),
+                  const SingInAndUpHeader(
+                    header: 'SignIn',
+                    description: 'Hi! Welcome back, you’ve missed',
+                  ),
+                  const SignInBody(),
+                  SizedBox(
+                    height: MediaQuery.sizeOf(context).height / 10,
+                  ),
+                  const SignInFooter(),
+                ],
+              ),
             ),
           ),
         ),
