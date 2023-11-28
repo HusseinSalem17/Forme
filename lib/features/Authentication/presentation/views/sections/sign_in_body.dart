@@ -57,8 +57,11 @@ class SignInBody extends StatelessWidget {
         text: "Sign In",
         isActive: true,
         onPressed: () {
-          Navigator.of(context)
-              .push(PageSlideTransition(const PreferencesScreen()));
+          Navigator.of(context).push(
+            PageSlideTransition(
+              const PreferencesScreen(),
+            ),
+          );
         },
       ),
       Padding(

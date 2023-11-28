@@ -20,4 +20,5 @@ abstract class AppColors {
   static const n500Color = Color(0xff404957);
   static const errorColor = Color(0xffF18181);
   static const neutralsN9 = Color(0xff071225);
+  static const starColor = Color(0xffFFCF24);
 }

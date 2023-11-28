@@ -9,6 +9,7 @@ import 'package:forme_app/features/home/presentation/views/home_view.dart';
 import 'package:forme_app/splash_screen.dart';
 import 'package:forme_app/onboarding_screens/views/onboarding_screen.dart';
 
+import 'features/home_feature/home_screen.dart';
 import 'features/preferences_feature/presentation/views/preferences_screen.dart';
 
 Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
@@ -99,7 +100,7 @@ MaterialPageRoute<dynamic> newpasswordRoute() {
 
 MaterialPageRoute<dynamic> preferencesScreenRoute() {
   return MaterialPageRoute(
-    builder: (context) =>  const PreferencesScreen(),
+    builder: (context) => const PreferencesScreen(),
   );
 }
 
