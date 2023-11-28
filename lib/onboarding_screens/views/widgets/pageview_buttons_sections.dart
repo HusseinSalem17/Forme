@@ -37,21 +37,21 @@ class _PageViewButtonsSectionsState extends State<PageViewButtonsSections> {
         children: [
           widget.state.page > 0
               ? GestureDetector(
-                  onTap: () {
-                    widget.pageController.animateToPage(
-                      --widget.state.page,
-                      duration: const Duration(
-                        milliseconds: 500,
-                      ),
-                      curve: Curves.easeIn,
-                    );
-                  },
-                  child: const CustomBackButton(),
-                )
-              : CircleAvatar(
-                  backgroundColor: AppColors.background,
-                  radius: 21.w,
+            onTap: () {
+              widget.pageController.animateToPage(
+                --widget.state.page,
+                duration: const Duration(
+                  milliseconds: 500,
                 ),
+                curve: Curves.easeIn,
+              );
+            },
+            child: const CustomBackButton(),
+          )
+              : CircleAvatar(
+            backgroundColor: AppColors.background,
+            radius: 21.w,
+          ),
           DotIndicator(page: widget.state.page),
           GestureDetector(
             onTap: () {

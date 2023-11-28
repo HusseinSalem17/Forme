@@ -4,17 +4,19 @@ import 'package:forme_app/features/Authentication/presentation/views/new_passwor
 import 'package:forme_app/features/Authentication/presentation/views/sign_up_view.dart';
 import 'package:forme_app/features/Authentication/presentation/views/sign_in_view.dart';
 import 'package:forme_app/features/Authentication/presentation/views/verify_code.dart';
+import 'package:forme_app/features/home/presentation/views/home_view.dart';
 //import 'package:forme_app/features/preferences_feature/presentation/views/preferencrs_screen.dart';
-import 'package:forme_app/splash/splash_screen.dart';
+import 'package:forme_app/splash_screen.dart';
 import 'package:forme_app/onboarding_screens/views/onboarding_screen.dart';
 
+import 'features/home_feature/home_screen.dart';
 import 'features/preferences_feature/presentation/views/preferences_screen.dart';
 
 Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
   switch (settings.name) {
 //----- Splash Routing -----
     case '/':
-      return signInRoute();
+      return homeRoute();
       //splashRoute();
 
 //----- OnBoarding Routing -----
@@ -98,15 +100,15 @@ MaterialPageRoute<dynamic> newpasswordRoute() {
 
 MaterialPageRoute<dynamic> preferencesScreenRoute() {
   return MaterialPageRoute(
-    builder: (context) => PreferencesScreen(),
+    builder: (context) => const PreferencesScreen(),
   );
 }
 
-// MaterialPageRoute<dynamic> homeRoute() {
-//   return MaterialPageRoute(
-//     builder: (context) => const HomeScreen(),
-//   );
-// }
+MaterialPageRoute<dynamic> homeRoute() {
+  return MaterialPageRoute(
+    builder: (context) => const HomeScreen(),
+  );
+}
 
 // MaterialPageRoute<dynamic> verifyRoute(int verifyId, User user) {
 //   return MaterialPageRoute(
