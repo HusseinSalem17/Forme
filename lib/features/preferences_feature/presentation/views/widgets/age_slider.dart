@@ -19,7 +19,7 @@ class _AgeSliderState extends State<AgeSlider> {
     super.initState();
     Timer(const Duration(seconds: 1), () {
       _scrollController.animateToItem(
-        36,
+        100,
         duration: const Duration(seconds: 3),
         curve: Curves.easeInOutQuart,
       );
@@ -107,7 +107,7 @@ class _AgeSliderState extends State<AgeSlider> {
   }
 
   Center numbers(int index, TextStyle style) {
-    return Center(child: Text(index.toString(), style: style));
+    return Center(child: Text((index+1).toString(), style: style));
   }
 }
 
