@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
- import 'package:forme_app/core/utils/app_colors.dart';
+import 'package:forme_app/core/utils/app_colors.dart';
+import 'package:forme_app/features/home/presentation/manager/bloc/home_bloc.dart';
 
 class CustomBottomNavigationBar extends StatefulWidget {
   const CustomBottomNavigationBar({Key? key}) : super(key: key);
@@ -57,15 +59,15 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
           label: 'Profile',
         ),
       ],
-      //currentIndex: BlocProvider.of<HomeBloc>(context).currentIndex,
+      currentIndex: BlocProvider.of<HomeBloc>(context).currentIndex,
       onTap: (index) {
         setState(() {
-          //BlocProvider.of<HomeBloc>(context).getCurrentIndex(index);
+          BlocProvider.of<HomeBloc>(context).getCurrentIndex(index);
         });
       },
-      //fixedColor: AssetsColors.kSecondaryColor,
+      unselectedItemColor: AppColors.n100Color,
       type: BottomNavigationBarType.fixed,
-      unselectedItemColor: AppColors.n80NavColor,
+      selectedItemColor: AppColors.p300PrimaryColor,
       showUnselectedLabels: true,
     );
   }

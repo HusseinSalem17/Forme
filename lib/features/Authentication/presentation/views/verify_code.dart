@@ -53,15 +53,16 @@ class _VerifyCodeScreenState extends State<VerifyCodeScreen> {
                 otpFiledController: otpController,
               ),
             ),
-            const Text(
+            Text(
               "Didn't receive OTP?",
-              style: Styles.textStyleRegular14,
+              style: Styles.textStyleRegular.copyWith(fontSize: 14.sp),
             ),
             GestureDetector(
               child: Text(
                 "Resend Code",
-                style: Styles.textStyleRegular14.copyWith(
+                style: Styles.textStyleRegular.copyWith(
                   color: AppColors.p300PrimaryColor,
+                  fontSize:14.sp,
                   decoration: TextDecoration.underline,
                   overflow: TextOverflow.ellipsis,
                 ),

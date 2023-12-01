@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
 
@@ -30,7 +31,7 @@ class CustomCheckComponent extends StatelessWidget {
             const SizedBox(
               width: 12,
             ),
-            Text(title, style: Styles.textStyleBold12.copyWith(color: color))
+            Text(title, style: Styles.textStyleBold.copyWith(color: color,fontSize:12.sp))
           ],
         ),
       ),
