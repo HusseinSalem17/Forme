@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:forme_app/core/utils/app_colors.dart';
+import 'package:forme_app/core/widgets/custom_app_botton.dart';
 import 'package:forme_app/features/preferences/presentation/manager/preferences_bloc.dart';
 
 
@@ -56,22 +56,11 @@ class CustomShadowButton extends StatelessWidget {
               );
             },
             splashColor: Colors.grey.withOpacity(1), // Add a splash color
-            child: Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(30),
-                color: AppColors.p300PrimaryColor,
-              ),
-              padding: const EdgeInsets.all(16.0),
-              child: const Center(
-                child: Text(
-                  'Next',
-                  style: TextStyle(color: Colors.white),
-                ),
-              ),
-            ),
+            child: const CustomAppBottom(title: 'Next',),
           ),
         ),
       ),
     );
   }
 }
+

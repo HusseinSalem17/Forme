@@ -51,7 +51,7 @@ class Listing extends StatelessWidget {
           height: MediaQuery.sizeOf(context).height / listheight,
           child: isVertical
               ? const VerticalCardsList()
-              : const SpecialProgramsCardList(),
+              : const ProgramsCardList(),
         ),
       ],
     );

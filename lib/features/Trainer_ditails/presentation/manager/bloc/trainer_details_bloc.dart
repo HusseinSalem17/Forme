@@ -7,7 +7,7 @@ part 'trainer_details_state.dart';
 class TrainerDetailsBloc extends Bloc<TrainerDetailsEvent, TrainerDetailsState> {
   TrainerDetailsBloc() : super(TrainerDetailsInitial()) {
     on<TrainerDetailsEvent>((event, emit) {
-      // TODO: implement event handler
+    
     });
   }
 }

@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 
-import 'package:forme_app/features/home/presentation/views/widgets/vertecal_Card_Item.dart';
+import 'package:forme_app/features/home/presentation/views/widgets/vertecal_card_item.dart';
 
 class VerticalCardsList extends StatelessWidget {
   const VerticalCardsList({Key? key}) : super(key: key);
