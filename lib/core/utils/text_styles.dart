@@ -6,15 +6,15 @@ import 'package:forme_app/core/utils/app_colors.dart';
 
 abstract class Styles {
 //description style
-  static const kDescriptionStyle = TextStyle(
+  static TextStyle kDescriptionStyle = TextStyle(
     height: 1.5,
     fontFamily: 'RobotoRegular',
-    fontSize: 18,
+    fontSize: 18.sp,
     color: AppColors.p300PrimaryColor,
   );
-  static const descriptionStyle = TextStyle(
+  static TextStyle descriptionStyle = TextStyle(
     fontFamily: 'RobotoRegular',
-    fontSize: 14,
+    fontSize: 14.sp,
     color: AppColors.n100Color,
   );
 
@@ -26,89 +26,45 @@ abstract class Styles {
     fontSize: 20.sp,
     color: AppColors.p300PrimaryColor,
   );
-
-//hint style
-  static const hintStyle = TextStyle(
-    fontFamily: 'RobotoRegular',
-    fontSize: 16,
-    color: AppColors.n70HintColor,
-  );
-
-//other styles
-//Regular
-  static const textStyleRegular14 = TextStyle(
-      fontFamily: 'RobotoRegular',
-      fontSize: 14,
-      color: AppColors.n100Color,
-      fontWeight: FontWeight.w400);
-  static const cardTextStyle = TextStyle(
-    color: AppColors.p300PrimaryColor,
-    fontWeight: FontWeight.w400,
-    fontSize: 8,
-  );
-  static const blackCardTextStyle = TextStyle(
-    color: AppColors.neutralsN9,
-    fontWeight: FontWeight.w600,
-    fontSize: 12,
-  );
-  static const textStyleRegular16 = TextStyle(
-    fontFamily: 'RobotoRegular',
-    fontSize: 16,
-    color: AppColors.n100Color,
-  );
-  static const textStyleRegular18 = TextStyle(
-    fontFamily: 'RobotoRegular',
-    fontSize: 18,
-    color: AppColors.n100Color,
-  );
-
-  //medium
-  static const textStyleMedium10 = TextStyle(
-    fontFamily: 'RobotoMedium',
-    fontSize: 12,
-    color: AppColors.n100Color,
-  );
-  static const textStyleMedium12 = TextStyle(
-    fontFamily: 'RobotoMedium',
-    fontSize: 14,
-    color: AppColors.n100Color,
-  );
-  static const textStyleMedium14 = TextStyle(
-    fontFamily: 'RobotoMedium',
-    fontSize: 16,
-    color: AppColors.n100Color,
-  );
-  static const textStyleMedium16 = TextStyle(
-    fontFamily: 'RobotoMedium',
-    fontSize: 18,
-    color: AppColors.n100Color,
-  );
-
-  //bold
-  static const textStyleBold10 = TextStyle(
-    fontFamily: 'RobotoBold',
-    fontSize: 12,
-    color: AppColors.n100Color,
-  );
-  static const textStyleBold12 = TextStyle(
-    fontFamily: 'RobotoBold',
-    fontSize: 14,
-    color: AppColors.n100Color,
-  );
-  static const textStyleBold14 = TextStyle(
-    fontFamily: 'RobotoBold',
-    fontSize: 16,
-    color: AppColors.n100Color,
-  );
-  static const textStyleBold16 = TextStyle(
-    fontFamily: 'RobotoBold',
-    fontSize: 18,
-    color: AppColors.n100Color,
-  );
-
   static const heading4Bold = TextStyle(
       fontFamily: 'RobotoBold',
       fontSize: 22,
       color: AppColors.neutralsN9,
       fontWeight: FontWeight.w700);
+//hint style
+  static TextStyle hintStyle = TextStyle(
+    fontFamily: 'RobotoRegular',
+    fontSize: 16.sp,
+    color: AppColors.n70HintColor,
+  );
+//card style
+  static TextStyle cardTextStyle = TextStyle(
+    fontFamily: 'RobotoRegular',
+    color: AppColors.p300PrimaryColor,
+    fontWeight: FontWeight.w400,
+    fontSize: 8.sp,
+  );
+  static TextStyle blackCardTextStyle = TextStyle(
+    color: AppColors.neutralsN9,
+    fontWeight: FontWeight.w600,
+    fontSize: 12.sp,
+  );
+//other styles
+  //Regular
+  static const textStyleRegular = TextStyle(
+      fontFamily: 'RobotoRegular',
+      color: AppColors.n100Color,
+      fontWeight: FontWeight.w400);
+
+  //medium
+  static const textStyleMedium = TextStyle(
+    fontFamily: 'RobotoMedium',
+    color: AppColors.n100Color,
+  );
+
+  //bold
+  static const textStyleBold = TextStyle(
+    fontFamily: 'RobotoBold',
+    color: AppColors.n100Color,
+  );
 }

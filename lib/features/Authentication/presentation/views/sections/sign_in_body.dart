@@ -10,7 +10,7 @@ import 'package:forme_app/features/Authentication/presentation/views/widgets/aut
 import 'package:forme_app/features/Authentication/presentation/views/widgets/custom_auth_button.dart';
 import 'package:forme_app/features/Authentication/presentation/views/widgets/custom_text_from_field.dart';
 import 'package:forme_app/features/Authentication/presentation/views/widgets/icon_widget.dart';
-import 'package:forme_app/features/preferences_feature/presentation/views/preferences_screen.dart';
+import 'package:forme_app/features/preferences/presentation/views/preferences_screen.dart';
 
 class SignInBody extends StatelessWidget {
   const SignInBody({super.key});
@@ -45,8 +45,9 @@ class SignInBody extends StatelessWidget {
                 padding: EdgeInsets.only(top: 16.h, bottom: 24.h),
                 child: Text(
                   "Forget password?",
-                  style: Styles.textStyleRegular14.copyWith(
+                  style: Styles.textStyleRegular.copyWith(
                     color: AppColors.p300PrimaryColor,
+                    fontSize: 12.sp,
                     decoration: TextDecoration.underline,
                   ),
                 ),
@@ -80,13 +81,14 @@ class SignInBody extends StatelessWidget {
         child: RichText(
           text: TextSpan(
             children: <TextSpan>[
-              const TextSpan(
+              TextSpan(
                   text: 'Don\'t have an account?',
-                  style: Styles.textStyleRegular14),
+                  style: Styles.textStyleRegular.copyWith(fontSize: 14.sp)),
               TextSpan(
                   text: 'Sign Up',
-                  style: Styles.textStyleRegular14.copyWith(
+                  style: Styles.textStyleRegular.copyWith(
                     color: AppColors.p300PrimaryColor,
+                    fontSize:14.sp,
                     decoration: TextDecoration.underline,
                   ),
                   recognizer: TapGestureRecognizer()

@@ -37,14 +37,14 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
             padding: EdgeInsets.only(bottom: 10.0.h),
             child: Text(
               widget.title,
-              style: Styles.textStyleBold14
-                  .copyWith(color: AppColors.n900PrimaryTextColor),
+              style: Styles.textStyleBold
+                  .copyWith(color: AppColors.n900PrimaryTextColor,fontSize:14.sp),
             ),
           ),
           TextFormField(
             cursorColor: AppColors.p300PrimaryColor,
-            style: Styles.textStyleRegular14
-                .copyWith(color: AppColors.n900PrimaryTextColor),
+            style: Styles.textStyleRegular
+                .copyWith(color: AppColors.n900PrimaryTextColor,fontSize:14.sp),
             keyboardType: widget.type == 'password'
                 ? TextInputType.visiblePassword
                 : TextInputType.emailAddress,
