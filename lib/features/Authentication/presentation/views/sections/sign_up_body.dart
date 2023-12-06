@@ -60,13 +60,13 @@ class _SignUpBodyState extends State<SignUpBody> {
             child: RichText(
               text: TextSpan(
                 children: <TextSpan>[
-                  const TextSpan(
+                  TextSpan(
                       text: 'By continuing you accept our ',
-                      style: Styles.textStyleRegular14),
+                      style: Styles.textStyleRegular.copyWith(fontSize:14.sp)),
                   TextSpan(
                       text: 'Privacy Policy and Term of Use',
-                      style: Styles.textStyleRegular14.copyWith(
-                        color: AppColors.p300PrimaryColor,
+                      style: Styles.textStyleRegular.copyWith(
+                        color: AppColors.p300PrimaryColor,fontSize:14.sp
                       ),
                       recognizer: TapGestureRecognizer()
                         ..onTap = () {
@@ -101,13 +101,14 @@ class _SignUpBodyState extends State<SignUpBody> {
         child: RichText(
           text: TextSpan(
             children: <TextSpan>[
-              const TextSpan(
+              TextSpan(
                   text: 'Already have an account?',
-                  style: Styles.textStyleRegular14),
+                  style: Styles.textStyleRegular.copyWith(fontSize: 14.sp)),
               TextSpan(
                   text: 'Sign In',
-                  style: Styles.textStyleRegular14.copyWith(
+                  style: Styles.textStyleRegular.copyWith(
                     color: AppColors.p300PrimaryColor,
+                    fontSize:14.sp,
                     decoration: TextDecoration.underline,
                   ),
                   recognizer: TapGestureRecognizer()

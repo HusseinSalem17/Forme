@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
+
 //temp widget for handling text styles
 class CustomText extends StatelessWidget {
   final String text1, text2;
@@ -18,18 +20,17 @@ class CustomText extends StatelessWidget {
       children: [
         Text(
           text1,
-          style: Styles.textStyleRegular14,
+          style: Styles.textStyleRegular.copyWith(fontSize: 14.sp),
         ),
         GestureDetector(
           onTap: onTap,
           child: FittedBox(
             child: Text(
               text2,
-              style: Styles.textStyleRegular14.copyWith(
+              style: Styles.textStyleRegular.copyWith(
                 color: AppColors.p300PrimaryColor,
-                
+                fontSize: 14.sp,
                 decoration: TextDecoration.underline,
-                
                 overflow: TextOverflow.ellipsis,
               ),
             ),

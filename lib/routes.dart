@@ -4,20 +4,20 @@ import 'package:forme_app/features/Authentication/presentation/views/new_passwor
 import 'package:forme_app/features/Authentication/presentation/views/sign_up_view.dart';
 import 'package:forme_app/features/Authentication/presentation/views/sign_in_view.dart';
 import 'package:forme_app/features/Authentication/presentation/views/verify_code.dart';
+import 'package:forme_app/features/Trainer_ditails/presentation/views/add_review.dart';
+import 'package:forme_app/features/Trainer_ditails/presentation/views/success_story.dart';
+import 'package:forme_app/features/Trainer_ditails/presentation/views/trainer_details_view.dart';
 import 'package:forme_app/features/home/presentation/views/home_view.dart';
-//import 'package:forme_app/features/preferences_feature/presentation/views/preferencrs_screen.dart';
 import 'package:forme_app/splash_screen.dart';
 import 'package:forme_app/onboarding_screens/views/onboarding_screen.dart';
-
-import 'features/home_feature/home_screen.dart';
-import 'features/preferences_feature/presentation/views/preferences_screen.dart';
+import 'features/preferences/presentation/views/preferences_screen.dart';
 
 Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
   switch (settings.name) {
 //----- Splash Routing -----
     case '/':
-      return homeRoute();
-      //splashRoute();
+      return trainerDetailsRoute();
+    //splashRoute();
 
 //----- OnBoarding Routing -----
     case OnBoardingView.routeName:
@@ -39,7 +39,17 @@ Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
     case PreferencesScreen.routeName:
       return preferencesScreenRoute();
 
-//----- Home Routing ------
+//--------------- Home Routing ----------------
+    case HomeScreen.routeName:
+      return homeRoute();
+//---- Trainer Details Routing ----
+case TrainerDetailsScreen.routeName:
+      return trainerDetailsRoute();
+case AddReview.routeName:
+      return addReviewRoute();
+case SuccessStory.routeName:
+      return successStoryRoute();
+
 
     default:
       return notFound();
@@ -107,6 +117,21 @@ MaterialPageRoute<dynamic> preferencesScreenRoute() {
 MaterialPageRoute<dynamic> homeRoute() {
   return MaterialPageRoute(
     builder: (context) => const HomeScreen(),
+  );
+}
+MaterialPageRoute<dynamic> trainerDetailsRoute() {
+  return MaterialPageRoute(
+    builder: (context) => const TrainerDetailsScreen(),
+  );
+}
+MaterialPageRoute<dynamic> addReviewRoute() {
+  return MaterialPageRoute(
+    builder: (context) => const AddReview(),
+  );
+}
+MaterialPageRoute<dynamic> successStoryRoute() {
+  return MaterialPageRoute(
+    builder: (context) => const SuccessStory(),
   );
 }
 
