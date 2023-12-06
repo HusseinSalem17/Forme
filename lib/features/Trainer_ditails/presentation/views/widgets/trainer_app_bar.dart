@@ -4,7 +4,6 @@ import 'package:flutter_svg/svg.dart';
 import 'package:forme_app/core/test_models/top_trainers_model.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
-import 'package:forme_app/core/widgets/custom_app_bar_arrow_button.dart';
 
 class TrainerDetailsAppBar extends StatelessWidget {
   const TrainerDetailsAppBar({
@@ -14,20 +13,11 @@ class TrainerDetailsAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 24.w),
+      padding: EdgeInsets.symmetric(horizontal: 24.w,vertical: 24.h),
       child: Column(children: [
-        Row(
-          children: [
-            CustomAppBarArrowButton(
-              onTap: () {},
-            ),
-            const Spacer(),
-            CustomAppBarArrowButton(onTap: () {}, icon: Icons.share),
-            CustomAppBarArrowButton(onTap: () {}, icon: Icons.favorite_border)
-          ],
-        ),
+      
         Padding(
-          padding: const EdgeInsets.symmetric(vertical: 24),
+          padding: EdgeInsets.symmetric(vertical: 24.h),
           child: Row(
             children: [
               SizedBox(

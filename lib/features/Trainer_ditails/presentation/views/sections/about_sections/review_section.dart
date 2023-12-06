@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:forme_app/core/transitions/page_slide.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
 import 'package:forme_app/features/Trainer_ditails/data/models/trainer_review_model.dart';
+import 'package:forme_app/features/Trainer_ditails/presentation/views/add_review.dart';
 import 'package:forme_app/features/Trainer_ditails/presentation/views/widgets/trainger_review.dart';
 
 class ReviewsSection extends StatelessWidget {
@@ -34,7 +36,10 @@ class ReviewsSection extends StatelessWidget {
                     style: Styles.textStyleBold.copyWith(
                         fontSize: 11.sp, color: AppColors.p300PrimaryColor),
                   ),
-                  onTap: (){},
+                  onTap: (){
+                    Navigator.of(context)
+                    .push(PageSlideTransition(const AddReview()));
+                  },
                 ),
               ],
             ),

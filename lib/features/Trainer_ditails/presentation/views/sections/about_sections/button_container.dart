@@ -4,8 +4,10 @@ import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/widgets/custom_app_botton.dart';
 
 class ButtonContainer extends StatelessWidget {
+  final String buttonTitle;
   const ButtonContainer({
     super.key,
+    required this.buttonTitle
   });
 
   @override
@@ -26,7 +28,7 @@ class ButtonContainer extends StatelessWidget {
               topLeft: Radius.circular(20.dg),
               topRight: Radius.circular(20.dg))),
       padding: EdgeInsets.all(23.h),
-      child: const CustomAppBottom(title: 'Book Appointment'),
+      child: CustomAppBottom(title: buttonTitle),
     );
   }
 }
