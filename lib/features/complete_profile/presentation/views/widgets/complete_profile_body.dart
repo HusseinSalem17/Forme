@@ -6,10 +6,10 @@ import 'package:forme_app/features/complete_profile/presentation/views/widgets/p
 import 'package:image_picker/image_picker.dart';
 
 import 'package:forme_app/features/complete_profile/data/models/Complete_profile_data.dart';
-import 'package:forme_app/features/complete_profile/presentation/manager/complete_profile_cubit/complete_profile_cubit.dart';
-import 'package:forme_app/features/complete_profile/presentation/views/widgets/custom_button.dart';
+import 'package:forme_app/features/complete_profile/presentation/views/widgets/custom_primary_button.dart';
 
 import '../../../../Authentication/presentation/views/widgets/header_text.dart';
+import '../../manager/complete_profile_cubit/complete_profile_cubit.dart';
 import 'body_fields.dart';
 
 class CompleteProfileBody extends StatefulWidget {
