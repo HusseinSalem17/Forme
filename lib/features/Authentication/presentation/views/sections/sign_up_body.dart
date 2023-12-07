@@ -2,11 +2,12 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
-import 'package:forme_app/core/utils/text_styles.dart';
 import 'package:forme_app/features/Authentication/presentation/views/widgets/auth_divider.dart';
 import 'package:forme_app/features/Authentication/presentation/views/widgets/custom_auth_button.dart';
 import 'package:forme_app/features/Authentication/presentation/views/widgets/custom_text_from_field.dart';
 import 'package:forme_app/features/Authentication/presentation/views/widgets/icon_widget.dart';
+
+import '../../../../../core/utils/text_styles_20231128011153.dart';
 
 class SignUpBody extends StatefulWidget {
   const SignUpBody({super.key});
@@ -62,11 +63,11 @@ class _SignUpBodyState extends State<SignUpBody> {
                 children: <TextSpan>[
                   TextSpan(
                       text: 'By continuing you accept our ',
-                      style: Styles.textStyleRegular.copyWith(fontSize:14.sp)),
+                      style: TextStyles.textStyleRegular14),
                   TextSpan(
                       text: 'Privacy Policy and Term of Use',
-                      style: Styles.textStyleRegular.copyWith(
-                        color: AppColors.p300PrimaryColor,fontSize:14.sp
+                      style: TextStyles.textStyleRegular14.copyWith(
+                        color: AppColors.p300PrimaryColor,
                       ),
                       recognizer: TapGestureRecognizer()
                         ..onTap = () {
@@ -103,12 +104,11 @@ class _SignUpBodyState extends State<SignUpBody> {
             children: <TextSpan>[
               TextSpan(
                   text: 'Already have an account?',
-                  style: Styles.textStyleRegular.copyWith(fontSize: 14.sp)),
+                  style: TextStyles.textStyleRegular14),
               TextSpan(
                   text: 'Sign In',
-                  style: Styles.textStyleRegular.copyWith(
+                  style: TextStyles.textStyleRegular14.copyWith(
                     color: AppColors.p300PrimaryColor,
-                    fontSize:14.sp,
                     decoration: TextDecoration.underline,
                   ),
                   recognizer: TapGestureRecognizer()

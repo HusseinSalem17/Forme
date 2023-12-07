@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
-import 'package:forme_app/core/utils/text_styles.dart';
+
+import '../../../../../core/utils/text_styles_20231128011153.dart';
 
 class HeaderText extends StatelessWidget {
   final String title, subtitle;
@@ -16,7 +17,7 @@ class HeaderText extends StatelessWidget {
           padding: EdgeInsets.only(bottom: 16.h),
           child: Text(
             title,
-            style: Styles.headerStyle
+            style: TextStyles.headerStyle
                 .copyWith(color: AppColors.n900PrimaryTextColor),
           ),
         ),
@@ -25,7 +26,7 @@ class HeaderText extends StatelessWidget {
           child: Text(
             subtitle,
             textAlign: TextAlign.center,
-            style: Styles.descriptionStyle,
+            style: TextStyles.descriptionStyle,
           ),
         ),
       ],

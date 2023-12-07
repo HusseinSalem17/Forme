@@ -29,7 +29,7 @@ class TypeAndState extends StatelessWidget {
           children: [
             Text(
               type,
-              style: Styles.cardTextStyle,
+              style: TextStyles.cardTextStyle,
             ),
             Container(
               width: 0.5,
@@ -38,7 +38,7 @@ class TypeAndState extends StatelessWidget {
             ),
             Text(
               state,
-              style: Styles.cardTextStyle.copyWith(
+              style: TextStyles.cardTextStyle.copyWith(
                   color: state == 'Open'
                       ? AppColors.greenColor
                       : state == 'Close'?AppColors.redColor:AppColors.p300PrimaryColor),

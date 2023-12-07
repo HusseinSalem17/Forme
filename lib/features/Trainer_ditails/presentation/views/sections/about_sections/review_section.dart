@@ -25,7 +25,7 @@ class ReviewsSection extends StatelessWidget {
               children: [
                 Text(
                   'Reviews',
-                  style: Styles.textStyleBold.copyWith(
+                  style: TextStyles.textStyleBold.copyWith(
                       fontSize: 14.sp, color: AppColors.n900PrimaryTextColor),
                 ),
                 const Spacer(),
@@ -33,7 +33,7 @@ class ReviewsSection extends StatelessWidget {
                 GestureDetector(
                   child: Text(
                     'add review',
-                    style: Styles.textStyleBold.copyWith(
+                    style: TextStyles.textStyleBold.copyWith(
                         fontSize: 11.sp, color: AppColors.p300PrimaryColor),
                   ),
                   onTap: (){

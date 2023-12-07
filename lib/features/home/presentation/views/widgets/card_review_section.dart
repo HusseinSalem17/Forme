@@ -27,7 +27,7 @@ class CardReviewSection extends StatelessWidget {
             ),
             Text(
               '4.9 (17 Reviews)',
-              style: Styles.cardTextStyle.copyWith(
+              style: TextStyles.cardTextStyle.copyWith(
                 color: AppColors.n200BodyContentColor,
                 fontSize: 9,
               ),

@@ -41,13 +41,13 @@ class TrainerDetailsAppBar extends StatelessWidget {
                     children: [
                       Text(
                         'Ahmed Ramy',
-                        style: Styles.cardTextStyle.copyWith(
+                        style: TextStyles.cardTextStyle.copyWith(
                             color: AppColors.n900PrimaryTextColor,
                             fontSize: 16,
                             fontWeight: FontWeight.w600),
                       ),
                       Text('Trainer',
-                          style: Styles.textStyleRegular
+                          style: TextStyles.textStyleRegular
                               .copyWith(fontSize: 14.sp)),
                       Row(
                         children: [
@@ -59,7 +59,7 @@ class TrainerDetailsAppBar extends StatelessWidget {
                             width: 3,
                           ),
                           Text('Port Said, EGY',
-                              style: Styles.textStyleRegular
+                              style: TextStyles.textStyleRegular
                                   .copyWith(fontSize: 14.sp)),
                         ],
                       ),

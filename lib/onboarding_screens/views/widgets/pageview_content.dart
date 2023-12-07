@@ -66,7 +66,7 @@ class PageViewContent extends StatelessWidget {
               children: [
                 TextSpan(
                   text: description,
-                  style: Styles.textStyleRegular
+                  style: TextStyles.textStyleRegular
                       .copyWith(color: AppColors.n70HintColor,fontSize:14.sp),
                 ),
               ],

@@ -4,7 +4,7 @@ import 'package:forme_app/core/utils/app_colors.dart';
 
 //semibold equal bold with size less 2px
 
-abstract class Styles {
+abstract class TextStyles {
 //description style
   static TextStyle kDescriptionStyle = TextStyle(
     height: 1.5,

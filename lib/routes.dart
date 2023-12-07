@@ -10,13 +10,14 @@ import 'package:forme_app/features/Trainer_ditails/presentation/views/trainer_de
 import 'package:forme_app/features/home/presentation/views/home_view.dart';
 import 'package:forme_app/splash_screen.dart';
 import 'package:forme_app/onboarding_screens/views/onboarding_screen.dart';
+import 'features/Complete_profile/presentation/views/complete_profile.dart';
 import 'features/preferences/presentation/views/preferences_screen.dart';
 
 Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
   switch (settings.name) {
 //----- Splash Routing -----
     case '/':
-      return trainerDetailsRoute();
+      return completeProfile();
     //splashRoute();
 
 //----- OnBoarding Routing -----
@@ -43,13 +44,16 @@ Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
     case HomeScreen.routeName:
       return homeRoute();
 //---- Trainer Details Routing ----
-case TrainerDetailsScreen.routeName:
+    case TrainerDetailsScreen.routeName:
       return trainerDetailsRoute();
-case AddReview.routeName:
+    case AddReview.routeName:
       return addReviewRoute();
-case SuccessStory.routeName:
+    case SuccessStory.routeName:
       return successStoryRoute();
 
+//----- Complete Profile Routing -----
+    case CompleteProfile.routeName:
+      return completeProfile();
 
     default:
       return notFound();
@@ -63,6 +67,12 @@ MaterialPageRoute<dynamic> notFound() {
         body: Text('This Page not found'),
       ),
     ),
+  );
+}
+
+MaterialPageRoute<dynamic> completeProfile() {
+  return MaterialPageRoute(
+    builder: (context) => const CompleteProfile(),
   );
 }
 
@@ -119,16 +129,19 @@ MaterialPageRoute<dynamic> homeRoute() {
     builder: (context) => const HomeScreen(),
   );
 }
+
 MaterialPageRoute<dynamic> trainerDetailsRoute() {
   return MaterialPageRoute(
     builder: (context) => const TrainerDetailsScreen(),
   );
 }
+
 MaterialPageRoute<dynamic> addReviewRoute() {
   return MaterialPageRoute(
     builder: (context) => const AddReview(),
   );
 }
+
 MaterialPageRoute<dynamic> successStoryRoute() {
   return MaterialPageRoute(
     builder: (context) => const SuccessStory(),

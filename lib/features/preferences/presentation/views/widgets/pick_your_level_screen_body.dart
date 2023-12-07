@@ -31,7 +31,7 @@ class _PickYourLevelScreenBodyState extends State<PickYourLevelScreenBody> {
           ),
           const Text(
             'Your regular physical \n activity level? ',
-            style: Styles.heading4Bold,
+            style: TextStyles.heading4Bold,
             textAlign: TextAlign.center,
           ),
           SizedBox(
@@ -39,7 +39,7 @@ class _PickYourLevelScreenBodyState extends State<PickYourLevelScreenBody> {
           ),
           Text(
             'This helps us create your personalized plan',
-            style: Styles.textStyleRegular.copyWith(
+            style: TextStyles.textStyleRegular.copyWith(
               color: AppColors.n70HintColor,
               fontSize:14.sp
             ),

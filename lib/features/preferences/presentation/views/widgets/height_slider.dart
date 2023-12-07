@@ -60,22 +60,22 @@ class _HeightSliderState extends State<HeightSlider> {
             return numbers(
                 index,
                 _scrollIndex == index
-                    ? Styles.textStyleRegular.copyWith(
+                    ? TextStyles.textStyleRegular.copyWith(
                         fontSize: 50.sp,
                         color: AppColors.p300PrimaryColor,
                         fontWeight: FontWeight.w600)
                     : _scrollIndex == index + 1 || _scrollIndex == index - 1
-                        ? Styles.textStyleRegular.copyWith(
+                        ? TextStyles.textStyleRegular.copyWith(
                             fontSize: 42.sp,
                             color: AppColors.n900PrimaryTextColor,
                           )
                         : _scrollIndex == index + 2 || _scrollIndex == index - 2
-                            ? Styles.textStyleRegular.copyWith(
+                            ? TextStyles.textStyleRegular.copyWith(
                                 fontSize: 34.sp,
                                 color: AppColors.n900PrimaryTextColor
                                     .withOpacity(0.4),
                               )
-                            : Styles.textStyleRegular.copyWith(
+                            : TextStyles.textStyleRegular.copyWith(
                                 fontSize: 26.sp,
                                 color: AppColors.n900PrimaryTextColor
                                     .withOpacity(0.15),
@@ -106,7 +106,7 @@ class _HeightSliderState extends State<HeightSlider> {
             top: 190.h,
             left: 102.w,
             child: Text('cm',
-                style: Styles.textStyleMedium
+                style: TextStyles.textStyleMedium
                     .copyWith(color: AppColors.p300PrimaryColor,fontSize:12.sp))),
       ]),
     );

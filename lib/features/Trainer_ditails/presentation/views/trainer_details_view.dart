@@ -56,7 +56,7 @@ class _TrainerDetailsScreenState extends State<TrainerDetailsScreen> {
                             dividerColor: AppColors.p300PrimaryColor,
                             labelColor: AppColors.p300PrimaryColor,
                             unselectedLabelColor: Colors.black,
-                            labelStyle: Styles.textStyleRegular.copyWith(
+                            labelStyle: TextStyles.textStyleRegular.copyWith(
                                 fontWeight: FontWeight.w500, fontSize: 16.sp),
                             indicatorSize: TabBarIndicatorSize.tab,
                             isScrollable: true,

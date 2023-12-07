@@ -34,14 +34,14 @@ class _PickYourGoalScreenBodyState extends State<PickYourGoalScreenBody> {
           ),
           const Text(
             'What’s Your Goal?',
-            style: Styles.heading4Bold,
+            style: TextStyles.heading4Bold,
           ),
           SizedBox(
             height: 16.h,
           ),
           Text(
             'This helps us create your personalized plan',
-            style: Styles.textStyleRegular.copyWith(
+            style: TextStyles.textStyleRegular.copyWith(
               color: AppColors.n70HintColor,
               fontSize:14.sp
             ),

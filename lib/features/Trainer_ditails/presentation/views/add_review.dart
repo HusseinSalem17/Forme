@@ -36,14 +36,14 @@ class AddReview extends StatelessWidget {
                       Padding(
                         padding: EdgeInsets.only(top: 65.h),
                         child: Text('Ahmed Ramy',
-                            style: Styles.textStyleBold.copyWith(
+                            style: TextStyles.textStyleBold.copyWith(
                                 fontSize: 16.sp,
                                 color: AppColors.n900PrimaryTextColor)),
                       ),
                       Padding(
                         padding: EdgeInsets.only(bottom: 18.h),
                         child: Text('Trainer',
-                            style: Styles.textStyleRegular
+                            style: TextStyles.textStyleRegular
                                 .copyWith(fontSize: 14.sp)),
                       ),
                       const Divider(
@@ -52,7 +52,7 @@ class AddReview extends StatelessWidget {
                       Padding(
                         padding: EdgeInsets.only(top: 21.h),
                         child: Text('Your overall rating',
-                            style: Styles.textStyleRegular
+                            style: TextStyles.textStyleRegular
                                 .copyWith(fontSize: 14.sp)),
                       ),
                       SimpleStarRating(
@@ -72,7 +72,7 @@ class AddReview extends StatelessWidget {
                         child: Align(
                           alignment: Alignment.centerLeft,
                           child: Text('Add detailed reviews',
-                              style: Styles.textStyleBold.copyWith(
+                              style: TextStyles.textStyleBold.copyWith(
                                   fontSize: 14.sp,
                                   color: AppColors.n900PrimaryTextColor)),
                         ),

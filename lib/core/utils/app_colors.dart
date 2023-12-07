@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 abstract class AppColors {
+  static const n50BackgroundColor = Color(0xffE6F0FF);
   static const p300PrimaryColor = Color(0xff0065ff);
   static const secondaryColor = Color(0xffee9f2f);
   static const n900PrimaryTextColor = Color(0xff071225);
@@ -17,9 +18,10 @@ abstract class AppColors {
   static const n30StrokeColor = Color(0xffebecee);
   static const n800BodyInProgramsColor = Color(0xff131e30);
   static const n500Color = Color(0xff404957);
-  static const n600Color = Color(0xff343D4C);
+  static const n600color = Color(0xff343D4C);
   static const errorColor = Color(0xffF18181);
   static const neutralsN9 = Color(0xff071225);
+  static const r200ErrorColor = Color(0xffEB4A4A);
   static const starColor = Color(0xffFFCF24);
   static const greenColor = Color(0xff25D02C);
   static const redColor = Color(0xffE72525);

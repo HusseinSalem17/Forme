@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
-import 'package:forme_app/core/utils/text_styles.dart';
+
+import '../../../../../core/utils/text_styles.dart';
 
 class MapPopubMenu extends StatelessWidget {
   const MapPopubMenu({
@@ -43,7 +44,7 @@ class MapPopubMenu extends StatelessWidget {
           ),
           Text(
             'Port Said, EGY',
-            style: Styles.textStyleRegular.copyWith(color: Colors.black,fontSize:16.sp),
+            style: TextStyles.textStyleRegular.copyWith(color: Colors.black,fontSize:16.sp),
           ),
           SvgPicture.asset(
             'assets/image/Icon/chevron-down.svg',

@@ -44,7 +44,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
               const SizedBox(width: 8),
               Text(
                 '${state.page + 1}/5',
-                style: Styles.textStyleRegular.copyWith(
+                style: TextStyles.textStyleRegular.copyWith(
                   color: AppColors.p300PrimaryColor,
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w400,

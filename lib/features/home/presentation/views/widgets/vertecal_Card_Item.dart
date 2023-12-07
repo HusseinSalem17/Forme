@@ -75,7 +75,7 @@ class VerticalCardItem extends StatelessWidget {
                           ),
                           Text(
                             '4.9',
-                            style: Styles.cardTextStyle.copyWith(
+                            style: TextStyles.cardTextStyle.copyWith(
                               color: AppColors.n200BodyContentColor,
                               fontSize: 9,
                             ),
@@ -84,7 +84,7 @@ class VerticalCardItem extends StatelessWidget {
                       ),
                       Text(
                         'Mindful Movement',
-                        style: Styles.blackCardTextStyle,
+                        style: TextStyles.blackCardTextStyle,
                       ),
                       Row(
                         children: [
@@ -93,7 +93,7 @@ class VerticalCardItem extends StatelessWidget {
                             padding: const EdgeInsets.only(left: 4.0),
                             child: Text(
                               'Prot Said, EGY',
-                              style: Styles.cardTextStyle.copyWith(
+                              style: TextStyles.cardTextStyle.copyWith(
                                 color: AppColors.n200BodyContentColor,
                                 fontSize: 11,
                               ),
@@ -105,14 +105,14 @@ class VerticalCardItem extends StatelessWidget {
                         children: [
                           Text(
                             '\$ 1500 ',
-                            style: Styles.cardTextStyle.copyWith(
+                            style: TextStyles.cardTextStyle.copyWith(
                               fontSize: 14,
                               fontWeight: FontWeight.w600,
                             ),
                           ),
                           Text(
                             '/month',
-                            style: Styles.cardTextStyle.copyWith(
+                            style: TextStyles.cardTextStyle.copyWith(
                               color: AppColors.n200BodyContentColor,
                               fontSize: 8,
                             ),
