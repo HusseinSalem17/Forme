@@ -18,7 +18,6 @@ Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
 //----- Splash Routing -----
     case '/':
       return completeProfile();
-    //splashRoute();
 
 //----- OnBoarding Routing -----
     case OnBoardingView.routeName:
@@ -60,6 +59,12 @@ Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
   }
 }
 
+MaterialPageRoute<dynamic> completeProfile() {
+  return MaterialPageRoute(
+    builder: (context) =>  const CompleteProfile(),
+  );
+}
+
 MaterialPageRoute<dynamic> notFound() {
   return MaterialPageRoute(
     builder: (context) => const Scaffold(
@@ -67,12 +72,6 @@ MaterialPageRoute<dynamic> notFound() {
         body: Text('This Page not found'),
       ),
     ),
-  );
-}
-
-MaterialPageRoute<dynamic> completeProfile() {
-  return MaterialPageRoute(
-    builder: (context) => const CompleteProfile(),
   );
 }
 

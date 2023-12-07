@@ -4,7 +4,6 @@ import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
 import 'custom_radio_list_tile.dart';
 
-
 class PickYourGoalScreenBody extends StatefulWidget {
   const PickYourGoalScreenBody({Key? key}) : super(key: key);
 
@@ -32,7 +31,7 @@ class _PickYourGoalScreenBodyState extends State<PickYourGoalScreenBody> {
           SizedBox(
             height: 19.h,
           ),
-          const Text(
+          Text(
             'What’s Your Goal?',
             style: TextStyles.heading4Bold,
           ),

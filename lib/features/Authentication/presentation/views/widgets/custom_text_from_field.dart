@@ -4,19 +4,24 @@ import 'package:flutter_svg/svg.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
 
+import '../../../../../core/utils/styles.dart';
+
 class CustomTextFormField extends StatefulWidget {
   final String title, hint, type;
   final String? error;
   final double topPadding, bottomPadding;
+  final Function(String)? onChanged;
 
-  const CustomTextFormField(
-      {super.key,
-      required this.title,
-      required this.hint,
-      required this.type,
-      this.bottomPadding = 4.0,
-      this.topPadding = 4.0,
-      this.error});
+  const CustomTextFormField({
+    super.key,
+    required this.title,
+    required this.hint,
+    required this.type,
+    this.onChanged,
+    this.bottomPadding = 4.0,
+    this.topPadding = 4.0,
+    this.error,
+  });
 
   @override
   State<CustomTextFormField> createState() => _CustomTextFormFieldState();
@@ -51,10 +56,9 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
             obscureText: widget.type == 'password' && _obscureText,
             // obscureText: widget.keyboardType == TextInputType.visiblePassword &&
             //     _obscureText,
-
             decoration: InputDecoration(
               filled: true,
-              fillColor: AppColors.fillColor,
+              fillColor: Colors.white,
               contentPadding:
                   EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
               hintText: widget.hint,

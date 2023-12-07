@@ -34,7 +34,7 @@ abstract class TextStyles {
 //hint style
   static TextStyle hintStyle = TextStyle(
     fontFamily: 'RobotoRegular',
-    fontSize: 16.sp,
+    fontSize: 14.sp,
     color: AppColors.n70HintColor,
   );
 //card style
