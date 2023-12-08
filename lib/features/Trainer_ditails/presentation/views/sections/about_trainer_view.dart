@@ -38,3 +38,4 @@ class _AboutTrainerScreenState extends State<AboutTrainerScreen> {
     );
   }
 }
+  

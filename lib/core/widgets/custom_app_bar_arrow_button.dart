@@ -18,7 +18,7 @@ class CustomAppBarArrowButton extends StatelessWidget {
         height: 32.w,
         decoration: BoxDecoration(
           color: Colors.white,
-          borderRadius: BorderRadius.circular(16.r),
+          borderRadius: BorderRadius.circular(16.dg),
           boxShadow: [
             BoxShadow(
               color: AppColors.n50dropShadowColor.withOpacity(0.5),

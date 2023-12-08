@@ -2,18 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomClipRect extends StatelessWidget {
-  const CustomClipRect({
-    super.key,
-  });
+  final double size;
+  const CustomClipRect({super.key, this.size = 130});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 130.h,
-      width: 130.h,
+      height: size.h,
+      width: size.h,
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(56.dg),
-          color: Colors.white),
+          borderRadius: BorderRadius.circular(56.dg), color: Colors.white),
       child: Padding(
         padding: EdgeInsets.all(4.h),
         child: ClipRRect(

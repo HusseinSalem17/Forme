@@ -71,7 +71,7 @@ class SpecialProgramsCardItem extends StatelessWidget {
                       '\$ 150.30 ',
                       style: Styles.cardTextStyle.copyWith(
                         fontSize: 12,
-                        fontWeight: FontWeight.w600,
+                        fontWeight: FontWeight.w600, 
                       ),
                     ),
                     Text(

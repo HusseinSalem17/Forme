@@ -10,16 +10,18 @@ class CustomAppBottom extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      
+      height: 48.h,
+      width: MediaQuery.sizeOf(context).width/1.6,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(30),
         color: AppColors.p300PrimaryColor,
       ),
-      padding: const EdgeInsets.all(16.0),
+      padding: EdgeInsets.all(16.0.h),
       child: Center(
         child: Text(
           title,
-          style: Styles.textStyleMedium.copyWith(fontSize: 16.sp,color: AppColors.background),
+          style: Styles.textStyleMedium
+              .copyWith(fontSize: 16.sp, color: AppColors.background),
         ),
       ),
     );

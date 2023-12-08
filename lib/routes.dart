@@ -8,6 +8,7 @@ import 'package:forme_app/features/Trainer_ditails/presentation/views/add_review
 import 'package:forme_app/features/Trainer_ditails/presentation/views/success_story.dart';
 import 'package:forme_app/features/Trainer_ditails/presentation/views/trainer_details_view.dart';
 import 'package:forme_app/features/home/presentation/views/home_view.dart';
+import 'package:forme_app/features/workout_detail/presentation/views/workout_detail.dart';
 import 'package:forme_app/splash_screen.dart';
 import 'package:forme_app/onboarding_screens/views/onboarding_screen.dart';
 import 'features/preferences/presentation/views/preferences_screen.dart';
@@ -16,7 +17,7 @@ Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
   switch (settings.name) {
 //----- Splash Routing -----
     case '/':
-      return trainerDetailsRoute();
+      return workoutDetailRoute();
     //splashRoute();
 
 //----- OnBoarding Routing -----
@@ -43,14 +44,15 @@ Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
     case HomeScreen.routeName:
       return homeRoute();
 //---- Trainer Details Routing ----
-case TrainerDetailsScreen.routeName:
+    case TrainerDetailsScreen.routeName:
       return trainerDetailsRoute();
-case AddReview.routeName:
+    case AddReview.routeName:
       return addReviewRoute();
-case SuccessStory.routeName:
+    case SuccessStory.routeName:
       return successStoryRoute();
-
-
+//---- Workout Details Routing ----
+    case WorkOutDetail.routeName:
+      return workoutDetailRoute();
     default:
       return notFound();
   }
@@ -119,21 +121,31 @@ MaterialPageRoute<dynamic> homeRoute() {
     builder: (context) => const HomeScreen(),
   );
 }
+
 MaterialPageRoute<dynamic> trainerDetailsRoute() {
   return MaterialPageRoute(
     builder: (context) => const TrainerDetailsScreen(),
   );
 }
+
 MaterialPageRoute<dynamic> addReviewRoute() {
   return MaterialPageRoute(
     builder: (context) => const AddReview(),
   );
 }
+
 MaterialPageRoute<dynamic> successStoryRoute() {
   return MaterialPageRoute(
     builder: (context) => const SuccessStory(),
   );
 }
+
+MaterialPageRoute<dynamic> workoutDetailRoute() {
+  return MaterialPageRoute(
+    builder: (context) => const WorkOutDetail(),
+  );
+}
+
 
 // MaterialPageRoute<dynamic> verifyRoute(int verifyId, User user) {
 //   return MaterialPageRoute(
