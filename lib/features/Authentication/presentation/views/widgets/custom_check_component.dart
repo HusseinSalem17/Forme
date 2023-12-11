@@ -31,7 +31,7 @@ class CustomCheckComponent extends StatelessWidget {
             const SizedBox(
               width: 12,
             ),
-            Text(title, style: Styles.textStyleBold.copyWith(color: color,fontSize:12.sp))
+            Text(title, style: TextStyles.textStyleBold.copyWith(color: color,fontSize:12.sp))
           ],
         ),
       ),

@@ -15,7 +15,7 @@ class CustomTextField extends StatelessWidget {
       width: 260.w,
       child: TextFormField(
         cursorColor: AppColors.p300PrimaryColor,
-        style: Styles.textStyleRegular
+        style: TextStyles.textStyleRegular
             .copyWith(color: AppColors.n900PrimaryTextColor,fontSize:14.sp),
         keyboardType: TextInputType.text,
         decoration: InputDecoration(
@@ -24,7 +24,7 @@ class CustomTextField extends StatelessWidget {
             contentPadding:
                 EdgeInsets.symmetric(horizontal: 16.w, vertical: 11.5.h),
             hintText: 'Search Workout, Trainer',
-            hintStyle: Styles.textStyleRegular.copyWith(fontSize: 16.sp),
+            hintStyle: TextStyles.textStyleRegular.copyWith(fontSize: 16.sp),
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(4.dg),
               borderSide: const BorderSide(

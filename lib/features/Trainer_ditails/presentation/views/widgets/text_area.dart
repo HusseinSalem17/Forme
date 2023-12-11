@@ -24,7 +24,7 @@ class TextArea extends StatelessWidget {
           maxLines: 6,
           decoration: InputDecoration(
             hintText: 'Enter here',
-            hintStyle: Styles.textStyleRegular.copyWith(fontSize: 16.sp),
+            hintStyle: TextStyles.textStyleRegular.copyWith(fontSize: 16.sp),
             border: InputBorder.none,
             focusedBorder: InputBorder.none,
             enabledBorder: InputBorder.none,

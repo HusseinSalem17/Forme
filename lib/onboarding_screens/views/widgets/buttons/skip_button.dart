@@ -15,7 +15,7 @@ class SkipButton extends StatelessWidget {
         padding: EdgeInsets.only(right: 25.5.w),
         child: Text(
           'Skip',
-          style: Styles.descriptionStyle.copyWith(
+          style: TextStyles.descriptionStyle.copyWith(
             color: AppColors.p300PrimaryColor,
           ),
         ),

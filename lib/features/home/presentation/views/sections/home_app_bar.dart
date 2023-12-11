@@ -18,7 +18,7 @@ class HomeAppBar extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('Location', style: Styles.textStyleRegular.copyWith(fontSize: 14.sp)),
+            Text('Location', style: TextStyles.textStyleRegular.copyWith(fontSize: 14.sp)),
             Padding(
               padding: EdgeInsets.only(top:4.h,bottom: 16.0.h),
               child: Row(

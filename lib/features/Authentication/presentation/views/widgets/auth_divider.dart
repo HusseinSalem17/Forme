@@ -22,7 +22,7 @@ class AuthDivider extends StatelessWidget {
         ),
         Text(
           "Or sign in with",
-          style: Styles.textStyleRegular
+          style: TextStyles.textStyleRegular
               .copyWith(color: AppColors.n70HintColor,fontSize:14.sp),
         ),
         Container(

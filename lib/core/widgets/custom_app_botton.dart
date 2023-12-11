@@ -19,7 +19,7 @@ class CustomAppBottom extends StatelessWidget {
       child: Center(
         child: Text(
           title,
-          style: Styles.textStyleMedium.copyWith(fontSize: 16.sp,color: AppColors.background),
+          style: TextStyles.textStyleMedium.copyWith(fontSize: 16.sp,color: AppColors.background),
         ),
       ),
     );

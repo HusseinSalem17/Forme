@@ -31,7 +31,7 @@ class ReviewWidget extends StatelessWidget {
               SizedBox(width: 8.w),
               Text(
                 model.name,
-                style: Styles.textStyleMedium.copyWith(
+                style: TextStyles.textStyleMedium.copyWith(
                   color: AppColors.n900PrimaryTextColor,
                   fontSize: 14.sp,
                 ),
@@ -39,7 +39,7 @@ class ReviewWidget extends StatelessWidget {
               const Spacer(),
               Text(
                 '${model.timeAgo} ago',
-                style: Styles.textStyleRegular.copyWith(
+                style: TextStyles.textStyleRegular.copyWith(
                   fontSize: 12.sp,
                 ),
               ),
@@ -49,7 +49,7 @@ class ReviewWidget extends StatelessWidget {
             padding: EdgeInsets.symmetric(vertical: 8.h),
             child: Text(
               model.review,
-              style: Styles.textStyleRegular.copyWith(
+              style: TextStyles.textStyleRegular.copyWith(
                   fontSize: 12.sp, color: AppColors.n200BodyContentColor),
             ),
           ),
@@ -71,7 +71,7 @@ class ReviewWidget extends StatelessWidget {
               ),
               Text(
                 model.rating.toString(),
-                style: Styles.textStyleBold.copyWith(fontSize: 11.sp),
+                style: TextStyles.textStyleBold.copyWith(fontSize: 11.sp),
               )
             ],
           )

@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:forme_app/core/transitions/page_slide.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
-import 'package:forme_app/core/utils/text_styles.dart';
 import 'package:forme_app/features/Authentication/presentation/views/forgot_password.dart';
 import 'package:forme_app/features/Authentication/presentation/views/sign_up_view.dart';
 import 'package:forme_app/features/Authentication/presentation/views/widgets/auth_divider.dart';
@@ -11,6 +10,8 @@ import 'package:forme_app/features/Authentication/presentation/views/widgets/cus
 import 'package:forme_app/features/Authentication/presentation/views/widgets/custom_text_from_field.dart';
 import 'package:forme_app/features/Authentication/presentation/views/widgets/icon_widget.dart';
 import 'package:forme_app/features/preferences/presentation/views/preferences_screen.dart';
+
+import '../../../../../core/utils/text_styles.dart';
 
 class SignInBody extends StatelessWidget {
   const SignInBody({super.key});
@@ -45,7 +46,7 @@ class SignInBody extends StatelessWidget {
                 padding: EdgeInsets.only(top: 16.h, bottom: 24.h),
                 child: Text(
                   "Forget password?",
-                  style: Styles.textStyleRegular.copyWith(
+                  style: TextStyles.textStyleRegular.copyWith(
                     color: AppColors.p300PrimaryColor,
                     fontSize: 12.sp,
                     decoration: TextDecoration.underline,
@@ -83,10 +84,10 @@ class SignInBody extends StatelessWidget {
             children: <TextSpan>[
               TextSpan(
                   text: 'Don\'t have an account?',
-                  style: Styles.textStyleRegular.copyWith(fontSize: 14.sp)),
+                  style: TextStyles.textStyleRegular.copyWith(fontSize: 14.sp)),
               TextSpan(
                   text: 'Sign Up',
-                  style: Styles.textStyleRegular.copyWith(
+                  style: TextStyles.textStyleRegular.copyWith(
                     color: AppColors.p300PrimaryColor,
                     fontSize:14.sp,
                     decoration: TextDecoration.underline,

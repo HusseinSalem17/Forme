@@ -6,8 +6,8 @@ import 'package:ionicons/ionicons.dart';
 import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/utils/text_styles.dart';
 import 'build_table.dart';
-class CoachPlanDetails extends StatelessWidget {
-  const CoachPlanDetails({Key? key}) : super(key: key);
+class CoachPlanDetailsSection extends StatelessWidget {
+  const CoachPlanDetailsSection({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +21,7 @@ class CoachPlanDetails extends StatelessWidget {
           ),
           Text(
             '\$20',
-            style: Styles.heading4Bold.copyWith(
+            style: TextStyles.heading4Bold.copyWith(
               fontSize: 16,
               color: AppColors.p300PrimaryColor,
             ),
@@ -30,7 +30,7 @@ class CoachPlanDetails extends StatelessWidget {
             height: 8.h,
           ),
           Text('Online Coaching',
-              style: Styles.heading4Bold.copyWith(
+              style: TextStyles.heading4Bold.copyWith(
                 fontSize: 16,
                 fontWeight: FontWeight.w600,
               )),
@@ -39,7 +39,7 @@ class CoachPlanDetails extends StatelessWidget {
           ),
           Text(
             'Created At 17 Jul 2023',
-            style: Styles.textStyleRegular.copyWith(fontSize: 14),
+            style: TextStyles.textStyleRegular.copyWith(fontSize: 14),
           ),
           SizedBox(
             height: 24.h,
@@ -80,14 +80,14 @@ class CoachPlanDetails extends StatelessWidget {
                       children: [
                         Text(
                           'Kareem Muhamed',
-                          style: Styles.textStyleRegular.copyWith(
+                          style: TextStyles.textStyleRegular.copyWith(
                             color: AppColors.neutralsN9,
                           ),
                         ),
                         SizedBox(height: 4.h),
                         Text(
                           'GYM Owner',
-                          style: Styles.textStyleRegular.copyWith(
+                          style: TextStyles.textStyleRegular.copyWith(
                             fontSize: 11.sp,
                           ),
                         ),
@@ -119,7 +119,7 @@ class CoachPlanDetails extends StatelessWidget {
             padding: const EdgeInsets.only(right: 12),
             child: Text(
               'Lorem ipsum dolor sit amet consectetur. Etiam morbi ut urna mi. Quis aliquam mattis consectetur varius a nunc id posuereLorem ipsum dolor sit amet consectetur. Etiam morbi ut urna mi. Quis aliquam mattis consectetur varius a nunc id posuereLorem ipsum dolor sit amet consectetur. Etiam morbi ut urna mi. Quis aliquam mattis consectetur varius a nunc id posuere',
-              style: Styles.textStyleRegular.copyWith(fontSize: 12),
+              style: TextStyles.textStyleRegular.copyWith(fontSize: 12),
               maxLines: 6,
               softWrap: true,
             ),
@@ -137,7 +137,7 @@ class CoachPlanDetails extends StatelessWidget {
               ),
               Text(
                 'Payment Plans',
-                style: Styles.descriptionStyle.copyWith(
+                style: TextStyles.descriptionStyle.copyWith(
                     fontWeight: FontWeight.w600,
                     color: AppColors.neutralsN9),
               )

@@ -20,14 +20,14 @@ class CustomText extends StatelessWidget {
       children: [
         Text(
           text1,
-          style: Styles.textStyleRegular.copyWith(fontSize: 14.sp),
+          style: TextStyles.textStyleRegular.copyWith(fontSize: 14.sp),
         ),
         GestureDetector(
           onTap: onTap,
           child: FittedBox(
             child: Text(
               text2,
-              style: Styles.textStyleRegular.copyWith(
+              style: TextStyles.textStyleRegular.copyWith(
                 color: AppColors.p300PrimaryColor,
                 fontSize: 14.sp,
                 decoration: TextDecoration.underline,

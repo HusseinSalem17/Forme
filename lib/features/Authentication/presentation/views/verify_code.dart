@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:forme_app/core/transitions/page_slide.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
-import 'package:forme_app/core/utils/text_styles.dart';
 import 'package:forme_app/features/Authentication/presentation/views/new_password.dart';
 import 'package:forme_app/features/Authentication/presentation/views/widgets/custom_auth_button.dart';
 import 'package:forme_app/features/Authentication/presentation/views/widgets/custom_pin_code.dart';
 import 'package:forme_app/features/Authentication/presentation/views/widgets/header_text.dart';
+
+import '../../../../core/utils/text_styles.dart';
 
 class VerifyCodeScreen extends StatefulWidget {
   const VerifyCodeScreen({super.key});
@@ -22,6 +23,7 @@ class _VerifyCodeScreenState extends State<VerifyCodeScreen> {
   @override
   void dispose() {
     super.dispose();
+    otpController.dispose();
   }
 
   @override
@@ -44,7 +46,7 @@ class _VerifyCodeScreenState extends State<VerifyCodeScreen> {
                 title: 'Verify Code',
                 subtitle: 'Please enter the code we just sent to email'),
             Text('example@email.com',
-                style: Styles.descriptionStyle
+                style: TextStyles.descriptionStyle
                     .copyWith(color: AppColors.errorColor)),
             Padding(
               padding: EdgeInsets.symmetric(vertical: 40.h),
@@ -55,15 +57,17 @@ class _VerifyCodeScreenState extends State<VerifyCodeScreen> {
             ),
             Text(
               "Didn't receive OTP?",
-              style: Styles.textStyleRegular.copyWith(fontSize: 14.sp),
+              style: TextStyles.textStyleRegular.copyWith(
+                fontSize: 14.sp,
+              ),
             ),
             GestureDetector(
               child: Text(
                 "Resend Code",
-                style: Styles.textStyleRegular.copyWith(
+                style: TextStyles.textStyleRegular.copyWith(
                   color: AppColors.p300PrimaryColor,
-                  fontSize:14.sp,
                   decoration: TextDecoration.underline,
+                  fontSize: 14.sp,
                   overflow: TextOverflow.ellipsis,
                 ),
               ),

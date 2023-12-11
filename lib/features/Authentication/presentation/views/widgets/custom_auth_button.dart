@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
-import 'package:forme_app/core/utils/text_styles.dart';
+
+import '../../../../../core/utils/text_styles.dart';
 
 class CustomAuthButton extends StatefulWidget {
   const CustomAuthButton({
@@ -42,7 +43,7 @@ class _CustomAuthButtonState extends State<CustomAuthButton> {
         onPressed: widget.isActive ? widget.onPressed : null,
         child: Text(
           widget.text,
-          style: Styles.textStyleMedium.copyWith(color: AppColors.background,fontSize:16.sp),
+          style: TextStyles.textStyleMedium.copyWith(color: AppColors.background,fontSize:16.sp),
         ),
       ),
     );

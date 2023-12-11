@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:forme_app/features/join_program_feature/presentation/views/widgets/coach_plan_details.dart';
+import 'package:forme_app/features/join_program_feature/presentation/views/widgets/coach_plan_details_section.dart';
 import 'package:forme_app/features/join_program_feature/presentation/views/widgets/custom_sliver_app_bar.dart';
 import 'package:forme_app/features/join_program_feature/presentation/views/widgets/plans_list_view.dart';
 
@@ -44,7 +44,7 @@ class BookOnlineCoachScreenState extends State<BookOnlineCoachScreen> {
             slivers: [
               CustomSliverAppBar(scrollOffset: _scrollOffset),
               const SliverToBoxAdapter(
-                child: CoachPlanDetails(),
+                child: CoachPlanDetailsSection(),
               ),
               const PlansListView(),
               const SliverToBoxAdapter(

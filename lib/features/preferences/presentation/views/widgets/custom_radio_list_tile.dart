@@ -66,7 +66,7 @@ class CustomRadioListTile extends StatelessWidget {
               const SizedBox(width: 16),
               Text(
                 title,
-                style: Styles.textStyleBold.copyWith(
+                style: TextStyles.textStyleBold.copyWith(
                   fontSize:12.sp,
                   color: AppColors.n900PrimaryTextColor,
                 ),

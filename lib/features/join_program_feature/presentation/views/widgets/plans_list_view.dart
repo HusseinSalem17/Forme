@@ -61,7 +61,7 @@ class PlansListViewState extends State<PlansListView> {
                         children: [
                           Text(
                             'Plan ${index + 1}',
-                            style: Styles.textStyleRegular.copyWith(
+                            style: TextStyles.textStyleRegular.copyWith(
                               color: selectedIndex == index
                                   ? AppColors.p300PrimaryColor
                                   : AppColors.n200BodyContentColor,
@@ -73,7 +73,7 @@ class PlansListViewState extends State<PlansListView> {
                           ),
                           Text(
                             '1 Month - 20\$',
-                            style: Styles.textStyleRegular.copyWith(
+                            style: TextStyles.textStyleRegular.copyWith(
                               color: AppColors.neutralsN9,
                             ),
                           ),

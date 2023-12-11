@@ -50,7 +50,7 @@ class SpecialProgramsCardItem extends StatelessWidget {
                 const CardReviewSection(),
                 Text(
                   'Mindful Movement',
-                  style: Styles.blackCardTextStyle,
+                  style: TextStyles.blackCardTextStyle,
                 ),
                 Row(
                   children: [
@@ -58,7 +58,7 @@ class SpecialProgramsCardItem extends StatelessWidget {
                     const SizedBox(width: 6),
                     Text(
                       'Kareem Muhamed',
-                      style: Styles.cardTextStyle.copyWith(
+                      style: TextStyles.cardTextStyle.copyWith(
                         color: AppColors.n200BodyContentColor,
                         fontSize: 11,
                       ),
@@ -69,14 +69,14 @@ class SpecialProgramsCardItem extends StatelessWidget {
                   children: [
                     Text(
                       '\$ 150.30 ',
-                      style: Styles.cardTextStyle.copyWith(
+                      style: TextStyles.cardTextStyle.copyWith(
                         fontSize: 12,
                         fontWeight: FontWeight.w600,
                       ),
                     ),
                     Text(
                       '/ 4 weeks',
-                      style: Styles.cardTextStyle.copyWith(
+                      style: TextStyles.cardTextStyle.copyWith(
                         color: AppColors.n200BodyContentColor,
                         fontSize: 9,
                       ),

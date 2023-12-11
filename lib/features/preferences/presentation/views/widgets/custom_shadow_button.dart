@@ -61,7 +61,7 @@ class CustomShadowButton extends StatelessWidget {
                 padding: EdgeInsets.only(top: 16.h),
                 child: Text(
                   buttonSubTitle!,
-                  style: Styles.textStyleRegular.copyWith(
+                  style: TextStyles.textStyleRegular.copyWith(
                     color: AppColors.p300PrimaryColor,
                   ),
                   textAlign: TextAlign.center,

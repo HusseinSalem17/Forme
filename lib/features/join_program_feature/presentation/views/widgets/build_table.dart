@@ -66,7 +66,7 @@ class CustomTable{
             children: [
               Text(
                 firstText,
-                style: Styles.textStyleRegular.copyWith(
+                style: TextStyles.textStyleRegular.copyWith(
                   fontSize: 14,
                   color: AppColors.n900PrimaryTextColor,
                 ),
@@ -76,7 +76,7 @@ class CustomTable{
               ),
               Text(
                 secondText,
-                style: Styles.textStyleRegular
+                style: TextStyles.textStyleRegular
                     .copyWith(fontSize: 12, fontWeight: FontWeight.w400),
               ),
             ],

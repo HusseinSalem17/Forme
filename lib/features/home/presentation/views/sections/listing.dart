@@ -28,7 +28,7 @@ class Listing extends StatelessWidget {
             children: [
               Text(
                 title,
-                style: Styles.textStyleBold.copyWith(
+                style: TextStyles.textStyleBold.copyWith(
                   fontWeight: FontWeight.w600,
                   fontSize:14.sp,
                   color: AppColors.neutralsN9,
@@ -38,7 +38,7 @@ class Listing extends StatelessWidget {
                   onTap: onTap,
                   child: Text(
                     'See all',
-                    style: Styles.textStyleRegular.copyWith(
+                    style: TextStyles.textStyleRegular.copyWith(
                       fontWeight: FontWeight.w400,
                       fontSize:14.sp,
                       color: AppColors.secondaryColor,

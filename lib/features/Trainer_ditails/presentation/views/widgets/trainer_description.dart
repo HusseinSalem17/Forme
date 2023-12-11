@@ -22,15 +22,15 @@ class TrainerDescription extends StatelessWidget {
           trimMode: TrimMode.Line,
           trimCollapsedText: 'Show more',
           trimExpandedText: 'Show less',
-          style: Styles.textStyleRegular.copyWith(
+          style: TextStyles.textStyleRegular.copyWith(
             fontSize: 12.sp,
           ),
-          lessStyle: Styles.textStyleRegular.copyWith(
+          lessStyle: TextStyles.textStyleRegular.copyWith(
             fontSize: 12.sp,
             color: AppColors.p300PrimaryColor,
             decoration: TextDecoration.underline,
           ),
-          moreStyle: Styles.textStyleRegular.copyWith(
+          moreStyle: TextStyles.textStyleRegular.copyWith(
             fontSize: 12.sp,
             color: AppColors.p300PrimaryColor,
             decoration: TextDecoration.underline,

@@ -70,23 +70,23 @@ class _AgeSliderState extends State<AgeSlider> {
                 return numbers(
                   index,
                   _scrollIndex == index
-                      ? Styles.textStyleRegular.copyWith(
+                      ? TextStyles.textStyleRegular.copyWith(
                           fontSize: 56.sp,
                           color: AppColors.p300PrimaryColor,
                           fontWeight: FontWeight.w600)
                       : _scrollIndex == index + 1 || _scrollIndex == index - 1
-                          ? Styles.textStyleRegular.copyWith(
+                          ? TextStyles.textStyleRegular.copyWith(
                               fontSize: 48.sp,
                               color: AppColors.n900PrimaryTextColor,
                             )
                           : _scrollIndex == index + 2 ||
                                   _scrollIndex == index - 2
-                              ? Styles.textStyleRegular.copyWith(
+                              ? TextStyles.textStyleRegular.copyWith(
                                   fontSize: 40.sp,
                                   color: AppColors.n900PrimaryTextColor
                                       .withOpacity(0.4),
                                 )
-                              : Styles.textStyleRegular.copyWith(
+                              : TextStyles.textStyleRegular.copyWith(
                                   fontSize: 32.sp,
                                   color: AppColors.n900PrimaryTextColor
                                       .withOpacity(0.1),

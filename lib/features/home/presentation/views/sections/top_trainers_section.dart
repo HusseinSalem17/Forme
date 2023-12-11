@@ -24,7 +24,7 @@ class TopTrainersSection extends StatelessWidget {
             children: [
               Text(
                 'Top Trainers',
-                style: Styles.textStyleBold.copyWith(
+                style: TextStyles.textStyleBold.copyWith(
                   fontWeight: FontWeight.w600,
                   fontSize:14.sp,
                   color: AppColors.neutralsN9,
@@ -32,7 +32,7 @@ class TopTrainersSection extends StatelessWidget {
               ),
               Text(
                 'See all',
-                style: Styles.textStyleRegular.copyWith(
+                style: TextStyles.textStyleRegular.copyWith(
                   fontWeight: FontWeight.w400,
                   fontSize:14.sp,
                   color: AppColors.secondaryColor,
@@ -68,7 +68,7 @@ class TopTrainersSection extends StatelessWidget {
                     const SizedBox(height: 4),
                     Text(
                       truncateText(topTrainersData[index].name, 8),
-                      style: Styles.textStyleRegular
+                      style: TextStyles.textStyleRegular
                           .copyWith(fontSize: 12, color: AppColors.neutralsN9),
                     )
                   ],
