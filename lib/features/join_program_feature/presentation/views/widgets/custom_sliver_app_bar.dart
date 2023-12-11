@@ -2,36 +2,13 @@ import 'package:flutter/material.dart';
 
 import '../../../../../core/widgets/custom_app_bar_arrow_button.dart';
 
-class CustomSliverAppBar extends StatefulWidget {
-  final ScrollController scrollController;
-
+class CustomSliverAppBar extends StatelessWidget {
   const CustomSliverAppBar({
     super.key,
-    required this.scrollController,
-  });
+    required double scrollOffset,
+  }) : _scrollOffset = scrollOffset;
 
-  @override
-  State<CustomSliverAppBar> createState() => _CustomSliverAppBarState();
-}
-
-class _CustomSliverAppBarState extends State<CustomSliverAppBar> {
-  double _scrollOffset = 0.0;
-
-  @override
-  void initState() {
-    super.initState();
-    widget.scrollController.addListener(() {
-      setState(() {
-        _scrollOffset = widget.scrollController.offset;
-      });
-    });
-  }
-
-  @override
-  void dispose() {
-    widget.scrollController.dispose();
-    super.dispose();
-  }
+  final double _scrollOffset;
 
   @override
   Widget build(BuildContext context) {

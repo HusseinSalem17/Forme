@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:forme_app/features/preferences/presentation/views/widgets/custom_preferences_page_veiw.dart';
 import 'package:forme_app/features/preferences/presentation/views/widgets/custom_app_bar.dart';
 import 'package:forme_app/features/preferences/presentation/views/widgets/custom_shadow_button.dart';
 
+import '../manager/preferences_bloc.dart';
 
 class PreferencesScreen extends StatefulWidget {
   static const routeName = '/preferences-screen';
@@ -34,7 +36,14 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
           Align(
             alignment: Alignment.bottomCenter,
             child: CustomShadowButton(
-              pageViewController: pageViewController,
+              onTap: () {
+                pageViewController.animateToPage(
+                  BlocProvider.of<PreferencesBloc>(context).state.page + 1,
+                  duration: const Duration(milliseconds: 700),
+                  curve: Curves.easeIn,
+                );
+              },
+              buttonTitle: 'Next',
             ),
           )
         ],

@@ -10,11 +10,11 @@ class PlansListView extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  _PlansListViewState createState() => _PlansListViewState();
+  PlansListViewState createState() => PlansListViewState();
 }
 
-class _PlansListViewState extends State<PlansListView> {
-  int selectedIndex = -1;
+class PlansListViewState extends State<PlansListView> {
+  int selectedIndex = 0;
 
   @override
   Widget build(BuildContext context) {

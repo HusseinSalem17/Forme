@@ -1,39 +1,70 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:forme_app/core/utils/app_colors.dart';
-import 'package:forme_app/core/utils/text_styles.dart';
-import 'package:forme_app/features/join_program_feature/presentation/views/widgets/build_table.dart';
 import 'package:forme_app/features/join_program_feature/presentation/views/widgets/coach_plan_details.dart';
 import 'package:forme_app/features/join_program_feature/presentation/views/widgets/custom_sliver_app_bar.dart';
 import 'package:forme_app/features/join_program_feature/presentation/views/widgets/plans_list_view.dart';
-import 'package:ionicons/ionicons.dart';
 
+import '../../../preferences/presentation/views/preferences_screen.dart';
+import '../../../preferences/presentation/views/widgets/custom_shadow_button.dart';
 
-class BookOnlineCoachScreen extends StatelessWidget {
+class BookOnlineCoachScreen extends StatefulWidget {
   const BookOnlineCoachScreen({Key? key}) : super(key: key);
 
   @override
+  BookOnlineCoachScreenState createState() => BookOnlineCoachScreenState();
+}
+
+class BookOnlineCoachScreenState extends State<BookOnlineCoachScreen> {
+  late ScrollController _scrollController;
+  double _scrollOffset = 0.0; // Initialize _scrollOffset here
+
+  @override
+  void initState() {
+    super.initState();
+    _scrollController = ScrollController()
+      ..addListener(() {
+        setState(() {
+          _scrollOffset = _scrollController.offset;
+        });
+      });
+  }
+
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    final ScrollController scrollController = ScrollController();
     return Scaffold(
-      body: CustomScrollView(
-        controller: scrollController,
-        slivers: [
-          CustomSliverAppBar(
-            scrollController: scrollController,
+      body: Stack(
+        children: [
+          CustomScrollView(
+            controller: _scrollController,
+            slivers: [
+              CustomSliverAppBar(scrollOffset: _scrollOffset),
+              const SliverToBoxAdapter(
+                child: CoachPlanDetails(),
+              ),
+              const PlansListView(),
+              const SliverToBoxAdapter(
+                child: SizedBox(height: 155), // Adjust the height as needed
+              ),
+            ],
           ),
-          const SliverToBoxAdapter(
-            child: CoachPlanDetails(),
-          ),
-          const PlansListView()
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: CustomShadowButton(
+              onTap: () {
+                print('Hi');
+              },
+              buttonTitle: 'Send Request To Join',
+              buttonSubTitle:
+                  'Please note that your cancellation is free of charge\nif the trainer does not accept the request',
+            ),
+          )
         ],
       ),
     );
   }
-
-
 }
-
-
-
