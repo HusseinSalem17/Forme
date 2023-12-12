@@ -72,6 +72,11 @@ abstract class TextStyles {
     fontFamily: 'RobotoBold',
     color: AppColors.n100Color,
   );
+  static const textStyleSemiBold = TextStyle(
+    fontFamily: 'Roboto',
+    color: AppColors.n100Color,
+    fontWeight: FontWeight.w600
+  );
 
   static const appTitleStyle = TextStyle(
     fontFamily: 'RobotoBold',
