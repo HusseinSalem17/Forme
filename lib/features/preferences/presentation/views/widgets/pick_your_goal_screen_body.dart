@@ -31,7 +31,7 @@ class _PickYourGoalScreenBodyState extends State<PickYourGoalScreenBody> {
           SizedBox(
             height: 19.h,
           ),
-          Text(
+          const Text(
             'What’s Your Goal?',
             style: TextStyles.heading4Bold,
           ),

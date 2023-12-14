@@ -27,16 +27,19 @@ abstract class TextStyles {
     color: AppColors.p300PrimaryColor,
   );
   static const heading4Bold = TextStyle(
-      fontFamily: 'RobotoBold',
-      fontSize: 22,
-      color: AppColors.neutralsN9,
-      fontWeight: FontWeight.w700);
+    fontFamily: 'RobotoBold',
+    fontSize: 22,
+    color: AppColors.neutralsN9,
+    fontWeight: FontWeight.w700,
+  );
+
 //hint style
   static TextStyle hintStyle = TextStyle(
     fontFamily: 'RobotoRegular',
     fontSize: 14.sp,
     color: AppColors.n70HintColor,
   );
+
 //card style
   static TextStyle cardTextStyle = TextStyle(
     fontFamily: 'RobotoRegular',
@@ -49,12 +52,14 @@ abstract class TextStyles {
     fontWeight: FontWeight.w600,
     fontSize: 12.sp,
   );
+
 //other styles
   //Regular
   static const textStyleRegular = TextStyle(
-      fontFamily: 'RobotoRegular',
-      color: AppColors.n100Color,
-      fontWeight: FontWeight.w400);
+    fontFamily: 'RobotoRegular',
+    color: AppColors.n100Color,
+    fontWeight: FontWeight.w400,
+  );
 
   //medium
   static const textStyleMedium = TextStyle(
@@ -66,5 +71,16 @@ abstract class TextStyles {
   static const textStyleBold = TextStyle(
     fontFamily: 'RobotoBold',
     color: AppColors.n100Color,
+  );
+  static const textStyleSemiBold = TextStyle(
+    fontFamily: 'Roboto',
+    color: AppColors.n100Color,
+    fontWeight: FontWeight.w600
+  );
+
+  static const appTitleStyle = TextStyle(
+    fontFamily: 'RobotoBold',
+    fontSize: 18,
+    color: AppColors.neutralsN9,
   );
 }

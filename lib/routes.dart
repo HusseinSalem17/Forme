@@ -10,14 +10,22 @@ import 'package:forme_app/features/Trainer_ditails/presentation/views/trainer_de
 import 'package:forme_app/features/home/presentation/views/home_view.dart';
 import 'package:forme_app/splash_screen.dart';
 import 'package:forme_app/onboarding_screens/views/onboarding_screen.dart';
+
+import 'features/join_program_feature/presentation/views/book_onling_coach_screen.dart';
+
 import 'features/Complete_profile/presentation/views/complete_profile.dart';
+
+import 'features/join_program_feature/presentation/views/payment_methods_screen.dart';
 import 'features/preferences/presentation/views/preferences_screen.dart';
 
 Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
   switch (settings.name) {
 //----- Splash Routing -----
     case '/':
-      return completeProfile();
+      return preferencesScreenRoute();
+      //splashRoute();
+
+
 
 //----- OnBoarding Routing -----
     case OnBoardingView.routeName:
@@ -61,7 +69,7 @@ Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
 
 MaterialPageRoute<dynamic> completeProfile() {
   return MaterialPageRoute(
-    builder: (context) =>  const CompleteProfile(),
+    builder: (context) => const CompleteProfile(),
   );
 }
 
@@ -119,7 +127,7 @@ MaterialPageRoute<dynamic> newpasswordRoute() {
 
 MaterialPageRoute<dynamic> preferencesScreenRoute() {
   return MaterialPageRoute(
-    builder: (context) => const PreferencesScreen(),
+    builder: (context) => const PaymentMethodsScreen(),
   );
 }
 

@@ -36,8 +36,10 @@ dependencies:
   pin_code_fields: ^8.0.1
   readmore: ^2.2.0
   simple_star_rating: ^0.0.3
+  ionicons: ^0.2.2
   tabbar_gradient_indicator: ^1.0.1
   wheel_slider: ^1.1.1
+
 
 dev_dependencies:
   flutter_lints: ^2.0.0
