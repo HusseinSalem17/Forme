@@ -1,12 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:forme_app/features/join_program_feature/presentation/views/widgets/custom_app_bar.dart';
 import 'package:forme_app/features/join_program_feature/presentation/views/widgets/payment_method_body.dart';
-
-import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/text_styles.dart';
-import '../../../join_program_feature/presentation/views/widgets/custom_radio_list_tile.dart';
 import '../../../preferences/presentation/views/widgets/custom_shadow_button.dart';
 
 class PaymentMethodsScreen extends StatefulWidget {
@@ -33,7 +28,7 @@ class _PaymentMethodsScreenState extends State<PaymentMethodsScreen> {
               alignment: Alignment.bottomCenter,
               child: CustomShadowButton(
                 onTap: () {
-                  print('Hi');
+                  debugPrint('Hi');
                 },
                 buttonTitle: 'Continue',
               ),

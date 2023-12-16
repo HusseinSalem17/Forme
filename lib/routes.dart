@@ -4,17 +4,16 @@ import 'package:forme_app/features/Authentication/presentation/views/new_passwor
 import 'package:forme_app/features/Authentication/presentation/views/sign_up_view.dart';
 import 'package:forme_app/features/Authentication/presentation/views/sign_in_view.dart';
 import 'package:forme_app/features/Authentication/presentation/views/verify_code.dart';
-import 'package:forme_app/features/Trainer_ditails/presentation/views/add_review.dart';
+import 'package:forme_app/features/Payment/presentation/view/ereceipt_screen.dart';
 import 'package:forme_app/features/Trainer_ditails/presentation/views/success_story.dart';
 import 'package:forme_app/features/Trainer_ditails/presentation/views/trainer_details_view.dart';
 import 'package:forme_app/features/home/presentation/views/home_view.dart';
+import 'package:forme_app/features/payment/presentation/view/congratulation_screen.dart';
+import 'package:forme_app/features/reviews/presentation/views/add_review.dart';
+import 'package:forme_app/features/reviews/presentation/views/workout_review.dart';
 import 'package:forme_app/splash_screen.dart';
 import 'package:forme_app/onboarding_screens/views/onboarding_screen.dart';
-
-import 'features/join_program_feature/presentation/views/book_onling_coach_screen.dart';
-
 import 'features/Complete_profile/presentation/views/complete_profile.dart';
-
 import 'features/join_program_feature/presentation/views/payment_methods_screen.dart';
 import 'features/preferences/presentation/views/preferences_screen.dart';
 
@@ -22,10 +21,7 @@ Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
   switch (settings.name) {
 //----- Splash Routing -----
     case '/':
-      return preferencesScreenRoute();
-      //splashRoute();
-
-
+      return splashRoute();
 
 //----- OnBoarding Routing -----
     case OnBoardingView.routeName:
@@ -53,15 +49,24 @@ Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
 //---- Trainer Details Routing ----
     case TrainerDetailsScreen.routeName:
       return trainerDetailsRoute();
-    case AddReview.routeName:
-      return addReviewRoute();
+
     case SuccessStory.routeName:
       return successStoryRoute();
 
 //----- Complete Profile Routing -----
     case CompleteProfile.routeName:
       return completeProfile();
-
+//---- Review Routing ----
+    case AddReview.routeName:
+      return addReviewRoute();
+    case WorkoutReview.routeName:
+      return workoutReviewRoute();
+//---- payment Routing ----
+    case CongratulationScreen.routeName:
+      return congratulationRoute();
+    case EReceiptScreen.routeName:
+      return eReceiptRoute();
+//---------------------------------------
     default:
       return notFound();
   }
@@ -155,6 +160,23 @@ MaterialPageRoute<dynamic> successStoryRoute() {
   );
 }
 
+MaterialPageRoute<dynamic> eReceiptRoute() {
+  return MaterialPageRoute(
+    builder: (context) => EReceiptScreen(),
+  );
+}
+
+MaterialPageRoute<dynamic> congratulationRoute() {
+  return MaterialPageRoute(
+    builder: (context) => const CongratulationScreen(),
+  );
+}
+
+MaterialPageRoute<dynamic> workoutReviewRoute() {
+  return MaterialPageRoute(
+    builder: (context) => const WorkoutReview(),
+  );
+}
 // MaterialPageRoute<dynamic> verifyRoute(int verifyId, User user) {
 //   return MaterialPageRoute(
 //     builder: (context) => VerifyView(

@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:forme_app/features/join_program_feature/presentation/views/widgets/coach_plan_details_section.dart';
 import 'package:forme_app/features/join_program_feature/presentation/views/widgets/custom_sliver_app_bar.dart';
 import 'package:forme_app/features/join_program_feature/presentation/views/widgets/plans_list_view.dart';
-
-import '../../../preferences/presentation/views/preferences_screen.dart';
 import '../../../preferences/presentation/views/widgets/custom_shadow_button.dart';
 
 class BookOnlineCoachScreen extends StatefulWidget {
