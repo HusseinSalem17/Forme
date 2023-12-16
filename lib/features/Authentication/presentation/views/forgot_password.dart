@@ -3,10 +3,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:forme_app/core/transitions/page_slide.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
-import 'package:forme_app/features/Authentication/presentation/views/verify_code.dart';
-import 'package:forme_app/features/Authentication/presentation/views/widgets/custom_auth_button.dart';
-import 'package:forme_app/features/Authentication/presentation/views/widgets/custom_text_from_field.dart';
-import 'package:forme_app/features/Authentication/presentation/views/widgets/header_text.dart';
+import 'package:forme_app/features/authentication/presentation/views/verify_code.dart';
+import 'package:forme_app/features/authentication/presentation/views/widgets/custom_auth_button.dart';
+import 'package:forme_app/features/authentication/presentation/views/widgets/custom_text_from_field.dart';
+import 'package:forme_app/features/authentication/presentation/views/widgets/header_text.dart';
 
 class ForgetPasswordScreen extends StatelessWidget {
   static const routeName = '/Forgot-password';

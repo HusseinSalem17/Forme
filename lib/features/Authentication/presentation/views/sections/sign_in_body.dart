@@ -4,11 +4,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:forme_app/core/transitions/page_slide.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/features/Authentication/presentation/views/forgot_password.dart';
-import 'package:forme_app/features/Authentication/presentation/views/sign_up_view.dart';
-import 'package:forme_app/features/Authentication/presentation/views/widgets/auth_divider.dart';
-import 'package:forme_app/features/Authentication/presentation/views/widgets/custom_auth_button.dart';
-import 'package:forme_app/features/Authentication/presentation/views/widgets/custom_text_from_field.dart';
-import 'package:forme_app/features/Authentication/presentation/views/widgets/icon_widget.dart';
+import 'package:forme_app/features/authentication/presentation/views/sign_up_view.dart';
+import 'package:forme_app/features/authentication/presentation/views/widgets/auth_divider.dart';
+import 'package:forme_app/features/authentication/presentation/views/widgets/custom_auth_button.dart';
+import 'package:forme_app/features/authentication/presentation/views/widgets/custom_text_from_field.dart';
+import 'package:forme_app/features/authentication/presentation/views/widgets/icon_widget.dart';
 import 'package:forme_app/features/preferences/presentation/views/preferences_screen.dart';
 
 import '../../../../../core/utils/text_styles.dart';

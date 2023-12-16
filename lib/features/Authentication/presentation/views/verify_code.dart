@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:forme_app/core/transitions/page_slide.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
-import 'package:forme_app/features/Authentication/presentation/views/new_password.dart';
-import 'package:forme_app/features/Authentication/presentation/views/widgets/custom_auth_button.dart';
-import 'package:forme_app/features/Authentication/presentation/views/widgets/custom_pin_code.dart';
-import 'package:forme_app/features/Authentication/presentation/views/widgets/header_text.dart';
+import 'package:forme_app/features/authentication/presentation/views/new_password.dart';
+import 'package:forme_app/features/authentication/presentation/views/widgets/custom_auth_button.dart';
+import 'package:forme_app/features/authentication/presentation/views/widgets/custom_pin_code.dart';
+import 'package:forme_app/features/authentication/presentation/views/widgets/header_text.dart';
 
 import '../../../../core/utils/text_styles.dart';
 

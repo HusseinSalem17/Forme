@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:forme_app/features/Authentication/presentation/views/sections/sign_in_and_up_header.dart';
 import 'package:forme_app/features/Authentication/presentation/views/sections/sign_in_footer.dart';
 import 'package:forme_app/features/Authentication/presentation/views/sections/sign_in_body.dart';
-import 'package:forme_app/features/Authentication/presentation/views/widgets/language_icon.dart';
+import 'package:forme_app/features/authentication/presentation/views/widgets/language_icon.dart';
 
 class SignInScreen extends StatefulWidget {
   const SignInScreen({super.key});

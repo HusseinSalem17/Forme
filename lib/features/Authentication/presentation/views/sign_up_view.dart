@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/features/Authentication/presentation/views/sections/sign_in_and_up_header.dart';
-import 'package:forme_app/features/Authentication/presentation/views/sections/sign_up_body.dart';
+import 'package:forme_app/features/authentication/presentation/views/sections/sign_up_body.dart';
 
 class SignUpScreen extends StatelessWidget {
   static const routeName = '/Sing-up-view';
