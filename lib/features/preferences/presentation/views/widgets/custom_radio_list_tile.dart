@@ -53,13 +53,13 @@ class CustomRadioListTile extends StatelessWidget {
                 child: Center(
                   child: value == groupValue
                       ? Container(
-                    width: 11.0,
-                    height: 11.0,
-                    decoration: const BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: AppColors.p300PrimaryColor,
-                    ),
-                  )
+                          width: 11.0,
+                          height: 11.0,
+                          decoration: const BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: AppColors.p300PrimaryColor,
+                          ),
+                        )
                       : null,
                 ),
               ),

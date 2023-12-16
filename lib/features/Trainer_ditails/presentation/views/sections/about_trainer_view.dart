@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:forme_app/features/Trainer_ditails/presentation/views/sections/about_sections/button_container.dart';
+import 'package:forme_app/core/widgets/button_container.dart';
 import 'package:forme_app/features/Trainer_ditails/presentation/views/sections/about_sections/about_trainer_section.dart';
 import 'package:forme_app/features/Trainer_ditails/presentation/views/sections/about_sections/review_section.dart';
 import 'package:forme_app/features/home/presentation/views/widgets/special_programs_list.dart';
@@ -38,3 +38,4 @@ class _AboutTrainerScreenState extends State<AboutTrainerScreen> {
     );
   }
 }
+  

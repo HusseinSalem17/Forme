@@ -16,8 +16,8 @@ class TypeAndState extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 85.w,
-      height: 18.h,
+      // width: 85.w,
+      // height: 18.h,
       decoration: BoxDecoration(
         color: AppColors.n20FillBodyInSmallCardColor,
         borderRadius: BorderRadius.circular(10),
