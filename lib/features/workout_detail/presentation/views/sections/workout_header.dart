@@ -7,31 +7,45 @@ import 'package:forme_app/features/workout_detail/presentation/views/sections/wo
 class WorkoutDetailHeader extends StatelessWidget {
   const WorkoutDetailHeader({
     super.key,
+    required this.titles,
   });
-
+  final List<String> titles;
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         const Workout_sub_header(),
-        TabBar(
-            enableFeedback: true,
-            dividerColor: AppColors.p300PrimaryColor,
-            labelColor: AppColors.p300PrimaryColor,
-            unselectedLabelColor: Colors.black,
-            labelStyle: TextStyles.textStyleRegular
-                .copyWith(fontWeight: FontWeight.w500, fontSize: 16.sp),
-            indicatorSize: TabBarIndicatorSize.tab,
-            isScrollable: true,
-            indicatorColor: AppColors.p300PrimaryColor,
-            tabs: const [
-              Tab(child: Text('    About   ')),
-              Tab(child: Text('   Workout  ')),
-              Tab(child: Text('   Reviews  ')),
-            ]),
+        CustomTabBar(titles: titles),
       ],
     );
   }
 }
 
+class CustomTabBar extends StatelessWidget {
+  const CustomTabBar({
+    super.key,
+    required this.titles,
+  });
 
+  final List<String> titles;
+
+  @override
+  Widget build(BuildContext context) {
+    return TabBar(
+      enableFeedback: true,
+      labelColor: AppColors.p300PrimaryColor,
+      unselectedLabelColor: Colors.black,
+      labelStyle: TextStyles.textStyleRegular
+          .copyWith(fontWeight: FontWeight.w500, fontSize: 16.sp),
+      indicatorSize: TabBarIndicatorSize.tab,
+      isScrollable: true,
+      indicatorColor: AppColors.p300PrimaryColor,
+      tabs: List<Widget>.generate(
+        titles.length,
+        (int index) {
+          return Tab(child: Text(titles[index]));
+        },
+      ),
+    );
+  }
+}

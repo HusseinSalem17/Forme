@@ -65,7 +65,7 @@ class _WorkOutDetailState extends State<WorkOutDetail> {
                               child: Padding(
                                 padding:
                                     EdgeInsets.symmetric(horizontal: 24.0.w),
-                                child: const WorkoutDetailHeader(),
+                                child: const WorkoutDetailHeader(titles: ['about','Workout','Reviews'],),
                               ),
                             ),
                           )),
