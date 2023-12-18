@@ -15,25 +15,24 @@ class _PaymentMethodsScreenState extends State<PaymentMethodsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: const CustomAppBar(
-          title: Text(
-            'Payment Methods',
-            style: TextStyles.appTitleStyle,
-          ),
-        ),
-        body: Stack(
-          children: [
-            const PaymentMethodBody(),
-            Align(
-              alignment: Alignment.bottomCenter,
-              child: CustomShadowButton(
-                onTap: () {
-                  debugPrint('Hi');
-                },
-                buttonTitle: 'Continue',
-              ),
-            )
-          ],
-        ));
+      appBar: const CustomAppBar(
+        title: Text('Payment Methods'),
+      ),
+      body: Stack(
+        children: [
+          const PaymentMethodBody(),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: CustomShadowButton(
+              onTap: () {
+                debugPrint('Hi');
+              },
+              buttonTitle: 'Continue',
+            ),
+          )
+        ],
+      ),
+    );
+
   }
 }

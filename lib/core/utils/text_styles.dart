@@ -26,12 +26,14 @@ abstract class TextStyles {
     fontSize: 20.sp,
     color: AppColors.p300PrimaryColor,
   );
+
   static const heading4Bold = TextStyle(
     fontFamily: 'RobotoBold',
     fontSize: 22,
     color: AppColors.neutralsN9,
     fontWeight: FontWeight.w700,
   );
+
 
 //hint style
   static TextStyle hintStyle = TextStyle(
