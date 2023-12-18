@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import '../../../../../core/utils/text_styles.dart';
 import '../../../../../core/widgets/custom_app_bar_arrow_button.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
-  final Widget title;
+  final Text title;
 
   const CustomAppBar({
     super.key,
@@ -20,6 +21,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       backgroundColor: Colors.white,
       elevation: 0,
       title: title,
+      titleTextStyle: TextStyles.appTitleStyle,
       centerTitle: true,
       leading: CustomAppBarArrowButton(
         onTap: () {},

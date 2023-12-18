@@ -11,11 +11,13 @@ import 'package:forme_app/features/home/presentation/views/home_view.dart';
 import 'package:forme_app/splash_screen.dart';
 import 'package:forme_app/onboarding_screens/views/onboarding_screen.dart';
 
+import 'features/join_program_feature/presentation/views/add_new_card_screen.dart';
 import 'features/join_program_feature/presentation/views/book_onling_coach_screen.dart';
 
 import 'features/Complete_profile/presentation/views/complete_profile.dart';
 
 import 'features/join_program_feature/presentation/views/payment_methods_screen.dart';
+import 'features/join_program_feature/presentation/views/review_summary.dart';
 import 'features/preferences/presentation/views/preferences_screen.dart';
 
 Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
@@ -127,7 +129,9 @@ MaterialPageRoute<dynamic> newpasswordRoute() {
 
 MaterialPageRoute<dynamic> preferencesScreenRoute() {
   return MaterialPageRoute(
-    builder: (context) => const PaymentMethodsScreen(),
+    //builder: (context) => const BookOnlineCoachScreen(),
+    //builder: (context) => const PaymentMethodsScreen(),
+    builder: (context) => const ReviewSummary(),
   );
 }
 
