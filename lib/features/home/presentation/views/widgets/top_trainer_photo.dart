@@ -31,7 +31,7 @@ class TopTrainerPhoto extends StatelessWidget {
           const SizedBox(height: 4),
           Text(
             topTrainersData[index].name,
-            style: Styles.textStyleRegular
+            style: TextStyles.textStyleRegular
                 .copyWith(fontSize: 12, color: AppColors.neutralsN9),
           )
         ],

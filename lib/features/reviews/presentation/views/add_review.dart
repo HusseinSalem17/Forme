@@ -4,7 +4,7 @@ import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
 import 'package:forme_app/core/widgets/custom_app_bar_arrow_button.dart';
 import 'package:forme_app/features/Trainer_ditails/presentation/views/widgets/custom_clip_rect.dart';
-import 'package:forme_app/features/Trainer_ditails/presentation/views/widgets/text_area.dart';
+import 'package:forme_app/core/widgets/text_area.dart';
 import 'package:simple_star_rating/simple_star_rating.dart';
 
 class AddReview extends StatelessWidget {
