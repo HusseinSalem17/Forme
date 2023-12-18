@@ -40,7 +40,7 @@ class CustomPageView extends StatelessWidget {
           blueText: "Any Age \nand in Every Sport",
           blueTextStyle: TextStyles.headerStyle,
           description:
-          'Fitness without limits. Embrace any sport, any age.\nJoin us for a diverse range of training options.',
+              'Fitness without limits. Embrace any sport, any age.\nJoin us for a diverse range of training options.',
         ),
         PageViewContent(
           context: context,
@@ -51,7 +51,7 @@ class CustomPageView extends StatelessWidget {
           blueText: "\nat Your Fingertips",
           blueTextStyle: TextStyles.headerStyle,
           description:
-          'Discover skilled trainers, connect, and enroll in personalized fitness programs and courses.',
+              'Discover skilled trainers, connect, and enroll in personalized fitness programs and courses.',
         ),
         PageViewContent(
           context: context,
@@ -62,7 +62,7 @@ class CustomPageView extends StatelessWidget {
           blueText: " Training Facilities, \nBook Memberships",
           blueTextStyle: TextStyles.headerStyle,
           description:
-          'Discover nearby training facilities in various sports \nfields. Elevate your fitness journey and easily book memberships at these places.',
+              'Discover nearby training facilities in various sports \nfields. Elevate your fitness journey and easily book memberships at these places.',
         ),
       ],
     );
