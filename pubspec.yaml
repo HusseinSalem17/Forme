@@ -39,6 +39,7 @@ dependencies:
   ionicons: ^0.2.2
   tabbar_gradient_indicator: ^1.0.1
   wheel_slider: ^1.1.1
+  flutter_credit_card: ^4.0.1
 
 
 dev_dependencies:

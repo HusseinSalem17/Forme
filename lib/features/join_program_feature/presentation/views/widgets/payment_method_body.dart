@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_credit_card/flutter_credit_card.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:forme_app/features/join_program_feature/presentation/views/widgets/custom_radio_list_tile.dart';
@@ -55,10 +56,11 @@ class _PaymentMethodBodyState extends State<PaymentMethodBody> {
             ),
             sizeBox,
             buildCustomRadioListTile(
-                1,
-                SvgPicture.asset(
-                  'assets/image/Icon/visa.svg', // Replace with the path to your SVG file
-                )),
+              1,
+              SvgPicture.asset(
+                'assets/image/Icon/visa.svg', // Replace with the path to your SVG file
+              ),
+            ),
             sizeBox,
             Text(
               'More Payment Options',
@@ -66,16 +68,18 @@ class _PaymentMethodBodyState extends State<PaymentMethodBody> {
             ),
             SizedBox(height: 8.h),
             buildCustomRadioListTile(
-                2,
-                SvgPicture.asset(
-                  'assets/image/Icon/paypal.svg', // Replace with the path to your SVG file
-                )),
+              2,
+              SvgPicture.asset(
+                'assets/image/Icon/paypal.svg', // Replace with the path to your SVG file
+              ),
+            ),
             SizedBox(height: 8.h),
             buildCustomRadioListTile(
-                3,
-                SvgPicture.asset(
-                  'assets/image/Icon/apple.svg', // Replace with the path to your SVG file
-                )),
+              3,
+              SvgPicture.asset(
+                'assets/image/Icon/apple.svg', // Replace with the path to your SVG file
+              ),
+            ),
           ],
         ),
       ),
