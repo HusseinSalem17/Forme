@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+
 import '../../../core/utils/app_colors.dart';
 import '../../../features/Authentication/presentation/views/sign_in_view.dart';
+
+
+import '../../../core/utils/app_colors.dart';
 
 import '../../data/bloc/onboarding_states.dart';
 import 'buttons/left_arrow_button.dart';
@@ -27,6 +31,11 @@ class PageViewButtonsSections extends StatefulWidget {
 class _PageViewButtonsSectionsState extends State<PageViewButtonsSections> {
   @override
 
+  void dispose() {
+    widget.pageController.dispose();
+    super.dispose();
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -37,6 +46,7 @@ class _PageViewButtonsSectionsState extends State<PageViewButtonsSections> {
         children: [
           widget.state.page > 0
               ? GestureDetector(
+
             onTap: () {
               widget.pageController.animateToPage(
                 --widget.state.page,
@@ -52,6 +62,8 @@ class _PageViewButtonsSectionsState extends State<PageViewButtonsSections> {
             backgroundColor: AppColors.background,
             radius: 21.w,
           ),
+
+
           DotIndicator(page: widget.state.page),
           GestureDetector(
             onTap: () {
