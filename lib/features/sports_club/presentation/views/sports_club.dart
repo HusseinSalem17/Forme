@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/widgets/button_container.dart';
 import 'package:forme_app/core/widgets/custom_app_bar_arrow_button.dart';
-import 'package:forme_app/features/workout_detail/presentation/views/sections/about_tab/workout_about_tab.dart';
+import 'package:forme_app/features/sports_club/presentation/views/sections/about/about_sport_club_screen.dart';
 import 'package:forme_app/features/workout_detail/presentation/views/sections/workout_header.dart';
 import 'package:forme_app/features/workout_detail/presentation/views/sections/workout_review_tab.dart';
 import 'package:forme_app/features/workout_detail/presentation/views/sections/workout_tab.dart';
@@ -16,7 +16,7 @@ class SportsClubScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
         child: DefaultTabController(
-            length: 3,
+            length: 4,
             child: Scaffold(
                 body: Stack(
               children: [
@@ -27,7 +27,7 @@ class SportsClubScreen extends StatelessWidget {
                           backgroundColor: AppColors.background,
                           pinned: true,
                           expandedHeight:
-                              MediaQuery.sizeOf(context).height / 1.5,
+                              MediaQuery.sizeOf(context).height / 1.8,
                           actions: [
                             Padding(
                               padding: EdgeInsets.only(left: 20.h),
@@ -52,19 +52,19 @@ class SportsClubScreen extends StatelessWidget {
                                 fit: BoxFit.cover,
                               )),
                           bottom: PreferredSize(
-                            preferredSize: Size.fromHeight(150.h),
+                            preferredSize: Size.fromHeight(140.h),
                             child: Container(
                               width: double.maxFinite,
                               color: AppColors.background,
                               child: Padding(
                                 padding:
-                                    EdgeInsets.symmetric(horizontal: 24.0.w),
+                                    EdgeInsets.symmetric(horizontal: 4.0.w),
                                 child: const WorkoutDetailHeader(
                                   titles: [
                                     'about',
                                     'Trainers',
                                     'Gallery',
-                                    'Review'
+                                    'Reviews'
                                   ],
                                 ),
                               ),
@@ -72,9 +72,10 @@ class SportsClubScreen extends StatelessWidget {
                           )),
                     ];
                   },
-                  body: const TabBarView(
+                  body: TabBarView(
                     children: [
-                      WorkoutAboutTab(),
+                      AboutSportsClubScreen(),
+                      WorkoutTab(),
                       WorkoutTab(),
                       WorkoutReviewTab()
                     ],

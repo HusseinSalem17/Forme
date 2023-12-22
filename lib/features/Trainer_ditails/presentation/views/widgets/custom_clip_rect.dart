@@ -9,8 +9,8 @@ class CustomClipRect extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 130.h,
-      width: 130.h,
+      height: 48.h,
+      width: 48.h,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(56.dg),
           color: Colors.white),

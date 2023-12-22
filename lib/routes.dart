@@ -27,7 +27,7 @@ Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
 //----- Splash Routing -----
     case '/':
       return sportsClubRoute();
-      //splashRoute();
+    //splashRoute();
 
 //----- OnBoarding Routing -----
     case OnBoardingView.routeName:
@@ -188,6 +188,7 @@ MaterialPageRoute<dynamic> workoutReviewRoute() {
     builder: (context) => const WorkoutReview(),
   );
 }
+
 MaterialPageRoute<dynamic> sportsClubRoute() {
   return MaterialPageRoute(
     builder: (context) => const SportsClubScreen(),
