@@ -5,8 +5,9 @@ import 'package:forme_app/core/utils/text_styles.dart';
 
 class CustomAppBottom extends StatelessWidget {
   final String title;
+  final double widthDivider;
   final void Function()? onTap;
-  const CustomAppBottom({super.key, required this.title,this.onTap});
+  const CustomAppBottom({super.key, required this.title,this.onTap,this.widthDivider=1});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +15,7 @@ class CustomAppBottom extends StatelessWidget {
       onTap: onTap,
       child: Container(
         height: 48.h,
-        width: MediaQuery.sizeOf(context).width,
+        width: MediaQuery.sizeOf(context).width/widthDivider,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(30),
           color: AppColors.p300PrimaryColor,

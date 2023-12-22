@@ -11,6 +11,7 @@ import 'package:forme_app/features/home/presentation/views/home_view.dart';
 import 'package:forme_app/features/payment/presentation/view/congratulation_screen.dart';
 import 'package:forme_app/features/reviews/presentation/views/add_review.dart';
 import 'package:forme_app/features/reviews/presentation/views/workout_review.dart';
+import 'package:forme_app/features/sports_club/presentation/views/sports_club.dart';
 import 'package:forme_app/splash_screen.dart';
 import 'package:forme_app/onboarding_screens/views/onboarding_screen.dart';
 
@@ -25,7 +26,8 @@ Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
   switch (settings.name) {
 //----- Splash Routing -----
     case '/':
-      return splashRoute();
+      return sportsClubRoute();
+    //splashRoute();
 
 //----- OnBoarding Routing -----
     case OnBoardingView.routeName:
@@ -70,6 +72,9 @@ Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
       return congratulationRoute();
     case EReceiptScreen.routeName:
       return eReceiptRoute();
+//---- sports club Routing ----
+    case SportsClubScreen.routeName:
+      return sportsClubRoute();
 //---------------------------------------
     default:
       return notFound();
@@ -181,6 +186,12 @@ MaterialPageRoute<dynamic> congratulationRoute() {
 MaterialPageRoute<dynamic> workoutReviewRoute() {
   return MaterialPageRoute(
     builder: (context) => const WorkoutReview(),
+  );
+}
+
+MaterialPageRoute<dynamic> sportsClubRoute() {
+  return MaterialPageRoute(
+    builder: (context) => const SportsClubScreen(),
   );
 }
 // MaterialPageRoute<dynamic> verifyRoute(int verifyId, User user) {
