@@ -8,7 +8,7 @@ import 'package:forme_app/features/sports_club/presentation/views/sections/about
 import 'package:forme_app/features/sports_club/presentation/views/widgets&methods/club_text_list.dart';
 import 'package:forme_app/features/sports_club/presentation/views/widgets&methods/plans_list.dart';
 
-class AboutSportsClubScreen extends StatelessWidget {
+class AboutSportsClubTab extends StatelessWidget {
   final List<String> days = [
     'Monday',
     'Tuesday',
@@ -27,7 +27,7 @@ class AboutSportsClubScreen extends StatelessWidget {
     '00:00 - 00:00',
     '00:00 - 00:00',
   ];
-  AboutSportsClubScreen({super.key});
+  AboutSportsClubTab({super.key});
 
   @override
   Widget build(BuildContext context) {
