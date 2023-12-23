@@ -55,7 +55,7 @@ class SportsClubScreen extends StatelessWidget {
                                 fit: BoxFit.cover,
                               )),
                           bottom: PreferredSize(
-                            preferredSize: Size.fromHeight(140.h),
+                            preferredSize: Size.fromHeight(MediaQuery.sizeOf(context).height / 5),
                             child: Container(
                               width: double.maxFinite,
                               color: AppColors.background,

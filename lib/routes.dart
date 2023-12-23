@@ -26,7 +26,8 @@ Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
   switch (settings.name) {
 //----- Splash Routing -----
     case '/':
-      return sportsClubRoute();
+      return //trainerDetailsRoute();
+      sportsClubRoute();
     //splashRoute();
 
 //----- OnBoarding Routing -----
