@@ -1,14 +1,10 @@
 import 'package:figma_squircle/figma_squircle.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:forme_app/features/join_program_feature/presentation/views/widgets/custom_app_bar.dart';
-
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/text_styles.dart';
-import '../../../home/presentation/views/widgets/card_image_section.dart';
-import '../../../home/presentation/views/widgets/card_review_section.dart';
-import '../../../home/presentation/views/widgets/specila_programs_card_item.dart';
+
 
 class ReviewSummary extends StatelessWidget {
   const ReviewSummary({Key? key}) : super(key: key);

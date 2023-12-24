@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:forme_app/core/test_models/top_trainers_model.dart';
+import 'package:forme_app/core/transitions/page_slide.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
+import 'package:forme_app/features/Trainer_ditails/presentation/views/trainer_details_view.dart';
 
 class TopTrainersSection extends StatelessWidget {
   const TopTrainersSection({Key? key}) : super(key: key);
@@ -49,29 +51,35 @@ class TopTrainersSection extends StatelessWidget {
             itemBuilder: (BuildContext context, index) {
               return Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 8),
-                child: Column(
-                  children: [
-                    Container(
-                      width: 64,
-                      height: 64,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(32),
-                      ),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(32),
-                        child: Image.asset(
-                          topTrainersData[index].imageUrl,
-                          fit: BoxFit.cover,
+                child: GestureDetector(
+                  onTap: (){
+                    Navigator.of(context)
+                          .push(PageSlideTransition(const TrainerDetailsScreen()));
+                  },
+                  child: Column(
+                    children: [
+                      Container(
+                        width: 64,
+                        height: 64,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(32),
+                        ),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(32),
+                          child: Image.asset(
+                            topTrainersData[index].imageUrl,
+                            fit: BoxFit.cover,
+                          ),
                         ),
                       ),
-                    ),
-                    const SizedBox(height: 4),
-                    Text(
-                      truncateText(topTrainersData[index].name, 8),
-                      style: TextStyles.textStyleRegular
-                          .copyWith(fontSize: 12, color: AppColors.neutralsN9),
-                    )
-                  ],
+                      const SizedBox(height: 4),
+                      Text(
+                        truncateText(topTrainersData[index].name, 8),
+                        style: TextStyles.textStyleRegular
+                            .copyWith(fontSize: 12, color: AppColors.neutralsN9),
+                      )
+                    ],
+                  ),
                 ),
               );
             },

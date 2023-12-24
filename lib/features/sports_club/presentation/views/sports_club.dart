@@ -3,25 +3,21 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/widgets/actionsIcon.dart';
 import 'package:forme_app/core/widgets/button_container.dart';
-import 'package:forme_app/features/workout_detail/presentation/views/sections/about_tab/workout_about_tab.dart';
+import 'package:forme_app/features/reviews/presentation/views/reviews_section.dart';
+import 'package:forme_app/features/sports_club/presentation/views/sections/gallery_tab.dart';
+import 'package:forme_app/features/sports_club/presentation/views/sections/about/about_sport_club_screen.dart';
+import 'package:forme_app/features/sports_club/presentation/views/sections/trainers_tab.dart';
 import 'package:forme_app/features/workout_detail/presentation/views/sections/workout_header.dart';
-import 'package:forme_app/features/workout_detail/presentation/views/sections/workout_review_tab.dart';
-import 'package:forme_app/features/workout_detail/presentation/views/sections/workout_tab.dart';
 
-class WorkOutDetail extends StatefulWidget {
-  static const routeName = '/Workout-details-screen';
-  const WorkOutDetail({super.key});
+class SportsClubScreen extends StatelessWidget {
+  static const routeName = '/sports-club-screen';
+  const SportsClubScreen({super.key});
 
-  @override
-  State<WorkOutDetail> createState() => _WorkOutDetailState();
-}
-
-class _WorkOutDetailState extends State<WorkOutDetail> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
         child: DefaultTabController(
-            length: 3,
+            length: 4,
             child: Scaffold(
                 body: Stack(
               children: [
@@ -29,10 +25,11 @@ class _WorkOutDetailState extends State<WorkOutDetail> {
                   headerSliverBuilder: (_, __) {
                     return <Widget>[
                       SliverAppBar(
-                          elevation: 1.5,
                           backgroundColor: AppColors.background,
                           pinned: true,
-                          expandedHeight: 400.h,
+                          automaticallyImplyLeading: false,
+                          expandedHeight:
+                              MediaQuery.sizeOf(context).height / 1.8,
                           actions: actionsIcons(context),
                           flexibleSpace: FlexibleSpaceBar(
                               collapseMode: CollapseMode.none,
@@ -42,26 +39,35 @@ class _WorkOutDetailState extends State<WorkOutDetail> {
                                 fit: BoxFit.cover,
                               )),
                           bottom: PreferredSize(
-                            preferredSize: Size.fromHeight(150.h),
+                            preferredSize: Size.fromHeight(
+                                MediaQuery.sizeOf(context).height / 5),
                             child: Container(
                               width: double.maxFinite,
                               color: AppColors.background,
                               child: Padding(
                                 padding:
-                                    EdgeInsets.symmetric(horizontal: 24.0.w),
+                                    EdgeInsets.symmetric(horizontal: 4.0.w),
                                 child: const WorkoutDetailHeader(
-                                  titles: ['about', 'Workout', 'Reviews'],
+                                  titles: [
+                                    'about',
+                                    'Trainers',
+                                    'Gallery',
+                                    'Reviews'
+                                  ],
                                 ),
                               ),
                             ),
                           )),
                     ];
                   },
-                  body: const TabBarView(
+                  body: TabBarView(
                     children: [
-                      WorkoutAboutTab(),
-                      WorkoutTab(),
-                      WorkoutReviewTab()
+                      AboutSportsClubTab(),
+                      const TrainersTab(),
+                      const GalleryTab(),
+                      const ReviewsSection(
+                        type: 'club',
+                      )
                     ],
                   ),
                 ),
@@ -75,4 +81,6 @@ class _WorkOutDetailState extends State<WorkOutDetail> {
               ],
             ))));
   }
+
+  
 }
