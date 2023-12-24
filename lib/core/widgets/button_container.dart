@@ -31,7 +31,11 @@ class ButtonContainer extends StatelessWidget {
           borderRadius: BorderRadius.only(
               topLeft: Radius.circular(20.dg),
               topRight: Radius.circular(20.dg))),
-      padding: EdgeInsets.only(left: 24.h, right: 24.h, top: 20.h),
+      padding: EdgeInsets.only(
+          left: 24.h,
+          right: 24.h,
+          top: 20.h,
+          bottom: (MediaQuery.sizeOf(context).height / 6.h) - 68.h),
       child: havePrice
           ? Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,

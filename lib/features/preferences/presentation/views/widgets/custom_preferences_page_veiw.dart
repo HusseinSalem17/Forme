@@ -5,7 +5,6 @@ import 'package:forme_app/features/preferences/presentation/manager/preferences_
 import 'package:forme_app/features/preferences/presentation/manager/preferences_state.dart';
 import 'package:forme_app/features/preferences/presentation/views/widgets/age_slider.dart';
 import 'package:forme_app/features/preferences/presentation/views/widgets/height_slider.dart';
-
 import 'package:forme_app/features/preferences/presentation/views/widgets/pick_your_goal_screen_body.dart';
 import 'package:forme_app/features/preferences/presentation/views/widgets/pick_your_level_screen_body.dart';
 import 'package:forme_app/features/preferences/presentation/views/widgets/weight_slider.dart';

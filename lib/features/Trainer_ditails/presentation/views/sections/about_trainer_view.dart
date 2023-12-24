@@ -24,7 +24,7 @@ class _AboutTrainerScreenState extends State<AboutTrainerScreen> {
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             const AboutTrainer(),
             const ProgramsCardList(),
-            const ReviewsSection(),
+            const ReviewsSection(type: 'workout',),
             SizedBox(height: 100.h)
           ]),
         ),
