@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -5,14 +6,8 @@ import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
 import 'package:forme_app/features/home/presentation/views/widgets/card_review_section.dart';
 
-class Workout_sub_header extends StatelessWidget {
-  const Workout_sub_header({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(children:[
+Column workoutSubHeader(){
+  return Column(children:[
     SizedBox(
       height: 26.h,
     ),
@@ -58,5 +53,4 @@ class Workout_sub_header extends StatelessWidget {
     SizedBox(
       height: 18.h,
     ),]);
-  }
 }

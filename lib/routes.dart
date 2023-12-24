@@ -10,10 +10,10 @@ import 'package:forme_app/features/Trainer_ditails/presentation/views/trainer_de
 import 'package:forme_app/features/home/presentation/views/home_view.dart';
 import 'package:forme_app/features/payment/presentation/view/congratulation_screen.dart';
 import 'package:forme_app/features/reviews/presentation/views/add_review.dart';
-import 'package:forme_app/features/reviews/presentation/views/workout_review.dart';
+import 'package:forme_app/features/reviews/presentation/views/add_review.dart';
+import 'package:forme_app/features/sports_club/presentation/views/sports_club.dart';
 import 'package:forme_app/splash_screen.dart';
 import 'package:forme_app/onboarding_screens/views/onboarding_screen.dart';
-
 import 'features/join_program_feature/presentation/views/add_new_card_screen.dart';
 import 'features/join_program_feature/presentation/views/book_onling_coach_screen.dart';
 import 'features/Complete_profile/presentation/views/complete_profile.dart';
@@ -25,7 +25,9 @@ Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
   switch (settings.name) {
 //----- Splash Routing -----
     case '/':
-      return splashRoute();
+      return //trainerDetailsRoute();
+          //sportsClubRoute();
+    splashRoute();
 
 //----- OnBoarding Routing -----
     case OnBoardingView.routeName:
@@ -62,14 +64,19 @@ Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
       return completeProfile();
 //---- Review Routing ----
     case AddReview.routeName:
-      return addReviewRoute();
-    case WorkoutReview.routeName:
-      return workoutReviewRoute();
+      final List<dynamic> args = settings.arguments as List<dynamic>;
+      final String type = args[0] as String;
+
+      return addReviewRoute(type);
+
 //---- payment Routing ----
     case CongratulationScreen.routeName:
       return congratulationRoute();
     case EReceiptScreen.routeName:
       return eReceiptRoute();
+//---- sports club Routing ----
+    case SportsClubScreen.routeName:
+      return sportsClubRoute();
 //---------------------------------------
     default:
       return notFound();
@@ -154,12 +161,6 @@ MaterialPageRoute<dynamic> trainerDetailsRoute() {
   );
 }
 
-MaterialPageRoute<dynamic> addReviewRoute() {
-  return MaterialPageRoute(
-    builder: (context) => const AddReview(),
-  );
-}
-
 MaterialPageRoute<dynamic> successStoryRoute() {
   return MaterialPageRoute(
     builder: (context) => const SuccessStory(),
@@ -178,9 +179,17 @@ MaterialPageRoute<dynamic> congratulationRoute() {
   );
 }
 
-MaterialPageRoute<dynamic> workoutReviewRoute() {
+MaterialPageRoute<dynamic> addReviewRoute(String type) {
   return MaterialPageRoute(
-    builder: (context) => const WorkoutReview(),
+    builder: (context) => AddReview(
+      type: type,
+    ),
+  );
+}
+
+MaterialPageRoute<dynamic> sportsClubRoute() {
+  return MaterialPageRoute(
+    builder: (context) => const SportsClubScreen(),
   );
 }
 // MaterialPageRoute<dynamic> verifyRoute(int verifyId, User user) {
