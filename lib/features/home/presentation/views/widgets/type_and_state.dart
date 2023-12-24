@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
 
@@ -16,8 +15,8 @@ class TypeAndState extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 85.w,
-      height: 18.h,
+      // width: 85.w,
+      // height: 18.h,
       decoration: BoxDecoration(
         color: AppColors.n20FillBodyInSmallCardColor,
         borderRadius: BorderRadius.circular(10),
@@ -41,7 +40,9 @@ class TypeAndState extends StatelessWidget {
               style: TextStyles.cardTextStyle.copyWith(
                   color: state == 'Open'
                       ? AppColors.greenColor
-                      : state == 'Close'?AppColors.redColor:AppColors.p300PrimaryColor),
+                      : state == 'Close'
+                          ? AppColors.redColor
+                          : AppColors.p300PrimaryColor),
             ),
           ],
         ),

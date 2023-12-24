@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:forme_app/features/join_program_feature/presentation/views/widgets/custom_app_bar.dart';
 import 'package:forme_app/features/join_program_feature/presentation/views/widgets/payment_method_body.dart';
+
 import '../../../preferences/presentation/views/widgets/custom_shadow_button.dart';
 
 class PaymentMethodsScreen extends StatefulWidget {
@@ -24,7 +25,7 @@ class _PaymentMethodsScreenState extends State<PaymentMethodsScreen> {
             alignment: Alignment.bottomCenter,
             child: CustomShadowButton(
               onTap: () {
-                print('Hi');
+                debugPrint('Hi');
               },
               buttonTitle: 'Continue',
             ),
@@ -32,5 +33,6 @@ class _PaymentMethodsScreenState extends State<PaymentMethodsScreen> {
         ],
       ),
     );
+
   }
 }
