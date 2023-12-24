@@ -10,6 +10,7 @@ class CustomRadioListTile extends StatelessWidget {
   final String title;
   final Widget icon;
   final ValueChanged<String?> onChanged;
+  final bool isTextButton;
 
   const CustomRadioListTile({
     super.key,
@@ -18,6 +19,7 @@ class CustomRadioListTile extends StatelessWidget {
     required this.onChanged,
     required this.title,
     required this.icon,
+    this.isTextButton = false,
   });
 
   @override
@@ -27,8 +29,9 @@ class CustomRadioListTile extends StatelessWidget {
         onChanged(value);
       },
       child: Container(
+        height: 52,
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: AppColors.n20FillBodyInBigCardColor,
           boxShadow: [
             BoxShadow(
               color: Colors.black.withOpacity(0.1),
@@ -57,34 +60,50 @@ class CustomRadioListTile extends StatelessWidget {
                   ),
                 ],
               ),
-              Container(
-                width: 24.0, // Set the desired size of the radio icon
-                height: 24.0,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  border: Border.all(
-                    color: value == groupValue
-                        ? AppColors.p300PrimaryColor
-                        : AppColors.n40BorderColor,
-                    width: 1.0,
-                  ),
-                ),
-                child: Center(
-                  child: value == groupValue
-                      ? Container(
-                          width: 11.0,
-                          height: 11.0,
-                          decoration: const BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: AppColors.p300PrimaryColor,
-                          ),
-                        )
-                      : null,
-                ),
-              ),
+              isTextButton
+                  ? GestureDetector(
+                      onTap: () {
+                        print('pressed');
+                      },
+                      child: Text(
+                        'Change',
+                        style: TextStyles.textStyleRegular.copyWith(
+                          color: AppColors.p300PrimaryColor,
+                        ),
+                      ),
+                    )
+                  : buildRadioButton(),
             ],
           ),
         ),
+      ),
+    );
+  }
+
+  Container buildRadioButton() {
+    return Container(
+      width: 24.0,
+      height: 24.0,
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        border: Border.all(
+          color: value == groupValue
+              ? AppColors.p300PrimaryColor
+              : AppColors.n40BorderColor,
+          width: 1.0,
+        ),
+      ),
+      child: Center(
+        child: value == groupValue
+            ? Container(
+                width: 11.0,
+                height: 11.0,
+                decoration: const BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: AppColors.p300PrimaryColor,
+                ),
+              )
+            : null,
       ),
     );
   }

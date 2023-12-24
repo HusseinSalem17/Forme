@@ -17,7 +17,8 @@ import 'features/join_program_feature/presentation/views/book_onling_coach_scree
 import 'features/Complete_profile/presentation/views/complete_profile.dart';
 
 import 'features/join_program_feature/presentation/views/payment_methods_screen.dart';
-import 'features/join_program_feature/presentation/views/review_summary.dart';
+import 'features/join_program_feature/presentation/views/payment_successfully_screen.dart';
+import 'features/join_program_feature/presentation/views/review_summary_screen.dart';
 import 'features/preferences/presentation/views/preferences_screen.dart';
 
 Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
@@ -129,9 +130,7 @@ MaterialPageRoute<dynamic> newpasswordRoute() {
 
 MaterialPageRoute<dynamic> preferencesScreenRoute() {
   return MaterialPageRoute(
-    //builder: (context) => const BookOnlineCoachScreen(),
-    //builder: (context) => const PaymentMethodsScreen(),
-    builder: (context) => const ReviewSummary(),
+    builder: (context) => const PaymentSuccessfullyScreen(),
   );
 }
 
