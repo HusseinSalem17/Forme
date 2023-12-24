@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
+import 'package:forme_app/core/widgets/actionsIcon.dart';
 import 'package:forme_app/core/widgets/button_container.dart';
-import 'package:forme_app/core/widgets/custom_app_bar_arrow_button.dart';
 import 'package:forme_app/features/reviews/presentation/views/reviews_section.dart';
 import 'package:forme_app/features/sports_club/presentation/views/sections/gallery_tab.dart';
 import 'package:forme_app/features/sports_club/presentation/views/sections/about/about_sport_club_screen.dart';
 import 'package:forme_app/features/sports_club/presentation/views/sections/trainers_tab.dart';
 import 'package:forme_app/features/workout_detail/presentation/views/sections/workout_header.dart';
-import 'package:forme_app/features/workout_detail/presentation/views/sections/workout_review_tab.dart';
-import 'package:forme_app/features/workout_detail/presentation/views/sections/workout_tab.dart';
 
 class SportsClubScreen extends StatelessWidget {
   static const routeName = '/sports-club-screen';
@@ -29,24 +27,10 @@ class SportsClubScreen extends StatelessWidget {
                       SliverAppBar(
                           backgroundColor: AppColors.background,
                           pinned: true,
+                          automaticallyImplyLeading: false,
                           expandedHeight:
                               MediaQuery.sizeOf(context).height / 1.8,
-                          actions: [
-                            Padding(
-                              padding: EdgeInsets.only(left: 20.h),
-                              child: CustomAppBarArrowButton(
-                                onTap: () {},
-                              ),
-                            ),
-                            const Spacer(),
-                            CustomAppBarArrowButton(
-                                onTap: () {}, icon: Icons.share),
-                            Padding(
-                              padding: EdgeInsets.only(right: 20.h),
-                              child: CustomAppBarArrowButton(
-                                  onTap: () {}, icon: Icons.favorite_border),
-                            )
-                          ],
+                          actions: actionsIcons(context),
                           flexibleSpace: FlexibleSpaceBar(
                               collapseMode: CollapseMode.none,
                               background: Image.asset(
@@ -55,7 +39,8 @@ class SportsClubScreen extends StatelessWidget {
                                 fit: BoxFit.cover,
                               )),
                           bottom: PreferredSize(
-                            preferredSize: Size.fromHeight(MediaQuery.sizeOf(context).height / 5),
+                            preferredSize: Size.fromHeight(
+                                MediaQuery.sizeOf(context).height / 5),
                             child: Container(
                               width: double.maxFinite,
                               color: AppColors.background,
@@ -80,7 +65,9 @@ class SportsClubScreen extends StatelessWidget {
                       AboutSportsClubTab(),
                       const TrainersTab(),
                       const GalleryTab(),
-                      const ReviewsSection()
+                      const ReviewsSection(
+                        type: 'club',
+                      )
                     ],
                   ),
                 ),
@@ -94,4 +81,6 @@ class SportsClubScreen extends StatelessWidget {
               ],
             ))));
   }
+
+  
 }

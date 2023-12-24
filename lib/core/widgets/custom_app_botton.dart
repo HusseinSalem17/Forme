@@ -13,19 +13,28 @@ class CustomAppBottom extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
-      child: Container(
-        height: 48.h,
-        width: MediaQuery.sizeOf(context).width/widthDivider,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(30),
-          color: AppColors.p300PrimaryColor,
-        ),
-        padding: EdgeInsets.all(16.0.h),
-        child: Center(
-          child: Text(
-            title,
-            style: TextStyles.textStyleMedium
-                .copyWith(fontSize: 16.sp, color: AppColors.background),
+      child: SizedBox(
+        child: Container(
+          height: 48.h,
+          width: MediaQuery.sizeOf(context).width/widthDivider,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(40.dg),
+            color: AppColors.p300PrimaryColor,
+            boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.1),
+            blurRadius: 4,
+            offset: const Offset(0, -2),
+          ),
+        ],
+          ),
+          padding: EdgeInsets.all(16.0.h),
+          child: Center(
+            child: Text(
+              title,
+              style: TextStyles.textStyleMedium
+                  .copyWith(fontSize: 16.sp, color: AppColors.background),
+            ),
           ),
         ),
       ),

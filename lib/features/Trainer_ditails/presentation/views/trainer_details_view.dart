@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
-import 'package:forme_app/core/widgets/custom_app_bar_arrow_button.dart';
+import 'package:forme_app/core/widgets/actionsIcon.dart';
 import 'package:forme_app/core/widgets/custom_tab_bar.dart';
 import 'package:forme_app/features/Trainer_ditails/presentation/views/sections/about_trainer_view.dart';
 import 'package:forme_app/features/Trainer_ditails/presentation/views/sections/trainer_storys_view.dart';
@@ -27,22 +27,9 @@ class _TrainerDetailsScreenState extends State<TrainerDetailsScreen> {
               SliverAppBar(
                   backgroundColor: AppColors.background,
                   pinned: true,
+                  automaticallyImplyLeading: false,
                   expandedHeight: MediaQuery.sizeOf(context).height / 3.8,
-                  actions: [
-                    Padding(
-                      padding: EdgeInsets.only(left: 20.h),
-                      child: CustomAppBarArrowButton(
-                        onTap: () {},
-                      ),
-                    ),
-                    const Spacer(),
-                    CustomAppBarArrowButton(onTap: () {}, icon: Icons.share),
-                    Padding(
-                      padding: EdgeInsets.only(right: 20.h),
-                      child: CustomAppBarArrowButton(
-                          onTap: () {}, icon: Icons.favorite_border),
-                    )
-                  ],
+                  actions: actionsIcons(context),
                   flexibleSpace: const FlexibleSpaceBar(
                     collapseMode: CollapseMode.none,
                     background: TrainerDetailsAppBar(),
