@@ -10,14 +10,10 @@ import 'package:forme_app/features/Trainer_ditails/presentation/views/trainer_de
 import 'package:forme_app/features/home/presentation/views/home_view.dart';
 import 'package:forme_app/features/payment/presentation/view/congratulation_screen.dart';
 import 'package:forme_app/features/reviews/presentation/views/add_review.dart';
-import 'package:forme_app/features/reviews/presentation/views/add_review.dart';
 import 'package:forme_app/features/sports_club/presentation/views/sports_club.dart';
 import 'package:forme_app/splash_screen.dart';
 import 'package:forme_app/onboarding_screens/views/onboarding_screen.dart';
-import 'features/join_program_feature/presentation/views/add_new_card_screen.dart';
-import 'features/join_program_feature/presentation/views/book_onling_coach_screen.dart';
 import 'features/Complete_profile/presentation/views/complete_profile.dart';
-import 'features/join_program_feature/presentation/views/payment_methods_screen.dart';
 import 'features/join_program_feature/presentation/views/review_summary.dart';
 import 'features/preferences/presentation/views/preferences_screen.dart';
 

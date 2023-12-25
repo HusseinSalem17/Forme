@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/widgets/custom_app_botton.dart';
-import 'package:forme_app/features/preferences/presentation/manager/preferences_bloc.dart';
-
 import '../../../../../core/utils/text_styles.dart';
 
 class CustomShadowButton extends StatelessWidget {

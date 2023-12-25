@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:forme_app/features/join_program_feature/presentation/views/widgets/custom_app_bar.dart';
 import 'package:forme_app/features/join_program_feature/presentation/views/widgets/payment_method_body.dart';
-import '../../../../core/utils/text_styles.dart';
 import '../../../preferences/presentation/views/widgets/custom_shadow_button.dart';
 
 class PaymentMethodsScreen extends StatefulWidget {
