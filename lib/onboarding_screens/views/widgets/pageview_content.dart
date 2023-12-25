@@ -53,11 +53,11 @@ class PageViewContent extends StatelessWidget {
             children: [
               TextSpan(
                 text: blackText,
-                style: blueTextStyle,
+                style: blackTextStyle,
               ),
               TextSpan(
                 text: blueText,
-                style: blackTextStyle,
+                style: blueTextStyle,
               ),
             ],
           ),

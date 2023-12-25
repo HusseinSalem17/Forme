@@ -49,10 +49,10 @@ class CustomPageView extends StatelessWidget {
           state: state,
           image: AssetsImages.onBoardingScreen2,
           blackText: "Trainers, Programs, and Courses",
-          blackTextStyle: TextStyles.headerStyle
-              .copyWith(color: AppColors.n900PrimaryTextColor),
+          blackTextStyle: TextStyles.headerStyle,
           blueText: "\nat Your Fingertips",
-          blueTextStyle: TextStyles.headerStyle,
+          blueTextStyle: TextStyles.headerStyle
+              .copyWith(color: AppColors.n900PrimaryTextColor),
           description:
               'Discover skilled trainers, connect, and enroll in personalized fitness programs and courses.',
         ),
