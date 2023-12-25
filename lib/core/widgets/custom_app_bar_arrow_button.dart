@@ -18,8 +18,8 @@ class CustomAppBarArrowButton extends StatelessWidget {
       splashColor: Colors.transparent,
       highlightColor: Colors.transparent,
       icon: Container(
-        width: 32,
-        height: 32,
+        width: 32.w,
+        height: 32.w,
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(16.r),
