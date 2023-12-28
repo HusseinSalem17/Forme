@@ -13,7 +13,7 @@ import 'package:forme_app/features/reviews/presentation/views/add_review.dart';
 import 'package:forme_app/features/reviews/presentation/views/workout_review.dart';
 import 'package:forme_app/splash_screen.dart';
 import 'package:forme_app/onboarding_screens/views/onboarding_screen.dart';
-
+import 'features/book_appointment_with _trainer/presentation/views/book_appointment_screen.dart';
 import 'features/join_program_feature/presentation/views/add_new_card_screen.dart';
 import 'features/join_program_feature/presentation/views/book_onling_coach_screen.dart';
 import 'features/Complete_profile/presentation/views/complete_profile.dart';

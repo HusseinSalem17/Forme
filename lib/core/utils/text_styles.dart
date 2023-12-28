@@ -60,7 +60,6 @@ abstract class TextStyles {
   static const textStyleRegular = TextStyle(
     fontFamily: 'RobotoRegular',
     color: AppColors.n100Color,
-    fontWeight: FontWeight.w400,
   );
 
   //medium
@@ -80,7 +79,7 @@ abstract class TextStyles {
     fontWeight: FontWeight.w600,
   );
 
-  static const appTitleStyle = TextStyle(
+  static const appBarTitleStyle = TextStyle(
     fontFamily: 'RobotoBold',
     fontSize: 18,
     color: AppColors.neutralsN9,

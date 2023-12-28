@@ -43,13 +43,16 @@ class PaymentSuccessfullyBody extends StatelessWidget {
               ),
               Text(
                 'You have successfully booked appointment with',
-                style: TextStyles.textStyleSemiBold.copyWith(
-                    color: AppColors.n70HintColor, fontWeight: FontWeight.w400),
+                style: TextStyles.textStyleRegular.copyWith(
+                  color: AppColors.n70HintColor,
+                ),
               ),
               Text(
                 'Coach (name)',
                 style: TextStyles.textStyleSemiBold.copyWith(
-                    color: AppColors.neutralsN9, fontWeight: FontWeight.w600),
+                  color: AppColors.neutralsN9,
+                  fontWeight: FontWeight.w600,
+                ),
               ),
               SizedBox(
                 height: 60.h,
@@ -81,7 +84,9 @@ class PaymentSuccessfullyBody extends StatelessWidget {
                   buildRowIcons('07:00 AM', 'assets/image/Icon/clock.svg'),
                 ],
               ),
-              const Spacer(flex: 4,),
+              const Spacer(
+                flex: 4,
+              ),
             ],
           ),
         ),

@@ -4,7 +4,7 @@ import 'package:flutter_credit_card/flutter_credit_card.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/utils/functions/validators.dart';
-import '../../../../book_appoitment_with _trainer/presentation/views/add_new_card_screen.dart';
+import '../../../../book_appointment_with _trainer/presentation/views/add_new_card_screen.dart';
 import 'card_text_form_field.dart';
 
 class CustomCreditCard extends StatefulWidget {
