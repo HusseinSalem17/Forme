@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
 import 'package:forme_app/core/widgets/custom_app_bar_arrow_button.dart';
+import 'package:forme_app/core/widgets/simple_app_bar.dart';
 
 class FeaturedScreen extends StatelessWidget {
   static const routeName = '/featured-screen';
@@ -14,28 +15,10 @@ class FeaturedScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          automaticallyImplyLeading: false,
-          title: Row(
-            children: [
-              CustomAppBarArrowButton(
-                onTap: () {
-                  Navigator.pop(context);
-                },
-              ),
-              const Spacer(),
-              Text(
-                featureType,
-                style: TextStyles.textStyleBold.copyWith(
-                    fontSize: 18.sp, color: AppColors.n900PrimaryTextColor),
-              ),
-              const Spacer(),
-              SizedBox(width: 32.w),
-            ],
-          ),
-        ),
+        appBar: simpleAppBar(context, featureType),
         body: Padding(
-          padding: EdgeInsets.only(top:32.h, bottom:16.h,left: 24.h, right: 24.h),
+          padding:
+              EdgeInsets.only(top: 32.h, bottom: 16.h, left: 24.h, right: 24.h),
           child: Column(
             children: [
               SingleChildScrollView(

@@ -10,6 +10,10 @@ import 'package:forme_app/features/Trainer_ditails/presentation/views/trainer_de
 import 'package:forme_app/features/featured/presentation/featured_screen.dart';
 import 'package:forme_app/features/home/presentation/views/home_view.dart';
 import 'package:forme_app/features/payment/presentation/view/congratulation_screen.dart';
+import 'package:forme_app/features/profile/presentation/views/help_center.dart';
+import 'package:forme_app/features/profile/presentation/views/my_profile.dart';
+import 'package:forme_app/features/profile/presentation/views/privacy_policy.dart';
+import 'package:forme_app/features/profile/presentation/views/settings_screen.dart';
 import 'package:forme_app/features/reviews/presentation/views/add_review.dart';
 import 'package:forme_app/features/reviews/presentation/views/add_review.dart';
 import 'package:forme_app/features/sports_club/presentation/views/sports_club.dart';
@@ -27,7 +31,7 @@ Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
 //----- Splash Routing -----
     case '/':
       return homeRoute();
-         // splashRoute();
+    // splashRoute();
 
 //----- OnBoarding Routing -----
     case OnBoardingView.routeName:
@@ -76,10 +80,19 @@ Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
       return sportsClubRoute();
 //----- featured Routing -------
     case FeaturedScreen.routeName:
-    final List<dynamic> args = settings.arguments as List<dynamic>;
-      final List<String> filterType= args[1] as  List<String>;
-      final String featuredType= args[2] as  String;
+      final List<dynamic> args = settings.arguments as List<dynamic>;
+      final List<String> filterType = args[1] as List<String>;
+      final String featuredType = args[2] as String;
       return featuredRoute(filterType, featuredType);
+//----- profile Routing -------
+    case MyProfile.routeName:
+      return myProfileRoute();
+    case SettingsScreen.routeName:
+      return settingsRoute();
+    case HelpCenter.routeName:
+      return helpCenterRoute();
+    case PrivacyPolicy.routeName:
+      return privacyPolicyRoute();
 //---------------------------------------
     default:
       return notFound();
@@ -195,23 +208,37 @@ MaterialPageRoute<dynamic> sportsClubRoute() {
     builder: (context) => const SportsClubScreen(),
   );
 }
-MaterialPageRoute<dynamic> featuredRoute(List<String> filterType, String featureType) {
+
+MaterialPageRoute<dynamic> featuredRoute(
+    List<String> filterType, String featureType) {
   return MaterialPageRoute(
-    builder: (context) => FeaturedScreen(filterTypes: filterType,featureType: featureType,),
+    builder: (context) => FeaturedScreen(
+      filterTypes: filterType,
+      featureType: featureType,
+    ),
   );
 }
-// MaterialPageRoute<dynamic> verifyRoute(int verifyId, User user) {
-//   return MaterialPageRoute(
-//     builder: (context) => VerifyView(
-//       verifyId: verifyId,
-//       user: user,
-//     ),
-//   );
-// }
 
-//----- Verify Routing -----
-// case VerifyView.routeName:
-//   final List<dynamic> args = settings.arguments as List<dynamic>;
-//   final int verifyId = args[0] as int;
-//   final User user = args[1] as User;
-//   return verifyRoute(verifyId, user);
+MaterialPageRoute<dynamic> myProfileRoute() {
+  return MaterialPageRoute(
+    builder: (context) => const MyProfile(),
+  );
+}
+
+MaterialPageRoute<dynamic> settingsRoute() {
+  return MaterialPageRoute(
+    builder: (context) => const SettingsScreen(),
+  );
+}
+
+MaterialPageRoute<dynamic> helpCenterRoute() {
+  return MaterialPageRoute(
+    builder: (context) => const HelpCenter(),
+  );
+}
+
+MaterialPageRoute<dynamic> privacyPolicyRoute() {
+  return MaterialPageRoute(
+    builder: (context) => const PrivacyPolicy(),
+  );
+}
