@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:forme_app/onboarding_screens/views/widgets/pageview_content.dart';
-
 import '../../../core/utils/app_colors.dart';
 import '../../../core/utils/image_assets.dart';
 import '../../../core/utils/text_styles.dart';
@@ -33,6 +32,8 @@ class CustomPageView extends StatelessWidget {
       children: [
         PageViewContent(
           context: context,
+          pageController: pageController,
+          state: state,
           image: AssetsImages.onBoardingScreen1,
           blackText: "Embrace Fitness at ",
           blackTextStyle: TextStyles.headerStyle
@@ -44,17 +45,21 @@ class CustomPageView extends StatelessWidget {
         ),
         PageViewContent(
           context: context,
+          pageController: pageController,
+          state: state,
           image: AssetsImages.onBoardingScreen2,
           blackText: "Trainers, Programs, and Courses",
-          blackTextStyle: TextStyles.headerStyle
-              .copyWith(color: AppColors.n900PrimaryTextColor),
+          blackTextStyle: TextStyles.headerStyle,
           blueText: "\nat Your Fingertips",
-          blueTextStyle: TextStyles.headerStyle,
+          blueTextStyle: TextStyles.headerStyle
+              .copyWith(color: AppColors.n900PrimaryTextColor),
           description:
               'Discover skilled trainers, connect, and enroll in personalized fitness programs and courses.',
         ),
         PageViewContent(
           context: context,
+          pageController: pageController,
+          state: state,
           image: AssetsImages.onBoardingScreen3,
           blackText: "Find Nearby",
           blackTextStyle: TextStyles.headerStyle

@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
-import 'package:forme_app/core/widgets/custom_app_bar_arrow_button.dart';
+import 'package:forme_app/core/widgets/actionsIcon.dart';
 import 'package:forme_app/core/widgets/button_container.dart';
-
 import 'package:forme_app/features/workout_detail/presentation/views/sections/about_tab/workout_about_tab.dart';
 import 'package:forme_app/features/workout_detail/presentation/views/sections/workout_header.dart';
 import 'package:forme_app/features/workout_detail/presentation/views/sections/workout_review_tab.dart';
@@ -34,22 +33,7 @@ class _WorkOutDetailState extends State<WorkOutDetail> {
                           backgroundColor: AppColors.background,
                           pinned: true,
                           expandedHeight: 400.h,
-                          actions: [
-                            Padding(
-                              padding: EdgeInsets.only(left: 20.h),
-                              child: CustomAppBarArrowButton(
-                                onTap: () {},
-                              ),
-                            ),
-                            const Spacer(),
-                            CustomAppBarArrowButton(
-                                onTap: () {}, icon: Icons.share),
-                            Padding(
-                              padding: EdgeInsets.only(right: 20.h),
-                              child: CustomAppBarArrowButton(
-                                  onTap: () {}, icon: Icons.favorite_border),
-                            )
-                          ],
+                          actions: actionsIcons(context),
                           flexibleSpace: FlexibleSpaceBar(
                               collapseMode: CollapseMode.none,
                               background: Image.asset(
@@ -65,14 +49,20 @@ class _WorkOutDetailState extends State<WorkOutDetail> {
                               child: Padding(
                                 padding:
                                     EdgeInsets.symmetric(horizontal: 24.0.w),
-                                child: const WorkoutDetailHeader(),
+                                child: const WorkoutDetailHeader(
+                                  titles: ['about', 'Workout', 'Reviews'],
+                                ),
                               ),
                             ),
                           )),
                     ];
                   },
                   body: const TabBarView(
-                    children: [WorkoutAboutTab(), WorkoutTab(),WorkoutReviewTab()],
+                    children: [
+                      WorkoutAboutTab(),
+                      WorkoutTab(),
+                      WorkoutReviewTab()
+                    ],
                   ),
                 ),
                 const Align(

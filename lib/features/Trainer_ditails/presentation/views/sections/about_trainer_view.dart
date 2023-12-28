@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:forme_app/features/Trainer_ditails/presentation/views/sections/about_sections/button_container.dart';
 import 'package:forme_app/features/Trainer_ditails/presentation/views/sections/about_sections/about_trainer_section.dart';
-import 'package:forme_app/features/Trainer_ditails/presentation/views/sections/about_sections/review_section.dart';
+import 'package:forme_app/features/reviews/presentation/views/reviews_section.dart';
 import 'package:forme_app/features/home/presentation/views/widgets/special_programs_list.dart';
 
 class AboutTrainerScreen extends StatefulWidget {
@@ -24,7 +24,7 @@ class _AboutTrainerScreenState extends State<AboutTrainerScreen> {
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             const AboutTrainer(),
             const ProgramsCardList(),
-            const ReviewsSection(),
+            const ReviewsSection(type: 'workout',),
             SizedBox(height: 100.h)
           ]),
         ),

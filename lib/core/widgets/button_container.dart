@@ -9,12 +9,15 @@ class ButtonContainer extends StatelessWidget {
   final bool havePrice;
   final void Function()? onTap;
   const ButtonContainer(
-      {super.key, required this.buttonTitle, this.havePrice = false,this.onTap});
+      {super.key,
+      required this.buttonTitle,
+      this.havePrice = false,
+      this.onTap});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 94.h,
+      height: MediaQuery.sizeOf(context).height / 6.h,
       width: double.infinity,
       decoration: BoxDecoration(
           color: AppColors.background,
@@ -28,30 +31,39 @@ class ButtonContainer extends StatelessWidget {
           borderRadius: BorderRadius.only(
               topLeft: Radius.circular(20.dg),
               topRight: Radius.circular(20.dg))),
-      padding: EdgeInsets.all(24.h),
+      padding: EdgeInsets.only(
+          left: 24.h,
+          right: 24.h,
+          top: 20.h,
+          bottom: (MediaQuery.sizeOf(context).height / 6.h) - 68.h),
       child: havePrice
           ? Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       'Total price',
-                      style: TextStyles.textStyleRegular.copyWith(fontSize: 14.sp),
+                      style:
+                          TextStyles.textStyleRegular.copyWith(fontSize: 14.sp),
                     ),
                     Text(
-                      '\$150',
+                      '\$1500',
                       style: TextStyles.textStyleBold.copyWith(
                           fontSize: 14.sp, color: AppColors.p300PrimaryColor),
                     )
                   ],
                 ),
-                CustomAppBottom(title: buttonTitle,onTap: onTap,),
+                CustomAppBottom(
+                  title: buttonTitle,
+                  onTap: onTap,
+                  widthDivider: 1.2.h,
+                ),
               ],
             )
-          : CustomAppBottom(title: buttonTitle,onTap: onTap),
+          : CustomAppBottom(title: buttonTitle, onTap: onTap),
     );
   }
 }

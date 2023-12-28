@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
 import 'package:forme_app/features/Trainer_ditails/data/models/trainer_review_model.dart';
-import 'package:forme_app/features/Trainer_ditails/presentation/views/widgets/trainger_review.dart';
+import 'package:forme_app/features/Trainer_ditails/presentation/views/widgets/trainer_review.dart';
 
 class WorkoutReviewTab extends StatelessWidget {
   const WorkoutReviewTab({super.key});

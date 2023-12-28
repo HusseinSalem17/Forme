@@ -5,12 +5,14 @@ import 'package:forme_app/core/transitions/page_slide.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
 import 'package:forme_app/features/Trainer_ditails/data/models/trainer_review_model.dart';
-import 'package:forme_app/features/Trainer_ditails/presentation/views/widgets/trainger_review.dart';
+import 'package:forme_app/features/Trainer_ditails/presentation/views/widgets/trainer_review.dart';
 import 'package:forme_app/features/reviews/presentation/views/add_review.dart';
 
 class ReviewsSection extends StatelessWidget {
+  final String type;
   const ReviewsSection({
     super.key,
+    required this.type,
   });
 
   @override
@@ -37,8 +39,10 @@ class ReviewsSection extends StatelessWidget {
                         fontSize: 11.sp, color: AppColors.p300PrimaryColor),
                   ),
                   onTap: () {
-                    Navigator.of(context)
-                        .push(PageSlideTransition(const AddReview()));
+                    Navigator.of(context).push(PageSlideTransition(AddReview(
+                      type: type,
+                    )));
+                    //const AddReview()
                   },
                 ),
               ],

@@ -57,6 +57,7 @@ flutter:
     - assets/image/
     - assets/image/Icon/
     - assets/image/onboarding/
+    - assets/image/profile/
     - assets/image/temp/
 
   fonts:

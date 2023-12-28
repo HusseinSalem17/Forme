@@ -22,7 +22,7 @@ class CustomShadowButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: buttonSubTitle != null ? 131.h : 94,
+      height: buttonSubTitle != null ? 131.h : 100,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: const BorderRadius.only(
