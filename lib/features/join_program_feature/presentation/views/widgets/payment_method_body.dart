@@ -47,7 +47,7 @@ class _PaymentMethodBodyState extends State<PaymentMethodBody> {
             buildCustomRadioListTile(
                 0,
                 SvgPicture.asset(
-                  'assets/image/Icon/cash.svg', // Replace with the path to your SVG file
+                  'assets/image/Icon/cash.svg',
                 )),
             sizeBox,
             Text(
@@ -58,7 +58,7 @@ class _PaymentMethodBodyState extends State<PaymentMethodBody> {
             buildCustomRadioListTile(
               1,
               SvgPicture.asset(
-                'assets/image/Icon/visa.svg', // Replace with the path to your SVG file
+                'assets/image/Icon/visa.svg',
               ),
             ),
             sizeBox,
@@ -70,14 +70,14 @@ class _PaymentMethodBodyState extends State<PaymentMethodBody> {
             buildCustomRadioListTile(
               2,
               SvgPicture.asset(
-                'assets/image/Icon/paypal.svg', // Replace with the path to your SVG file
+                'assets/image/Icon/paypal.svg',
               ),
             ),
             SizedBox(height: 8.h),
             buildCustomRadioListTile(
               3,
               SvgPicture.asset(
-                'assets/image/Icon/apple.svg', // Replace with the path to your SVG file
+                'assets/image/Icon/apple.svg',
               ),
             ),
           ],
