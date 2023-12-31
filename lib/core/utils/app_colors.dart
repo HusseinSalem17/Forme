@@ -25,6 +25,9 @@ abstract class AppColors {
   static const starColor = Color(0xffFFCF24);
   static const greenColor = Color(0xff25D02C);
   static const redColor = Color(0xffE72525);
+  static const d50Danger = Color(0xffF18181);
+  static const d100Danger = Color(0xffFDE9E9);
+  static const d300Danger = Color(0xffE72525);
 
 
 }

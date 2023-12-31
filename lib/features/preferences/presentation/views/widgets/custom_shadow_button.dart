@@ -1,29 +1,28 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/widgets/custom_app_botton.dart';
-import 'package:forme_app/features/preferences/presentation/manager/preferences_bloc.dart';
-
 import '../../../../../core/utils/text_styles.dart';
 
 class CustomShadowButton extends StatelessWidget {
   final VoidCallback onTap;
   final String? buttonTitle;
   final String? buttonSubTitle;
+  final VoidCallback? subTitleOnTap;
 
   const CustomShadowButton({
     Key? key,
     required this.onTap,
     this.buttonTitle,
     this.buttonSubTitle,
+    this.subTitleOnTap,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: buttonSubTitle != null ? 131.h : 94,
+      height: buttonSubTitle != null ? 131.h : 100,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: const BorderRadius.only(
@@ -59,12 +58,15 @@ class CustomShadowButton extends StatelessWidget {
                 null) // Perform a null check before using buttonSubTitle
               Padding(
                 padding: EdgeInsets.only(top: 16.h),
-                child: Text(
-                  buttonSubTitle!,
-                  style: TextStyles.textStyleRegular.copyWith(
-                    color: AppColors.p300PrimaryColor,
+                child: GestureDetector(
+                  onTap: subTitleOnTap ?? () {},
+                  child: Text(
+                    buttonSubTitle!,
+                    style: TextStyles.textStyleRegular.copyWith(
+                      color: AppColors.p300PrimaryColor,
+                    ),
+                    textAlign: TextAlign.center,
                   ),
-                  textAlign: TextAlign.center,
                 ),
               )
           ],

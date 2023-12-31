@@ -15,10 +15,11 @@ class CustomTabBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return TabBar(
       enableFeedback: true,
+      labelPadding: EdgeInsets.zero,
       labelColor: AppColors.p300PrimaryColor,
       unselectedLabelColor: AppColors.n900PrimaryTextColor,
       labelStyle: TextStyles.textStyleRegular
-          .copyWith(fontWeight: FontWeight.w500, fontSize: 16.sp),
+          .copyWith(fontWeight: FontWeight.w400, fontSize: 16.sp),
       indicatorSize: TabBarIndicatorSize.tab,
       indicatorColor: AppColors.p300PrimaryColor,
       

@@ -1,0 +1,97 @@
+class SportsClubCardModel {
+  String typeCard, state, reviews, title, address, price, period;
+  int id;
+  String category;
+
+  SportsClubCardModel({
+    required this.id,
+    required this.category,
+    required this.typeCard,
+    required this.state,
+    required this.reviews,
+    required this.title,
+    required this.address,
+    required this.price,
+    required this.period,
+  });
+}
+
+List<SportsClubCardModel> sportsClubCardModel = [
+  SportsClubCardModel(
+    id: 0,
+    category: 'Sports Club',
+    typeCard: 'Yoga ',
+    state: ' Online Coaching',
+    reviews: '4.9',
+    title: 'Pulse Fitness Center',
+    address: 'Port Said, EGY',
+    price: '\$1500 ',
+    period: '/month',
+  ),
+  SportsClubCardModel(
+    id: 1,
+    category: 'Sports Club',
+    typeCard: 'Yoga ',
+    state: ' Online Coaching',
+    reviews: '4.9',
+    title: 'Pulse Fitness Center',
+    address: 'Cairo, EGY',
+    price: '\$1500 ',
+    period: '/month',
+  ),
+  SportsClubCardModel(
+    id: 2,
+    category: 'Sports Club',
+    typeCard: 'Yoga ',
+    state: ' Online Coaching',
+    reviews: '4.9',
+    title: 'Pulse Fitness Center',
+    address: 'Port Said, EGY',
+    price: '\$1500 ',
+    period: '/month',
+  ),
+  SportsClubCardModel(
+    id: 3,
+    category: 'Sports Club',
+    typeCard: 'Yoga ',
+    state: ' Online Coaching',
+    reviews: '4.9',
+    title: 'Pulse Fitness Center',
+    address: 'Cairo, EGY',
+    price: '\$1500 ',
+    period: '/month',
+  ),
+  SportsClubCardModel(
+    id: 4,
+    category: 'Sports Club',
+    typeCard: 'Yoga ',
+    state: ' Online Coaching',
+    reviews: '4.9',
+    title: 'Pulse Fitness Center',
+    address: 'Cairo, EGY',
+    price: '\$1500 ',
+    period: '/month',
+  ),
+  SportsClubCardModel(
+    id: 5,
+    category: 'Sports Club',
+    typeCard: 'Yoga ',
+    state: ' Online Coaching',
+    reviews: '4.9',
+    title: 'Pulse Fitness Center',
+    address: 'Port Said, EGY',
+    price: '\$1500 ',
+    period: '/month',
+  ),
+  SportsClubCardModel(
+    id: 6,
+    category: 'Sports Club',
+    typeCard: 'Yoga ',
+    state: ' Online Coaching',
+    reviews: '4.9',
+    title: 'Pulse Fitness Center',
+    address: 'Cairo, EGY',
+    price: '\$1500 ',
+    period: '/month',
+  ),
+];
