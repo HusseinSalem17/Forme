@@ -21,7 +21,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       backgroundColor: Colors.white,
       elevation: 0,
       title: title,
-      titleTextStyle: TextStyles.appTitleStyle,
+      titleTextStyle: TextStyles.appBarTitleStyle,
       centerTitle: true,
       leading: CustomAppBarArrowButton(
         onTap: () {},
