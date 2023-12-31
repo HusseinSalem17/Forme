@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 
-class CardImageSection extends StatelessWidget {
-  const CardImageSection({
+class RemoveCardImage extends StatelessWidget {
+  const RemoveCardImage({
     super.key,
     required this.height,
     required this.width,
@@ -20,24 +20,24 @@ class CardImageSection extends StatelessWidget {
       child: Stack(
         children: [
           SizedBox(
-            height: height, //size.height / 3.75 / 2,
-            width: width, //size.width / 2,
+            height: height, 
+            width: width,
             child: ClipRRect(
               borderRadius: BorderRadius.circular(4),
               child: Image.asset(
-                'assets/image/m.jpg',
+                'assets/image/workout_image.jpg',
                 fit: BoxFit.cover,
               ),
             ),
           ),
           Positioned(
-            top: topPaddingIcon.w,
-            left: leftPaddingIcon.h,
+            top: topPaddingIcon,
+            left: leftPaddingIcon,
             child: const CircleAvatar(
               radius: 10,
               backgroundColor: Colors.white,
               child: Icon(
-                Icons.favorite_border,
+                Icons.favorite,
                 color: AppColors.p300PrimaryColor,
                 size: 15,
               ),
@@ -48,18 +48,3 @@ class CardImageSection extends StatelessWidget {
     );
   }
 }
-// const Padding(
-//             padding: EdgeInsets.only(top: 7, right: 7),
-//             child: Align(
-//               alignment: Alignment.topRight,
-//               child: CircleAvatar(
-//                 radius: 10,
-//                 backgroundColor: Colors.white,
-//                 child: Icon(
-//                   Icons.favorite_border,
-//                   color: AppColors.p300PrimaryColor,
-//                   size: 15,
-//                 ),
-//               ),
-//             ),
-//           ),
