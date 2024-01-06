@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:forme_app/features/Favorite/presentation/views/favorite_screen.dart';
 import 'package:forme_app/features/home/presentation/manager/bloc/home_bloc.dart';
 import 'package:forme_app/features/home/presentation/views/home_body.dart';
 import 'package:forme_app/features/home/presentation/views/widgets/custom_bottom_navigation_bar.dart';
@@ -18,7 +19,7 @@ class _HomeScreenState extends State<HomeScreen> {
   final List<Widget> _pages = [
     const HomeBody(),
     const SafeArea(child: Center(child: Text('2'))),
-    const SafeArea(child: Center(child: Text('3'))),
+    const SafeArea(child: Center(child: FavoriteScreen())),
     const SafeArea(child: Center(child: Text('4'))),
     const SafeArea(child: ProfileScreen()),
   ];
