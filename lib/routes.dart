@@ -9,6 +9,7 @@ import 'package:forme_app/features/Trainer_ditails/presentation/views/success_st
 import 'package:forme_app/features/Trainer_ditails/presentation/views/trainer_details_view.dart';
 import 'package:forme_app/features/featured/presentation/featured_screen.dart';
 import 'package:forme_app/features/home/presentation/views/home_view.dart';
+import 'package:forme_app/features/join_program_feature/presentation/views/add_new_card_screen.dart';
 import 'package:forme_app/features/payment/presentation/view/congratulation_screen.dart';
 import 'package:forme_app/features/profile/presentation/views/help_center.dart';
 import 'package:forme_app/features/profile/presentation/views/my_profile.dart';
@@ -18,8 +19,13 @@ import 'package:forme_app/features/reviews/presentation/views/add_review.dart';
 import 'package:forme_app/features/sports_club/presentation/views/sports_club.dart';
 import 'package:forme_app/splash_screen.dart';
 import 'package:forme_app/onboarding_screens/views/onboarding_screen.dart';
+
 import 'features/Complete_profile/presentation/views/complete_profile.dart';
+import 'features/book_appointment_with _trainer/presentation/views/payment_methods_screen.dart';
+import 'features/join_program_feature/presentation/views/book_onling_coach_screen.dart';
+import 'features/join_program_feature/presentation/views/payment_successfully_screen.dart';
 import 'features/join_program_feature/presentation/views/review_summary.dart';
+
 import 'features/preferences/presentation/views/preferences_screen.dart';
 
 Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
@@ -155,15 +161,13 @@ MaterialPageRoute<dynamic> newpasswordRoute() {
 
 MaterialPageRoute<dynamic> preferencesScreenRoute() {
   return MaterialPageRoute(
-    //builder: (context) => const BookOnlineCoachScreen(),
-    //builder: (context) => const PaymentMethodsScreen(),
-    builder: (context) => const ReviewSummary(),
+    builder: (context) => const PaymentSuccessfullyScreen(),
   );
 }
 
 MaterialPageRoute<dynamic> homeRoute() {
   return MaterialPageRoute(
-    builder: (context) => const HomeScreen(),
+    builder: (context) => const AddNewCardScreen(),
   );
 }
 

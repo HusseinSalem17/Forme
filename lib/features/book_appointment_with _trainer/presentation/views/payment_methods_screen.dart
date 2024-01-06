@@ -1,27 +1,32 @@
 import 'package:flutter/material.dart';
 import 'package:forme_app/features/join_program_feature/presentation/views/widgets/custom_app_bar.dart';
-import '../../../book_appointment_with _trainer/presentation/views/add_new_card_screen.dart';
+import 'package:forme_app/features/join_program_feature/presentation/views/widgets/payment_method_body.dart';
 import '../../../preferences/presentation/views/widgets/custom_shadow_button.dart';
 
-class AddNewCardScreen extends StatelessWidget {
-  const AddNewCardScreen({Key? key}) : super(key: key);
+class PaymentMethodsScreen extends StatefulWidget {
+  const PaymentMethodsScreen({Key? key}) : super(key: key);
 
   @override
+  State<PaymentMethodsScreen> createState() => _PaymentMethodsScreenState();
+}
+
+class _PaymentMethodsScreenState extends State<PaymentMethodsScreen> {
+  @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       appBar: const CustomAppBar(
-        title: Text('Add New Card'),
+        title: Text('Payment Methods'),
       ),
       body: Stack(
         children: [
-          const CustomCreditCard(),
+          const PaymentMethodBody(),
           Align(
             alignment: Alignment.bottomCenter,
             child: CustomShadowButton(
               onTap: () {
-                debugPrint('Hi');
+                print('Hi');
               },
-              buttonTitle: 'Add Card',
+              buttonTitle: 'Continue',
             ),
           )
         ],
@@ -29,6 +34,3 @@ class AddNewCardScreen extends StatelessWidget {
     );
   }
 }
-
-
-
