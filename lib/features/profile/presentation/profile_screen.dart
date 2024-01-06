@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:forme_app/core/test_models/top_trainers_model.dart';
 import 'package:forme_app/core/transitions/page_slide.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
@@ -9,6 +8,7 @@ import 'package:forme_app/features/profile/presentation/views/help_center.dart';
 import 'package:forme_app/features/profile/presentation/views/my_profile.dart';
 import 'package:forme_app/features/profile/presentation/views/privacy_policy.dart';
 import 'package:forme_app/features/profile/presentation/views/settings_screen.dart';
+import 'package:forme_app/features/profile/presentation/widgets/profile_feature.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -116,38 +116,5 @@ class ProfileScreen extends StatelessWidget {
     ));
   }
 
-  GestureDetector profileFeature(
-      String icon, String title, void Function()? onTap, Color textColor) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Column(
-        children: [
-          Row(
-            children: [
-              Padding(
-                padding: EdgeInsets.only(right: 16.w),
-                child: SvgPicture.asset('assets/image/profile/$icon.svg'),
-              ),
-              Text(
-                title,
-                style: TextStyles.textStyleRegular
-                    .copyWith(height: 3, fontSize: 16.w, color: textColor),
-              ),
-              const Spacer(),
-              Visibility(
-                visible: textColor != AppColors.redColor
-                    ? true
-                    : false, // Set this to your condition
-                child: SvgPicture.asset('assets/image/profile/arrow.svg'),
-              )
-            ],
-          ),
-          const Divider(
-            thickness: 1,
-            color: AppColors.n30StrokeColor,
-          )
-        ],
-      ),
-    );
-  }
+  
 }

@@ -167,7 +167,7 @@ MaterialPageRoute<dynamic> preferencesScreenRoute() {
 
 MaterialPageRoute<dynamic> homeRoute() {
   return MaterialPageRoute(
-    builder: (context) => const AddNewCardScreen(),
+    builder: (context) => const HomeScreen(),
   );
 }
 
