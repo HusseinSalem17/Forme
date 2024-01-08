@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:forme_app/core/transitions/page_slide.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/widgets/simple_app_bar.dart';
+import 'package:forme_app/features/profile/presentation/views/password_manager.dart';
 import 'package:forme_app/features/profile/presentation/widgets/pop_up.dart';
 import 'package:forme_app/features/profile/presentation/widgets/profile_feature.dart';
 
@@ -33,14 +35,17 @@ class SettingsScreen extends StatelessWidget {
               return profileFeature(icons[index], features[index], () {
                 switch (index) {
                   case 0: //notifcation
-                  case 1: //Password manager
+                  case 1:
+                    Navigator.of(context)
+                        .push(PageSlideTransition(const PasswordManager()));
                   case 2: //change language
                   case 3:
                     popUp(
-                        context,
-                        'Delete Account',
-                        'Are you sure you want to delete this account?',
-                        'Yes, Delete');
+                      context,
+                      'Delete Account',
+                      'Are you sure you want to delete this account?',
+                      'Yes, Delete',
+                    );
                 }
               },
                   index != 3

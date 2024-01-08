@@ -8,6 +8,7 @@ import 'package:forme_app/features/profile/presentation/views/help_center.dart';
 import 'package:forme_app/features/profile/presentation/views/my_profile.dart';
 import 'package:forme_app/features/profile/presentation/views/privacy_policy.dart';
 import 'package:forme_app/features/profile/presentation/views/settings_screen.dart';
+import 'package:forme_app/features/profile/presentation/widgets/pop_up.dart';
 import 'package:forme_app/features/profile/presentation/widgets/profile_feature.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -97,12 +98,21 @@ class ProfileScreen extends StatelessWidget {
                           .push(PageSlideTransition(const SettingsScreen()));
                     case 7:
                       Navigator.of(context)
-                          .push(PageSlideTransition(const HelpCenter()));
+                          .push(PageSlideTransition(const HelpCenter(
+                        filterTypes: [
+                          'all',
+                          'GYM',
+                          'Swimming',
+                          'Boxing',
+                          'Rumming'
+                        ],
+                      )));
                     case 8:
                       Navigator.of(context)
                           .push(PageSlideTransition(const PrivacyPolicy()));
                     case 9:
-                     //log out
+                      popUp(context, 'Logout',
+                          'Are you sure you want to log out?', 'Log Out');
                   }
                 },
                     index != 9
@@ -115,6 +125,4 @@ class ProfileScreen extends StatelessWidget {
       ),
     ));
   }
-
-  
 }
