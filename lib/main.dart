@@ -9,7 +9,6 @@ import 'package:forme_app/features/workout_detail/presentation/views/workout_det
 import 'package:forme_app/onboarding_screens/data/bloc/onboarding_blocs.dart';
 import 'package:flutter/services.dart';
 import 'package:forme_app/routes.dart';
-
 import 'core/utils/functions/service_locator.dart';
 import 'core/utils/scroll_behavior.dart';
 import 'features/home/presentation/manager/bloc/home_bloc.dart';

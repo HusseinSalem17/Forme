@@ -83,8 +83,8 @@ Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
 //----- featured Routing -------
     case FeaturedScreen.routeName:
       final List<dynamic> args = settings.arguments as List<dynamic>;
-      final List<String> filterType = args[1] as List<String>;
-      final String featuredType = args[2] as String;
+      final List<String> filterType = args[0] as List<String>;
+      final String featuredType = args[1] as String;
       return featuredRoute(filterType, featuredType);
 //----- profile Routing -------
     case MyProfile.routeName:
@@ -92,7 +92,9 @@ Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
     case SettingsScreen.routeName:
       return settingsRoute();
     case HelpCenter.routeName:
-      return helpCenterRoute();
+      final List<dynamic> args = settings.arguments as List<dynamic>;
+      final List<String> filterType = args[0] as List<String>;
+      return helpCenterRoute(filterType);
     case PrivacyPolicy.routeName:
       return privacyPolicyRoute();
 //---------------------------------------
@@ -167,7 +169,7 @@ MaterialPageRoute<dynamic> preferencesScreenRoute() {
 
 MaterialPageRoute<dynamic> homeRoute() {
   return MaterialPageRoute(
-    builder: (context) => const AddNewCardScreen(),
+    builder: (context) => const HomeScreen(),
   );
 }
 
@@ -231,9 +233,11 @@ MaterialPageRoute<dynamic> settingsRoute() {
   );
 }
 
-MaterialPageRoute<dynamic> helpCenterRoute() {
+MaterialPageRoute<dynamic> helpCenterRoute(List<String> filterTypes) {
   return MaterialPageRoute(
-    builder: (context) => const HelpCenter(),
+    builder: (context) => HelpCenter(
+      filterTypes: filterTypes,
+    ),
   );
 }
 

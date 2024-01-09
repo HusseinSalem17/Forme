@@ -6,7 +6,9 @@ import 'package:forme_app/core/widgets/custom_app_bar_arrow_button.dart';
 
 AppBar simpleAppBar(BuildContext context,String title){
     return AppBar(
+      backgroundColor: AppColors.background,
         automaticallyImplyLeading: false,
+        
         title: Row(
           children: [
             CustomAppBarArrowButton(
