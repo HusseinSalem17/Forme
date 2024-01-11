@@ -4,8 +4,8 @@ import 'package:forme_app/core/transitions/page_slide.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/widgets/simple_app_bar.dart';
 import 'package:forme_app/features/profile/presentation/views/password_manager.dart';
-import 'package:forme_app/features/profile/presentation/widgets/pop_up.dart';
-import 'package:forme_app/features/profile/presentation/widgets/profile_feature.dart';
+import 'package:forme_app/features/profile/presentation/views/widgets/pop_up.dart';
+import 'package:forme_app/features/profile/presentation/views/widgets/profile_feature.dart';
 
 class SettingsScreen extends StatelessWidget {
   static const routeName = '/settings-screen';

@@ -4,7 +4,7 @@ import 'package:forme_app/features/Favorite/presentation/views/favorite_screen.d
 import 'package:forme_app/features/home/presentation/manager/bloc/home_bloc.dart';
 import 'package:forme_app/features/home/presentation/views/home_body.dart';
 import 'package:forme_app/features/home/presentation/views/widgets/custom_bottom_navigation_bar.dart';
-import 'package:forme_app/features/profile/presentation/profile_screen.dart';
+import 'package:forme_app/features/profile/presentation/views/profile_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   static const routeName = '/home-screen';

@@ -1,7 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:forme_app/features/complete_profile/data/repos/complete_profile_repo.dart';
-
+import 'package:forme_app/features/profile/data/repos/complete_profile_repo.dart';
 import '../../../data/models/Complete_profile_data.dart';
 
 part 'complete_profile_state.dart';

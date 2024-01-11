@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:forme_app/core/utils/app_theme.dart';
-import 'package:forme_app/features/Favorite/presentation/views/favorite_screen.dart';
-import 'package:forme_app/features/complete_profile/data/repos/complete_profile_repo_impl.dart';
-import 'package:forme_app/features/complete_profile/presentation/manager/complete_profile_cubit/complete_profile_cubit.dart';
-import 'package:forme_app/features/workout_detail/presentation/views/workout_detail.dart';
+import 'package:forme_app/features/profile/data/repos/complete_profile_repo.dart';
+import 'package:forme_app/features/profile/data/repos/complete_profile_repo_impl.dart';
+import 'package:forme_app/features/profile/presentation/manager/complete_profile_cubit/complete_profile_cubit.dart';
+
 import 'package:forme_app/onboarding_screens/data/bloc/onboarding_blocs.dart';
 import 'package:flutter/services.dart';
 import 'package:forme_app/routes.dart';
@@ -39,7 +39,7 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) =>
-              CompleteProfileCubit(getIt.get<CompleteProfileRepoImpl>()),
+              CompleteProfileCubit(getIt.get<CompleteProfileRepoImpl>() as CompleteProfileRepo),
         ),
         BlocProvider(
           create: (context) => HomeBloc(),

@@ -8,8 +8,7 @@ class MyProfile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: simpleAppBar(context, 'My Profile'),
-      body: const Center(child: Text('myprofile')),
-    );
+        appBar: simpleAppBar(context, 'My Profile'),
+        body: const SizedBox());
   }
 }
