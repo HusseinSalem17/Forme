@@ -34,6 +34,7 @@ class CustomPhoneField extends StatefulWidget {
   final String? errorText;
   final bool optional;
   final bool enabled;
+  final bool titleVisibility;
   const CustomPhoneField({
     Key? key,
     this.controller,
@@ -58,6 +59,7 @@ class CustomPhoneField extends StatefulWidget {
     this.errorBorder,
     this.contactsPickerPosition = ContactsPickerPosition.suffix,
     this.errorText,
+    this.titleVisibility = true,
     this.enabled = true,
   }) : super(key: key);
 
@@ -124,6 +126,7 @@ class _CountryCodePickerState extends State<CustomPhoneField> {
         builder: (context, snapshot) {
           return CustomBuildForm(
             optional: widget.optional,
+            titleVisibility: widget.titleVisibility,
             title: widget.title,
             child: Column(
               children: [

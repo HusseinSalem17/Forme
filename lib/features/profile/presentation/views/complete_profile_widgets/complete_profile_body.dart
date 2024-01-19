@@ -10,7 +10,7 @@ import '../../manager/complete_profile_cubit/complete_profile_cubit.dart';
 import 'body_fields.dart';
 
 class CompleteProfileBody extends StatefulWidget {
-  const CompleteProfileBody({Key? key}) : super(key: key);
+  const  CompleteProfileBody({Key? key}) : super(key: key);
 
   @override
   State<CompleteProfileBody> createState() => _CompleteProfileBodyState();

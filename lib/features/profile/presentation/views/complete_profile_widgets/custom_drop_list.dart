@@ -36,6 +36,13 @@ class CustomDropList extends StatefulWidget {
 class _CustomDropList extends State<CustomDropList> {
   String? _selectedValue;
   @override
+  void initState() {
+    super.initState();
+    // Set the default selected value here
+    _selectedValue = widget.items.isNotEmpty ? widget.items[0].value : null;
+  }
+
+  @override
   Widget build(BuildContext context) {
     return CustomBuildForm(
       title: widget.title,

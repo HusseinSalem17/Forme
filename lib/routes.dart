@@ -26,8 +26,8 @@ Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
   switch (settings.name) {
 //----- Splash Routing -----
     case '/':
-      return completeProfile();
-      //homeRoute();
+      return //completeProfile();
+      homeRoute();
     // splashRoute();
 
 //----- OnBoarding Routing -----

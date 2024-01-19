@@ -5,6 +5,7 @@ import 'package:forme_app/core/utils/app_theme.dart';
 import 'package:forme_app/features/profile/data/repos/complete_profile_repo.dart';
 import 'package:forme_app/features/profile/data/repos/complete_profile_repo_impl.dart';
 import 'package:forme_app/features/profile/presentation/manager/complete_profile_cubit/complete_profile_cubit.dart';
+import 'package:forme_app/features/profile/presentation/manager/my_profile_cubit/cubit/my_profile_cubit.dart';
 
 import 'package:forme_app/onboarding_screens/data/bloc/onboarding_blocs.dart';
 import 'package:flutter/services.dart';
@@ -40,6 +41,10 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (context) =>
               CompleteProfileCubit(getIt.get<CompleteProfileRepoImpl>() as CompleteProfileRepo),
+        ),
+        BlocProvider(
+          create: (context) =>
+              MyProfileCubit(),
         ),
         BlocProvider(
           create: (context) => HomeBloc(),
