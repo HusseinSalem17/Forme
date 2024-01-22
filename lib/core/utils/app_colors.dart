@@ -28,6 +28,7 @@ abstract class AppColors {
   static const d50Danger = Color(0xffF18181);
   static const d100Danger = Color(0xffFDE9E9);
   static const d300Danger = Color(0xffE72525);
+  static const n300 = Color(0xff5B636F);
 
 
 }

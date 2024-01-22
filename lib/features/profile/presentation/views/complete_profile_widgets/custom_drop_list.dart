@@ -2,8 +2,7 @@ import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:forme_app/features/complete_profile/presentation/views/widgets/custom_build_form.dart';
-
+import 'package:forme_app/features/profile/presentation/views/complete_profile_widgets/custom_build_form.dart';
 import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/utils/styles.dart';
 import '../../../../../core/utils/text_styles.dart';
@@ -16,7 +15,7 @@ class CustomDropList extends StatefulWidget {
   final Function(String?)? onSaved;
   final String? Function(String?)? validator;
   final Widget? hint;
-
+  final bool enabled;
   const CustomDropList({
     super.key,
     this.hint,
@@ -27,6 +26,7 @@ class CustomDropList extends StatefulWidget {
     this.onChanged,
     this.onSaved,
     this.validator,
+    this.enabled = true,
   });
 
   @override
@@ -34,6 +34,14 @@ class CustomDropList extends StatefulWidget {
 }
 
 class _CustomDropList extends State<CustomDropList> {
+  String? _selectedValue;
+  @override
+  void initState() {
+    super.initState();
+    // Set the default selected value here
+    _selectedValue = widget.items.isNotEmpty ? widget.items[0].value : null;
+  }
+
   @override
   Widget build(BuildContext context) {
     return CustomBuildForm(
@@ -63,7 +71,7 @@ class _CustomDropList extends State<CustomDropList> {
         hint: widget.hint,
         items: widget.items,
         validator: widget.validator,
-        onChanged: widget.onChanged,
+        onChanged: widget.enabled ? (value) => _onDropdownChanged(value) : null,
         onSaved: widget.onSaved,
         buttonStyleData: const ButtonStyleData(
           padding: EdgeInsets.only(right: 8),
@@ -98,5 +106,16 @@ class _CustomDropList extends State<CustomDropList> {
         isDense: true, // Set to true to reduce the height
       ),
     );
+  }
+
+  void _onDropdownChanged(String? value) {
+    setState(() {
+      _selectedValue = value;
+    });
+
+    // Call the provided onChanged callback if available
+    if (widget.onChanged != null) {
+      widget.onChanged!(_selectedValue);
+    }
   }
 }

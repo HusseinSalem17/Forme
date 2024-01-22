@@ -4,12 +4,12 @@ import 'package:forme_app/core/test_models/top_trainers_model.dart';
 import 'package:forme_app/core/transitions/page_slide.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
-import 'package:forme_app/features/profile/presentation/views/help_center.dart';
+import 'package:forme_app/features/profile/presentation/views/help_center/help_center.dart';
 import 'package:forme_app/features/profile/presentation/views/my_profile.dart';
 import 'package:forme_app/features/profile/presentation/views/privacy_policy.dart';
 import 'package:forme_app/features/profile/presentation/views/settings_screen.dart';
-import 'package:forme_app/features/profile/presentation/widgets/pop_up.dart';
-import 'package:forme_app/features/profile/presentation/widgets/profile_feature.dart';
+import 'package:forme_app/features/profile/presentation/views/widgets/pop_up.dart';
+import 'package:forme_app/features/profile/presentation/views/widgets/profile_feature.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});

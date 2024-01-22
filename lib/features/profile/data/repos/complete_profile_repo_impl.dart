@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
-import 'package:forme_app/features/complete_profile/data/models/Complete_profile_data.dart';
-import 'package:forme_app/features/complete_profile/data/repos/complete_profile_repo.dart';
+import 'package:forme_app/features/profile/data/models/Complete_profile_data.dart';
+import 'package:forme_app/features/profile/data/repos/complete_profile_repo.dart';
 
 import '../../../../core/errors/failures.dart';
 import '../../../../core/widgets/flutter_toast.dart';

@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
 import 'package:forme_app/features/featured/presentation/widgets/filter_type.dart';
-import 'package:forme_app/features/profile/presentation/widgets/custom_expansion_tile.dart';
+import 'package:forme_app/features/profile/presentation/views/widgets/custom_expansion_tile.dart';
 
 class FAQsTab extends StatelessWidget {
   final List<String> filterTypes;

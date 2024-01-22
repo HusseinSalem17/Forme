@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
-import 'package:forme_app/features/complete_profile/presentation/views/widgets/custom_build_form.dart';
+import 'package:forme_app/features/profile/presentation/views/complete_profile_widgets/custom_build_form.dart';
 
 import '../../../../../core/utils/functions/validators.dart';
 import '../../../../../core/utils/styles.dart';
@@ -21,7 +20,7 @@ class CustomTextField extends StatefulWidget {
     this.errorText,
     required this.title,
     this.optional = false,
-    this.required = false,
+    this.enabled = true,
   }) : super(key: key);
 
   final void Function(String)? onChanged;
@@ -32,7 +31,7 @@ class CustomTextField extends StatefulWidget {
   final TextInputType? keyboardType;
   final TextEditingController? confirmPasswordController;
   final String? Function(String?)? validator;
-  final bool required;
+  final bool enabled;
 
   @override
   CustomTextFieldState createState() => CustomTextFieldState();
@@ -51,6 +50,7 @@ class CustomTextFieldState extends State<CustomTextField> {
         controller: widget.controller,
         autovalidateMode: AutovalidateMode.onUserInteraction,
         cursorColor: AppColors.p300PrimaryColor,
+        enabled: widget.enabled,
         style: TextStyles.textStyleRegular
             .copyWith(
               fontSize: 14.sp,

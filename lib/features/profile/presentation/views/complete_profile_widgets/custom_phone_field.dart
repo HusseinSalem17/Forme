@@ -8,7 +8,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
-import 'package:forme_app/features/complete_profile/presentation/views/widgets/custom_build_form.dart';
+import 'package:forme_app/features/profile/presentation/views/complete_profile_widgets/custom_build_form.dart';
 
 class CustomPhoneField extends StatefulWidget {
   final PhoneNumberInputController? controller;
@@ -33,6 +33,8 @@ class CustomPhoneField extends StatefulWidget {
   final ContactsPickerPosition contactsPickerPosition;
   final String? errorText;
   final bool optional;
+  final bool enabled;
+  final bool titleVisibility;
   const CustomPhoneField({
     Key? key,
     this.controller,
@@ -57,6 +59,8 @@ class CustomPhoneField extends StatefulWidget {
     this.errorBorder,
     this.contactsPickerPosition = ContactsPickerPosition.suffix,
     this.errorText,
+    this.titleVisibility = true,
+    this.enabled = true,
   }) : super(key: key);
 
   @override
@@ -122,12 +126,14 @@ class _CountryCodePickerState extends State<CustomPhoneField> {
         builder: (context, snapshot) {
           return CustomBuildForm(
             optional: widget.optional,
+            titleVisibility: widget.titleVisibility,
             title: widget.title,
             child: Column(
               children: [
                 Directionality(
                   textDirection: TextDirection.ltr,
                   child: TextFormField(
+                    enabled: widget.enabled,
                     style: TextStyles.textStyleRegular.copyWith(
                       color: AppColors.n900PrimaryTextColor,
                       fontSize: 14.sp,

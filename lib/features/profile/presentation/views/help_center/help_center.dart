@@ -4,9 +4,9 @@ import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
 import 'package:forme_app/core/widgets/custom_app_bar_arrow_button.dart';
 import 'package:forme_app/core/widgets/custom_tab_bar.dart';
-import 'package:forme_app/features/profile/presentation/views/contact_us.dart';
-import 'package:forme_app/features/profile/presentation/views/f_a_q.dart';
-import 'package:forme_app/features/profile/presentation/widgets/search_text_field.dart';
+import 'package:forme_app/features/profile/presentation/views/help_center/contact_us.dart';
+import 'package:forme_app/features/profile/presentation/views/help_center/f_a_q.dart';
+import 'package:forme_app/features/profile/presentation/views/widgets/search_text_field.dart';
 
 class HelpCenter extends StatefulWidget {
   static const routeName = '/help-center-screen';

@@ -1,19 +1,16 @@
-// complete_profile_body.dart
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:forme_app/features/complete_profile/presentation/views/widgets/profile_image_picker.dart';
+import 'package:forme_app/features/profile/presentation/views/complete_profile_widgets/custom_primary_button.dart';
+import 'package:forme_app/features/profile/presentation/views/complete_profile_widgets/profile_image_picker.dart';
 import 'package:image_picker/image_picker.dart';
-
-import 'package:forme_app/features/complete_profile/data/models/Complete_profile_data.dart';
-import 'package:forme_app/features/complete_profile/presentation/views/widgets/custom_primary_button.dart';
-
+import 'package:forme_app/features/profile/data/models/Complete_profile_data.dart';
 import '../../../../Authentication/presentation/views/widgets/header_text.dart';
 import '../../manager/complete_profile_cubit/complete_profile_cubit.dart';
 import 'body_fields.dart';
 
 class CompleteProfileBody extends StatefulWidget {
-  const CompleteProfileBody({Key? key}) : super(key: key);
+  const  CompleteProfileBody({Key? key}) : super(key: key);
 
   @override
   State<CompleteProfileBody> createState() => _CompleteProfileBodyState();
