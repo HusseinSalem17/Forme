@@ -5,9 +5,19 @@ import 'package:forme_app/core/utils/text_styles.dart';
 
 class CustomAppBottom extends StatelessWidget {
   final String title;
-  final double widthDivider;
+  final double widthDivider, height, padding, fontSize;
   final void Function()? onTap;
-  const CustomAppBottom({super.key, required this.title,this.onTap,this.widthDivider=1});
+  final Color color;
+  const CustomAppBottom({
+    super.key,
+    required this.title,
+    this.onTap,
+    this.widthDivider = 1,
+    this.color = AppColors.p300PrimaryColor,
+    this.height = 48,
+    this.padding = 16,
+    this.fontSize = 16,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -15,25 +25,25 @@ class CustomAppBottom extends StatelessWidget {
       onTap: onTap,
       child: SizedBox(
         child: Container(
-          height: 48.h,
-          width: MediaQuery.sizeOf(context).width/widthDivider,
+          height: height.h,
+          width: MediaQuery.sizeOf(context).width / widthDivider,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(40.dg),
-            color: AppColors.p300PrimaryColor,
+            color: color,
             boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.1),
-            blurRadius: 4,
-            offset: const Offset(0, -2),
+              BoxShadow(
+                color: Colors.black.withOpacity(0.1),
+                blurRadius: 4,
+                offset: const Offset(0, -2),
+              ),
+            ],
           ),
-        ],
-          ),
-          padding: EdgeInsets.all(16.0.h),
+          padding: EdgeInsets.all(padding.h),
           child: Center(
             child: Text(
               title,
               style: TextStyles.textStyleMedium
-                  .copyWith(fontSize: 16.sp, color: AppColors.background),
+                  .copyWith(fontSize: fontSize.sp, color: AppColors.background,height: 1),
             ),
           ),
         ),

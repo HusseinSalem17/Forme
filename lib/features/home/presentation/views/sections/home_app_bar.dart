@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
-import 'package:forme_app/features/home/presentation/views/widgets/custom_search_text_field.dart';
+import 'package:forme_app/core/widgets/custom_search_text_field.dart';
 import 'package:forme_app/features/home/presentation/views/widgets/map_popub_menu.dart';
 
 class HomeAppBar extends StatelessWidget {

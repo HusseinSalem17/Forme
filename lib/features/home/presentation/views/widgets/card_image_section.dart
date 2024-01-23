@@ -3,16 +3,16 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 
 class CardImageSection extends StatelessWidget {
-  const CardImageSection(
-      {super.key,
-      required this.height,
-      required this.width,
-      this.bottomPadding = 8,
-      this.leftPaddingIcon=130,
-      this.topPaddingIcon=5,
-      });
+  const CardImageSection({
+    super.key,
+    required this.height,
+    required this.width,
+    this.bottomPadding = 8,
+    this.leftPaddingIcon = 130,
+    this.topPaddingIcon = 5,
+  });
 
-  final double height, width, bottomPadding,topPaddingIcon,leftPaddingIcon;
+  final double height, width, bottomPadding, topPaddingIcon, leftPaddingIcon;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -33,7 +33,7 @@ class CardImageSection extends StatelessWidget {
           Positioned(
             top: topPaddingIcon.w,
             left: leftPaddingIcon.h,
-            child:  const CircleAvatar(
+            child: const CircleAvatar(
               radius: 10,
               backgroundColor: Colors.white,
               child: Icon(
