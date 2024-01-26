@@ -4,6 +4,7 @@ import 'package:forme_app/features/Authentication/presentation/views/new_passwor
 import 'package:forme_app/features/Authentication/presentation/views/sign_up_view.dart';
 import 'package:forme_app/features/Authentication/presentation/views/sign_in_view.dart';
 import 'package:forme_app/features/Authentication/presentation/views/verify_code.dart';
+import 'package:forme_app/features/trainer_features/dashboard/presentation/views/home_view.dart';
 import 'package:forme_app/features/user_features/Payment/presentation/view/ereceipt_screen.dart';
 import 'package:forme_app/features/user_features/Trainer_ditails/presentation/views/success_story.dart';
 import 'package:forme_app/features/user_features/Trainer_ditails/presentation/views/trainer_details_view.dart';
@@ -26,8 +27,8 @@ Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
   switch (settings.name) {
 //----- Splash Routing -----
     case '/':
-      return //completeProfile();
-      homeRoute();
+      return trainerHomeRoute();
+    //homeRoute();
     // splashRoute();
 
 //----- OnBoarding Routing -----
@@ -45,7 +46,7 @@ Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
       return verifyCodeRoute();
     case NewPasswordScreen.routeName:
       return newpasswordRoute();
-
+//------------------------------------------- user section ------------------------
 //----- Preferences Routing -----
     case PreferencesScreen.routeName:
       return preferencesScreenRoute();
@@ -92,6 +93,10 @@ Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
       return helpCenterRoute(filterType);
     case PrivacyPolicy.routeName:
       return privacyPolicyRoute();
+//------------------------------------------- trainer section -----------------------
+//-------- Home Routing -----------
+    case TrainerHomeScreen.routeName:
+      return trainerHomeRoute();
 //---------------------------------------
     default:
       return notFound();
@@ -239,5 +244,13 @@ MaterialPageRoute<dynamic> helpCenterRoute(List<String> filterTypes) {
 MaterialPageRoute<dynamic> privacyPolicyRoute() {
   return MaterialPageRoute(
     builder: (context) => const PrivacyPolicy(),
+  );
+}
+
+// ---------------- trainer section --------------
+
+MaterialPageRoute<dynamic> trainerHomeRoute() {
+  return MaterialPageRoute(
+    builder: (context) => const TrainerHomeScreen(),
   );
 }

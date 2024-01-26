@@ -10,59 +10,57 @@ class HomeBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: SingleChildScrollView(
-        child: Column(
-          children: [
-            const HomeAppBar(),
-            TopTrainersSection(
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          const HomeAppBar(),
+          TopTrainersSection(
+            onTap: () {
+              Navigator.of(context)
+                  .push(PageSlideTransition(const FeaturedScreen(
+                featureType: "Top trainer",
+                filterTypes: ['all', 'GYM', 'Swimming', 'Boxing', 'Rumming'],
+              )));
+            },
+          ),
+          Listing(
+            title: 'Special Programs',
+            onTap: () {
+              Navigator.of(context)
+                  .push(PageSlideTransition(const FeaturedScreen(
+                featureType: "Special Programs",
+                filterTypes: ['all', 'GYM', 'Swimming', 'Boxing', 'Rumming'],
+              )));
+            },
+          ),
+          Listing(
+              title: 'Featured Workouts',
               onTap: () {
                 Navigator.of(context)
                     .push(PageSlideTransition(const FeaturedScreen(
-                  featureType: "Top trainer",
-                  filterTypes: ['all', 'GYM', 'Swimming', 'Boxing', 'Rumming'],
+                  featureType: "Featured Workouts",
+                  filterTypes: [
+                    'all',
+                    'GYM',
+                    'Swimming',
+                    'Boxing',
+                    'Rumming'
+                  ],
                 )));
-              },
-            ),
-            Listing(
-              title: 'Special Programs',
-              onTap: () {
-                Navigator.of(context)
-                    .push(PageSlideTransition(const FeaturedScreen(
-                  featureType: "Special Programs",
-                  filterTypes: ['all', 'GYM', 'Swimming', 'Boxing', 'Rumming'],
-                )));
-              },
-            ),
-            Listing(
-                title: 'Featured Workouts',
-                onTap: () {
-                  Navigator.of(context)
-                      .push(PageSlideTransition(const FeaturedScreen(
-                    featureType: "Featured Workouts",
-                    filterTypes: [
-                      'all',
-                      'GYM',
-                      'Swimming',
-                      'Boxing',
-                      'Rumming'
-                    ],
-                  )));
-                }),
-            Listing(
-              title: 'Special Offers Clubs',
-              onTap: () {
-                Navigator.of(context)
-                    .push(PageSlideTransition(const FeaturedScreen(
-                  featureType: "Special Offers",
-                  filterTypes: ['all', 'GYM', 'Swimming', 'Boxing', 'Rumming'],
-                )));
-              },
-              isVertical: true,
-              listheight: 1.9,
-            )
-          ],
-        ),
+              }),
+          Listing(
+            title: 'Special Offers Clubs',
+            onTap: () {
+              Navigator.of(context)
+                  .push(PageSlideTransition(const FeaturedScreen(
+                featureType: "Special Offers",
+                filterTypes: ['all', 'GYM', 'Swimming', 'Boxing', 'Rumming'],
+              )));
+            },
+            isVertical: true,
+            listheight: 1.9,
+          )
+        ],
       ),
     );
   }

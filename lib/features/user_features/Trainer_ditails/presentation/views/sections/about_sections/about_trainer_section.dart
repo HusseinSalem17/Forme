@@ -7,7 +7,7 @@ import 'package:forme_app/features/user_features/Trainer_ditails/presentation/vi
 import 'package:forme_app/features/user_features/Trainer_ditails/presentation/views/widgets/trainer_icon.dart';
 
 class AboutTrainer extends StatelessWidget {
-  const AboutTrainer({super.key});
+  const  AboutTrainer({super.key});
 
   @override
   Widget build(BuildContext context) {

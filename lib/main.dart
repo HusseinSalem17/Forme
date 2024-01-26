@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:forme_app/core/utils/app_theme.dart';
+import 'package:forme_app/features/trainer_features/dashboard/presentation/views/manager/bloc/trainer_home_bloc.dart';
 import 'package:forme_app/features/user_features/home/presentation/manager/bloc/home_bloc.dart';
 import 'package:forme_app/features/user_features/preferences/presentation/manager/preferences_bloc.dart';
 import 'package:forme_app/features/user_features/profile/data/repos/complete_profile_repo_impl.dart';
@@ -45,6 +46,9 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => HomeBloc(),
+        ),
+        BlocProvider(
+          create: (context) => TrainerHomeBloc(),
         ),
       ],
       child: ScreenUtilInit(
