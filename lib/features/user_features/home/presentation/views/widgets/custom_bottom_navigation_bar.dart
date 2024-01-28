@@ -6,8 +6,14 @@ import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/features/user_features/home/presentation/manager/bloc/home_bloc.dart';
 
 class CustomBottomNavigationBar extends StatefulWidget {
-  const CustomBottomNavigationBar({Key? key}) : super(key: key);
-
+  const CustomBottomNavigationBar({
+    Key? key,
+    required this.icons,
+    required this.labels,
+  }) : super(key: key);
+  final List<String>
+      icons;
+  final List<String> labels;
   @override
   State<CustomBottomNavigationBar> createState() =>
       _CustomBottomNavigationBarState();
@@ -16,49 +22,14 @@ class CustomBottomNavigationBar extends StatefulWidget {
 class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
   @override
   Widget build(BuildContext context) {
+    
     return BottomNavigationBar(
-      items: [
-        BottomNavigationBarItem(
-          icon: SvgPicture.asset(
-            'assets/image/Icon/home.svg',
-            height: 20.h,
-            width: 20.w,
-          ),
-          label: 'Home',
-        ),
-        BottomNavigationBarItem(
-          icon: SvgPicture.asset(
-            'assets/image/Icon/pin-map.svg',
-            height: 20.h,
-            width: 20.w,
-          ),
-          label: 'Explore',
-        ),
-        BottomNavigationBarItem(
-          icon: SvgPicture.asset(
-            'assets/image/Icon/heart.svg',
-            height: 20.h,
-            width: 20.w,
-          ),
-          label: 'Favorite',
-        ),
-        BottomNavigationBarItem(
-          icon: SvgPicture.asset(
-            'assets/image/Icon/chat.svg',
-            height: 20.h,
-            width: 20.w,
-          ),
-          label: 'chat',
-        ),
-        BottomNavigationBarItem(
-          icon: SvgPicture.asset(
-            'assets/image/Icon/profile.svg',
-            height: 20.h,
-            width: 20.w,
-          ),
-          label: 'Profile',
-        ),
-      ],
+      items: List<BottomNavigationBarItem>.generate(
+        5,
+        (int index) {
+          return customNavigationBarItem(widget.icons[index], widget.labels[index]);
+        },
+      ),
       currentIndex: BlocProvider.of<HomeBloc>(context).currentIndex,
       onTap: (index) {
         setState(() {
@@ -69,6 +40,17 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
       type: BottomNavigationBarType.fixed,
       selectedItemColor: AppColors.p300PrimaryColor,
       showUnselectedLabels: true,
+    );
+  }
+
+  BottomNavigationBarItem customNavigationBarItem(String icon, String label) {
+    return BottomNavigationBarItem(
+      icon: SvgPicture.asset(
+        'assets/image/Icon/$icon.svg',
+        height: 20.h,
+        width: 20.w,
+      ),
+      label: label,
     );
   }
 }

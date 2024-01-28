@@ -19,41 +19,39 @@ class FavoriteScreen extends StatefulWidget {
 class _FavoriteScreenState extends State<FavoriteScreen> {
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: DefaultTabController(
-        length: 4,
-        child: Scaffold(
-          appBar: AppBar(
-            backgroundColor: AppColors.background,
-            leading: Padding(
-              padding: const EdgeInsets.only(left: 10.0),
-              child: CustomAppBarArrowButton(
-                onTap: () {
-                  Navigator.pop(context);
-                },
-              ),
+    return DefaultTabController(
+      length: 4,
+      child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: AppColors.background,
+          leading: Padding(
+            padding: const EdgeInsets.only(left: 10.0),
+            child: CustomAppBarArrowButton(
+              onTap: () {
+                Navigator.pop(context);
+              },
             ),
-            centerTitle: true,
-            title: Text("Bookmark", style: TextStyles.heading4Bold.copyWith(fontSize: 18)),
-            bottom: PreferredSize(
-              preferredSize: const Size.fromHeight(40),
-              child: Container(
-                width: double.maxFinite,
-                color: AppColors.background,
-                child: const CustomTabBar(
-                  titles: ['Workout', 'Programs', 'Trainer', 'Sports Club'],
-                ),
+          ),
+          centerTitle: true,
+          title: Text("Bookmark", style: TextStyles.heading4Bold.copyWith(fontSize: 18)),
+          bottom: PreferredSize(
+            preferredSize: const Size.fromHeight(40),
+            child: Container(
+              width: double.maxFinite,
+              color: AppColors.background,
+              child: const CustomTabBar(
+                titles: ['Workout', 'Programs', 'Trainer', 'Sports Club'],
               ),
             ),
           ),
-          body: const TabBarView(
-            children: [
-              FavWorkoutTab(),
-              FavProgramsTab(),
-              FavTrainerTab(),
-              FavSportsClubTab(),
-            ],
-          ),
+        ),
+        body: const TabBarView(
+          children: [
+            FavWorkoutTab(),
+            FavProgramsTab(),
+            FavTrainerTab(),
+            FavSportsClubTab(),
+          ],
         ),
       ),
     );

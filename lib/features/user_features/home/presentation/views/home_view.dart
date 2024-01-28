@@ -19,7 +19,7 @@ class _HomeScreenState extends State<HomeScreen> {
   final List<Widget> _pages = [
     const HomeBody(),
     const SafeArea(child: Center(child: Text('2'))),
-    const SafeArea(child: Center(child: FavoriteScreen())),
+    const SafeArea(child: FavoriteScreen()),
     const SafeArea(child: Center(child: Text('4'))),
     const SafeArea(child: ProfileScreen()),
   ];
@@ -31,7 +31,10 @@ class _HomeScreenState extends State<HomeScreen> {
         int currentIndex = BlocProvider.of<HomeBloc>(context).currentIndex;
         return Scaffold(
           body: _pages[currentIndex],
-          bottomNavigationBar: const CustomBottomNavigationBar(),
+          bottomNavigationBar: const CustomBottomNavigationBar(
+            icons: ['home', 'pin-map', 'heart', 'chat', 'profile'],
+            labels: ['Home', 'Explore', 'Favorite', 'chat', 'Profile'],
+          ),
         );
       },
     );
