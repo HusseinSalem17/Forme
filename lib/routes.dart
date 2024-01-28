@@ -4,30 +4,31 @@ import 'package:forme_app/features/Authentication/presentation/views/new_passwor
 import 'package:forme_app/features/Authentication/presentation/views/sign_up_view.dart';
 import 'package:forme_app/features/Authentication/presentation/views/sign_in_view.dart';
 import 'package:forme_app/features/Authentication/presentation/views/verify_code.dart';
-import 'package:forme_app/features/Payment/presentation/view/ereceipt_screen.dart';
-import 'package:forme_app/features/Trainer_ditails/presentation/views/success_story.dart';
-import 'package:forme_app/features/Trainer_ditails/presentation/views/trainer_details_view.dart';
-import 'package:forme_app/features/featured/presentation/featured_screen.dart';
-import 'package:forme_app/features/home/presentation/views/home_view.dart';
-import 'package:forme_app/features/payment/presentation/view/congratulation_screen.dart';
-import 'package:forme_app/features/profile/presentation/views/complete_profile.dart';
-import 'package:forme_app/features/profile/presentation/views/help_center/help_center.dart';
-import 'package:forme_app/features/profile/presentation/views/my_profile.dart';
-import 'package:forme_app/features/profile/presentation/views/privacy_policy.dart';
-import 'package:forme_app/features/profile/presentation/views/settings_screen.dart';
-import 'package:forme_app/features/reviews/presentation/views/add_review.dart';
-import 'package:forme_app/features/sports_club/presentation/views/sports_club.dart';
+import 'package:forme_app/features/trainer_features/dashboard/presentation/views/home_view.dart';
+import 'package:forme_app/features/user_features/Payment/presentation/view/ereceipt_screen.dart';
+import 'package:forme_app/features/user_features/Trainer_ditails/presentation/views/success_story.dart';
+import 'package:forme_app/features/user_features/Trainer_ditails/presentation/views/trainer_details_view.dart';
+import 'package:forme_app/features/user_features/featured/presentation/featured_screen.dart';
+import 'package:forme_app/features/user_features/home/presentation/views/home_view.dart';
+import 'package:forme_app/features/user_features/payment/presentation/view/congratulation_screen.dart';
+import 'package:forme_app/features/user_features/profile/presentation/views/complete_profile.dart';
+import 'package:forme_app/features/user_features/profile/presentation/views/help_center/help_center.dart';
+import 'package:forme_app/features/user_features/profile/presentation/views/my_profile.dart';
+import 'package:forme_app/features/user_features/profile/presentation/views/privacy_policy.dart';
+import 'package:forme_app/features/user_features/profile/presentation/views/settings_screen.dart';
+import 'package:forme_app/features/user_features/reviews/presentation/views/add_review.dart';
+import 'package:forme_app/features/user_features/sports_club/presentation/views/sports_club.dart';
 import 'package:forme_app/splash_screen.dart';
 import 'package:forme_app/onboarding_screens/views/onboarding_screen.dart';
-import 'features/join_program_feature/presentation/views/payment_successfully_screen.dart';
-import 'features/preferences/presentation/views/preferences_screen.dart';
+import 'features/user_features/join_program_feature/presentation/views/payment_successfully_screen.dart';
+import 'features/user_features/preferences/presentation/views/preferences_screen.dart';
 
 Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
   switch (settings.name) {
 //----- Splash Routing -----
     case '/':
-      return //completeProfile();
-      homeRoute();
+      return trainerHomeRoute();
+    //homeRoute();
     // splashRoute();
 
 //----- OnBoarding Routing -----
@@ -45,7 +46,7 @@ Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
       return verifyCodeRoute();
     case NewPasswordScreen.routeName:
       return newpasswordRoute();
-
+//------------------------------------------- user section ------------------------
 //----- Preferences Routing -----
     case PreferencesScreen.routeName:
       return preferencesScreenRoute();
@@ -92,6 +93,10 @@ Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
       return helpCenterRoute(filterType);
     case PrivacyPolicy.routeName:
       return privacyPolicyRoute();
+//------------------------------------------- trainer section -----------------------
+//-------- Home Routing -----------
+    case TrainerHomeScreen.routeName:
+      return trainerHomeRoute();
 //---------------------------------------
     default:
       return notFound();
@@ -239,5 +244,13 @@ MaterialPageRoute<dynamic> helpCenterRoute(List<String> filterTypes) {
 MaterialPageRoute<dynamic> privacyPolicyRoute() {
   return MaterialPageRoute(
     builder: (context) => const PrivacyPolicy(),
+  );
+}
+
+// ---------------- trainer section --------------
+
+MaterialPageRoute<dynamic> trainerHomeRoute() {
+  return MaterialPageRoute(
+    builder: (context) => const TrainerHomeScreen(),
   );
 }

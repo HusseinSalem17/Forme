@@ -9,8 +9,7 @@ import 'package:forme_app/features/Authentication/presentation/views/widgets/aut
 import 'package:forme_app/features/Authentication/presentation/views/widgets/custom_auth_button.dart';
 import 'package:forme_app/features/Authentication/presentation/views/widgets/custom_text_from_field.dart';
 import 'package:forme_app/features/Authentication/presentation/views/widgets/icon_widget.dart';
-import 'package:forme_app/features/preferences/presentation/views/preferences_screen.dart';
-
+import 'package:forme_app/features/user_features/preferences/presentation/views/preferences_screen.dart';
 import '../../../../../core/utils/text_styles.dart';
 
 class SignInBody extends StatelessWidget {
