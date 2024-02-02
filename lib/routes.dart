@@ -4,6 +4,7 @@ import 'package:forme_app/features/Authentication/presentation/views/new_passwor
 import 'package:forme_app/features/Authentication/presentation/views/sign_up_view.dart';
 import 'package:forme_app/features/Authentication/presentation/views/sign_in_view.dart';
 import 'package:forme_app/features/Authentication/presentation/views/verify_code.dart';
+import 'package:forme_app/features/trainer_features/add_program/presentation/views/add_program_screen.dart';
 import 'package:forme_app/features/trainer_features/dashboard/presentation/views/home_view.dart';
 import 'package:forme_app/features/user_features/Payment/presentation/view/ereceipt_screen.dart';
 import 'package:forme_app/features/user_features/Trainer_ditails/presentation/views/success_story.dart';
@@ -97,6 +98,9 @@ Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
 //-------- Home Routing -----------
     case TrainerHomeScreen.routeName:
       return trainerHomeRoute();
+//-------- Add Program Routing -----------
+    case AddProgramScreen.routeName:
+      return addProgramRoute();
 //---------------------------------------
     default:
       return notFound();
@@ -252,5 +256,10 @@ MaterialPageRoute<dynamic> privacyPolicyRoute() {
 MaterialPageRoute<dynamic> trainerHomeRoute() {
   return MaterialPageRoute(
     builder: (context) => const TrainerHomeScreen(),
+  );
+}
+MaterialPageRoute<dynamic> addProgramRoute() {
+  return MaterialPageRoute(
+    builder: (context) => const AddProgramScreen(),
   );
 }
