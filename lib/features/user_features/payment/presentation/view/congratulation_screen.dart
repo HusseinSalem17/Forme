@@ -20,7 +20,8 @@ class CongratulationScreen extends StatelessWidget {
           automaticallyImplyLeading: false,
           title: Row(children: [
             CustomAppBarArrowButton(onTap: () {
-              Navigator.pop(context);
+              Navigator.of(context)
+                  .push(PageSlideTransition(const HomeScreen()));
             }),
           ]),
         ),
