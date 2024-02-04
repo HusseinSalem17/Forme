@@ -5,14 +5,16 @@ import 'package:forme_app/core/utils/text_styles.dart';
 
 class CustomBuildForm extends StatelessWidget {
   final String title;
+  final Color? titleColor;
   final double topPadding, bottomPadding;
-  final bool optional,titleVisibility;
+  final bool optional, titleVisibility;
   final Widget child;
   const CustomBuildForm({
     super.key,
     this.optional = false,
     required this.title,
     required this.child,
+    this.titleColor,
     this.bottomPadding = 4.0,
     this.topPadding = 4.0,
     this.titleVisibility = true,
@@ -34,7 +36,7 @@ class CustomBuildForm extends StatelessWidget {
                         Text(
                           title,
                           style: TextStyles.textStyleBold.copyWith(
-                            color: AppColors.n900PrimaryTextColor,
+                            color: titleColor,
                             fontSize: 14.sp,
                           ),
                         ),
@@ -50,7 +52,7 @@ class CustomBuildForm extends StatelessWidget {
                   : Text(
                       title,
                       style: TextStyles.textStyleBold.copyWith(
-                        color: AppColors.n900PrimaryTextColor,
+                        color: titleColor,
                         fontSize: 14.sp,
                       ),
                     )),
