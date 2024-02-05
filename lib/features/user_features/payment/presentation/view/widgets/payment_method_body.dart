@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:forme_app/core/transitions/page_slide.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
+
 import 'package:forme_app/features/user_features/join_program_feature/presentation/views/widgets/custom_radio_list_tile.dart';
+import 'package:forme_app/features/user_features/payment/presentation/view/add_new_card_screen.dart';
+import 'package:forme_app/features/user_features/payment/presentation/view/widgets/add_new_card_card.dart';
 
 class PaymentMethodBody extends StatefulWidget {
   const PaymentMethodBody({
@@ -53,12 +57,10 @@ class _PaymentMethodBodyState extends State<PaymentMethodBody> {
               style: subTitleStyle,
             ),
             sizeBox,
-            buildCustomRadioListTile(
-              1,
-              SvgPicture.asset(
-                'assets/image/Icon/visa.svg',
-              ),
-            ),
+            addNewCardCard(() {
+              Navigator.of(context)
+                  .push(PageSlideTransition(const AddNewCardScreen()));
+            }),
             sizeBox,
             Text(
               'More Payment Options',
