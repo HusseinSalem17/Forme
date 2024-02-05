@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
-import 'package:forme_app/core/widgets/custom_app_botton.dart';
+import 'package:forme_app/core/widgets/custom_app_button.dart';
 
 class CustomShadowButton extends StatelessWidget {
   final VoidCallback onTap;
@@ -49,13 +49,11 @@ class CustomShadowButton extends StatelessWidget {
             InkWell(
               onTap: onTap,
               splashColor: Colors.grey.withOpacity(1), // Add a splash color
-              child: CustomAppBottom(
-                title: buttonTitle ??
-                    '', // Use the null-aware operator ?? to provide a default value
+              child: CustomAppButton(
+                title: buttonTitle ?? '', // Use the null-aware operator ?? to provide a default value
               ),
             ),
-            if (buttonSubTitle !=
-                null) // Perform a null check before using buttonSubTitle
+            if (buttonSubTitle != null) // Perform a null check before using buttonSubTitle
               Padding(
                 padding: EdgeInsets.only(top: 16.h),
                 child: GestureDetector(
