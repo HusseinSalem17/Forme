@@ -2,19 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:forme_app/core/utils/app_theme.dart';
-import 'package:forme_app/features/Favorite/presentation/views/favorite_screen.dart';
-import 'package:forme_app/features/complete_profile/data/repos/complete_profile_repo_impl.dart';
-import 'package:forme_app/features/complete_profile/presentation/manager/complete_profile_cubit/complete_profile_cubit.dart';
-import 'package:forme_app/features/workout_detail/presentation/views/workout_detail.dart';
+import 'package:forme_app/features/trainer_features/dashboard/presentation/views/manager/bloc/trainer_home_bloc.dart';
+import 'package:forme_app/features/user_features/home/presentation/manager/bloc/home_bloc.dart';
+import 'package:forme_app/features/user_features/preferences/presentation/manager/preferences_bloc.dart';
+import 'package:forme_app/features/user_features/profile/data/repos/complete_profile_repo_impl.dart';
+import 'package:forme_app/features/user_features/profile/presentation/manager/complete_profile_cubit/complete_profile_cubit.dart';
+import 'package:forme_app/features/user_features/profile/presentation/manager/my_profile_cubit/cubit/my_profile_cubit.dart';
 import 'package:forme_app/onboarding_screens/data/bloc/onboarding_blocs.dart';
 import 'package:flutter/services.dart';
 import 'package:forme_app/routes.dart';
-
 import 'core/utils/functions/service_locator.dart';
 import 'core/utils/scroll_behavior.dart';
-import 'features/home/presentation/manager/bloc/home_bloc.dart';
-import 'features/preferences/presentation/manager/preferences_bloc.dart';
-
 void main() {
   setupServiceLocator();
   SystemChrome.setSystemUIOverlayStyle(
@@ -43,7 +41,14 @@ class MyApp extends StatelessWidget {
               CompleteProfileCubit(getIt.get<CompleteProfileRepoImpl>()),
         ),
         BlocProvider(
+          create: (context) =>
+              MyProfileCubit(),
+        ),
+        BlocProvider(
           create: (context) => HomeBloc(),
+        ),
+        BlocProvider(
+          create: (context) => TrainerHomeBloc(),
         ),
       ],
       child: ScreenUtilInit(

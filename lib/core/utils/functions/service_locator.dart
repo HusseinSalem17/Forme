@@ -1,4 +1,4 @@
-import 'package:forme_app/features/complete_profile/data/repos/complete_profile_repo_impl.dart';
+import 'package:forme_app/features/user_features/profile/data/repos/complete_profile_repo_impl.dart';
 import 'package:get_it/get_it.dart';
 
 final getIt = GetIt.instance;
