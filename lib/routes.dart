@@ -23,8 +23,10 @@ import 'package:forme_app/features/user_features/reviews/presentation/views/add_
 import 'package:forme_app/features/user_features/sports_club/presentation/views/sports_club.dart';
 import 'package:forme_app/splash_screen.dart';
 import 'package:forme_app/onboarding_screens/views/onboarding_screen.dart';
+
 import 'features/user_features/payment/presentation/view/payment_methods_screen.dart';
 import 'features/user_features/preferences/presentation/views/preferences_screen.dart';
+
 
 Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
   switch (settings.name) {
@@ -273,7 +275,7 @@ MaterialPageRoute<dynamic> privacyPolicyRoute() {
 
 MaterialPageRoute<dynamic> trainerHomeRoute() {
   return MaterialPageRoute(
-    builder: (context) => const TrainerHomeScreen(),
+    builder: (context) => const PaymentSuccessfullyScreen(),
   );
 }
 
