@@ -6,7 +6,7 @@ import 'package:forme_app/core/utils/styles.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
 import 'package:forme_app/core/widgets/custom_app_botton.dart';
 import 'package:forme_app/core/widgets/second_custom_app_botton.dart';
-import 'package:forme_app/features/user_features/profile/presentation/views/complete_profile_widgets/custom_phone_field.dart';
+import 'package:forme_app/core/widgets/app_fields/custom_phone_field.dart';
 
 class MyProfilePhoneField extends StatelessWidget {
   const MyProfilePhoneField({super.key, required this.phone});

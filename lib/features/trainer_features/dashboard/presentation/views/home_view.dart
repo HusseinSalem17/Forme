@@ -30,7 +30,10 @@ class _TrainerHomeScreenState extends State<TrainerHomeScreen> {
             BlocProvider.of<TrainerHomeBloc>(context).currentIndex;
         return Scaffold(
           body: _pages[currentIndex],
-          bottomNavigationBar: const CustomBottomNavigationBar(),
+          bottomNavigationBar: const CustomBottomNavigationBar(
+            icons: ['home', 'PlayBorder', 'client-list', 'chat', 'profile'],
+            labels: ['Home', 'My Services', 'Client List', 'Chat', 'Profile'],
+          ),
         );
       },
     );

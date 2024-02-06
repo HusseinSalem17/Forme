@@ -30,6 +30,7 @@ abstract class AppColors {
   static const d300Danger = Color(0xffE72525);
   static const n300 = Color(0xff5B636F);
   static const border30 = Color(0xffEBECEE);
+  static const n400 = Color(0xff4F5764);
 
 
 }
