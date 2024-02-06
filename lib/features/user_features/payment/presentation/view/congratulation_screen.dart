@@ -4,7 +4,7 @@ import 'package:forme_app/core/transitions/page_slide.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
 import 'package:forme_app/core/widgets/custom_app_bar_arrow_button.dart';
-import 'package:forme_app/core/widgets/custom_app_botton.dart';
+import 'package:forme_app/core/widgets/custom_app_button.dart';
 import 'package:forme_app/features/user_features/Payment/presentation/view/ereceipt_screen.dart';
 import 'package:forme_app/features/user_features/home/presentation/views/home_view.dart';
 
@@ -38,15 +38,12 @@ class CongratulationScreen extends StatelessWidget {
                       Image.asset('assets/image/congratulations.png'),
                       Text(
                         'Congratulations!',
-                        style: TextStyles.textStyleBold.copyWith(
-                            fontSize: 22.sp,
-                            color: AppColors.n900PrimaryTextColor),
+                        style: TextStyles.textStyleBold.copyWith(fontSize: 22.sp, color: AppColors.n900PrimaryTextColor),
                       ),
                       Text(
                         textAlign: TextAlign.center,
                         'You have successfully made payment and enrolled the workout activity.',
-                        style: TextStyles.textStyleRegular
-                            .copyWith(fontSize: 14.sp),
+                        style: TextStyles.textStyleRegular.copyWith(fontSize: 14.sp),
                       )
                     ],
                   ),
@@ -67,28 +64,21 @@ class CongratulationScreen extends StatelessWidget {
                           offset: const Offset(0, 2),
                         ),
                       ],
-                      borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(20.dg),
-                          topRight: Radius.circular(20.dg))),
+                      borderRadius: BorderRadius.only(topLeft: Radius.circular(20.dg), topRight: Radius.circular(20.dg))),
                   padding: EdgeInsets.all(24.h),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      CustomAppBottom(
+                      CustomAppButton(
                           title: 'View E-Receipt',
                           onTap: () {
-                            Navigator.of(context)
-                                .push(PageSlideTransition(EReceiptScreen()));
+                            Navigator.of(context).push(PageSlideTransition(EReceiptScreen()));
                           }),
                       TextButton(
                           onPressed: () {
-                            Navigator.of(context)
-                                .push(PageSlideTransition(const HomeScreen()));
+                            Navigator.of(context).push(PageSlideTransition(const HomeScreen()));
                           },
-                          child: Text('Go to Home',
-                              style: TextStyles.textStyleRegular.copyWith(
-                                  fontSize: 14.sp,
-                                  color: AppColors.p300PrimaryColor)))
+                          child: Text('Go to Home', style: TextStyles.textStyleRegular.copyWith(fontSize: 14.sp, color: AppColors.p300PrimaryColor)))
                     ],
                   )),
             )

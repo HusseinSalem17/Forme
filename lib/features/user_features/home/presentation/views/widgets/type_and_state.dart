@@ -41,7 +41,7 @@ class TypeAndState extends StatelessWidget {
                   color: state == 'Open'
                       ? AppColors.greenColor
                       : state == 'Close'
-                          ? AppColors.redColor
+                          ? AppColors.d300Danger
                           : AppColors.p300PrimaryColor),
             ),
           ],
