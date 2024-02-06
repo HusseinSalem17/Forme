@@ -20,7 +20,11 @@ import 'package:forme_app/features/user_features/reviews/presentation/views/add_
 import 'package:forme_app/features/user_features/sports_club/presentation/views/sports_club.dart';
 import 'package:forme_app/splash_screen.dart';
 import 'package:forme_app/onboarding_screens/views/onboarding_screen.dart';
+import 'features/user_features/book_appointment_with _trainer/presentation/views/add_new_card_screen.dart';
+import 'features/user_features/book_appointment_with _trainer/presentation/views/payment_methods_screen.dart';
+import 'features/user_features/join_program_feature/presentation/views/book_onling_coach_screen.dart';
 import 'features/user_features/join_program_feature/presentation/views/payment_successfully_screen.dart';
+import 'features/user_features/maps/presentation/views/map_screen.dart';
 import 'features/user_features/preferences/presentation/views/preferences_screen.dart';
 
 Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
@@ -251,6 +255,6 @@ MaterialPageRoute<dynamic> privacyPolicyRoute() {
 
 MaterialPageRoute<dynamic> trainerHomeRoute() {
   return MaterialPageRoute(
-    builder: (context) => const TrainerHomeScreen(),
+    builder: (context) => const MapScreen(),
   );
 }
