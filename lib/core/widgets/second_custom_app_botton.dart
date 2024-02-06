@@ -3,12 +3,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
 
-class SecondCustomAppBottom extends StatelessWidget {
+class SecondCustomAppButton extends StatelessWidget {
   final String title;
   final double widthDivider;
   final void Function()? onTap;
-  const SecondCustomAppBottom(
-      {super.key, required this.title, this.onTap, this.widthDivider = 1});
+  const SecondCustomAppButton({super.key, required this.title, this.onTap, this.widthDivider = 1});
 
   @override
   Widget build(BuildContext context) {
@@ -33,11 +32,7 @@ class SecondCustomAppBottom extends StatelessWidget {
           child: Center(
             child: Text(
               title,
-              style: TextStyles.textStyleMedium.copyWith(
-                  fontSize: 14.sp,
-                  color: AppColors.p300PrimaryColor,
-                  height: 1
-                  ),
+              style: TextStyles.textStyleMedium.copyWith(fontSize: 14.sp, color: AppColors.p300PrimaryColor, height: 1),
             ),
           ),
         ),

@@ -6,6 +6,10 @@ import 'package:forme_app/features/Authentication/presentation/views/sign_in_vie
 import 'package:forme_app/features/Authentication/presentation/views/verify_code.dart';
 import 'package:forme_app/features/trainer_features/add_program/presentation/views/add_program_screen.dart';
 import 'package:forme_app/features/trainer_features/dashboard/presentation/views/home_view.dart';
+import 'package:forme_app/features/trainer_features/my_services/presentation/views/my_services_screen.dart';
+import 'package:forme_app/features/trainer_features/trainer_preference/presentation/views/trainer_preference_screen.dart';
+import 'package:forme_app/features/user_features/Favorite/presentation/views/favorite_screen.dart';
+import 'package:forme_app/features/user_features/Notification/presentation/views/notification_screen.dart';
 import 'package:forme_app/features/user_features/Payment/presentation/view/ereceipt_screen.dart';
 import 'package:forme_app/features/user_features/Trainer_ditails/presentation/views/success_story.dart';
 import 'package:forme_app/features/user_features/Trainer_ditails/presentation/views/trainer_details_view.dart';
@@ -20,9 +24,13 @@ import 'package:forme_app/features/user_features/profile/presentation/views/my_p
 import 'package:forme_app/features/user_features/profile/presentation/views/privacy_policy.dart';
 import 'package:forme_app/features/user_features/profile/presentation/views/settings_screen.dart';
 import 'package:forme_app/features/user_features/reviews/presentation/views/add_review.dart';
+import 'package:forme_app/features/user_features/search/presentation/search_screen.dart';
+import 'package:forme_app/features/user_features/search/presentation/views/filter/filter_screen.dart';
 import 'package:forme_app/features/user_features/sports_club/presentation/views/sports_club.dart';
 import 'package:forme_app/splash_screen.dart';
 import 'package:forme_app/onboarding_screens/views/onboarding_screen.dart';
+import 'features/trainer_features/complete_profile_trainer/presentation/views/trainer_complete_profile.dart';
+import 'features/user_features/join_program_feature/presentation/views/payment_successfully_screen.dart';
 import 'features/user_features/payment/presentation/view/payment_methods_screen.dart';
 import 'features/user_features/preferences/presentation/views/preferences_screen.dart';
 
@@ -101,10 +109,30 @@ Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
       return helpCenterRoute(filterType);
     case PrivacyPolicy.routeName:
       return privacyPolicyRoute();
+//------ Search Routing ----------
+    case SearchScreen.routeName:
+      return searchScreenRoute();
+    case FilterScreen.routeName:
+      return filterScreenRoute();
+//------ Notification Routing ------
+    case NotificationScreen.routeName:
+      return notificationScreenRoute();
+//------ Favorite Routing ------
+    case FavoriteScreen.routeName:
+      return favoriteScreenRoute();
 //------------------------------------------- trainer section -----------------------
 //-------- Home Routing -----------
     case TrainerHomeScreen.routeName:
       return trainerHomeRoute();
+//-------- Preferences Routing -----------
+    case TrainerPreferenceScreen.routeName:
+      return trainerPreferencesScreenRoute();
+//-------- Complete Profile Routing -----------
+    case TrainerCompleteProfile.routeName:
+      return trainerCompleteProfileRoute();
+//-------- My Services Routing -----------  
+    case MyServicesScreen.routeName:
+      return trainerMyServicesScreen();  
 //-------- Add Program Routing -----------
     case AddProgramScreen.routeName:
       return addProgramRoute();
@@ -269,6 +297,30 @@ MaterialPageRoute<dynamic> privacyPolicyRoute() {
   );
 }
 
+MaterialPageRoute<dynamic> searchScreenRoute() {
+  return MaterialPageRoute(
+    builder: (context) => const SearchScreen(),
+  );
+}
+
+MaterialPageRoute<dynamic> filterScreenRoute() {
+  return MaterialPageRoute(
+    builder: (context) => const FilterScreen(),
+  );
+}
+
+MaterialPageRoute<dynamic> notificationScreenRoute() {
+  return MaterialPageRoute(
+    builder: (context) => const NotificationScreen(),
+  );
+}
+
+MaterialPageRoute<dynamic> favoriteScreenRoute() {
+  return MaterialPageRoute(
+    builder: (context) => const FavoriteScreen(),
+  );
+}
+
 // ---------------- trainer section --------------
 
 MaterialPageRoute<dynamic> trainerHomeRoute() {
@@ -277,8 +329,29 @@ MaterialPageRoute<dynamic> trainerHomeRoute() {
   );
 }
 
+MaterialPageRoute<dynamic> trainerPreferencesScreenRoute() {
+  return MaterialPageRoute(
+    builder: (context) => const TrainerPreferenceScreen(),
+  );
+}
+
+MaterialPageRoute<dynamic> trainerCompleteProfileRoute() {
+  return MaterialPageRoute(
+    builder: (context) => const TrainerCompleteProfile(),
+  );
+}
+
+MaterialPageRoute<dynamic> trainerMyServicesScreen() {
+  return MaterialPageRoute(
+    builder: (context) => const MyServicesScreen(),
+  );
+}
+
 MaterialPageRoute<dynamic> addProgramRoute() {
   return MaterialPageRoute(
     builder: (context) => const AddProgramScreen(),
   );
+}
+
+  
 }

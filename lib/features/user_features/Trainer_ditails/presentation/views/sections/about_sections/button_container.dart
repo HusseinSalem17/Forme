@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
-import 'package:forme_app/core/widgets/custom_app_botton.dart';
+import 'package:forme_app/core/widgets/custom_app_button.dart';
 
 class ButtonContainer extends StatelessWidget {
   final String buttonTitle;
-  const ButtonContainer({
-    super.key,
-    required this.buttonTitle
-  });
+  const ButtonContainer({super.key, required this.buttonTitle});
 
   @override
   Widget build(BuildContext context) {
@@ -24,11 +21,9 @@ class ButtonContainer extends StatelessWidget {
               offset: const Offset(0, 2),
             ),
           ],
-          borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(20.dg),
-              topRight: Radius.circular(20.dg))),
+          borderRadius: BorderRadius.only(topLeft: Radius.circular(20.dg), topRight: Radius.circular(20.dg))),
       padding: EdgeInsets.all(23.h),
-      child: CustomAppBottom(title: buttonTitle),
+      child: CustomAppButton(title: buttonTitle),
     );
   }
 }

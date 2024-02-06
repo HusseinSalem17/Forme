@@ -23,7 +23,7 @@ GestureDetector profileFeature(
               ),
               const Spacer(),
               Visibility(
-                visible: textColor != AppColors.redColor
+                visible: textColor != AppColors.d300Danger
                     ? true
                     : false, // Set this to your condition
                 child: SvgPicture.asset('assets/image/profile/arrow.svg'),
