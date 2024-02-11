@@ -5,11 +5,13 @@ import '../utils/app_colors.dart';
 class CustomAppBarArrowButton extends StatelessWidget {
   final IconData icon;
   final void Function()? onTap;
+  final Color color;
+  final double size;
 
   const CustomAppBarArrowButton({
     super.key,
     required this.onTap,
-    this.icon = Icons.arrow_back_rounded,
+    this.icon = Icons.arrow_back_rounded, this.color = Colors.black, this.size = 17,
   });
 
   @override
@@ -33,8 +35,8 @@ class CustomAppBarArrowButton extends StatelessWidget {
         ),
         child: Icon(
           icon,
-          color: Colors.black,
-          size: 17,
+          color: color,
+          size: size,
         ),
       ),
       onPressed: onTap,

@@ -2,11 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
-import 'package:forme_app/core/widgets/custom_app_botton.dart';
+import 'package:forme_app/core/widgets/custom_app_button.dart';
 import 'package:forme_app/core/widgets/second_custom_app_botton.dart';
 
-Future<dynamic> popUp(
-    BuildContext context, String title, String text, String buttonTitle) {
+Future<dynamic> popUp(BuildContext context, String title, String text, String buttonTitle) {
   return showModalBottomSheet(
       backgroundColor: AppColors.background,
       isScrollControlled: true,
@@ -16,18 +15,14 @@ Future<dynamic> popUp(
         return Container(
             height: MediaQuery.sizeOf(context).height / 5,
             width: double.infinity,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(20.dg),
-                    topRight: Radius.circular(20.dg))),
+            decoration: BoxDecoration(borderRadius: BorderRadius.only(topLeft: Radius.circular(20.dg), topRight: Radius.circular(20.dg))),
             padding: EdgeInsets.symmetric(horizontal: 8.h, vertical: 16.h),
             child: Column(
               children: [
                 Text(
                   title,
                   textAlign: TextAlign.center,
-                  style: TextStyles.textStyleMedium.copyWith(
-                      fontSize: 16.sp, color: AppColors.n900PrimaryTextColor),
+                  style: TextStyles.textStyleMedium.copyWith(fontSize: 16.sp, color: AppColors.n900PrimaryTextColor),
                 ),
                 const Divider(
                   color: AppColors.n30StrokeColor,
@@ -44,17 +39,17 @@ Future<dynamic> popUp(
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    SecondCustomAppBottom(
+                    SecondCustomAppButton(
                       title: 'Cancel',
                       widthDivider: 2.2,
                       onTap: () {
                         Navigator.pop(context);
                       },
                     ),
-                    CustomAppBottom(
+                    CustomAppButton(
                       title: buttonTitle,
                       widthDivider: 2.2,
-                      color: AppColors.redColor,
+                      color: AppColors.d300Danger,
                       height: 40,
                       fontSize: 14,
                       padding: 0,

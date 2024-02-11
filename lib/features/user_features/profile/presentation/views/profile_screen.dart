@@ -117,7 +117,7 @@ class ProfileScreen extends StatelessWidget {
                 },
                     index != 9
                         ? AppColors.n900PrimaryTextColor
-                        : AppColors.redColor);
+                        : AppColors.d300Danger);
               })),
             )
           ],
