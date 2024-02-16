@@ -4,30 +4,42 @@ import 'package:forme_app/features/Authentication/presentation/views/new_passwor
 import 'package:forme_app/features/Authentication/presentation/views/sign_up_view.dart';
 import 'package:forme_app/features/Authentication/presentation/views/sign_in_view.dart';
 import 'package:forme_app/features/Authentication/presentation/views/verify_code.dart';
-import 'package:forme_app/features/Payment/presentation/view/ereceipt_screen.dart';
-import 'package:forme_app/features/Trainer_ditails/presentation/views/success_story.dart';
-import 'package:forme_app/features/Trainer_ditails/presentation/views/trainer_details_view.dart';
-import 'package:forme_app/features/featured/presentation/featured_screen.dart';
-import 'package:forme_app/features/home/presentation/views/home_view.dart';
-import 'package:forme_app/features/payment/presentation/view/congratulation_screen.dart';
-import 'package:forme_app/features/profile/presentation/views/complete_profile.dart';
-import 'package:forme_app/features/profile/presentation/views/help_center/help_center.dart';
-import 'package:forme_app/features/profile/presentation/views/my_profile.dart';
-import 'package:forme_app/features/profile/presentation/views/privacy_policy.dart';
-import 'package:forme_app/features/profile/presentation/views/settings_screen.dart';
-import 'package:forme_app/features/reviews/presentation/views/add_review.dart';
-import 'package:forme_app/features/sports_club/presentation/views/sports_club.dart';
+import 'package:forme_app/features/trainer_features/add_program/presentation/views/add_program_screen.dart';
+import 'package:forme_app/features/trainer_features/dashboard/presentation/views/home_view.dart';
+import 'package:forme_app/features/trainer_features/my_services/presentation/views/my_services_screen.dart';
+import 'package:forme_app/features/trainer_features/trainer_preference/presentation/views/trainer_preference_screen.dart';
+import 'package:forme_app/features/user_features/Favorite/presentation/views/favorite_screen.dart';
+import 'package:forme_app/features/user_features/Notification/presentation/views/notification_screen.dart';
+import 'package:forme_app/features/user_features/Payment/presentation/view/ereceipt_screen.dart';
+import 'package:forme_app/features/user_features/Trainer_ditails/presentation/views/success_story.dart';
+import 'package:forme_app/features/user_features/Trainer_ditails/presentation/views/trainer_details_view.dart';
+import 'package:forme_app/features/user_features/featured/presentation/featured_screen.dart';
+import 'package:forme_app/features/user_features/home/presentation/views/home_view.dart';
+import 'package:forme_app/features/user_features/payment/presentation/view/add_new_card_screen.dart';
+import 'package:forme_app/features/user_features/payment/presentation/view/congratulation_screen.dart';
+import 'package:forme_app/features/user_features/payment/presentation/view/payment_successfully_screen.dart';
+import 'package:forme_app/features/user_features/profile/presentation/views/complete_profile.dart';
+import 'package:forme_app/features/user_features/profile/presentation/views/help_center/help_center.dart';
+import 'package:forme_app/features/user_features/profile/presentation/views/my_profile.dart';
+import 'package:forme_app/features/user_features/profile/presentation/views/privacy_policy.dart';
+import 'package:forme_app/features/user_features/profile/presentation/views/settings_screen.dart';
+import 'package:forme_app/features/user_features/reviews/presentation/views/add_review.dart';
+import 'package:forme_app/features/user_features/search/presentation/search_screen.dart';
+import 'package:forme_app/features/user_features/search/presentation/views/filter/filter_screen.dart';
+import 'package:forme_app/features/user_features/sports_club/presentation/views/sports_club.dart';
 import 'package:forme_app/splash_screen.dart';
 import 'package:forme_app/onboarding_screens/views/onboarding_screen.dart';
-import 'features/join_program_feature/presentation/views/payment_successfully_screen.dart';
-import 'features/preferences/presentation/views/preferences_screen.dart';
+import 'features/trainer_features/complete_profile_trainer/presentation/views/trainer_complete_profile.dart';
+import 'features/user_features/payment/presentation/view/payment_methods_screen.dart';
+import 'features/user_features/preferences/presentation/views/preferences_screen.dart';
 
 Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
   switch (settings.name) {
 //----- Splash Routing -----
     case '/':
-      return //completeProfile();
-      homeRoute();
+      return trainerHomeRoute();
+//trainerMyServicesRoute();
+    //homeRoute();
     // splashRoute();
 
 //----- OnBoarding Routing -----
@@ -45,43 +57,47 @@ Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
       return verifyCodeRoute();
     case NewPasswordScreen.routeName:
       return newpasswordRoute();
-
-//----- Preferences Routing -----
+//------------------------------------------- user section ------------------------
+//---------- Preferences Routing -----
     case PreferencesScreen.routeName:
       return preferencesScreenRoute();
 
-//-------- Home Routing -----------
+//------------ Home Routing -----------
     case HomeScreen.routeName:
       return homeRoute();
-//---- Trainer Details Routing ----
+//-------- Trainer Details Routing ----
     case TrainerDetailsScreen.routeName:
       return trainerDetailsRoute();
 
     case SuccessStory.routeName:
       return successStoryRoute();
-//--- Complete Profile Routing ----
+//------ Complete Profile Routing ----
     case CompleteProfile.routeName:
       return completeProfile();
-//--------- Review Routing --------
+//------------ Review Routing --------
     case AddReview.routeName:
       final List<dynamic> args = settings.arguments as List<dynamic>;
       final String type = args[0] as String;
       return addReviewRoute(type);
-//------ payment Routing ----------
+//--------- payment Routing ----------
     case CongratulationScreen.routeName:
       return congratulationRoute();
     case EReceiptScreen.routeName:
       return eReceiptRoute();
-//----- sports club Routing -------
+    case AddNewCardScreen.routeName:
+      return addNewCardRoute();
+    case PaymentMethodsScreen.routeName:
+      return paymentMethodsRoute();
+//------ sports club Routing -------
     case SportsClubScreen.routeName:
       return sportsClubRoute();
-//----- featured Routing -------
+//------- featured Routing -------
     case FeaturedScreen.routeName:
       final List<dynamic> args = settings.arguments as List<dynamic>;
       final List<String> filterType = args[0] as List<String>;
       final String featuredType = args[1] as String;
       return featuredRoute(filterType, featuredType);
-//----- profile Routing -------
+//-------- profile Routing -------
     case MyProfile.routeName:
       return myProfileRoute();
     case SettingsScreen.routeName:
@@ -92,6 +108,33 @@ Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
       return helpCenterRoute(filterType);
     case PrivacyPolicy.routeName:
       return privacyPolicyRoute();
+//------ Search Routing ----------
+    case SearchScreen.routeName:
+      return searchScreenRoute();
+    case FilterScreen.routeName:
+      return filterScreenRoute();
+//------ Notification Routing ------
+    case NotificationScreen.routeName:
+      return notificationScreenRoute();
+//------ Favorite Routing ------
+    case FavoriteScreen.routeName:
+      return favoriteScreenRoute();
+//------------------------------------------- trainer section -----------------------
+//-------- Home Routing -----------
+    case TrainerHomeScreen.routeName:
+      return trainerHomeRoute();
+//-------- Preferences Routing -----------
+    case TrainerPreferenceScreen.routeName:
+      return trainerPreferencesScreenRoute();
+//-------- Complete Profile Routing -----------
+    case TrainerCompleteProfile.routeName:
+      return trainerCompleteProfileRoute();
+//-------- My Services Routing -----------
+    case MyServicesScreen.routeName:
+      return trainerMyServicesRoute();
+//-------- Add Program Routing -----------
+    case AddProgramScreen.routeName:
+      return addProgramRoute();
 //---------------------------------------
     default:
       return notFound();
@@ -164,7 +207,7 @@ MaterialPageRoute<dynamic> preferencesScreenRoute() {
 
 MaterialPageRoute<dynamic> homeRoute() {
   return MaterialPageRoute(
-    builder: (context) => const HomeScreen(),
+    builder: (context) => const AddNewCardScreen(),
   );
 }
 
@@ -189,6 +232,18 @@ MaterialPageRoute<dynamic> eReceiptRoute() {
 MaterialPageRoute<dynamic> congratulationRoute() {
   return MaterialPageRoute(
     builder: (context) => const CongratulationScreen(),
+  );
+}
+
+MaterialPageRoute<dynamic> paymentMethodsRoute() {
+  return MaterialPageRoute(
+    builder: (context) => const PaymentMethodsScreen(),
+  );
+}
+
+MaterialPageRoute<dynamic> addNewCardRoute() {
+  return MaterialPageRoute(
+    builder: (context) => const AddNewCardScreen(),
   );
 }
 
@@ -239,5 +294,61 @@ MaterialPageRoute<dynamic> helpCenterRoute(List<String> filterTypes) {
 MaterialPageRoute<dynamic> privacyPolicyRoute() {
   return MaterialPageRoute(
     builder: (context) => const PrivacyPolicy(),
+  );
+}
+
+MaterialPageRoute<dynamic> searchScreenRoute() {
+  return MaterialPageRoute(
+    builder: (context) => const SearchScreen(),
+  );
+}
+
+MaterialPageRoute<dynamic> filterScreenRoute() {
+  return MaterialPageRoute(
+    builder: (context) => const FilterScreen(),
+  );
+}
+
+MaterialPageRoute<dynamic> notificationScreenRoute() {
+  return MaterialPageRoute(
+    builder: (context) => const NotificationScreen(),
+  );
+}
+
+MaterialPageRoute<dynamic> favoriteScreenRoute() {
+  return MaterialPageRoute(
+    builder: (context) => const FavoriteScreen(),
+  );
+}
+
+// ---------------- trainer section --------------
+
+MaterialPageRoute<dynamic> trainerHomeRoute() {
+  return MaterialPageRoute(
+    builder: (context) => const TrainerHomeScreen(),
+  );
+}
+
+MaterialPageRoute<dynamic> trainerPreferencesScreenRoute() {
+  return MaterialPageRoute(
+    builder: (context) => const TrainerPreferenceScreen(),
+  );
+}
+
+MaterialPageRoute<dynamic> trainerCompleteProfileRoute() {
+  return MaterialPageRoute(
+    builder: (context) => const TrainerCompleteProfile(),
+  );
+}
+
+MaterialPageRoute<dynamic> trainerMyServicesRoute() {
+  return MaterialPageRoute(
+    builder: (context) => const MyServicesScreen(),
+  );
+}
+
+MaterialPageRoute<dynamic> addProgramRoute() {
+  return MaterialPageRoute(
+    builder: (context) => const AddProgramScreen(),
   );
 }

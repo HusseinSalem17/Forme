@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
 abstract class AppColors {
+  static const n10Color = Color(0xffFAFAFB);
   static const n50BackgroundColor = Color(0xffE6F0FF);
   static const p300PrimaryColor = Color(0xff0065ff);
+  static const p50PrimaryColor = Color(0xffe6f0ff);
   static const secondaryColor = Color(0xffee9f2f);
   static const n900PrimaryTextColor = Color(0xff071225);
   static const n100Color = Color(0xff797f89);
@@ -17,6 +19,7 @@ abstract class AppColors {
   static const n20FillBodyInBigCardColor = Color(0xfffafafb);
   static const n30StrokeColor = Color(0xffebecee);
   static const n800BodyInProgramsColor = Color(0xff131e30);
+  static const n400color = Color(0xff4f5764);
   static const n500Color = Color(0xff404957);
   static const n600color = Color(0xff343D4C);
   static const errorColor = Color(0xffF18181);
@@ -24,11 +27,16 @@ abstract class AppColors {
   static const r200ErrorColor = Color(0xffEB4A4A);
   static const starColor = Color(0xffFFCF24);
   static const greenColor = Color(0xff25D02C);
-  static const redColor = Color(0xffE72525);
   static const d50Danger = Color(0xffF18181);
   static const d100Danger = Color(0xffFDE9E9);
   static const d300Danger = Color(0xffE72525);
+  static const d500Danger = Color(0xff8D1717);
+  static const s500Success = Color(0xff177F1B);
   static const n300 = Color(0xff5B636F);
+  static const border30 = Color(0xffEBECEE);
+  static const w75Warning = Color(0xffFBF8B2);
+  static const w50Warning = Color(0xffFEFDEC);
+  static const n400 = Color(0xff4F5764);
 
 
 }
