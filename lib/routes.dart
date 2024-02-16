@@ -38,7 +38,7 @@ Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
 //----- Splash Routing -----
     case '/':
       return trainerHomeRoute();
-
+//trainerMyServicesRoute();
     //homeRoute();
     // splashRoute();
 
@@ -131,7 +131,7 @@ Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
       return trainerCompleteProfileRoute();
 //-------- My Services Routing -----------
     case MyServicesScreen.routeName:
-      return trainerMyServicesScreen();
+      return trainerMyServicesRoute();
 //-------- Add Program Routing -----------
     case AddProgramScreen.routeName:
       return addProgramRoute();
@@ -341,7 +341,7 @@ MaterialPageRoute<dynamic> trainerCompleteProfileRoute() {
   );
 }
 
-MaterialPageRoute<dynamic> trainerMyServicesScreen() {
+MaterialPageRoute<dynamic> trainerMyServicesRoute() {
   return MaterialPageRoute(
     builder: (context) => const MyServicesScreen(),
   );

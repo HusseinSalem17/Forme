@@ -67,17 +67,17 @@ class AddReview extends StatelessWidget {
                       size: 70,
                       spacing: 1,
                     ),
-                    Padding(
-                      padding: EdgeInsets.only(top: 30.h, bottom: 8.h),
-                      child: Align(
-                        alignment: Alignment.centerLeft,
-                        child: Text('Add detailed reviews',
-                            style: TextStyles.textStyleBold.copyWith(
-                                fontSize: 14.sp,
-                                color: AppColors.n900PrimaryTextColor)),
-                      ),
-                    ),
-                    const TextArea(),
+                    // Padding(
+                    //   padding: EdgeInsets.only(top: 30.h, bottom: 8.h),
+                    //   child: Align(
+                    //     alignment: Alignment.centerLeft,
+                    //     child: Text('Add detailed reviews',
+                    //         style: TextStyles.textStyleBold.copyWith(
+                    //             fontSize: 14.sp,
+                    //             color: AppColors.n900PrimaryTextColor)),
+                    //   ),
+                    // ),
+                    const TextArea(title: 'Add detailed reviews',),
                     const SizedBox(
                       height: 300,
                     )

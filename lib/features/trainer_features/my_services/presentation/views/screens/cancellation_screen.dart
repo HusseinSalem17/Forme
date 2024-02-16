@@ -9,7 +9,7 @@ import 'package:forme_app/features/trainer_features/trainer_preference/presentat
 
 class CancellationScreen extends StatelessWidget {
   const CancellationScreen({super.key});
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,46 +45,49 @@ class CancellationScreen extends StatelessWidget {
           ),
         ),
       ),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: EdgeInsets.only(left: 24.w, right: 24.w, top: 32.h),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                "Please select a reason for cancellation: ",
-                style: TextStyles.textStyleRegular.copyWith(fontSize: 14.sp),
-              ),
-              SizedBox(
-                height: 16.h,
-              ),
-              const CancellationRadio(),
-              SizedBox(
-                height: 32.h,
-              ),
-              Text(
-                'Note to Trainer',
-                style: TextStyles.textStyleSemiBold.copyWith(fontSize: 14.sp, color: AppColors.n900PrimaryTextColor),
-              ),
-              SizedBox(
-                height: 8.h,
-              ),
-              const TextAreaField(hintText: 'Enter here'),
-              SizedBox(
-                height: 2.h,
-              ),
-              Align(
-                alignment: Alignment.bottomCenter,
-                child: ButtonContainer(
-                  buttonTitle: 'Cancel Session',
-                  color: AppColors.d300Danger,
-                  onTap: () {},
+      body: Stack(children: [
+        SingleChildScrollView(
+          child: Padding(
+            padding: EdgeInsets.only(left: 24.w, right: 24.w, top: 32.h),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "Please select a reason for cancellation: ",
+                  style: TextStyles.textStyleRegular.copyWith(fontSize: 14.sp),
                 ),
-              ),
-            ],
+                SizedBox(
+                  height: 16.h,
+                ),
+                const CancellationRadio(),
+                SizedBox(
+                  height: 32.h,
+                ),
+                Text(
+                  'Note to Trainer',
+                  style: TextStyles.textStyleSemiBold.copyWith(
+                      fontSize: 14.sp, color: AppColors.n900PrimaryTextColor),
+                ),
+                SizedBox(
+                  height: 8.h,
+                ),
+                const TextAreaField(hintText: 'Enter here'),
+                SizedBox(
+                  height: 2.h,
+                ),
+              ],
+            ),
           ),
         ),
-      ),
+        Align(
+          alignment: Alignment.bottomCenter,
+          child: ButtonContainer(
+            buttonTitle: 'Cancel Session',
+            color: AppColors.d300Danger,
+            onTap: () {},
+          ),
+        ),
+      ]),
     );
   }
 }
