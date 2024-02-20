@@ -47,7 +47,7 @@ class SpecialProgramsCardItem extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 CardImageSection(height: size.height / 3.75 / 2,width: size.width / 2 ),
-                const CardReviewSection(),
+                CardReviewSection(),
                 Text(
                   'Mindful Movement',
                   style: TextStyles.blackCardTextStyle,

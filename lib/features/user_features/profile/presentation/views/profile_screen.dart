@@ -104,7 +104,7 @@ class ProfileScreen extends StatelessWidget {
                           'GYM',
                           'Swimming',
                           'Boxing',
-                          'Rumming'
+                          'Running'
                         ],
                       )));
                     case 8:

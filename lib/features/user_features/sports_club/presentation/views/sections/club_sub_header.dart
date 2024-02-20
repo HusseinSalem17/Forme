@@ -12,7 +12,7 @@ Padding clubSubHeader() {
       SizedBox(
         height: 26.h,
       ),
-      const CardReviewSection(),
+      CardReviewSection(),
       SizedBox(
         height: 16.h,
       ),
