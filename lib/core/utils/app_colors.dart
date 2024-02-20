@@ -38,6 +38,7 @@ abstract class AppColors {
   static const border30 = Color(0xffEBECEE);
   static const w75Warning = Color(0xffFBF8B2);
   static const w50Warning = Color(0xffFEFDEC);
+  static const n400 = Color(0xff4F5764);
 
 
 }

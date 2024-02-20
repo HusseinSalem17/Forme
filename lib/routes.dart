@@ -4,8 +4,6 @@ import 'package:forme_app/features/Authentication/presentation/views/new_passwor
 import 'package:forme_app/features/Authentication/presentation/views/sign_up_view.dart';
 import 'package:forme_app/features/Authentication/presentation/views/sign_in_view.dart';
 import 'package:forme_app/features/Authentication/presentation/views/verify_code.dart';
-import 'package:forme_app/features/trainer_features/client_list/presentation/views/client_list_screen.dart';
-import 'package:forme_app/features/trainer_features/create_sessions/presentation/views/create_session.dart';
 import 'package:forme_app/features/trainer_features/dashboard/presentation/views/home_view.dart';
 import 'package:forme_app/features/trainer_features/my_services/presentation/views/my_services_screen.dart';
 import 'package:forme_app/features/trainer_features/subscriptions/presentation/views/subscriptions_screen.dart';
@@ -17,7 +15,9 @@ import 'package:forme_app/features/user_features/Trainer_details/presentation/vi
 import 'package:forme_app/features/user_features/Trainer_details/presentation/views/trainer_details_view.dart';
 import 'package:forme_app/features/user_features/featured/presentation/featured_screen.dart';
 import 'package:forme_app/features/user_features/home/presentation/views/home_view.dart';
+import 'package:forme_app/features/user_features/payment/presentation/view/add_new_card_screen.dart';
 import 'package:forme_app/features/user_features/payment/presentation/view/congratulation_screen.dart';
+import 'package:forme_app/features/user_features/payment/presentation/view/payment_successfully_screen.dart';
 import 'package:forme_app/features/user_features/profile/presentation/views/complete_profile.dart';
 import 'package:forme_app/features/user_features/profile/presentation/views/help_center/help_center.dart';
 import 'package:forme_app/features/user_features/profile/presentation/views/my_profile.dart';
@@ -30,18 +30,20 @@ import 'package:forme_app/features/user_features/sports_club/presentation/views/
 import 'package:forme_app/splash_screen.dart';
 import 'package:forme_app/onboarding_screens/views/onboarding_screen.dart';
 import 'features/trainer_features/Trainer_Notification/presentation/views/trainer_notification_screen.dart';
+import 'features/trainer_features/add_program/presentation/views/add_program_screen.dart';
+import 'features/trainer_features/client_list/presentation/views/client_list_screen.dart';
 import 'features/trainer_features/complete_profile_trainer/presentation/views/trainer_complete_profile.dart';
-import 'features/user_features/join_program_feature/presentation/views/payment_successfully_screen.dart';
+import 'features/trainer_features/create_sessions/presentation/views/create_session.dart';
+import 'features/user_features/payment/presentation/view/payment_methods_screen.dart';
 import 'features/user_features/preferences/presentation/views/preferences_screen.dart';
+
 
 Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
   switch (settings.name) {
 //----- Splash Routing -----
     case '/':
-      //return trainerHomeRoute();
-      return trainerMyServicesScreen();
-      //return homeRoute();
-
+      return subscriptionsScreenRoute();
+    //homeRoute();
     // splashRoute();
 
 //----- OnBoarding Routing -----
@@ -60,42 +62,46 @@ Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
     case NewPasswordScreen.routeName:
       return newPasswordRoute();
 //------------------------------------------- user section ------------------------
-//----- Preferences Routing -----
+//---------- Preferences Routing -----
     case PreferencesScreen.routeName:
       return preferencesScreenRoute();
 
-//-------- Home Routing -----------
+//------------ Home Routing -----------
     case HomeScreen.routeName:
       return homeRoute();
-//---- Trainer Details Routing ----
+//-------- Trainer Details Routing ----
     case TrainerDetailsScreen.routeName:
       return trainerDetailsRoute();
 
     case SuccessStory.routeName:
       return successStoryRoute();
-//--- Complete Profile Routing ----
+//------ Complete Profile Routing ----
     case CompleteProfile.routeName:
       return completeProfile();
-//--------- Review Routing --------
+//------------ Review Routing --------
     case AddReview.routeName:
       final List<dynamic> args = settings.arguments as List<dynamic>;
       final String type = args[0] as String;
       return addReviewRoute(type);
-//------ payment Routing ----------
+//--------- payment Routing ----------
     case CongratulationScreen.routeName:
       return congratulationRoute();
     case EReceiptScreen.routeName:
       return eReceiptRoute();
-//----- sports club Routing -------
+    case AddNewCardScreen.routeName:
+      return addNewCardRoute();
+    case PaymentMethodsScreen.routeName:
+      return paymentMethodsRoute();
+//------ sports club Routing -------
     case SportsClubScreen.routeName:
       return sportsClubRoute();
-//----- featured Routing -------
+//------- featured Routing -------
     case FeaturedScreen.routeName:
       final List<dynamic> args = settings.arguments as List<dynamic>;
       final List<String> filterType = args[0] as List<String>;
       final String featuredType = args[1] as String;
       return featuredRoute(filterType, featuredType);
-//----- profile Routing -------
+//-------- profile Routing -------
     case MyProfile.routeName:
       return myProfileRoute();
     case SettingsScreen.routeName:
@@ -129,19 +135,7 @@ Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
       return trainerCompleteProfileRoute();
 //-------- My Services Routing -----------
     case MyServicesScreen.routeName:
-      return trainerMyServicesScreen();
-//-------- Client List Routing -----------
-    case ClientListScreen.routeName:
-      return trainerClientListScreen();
-//-------- Create Sessions Routing -----------
-    case CreateSessionScreen.routeName:
-      return createSessionRoute();
-//-------- Subscriptions Routing -----------
-    case SubscriptionsScreen.routeName:
-      return subscriptionsScreenRoute();
-//-------- Notifications Routing -----------
-    case TrainerNotificationScreen.routeName:
-      return trainerNotificationScreenRoute();
+      return trainerMyServicesScreen();  
 //---------------------------------------
     default:
       return notFound();
@@ -214,7 +208,7 @@ MaterialPageRoute<dynamic> preferencesScreenRoute() {
 
 MaterialPageRoute<dynamic> homeRoute() {
   return MaterialPageRoute(
-    builder: (context) => const HomeScreen(),
+    builder: (context) => const AddNewCardScreen(),
   );
 }
 
@@ -239,6 +233,17 @@ MaterialPageRoute<dynamic> eReceiptRoute() {
 MaterialPageRoute<dynamic> congratulationRoute() {
   return MaterialPageRoute(
     builder: (context) => const CongratulationScreen(),
+  );
+}
+
+MaterialPageRoute<dynamic> paymentMethodsRoute() {
+  return MaterialPageRoute(
+    builder: (context) => const PaymentMethodsScreen(),
+  );
+}
+MaterialPageRoute<dynamic> addNewCardRoute() {
+  return MaterialPageRoute(
+    builder: (context) => const AddNewCardScreen(),
   );
 }
 
@@ -319,7 +324,8 @@ MaterialPageRoute<dynamic> favoriteScreenRoute() {
 
 MaterialPageRoute<dynamic> trainerHomeRoute() {
   return MaterialPageRoute(
-    builder: (context) => const TrainerHomeScreen(),
+
+    builder: (context) => const PaymentSuccessfullyScreen(),
   );
 }
 
@@ -340,6 +346,14 @@ MaterialPageRoute<dynamic> trainerMyServicesScreen() {
     builder: (context) => const MyServicesScreen(),
   );
 }
+
+MaterialPageRoute<dynamic> addProgramRoute() {
+  return MaterialPageRoute(
+    builder: (context) => const AddProgramScreen(),
+
+  );
+}
+
 
 MaterialPageRoute<dynamic> trainerClientListScreen() {
   return MaterialPageRoute(

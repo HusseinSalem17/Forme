@@ -41,12 +41,17 @@ dependencies:
   wheel_slider: ^1.1.1
   flutter_credit_card: ^4.0.1
   intl: ^0.17.0
+
+  google_maps_flutter: ^2.5.3
+  geolocator: ^10.1.0
+
   multiselect: ^0.0.4
   lottie: ^3.0.0
   dotted_border: ^2.1.0
   file_picker: ^6.1.1
   open_file: ^3.3.2
   time_range_picker: ^2.2.0
+
 
 
 dev_dependencies:

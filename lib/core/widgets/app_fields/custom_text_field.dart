@@ -8,19 +8,20 @@ import 'package:forme_app/core/utils/text_styles.dart';
 import 'package:forme_app/features/user_features/profile/presentation/views/complete_profile_widgets/custom_build_form.dart';
 
 class CustomTextField extends StatefulWidget {
-  const CustomTextField({
-    Key? key,
-    this.hintText,
-    this.controller,
-    this.keyboardType,
-    this.onChanged,
-    this.validator,
-    this.confirmPasswordController,
-    this.errorText,
-    required this.title,
-    this.optional = false,
-    this.enabled = true,
-  }) : super(key: key);
+  const CustomTextField(
+      {Key? key,
+      this.hintText,
+      this.controller,
+      this.keyboardType,
+      this.onChanged,
+      this.validator,
+      this.confirmPasswordController,
+      this.errorText,
+      required this.title,
+      this.optional = false,
+      this.enabled = true,
+      this.titleColor = AppColors.n900PrimaryTextColor})
+      : super(key: key);
 
   final void Function(String)? onChanged;
   final String? hintText, errorText;
@@ -30,6 +31,7 @@ class CustomTextField extends StatefulWidget {
   final TextInputType? keyboardType;
   final TextEditingController? confirmPasswordController;
   final String? Function(String?)? validator;
+  final Color titleColor;
   final bool enabled;
 
   @override
@@ -43,6 +45,7 @@ class CustomTextFieldState extends State<CustomTextField> {
   Widget build(BuildContext context) {
     return CustomBuildForm(
       title: widget.title,
+      titleColor: widget.titleColor,
       optional: widget.optional,
       child: TextFormField(
         textAlign: TextAlign.start,
@@ -51,10 +54,7 @@ class CustomTextFieldState extends State<CustomTextField> {
         cursorColor: AppColors.p300PrimaryColor,
         enabled: widget.enabled,
         style: TextStyles.textStyleRegular
-            .copyWith(
-              fontSize: 14.sp,
-            )
-            .copyWith(color: AppColors.n900PrimaryTextColor),
+            .copyWith(fontSize: 14.sp, color: AppColors.n900PrimaryTextColor),
         keyboardType: widget.keyboardType,
         obscureText: widget.keyboardType == TextInputType.visiblePassword &&
             _obscureText,

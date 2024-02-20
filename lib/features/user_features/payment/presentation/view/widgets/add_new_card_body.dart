@@ -1,29 +1,12 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_credit_card/flutter_credit_card.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/functions/validators.dart';
-import 'package:forme_app/core/utils/text_styles.dart';
-import 'package:forme_app/features/user_features/join_program_feature/presentation/views/widgets/custom_app_bar.dart';
+import 'package:forme_app/features/user_features/join_program_feature/formatters/add_new_card_formatters.dart';
 
-
-
-class AddNewCardScreen extends StatelessWidget {
-  const AddNewCardScreen({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return const Scaffold(
-      appBar: CustomAppBar(
-        title: Text('Add New Card'),
-      ),
-      body: CustomCreditCard(),
-    );
-  }
-}
+import '../../../../join_program_feature/presentation/views/widgets/card_text_form_field.dart';
 
 class CustomCreditCard extends StatefulWidget {
   const CustomCreditCard({Key? key}) : super(key: key);
@@ -49,6 +32,7 @@ class _CustomCreditCardState extends State<CustomCreditCard> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            SizedBox(height: 24.h,),
             CreditCardWidget(
               cardBgColor: AppColors.p300PrimaryColor,
               padding: 0,
@@ -60,7 +44,7 @@ class _CustomCreditCardState extends State<CustomCreditCard> {
               isHolderNameVisible: true,
               onCreditCardWidgetChange: (value) {},
             ),
-            CardTextFromFields(
+            CardTextFromField(
               subTitle: 'Card Holder Name',
               hintText: 'Enter Your Name',
               onChange: (val) {
@@ -68,7 +52,7 @@ class _CustomCreditCardState extends State<CustomCreditCard> {
                 setState(() {});
               },
             ),
-            CardTextFromFields(
+            CardTextFromField(
               subTitle: 'Card Number',
               hintText: 'xxxx xxxx xxxx xxxx',
               onChange: (val) {
@@ -91,7 +75,7 @@ class _CustomCreditCardState extends State<CustomCreditCard> {
               mainAxisSize: MainAxisSize.min,
               children: [
                 Expanded(
-                  child: CardTextFromFields(
+                  child: CardTextFromField(
                     subTitle: 'Expiry Date',
                     hintText: '02/30',
                     inputFormats: [
@@ -105,7 +89,7 @@ class _CustomCreditCardState extends State<CustomCreditCard> {
                 ),
                 const SizedBox(width: 16),
                 Expanded(
-                  child: CardTextFromFields(
+                  child: CardTextFromField(
                     subTitle: 'CVV',
                     hintText: '000',
                     onChange: (value) {
@@ -163,128 +147,6 @@ class _CustomCreditCardState extends State<CustomCreditCard> {
           ],
         ),
       ),
-    );
-  }
-}
-
-class CardTextFromFields extends StatelessWidget {
-  final String hintText;
-  final String subTitle;
-  final ValueChanged<String>? onChange;
-
-  final List<TextInputFormatter>? inputFormats;
-  final TextInputType? textInputType;
-  final VoidCallback? onEditingComplete;
-
-  const CardTextFromFields(
-      {super.key,
-        required this.hintText,
-        required this.subTitle,
-        this.onChange,
-        this.inputFormats,
-        this.textInputType,
-        this.onEditingComplete});
-
-  @override
-  Widget build(BuildContext context) {
-    final subTitleStyle = TextStyles.textStyleSemiBold.copyWith(
-      fontSize: 16,
-      color: AppColors.neutralsN9,
-    );
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        SizedBox(height: 16.h),
-        Text(
-          subTitle,
-          style: subTitleStyle,
-        ),
-        SizedBox(height: 10.h),
-        TextFormField(
-          decoration: InputDecoration(
-            contentPadding: const EdgeInsets.symmetric(
-              horizontal: 12,
-              vertical: 11.5,
-            ),
-            hintText: hintText,
-            hintStyle: TextStyles.textStyleRegular.copyWith(
-              fontSize: 14,
-            ),
-            enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(4),
-              borderSide: const BorderSide(color: AppColors.n40BorderColor),
-            ),
-            focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(4),
-              borderSide: const BorderSide(color: AppColors.p300PrimaryColor),
-            ),
-          ),
-          keyboardType: textInputType,
-
-          ///initialValue: formatCardNumber(cardNumber),
-          onChanged: onChange,
-          //keyboardType: TextInputType.number,
-          inputFormatters: inputFormats,
-          onEditingComplete: onEditingComplete,
-        ),
-      ],
-    );
-  }
-}
-
-class CardNumberFormatter extends TextInputFormatter {
-  @override
-  TextEditingValue formatEditUpdate(
-      TextEditingValue oldValue,
-      TextEditingValue newValue,
-      ) {
-    final text = newValue.text;
-
-    if (text.length <= 4) {
-      return newValue;
-    }
-
-    final formattedText = StringBuffer();
-    for (int i = 0; i < text.length; i += 4) {
-      final end = (i + 4 < text.length) ? i + 4 : text.length;
-      formattedText.write(text.substring(i, end));
-
-      if (end < text.length) {
-        formattedText.write(' ');
-      }
-    }
-
-    return newValue.copyWith(
-      text: formattedText.toString(),
-      selection: TextSelection.collapsed(offset: formattedText.length),
-    );
-  }
-}
-
-class ExpireDateFormatter extends TextInputFormatter {
-  @override
-  TextEditingValue formatEditUpdate(
-      TextEditingValue oldValue,
-      TextEditingValue newValue,
-      ) {
-    final String newText = newValue.text;
-
-    // Allow only numeric characters
-    final String sanitizedText = newText.replaceAll(RegExp(r'[^0-9]'), '');
-
-    if (sanitizedText.length >= 2) {
-      // Insert '/' after the second numeric character
-      final String formattedText =
-          '${sanitizedText.substring(0, 2)}${sanitizedText.length > 2 ? '/${sanitizedText.substring(2, min(4, sanitizedText.length))}' : ''}';
-      return TextEditingValue(
-        text: formattedText,
-        selection: TextSelection.collapsed(offset: formattedText.length),
-      );
-    }
-
-    return newValue.copyWith(
-      text: sanitizedText,
-      selection: TextSelection.collapsed(offset: sanitizedText.length),
     );
   }
 }

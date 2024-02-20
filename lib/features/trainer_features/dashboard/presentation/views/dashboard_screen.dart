@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:forme_app/core/transitions/page_slide.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles_20231128011153.dart';
+import 'package:forme_app/features/trainer_features/add_program/presentation/views/add_program_screen.dart';
 import 'package:forme_app/features/trainer_features/dashboard/presentation/views/widgets/data_container.dart';
 import 'package:forme_app/features/trainer_features/dashboard/presentation/views/widgets/trainer_card.dart';
 import 'package:forme_app/features/trainer_features/dashboard/presentation/views/widgets/trainer_component_icon.dart';
@@ -25,7 +27,7 @@ class DashboardScreen extends StatelessWidget {
       'Workouts',
       'Sessions',
       'Club\nSubscriptions',
-      'Payment\nMethods',
+      'Cards',
       'Revenue'
     ];
     final List<String> cardIcons = [
@@ -108,6 +110,8 @@ class DashboardScreen extends StatelessWidget {
                         cardIcons[index], cardTitles[index], context, () {
                       switch (index) {
                         case 0: //programs
+                          Navigator.of(context).push(
+                              PageSlideTransition(const AddProgramScreen()));
                         case 1: //Workouts
                         case 2: //Sessions
                         case 3: //Club Subscriptions

@@ -26,7 +26,7 @@ class ProfileImagePicker extends StatelessWidget {
             backgroundImage: imageFile == null
                 ? null
                 : FileImage(
-                    File(imageFile!.path),
+                    File(imageFile!.path),//picked image
                   ),
             child: imageFile == null ? defaultImage() : null,
           ),

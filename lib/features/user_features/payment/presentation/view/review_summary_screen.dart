@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:forme_app/features/user_features/join_program_feature/presentation/views/widgets/custom_app_bar.dart';
-import 'package:forme_app/features/user_features/join_program_feature/presentation/views/widgets/review_summary_body.dart';
-import '../../../preferences/presentation/views/widgets/custom_shadow_button.dart';
+import 'package:forme_app/core/transitions/page_slide.dart';
+import 'package:forme_app/core/widgets/button_container.dart';
+import 'package:forme_app/core/widgets/simple_app_bar.dart';
+import 'package:forme_app/features/user_features/payment/presentation/view/payment_successfully_screen.dart';
+import 'package:forme_app/features/user_features/payment/presentation/view/widgets/review_summary_body.dart';
 
 class ReviewSummaryScreen extends StatelessWidget {
+  static const routeName = '/review-summary-screen';
   const ReviewSummaryScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(
-        title: Text('Review Summary'),
-      ),
+      appBar: simpleAppBar(context, 'Review Summary'),
       body: Stack(
         children: [
           CustomScrollView(
@@ -28,11 +29,12 @@ class ReviewSummaryScreen extends StatelessWidget {
           ),
           Align(
             alignment: Alignment.bottomCenter,
-            child: CustomShadowButton(
-              onTap: () {
-                debugPrint('Hi');
-              },
+            child: ButtonContainer(
               buttonTitle: 'Continue',
+              onTap: () {
+                Navigator.of(context).push(
+                    PageSlideTransition(const PaymentSuccessfullyScreen()));
+              },
             ),
           )
         ],

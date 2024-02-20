@@ -22,7 +22,7 @@ class CustomShadowButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: buttonSubTitle != null ? 131.h : 100,
+      height: buttonSubTitle != null ? 120.h : 100,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: const BorderRadius.only(
@@ -60,11 +60,10 @@ class CustomShadowButton extends StatelessWidget {
                   onTap: subTitleOnTap ?? () {},
                   child: Text(
                     buttonSubTitle!,
-                    style: TextStyles.textStyleRegular.copyWith(
-                      color: AppColors.p300PrimaryColor,
-                    ),
+                    style: TextStyles.textStyleRegular
+                        .copyWith(color: AppColors.p300PrimaryColor, height: 1),
                     textAlign: TextAlign.center,
-                  ),
+                  ), 
                 ),
               )
           ],
