@@ -5,7 +5,7 @@ import 'package:forme_app/core/utils/text_styles.dart';
 import 'package:forme_app/features/trainer_features/trainer_preference/presentation/views/widgets/links_text_field.dart';
 import 'package:forme_app/features/trainer_features/trainer_preference/presentation/views/widgets/pick_languages.dart';
 import 'package:forme_app/features/trainer_features/trainer_preference/presentation/views/widgets/text_area_field.dart';
-import 'package:forme_app/features/trainer_features/trainer_preference/presentation/views/widgets/yes_or_no_buttons.dart';
+import 'package:forme_app/features/trainer_features/trainer_preference/presentation/views/widgets/two_choices.dart';
 
 
 class FirstPreferenceTrainer extends StatelessWidget {
@@ -48,7 +48,7 @@ class FirstPreferenceTrainer extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 24.h),
-              const YesOrNo(),
+              const TwoChoices(text1: 'Yes', text2: 'No'),
               SizedBox(height: 16.h),
               const Divider(
                 color: AppColors.n40BorderColor,
@@ -65,7 +65,7 @@ class FirstPreferenceTrainer extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 24.h),
-              const YesOrNo(),
+              const TwoChoices(text1: 'Yes', text2: 'No'),
               SizedBox(height: 16.h),
               const Divider(
                 color: AppColors.n40BorderColor,

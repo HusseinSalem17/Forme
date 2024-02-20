@@ -36,7 +36,7 @@ class EmptyContentScreen extends StatelessWidget {
                       radius: 87.dg,
                       backgroundColor: AppColors.n10Color,
                       child: SvgPicture.asset(
-                        'assets/image/Icon/empty_content.svg',
+                        'assets/image/icon/empty_content.svg',
                         width: 175.h,
                         height: 175.w,
                       ),

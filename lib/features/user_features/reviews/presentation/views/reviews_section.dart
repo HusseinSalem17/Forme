@@ -4,8 +4,8 @@ import 'package:flutter_svg/svg.dart';
 import 'package:forme_app/core/transitions/page_slide.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
-import 'package:forme_app/features/user_features/Trainer_ditails/data/models/trainer_review_model.dart';
-import 'package:forme_app/features/user_features/Trainer_ditails/presentation/views/widgets/trainer_review.dart';
+import 'package:forme_app/features/user_features/Trainer_details/data/models/trainer_review_model.dart';
+import 'package:forme_app/features/user_features/Trainer_details/presentation/views/widgets/trainer_review.dart';
 import 'package:forme_app/features/user_features/reviews/presentation/views/add_review.dart';
 
 class ReviewsSection extends StatelessWidget {
@@ -27,16 +27,14 @@ class ReviewsSection extends StatelessWidget {
               children: [
                 Text(
                   'Reviews',
-                  style: TextStyles.textStyleBold.copyWith(
-                      fontSize: 14.sp, color: AppColors.n900PrimaryTextColor),
+                  style: TextStyles.textStyleBold.copyWith(fontSize: 14.sp, color: AppColors.n900PrimaryTextColor),
                 ),
                 const Spacer(),
                 SvgPicture.asset('assets/image/Icon/tabler_pencil-minus.svg'),
                 GestureDetector(
                   child: Text(
                     'add review',
-                    style: TextStyles.textStyleBold.copyWith(
-                        fontSize: 11.sp, color: AppColors.p300PrimaryColor),
+                    style: TextStyles.textStyleBold.copyWith(fontSize: 11.sp, color: AppColors.p300PrimaryColor),
                   ),
                   onTap: () {
                     Navigator.of(context).push(PageSlideTransition(AddReview(
