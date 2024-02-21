@@ -4,6 +4,8 @@ import 'package:forme_app/features/Authentication/presentation/views/new_passwor
 import 'package:forme_app/features/Authentication/presentation/views/sign_up_view.dart';
 import 'package:forme_app/features/Authentication/presentation/views/sign_in_view.dart';
 import 'package:forme_app/features/Authentication/presentation/views/verify_code.dart';
+import 'package:forme_app/features/trainer_features/add_program/presentation/views/add_program_screen.dart';
+import 'package:forme_app/features/trainer_features/complete_profile_trainer/presentation/views/trainer_complete_profile.dart';
 import 'package:forme_app/features/trainer_features/dashboard/presentation/views/home_view.dart';
 import 'package:forme_app/features/trainer_features/my_services/presentation/views/my_services_screen.dart';
 import 'package:forme_app/features/trainer_features/subscriptions/presentation/views/subscriptions_screen.dart';
@@ -37,14 +39,11 @@ import 'features/trainer_features/create_sessions/presentation/views/create_sess
 import 'features/user_features/payment/presentation/view/payment_methods_screen.dart';
 import 'features/user_features/preferences/presentation/views/preferences_screen.dart';
 
-
 Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
   switch (settings.name) {
 //----- Splash Routing -----
     case '/':
       return subscriptionsScreenRoute();
-    //homeRoute();
-    // splashRoute();
 
 //----- OnBoarding Routing -----
     case OnBoardingView.routeName:
@@ -135,7 +134,10 @@ Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
       return trainerCompleteProfileRoute();
 //-------- My Services Routing -----------
     case MyServicesScreen.routeName:
-      return trainerMyServicesScreen();  
+      return trainerMyServicesScreen();
+//-------- Add Program Routing -----------
+    case AddProgramScreen.routeName:
+      return addProgramRoute();
 //---------------------------------------
     default:
       return notFound();
@@ -241,6 +243,7 @@ MaterialPageRoute<dynamic> paymentMethodsRoute() {
     builder: (context) => const PaymentMethodsScreen(),
   );
 }
+
 MaterialPageRoute<dynamic> addNewCardRoute() {
   return MaterialPageRoute(
     builder: (context) => const AddNewCardScreen(),
@@ -324,8 +327,7 @@ MaterialPageRoute<dynamic> favoriteScreenRoute() {
 
 MaterialPageRoute<dynamic> trainerHomeRoute() {
   return MaterialPageRoute(
-
-    builder: (context) => const PaymentSuccessfullyScreen(),
+    builder: (context) => const TrainerHomeScreen(),
   );
 }
 
@@ -350,11 +352,8 @@ MaterialPageRoute<dynamic> trainerMyServicesScreen() {
 MaterialPageRoute<dynamic> addProgramRoute() {
   return MaterialPageRoute(
     builder: (context) => const AddProgramScreen(),
-
   );
 }
-
-
 MaterialPageRoute<dynamic> trainerClientListScreen() {
   return MaterialPageRoute(
     builder: (context) => const ClientListScreen(),
@@ -377,4 +376,4 @@ MaterialPageRoute<dynamic> trainerNotificationScreenRoute() {
   return MaterialPageRoute(
     builder: (context) => const TrainerNotificationScreen(),
   );
-}
+

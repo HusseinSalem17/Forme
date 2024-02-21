@@ -46,14 +46,16 @@ class _AddProgramScreenState extends State<AddProgramScreen> {
       body: Padding(
         padding: EdgeInsets.all(14.w),
         child: Center(
-            child: AddProgramBody(
-          imageFile: _imageFile,
-          onImageSelected: (file) {
-            setState(() {
-              _imageFile = file;
-            });
-          },
-        )),
+            child: SingleChildScrollView(
+              child: AddProgramBody(
+                        imageFile: _imageFile,
+                        onImageSelected: (file) {
+              setState(() {
+                _imageFile = file;
+              });
+                        },
+                      ),
+            )),
       ),
     );
   }
