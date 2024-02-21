@@ -8,12 +8,13 @@ import 'package:forme_app/features/trainer_features/add_program/presentation/vie
 import 'package:forme_app/features/trainer_features/complete_profile_trainer/presentation/views/trainer_complete_profile.dart';
 import 'package:forme_app/features/trainer_features/dashboard/presentation/views/home_view.dart';
 import 'package:forme_app/features/trainer_features/my_services/presentation/views/my_services_screen.dart';
+import 'package:forme_app/features/trainer_features/subscriptions/presentation/views/subscriptions_screen.dart';
 import 'package:forme_app/features/trainer_features/trainer_preference/presentation/views/trainer_preference_screen.dart';
 import 'package:forme_app/features/user_features/Favorite/presentation/views/favorite_screen.dart';
 import 'package:forme_app/features/user_features/Notification/presentation/views/notification_screen.dart';
 import 'package:forme_app/features/user_features/Payment/presentation/view/ereceipt_screen.dart';
-import 'package:forme_app/features/user_features/Trainer_ditails/presentation/views/success_story.dart';
-import 'package:forme_app/features/user_features/Trainer_ditails/presentation/views/trainer_details_view.dart';
+import 'package:forme_app/features/user_features/Trainer_details/presentation/views/success_story.dart';
+import 'package:forme_app/features/user_features/Trainer_details/presentation/views/trainer_details_view.dart';
 import 'package:forme_app/features/user_features/featured/presentation/featured_screen.dart';
 import 'package:forme_app/features/user_features/home/presentation/views/home_view.dart';
 import 'package:forme_app/features/user_features/payment/presentation/view/add_new_card_screen.dart';
@@ -30,18 +31,19 @@ import 'package:forme_app/features/user_features/search/presentation/views/filte
 import 'package:forme_app/features/user_features/sports_club/presentation/views/sports_club.dart';
 import 'package:forme_app/splash_screen.dart';
 import 'package:forme_app/onboarding_screens/views/onboarding_screen.dart';
+import 'features/trainer_features/Trainer_Notification/presentation/views/trainer_notification_screen.dart';
+import 'features/trainer_features/add_program/presentation/views/add_program_screen.dart';
+import 'features/trainer_features/client_list/presentation/views/client_list_screen.dart';
+import 'features/trainer_features/complete_profile_trainer/presentation/views/trainer_complete_profile.dart';
+import 'features/trainer_features/create_sessions/presentation/views/create_session.dart';
 import 'features/user_features/payment/presentation/view/payment_methods_screen.dart';
-
 import 'features/user_features/preferences/presentation/views/preferences_screen.dart';
 
 Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
   switch (settings.name) {
 //----- Splash Routing -----
     case '/':
-      return trainerHomeRoute();
-
-    //homeRoute();
-    // splashRoute();
+      return subscriptionsScreenRoute();
 
 //----- OnBoarding Routing -----
     case OnBoardingView.routeName:
@@ -57,7 +59,7 @@ Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
     case VerifyCodeScreen.routeName:
       return verifyCodeRoute();
     case NewPasswordScreen.routeName:
-      return newpasswordRoute();
+      return newPasswordRoute();
 //------------------------------------------- user section ------------------------
 //---------- Preferences Routing -----
     case PreferencesScreen.routeName:
@@ -194,7 +196,7 @@ MaterialPageRoute<dynamic> verifyCodeRoute() {
   );
 }
 
-MaterialPageRoute<dynamic> newpasswordRoute() {
+MaterialPageRoute<dynamic> newPasswordRoute() {
   return MaterialPageRoute(
     builder: (context) => const NewPasswordScreen(),
   );
@@ -262,8 +264,7 @@ MaterialPageRoute<dynamic> sportsClubRoute() {
   );
 }
 
-MaterialPageRoute<dynamic> featuredRoute(
-    List<String> filterType, String featureType) {
+MaterialPageRoute<dynamic> featuredRoute(List<String> filterType, String featureType) {
   return MaterialPageRoute(
     builder: (context) => FeaturedScreen(
       filterTypes: filterType,
@@ -353,3 +354,26 @@ MaterialPageRoute<dynamic> addProgramRoute() {
     builder: (context) => const AddProgramScreen(),
   );
 }
+MaterialPageRoute<dynamic> trainerClientListScreen() {
+  return MaterialPageRoute(
+    builder: (context) => const ClientListScreen(),
+  );
+}
+
+MaterialPageRoute<dynamic> createSessionRoute() {
+  return MaterialPageRoute(
+    builder: (context) => const CreateSessionScreen(),
+  );
+}
+
+MaterialPageRoute<dynamic> subscriptionsScreenRoute() {
+  return MaterialPageRoute(
+    builder: (context) => const SubscriptionsScreen(),
+  );
+}
+
+MaterialPageRoute<dynamic> trainerNotificationScreenRoute() {
+  return MaterialPageRoute(
+    builder: (context) => const TrainerNotificationScreen(),
+  );
+

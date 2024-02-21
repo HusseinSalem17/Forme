@@ -4,7 +4,9 @@ abstract class AppColors {
   static const n10Color = Color(0xffFAFAFB);
   static const n50BackgroundColor = Color(0xffE6F0FF);
   static const p300PrimaryColor = Color(0xff0065ff);
+  static const p200PrimaryColor = Color(0xff2B7FFF);
   static const p50PrimaryColor = Color(0xffe6f0ff);
+  static const p75PrimaryColor = Color(0xff96C0FF);
   static const secondaryColor = Color(0xffee9f2f);
   static const n900PrimaryTextColor = Color(0xff071225);
   static const n100Color = Color(0xff797f89);

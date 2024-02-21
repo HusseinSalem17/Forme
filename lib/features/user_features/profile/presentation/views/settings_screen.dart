@@ -34,7 +34,7 @@ class SettingsScreen extends StatelessWidget {
                 children: List<Widget>.generate(4, (int index) {
               return profileFeature(icons[index], features[index], () {
                 switch (index) {
-                  case 0: //notifcation
+                  case 0: //notification
                   case 1:
                     Navigator.of(context)
                         .push(PageSlideTransition(const PasswordManager()));
