@@ -4,13 +4,15 @@ import 'package:forme_app/core/transitions/page_slide.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
 import 'package:forme_app/core/widgets/custom_app_bar_arrow_button.dart';
-import 'package:forme_app/core/widgets/custom_app_botton.dart';
+import 'package:forme_app/core/widgets/custom_app_button.dart';
+
 import 'package:forme_app/features/user_features/Payment/presentation/view/ereceipt_screen.dart';
 import 'package:forme_app/features/user_features/home/presentation/views/home_view.dart';
 import 'package:forme_app/features/user_features/payment/presentation/view/widgets/payment_successfully_body.dart';
 
 class PaymentSuccessfullyScreen extends StatelessWidget {
   static const routeName = '/payment-successfully-screen';
+
   const PaymentSuccessfullyScreen({Key? key}) : super(key: key);
 
   @override
@@ -48,7 +50,7 @@ class PaymentSuccessfullyScreen extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    CustomAppBottom(
+                    CustomAppButton(
                         title: 'View E-Receipt',
                         onTap: () {
                           Navigator.of(context)

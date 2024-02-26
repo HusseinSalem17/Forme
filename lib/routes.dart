@@ -29,6 +29,7 @@ import 'package:forme_app/features/user_features/search/presentation/views/filte
 import 'package:forme_app/features/user_features/sports_club/presentation/views/sports_club.dart';
 import 'package:forme_app/splash_screen.dart';
 import 'package:forme_app/onboarding_screens/views/onboarding_screen.dart';
+import 'features/trainer_features/complete_profile_trainer/presentation/views/trainer_complete_profile.dart';
 import 'features/user_features/payment/presentation/view/payment_methods_screen.dart';
 
 import 'features/user_features/preferences/presentation/views/preferences_screen.dart';
@@ -356,4 +357,4 @@ MaterialPageRoute<dynamic> addProgramRoute() {
 }
 
   
-}
+
