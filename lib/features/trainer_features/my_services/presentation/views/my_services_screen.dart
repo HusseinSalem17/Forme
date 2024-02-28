@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:forme_app/core/transitions/page_slide.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
 import 'package:forme_app/core/widgets/custom_app_bar_arrow_button.dart';
 import 'package:forme_app/core/widgets/custom_tab_bar.dart';
-import 'package:forme_app/features/trainer_features/my_services/presentation/views/tabs/my_programs_tab.dart';
-import 'package:forme_app/features/trainer_features/my_services/presentation/views/tabs/my_sessions_tab.dart';
-import 'package:forme_app/features/trainer_features/my_services/presentation/views/tabs/my_workout_tab.dart';
+import 'package:forme_app/features/trainer_features/create_sessions/presentation/views/create_session.dart';
+
+import 'tabs/my_programs_tab.dart';
+import 'tabs/my_sessions_tab.dart';
+import 'tabs/my_workout_tab.dart';
 
 class MyServicesScreen extends StatelessWidget {
   static const routeName = '/my-services';
@@ -29,7 +32,9 @@ class MyServicesScreen extends StatelessWidget {
                   icon: Icons.add_circle,
                   color: AppColors.p300PrimaryColor,
                   size: 30,
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.of(context).push(PageSlideTransition(const CreateSessionScreen()));
+                  },
                 ),
               ),
             ],

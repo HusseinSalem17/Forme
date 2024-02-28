@@ -4,6 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
 
+
 class WarningNotification extends StatelessWidget {
   const WarningNotification({super.key});
 
@@ -30,7 +31,7 @@ class WarningNotification extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            SvgPicture.asset('assets/image/icon/danger.svg'),
+            SvgPicture.asset('assets/image/Icon/danger.svg'),
             const SizedBox(
               width: 10,
             ),
