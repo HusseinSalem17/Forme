@@ -138,7 +138,7 @@ class _AgeSliderState extends State<AgeSlider> {
 //     return Center(
 //         child: Text('${index + 1}',
 //             style: index == selectedValue
-//                 ? Styles.textStyleRegular16.copyWith(
+//                  Styles.textStyleRegular16.copyWith(
 //                     fontSize: 56.sp,
 //                     color: AppColors.p300PrimaryColor,
 //                     fontWeight: FontWeight.w600)
