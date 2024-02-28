@@ -50,6 +50,8 @@ dependencies:
   dotted_border: ^2.1.0
   file_picker: ^6.1.1
   open_file: ^3.3.2
+  syncfusion_flutter_charts: ^21.2.4
+  fl_chart: ^0.66.2
 
 
 

@@ -4,6 +4,7 @@ import 'package:forme_app/features/Authentication/presentation/views/new_passwor
 import 'package:forme_app/features/Authentication/presentation/views/sign_up_view.dart';
 import 'package:forme_app/features/Authentication/presentation/views/sign_in_view.dart';
 import 'package:forme_app/features/Authentication/presentation/views/verify_code.dart';
+import 'package:forme_app/features/trainer_features/Revenue/presentation/views/revenue_screen.dart';
 import 'package:forme_app/features/trainer_features/add_program/presentation/views/add_program_screen.dart';
 import 'package:forme_app/features/trainer_features/complete_profile_trainer/presentation/views/trainer_complete_profile.dart';
 import 'package:forme_app/features/trainer_features/dashboard/presentation/views/home_view.dart';
@@ -136,6 +137,9 @@ Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
 //-------- Add Program Routing -----------
     case AddProgramScreen.routeName:
       return addProgramRoute();
+//-------- Revenue Routing -----------
+    case RevenueScreen.routeName:
+      return revenueScreenRoute();
 //---------------------------------------
     default:
       return notFound();
@@ -351,5 +355,11 @@ MaterialPageRoute<dynamic> trainerMyServicesScreen() {
 MaterialPageRoute<dynamic> addProgramRoute() {
   return MaterialPageRoute(
     builder: (context) => const AddProgramScreen(),
+  );
+}
+
+MaterialPageRoute<dynamic> revenueScreenRoute() {
+  return MaterialPageRoute(
+    builder: (context) => const RevenueScreen(),
   );
 }

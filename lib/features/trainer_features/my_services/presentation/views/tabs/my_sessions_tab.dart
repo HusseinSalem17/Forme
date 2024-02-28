@@ -18,7 +18,7 @@ class _MySessionsTabState extends State<MySessionsTab> with SingleTickerProvider
   @override
   void initState() {
     super.initState();
-    _tabController = new TabController(vsync: this, length: 3);
+    _tabController = TabController(vsync: this, length: 3);
     _tabController.addListener(_handleTabSelection);
   }
 
