@@ -4,6 +4,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:forme_app/core/transitions/page_slide.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles_20231128011153.dart';
+import 'package:forme_app/features/trainer_features/Revenue/presentation/views/revenue_screen.dart';
 import 'package:forme_app/features/trainer_features/add_program/presentation/views/add_program_screen.dart';
 import 'package:forme_app/features/trainer_features/dashboard/presentation/views/widgets/data_container.dart';
 import 'package:forme_app/features/trainer_features/dashboard/presentation/views/widgets/trainer_card.dart';
@@ -91,7 +92,9 @@ class DashboardScreen extends StatelessWidget {
                             case 2: //Sessions
                             case 3: //Club Subscriptions
                             case 4: //Payment Methods
-                            case 5: //Revenue
+                            case 5:
+                              Navigator.of(context).push(
+                                  PageSlideTransition(const RevenueScreen()));
                           }
                         });
                       },

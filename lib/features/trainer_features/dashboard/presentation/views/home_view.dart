@@ -6,6 +6,8 @@ import 'package:forme_app/features/trainer_features/dashboard/presentation/views
 import 'package:forme_app/features/trainer_features/my_services/presentation/views/my_services_screen.dart';
 import 'package:forme_app/features/user_features/home/presentation/views/widgets/custom_bottom_navigation_bar.dart';
 
+import '../../../Trainer_Profile/presentation/views/trainer_profile_screen.dart';
+
 class TrainerHomeScreen extends StatefulWidget {
   static const routeName = '/trainer_home-screen';
 
@@ -21,7 +23,7 @@ class _TrainerHomeScreenState extends State<TrainerHomeScreen> {
     const SafeArea(child: Center(child: MyServicesScreen())),
     const SafeArea(child: Center(child: ClientListScreen())),
     const SafeArea(child: Center(child: Text('4'))),
-    const SafeArea(child: Center(child: Text('5'))),
+    const SafeArea(child: Center(child: TrainerProfileScreen())),
   ];
 
   @override
