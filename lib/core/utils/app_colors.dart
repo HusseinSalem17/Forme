@@ -34,11 +34,9 @@ abstract class AppColors {
   static const d300Danger = Color(0xffE72525);
   static const d500Danger = Color(0xff8D1717);
   static const s500Success = Color(0xff177F1B);
-  static const n300 = Color(0xff5B636F);
+  static const n300Color = Color(0xff5B636F);
   static const border30 = Color(0xffEBECEE);
   static const w75Warning = Color(0xffFBF8B2);
   static const w50Warning = Color(0xffFEFDEC);
   static const n400 = Color(0xff4F5764);
-
-
 }

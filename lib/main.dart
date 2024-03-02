@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:forme_app/core/utils/app_theme.dart';
+import 'package:forme_app/features/trainer_features/Trainer_Profile/presentation/manager/my_profile_cubit/cubit/my_profile_cubit.dart';
 import 'package:forme_app/features/trainer_features/dashboard/presentation/views/manager/bloc/trainer_home_bloc.dart';
+import 'package:forme_app/features/trainer_features/trainee_profile/presentation/manager/trainee_profile_cubit.dart';
 import 'package:forme_app/features/user_features/home/presentation/manager/bloc/home_bloc.dart';
 import 'package:forme_app/features/user_features/preferences/presentation/manager/preferences_bloc.dart';
 import 'package:forme_app/features/user_features/profile/data/repos/complete_profile_repo_impl.dart';
@@ -13,6 +15,7 @@ import 'package:flutter/services.dart';
 import 'package:forme_app/routes.dart';
 import 'core/utils/functions/service_locator.dart';
 import 'core/utils/scroll_behavior.dart';
+
 void main() {
   setupServiceLocator();
   SystemChrome.setSystemUIOverlayStyle(
@@ -37,12 +40,10 @@ class MyApp extends StatelessWidget {
           create: (context) => PreferencesBloc(),
         ),
         BlocProvider(
-          create: (context) =>
-              CompleteProfileCubit(getIt.get<CompleteProfileRepoImpl>()),
+          create: (context) => CompleteProfileCubit(getIt.get<CompleteProfileRepoImpl>()),
         ),
         BlocProvider(
-          create: (context) =>
-              MyProfileCubit(),
+          create: (context) => MyProfileCubit(),
         ),
         BlocProvider(
           create: (context) => HomeBloc(),
@@ -50,6 +51,13 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (context) => TrainerHomeBloc(),
         ),
+        BlocProvider(
+          create: (context) => MyProfileTrainerCubit(),
+        ),
+        BlocProvider(
+          create: (context) => TraineeProfileCubit(),
+        ),
+        
       ],
       child: ScreenUtilInit(
         builder: (context, child) => MaterialApp(
@@ -62,4 +70,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-

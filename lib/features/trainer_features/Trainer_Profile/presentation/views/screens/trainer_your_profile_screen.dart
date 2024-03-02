@@ -2,29 +2,26 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:forme_app/core/utils/app_colors.dart';
-import 'package:forme_app/core/utils/text_styles.dart';
-import 'package:forme_app/core/widgets/custom_app_bar_arrow_button.dart';
-import 'package:forme_app/core/widgets/simple_app_bar.dart';
-import 'package:forme_app/features/trainer_features/subscriptions/presentation/views/screens/clients_subscriptions.dart';
-import 'package:forme_app/features/trainer_features/subscriptions/presentation/views/screens/your_clubs.dart';
-import 'package:simple_star_rating/simple_star_rating.dart';
+import '../../../../../../core/transitions/page_slide.dart';
+import '../../../../../../core/utils/app_colors.dart';
+import '../../../../../../core/utils/text_styles.dart';
+import '../../../../../../core/widgets/simple_app_bar.dart';
+import '../../../../subscriptions/presentation/views/widgets/custom_gesture_detector_row.dart';
+import 'trainer_your_profile/complete_verification_screen.dart';
+import 'trainer_your_profile/languages_screen.dart';
+import 'trainer_your_profile/my_profile.dart';
+import 'trainer_your_profile/social_media_links_screen.dart';
 
-import '../../../../../core/transitions/page_slide.dart';
-import 'widgets/custom_gesture_detector_row.dart';
-
-class SubscriptionsScreen extends StatelessWidget {
-  static const String routeName = '/subscriptions_route';
-  final String textId;
-  const SubscriptionsScreen({super.key, this.textId = 'hussein_salem17'});
+class TrainerYourProfileScreen extends StatelessWidget {
+  const TrainerYourProfileScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    String textId = 'hussein_salem17';
     return Scaffold(
-      backgroundColor: AppColors.background,
       appBar: simpleAppBar(
         context,
-        'Club Subscriptions',
+        'Your Profile',
       ),
       body: Column(
         children: [
@@ -39,18 +36,18 @@ class SubscriptionsScreen extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      SvgPicture.asset('assets/image/Icon/hash.svg', color: AppColors.n900PrimaryTextColor),
+                      SvgPicture.asset('assets/image/Icon/hash.svg', color: AppColors.n900PrimaryTextColor,),
                       SizedBox(
                         width: 16.w,
                       ),
                       RichText(
                         text: TextSpan(
                           text: 'Trainer ID: ',
-                          style: TextStyles.textStyleRegular.copyWith(color: Colors.black),
+                          style: TextStyles.textStyleRegular.copyWith(color: AppColors.n600color, fontSize: 16.sp, fontWeight: FontWeight.w600),
                           children: <TextSpan>[
                             TextSpan(
                               text: textId,
-                              style: TextStyles.textStyleSemiBold.copyWith(color: AppColors.p300PrimaryColor),
+                              style: TextStyles.textStyleSemiBold.copyWith(color: AppColors.p300PrimaryColor, fontSize: 16.sp, fontWeight: FontWeight.w600),
                             ),
                           ],
                         ),
@@ -94,27 +91,32 @@ class SubscriptionsScreen extends StatelessWidget {
               children: [
                 Text(
                   'Retrieve your trainer ID from your profile or simply click the copy icon above, then share it through your personal page to showcase clients who have chosen you as their coach within the club.',
-                  style: TextStyles.textStyleRegular.copyWith(color: Colors.black),
+                  style: TextStyles.textStyleRegular.copyWith(color: Colors.black, fontSize: 14.sp, fontWeight: FontWeight.w400),
                 ),
                 SizedBox(
                   height: 32.h,
                 ),
-                CustomGestureDetectorRow(
-                    title: "Your Clubs",
-                    imageAddress: 'assets/image/Icon/club.svg',
-                    onTap: () {
-                      Navigator.of(context).push(PageSlideTransition(const YourClubsScreen()));
-                    }),
+                CustomGestureDetectorRow(title: "Edit Profile", imageAddress: 'assets/image/profile/profile_user.svg', onTap:(){
+                  Navigator.of(context).push(PageSlideTransition(const MyProfileTrainer()));
+                }),
                 const Divider(
                   color: AppColors.n20FillBodyInSmallCardColor,
                 ),
-                CustomGestureDetectorRow(
-                  title: "Clients Subscriptions",
-                  imageAddress: 'assets/image/Icon/users.svg',
-                  onTap: () {
-                    Navigator.of(context).push(PageSlideTransition(const ClientsSubscriptionsScreen()));
-                  },
+                CustomGestureDetectorRow(title: "Languages", imageAddress: 'assets/image/Icon/languages.svg', onTap:(){
+                  Navigator.of(context).push(PageSlideTransition(const LanguagesSearchScreen()));
+                }),
+                const Divider(
+                  color: AppColors.n20FillBodyInSmallCardColor,
                 ),
+                CustomGestureDetectorRow(title: "Social Media Links", imageAddress: 'assets/image/profile/profile_user.svg', onTap:(){
+                  Navigator.of(context).push(PageSlideTransition(const SocialMediaLinksScreen()));
+                }),
+                const Divider(
+                  color: AppColors.n20FillBodyInSmallCardColor,
+                ),
+                CustomGestureDetectorRow(title: "Complete Verification", imageAddress: 'assets/image/Icon/verified_black.svg', onTap: () {
+                  Navigator.of(context).push(PageSlideTransition(const CompleteVerificationScreen()));
+                }),
                 const Divider(
                   color: AppColors.n20FillBodyInSmallCardColor,
                 ),

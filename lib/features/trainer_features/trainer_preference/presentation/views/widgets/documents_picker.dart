@@ -9,7 +9,7 @@ import 'package:forme_app/core/utils/text_styles.dart';
 import 'package:open_file/open_file.dart';
 
 class DocumentsPicker extends StatefulWidget {
-  DocumentsPicker({super.key});
+  const DocumentsPicker({super.key});
 
   @override
   State<DocumentsPicker> createState() => _DocumentsPickerState();
