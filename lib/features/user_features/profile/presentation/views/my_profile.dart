@@ -25,12 +25,12 @@ class _MyProfileState extends State<MyProfile> {
   final TextEditingController _phoneController = TextEditingController();
   //final TextEditingController _birthController = TextEditingController();
   final TextEditingController _heightController = TextEditingController();
-  final TextEditingController _wegithController = TextEditingController();
+  final TextEditingController _weightController = TextEditingController();
   //final TextEditingController _countryController = TextEditingController();
   //final TextEditingController _goalController = TextEditingController();
   //final TextEditingController _physicalActivityLevelController =
   //    TextEditingController();
-  String? name, phone, birth, height, wegith, goal, gender, country;
+  String? name, phone, birth, height, weight, goal, gender, country;
   XFile? _imageFile;
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   @override
@@ -40,7 +40,7 @@ class _MyProfileState extends State<MyProfile> {
     _nameController.text = "Hussein Salem";
     _phoneController.text = "0124822101";
     _heightController.text = "175";
-    _wegithController.text = "75";
+    _weightController.text = "75";
   }
 
   @override
@@ -132,7 +132,7 @@ class _MyProfileState extends State<MyProfile> {
                 CustomTextField(
                   controller: _nameController,
                   title: 'Full Name',
-                  hintText: 'Hussein Salem Eldeskey',
+                  hintText: 'Hussein Salem Eldesokey',
                   keyboardType: TextInputType.name,
                   enabled: adjustable,
                   onChanged: (value) {
@@ -184,8 +184,8 @@ class _MyProfileState extends State<MyProfile> {
                   children: [
                     Expanded(
                       child: CustomTextField(
-                        controller: _wegithController,
-                        title: 'wegith',
+                        controller: _weightController,
+                        title: 'weight',
                         hintText: '75',
                         keyboardType: TextInputType.number,
                         enabled: adjustable,

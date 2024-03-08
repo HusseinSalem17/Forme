@@ -1,14 +1,20 @@
 import 'package:figma_squircle/figma_squircle.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
 import 'package:forme_app/features/user_features/Favorite/presentation/views/widgets/workout_card_type.dart';
 import 'package:forme_app/features/user_features/home/presentation/views/widgets/card_review_section.dart';
+
+
 class CardsItem extends StatelessWidget {
-  const CardsItem({super.key, required this.isPrograms});
+  CardsItem(
+      {super.key, required this.isPrograms, required this.type, this.state = 'Online', this.videos = 17, required this.title, required this.clients,  this.duration = '', required this.price, required this.rating, required this.reviews});
   final bool isPrograms;
+  String type, state, title, duration;
+  double price, rating;
+  int reviews, videos, clients;
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -53,13 +59,19 @@ class CardsItem extends StatelessWidget {
                     ),
                   ),
                 ),
+                const SizedBox(height: 4),
                 isPrograms
-                    ? const CardReviewSection()
+                    ? CardReviewSection(
+                        type: type,
+                        state: state,
+                        rating: rating,
+                        review: reviews,
+                      )
                     : Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           WorkoutCardType(
-                            type: 'Yoga',
+                            type: type,
                           ),
                           Row(
                             children: [
@@ -69,7 +81,7 @@ class CardsItem extends StatelessWidget {
                                 color: AppColors.starColor,
                               ),
                               Text(
-                                '4.9 (17 Reviews)',
+                                '$rating ($reviews Reviews)',
                                 style: TextStyles.cardTextStyle.copyWith(color: AppColors.n200BodyContentColor, fontSize: 9, fontWeight: FontWeight.w400),
                               ),
                             ],
@@ -77,7 +89,7 @@ class CardsItem extends StatelessWidget {
                         ],
                       ),
                 Text(
-                  'Mindful Movement',
+                  title,
                   style: TextStyles.blackCardTextStyle,
                 ),
                 Row(
@@ -92,15 +104,15 @@ class CardsItem extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      '23 clients',
-                      style: TextStyles.cardTextStyle.copyWith(color: AppColors.p300PrimaryColor, fontSize: 11, fontWeight: FontWeight.w700),
+                      '$clients clients',
+                      style: TextStyles.cardTextStyle.copyWith(color: AppColors.p200PrimaryColor, fontSize: 11, fontWeight: FontWeight.w700),
                     )
                   ],
                 ),
                 Row(
                   children: [
                     Text(
-                      '\$150.00',
+                      'E£$price',
                       style: TextStyles.cardTextStyle.copyWith(
                         fontSize: 12,
                         fontWeight: FontWeight.w600,
@@ -108,14 +120,14 @@ class CardsItem extends StatelessWidget {
                     ),
                     isPrograms
                         ? Text(
-                            ' /4 weeks',
+                            ' /$duration',
                             style: TextStyles.cardTextStyle.copyWith(
                               color: AppColors.n200BodyContentColor,
                               fontSize: 9,
                             ),
                           )
                         : Text(
-                            ' /20 videos',
+                            ' /$videos videos',
                             style: TextStyles.cardTextStyle.copyWith(
                               color: AppColors.n200BodyContentColor,
                               fontSize: 9,

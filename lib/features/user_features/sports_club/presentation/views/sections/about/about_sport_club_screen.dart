@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
-import 'package:forme_app/features/user_features/Trainer_ditails/presentation/views/widgets/trainer_description.dart';
+import 'package:forme_app/features/user_features/Trainer_details/presentation/views/widgets/trainer_description.dart';
 import 'package:forme_app/features/user_features/sports_club/presentation/views/sections/about/sections/facilities_section.dart';
 import 'package:forme_app/features/user_features/sports_club/presentation/views/sections/about/sections/trainer_section.dart';
 import 'package:forme_app/features/user_features/sports_club/presentation/views/widgets&methods/club_text_list.dart';
@@ -37,14 +37,12 @@ class AboutSportsClubTab extends StatelessWidget {
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           Text(
             'Description',
-            style: TextStyles.textStyleBold.copyWith(
-                fontSize: 14.sp, color: AppColors.n900PrimaryTextColor),
+            style: TextStyles.textStyleBold.copyWith(fontSize: 14.sp, color: AppColors.n900PrimaryTextColor),
           ),
           const TrainerDescription(),
           Text(
             'Working Hours',
-            style: TextStyles.textStyleBold.copyWith(
-                fontSize: 14.sp, color: AppColors.n900PrimaryTextColor),
+            style: TextStyles.textStyleBold.copyWith(fontSize: 14.sp, color: AppColors.n900PrimaryTextColor),
           ),
           const Divider(
             thickness: 1,
@@ -55,8 +53,7 @@ class AboutSportsClubTab extends StatelessWidget {
             padding: EdgeInsets.only(top: 24.h, bottom: 8.h),
             child: Text(
               'GYM Owner',
-              style: TextStyles.textStyleBold.copyWith(
-                  fontSize: 14.sp, color: AppColors.n900PrimaryTextColor),
+              style: TextStyles.textStyleBold.copyWith(fontSize: 14.sp, color: AppColors.n900PrimaryTextColor),
             ),
           ),
           trainerSection(),
@@ -64,8 +61,7 @@ class AboutSportsClubTab extends StatelessWidget {
             padding: EdgeInsets.only(top: 24.h, bottom: 8.h),
             child: Text(
               'Facilities',
-              style: TextStyles.textStyleBold.copyWith(
-                  fontSize: 14.sp, color: AppColors.n900PrimaryTextColor),
+              style: TextStyles.textStyleBold.copyWith(fontSize: 14.sp, color: AppColors.n900PrimaryTextColor),
             ),
           ),
           facilitiesSection(),
@@ -73,8 +69,7 @@ class AboutSportsClubTab extends StatelessWidget {
             padding: EdgeInsets.only(top: 24.h, bottom: 8.h),
             child: Text(
               'Branches',
-              style: TextStyles.textStyleBold.copyWith(
-                  fontSize: 14.sp, color: AppColors.n900PrimaryTextColor),
+              style: TextStyles.textStyleBold.copyWith(fontSize: 14.sp, color: AppColors.n900PrimaryTextColor),
             ),
           ),
           Padding(

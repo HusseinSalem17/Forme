@@ -14,18 +14,22 @@ class MySessionsTab extends StatefulWidget {
 }
 
 class _MySessionsTabState extends State<MySessionsTab> with SingleTickerProviderStateMixin {
-  late TabController _tabController;
+  late TabController tabController;
+
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(vsync: this, length: 3);
-    _tabController.addListener(_handleTabSelection);
+    tabController = TabController(length: 3, vsync: this);
+    tabController.addListener(() {
+      setState(() {}); // Update the state when tab changes
+    });
   }
 
-  void _handleTabSelection() {
-    setState(() {});
+  @override
+  void dispose() {
+    tabController.dispose();
+    super.dispose();
   }
-
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -47,7 +51,7 @@ class _MySessionsTabState extends State<MySessionsTab> with SingleTickerProvider
                   indicatorColor: Colors.transparent,
                   dividerColor: Colors.transparent,
                   tabAlignment: TabAlignment.fill,
-                  controller: _tabController,
+                  controller: tabController,
                   indicator: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                     color: Colors.white,
@@ -60,7 +64,7 @@ class _MySessionsTabState extends State<MySessionsTab> with SingleTickerProvider
                       child: Text(
                         'Upcoming',
                         style: TextStyles.textStyleRegular.copyWith(
-                          color: _tabController.index == 0 ? AppColors.p300PrimaryColor : AppColors.n400color,
+                          color: tabController.index == 0 ? AppColors.n900PrimaryTextColor : AppColors.n400color,
                           fontSize: 14.sp,
                         ),
                       ),
@@ -69,7 +73,7 @@ class _MySessionsTabState extends State<MySessionsTab> with SingleTickerProvider
                       child: Text(
                         'Completed',
                         style: TextStyles.textStyleRegular.copyWith(
-                          color: _tabController.index == 1 ? AppColors.s500Success : AppColors.n400color,
+                          color: tabController.index == 1 ? AppColors.s500Success : AppColors.n400color,
                           fontSize: 14.sp,
                         ),
                       ),
@@ -78,7 +82,7 @@ class _MySessionsTabState extends State<MySessionsTab> with SingleTickerProvider
                       child: Text(
                         'Cancelled',
                         style: TextStyles.textStyleRegular.copyWith(
-                          color: _tabController.index == 2 ? AppColors.d500Danger : AppColors.n400color,
+                          color: tabController.index == 2 ? AppColors.d500Danger : AppColors.n400color,
                           fontSize: 14.sp,
                         ),
                       ),
@@ -87,9 +91,10 @@ class _MySessionsTabState extends State<MySessionsTab> with SingleTickerProvider
                 ),
               ),
             ),
-            const Expanded(
+            Expanded(
               child: TabBarView(
-                children: [
+                controller: tabController,
+                children: const [
                   UpcomingTab(),
                   CompletedTab(),
                   CancelledTab(),
