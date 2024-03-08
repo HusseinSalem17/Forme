@@ -6,6 +6,7 @@ import 'package:forme_app/core/utils/text_styles.dart';
 import 'package:forme_app/core/widgets/custom_app_bar_arrow_button.dart';
 import 'package:forme_app/features/trainer_features/Revenue/presentation/views/widgets/custom_tab_bar.dart';
 import 'package:forme_app/features/trainer_features/Revenue/presentation/views/widgets/revenue_card.dart';
+import 'package:forme_app/features/trainer_features/Revenue/presentation/views/widgets/trainer_card.dart';
 
 class RevenueScreen extends StatefulWidget {
   static const routeName = '/revenue-screen';
@@ -62,27 +63,60 @@ class _RevenueScreenState extends State<RevenueScreen>
         ),
         body: Padding(
           padding: EdgeInsets.symmetric(horizontal: 8.h),
-          child: Column(
-            children: [
-              CustomTabBar(
-                tabs: tabTitles,
-                selectedIndex: _selectedIndex,
-                onTabSelected: _onTabSelected,
-              ),
-              RevenueCard(
-                context: context,
-                title: 'Week',
-                value: '950.00',
-                index: _selectedIndex,
-                spots: const [
-                  FlSpot(0, 85),
-                  FlSpot(1, 110),
-                  FlSpot(2, 90),
-                  FlSpot(3, 150),
-                  
-                ],
-              )
-            ],
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                CustomTabBar(
+                  tabs: tabTitles,
+                  selectedIndex: _selectedIndex,
+                  onTabSelected: _onTabSelected,
+                ),
+                RevenueCard(
+                  context: context,
+                  title: 'Week',
+                  value: '950.00',
+                  index: _selectedIndex,
+                  spots: const [
+                    FlSpot(0, 85),
+                    FlSpot(1, 110),
+                    FlSpot(2, 90),
+                    FlSpot(3, 150),
+                  ],
+                ),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 8.w),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Today',
+                        style: TextStyles.textStyleRegular.copyWith(
+                            fontSize: 16.sp,
+                            color: AppColors.n900PrimaryTextColor,
+                            height: 3),
+                      ),
+                      SizedBox(
+                        height: MediaQuery.sizeOf(context).height / 3,
+                        child: ListView.builder(
+                          scrollDirection: Axis.vertical,
+                          itemCount: 50,
+                          itemBuilder: (context, index) {
+                            return trainerCard(
+                                context,
+                                'Mohamed salah',
+                                'assets/image/m.jpg',
+                                'Beginner',
+                                'Paypal',
+                                '+ E£250.00',
+                                '01:30 PM');
+                          },
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
