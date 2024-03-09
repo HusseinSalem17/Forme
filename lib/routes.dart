@@ -33,6 +33,7 @@ import 'package:forme_app/features/user_features/sports_club/presentation/views/
 import 'package:forme_app/splash_screen.dart';
 import 'package:forme_app/onboarding_screens/views/onboarding_screen.dart';
 import 'features/trainer_features/Trainer_Notification/presentation/views/trainer_notification_screen.dart';
+import 'features/trainer_features/Trainer_Profile/presentation/views/trainer_profile_screen.dart';
 import 'features/trainer_features/client_list/presentation/views/client_list_screen.dart';
 import 'features/trainer_features/create_sessions/presentation/views/create_session.dart';
 import 'features/trainer_features/Trainee_profile/presentation/views/trainee_profile_screen.dart';
@@ -45,7 +46,7 @@ Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
     case '/':
       return
           // subscriptionsScreenRoute();
-          trainerHomeRoute();
+          trainerProfileScreenRoute();
 
 //----- OnBoarding Routing -----
     case OnBoardingView.routeName:
@@ -158,6 +159,9 @@ Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
 //-------- Trainee Profile Routing -----------
     case TraineeProfile.routeName:
       return traineeProfileScreenRoute();
+//-------- Trainer Profile Routing -----------
+    case TrainerProfileScreen.routeName:
+      return trainerProfileScreenRoute();
 //---------------------------------------
     default:
       return notFound();
@@ -408,5 +412,11 @@ MaterialPageRoute<dynamic> trainerNotificationScreenRoute() {
 MaterialPageRoute<dynamic> traineeProfileScreenRoute() {
   return MaterialPageRoute(
     builder: (context) => const TraineeProfile(),
+  );
+}
+
+MaterialPageRoute<dynamic> trainerProfileScreenRoute() {
+  return MaterialPageRoute(
+    builder: (context) => const TrainerProfileScreen(),
   );
 }

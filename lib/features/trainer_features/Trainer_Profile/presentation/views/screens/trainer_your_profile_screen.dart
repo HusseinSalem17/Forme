@@ -102,13 +102,13 @@ class TrainerYourProfileScreen extends StatelessWidget {
                 const Divider(
                   color: AppColors.n20FillBodyInSmallCardColor,
                 ),
-                CustomGestureDetectorRow(title: "Languages", imageAddress: 'assets/image/Icon/languages.svg', onTap:(){
+                CustomGestureDetectorRow(title: "Languages", imageAddress: 'assets/image/profile/languages.svg', onTap:(){
                   Navigator.of(context).push(PageSlideTransition(const LanguagesSearchScreen()));
                 }),
                 const Divider(
                   color: AppColors.n20FillBodyInSmallCardColor,
                 ),
-                CustomGestureDetectorRow(title: "Social Media Links", imageAddress: 'assets/image/profile/profile_user.svg', onTap:(){
+                CustomGestureDetectorRow(title: "Social Media Links", imageAddress: 'assets/image/profile/social-media.svg', onTap:(){
                   Navigator.of(context).push(PageSlideTransition(const SocialMediaLinksScreen()));
                 }),
                 const Divider(

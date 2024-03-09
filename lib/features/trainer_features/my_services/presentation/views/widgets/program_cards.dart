@@ -8,12 +8,12 @@ import 'package:forme_app/features/user_features/home/presentation/views/widgets
 
 
 class CardsItem extends StatelessWidget {
-  CardsItem(
+  const CardsItem(
       {super.key, required this.isPrograms, required this.type, this.state = 'Online', this.videos = 17, required this.title, required this.clients,  this.duration = '', required this.price, required this.rating, required this.reviews});
   final bool isPrograms;
-  String type, state, title, duration;
-  double price, rating;
-  int reviews, videos, clients;
+  final String type, state, title, duration;
+  final double price, rating;
+  final int reviews, videos, clients;
 
   @override
   Widget build(BuildContext context) {

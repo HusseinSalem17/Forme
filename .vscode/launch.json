@@ -1,0 +1,10 @@
+{
+    "configurations": [
+        {
+            "name": "Flutter (lib\\features\\user_features\\home\\presentation\\views\\widgets\\specila_programs_card_item.dart)",
+            "type": "dart",
+            "request": "launch",
+            "program": "lib\\features\\user_features\\home\\presentation\\views\\widgets\\specila_programs_card_item.dart"
+        }
+    ]
+}

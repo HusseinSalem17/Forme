@@ -48,7 +48,7 @@ class _DocumentsPickerState extends State<DocumentsPicker> {
                       ),
                     ),
                     SvgPicture.asset(
-                      'assets/image/icon/upload-cloud.svg',
+                      'assets/image/Icon/upload-cloud.svg',
                     ),
                   ],
                 ),

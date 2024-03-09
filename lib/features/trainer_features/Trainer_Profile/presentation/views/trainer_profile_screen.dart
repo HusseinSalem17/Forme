@@ -18,6 +18,7 @@ import 'screens/trainer_your_profile_screen.dart';
 
 class TrainerProfileScreen extends StatefulWidget {
   const TrainerProfileScreen({super.key});
+  static const routeName = '/trainer_profile-screen';
 
   @override
   State<TrainerProfileScreen> createState() => _TrainerProfileScreenState();
@@ -199,20 +200,16 @@ class _TrainerProfileScreenState extends State<TrainerProfileScreen> {
                     case 0:
                       Navigator.of(context).push(PageSlideTransition(const TrainerYourProfileScreen()));
                     case 1:
-                      Navigator.of(context)
-                          .push(PageSlideTransition(const ProgramFilesScreen()));
+                      Navigator.of(context).push(PageSlideTransition(const ProgramFilesScreen()));
                     case 2:
-                      Navigator.of(context)
-                          .push(PageSlideTransition(const NutritionFilesScreen()));
+                      Navigator.of(context).push(PageSlideTransition(const NutritionFilesScreen()));
                     case 3:
-                      Navigator.of(context)
-                          .push(PageSlideTransition(const ReviewsScreen()));
+                      Navigator.of(context).push(PageSlideTransition(const ReviewsScreen()));
                     // case 4:
                     //   Navigator.of(context)
                     //       .push(PageSlideTransition(const MyProfile()));
                     case 5:
-                      Navigator.of(context)
-                          .push(PageSlideTransition(const SettingsScreen()));
+                      Navigator.of(context).push(PageSlideTransition(const SettingsScreen()));
                     case 6:
                       Navigator.of(context).push(PageSlideTransition(const HelpCenter(
                         filterTypes: ['all', 'GYM', 'Swimming', 'Boxing', 'Running'],

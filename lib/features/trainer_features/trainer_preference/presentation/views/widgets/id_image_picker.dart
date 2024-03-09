@@ -70,7 +70,7 @@ class IdImagePicker extends StatelessWidget {
         ),
       ),
       child: SvgPicture.asset(
-        "assets/image/icon/id.svg",
+        "assets/image/Icon/id.svg",
         height: 30.h,
         width: 30.w,
         fit: BoxFit.none,

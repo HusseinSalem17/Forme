@@ -31,7 +31,7 @@ class ReviewsCard extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  CustomClipRect(height: 40.h, width: 40.w),
+                  CustomClipRect(imagePath: 'assets/image/workout_image.jpg',height: 40.h, width: 40.w),
                   SizedBox(
                     width: 10.w,
                   ),
