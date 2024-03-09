@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:forme_app/core/widgets/simple_app_bar.dart';
+import 'package:forme_app/features/trainer_features/subscriptions/presentation/views/widgets/custom_gesture_detector_row.dart';
 import '../../../../../../core/transitions/page_slide.dart';
 import '../../../../../../core/utils/app_colors.dart';
 import '../../../../../../core/utils/text_styles.dart';
-import '../../../../../../core/widgets/simple_app_bar.dart';
-import '../../../../subscriptions/presentation/views/widgets/custom_gesture_detector_row.dart';
 import 'trainer_your_profile/complete_verification_screen.dart';
 import 'trainer_your_profile/languages_screen.dart';
 import 'trainer_your_profile/my_profile.dart';
@@ -102,13 +102,13 @@ class TrainerYourProfileScreen extends StatelessWidget {
                 const Divider(
                   color: AppColors.n20FillBodyInSmallCardColor,
                 ),
-                CustomGestureDetectorRow(title: "Languages", imageAddress: 'assets/image/Icon/languages.svg', onTap:(){
+                CustomGestureDetectorRow(title: "Languages", imageAddress: 'assets/image/profile/languages.svg', onTap:(){
                   Navigator.of(context).push(PageSlideTransition(const LanguagesSearchScreen()));
                 }),
                 const Divider(
                   color: AppColors.n20FillBodyInSmallCardColor,
                 ),
-                CustomGestureDetectorRow(title: "Social Media Links", imageAddress: 'assets/image/profile/profile_user.svg', onTap:(){
+                CustomGestureDetectorRow(title: "Social Media Links", imageAddress: 'assets/image/profile/social-media.svg', onTap:(){
                   Navigator.of(context).push(PageSlideTransition(const SocialMediaLinksScreen()));
                 }),
                 const Divider(

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:forme_app/core/transitions/page_slide.dart';
-import 'package:forme_app/features/user_features/home/presentation/views/widgets/specila_programs_card_item.dart';
+import 'package:forme_app/features/user_features/home/presentation/views/widgets/special_programs_card_item.dart';
 import 'package:forme_app/features/user_features/workout_detail/presentation/views/workout_detail.dart';
 
 class ProgramsCardList extends StatelessWidget {

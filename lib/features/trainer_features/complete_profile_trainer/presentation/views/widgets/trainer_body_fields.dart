@@ -6,9 +6,7 @@ import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/styles.dart';
 import 'package:forme_app/core/widgets/app_fields/custom_phone_field.dart';
 import 'package:forme_app/core/widgets/app_fields/custom_text_field.dart';
-import 'package:forme_app/core/widgets/app_fields/custom_text_field.dart';
 import 'package:forme_app/core/widgets/app_drop_list/custom_drop_list.dart';
-import 'package:forme_app/core/widgets/app_fields/custom_phone_field.dart';
 
 Widget buildTrainerBodyFields({
   required String? name,
@@ -24,7 +22,31 @@ Widget buildTrainerBodyFields({
 }) {
   final List<String> genderItems = ['Male', 'Female'];
   final List<String> countryItems = ['Egypt', 'USA'];
-  final List<String> sportFieldItems = ['Fitness', 'Football', 'Tennis', 'Swimming', 'Basketball', 'Volleyball', 'Handball', 'Running', 'Cycling', 'Boxing', 'Yoga', 'Pilates', 'Dancing', 'Golf', 'Horse Riding', 'Skiing', 'Skating', 'Surfing', 'Sailing', 'Bowling', 'Billiards', 'Chess', 'Shooting'];
+  final List<String> sportFieldItems = [
+    'Fitness',
+    'Football',
+    'Tennis',
+    'Swimming',
+    'Basketball',
+    'Volleyball',
+    'Handball',
+    'Running',
+    'Cycling',
+    'Boxing',
+    'Yoga',
+    'Pilates',
+    'Dancing',
+    'Golf',
+    'Horse Riding',
+    'Skiing',
+    'Skating',
+    'Surfing',
+    'Sailing',
+    'Bowling',
+    'Billiards',
+    'Chess',
+    'Shooting'
+  ];
 
   return Column(
     children: [

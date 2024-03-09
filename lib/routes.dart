@@ -31,10 +31,10 @@ import 'package:forme_app/features/user_features/sports_club/presentation/views/
 import 'package:forme_app/splash_screen.dart';
 import 'package:forme_app/onboarding_screens/views/onboarding_screen.dart';
 import 'features/trainer_features/Trainer_Notification/presentation/views/trainer_notification_screen.dart';
-import 'features/trainer_features/add_program/presentation/views/add_program_screen.dart';
+import 'features/trainer_features/Trainer_Profile/presentation/views/trainer_profile_screen.dart';
 import 'features/trainer_features/client_list/presentation/views/client_list_screen.dart';
-import 'features/trainer_features/complete_profile_trainer/presentation/views/trainer_complete_profile.dart';
 import 'features/trainer_features/create_sessions/presentation/views/create_session.dart';
+import 'features/trainer_features/Trainee_profile/presentation/views/trainee_profile_screen.dart';
 import 'features/user_features/payment/presentation/view/payment_methods_screen.dart';
 import 'features/user_features/preferences/presentation/views/preferences_screen.dart';
 
@@ -42,10 +42,12 @@ Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
   switch (settings.name) {
 //----- Splash Routing -----
     case '/':
-      return trainerHomeRoute();
-    // subscriptionsScreenRoute();
-    // homeRoute();
-    //splashRoute();
+      return
+          // subscriptionsScreenRoute();
+          trainerProfileScreenRoute();
+          // subscriptionsScreenRoute();
+          // homeRoute();
+          //splashRoute();
 
 //----- OnBoarding Routing -----
     case OnBoardingView.routeName:
@@ -137,6 +139,12 @@ Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
 //-------- My Services Routing -----------
     case MyServicesScreen.routeName:
       return trainerMyServicesScreen();
+//-------- Add Program Routing -----------
+    case AddProgramScreen.routeName:
+      return addProgramRoute();
+//-------- Revenue Routing -----------
+    case RevenueScreen.routeName:
+      return revenueScreenRoute();
 //-------- Client list Routing -----------
     case ClientListScreen.routeName:
       return trainerClientListScreen();
@@ -152,6 +160,9 @@ Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
 //-------- Trainee Profile Routing -----------
     case TraineeProfile.routeName:
       return traineeProfileScreenRoute();
+//-------- Trainer Profile Routing -----------
+    case TrainerProfileScreen.routeName:
+      return trainerProfileScreenRoute();
 //---------------------------------------
     default:
       return notFound();
@@ -369,6 +380,12 @@ MaterialPageRoute<dynamic> addProgramRoute() {
   );
 }
 
+MaterialPageRoute<dynamic> revenueScreenRoute() {
+  return MaterialPageRoute(
+    builder: (context) => const RevenueScreen(),
+  );
+}
+
 MaterialPageRoute<dynamic> trainerClientListScreen() {
   return MaterialPageRoute(
     builder: (context) => const ClientListScreen(),
@@ -393,8 +410,16 @@ MaterialPageRoute<dynamic> trainerNotificationScreenRoute() {
   );
 }
 
+
 MaterialPageRoute<dynamic> traineeProfileScreenRoute() {
   return MaterialPageRoute(
     builder: (context) => const TraineeProfile(),
   );
 }
+
+MaterialPageRoute<dynamic> trainerProfileScreenRoute() {
+  return MaterialPageRoute(
+    builder: (context) => const TrainerProfileScreen(),
+  );
+}
+

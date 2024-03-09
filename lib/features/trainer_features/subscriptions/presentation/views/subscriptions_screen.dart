@@ -13,6 +13,9 @@ import 'package:simple_star_rating/simple_star_rating.dart';
 import '../../../../../core/transitions/page_slide.dart';
 import 'widgets/custom_gesture_detector_row.dart';
 
+import '../../../../../core/transitions/page_slide.dart';
+import 'widgets/custom_gesture_detector_row.dart';
+
 class SubscriptionsScreen extends StatelessWidget {
   static const String routeName = '/subscriptions_route';
   final String textId;

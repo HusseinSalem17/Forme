@@ -5,7 +5,7 @@ import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
 
 class CustomSearchTextField extends StatelessWidget {
-  const CustomSearchTextField({Key? key});
+  const CustomSearchTextField({super.key});
 
   @override
   Widget build(BuildContext context) {

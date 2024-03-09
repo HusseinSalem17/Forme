@@ -34,8 +34,8 @@ class RevenueCard extends StatelessWidget {
               offset: const Offset(0, 0),
             ),
           ]),
-      margin: EdgeInsets.symmetric(horizontal: 8.h, vertical: 24.h),
-      padding: EdgeInsets.symmetric(horizontal: 16.h, vertical: 16.h),
+      margin: EdgeInsets.only(left: 8.h, top: 24.h,right: 8.h),
+      padding: EdgeInsets.all(16.h),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
