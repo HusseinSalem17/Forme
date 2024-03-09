@@ -6,10 +6,10 @@ import 'package:forme_app/core/utils/text_styles.dart';
 import 'package:forme_app/features/user_features/Favorite/presentation/views/widgets/workout_card_type.dart';
 import 'package:forme_app/features/user_features/home/presentation/views/widgets/card_review_section.dart';
 
-
 class CardsItem extends StatelessWidget {
   const CardsItem(
       {super.key, required this.isPrograms, required this.type, this.state = 'Online', this.videos = 17, required this.title, required this.clients,  this.duration = '', required this.price, required this.rating, required this.reviews});
+
   final bool isPrograms;
   final String type, state, title, duration;
   final double price, rating;

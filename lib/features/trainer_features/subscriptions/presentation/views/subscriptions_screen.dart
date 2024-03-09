@@ -5,8 +5,13 @@ import 'package:flutter_svg/svg.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
 import 'package:forme_app/core/widgets/custom_app_bar_arrow_button.dart';
+import 'package:forme_app/core/widgets/simple_app_bar.dart';
 import 'package:forme_app/features/trainer_features/subscriptions/presentation/views/screens/clients_subscriptions.dart';
 import 'package:forme_app/features/trainer_features/subscriptions/presentation/views/screens/your_clubs.dart';
+import 'package:simple_star_rating/simple_star_rating.dart';
+
+import '../../../../../core/transitions/page_slide.dart';
+import 'widgets/custom_gesture_detector_row.dart';
 
 import '../../../../../core/transitions/page_slide.dart';
 import 'widgets/custom_gesture_detector_row.dart';
@@ -20,22 +25,9 @@ class SubscriptionsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.background,
-      appBar: AppBar(
-        toolbarHeight: 75.h,
-        backgroundColor: AppColors.background,
-        centerTitle: true,
-        leading: Padding(
-          padding: const EdgeInsets.only(top:15.0),
-          child: CustomAppBarArrowButton(
-            onTap: () {
-              Navigator.pop(context);
-            },
-          ),
-        ),
-        title: Padding(
-          padding: const EdgeInsets.only(top:15.0),
-          child: Text('Club Subscriptions', style: TextStyles.heading4Bold.copyWith(fontSize: 18.sp)),
-        ),
+      appBar: simpleAppBar(
+        context,
+        'Club Subscriptions',
       ),
       body: Column(
         children: [
