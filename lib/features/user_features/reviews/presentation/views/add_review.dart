@@ -68,7 +68,7 @@ class AddReview extends StatelessWidget {
                       child: Align(
                         alignment: Alignment.centerLeft,
                         child: Text('Add detailed reviews', style: TextStyles.textStyleBold.copyWith(fontSize: 14.sp, color: AppColors.n900PrimaryTextColor)),
-                      ),
+                      ),),
                     const TextArea(
                       title: 'Add detailed reviews',
                     ),
