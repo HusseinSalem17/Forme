@@ -386,4 +386,4 @@ MaterialPageRoute<dynamic> trainerNotificationScreenRoute() {
   return MaterialPageRoute(
     builder: (context) => const TrainerNotificationScreen(),
   );
-
+}

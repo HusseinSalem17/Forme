@@ -19,79 +19,79 @@ class AddReview extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          CustomScrollView(slivers: <Widget>[
-            SliverAppBar(
-              pinned: true,
-              elevation: 1,
-              automaticallyImplyLeading: false,
-              expandedHeight: MediaQuery.sizeOf(context).height / 5,
-              actions: [
-                Padding(
-                  padding: EdgeInsets.only(left: 20.h),
-                  child: CustomAppBarArrowButton(
-                    onTap: () {
-                      Navigator.pop(context);
-                    },
-                  ),
-                ),
-                const Spacer(),
-              ],
-              flexibleSpace: FlexibleSpaceBar(
-                  collapseMode: CollapseMode.none,
-                  background: Image.asset(
-                    'assets/image/temp/Header1.png',
-                    width: double.maxFinite,
-                    fit: BoxFit.cover,
-                  )),
-            ),
-            SliverToBoxAdapter(
-              child: Container(
-                decoration: BoxDecoration(borderRadius: BorderRadius.circular(32.dg), color: AppColors.background),
-                child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 24.w),
-                  child: Column(children: [
-                    type == "club" ? clubSubHeader() : workoutSubHeader(),
-                    Padding(
-                      padding: EdgeInsets.only(top: 21.h),
-                      child: Text('Your Overall rating of this product', style: TextStyles.textStyleRegular.copyWith(fontSize: 14.sp)),
-                    ),
-                    SimpleStarRating(
-                      allowHalfRating: true,
-                      isReadOnly: false,
-                      starCount: 5,
-                      //rating: model.rating,
-                      size: 70,
-                      spacing: 1,
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(top: 30.h, bottom: 8.h),
-                      child: Align(
-                        alignment: Alignment.centerLeft,
-                        child: Text('Add detailed reviews', style: TextStyles.textStyleBold.copyWith(fontSize: 14.sp, color: AppColors.n900PrimaryTextColor)),
-                      ),
-                    const TextArea(
-                      title: 'Add detailed reviews',
-                    ),
-                    const SizedBox(
-                      height: 300,
-                    )
-                  ]),
-                ),
-              ),
-            )
-          ]),
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: ButtonContainer(
-              buttonTitle: 'Submit',
+      CustomScrollView(slivers: <Widget>[
+      SliverAppBar(
+        pinned: true,
+        elevation: 1,
+        automaticallyImplyLeading: false,
+        expandedHeight: MediaQuery.sizeOf(context).height / 5,
+        actions: [
+          Padding(
+            padding: EdgeInsets.only(left: 20.h),
+            child: CustomAppBarArrowButton(
               onTap: () {
-                // do submit review actions
                 Navigator.pop(context);
               },
             ),
-          )
+          ),
+          const Spacer(),
         ],
+        flexibleSpace: FlexibleSpaceBar(
+            collapseMode: CollapseMode.none,
+            background: Image.asset(
+              'assets/image/temp/Header1.png',
+              width: double.maxFinite,
+              fit: BoxFit.cover,
+            )),
       ),
+      SliverToBoxAdapter(
+        child: Container(
+          decoration: BoxDecoration(borderRadius: BorderRadius.circular(32.dg), color: AppColors.background),
+          child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 24.w),
+              child: Column(children: [
+                  type == "club" ? clubSubHeader() : workoutSubHeader(),
+          Padding(
+            padding: EdgeInsets.only(top: 21.h),
+            child: Text('Your Overall rating of this product', style: TextStyles.textStyleRegular.copyWith(fontSize: 14.sp)),
+          ),
+          SimpleStarRating(
+            allowHalfRating: true,
+            isReadOnly: false,
+            starCount: 5,
+            //rating: model.rating,
+            size: 70,
+            spacing: 1,
+          ),
+          Padding(
+              padding: EdgeInsets.only(top: 30.h, bottom: 8.h),
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: Text('Add detailed reviews', style: TextStyles.textStyleBold.copyWith(fontSize: 14.sp, color: AppColors.n900PrimaryTextColor)),
+              ),
+              const TextArea(
+                title: 'Add detailed reviews',
+              ),
+              const SizedBox(
+                height: 300,
+              )
+              ]),
+        ),
+      ),
+    )
+    ]),
+    Align(
+    alignment: Alignment.bottomCenter,
+    child: ButtonContainer(
+    buttonTitle: 'Submit',
+    onTap: () {
+    // do submit review actions
+    Navigator.pop(context);
+    },
+    ),
+    )
+    ],
+    ),
     );
   }
 }
