@@ -9,7 +9,7 @@ import 'package:forme_app/core/utils/text_styles.dart';
 import 'package:open_file/open_file.dart';
 
 class DocumentsPicker extends StatefulWidget {
-  DocumentsPicker({super.key});
+  const DocumentsPicker({super.key});
 
   @override
   State<DocumentsPicker> createState() => _DocumentsPickerState();
@@ -48,7 +48,7 @@ class _DocumentsPickerState extends State<DocumentsPicker> {
                       ),
                     ),
                     SvgPicture.asset(
-                      'assets/image/icon/upload-cloud.svg',
+                      'assets/image/Icon/upload-cloud.svg',
                     ),
                   ],
                 ),
@@ -71,20 +71,20 @@ class _DocumentsPickerState extends State<DocumentsPicker> {
     }
     isPickerOpen = true;
     FilePickerResult? newResult = await FilePicker.platform.pickFiles(
-    type: FileType.custom,
-    allowedExtensions: ['pdf', 'doc', 'docx', 'xls', 'xlsx', 'ppt', 'pptx', 'txt', 'jpg', 'jpeg', 'png'],
-    allowMultiple: true,
-  );
+      type: FileType.custom,
+      allowedExtensions: ['pdf', 'doc', 'docx', 'xls', 'xlsx', 'ppt', 'pptx', 'txt', 'jpg', 'jpeg', 'png'],
+      allowMultiple: true,
+    );
     isPickerOpen = false;
     if (newResult != null) {
-    setState(() {
-      if (files != null) {
-        files!.addAll(newResult.files);
-      } else {
-        files = newResult.files;
-      }
-    });
-  }
+      setState(() {
+        if (files != null) {
+          files!.addAll(newResult.files);
+        } else {
+          files = newResult.files;
+        }
+      });
+    }
     if (result == null) {
       return;
     }

@@ -5,9 +5,9 @@ import 'package:forme_app/core/utils/text_styles.dart';
 import 'package:forme_app/features/trainer_features/create_sessions/presentation/views/widgets/custom_text_form_field.dart';
 
 class SelectPackage extends StatefulWidget {
-  final String text1, text2, text3, text4;
-  final bool isInput;
-  const SelectPackage({super.key, this.isInput = true, required this.text1, required this.text2, required this.text3, required this.text4});
+  final String text1, text2, text3, text4,text5;
+  final bool isInput, isLanguages;
+  const SelectPackage({super.key, this.isInput = true, required this.text1, required this.text2, required this.text3, required this.text4, this.text5 = '', this.isLanguages = false});
 
   @override
   State<SelectPackage> createState() => _SelectPackageState();
@@ -18,6 +18,7 @@ class _SelectPackageState extends State<SelectPackage> {
   bool isCall = false;
   bool isVideo = false;
   bool isInPerson = false;
+  bool isText5 = false;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -113,6 +114,23 @@ class _SelectPackageState extends State<SelectPackage> {
                 : Container(),
           ],
         ),
+        SizedBox(height: 8.h),
+        widget.isLanguages
+            ? Row(
+                children: [
+                  Checkbox(
+                    value: isText5,
+                    onChanged: (val) {
+                      setState(() {
+                        isText5 = val!;
+                      });
+                    },
+                    activeColor: AppColors.p300PrimaryColor,
+                  ),
+                  Text(widget.text5, style: TextStyles.textStyleRegular.copyWith(color: AppColors.n900PrimaryTextColor)),
+                ],
+              )
+            : Container(),
       ],
     );
   }

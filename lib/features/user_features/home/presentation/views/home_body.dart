@@ -16,45 +16,35 @@ class HomeBody extends StatelessWidget {
           const HomeAppBar(),
           TopTrainersSection(
             onTap: () {
-              Navigator.of(context)
-                  .push(PageSlideTransition(const FeaturedScreen(
+              Navigator.of(context).push(PageSlideTransition(const FeaturedScreen(
                 featureType: "Top trainer",
-                filterTypes: ['all', 'GYM', 'Swimming', 'Boxing', 'Rumming'],
+                filterTypes: ['all', 'GYM', 'Swimming', 'Boxing', 'Running'],
               )));
             },
           ),
           Listing(
             title: 'Special Programs',
             onTap: () {
-              Navigator.of(context)
-                  .push(PageSlideTransition(const FeaturedScreen(
+              Navigator.of(context).push(PageSlideTransition(const FeaturedScreen(
                 featureType: "Special Programs",
-                filterTypes: ['all', 'GYM', 'Swimming', 'Boxing', 'Rumming'],
+                filterTypes: ['all', 'GYM', 'Swimming', 'Boxing', 'Running'],
               )));
             },
           ),
           Listing(
               title: 'Featured Workouts',
               onTap: () {
-                Navigator.of(context)
-                    .push(PageSlideTransition(const FeaturedScreen(
+                Navigator.of(context).push(PageSlideTransition(const FeaturedScreen(
                   featureType: "Featured Workouts",
-                  filterTypes: [
-                    'all',
-                    'GYM',
-                    'Swimming',
-                    'Boxing',
-                    'Rumming'
-                  ],
+                  filterTypes: ['all', 'GYM', 'Swimming', 'Boxing', 'Running'],
                 )));
               }),
           Listing(
             title: 'Special Offers Clubs',
             onTap: () {
-              Navigator.of(context)
-                  .push(PageSlideTransition(const FeaturedScreen(
+              Navigator.of(context).push(PageSlideTransition(const FeaturedScreen(
                 featureType: "Special Offers",
-                filterTypes: ['all', 'GYM', 'Swimming', 'Boxing', 'Rumming'],
+                filterTypes: ['all', 'GYM', 'Swimming', 'Boxing', 'Running'],
               )));
             },
             isVertical: true,
