@@ -20,6 +20,7 @@ class CardsItem extends StatelessWidget {
     required this.rating,
     required this.reviews,
   });
+
   final bool isPrograms;
   final String type, state, title, duration;
   final double price, rating;

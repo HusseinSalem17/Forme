@@ -5,9 +5,18 @@ import 'package:forme_app/core/utils/text_styles.dart';
 import 'package:forme_app/features/trainer_features/create_sessions/presentation/views/widgets/custom_text_form_field.dart';
 
 class SelectPackage extends StatefulWidget {
-  final String text1, text2, text3, text4,text5;
+  final String text1, text2, text3, text4, text5;
   final bool isInput, isLanguages;
-  const SelectPackage({super.key, this.isInput = true, required this.text1, required this.text2, required this.text3, required this.text4, this.text5 = '', this.isLanguages = false});
+  const SelectPackage({
+    super.key,
+    this.isInput = true,
+    required this.text1,
+    required this.text2,
+    required this.text3,
+    required this.text4,
+    this.text5 = '',
+    this.isLanguages = false,
+  });
 
   @override
   State<SelectPackage> createState() => _SelectPackageState();
@@ -41,7 +50,9 @@ class _SelectPackageState extends State<SelectPackage> {
               ],
             ),
             widget.isInput
-                ? TextFieldWithCustomLabel(isEnabled: isChat,)
+                ? TextFieldWithCustomLabel(
+                    isEnabled: isChat,
+                  )
                 : Container(),
           ],
         ),
@@ -63,9 +74,7 @@ class _SelectPackageState extends State<SelectPackage> {
                 Text(widget.text2, style: TextStyles.textStyleRegular.copyWith(color: AppColors.n900PrimaryTextColor)),
               ],
             ),
-            widget.isInput
-                ? TextFieldWithCustomLabel(isEnabled: isCall)
-                : Container(),
+            widget.isInput ? TextFieldWithCustomLabel(isEnabled: isCall) : Container(),
           ],
         ),
         SizedBox(height: 8.h),
@@ -87,7 +96,9 @@ class _SelectPackageState extends State<SelectPackage> {
               ],
             ),
             widget.isInput
-                ? TextFieldWithCustomLabel(isEnabled: isVideo,)
+                ? TextFieldWithCustomLabel(
+                    isEnabled: isVideo,
+                  )
                 : Container(),
           ],
         ),
@@ -110,7 +121,9 @@ class _SelectPackageState extends State<SelectPackage> {
               ],
             ),
             widget.isInput
-                ? TextFieldWithCustomLabel(isEnabled: isInPerson,)
+                ? TextFieldWithCustomLabel(
+                    isEnabled: isInPerson,
+                  )
                 : Container(),
           ],
         ),

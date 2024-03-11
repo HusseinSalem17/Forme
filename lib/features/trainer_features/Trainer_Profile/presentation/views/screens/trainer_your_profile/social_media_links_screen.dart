@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../../../core/widgets/button_container.dart';
 import '../../../../../../../core/widgets/simple_app_bar.dart';
 import '../../../../../trainer_preference/presentation/views/widgets/links_text_field.dart';
+
 class SocialMediaLinksScreen extends StatelessWidget {
   const SocialMediaLinksScreen({super.key});
 
