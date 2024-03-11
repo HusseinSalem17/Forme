@@ -4,9 +4,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
-import 'package:forme_app/core/widgets/custom_app_bar_arrow_button.dart';
+import 'package:forme_app/core/widgets/simple_app_bar.dart';
 import 'package:forme_app/features/trainer_features/subscriptions/presentation/views/screens/clients_subscriptions.dart';
 import 'package:forme_app/features/trainer_features/subscriptions/presentation/views/screens/your_clubs.dart';
+import '../../../../../core/transitions/page_slide.dart';
+import 'widgets/custom_gesture_detector_row.dart';
 
 class SubscriptionsScreen extends StatelessWidget {
   static const String routeName = '/subscriptions_route';
@@ -17,22 +19,9 @@ class SubscriptionsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.background,
-      appBar: AppBar(
-        toolbarHeight: 75.h,
-        backgroundColor: AppColors.background,
-        centerTitle: true,
-        leading: Padding(
-          padding: const EdgeInsets.only(top:15.0),
-          child: CustomAppBarArrowButton(
-            onTap: () {
-              Navigator.pop(context);
-            },
-          ),
-        ),
-        title: Padding(
-          padding: const EdgeInsets.only(top:15.0),
-          child: Text('Club Subscriptions', style: TextStyles.heading4Bold.copyWith(fontSize: 18.sp)),
-        ),
+      appBar: simpleAppBar(
+        context,
+        'Club Subscriptions',
       ),
       body: Column(
         children: [
@@ -107,84 +96,21 @@ class SubscriptionsScreen extends StatelessWidget {
                 SizedBox(
                   height: 32.h,
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const YourClubsScreen(),
-                          ),
-                        );
-                      },
-                      child: Row(
-                        children: [
-                          SvgPicture.asset('assets/image/Icon/club.svg'),
-                          SizedBox(
-                            width: 8.w,
-                          ),
-                          Text(
-                            'Your Clubs',
-                            style: TextStyles.textStyleRegular.copyWith(color: Colors.black),
-                          ),
-                        ],
-                      ),
-                    ),
-                    IconButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const YourClubsScreen(),
-                          ),
-                        );
-                      },
-                      icon: const Icon(Icons.arrow_forward_ios),
-                    ),
-                  ],
-                ),
+                CustomGestureDetectorRow(
+                    title: "Your Clubs",
+                    imageAddress: 'assets/image/Icon/club.svg',
+                    onTap: () {
+                      Navigator.of(context).push(PageSlideTransition(const YourClubsScreen()));
+                    }),
                 const Divider(
                   color: AppColors.n20FillBodyInSmallCardColor,
                 ),
-                GestureDetector(
+                CustomGestureDetectorRow(
+                  title: "Clients Subscriptions",
+                  imageAddress: 'assets/image/Icon/users.svg',
                   onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const ClientsSubscriptionsScreen(),
-                      ),
-                    );
+                    Navigator.of(context).push(PageSlideTransition(const ClientsSubscriptionsScreen()));
                   },
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Row(
-                        children: [
-                          SvgPicture.asset('assets/image/Icon/users.svg'),
-                          SizedBox(
-                            width: 8.w,
-                          ),
-                          Text(
-                            'Clients Subscriptions',
-                            style: TextStyles.textStyleRegular.copyWith(color: Colors.black),
-                          ),
-                        ],
-                      ),
-                      IconButton(
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const ClientsSubscriptionsScreen(),
-                            ),
-                          );
-                        },
-                        icon: const Icon(Icons.arrow_forward_ios),
-                      ),
-                    ],
-                  ),
                 ),
                 const Divider(
                   color: AppColors.n20FillBodyInSmallCardColor,

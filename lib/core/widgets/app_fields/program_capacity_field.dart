@@ -56,7 +56,9 @@ class ProgramCapacityField extends StatelessWidget {
             ),
           ),
         ),
-        validator: (value) {},
+        validator: (value) {
+          return null;
+        },
       ),
     );
   }

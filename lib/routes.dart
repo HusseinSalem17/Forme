@@ -4,12 +4,10 @@ import 'package:forme_app/features/Authentication/presentation/views/new_passwor
 import 'package:forme_app/features/Authentication/presentation/views/sign_up_view.dart';
 import 'package:forme_app/features/Authentication/presentation/views/sign_in_view.dart';
 import 'package:forme_app/features/Authentication/presentation/views/verify_code.dart';
-import 'package:forme_app/features/trainer_features/Revenue/presentation/views/revenue_screen.dart';
-import 'package:forme_app/features/trainer_features/add_program/presentation/views/add_program_screen.dart';
-import 'package:forme_app/features/trainer_features/complete_profile_trainer/presentation/views/trainer_complete_profile.dart';
 import 'package:forme_app/features/trainer_features/dashboard/presentation/views/home_view.dart';
 import 'package:forme_app/features/trainer_features/my_services/presentation/views/my_services_screen.dart';
 import 'package:forme_app/features/trainer_features/subscriptions/presentation/views/subscriptions_screen.dart';
+import 'package:forme_app/features/trainer_features/trainee_profile/presentation/views/trainee_profile_screen.dart';
 import 'package:forme_app/features/trainer_features/trainer_preference/presentation/views/trainer_preference_screen.dart';
 import 'package:forme_app/features/user_features/Favorite/presentation/views/favorite_screen.dart';
 import 'package:forme_app/features/user_features/Notification/presentation/views/notification_screen.dart';
@@ -32,9 +30,14 @@ import 'package:forme_app/features/user_features/search/presentation/views/filte
 import 'package:forme_app/features/user_features/sports_club/presentation/views/sports_club.dart';
 import 'package:forme_app/splash_screen.dart';
 import 'package:forme_app/onboarding_screens/views/onboarding_screen.dart';
+import 'features/trainer_features/Revenue/presentation/views/revenue_screen.dart';
 import 'features/trainer_features/Trainer_Notification/presentation/views/trainer_notification_screen.dart';
+import 'features/trainer_features/Trainer_Profile/presentation/views/trainer_profile_screen.dart';
+import 'features/trainer_features/add_program/presentation/views/add_program_screen.dart';
 import 'features/trainer_features/client_list/presentation/views/client_list_screen.dart';
+import 'features/trainer_features/complete_profile_trainer/presentation/views/trainer_complete_profile.dart';
 import 'features/trainer_features/create_sessions/presentation/views/create_session.dart';
+import 'features/trainer_features/Trainee_profile/presentation/views/trainee_profile_screen.dart';
 import 'features/user_features/payment/presentation/view/payment_methods_screen.dart';
 import 'features/user_features/preferences/presentation/views/preferences_screen.dart';
 
@@ -42,7 +45,12 @@ Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
   switch (settings.name) {
 //----- Splash Routing -----
     case '/':
-      return trainerHomeRoute();
+      return
+          // subscriptionsScreenRoute();
+          // trainerProfileScreenRoute();
+          traineeProfileScreenRoute();
+          // homeRoute();
+          //splashRoute();
 
 //----- OnBoarding Routing -----
     case OnBoardingView.routeName:
@@ -140,6 +148,24 @@ Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
 //-------- Revenue Routing -----------
     case RevenueScreen.routeName:
       return revenueScreenRoute();
+//-------- Client list Routing -----------
+    case ClientListScreen.routeName:
+      return trainerClientListScreen();
+//-------- Create Session Routing -----------
+    case CreateSessionScreen.routeName:
+      return createSessionRoute();
+//-------- Subscriptions Routing -----------
+    case SubscriptionsScreen.routeName:
+      return subscriptionsScreenRoute();
+//-------- Notification Routing -----------
+    case TrainerNotificationScreen.routeName:
+      return trainerNotificationScreenRoute();
+//-------- Trainee Profile Routing -----------
+    case TraineeProfileScreen.routeName:
+      return traineeProfileScreenRoute();
+//-------- Trainer Profile Routing -----------
+    case TrainerProfileScreen.routeName:
+      return trainerProfileScreenRoute();
 //---------------------------------------
     default:
       return notFound();
@@ -329,7 +355,7 @@ MaterialPageRoute<dynamic> favoriteScreenRoute() {
 
 MaterialPageRoute<dynamic> trainerHomeRoute() {
   return MaterialPageRoute(
-    builder: (context) => const TrainerHomeScreen(),
+    builder: (context) => const PaymentSuccessfullyScreen(),
   );
 }
 
@@ -362,6 +388,7 @@ MaterialPageRoute<dynamic> revenueScreenRoute() {
     builder: (context) => const RevenueScreen(),
   );
 }
+
 MaterialPageRoute<dynamic> trainerClientListScreen() {
   return MaterialPageRoute(
     builder: (context) => const ClientListScreen(),
@@ -384,5 +411,18 @@ MaterialPageRoute<dynamic> trainerNotificationScreenRoute() {
   return MaterialPageRoute(
     builder: (context) => const TrainerNotificationScreen(),
   );
-
 }
+
+
+MaterialPageRoute<dynamic> traineeProfileScreenRoute() {
+  return MaterialPageRoute(
+    builder: (context) => const TraineeProfileScreen(),
+  );
+}
+
+MaterialPageRoute<dynamic> trainerProfileScreenRoute() {
+  return MaterialPageRoute(
+    builder: (context) => const TrainerProfileScreen(),
+  );
+}
+
