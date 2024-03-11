@@ -30,9 +30,12 @@ import 'package:forme_app/features/user_features/search/presentation/views/filte
 import 'package:forme_app/features/user_features/sports_club/presentation/views/sports_club.dart';
 import 'package:forme_app/splash_screen.dart';
 import 'package:forme_app/onboarding_screens/views/onboarding_screen.dart';
+import 'features/trainer_features/Revenue/presentation/views/revenue_screen.dart';
 import 'features/trainer_features/Trainer_Notification/presentation/views/trainer_notification_screen.dart';
 import 'features/trainer_features/Trainer_Profile/presentation/views/trainer_profile_screen.dart';
+import 'features/trainer_features/add_program/presentation/views/add_program_screen.dart';
 import 'features/trainer_features/client_list/presentation/views/client_list_screen.dart';
+import 'features/trainer_features/complete_profile_trainer/presentation/views/trainer_complete_profile.dart';
 import 'features/trainer_features/create_sessions/presentation/views/create_session.dart';
 import 'features/trainer_features/Trainee_profile/presentation/views/trainee_profile_screen.dart';
 import 'features/user_features/payment/presentation/view/payment_methods_screen.dart';
@@ -44,8 +47,8 @@ Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
     case '/':
       return
           // subscriptionsScreenRoute();
-          trainerProfileScreenRoute();
-          // subscriptionsScreenRoute();
+          // trainerProfileScreenRoute();
+          traineeProfileScreenRoute();
           // homeRoute();
           //splashRoute();
 
@@ -158,7 +161,7 @@ Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
     case TrainerNotificationScreen.routeName:
       return trainerNotificationScreenRoute();
 //-------- Trainee Profile Routing -----------
-    case TraineeProfile.routeName:
+    case TraineeProfileScreen.routeName:
       return traineeProfileScreenRoute();
 //-------- Trainer Profile Routing -----------
     case TrainerProfileScreen.routeName:
@@ -413,7 +416,7 @@ MaterialPageRoute<dynamic> trainerNotificationScreenRoute() {
 
 MaterialPageRoute<dynamic> traineeProfileScreenRoute() {
   return MaterialPageRoute(
-    builder: (context) => const TraineeProfile(),
+    builder: (context) => const TraineeProfileScreen(),
   );
 }
 

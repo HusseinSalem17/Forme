@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:forme_app/core/widgets/text_area.dart';
 import 'package:image_picker/image_picker.dart';
 import '../../../../../../../core/utils/app_colors.dart';
 import '../../../../../../../core/utils/text_styles.dart';
@@ -138,11 +139,34 @@ class _MyProfileTrainerState extends State<MyProfileTrainer> {
                 ),
                 SizedBox(height: 16.h),
                 CustomDropList(
+                  title: "Gender",
+                  enabled: adjustable,
+                  hint: const Text('select Gender'),
+                  items: genderItem
+                      .map((e) => DropdownMenuItem<String>(
+                            value: e,
+                            child: Text(e),
+                          ))
+                      .toList(),
+                  validator: (value) {
+                    if (value == null) {
+                      return 'Please select Gender.';
+                    }
+                    return null;
+                  },
+                  onChanged: (value) {
+                    setState(() {
+                      country = value;
+                    });
+                  },
+                  onSaved: (value) {},
+                ),
+                SizedBox(height: 16.h),
+                CustomDropList(
                   title: "Country",
                   enabled: adjustable,
                   hint: const Text('Select Country'),
-                  items: countryItems
-                      .map((e) => DropdownMenuItem<String>(
+                  items: countryItems        .map((e) => DropdownMenuItem<String>(
                             value: e,
                             child: Text(e),
                           ))
@@ -185,29 +209,7 @@ class _MyProfileTrainerState extends State<MyProfileTrainer> {
                   onSaved: (value) {},
                 ),
                 SizedBox(height: 16.h),
-                CustomDropList(
-                  title: "Gender",
-                  enabled: adjustable,
-                  hint: const Text('select Gender'),
-                  items: genderItems
-                      .map((e) => DropdownMenuItem<String>(
-                            value: e,
-                            child: Text(e),
-                          ))
-                      .toList(),
-                  validator: (value) {
-                    if (value == null) {
-                      return 'Please select Gender.';
-                    }
-                    return null;
-                  },
-                  onChanged: (value) {
-                    setState(() {
-                      country = value;
-                    });
-                  },
-                  onSaved: (value) {},
-                )
+                TextArea(title: 'Tell us about yourself', enabled: adjustable, hintText: 'Please share a brief description about yourself',),
               ],
             );
             return Form(

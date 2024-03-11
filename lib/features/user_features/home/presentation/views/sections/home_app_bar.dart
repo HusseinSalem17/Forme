@@ -4,6 +4,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
 import 'package:forme_app/core/widgets/app_fields/custom_search_text_field.dart';
+import 'package:forme_app/core/widgets/app_fields/custom_text_field.dart';
 import 'package:forme_app/features/user_features/home/presentation/views/widgets/map_popup_menu.dart';
 
 class HomeAppBar extends StatelessWidget {

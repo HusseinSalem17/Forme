@@ -15,7 +15,6 @@ import 'package:flutter/services.dart';
 import 'package:forme_app/routes.dart';
 import 'core/utils/functions/service_locator.dart';
 import 'core/utils/scroll_behavior.dart';
-import 'features/trainer_features/Trainer_Profile/presentation/manager/my_profile_cubit/cubit/my_profile_cubit.dart';
 
 void main() {
   setupServiceLocator();
@@ -34,6 +33,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
+        BlocProvider(
+          create: (context) => TraineeProfileCubit(),
+        ),
         BlocProvider(
           create: (context) => OnBoardingBloc(),
         ),
@@ -54,10 +56,6 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => MyProfileTrainerCubit(),
-        ),
-
-        BlocProvider(
-          create: (context) => TraineeProfileCubit(),
         ),
       ],
       child: ScreenUtilInit(

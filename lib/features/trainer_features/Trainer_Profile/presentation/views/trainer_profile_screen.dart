@@ -199,6 +199,7 @@ class _TrainerProfileScreenState extends State<TrainerProfileScreen> {
                   switch (index) {
                     case 0:
                       Navigator.of(context).push(PageSlideTransition(const TrainerYourProfileScreen()));
+                    case 1:  
                       Navigator.of(context).push(PageSlideTransition(const ProgramFilesScreen()));
                     case 2:
                       Navigator.of(context).push(PageSlideTransition(const NutritionFilesScreen()));

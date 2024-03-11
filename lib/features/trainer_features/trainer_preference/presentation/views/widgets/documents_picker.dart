@@ -71,20 +71,20 @@ class _DocumentsPickerState extends State<DocumentsPicker> {
     }
     isPickerOpen = true;
     FilePickerResult? newResult = await FilePicker.platform.pickFiles(
-    type: FileType.custom,
-    allowedExtensions: ['pdf', 'doc', 'docx', 'xls', 'xlsx', 'ppt', 'pptx', 'txt', 'jpg', 'jpeg', 'png'],
-    allowMultiple: true,
-  );
+      type: FileType.custom,
+      allowedExtensions: ['pdf', 'doc', 'docx', 'xls', 'xlsx', 'ppt', 'pptx', 'txt', 'jpg', 'jpeg', 'png'],
+      allowMultiple: true,
+    );
     isPickerOpen = false;
     if (newResult != null) {
-    setState(() {
-      if (files != null) {
-        files!.addAll(newResult.files);
-      } else {
-        files = newResult.files;
-      }
-    });
-  }
+      setState(() {
+        if (files != null) {
+          files!.addAll(newResult.files);
+        } else {
+          files = newResult.files;
+        }
+      });
+    }
     if (result == null) {
       return;
     }

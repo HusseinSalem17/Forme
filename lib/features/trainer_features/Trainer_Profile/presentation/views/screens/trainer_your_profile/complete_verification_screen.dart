@@ -101,7 +101,7 @@ class _CompleteVerificationScreenState extends State<CompleteVerificationScreen>
                 SizedBox(height: 10.h),
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 14.w),
-                  child: DocumentsPicker(),
+                  child: const DocumentsPicker(),
                 ),
                 Container(
                   height: MediaQuery.sizeOf(context).height / 6.h,

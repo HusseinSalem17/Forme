@@ -4,15 +4,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
-import 'package:forme_app/core/widgets/custom_app_bar_arrow_button.dart';
 import 'package:forme_app/core/widgets/simple_app_bar.dart';
 import 'package:forme_app/features/trainer_features/subscriptions/presentation/views/screens/clients_subscriptions.dart';
 import 'package:forme_app/features/trainer_features/subscriptions/presentation/views/screens/your_clubs.dart';
-import 'package:simple_star_rating/simple_star_rating.dart';
-
-import '../../../../../core/transitions/page_slide.dart';
-import 'widgets/custom_gesture_detector_row.dart';
-
 import '../../../../../core/transitions/page_slide.dart';
 import 'widgets/custom_gesture_detector_row.dart';
 
