@@ -25,7 +25,7 @@ List<SportsClubCardModel> sportsClubCardModel = [
     reviews: '4.9',
     title: 'Pulse Fitness Center',
     address: 'Port Said, EGY',
-    price: '\$1500 ',
+    price: 'E£1500 ',
     period: '/month',
   ),
   SportsClubCardModel(
@@ -36,7 +36,7 @@ List<SportsClubCardModel> sportsClubCardModel = [
     reviews: '4.9',
     title: 'Pulse Fitness Center',
     address: 'Cairo, EGY',
-    price: '\$1500 ',
+    price: 'E£1500 ',
     period: '/month',
   ),
   SportsClubCardModel(
@@ -47,7 +47,7 @@ List<SportsClubCardModel> sportsClubCardModel = [
     reviews: '4.9',
     title: 'Pulse Fitness Center',
     address: 'Port Said, EGY',
-    price: '\$1500 ',
+    price: 'E£1500 ',
     period: '/month',
   ),
   SportsClubCardModel(
@@ -58,7 +58,7 @@ List<SportsClubCardModel> sportsClubCardModel = [
     reviews: '4.9',
     title: 'Pulse Fitness Center',
     address: 'Cairo, EGY',
-    price: '\$1500 ',
+    price: 'E£1500 ',
     period: '/month',
   ),
   SportsClubCardModel(
@@ -69,7 +69,7 @@ List<SportsClubCardModel> sportsClubCardModel = [
     reviews: '4.9',
     title: 'Pulse Fitness Center',
     address: 'Cairo, EGY',
-    price: '\$1500 ',
+    price: 'E£1500 ',
     period: '/month',
   ),
   SportsClubCardModel(
@@ -80,7 +80,7 @@ List<SportsClubCardModel> sportsClubCardModel = [
     reviews: '4.9',
     title: 'Pulse Fitness Center',
     address: 'Port Said, EGY',
-    price: '\$1500 ',
+    price: 'E£1500 ',
     period: '/month',
   ),
   SportsClubCardModel(
@@ -91,7 +91,7 @@ List<SportsClubCardModel> sportsClubCardModel = [
     reviews: '4.9',
     title: 'Pulse Fitness Center',
     address: 'Cairo, EGY',
-    price: '\$1500 ',
+    price: 'E£1500 ',
     period: '/month',
   ),
 ];

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:forme_app/core/utils/app_colors.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:forme_app/features/user_features/Favorite/data/programs_card_model.dart';
 import 'package:forme_app/features/user_features/Favorite/presentation/views/tabs/tabs_cards/programs_tab_card.dart';
 import 'package:forme_app/features/user_features/search/presentation/views/widgets/filters_types.dart';
+
+import '../widgets/custom_expanded_list_view.dart';
 
 class FavProgramsTab extends StatelessWidget {
   const FavProgramsTab({super.key});
@@ -11,23 +13,20 @@ class FavProgramsTab extends StatelessWidget {
   Widget build(BuildContext context) {
   Size size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: AppColors.background,
       body: Column(
         children: [
-          const FilterType(type: 'programs',categories:['All', 'GYM', 'YOGA', 'Running', 'Boxing']),
-          Expanded(
-            child: ListView.builder(
-              itemCount: programsCardModel.length,
-              itemBuilder: (context, index) {
-                return Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 8),
-                  child: ProgramsTabCard(
-                    model: programsCardModel[index],
-                    size: size,
-                  ),
-                );
-              },
-            ),
+          Padding(
+            padding: EdgeInsets.only(top: 18.5, bottom: 22, left: 24.w),
+            child: const FilterType(type: 'programs',categories:['All', 'GYM', 'YOGA', 'Running', 'Boxing']),
+          ),
+          CustomExpandedListView(
+            itemCount: programsCardModel.length,
+            itemBuilder: (context, index) {
+              return ProgramsTabCard(
+                model: programsCardModel[index],
+                size: size,
+              );
+            },
           ),
         ],
       ),
