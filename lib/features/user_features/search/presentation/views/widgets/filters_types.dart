@@ -33,8 +33,8 @@ class _FilterTypeState extends State<FilterType> {
           children: widget.categories.map((category) {
             var index = widget.categories.indexOf(category);
             return Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 4,
+              padding: EdgeInsets.only(
+                right: 8.w,
               ),
               child: Container(
                 height: 40,

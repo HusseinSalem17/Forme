@@ -47,7 +47,7 @@ Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
       return
           // subscriptionsScreenRoute();
           // trainerProfileScreenRoute();
-          traineeProfileScreenRoute();
+          favoriteScreenRoute();
           // homeRoute();
           //splashRoute();
 
