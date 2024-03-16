@@ -160,7 +160,7 @@ Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
     case TrainerNotificationScreen.routeName:
       return trainerNotificationScreenRoute();
 //-------- Trainee Profile Routing -----------
-    case TraineeProfile.routeName:
+    case TraineeProfileScreen.routeName:
       return traineeProfileScreenRoute();
 //-------- Trainer Profile Routing -----------
     case TrainerProfileScreen.routeName:
@@ -415,7 +415,7 @@ MaterialPageRoute<dynamic> trainerNotificationScreenRoute() {
 
 MaterialPageRoute<dynamic> traineeProfileScreenRoute() {
   return MaterialPageRoute(
-    builder: (context) => const TraineeProfile(),
+    builder: (context) => const TraineeProfileScreen(),
   );
 }
 
