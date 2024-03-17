@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
-import 'package:forme_app/core/widgets/custom_app_bar_arrow_button.dart';
 import 'package:forme_app/core/widgets/custom_tab_bar.dart';
 import 'package:forme_app/features/user_features/Favorite/presentation/views/tabs/favorite_programs_tab.dart';
 import 'package:forme_app/features/user_features/Favorite/presentation/views/tabs/favorite_sports_club_tab.dart';
@@ -23,17 +23,9 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
       length: 4,
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: AppColors.background,
-          leading: Padding(
-            padding: const EdgeInsets.only(left: 10.0),
-            child: CustomAppBarArrowButton(
-              onTap: () {
-                Navigator.pop(context);
-              },
-            ),
-          ),
           centerTitle: true,
-          title: Text("Bookmark", style: TextStyles.heading4Bold.copyWith(fontSize: 18)),
+          title: Text("Favorite", style: TextStyles.textStyleBold.copyWith(
+                  fontSize: 18.sp, color: AppColors.n900PrimaryTextColor),),
           bottom: PreferredSize(
             preferredSize: const Size.fromHeight(40),
             child: Container(
