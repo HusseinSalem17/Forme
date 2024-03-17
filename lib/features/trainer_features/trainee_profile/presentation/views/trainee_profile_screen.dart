@@ -12,15 +12,15 @@ import '../../../../user_features/profile/presentation/views/complete_profile_wi
 import '../../../../user_features/profile/presentation/views/widgets/my_profile_phone_field.dart';
 import '../manager/trainee_profile_cubit.dart';
 
-class TraineeProfile extends StatefulWidget {
+class TraineeProfileScreen extends StatefulWidget {
   static const routeName = '/trainee-profile-screen';
-  const TraineeProfile({super.key});
+  const TraineeProfileScreen({super.key});
 
   @override
-  State<TraineeProfile> createState() => _TraineeProfileState();
+  State<TraineeProfileScreen> createState() => _TraineeProfileScreenState();
 }
 
-class _TraineeProfileState extends State<TraineeProfile> {
+class _TraineeProfileScreenState extends State<TraineeProfileScreen> {
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _phoneController = TextEditingController();
   //final TextEditingController _birthController = TextEditingController();
