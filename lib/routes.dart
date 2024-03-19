@@ -39,6 +39,7 @@ import 'features/trainer_features/client_list/presentation/views/client_list_scr
 import 'features/trainer_features/complete_profile_trainer/presentation/views/trainer_complete_profile.dart';
 
 import 'features/trainer_features/create_sessions/presentation/views/create_session.dart';
+
 import 'features/user_features/payment/presentation/view/payment_methods_screen.dart';
 import 'features/user_features/preferences/presentation/views/preferences_screen.dart';
 
@@ -385,6 +386,7 @@ MaterialPageRoute<dynamic> addProgramRoute() {
 }
 
 
+
 MaterialPageRoute<dynamic> revenueScreenRoute() {
   return MaterialPageRoute(
     builder: (context) => const RevenueScreen(),
@@ -427,4 +429,3 @@ MaterialPageRoute<dynamic> trainerProfileScreenRoute() {
     builder: (context) => const TrainerProfileScreen(),
   );
 }
-

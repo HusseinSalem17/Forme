@@ -9,7 +9,6 @@ import '../../../../../../core/widgets/app_drop_list/custom_drop_list.dart';
 import '../../../../../../core/widgets/app_fields/custom_phone_field.dart';
 import '../../../../../../core/widgets/app_fields/custom_text_field.dart';
 
-
 Widget buildTrainerBodyFields({
   required String? name,
   required String? phone,

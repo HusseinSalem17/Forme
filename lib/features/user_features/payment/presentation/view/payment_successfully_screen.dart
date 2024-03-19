@@ -10,6 +10,7 @@ import '../../../../../core/widgets/custom_app_button.dart';
 import '../../../home/presentation/views/home_view.dart';
 import 'ereceipt_screen.dart';
 
+
 class PaymentSuccessfullyScreen extends StatelessWidget {
   static const routeName = '/payment-successfully-screen';
   const PaymentSuccessfullyScreen({Key? key}) : super(key: key);
