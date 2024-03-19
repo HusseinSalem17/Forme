@@ -1,5 +1,5 @@
 buildscript {
-    ext.kotlin_version = '1.9.0'
+    ext.kotlin_version = '1.7.10'
     repositories {
         google()
         mavenCentral()
@@ -22,15 +22,8 @@ rootProject.buildDir = '../build'
 subprojects {
     project.buildDir = "${rootProject.buildDir}/${project.name}"
 }
-
 subprojects {
-    afterEvaluate {
-        tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
-            kotlinOptions {
-                jvmTarget = '1.8' // Specify the Java version here
-            }
-        }
-    }
+    project.evaluationDependsOn(':app')
 }
 
 tasks.register("clean", Delete) {

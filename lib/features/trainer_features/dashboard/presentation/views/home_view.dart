@@ -30,11 +30,11 @@ class _TrainerHomeScreenState extends State<TrainerHomeScreen> {
   Widget build(BuildContext context) {
     return BlocBuilder<TrainerHomeBloc, TrainerHomeState>(
       builder: (context, state) {
-        int currentIndex =
-            BlocProvider.of<TrainerHomeBloc>(context).currentIndex;
+        int currentIndex = BlocProvider.of<TrainerHomeBloc>(context).currentIndex;
         return Scaffold(
           body: _pages[currentIndex],
           bottomNavigationBar: const CustomBottomNavigationBar(
+            isTrainer: true,
             icons: ['home', 'PlayBorder', 'client-list', 'chat', 'profile'],
             labels: ['Home', 'My Services', 'Client List', 'Chat', 'Profile'],
           ),

@@ -45,9 +45,9 @@ Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
 //----- Splash Routing -----
     case '/':
       return
-          // subscriptionsScreenRoute();
+          trainerHomeRoute();
           // trainerProfileScreenRoute();
-          favoriteScreenRoute();
+          // favoriteScreenRoute();
           // homeRoute();
           //splashRoute();
 
@@ -354,7 +354,7 @@ MaterialPageRoute<dynamic> favoriteScreenRoute() {
 
 MaterialPageRoute<dynamic> trainerHomeRoute() {
   return MaterialPageRoute(
-    builder: (context) => const PaymentSuccessfullyScreen(),
+    builder: (context) => const TrainerHomeScreen(),
   );
 }
 
