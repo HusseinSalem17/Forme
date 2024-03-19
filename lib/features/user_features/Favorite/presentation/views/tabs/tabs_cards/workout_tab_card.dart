@@ -47,7 +47,7 @@ class WorkoutTabCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisSize: MainAxisSize.min,
           children: [
-            FavCardImageSection(height: size.height / 2, width: size.width / 3, bottomPadding: 0, leftPaddingIcon: 110, id: model.id, category: model.category,),
+            FavCardImageSection(height: size.height / 2, width: size.width / 4, bottomPadding: 0, leftPaddingIcon: 110, id: model.id, category: model.category,),
             Padding(
               padding: const EdgeInsets.only(top: 8, bottom: 8, left: 20),
               child: Column(
@@ -104,9 +104,8 @@ class WorkoutTabCard extends StatelessWidget {
                       children: [
                         Text(
                           model.price,
-                          style: TextStyles.cardTextStyle.copyWith(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w600,
+                          style: TextStyles.blackCardTextStyle.copyWith(
+                            color: AppColors.p300PrimaryColor
                           ),
                         ),
                         if (model.isBestSeller) const WorkoutCardType(type: 'Best Seller')

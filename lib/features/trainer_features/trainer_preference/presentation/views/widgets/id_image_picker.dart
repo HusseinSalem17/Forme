@@ -41,7 +41,7 @@ class IdImagePicker extends StatelessWidget {
         height: 56.h,
         decoration: BoxDecoration(
           shape: BoxShape.rectangle,
-          borderRadius: BorderRadius.circular(6.r), 
+          borderRadius: BorderRadius.circular(6.r),
           image: imageFile == null
               ? null
               : DecorationImage(
@@ -62,7 +62,7 @@ class IdImagePicker extends StatelessWidget {
       height: 56.h,
       decoration: BoxDecoration(
         shape: BoxShape.rectangle,
-        borderRadius: BorderRadius.circular(6.r), 
+        borderRadius: BorderRadius.circular(6.r),
         color: AppColors.background,
         border: Border.all(
           color: AppColors.n40BorderColor,
@@ -70,7 +70,7 @@ class IdImagePicker extends StatelessWidget {
         ),
       ),
       child: SvgPicture.asset(
-        "assets/image/icon/id.svg",
+        "assets/image/Icon/id.svg",
         height: 30.h,
         width: 30.w,
         fit: BoxFit.none,

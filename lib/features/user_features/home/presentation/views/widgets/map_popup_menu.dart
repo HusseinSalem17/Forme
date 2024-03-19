@@ -4,8 +4,8 @@ import 'package:flutter_svg/svg.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
 
-class MapPopubMenu extends StatelessWidget {
-  const MapPopubMenu({
+class MapPopupMenu extends StatelessWidget {
+  const MapPopupMenu({
     super.key,
   });
 
@@ -35,15 +35,14 @@ class MapPopubMenu extends StatelessWidget {
           SvgPicture.asset(
             'assets/image/Icon/pin-map.svg',
             height: 24.h,
-            colorFilter: const ColorFilter.mode(
-                AppColors.p300PrimaryColor, BlendMode.srcIn),
+            colorFilter: const ColorFilter.mode(AppColors.p300PrimaryColor, BlendMode.srcIn),
           ),
           SizedBox(
             width: 4.w,
           ),
           Text(
             'Port Said, EGY',
-            style: TextStyles.textStyleRegular.copyWith(color: Colors.black,fontSize:16.sp),
+            style: TextStyles.textStyleRegular.copyWith(color: Colors.black, fontSize: 16.sp),
           ),
           SvgPicture.asset(
             'assets/image/Icon/chevron-down.svg',
