@@ -30,6 +30,7 @@ import 'package:forme_app/features/user_features/sports_club/presentation/views/
 import 'package:forme_app/splash_screen.dart';
 import 'package:forme_app/onboarding_screens/views/onboarding_screen.dart';
 
+
 import 'features/trainer_features/Revenue/presentation/views/revenue_screen.dart';
 import 'features/trainer_features/Trainee_profile/presentation/views/trainee_profile_screen.dart';
 import 'features/trainer_features/Trainer_Notification/presentation/views/trainer_notification_screen.dart';
@@ -384,7 +385,6 @@ MaterialPageRoute<dynamic> addProgramRoute() {
     builder: (context) => const AddProgramScreen(),
   );
 }
-
 
 
 MaterialPageRoute<dynamic> revenueScreenRoute() {

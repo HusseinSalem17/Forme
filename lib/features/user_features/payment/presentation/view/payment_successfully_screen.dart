@@ -4,6 +4,7 @@ import 'package:forme_app/core/transitions/page_slide.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
 import 'package:forme_app/core/widgets/custom_app_bar_arrow_button.dart';
+
 import 'package:forme_app/features/user_features/payment/presentation/view/widgets/payment_successfully_body.dart';
 
 import '../../../../../core/widgets/custom_app_button.dart';
@@ -13,6 +14,7 @@ import 'ereceipt_screen.dart';
 
 class PaymentSuccessfullyScreen extends StatelessWidget {
   static const routeName = '/payment-successfully-screen';
+
   const PaymentSuccessfullyScreen({Key? key}) : super(key: key);
 
   @override
