@@ -5,6 +5,8 @@ import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
 
 class BookAppointmentScreen extends StatelessWidget {
+  static const routeName = '/book-appointment-screen';
+
   const BookAppointmentScreen({Key? key}) : super(key: key);
 
   @override
