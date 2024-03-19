@@ -142,7 +142,7 @@ class _MyProfileTrainerState extends State<MyProfileTrainer> {
                   title: "Gender",
                   enabled: adjustable,
                   hint: const Text('select Gender'),
-                  items: genderItem
+                  items: genderItems
                       .map((e) => DropdownMenuItem<String>(
                             value: e,
                             child: Text(e),

@@ -42,14 +42,14 @@ class ProgramsTabCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisSize: MainAxisSize.min,
           children: [
-            FavCardImageSection(height: size.height / 2, width: size.width / 3, bottomPadding: 0, leftPaddingIcon: 110, id: model.id, category: model.category),
+            FavCardImageSection(height: size.height / 2, width: size.width / 4, bottomPadding: 0, leftPaddingIcon: 110, id: model.id, category: model.category),
             Padding(
               padding: const EdgeInsets.only(top: 8, bottom: 8, left: 20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Container(
+                  SizedBox(
                     width: size.width / 2,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -105,7 +105,7 @@ class ProgramsTabCard extends StatelessWidget {
                       )
                     ],
                   ),
-                  Container(
+                  SizedBox(
                     width: size.width / 2,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,

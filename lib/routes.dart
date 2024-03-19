@@ -7,7 +7,6 @@ import 'package:forme_app/features/Authentication/presentation/views/verify_code
 import 'package:forme_app/features/trainer_features/dashboard/presentation/views/home_view.dart';
 import 'package:forme_app/features/trainer_features/my_services/presentation/views/my_services_screen.dart';
 import 'package:forme_app/features/trainer_features/subscriptions/presentation/views/subscriptions_screen.dart';
-import 'package:forme_app/features/trainer_features/trainee_profile/presentation/views/trainee_profile_screen.dart';
 import 'package:forme_app/features/trainer_features/trainer_preference/presentation/views/trainer_preference_screen.dart';
 import 'package:forme_app/features/user_features/Favorite/presentation/views/favorite_screen.dart';
 import 'package:forme_app/features/user_features/Notification/presentation/views/notification_screen.dart';
@@ -46,9 +45,9 @@ Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
 //----- Splash Routing -----
     case '/':
       return
-          // subscriptionsScreenRoute();
+          trainerHomeRoute();
           // trainerProfileScreenRoute();
-          traineeProfileScreenRoute();
+          // favoriteScreenRoute();
           // homeRoute();
           //splashRoute();
 
@@ -355,7 +354,7 @@ MaterialPageRoute<dynamic> favoriteScreenRoute() {
 
 MaterialPageRoute<dynamic> trainerHomeRoute() {
   return MaterialPageRoute(
-    builder: (context) => const PaymentSuccessfullyScreen(),
+    builder: (context) => const TrainerHomeScreen(),
   );
 }
 

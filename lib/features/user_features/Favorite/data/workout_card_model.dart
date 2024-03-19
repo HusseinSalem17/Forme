@@ -23,7 +23,7 @@ List<WorkoutCardModel> workoutCardData = [
     reviews: '4.9 (17 Reviews)',
     title: 'Mindful Movement',
     trainerName: 'Hussein Salem',
-    price: '\$150.00 ',
+    price: 'E£150.00 ',
   ),
   WorkoutCardModel(
     id: 1,
@@ -32,7 +32,7 @@ List<WorkoutCardModel> workoutCardData = [
     reviews: '4.9 (17 Reviews)',
     title: 'Mindful Movement',
     trainerName: 'Hussein Salem',
-    price: '\$150.00 ',
+    price: 'E£150.00 ',
   ),
   WorkoutCardModel(
     id: 2,
@@ -41,7 +41,7 @@ List<WorkoutCardModel> workoutCardData = [
     reviews: '4.9 (17 Reviews)',
     title: 'Mindful Movement',
     trainerName: 'Hussein Salem',
-    price: '\$150.00 ',
+    price: 'E£150.00 ',
     isBestSeller: true,
   ),
   WorkoutCardModel(
@@ -51,7 +51,7 @@ List<WorkoutCardModel> workoutCardData = [
     reviews: '4.9 (17 Reviews)',
     title: 'Mindful Movement',
     trainerName: 'Hussein Salem',
-    price: '\$150.00 ',
+    price: 'E£150.00 ',
   ),
   WorkoutCardModel(
     id: 4,
@@ -60,7 +60,7 @@ List<WorkoutCardModel> workoutCardData = [
     reviews: '4.9 (17 Reviews)',
     title: 'Mindful Movement',
     trainerName: 'Hussein Salem',
-    price: '\$150.00 ',
+    price: 'E£150.00 ',
     isBestSeller: true,
   ),
   WorkoutCardModel(
@@ -70,7 +70,7 @@ List<WorkoutCardModel> workoutCardData = [
     reviews: '4.9 (17 Reviews)',
     title: 'Mindful Movement',
     trainerName: 'Hussein Salem',
-    price: '\$150.00 ',
+    price: 'E£150.00 ',
   ),
   WorkoutCardModel(
     id: 6,
@@ -79,7 +79,7 @@ List<WorkoutCardModel> workoutCardData = [
     reviews: '4.9 (17 Reviews)',
     title: 'Mindful Movement',
     trainerName: 'Hussein Salem',
-    price: '\$150.00 ',
+    price: 'E£150.00 ',
   ),
   WorkoutCardModel(
     id: 7,
@@ -88,6 +88,6 @@ List<WorkoutCardModel> workoutCardData = [
     reviews: '4.9 (17 Reviews)',
     title: 'Mindful Movement',
     trainerName: 'Hussein Salem',
-    price: '\$ 150.00 ',
+    price: 'E£ 150.00 ',
   ),
 ];
