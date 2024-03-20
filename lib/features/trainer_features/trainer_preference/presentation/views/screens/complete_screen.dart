@@ -5,6 +5,7 @@ import 'package:forme_app/core/utils/text_styles.dart';
 import 'package:forme_app/core/widgets/button_container.dart';
 import 'package:lottie/lottie.dart';
 
+
 class CompletePreferenceScreen extends StatefulWidget {
   const CompletePreferenceScreen({super.key});
 

@@ -5,6 +5,8 @@ import 'package:forme_app/features/user_features/join_program_feature/presentati
 import '../../../preferences/presentation/views/widgets/custom_shadow_button.dart';
 
 class BookOnlineCoachScreen extends StatefulWidget {
+  static const routeName = '/book-online-coach-screen';
+
   const BookOnlineCoachScreen({Key? key}) : super(key: key);
 
   @override
