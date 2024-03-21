@@ -4,16 +4,14 @@ import 'package:forme_app/core/test_models/top_trainers_model.dart';
 import 'package:forme_app/core/transitions/page_slide.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
-import 'package:forme_app/features/user_features/Trainer_ditails/presentation/views/trainer_details_view.dart';
+import 'package:forme_app/features/user_features/Trainer_details/presentation/views/trainer_details_view.dart';
 
 class TopTrainersSection extends StatelessWidget {
   final void Function()? onTap;
   const TopTrainersSection({Key? key, required this.onTap}) : super(key: key);
 
   String truncateText(String text, int maxLength) {
-    return (text.length <= maxLength)
-        ? text
-        : '${text.substring(0, maxLength)}..';
+    return (text.length <= maxLength) ? text : '${text.substring(0, maxLength)}..';
   }
 
   @override
@@ -57,8 +55,7 @@ class TopTrainersSection extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 8),
                 child: GestureDetector(
                   onTap: () {
-                    Navigator.of(context).push(
-                        PageSlideTransition(const TrainerDetailsScreen()));
+                    Navigator.of(context).push(PageSlideTransition(const TrainerDetailsScreen()));
                   },
                   child: Column(
                     children: [
@@ -79,8 +76,7 @@ class TopTrainersSection extends StatelessWidget {
                       const SizedBox(height: 4),
                       Text(
                         truncateText(topTrainersData[index].name, 8),
-                        style: TextStyles.textStyleRegular.copyWith(
-                            fontSize: 12, color: AppColors.neutralsN9),
+                        style: TextStyles.textStyleRegular.copyWith(fontSize: 12, color: AppColors.neutralsN9),
                       )
                     ],
                   ),

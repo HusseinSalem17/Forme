@@ -32,6 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
         return Scaffold(
           body: _pages[currentIndex],
           bottomNavigationBar: const CustomBottomNavigationBar(
+            isTrainer: false,
             icons: ['home', 'pin-map', 'heart', 'chat', 'profile'],
             labels: ['Home', 'Explore', 'Favorite', 'chat', 'Profile'],
           ),

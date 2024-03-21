@@ -3,7 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/app_theme.dart';
+import 'package:forme_app/features/trainer_features/Trainer_Profile/presentation/manager/my_profile_cubit/cubit/my_profile_cubit.dart';
 import 'package:forme_app/features/trainer_features/dashboard/presentation/views/manager/bloc/trainer_home_bloc.dart';
+import 'package:forme_app/features/trainer_features/trainee_profile/presentation/manager/trainee_profile_cubit.dart';
 import 'package:forme_app/features/user_features/home/presentation/manager/bloc/home_bloc.dart';
 import 'package:forme_app/features/user_features/preferences/presentation/manager/preferences_bloc.dart';
 import 'package:forme_app/features/user_features/profile/data/repos/complete_profile_repo_impl.dart';
@@ -35,14 +37,16 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
+          create: (context) => TraineeProfileCubit(),
+        ),
+        BlocProvider(
           create: (context) => OnBoardingBloc(),
         ),
         BlocProvider(
           create: (context) => PreferencesBloc(),
         ),
         BlocProvider(
-          create: (context) =>
-              CompleteProfileCubit(getIt.get<CompleteProfileRepoImpl>()),
+          create: (context) => CompleteProfileCubit(getIt.get<CompleteProfileRepoImpl>()),
         ),
         BlocProvider(
           create: (context) => MyProfileCubit(),
@@ -52,6 +56,9 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => TrainerHomeBloc(),
+        ),
+        BlocProvider(
+          create: (context) => MyProfileTrainerCubit(),
         ),
       ],
       child: ScreenUtilInit(

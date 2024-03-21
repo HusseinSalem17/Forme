@@ -30,6 +30,7 @@ class CustomDropList extends StatefulWidget {
       this.enabled = true,
       this.titleColor = AppColors.n400});
 
+
   @override
   State<CustomDropList> createState() => _CustomDropList();
 }
@@ -71,7 +72,6 @@ class _CustomDropList extends State<CustomDropList> {
           ),
         ),
         hint: widget.hint,
-
         items: widget.items,
         validator: widget.validator,
         onChanged: widget.enabled ? (value) => _onDropdownChanged(value) : null,

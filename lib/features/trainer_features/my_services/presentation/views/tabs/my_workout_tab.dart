@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:forme_app/features/trainer_features/my_services/data/my_workout_card_model.dart';
 import 'package:forme_app/features/trainer_features/my_services/presentation/views/widgets/program_cards.dart';
 
 
@@ -20,12 +21,20 @@ class MyWorkoutTab extends StatelessWidget {
                 child: GridView.builder(
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
-                    mainAxisSpacing: 32,
+                    mainAxisSpacing: 1,
                     crossAxisSpacing: 8,
+                    childAspectRatio: 0.85,
                   ),
-                  itemCount: 10,
-                  itemBuilder: (context, size) => const CardsItem(
+                  itemCount: myWorkoutsCardsModel.length,
+                  itemBuilder: (context, index) => CardsItem(
                     isPrograms: false,
+                    type: myWorkoutsCardsModel[index].type,
+                    reviews: myWorkoutsCardsModel[index].reviews,
+                    rating: myWorkoutsCardsModel[index].rating,
+                    title: myWorkoutsCardsModel[index].title,
+                    clients: myWorkoutsCardsModel[index].clients,
+                    price: myWorkoutsCardsModel[index].price,
+                    videos: myWorkoutsCardsModel[index].videos,
                   ),
                 ),
               ),

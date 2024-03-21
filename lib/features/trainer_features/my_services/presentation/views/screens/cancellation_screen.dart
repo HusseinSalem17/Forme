@@ -45,6 +45,7 @@ class CancellationScreen extends StatelessWidget {
           ),
         ),
       ),
+
       body: Stack(children: [
         SingleChildScrollView(
           child: Padding(
@@ -88,6 +89,7 @@ class CancellationScreen extends StatelessWidget {
           ),
         ),
       ]),
+
     );
   }
 }

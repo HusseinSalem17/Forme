@@ -74,7 +74,9 @@ class _TargetAgeSectionState extends State<TargetAgeSection> {
           ],
         ),
         Padding(
-          padding:EdgeInsets.symmetric(vertical: 10.h),
+
+          padding: EdgeInsets.symmetric(vertical: 10.h),
+
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -90,43 +92,40 @@ class _TargetAgeSectionState extends State<TargetAgeSection> {
       ],
     );
   }
+
   Expanded customNumberField(FocusNode focusNode,
       TextEditingController controller, BuildContext context) {
     return Expanded(
-      child: Center(
-        child: TextField(
-          controller: controller,
-          focusNode: focusNode,
-          keyboardType: TextInputType.number,
-          textAlign: TextAlign.center,
-          decoration: InputDecoration(
-            filled: true,
-            fillColor: Colors.white,
-            contentPadding: EdgeInsets.only(
-              left: 0.w,
-              top: 8.h,
-              bottom: 8.h,
-            ),
-            prefix: Padding(
-              padding: EdgeInsets.only(left: 16.w),
-            ),
-            hintText: '0',
-            hintStyle: TextStyles.hintStyle,
-            border: textFieldBorder(),
-            enabledBorder: textFieldBorder(),
-            focusedBorder: textFieldBorder(
-              color: AppColors.p300PrimaryColor,
-              width: 2.0,
-            ),
-            errorBorder: textFieldBorder(
-              color: AppColors.r200ErrorColor,
-              width: 2.0,
-            ),
+      child: TextField(
+        controller: controller,
+        focusNode: focusNode,
+        keyboardType: TextInputType.number,
+        textAlign: TextAlign.center,
+        decoration: InputDecoration(
+          filled: true,
+          fillColor: Colors.white,
+          contentPadding: EdgeInsets.only(
+            left: 0.w,
+            top: 8.h,
+            bottom: 8.h,
           ),
-          onChanged: (value) {
-            debugPrint(value);
-          },
+          hintText: '0',
+          hintStyle: TextStyles.hintStyle,
+          border: textFieldBorder(),
+          enabledBorder: textFieldBorder(),
+          focusedBorder: textFieldBorder(
+            color: AppColors.p300PrimaryColor,
+            width: 2.0,
+          ),
+          errorBorder: textFieldBorder(
+            color: AppColors.r200ErrorColor,
+            width: 2.0,
+          ),
         ),
+        onChanged: (value) {
+          debugPrint(value);
+        },
+
       ),
     );
   }

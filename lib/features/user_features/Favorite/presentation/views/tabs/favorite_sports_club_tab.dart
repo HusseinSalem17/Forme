@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:forme_app/core/utils/app_colors.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:forme_app/features/user_features/Favorite/data/sports_club_card_model.dart';
 import 'package:forme_app/features/user_features/Favorite/presentation/views/tabs/tabs_cards/sports_club_tab_card.dart';
 import 'package:forme_app/features/user_features/search/presentation/views/widgets/filters_types.dart';
+
+import '../widgets/custom_expanded_list_view.dart';
 
 class FavSportsClubTab extends StatelessWidget {
   const FavSportsClubTab({super.key});
@@ -11,23 +13,20 @@ class FavSportsClubTab extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: AppColors.background,
       body: Column(
         children: [
-          const FilterType(type: 'sports club',categories:['All', 'GYM', 'YOGA', 'Running', 'Boxing']),
-          Expanded(
-            child: ListView.builder(
-              itemCount: sportsClubCardModel.length,
-              itemBuilder: (context, index) {
-                return Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 8),
-                  child: SportsClubTabCard(
-                    model: sportsClubCardModel[index],
-                    size: size,
-                  ),
-                );
-              },
-            ),
+          Padding(
+            padding: EdgeInsets.only(top: 18.5, bottom: 22, left: 24.w),
+            child: const FilterType(type: 'sports club',categories:['All', 'GYM', 'YOGA', 'Running', 'Boxing']),
+          ),
+          CustomExpandedListView(
+            itemCount: sportsClubCardModel.length,
+            itemBuilder: (context, index) {
+              return SportsClubTabCard(
+                model: sportsClubCardModel[index],
+                size: size,
+              );
+            },
           ),
         ],
       ),

@@ -1,7 +1,9 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
+
 
 class CancellationRadio extends StatefulWidget {
   const CancellationRadio({super.key});
@@ -21,7 +23,9 @@ class _CancellationRadioState extends State<CancellationRadio> {
           onTap: () {
             setState(() {
               reviews = 1;
-              print('$reviews');
+              if (kDebugMode) {
+                print('$reviews');
+              }
             });
           },
           child: Row(
@@ -34,7 +38,9 @@ class _CancellationRadioState extends State<CancellationRadio> {
                 onChanged: (value) {
                   setState(() {
                     reviews = value!;
-                    print('$reviews');
+                    if (kDebugMode) {
+                      print('$reviews');
+                    }
                   });
                 },
               ),
@@ -49,7 +55,9 @@ class _CancellationRadioState extends State<CancellationRadio> {
           onTap: () {
             setState(() {
               reviews = 2;
-              print('$reviews');
+              if (kDebugMode) {
+                print('$reviews');
+              }
             });
           },
           child: Row(
@@ -61,7 +69,9 @@ class _CancellationRadioState extends State<CancellationRadio> {
                 onChanged: (value) {
                   setState(() {
                     reviews = value!;
-                    print('$reviews');
+                    if (kDebugMode) {
+                      print('$reviews');
+                    }
                   });
                 },
               ),
@@ -76,7 +86,9 @@ class _CancellationRadioState extends State<CancellationRadio> {
           onTap: () {
             setState(() {
               reviews = 3;
-              print('$reviews');
+              if (kDebugMode) {
+                print('$reviews');
+              }
             });
           },
           child: Row(
@@ -88,7 +100,9 @@ class _CancellationRadioState extends State<CancellationRadio> {
                 onChanged: (value) {
                   setState(() {
                     reviews = value!;
-                    print('$reviews');
+                    if (kDebugMode) {
+                      print('$reviews');
+                    }
                   });
                 },
               ),
@@ -103,7 +117,9 @@ class _CancellationRadioState extends State<CancellationRadio> {
           onTap: () {
             setState(() {
               reviews = 4;
-              print('$reviews');
+              if (kDebugMode) {
+                print('$reviews');
+              }
             });
           },
           child: Row(
@@ -115,7 +131,9 @@ class _CancellationRadioState extends State<CancellationRadio> {
                 onChanged: (value) {
                   setState(() {
                     reviews = value!;
-                    print('$reviews');
+                    if (kDebugMode) {
+                      print('$reviews');
+                    }
                   });
                 },
               ),
@@ -130,7 +148,9 @@ class _CancellationRadioState extends State<CancellationRadio> {
           onTap: () {
             setState(() {
               reviews = 5;
-              print('$reviews');
+              if (kDebugMode) {
+                print('$reviews');
+              }
             });
           },
           child: Row(
@@ -142,7 +162,9 @@ class _CancellationRadioState extends State<CancellationRadio> {
                 onChanged: (value) {
                   setState(() {
                     reviews = value!;
-                    print('$reviews');
+                    if (kDebugMode) {
+                      print('$reviews');
+                    }
                   });
                 },
               ),
@@ -157,7 +179,9 @@ class _CancellationRadioState extends State<CancellationRadio> {
           onTap: () {
             setState(() {
               reviews = 6;
-              print('$reviews');
+              if (kDebugMode) {
+                print('$reviews');
+              }
             });
           },
           child: Row(
@@ -169,7 +193,9 @@ class _CancellationRadioState extends State<CancellationRadio> {
                 onChanged: (value) {
                   setState(() {
                     reviews = value!;
-                    print('$reviews');
+                    if (kDebugMode) {
+                      print('$reviews');
+                    }
                   });
                 },
               ),
