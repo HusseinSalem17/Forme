@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
-import 'package:forme_app/core/utils/styles.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
 import 'package:forme_app/core/widgets/app_drop_list/custom_drop_list.dart';
 import 'package:forme_app/core/widgets/app_fields/custom_text_field.dart';
@@ -10,7 +9,6 @@ import 'package:forme_app/core/widgets/app_fields/program_capacity_field.dart';
 import 'package:forme_app/core/widgets/text_area.dart';
 import 'package:forme_app/features/trainer_features/add_program/presentation/views/sections/select_gender_section.dart';
 import 'package:forme_app/features/trainer_features/add_program/presentation/views/sections/target_age_section.dart';
-import 'package:forme_app/features/user_features/profile/presentation/views/complete_profile_widgets/custom_build_form.dart';
 import 'package:forme_app/features/user_features/profile/presentation/views/complete_profile_widgets/image_selection_bottom_sheet.dart';
 import 'package:image_picker/image_picker.dart';
 
@@ -146,6 +144,7 @@ class _AddProgramBodyState extends State<AddProgramBody> {
             thickness: 1,
             color: AppColors.n40BorderColor,
           ),
+
           Row(
             children: [
               SvgPicture.asset('assets/image/Icon/plans.svg'),
@@ -280,3 +279,6 @@ class _PaymentPlanItemState extends State<PaymentPlanItem> {
     );
   }
 }
+
+  
+

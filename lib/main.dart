@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/app_theme.dart';
 import 'package:forme_app/features/trainer_features/Trainer_Profile/presentation/manager/my_profile_cubit/cubit/my_profile_cubit.dart';
 import 'package:forme_app/features/trainer_features/dashboard/presentation/views/manager/bloc/trainer_home_bloc.dart';
@@ -20,7 +21,9 @@ void main() {
   setupServiceLocator();
   SystemChrome.setSystemUIOverlayStyle(
     const SystemUiOverlayStyle(
-      statusBarColor: Colors.white,
+      statusBarColor: AppColors.background,
+      systemNavigationBarColor: AppColors.background,
+      systemNavigationBarDividerColor: AppColors.background,
     ),
   );
   runApp(const MyApp());
