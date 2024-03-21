@@ -28,7 +28,9 @@ class TextArea extends StatelessWidget {
           height: MediaQuery.sizeOf(context).height / 4.h,
           width: MediaQuery.sizeOf(context).width,
           decoration: BoxDecoration(
-              color: AppColors.background,
+              color: enabled
+                  ? AppColors.background
+                  : AppColors.n20FillBodyInSmallCardColor,
               border: Border.all(color: AppColors.n40BorderColor, width: 1),
               borderRadius: BorderRadius.circular(4.dg)),
           child: Padding(
