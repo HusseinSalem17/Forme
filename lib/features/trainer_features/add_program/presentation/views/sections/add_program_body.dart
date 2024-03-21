@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
-import 'package:forme_app/core/utils/styles.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
 import 'package:forme_app/core/widgets/app_drop_list/custom_drop_list.dart';
 import 'package:forme_app/core/widgets/app_fields/custom_text_field.dart';
@@ -145,6 +144,7 @@ class _AddProgramBodyState extends State<AddProgramBody> {
             thickness: 1,
             color: AppColors.n40BorderColor,
           ),
+
           Row(
             children: [
               SvgPicture.asset('assets/image/Icon/plans.svg'),
@@ -279,3 +279,6 @@ class _PaymentPlanItemState extends State<PaymentPlanItem> {
     );
   }
 }
+
+  
+

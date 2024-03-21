@@ -56,7 +56,7 @@ class PageViewContent extends StatelessWidget {
                 style: blackTextStyle,
               ),
               TextSpan(
-                text: blueText,
+                text: blueText,                      
                 style: blueTextStyle,
               ),
             ],
