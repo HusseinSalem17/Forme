@@ -4,6 +4,8 @@ import 'package:forme_app/features/Authentication/presentation/views/new_passwor
 import 'package:forme_app/features/Authentication/presentation/views/sign_up_view.dart';
 import 'package:forme_app/features/Authentication/presentation/views/sign_in_view.dart';
 import 'package:forme_app/features/Authentication/presentation/views/verify_code.dart';
+import 'package:forme_app/features/trainer_features/Transformations/presentation/view/Transformations_screen.dart';
+import 'package:forme_app/features/trainer_features/Transformations/presentation/view/screens/add_transformation.dart';
 import 'package:forme_app/features/trainer_features/dashboard/presentation/views/home_view.dart';
 import 'package:forme_app/features/trainer_features/my_services/presentation/views/my_services_screen.dart';
 import 'package:forme_app/features/trainer_features/subscriptions/presentation/views/subscriptions_screen.dart';
@@ -29,8 +31,6 @@ import 'package:forme_app/features/user_features/search/presentation/views/filte
 import 'package:forme_app/features/user_features/sports_club/presentation/views/sports_club.dart';
 import 'package:forme_app/splash_screen.dart';
 import 'package:forme_app/onboarding_screens/views/onboarding_screen.dart';
-
-
 import 'features/trainer_features/Revenue/presentation/views/revenue_screen.dart';
 import 'features/trainer_features/Trainee_profile/presentation/views/trainee_profile_screen.dart';
 import 'features/trainer_features/Trainer_Notification/presentation/views/trainer_notification_screen.dart';
@@ -48,12 +48,8 @@ Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
   switch (settings.name) {
 //----- Splash Routing -----
     case '/':
-      return
-          trainerHomeRoute();
-          // trainerProfileScreenRoute();
-          // favoriteScreenRoute();
-          // homeRoute();
-          //splashRoute();
+      return trainerHomeRoute();
+
 
 //----- OnBoarding Routing -----
     case OnBoardingView.routeName:
@@ -144,7 +140,7 @@ Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
       return trainerCompleteProfileRoute();
 //-------- My Services Routing -----------
     case MyServicesScreen.routeName:
-      return trainerMyServicesScreen();
+      return trainerMyServicesRoute();
 //-------- Add Program Routing -----------
     case AddProgramScreen.routeName:
       return addProgramRoute();
@@ -169,6 +165,15 @@ Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
 //-------- Trainer Profile Routing -----------
     case TrainerProfileScreen.routeName:
       return trainerProfileScreenRoute();
+//-------- Transformations Routing -----------
+    case TransformationsScreen.routeName:
+      return transformationRoute();
+    case AddTransformation.routeName:
+      final List<dynamic> args = settings.arguments as List<dynamic>;
+      final String title = args[0] as String;
+      return addTransformationRoute(
+        title,
+      );
 //---------------------------------------
     default:
       return notFound();
@@ -295,7 +300,8 @@ MaterialPageRoute<dynamic> sportsClubRoute() {
   );
 }
 
-MaterialPageRoute<dynamic> featuredRoute(List<String> filterType, String featureType) {
+MaterialPageRoute<dynamic> featuredRoute(
+    List<String> filterType, String featureType) {
   return MaterialPageRoute(
     builder: (context) => FeaturedScreen(
       filterTypes: filterType,
@@ -374,7 +380,7 @@ MaterialPageRoute<dynamic> trainerCompleteProfileRoute() {
   );
 }
 
-MaterialPageRoute<dynamic> trainerMyServicesScreen() {
+MaterialPageRoute<dynamic> trainerMyServicesRoute() {
   return MaterialPageRoute(
     builder: (context) => const MyServicesScreen(),
   );
@@ -417,7 +423,6 @@ MaterialPageRoute<dynamic> trainerNotificationScreenRoute() {
   );
 }
 
-
 MaterialPageRoute<dynamic> traineeProfileScreenRoute() {
   return MaterialPageRoute(
     builder: (context) => const TraineeProfileScreen(),
@@ -429,3 +434,18 @@ MaterialPageRoute<dynamic> trainerProfileScreenRoute() {
     builder: (context) => const TrainerProfileScreen(),
   );
 }
+
+MaterialPageRoute<dynamic> transformationRoute() {
+  return MaterialPageRoute(
+    builder: (context) => const TransformationsScreen(),
+  );
+}
+
+MaterialPageRoute<dynamic> addTransformationRoute(String title) {
+  return MaterialPageRoute(
+    builder: (context) => AddTransformation(
+      title: title,
+    ),
+  );
+}
+

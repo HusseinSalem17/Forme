@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -73,7 +74,9 @@ class _TargetAgeSectionState extends State<TargetAgeSection> {
           ],
         ),
         Padding(
+
           padding: EdgeInsets.symmetric(vertical: 10.h),
+
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -122,6 +125,7 @@ class _TargetAgeSectionState extends State<TargetAgeSection> {
         onChanged: (value) {
           debugPrint(value);
         },
+
       ),
     );
   }

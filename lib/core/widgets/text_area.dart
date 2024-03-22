@@ -8,15 +8,19 @@ class TextArea extends StatelessWidget {
   final String title;
   final Color titleColor;
   final TextEditingController? controller;
+
   final String hintText;
   final bool enabled;
+
   const TextArea({
     super.key,
     required this.title,
     this.titleColor = AppColors.n400,
     this.controller,
+
     this.hintText = 'Enter here',
     this.enabled = true,
+
   });
 
   @override
@@ -28,14 +32,19 @@ class TextArea extends StatelessWidget {
           height: MediaQuery.sizeOf(context).height / 4.h,
           width: MediaQuery.sizeOf(context).width,
           decoration: BoxDecoration(
-              color: AppColors.background,
+
+              color: enabled
+                  ? AppColors.background
+                  : AppColors.n20FillBodyInSmallCardColor,
               border: Border.all(color: AppColors.n40BorderColor, width: 1),
               borderRadius: BorderRadius.circular(4.dg)),
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 8.h),
             child: TextField(
               controller: controller,
+
               enabled: enabled,
+
               style: TextStyles.textStyleRegular.copyWith(
                   fontSize: 14.sp, color: AppColors.n900PrimaryTextColor),
               cursorColor: AppColors.p300PrimaryColor,

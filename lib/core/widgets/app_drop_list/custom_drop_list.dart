@@ -16,18 +16,20 @@ class CustomDropList extends StatefulWidget {
   final String? Function(String?)? validator;
   final Widget? hint;
   final bool enabled;
-  const CustomDropList({
-    super.key,
-    this.hint,
-    this.bottomPadding = 4.0,
-    this.topPadding = 4.0,
-    required this.items,
-    required this.title,
-    this.onChanged,
-    this.onSaved,
-    this.validator,
-    this.enabled = true,
-  });
+  final Color titleColor;
+  const CustomDropList(
+      {super.key,
+      this.hint,
+      this.bottomPadding = 4.0,
+      this.topPadding = 4.0,
+      required this.items,
+      required this.title,
+      this.onChanged,
+      this.onSaved,
+      this.validator,
+      this.enabled = true,
+      this.titleColor = AppColors.n400});
+
 
   @override
   State<CustomDropList> createState() => _CustomDropList();
@@ -46,6 +48,7 @@ class _CustomDropList extends State<CustomDropList> {
   Widget build(BuildContext context) {
     return CustomBuildForm(
       title: widget.title,
+      titleColor: widget.titleColor,
       child: DropdownButtonFormField2<String>(
         isExpanded: true,
         autovalidateMode: AutovalidateMode.onUserInteraction,

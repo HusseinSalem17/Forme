@@ -34,6 +34,7 @@ class CardReviewSection extends StatelessWidget {
               color: AppColors.starColor,
             ),
             Text(
+
               '$rating ($review Reviews)',
               style: TextStyles.cardTextStyle.copyWith(
                 color: AppColors.n200BodyContentColor,

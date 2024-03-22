@@ -151,7 +151,7 @@ class _ExpandableListViewState extends State<ExpandableListView> {
                     itemCount: sessions.length,
                     itemBuilder: (context, index) {
                       return ListTile(
-                        // title: const TimeRangePickerWidget(),
+                        title: const TimeRangePickerWidget(),
                         trailing: IconButton(
                           icon: const Icon(
                             Icons.remove_circle_outline,

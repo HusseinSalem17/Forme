@@ -2,14 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/widgets/custom_app_bar_arrow_button.dart';
-import 'package:forme_app/features/user_features/search/presentation/views/recent_and_result/recent_search_screen.dart';
-
+import 'views/recent_and_result/results_search_screen.dart';
 import 'views/widgets/custom_search_text_field.dart';
 
 
 class SearchScreen extends StatelessWidget {
   static const routeName = '/search-screen';
-  const SearchScreen({Key? key});
+  const SearchScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -27,12 +26,12 @@ class SearchScreen extends StatelessWidget {
                   Navigator.pop(context);
                 },
               ),
-              const CustomSearchTextField(),
+              const CustomSearchTextField(isSearchScreen: true,),
             ],
           ),
         ),
       ),
-      body: const RecentSearchScreen(),
+      body: const ResultsSearchScreen(),
     );
   }
 }
