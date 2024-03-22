@@ -15,7 +15,7 @@ class WorkoutSearchCardModel {
   });
 }
 
-List<WorkoutSearchCardModel> workoutSearchCardData = [
+List<WorkoutSearchCardModel> workoutSearchCardModel = [
   WorkoutSearchCardModel(
     id: 0,
     category: 'Workout',

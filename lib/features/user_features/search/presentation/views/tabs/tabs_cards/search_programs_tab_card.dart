@@ -18,7 +18,7 @@ class SearchProgramsTabCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 5),
-      padding: EdgeInsets.only(top: 8.0.h, bottom: 8.0.h, left: 24.0.h),
+      padding: EdgeInsets.only(top: 8.0.h, bottom: 8.0.h, left: 10.0.h),
       width: size.width,
       height: size.height / 6,
       decoration: ShapeDecoration(

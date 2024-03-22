@@ -11,9 +11,6 @@ import 'package:forme_app/features/user_features/home/presentation/views/home_vi
 import 'package:forme_app/features/user_features/payment/presentation/view/widgets/payment_successfully_body.dart';
 import 'package:forme_app/core/widgets/custom_app_button.dart';
 
-import '../../../../../core/widgets/custom_app_button.dart';
-import '../../../home/presentation/views/home_view.dart';
-import 'ereceipt_screen.dart';
 
 
 class PaymentSuccessfullyScreen extends StatelessWidget {

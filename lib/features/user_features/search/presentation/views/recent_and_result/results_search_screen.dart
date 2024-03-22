@@ -10,7 +10,7 @@ import 'package:forme_app/features/user_features/search/presentation/views/tabs/
 class ResultsSearchScreen extends StatelessWidget {
   static const routeName = '/search-screen';
 
-  const ResultsSearchScreen({Key? key});
+  const ResultsSearchScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

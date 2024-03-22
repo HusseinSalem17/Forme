@@ -49,7 +49,7 @@ class SearchWorkoutTabCard extends StatelessWidget {
         children: [
           CardImageSection(
             height: size.height / 2,
-            width: size.width / 4,
+            width: size.width / 5,
             bottomPadding: 0,
             leftPaddingIcon: 110,
             id: model.id,
@@ -61,7 +61,7 @@ class SearchWorkoutTabCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Container(
+                SizedBox(
                   width: size.width / 2,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -104,7 +104,7 @@ class SearchWorkoutTabCard extends StatelessWidget {
                     )
                   ],
                 ),
-                Container(
+                SizedBox(
                   width: size.width / 2,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,

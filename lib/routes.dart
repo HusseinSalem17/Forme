@@ -140,7 +140,7 @@ Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
       return trainerCompleteProfileRoute();
 //-------- My Services Routing -----------
     case MyServicesScreen.routeName:
-      return trainerMyServicesScreen();
+      return trainerMyServicesRoute();
 //-------- Add Program Routing -----------
     case AddProgramScreen.routeName:
       return addProgramRoute();

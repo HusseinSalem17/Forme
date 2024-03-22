@@ -60,13 +60,17 @@ class SearchTrainerTabCard extends StatelessWidget {
               ],
             ),
             const Spacer(),
-            WorkoutIcon(
-              icon: 'chat',
-              onTap: () {},
+            Center(
+              child: WorkoutIcon(
+                icon: 'chat',
+                onTap: () {},
+              ),
             ),
-            WorkoutIcon(
-              icon: 'call',
-              onTap: () {},
+            Center(
+              child: WorkoutIcon(
+                icon: 'call',
+                onTap: () {},
+              ),
             )
           ],
         ),
