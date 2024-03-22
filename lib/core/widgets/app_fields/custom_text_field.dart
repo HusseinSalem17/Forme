@@ -18,6 +18,7 @@ class CustomTextField extends StatefulWidget {
       this.confirmPasswordController,
       this.errorText,
       required this.title,
+      this.subTitle ='',
       this.optional = false,
       this.enabled = true,
       this.titleColor = AppColors.n900PrimaryTextColor})
@@ -25,7 +26,7 @@ class CustomTextField extends StatefulWidget {
 
   final void Function(String)? onChanged;
   final String? hintText, errorText;
-  final String title;
+  final String title,subTitle;
   final bool optional;
   final TextEditingController? controller;
   final TextInputType? keyboardType;
@@ -45,6 +46,7 @@ class CustomTextFieldState extends State<CustomTextField> {
   Widget build(BuildContext context) {
     return CustomBuildForm(
       title: widget.title,
+      subTitle: widget.subTitle,
       titleColor: widget.titleColor,
       optional: widget.optional,
       child: TextFormField(

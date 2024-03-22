@@ -7,6 +7,7 @@ import 'package:forme_app/core/utils/text_styles_20231128011153.dart';
 import 'package:forme_app/features/trainer_features/Revenue/presentation/views/revenue_screen.dart';
 import 'package:forme_app/features/trainer_features/Transformations/presentation/view/Transformations_screen.dart';
 import 'package:forme_app/features/trainer_features/add_program/presentation/views/add_program_screen.dart';
+import 'package:forme_app/features/trainer_features/add_workout/presentation/view/add_workout.dart';
 import 'package:forme_app/features/trainer_features/dashboard/presentation/views/widgets/data_container.dart';
 import 'package:forme_app/features/trainer_features/dashboard/presentation/views/widgets/trainer_card.dart';
 import 'package:forme_app/features/trainer_features/dashboard/presentation/views/widgets/trainer_component_icon.dart';
@@ -116,11 +117,13 @@ class DashboardScreen extends StatelessWidget {
                         case 0:
                           Navigator.of(context).push(
                               PageSlideTransition(const AddProgramScreen()));
-                        case 1: //Workouts
+                        case 1:
+                          Navigator.of(context).push(
+                              PageSlideTransition(const AddWorkoutScreen()));
                         case 2: //Sessions
                         case 3:
-                          Navigator.of(context).push(
-                              PageSlideTransition(const TransformationsScreen()));
+                          Navigator.of(context).push(PageSlideTransition(
+                              const TransformationsScreen()));
                       }
                     });
                   },
