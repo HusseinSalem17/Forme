@@ -6,6 +6,7 @@ import 'package:forme_app/features/Authentication/presentation/views/sign_in_vie
 import 'package:forme_app/features/Authentication/presentation/views/verify_code.dart';
 import 'package:forme_app/features/trainer_features/Transformations/presentation/view/Transformations_screen.dart';
 import 'package:forme_app/features/trainer_features/Transformations/presentation/view/screens/add_transformation.dart';
+import 'package:forme_app/features/trainer_features/add_workout/presentation/view/add_workout.dart';
 import 'package:forme_app/features/trainer_features/dashboard/presentation/views/home_view.dart';
 import 'package:forme_app/features/trainer_features/my_services/presentation/views/my_services_screen.dart';
 import 'package:forme_app/features/trainer_features/subscriptions/presentation/views/subscriptions_screen.dart';
@@ -38,9 +39,7 @@ import 'features/trainer_features/Trainer_Profile/presentation/views/trainer_pro
 import 'features/trainer_features/add_program/presentation/views/add_program_screen.dart';
 import 'features/trainer_features/client_list/presentation/views/client_list_screen.dart';
 import 'features/trainer_features/complete_profile_trainer/presentation/views/trainer_complete_profile.dart';
-
 import 'features/trainer_features/create_sessions/presentation/views/create_session.dart';
-
 import 'features/user_features/payment/presentation/view/payment_methods_screen.dart';
 import 'features/user_features/preferences/presentation/views/preferences_screen.dart';
 
@@ -49,7 +48,10 @@ Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
 //----- Splash Routing -----
     case '/':
       return trainerHomeRoute();
-
+    // trainerProfileScreenRoute();
+    // favoriteScreenRoute();
+    // homeRoute();
+    //splashRoute();
 
 //----- OnBoarding Routing -----
     case OnBoardingView.routeName:
@@ -174,6 +176,8 @@ Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
       return addTransformationRoute(
         title,
       );
+    case AddWorkoutScreen.routeName:
+      return addWorkoutRoute();
 //---------------------------------------
     default:
       return notFound();
@@ -380,7 +384,7 @@ MaterialPageRoute<dynamic> trainerCompleteProfileRoute() {
   );
 }
 
-MaterialPageRoute<dynamic> trainerMyServicesRoute() {
+MaterialPageRoute<dynamic> trainerMyServicesScreen() {
   return MaterialPageRoute(
     builder: (context) => const MyServicesScreen(),
   );
@@ -391,7 +395,6 @@ MaterialPageRoute<dynamic> addProgramRoute() {
     builder: (context) => const AddProgramScreen(),
   );
 }
-
 
 MaterialPageRoute<dynamic> revenueScreenRoute() {
   return MaterialPageRoute(
@@ -449,3 +452,8 @@ MaterialPageRoute<dynamic> addTransformationRoute(String title) {
   );
 }
 
+MaterialPageRoute<dynamic> addWorkoutRoute() {
+  return MaterialPageRoute(
+    builder: (context) => const AddWorkoutScreen(),
+  );
+}
