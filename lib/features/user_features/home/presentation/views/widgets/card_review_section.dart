@@ -36,10 +36,6 @@ class CardReviewSection extends StatelessWidget {
             Text(
 
               '$rating ($review Reviews)',
-
-              '4.9 (17 Reviews)',
-              overflow: TextOverflow.clip,
-
               style: TextStyles.cardTextStyle.copyWith(
                 color: AppColors.n200BodyContentColor,
                 fontSize: 9,

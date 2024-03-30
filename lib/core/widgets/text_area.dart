@@ -36,8 +36,6 @@ class TextArea extends StatelessWidget {
               color: enabled
                   ? AppColors.background
                   : AppColors.n20FillBodyInSmallCardColor,
-              color: AppColors.background,
-
               border: Border.all(color: AppColors.n40BorderColor, width: 1),
               borderRadius: BorderRadius.circular(4.dg)),
           child: Padding(
@@ -53,11 +51,7 @@ class TextArea extends StatelessWidget {
               keyboardType: TextInputType.multiline,
               maxLines: 6,
               decoration: InputDecoration(
-
                 hintText: hintText,
-
-                hintText: 'Enter here',
-
                 hintStyle:
                     TextStyles.textStyleRegular.copyWith(fontSize: 14.sp),
                 border: InputBorder.none,
