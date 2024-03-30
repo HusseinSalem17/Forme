@@ -44,17 +44,10 @@ class _AddWorkoutScreenState extends State<AddWorkoutScreen> {
       ),
       body: Padding(
         padding: EdgeInsets.all(14.w),
-        child: Center(
+        child: const Center(
             child: SingleChildScrollView(
-              child: AddWorkoutBody(
-                        imageFile: _imageFile,
-                        onImageSelected: (file) {
-              // setState(() {
-              //   _imageFile = file;
-              // });
-                        },
-                      ),
-            )),
+          child: AddWorkoutBody(),
+        )),
       ),
     );
   }
