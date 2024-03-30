@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:forme_app/core/widgets/import_media.dart';
 import 'package:forme_app/features/Authentication/presentation/views/forgot_password.dart';
 import 'package:forme_app/features/Authentication/presentation/views/new_password.dart';
 import 'package:forme_app/features/Authentication/presentation/views/sign_up_view.dart';
@@ -7,6 +8,7 @@ import 'package:forme_app/features/Authentication/presentation/views/verify_code
 import 'package:forme_app/features/trainer_features/Transformations/presentation/view/Transformations_screen.dart';
 import 'package:forme_app/features/trainer_features/Transformations/presentation/view/screens/add_transformation.dart';
 import 'package:forme_app/features/trainer_features/add_workout/presentation/view/add_workout.dart';
+import 'package:forme_app/features/trainer_features/dashboard/presentation/views/dashboard_screen.dart';
 import 'package:forme_app/features/trainer_features/dashboard/presentation/views/home_view.dart';
 import 'package:forme_app/features/trainer_features/my_services/presentation/views/my_services_screen.dart';
 import 'package:forme_app/features/trainer_features/subscriptions/presentation/views/subscriptions_screen.dart';
