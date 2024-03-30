@@ -52,7 +52,6 @@ dependencies:
   open_file: ^3.3.2
   syncfusion_flutter_charts: ^21.2.4
   fl_chart: ^0.66.2
-  video_player: ^2.8.3
 #  time_range_picker: ^2.2.0
 
 
