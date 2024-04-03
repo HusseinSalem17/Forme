@@ -12,6 +12,8 @@ import 'package:forme_app/features/trainer_features/add_program/presentation/vie
 import 'package:forme_app/features/user_features/profile/presentation/views/complete_profile_widgets/image_selection_bottom_sheet.dart';
 import 'package:image_picker/image_picker.dart';
 
+import '../../../../../../core/utils/styles.dart';
+
 class AddProgramBody extends StatefulWidget {
   final XFile? imageFile;
   final void Function(XFile?) onImageSelected;

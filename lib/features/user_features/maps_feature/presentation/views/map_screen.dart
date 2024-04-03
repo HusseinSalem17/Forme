@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:forme_app/features/user_features/maps/presentation/views/widgets/custom_floatin_search_bar.dart';
-import 'package:forme_app/features/user_features/maps/presentation/views/widgets/custom_search_delegate.dart';
+import 'package:forme_app/features/user_features/maps_feature/presentation/views/widgets/custom_floatin_search_bar.dart';
+import 'package:forme_app/features/user_features/maps_feature/presentation/views/widgets/custom_search_delegate.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import '../../../../../core/request_permissions/user_current_location.dart';

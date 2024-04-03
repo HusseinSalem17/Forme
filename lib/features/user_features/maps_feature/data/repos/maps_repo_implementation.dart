@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:forme_app/core/errors/failures.dart';
-import 'package:forme_app/features/user_features/maps/data/repos/maps_repo.dart';
+import 'package:forme_app/features/user_features/maps_feature/data/repos/maps_repo.dart';
 import '../models/places_suggestoins.dart';
 import '../web_services/places_web_services.dart';
 

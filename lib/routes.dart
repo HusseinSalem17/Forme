@@ -68,81 +68,81 @@ Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
       return newPasswordRoute();
 //------------------------------------------- user section ------------------------
 //---------- Preferences Routing -----
-    case PreferencesScreen.routeName:
+    case PreferencesScreen.routeName: // done
       return preferencesScreenRoute();
 
 //------------ Home Routing -----------
-    case HomeScreen.routeName:
+    case HomeScreen.routeName: // done
       return homeRoute();
 //-------- Trainer Details Routing ----
-    case TrainerDetailsScreen.routeName:
+    case TrainerDetailsScreen.routeName: // done
       return trainerDetailsRoute();
 
-    case SuccessStory.routeName:
+    case SuccessStory.routeName: //done
       return successStoryRoute();
 //------ Complete Profile Routing ----
-    case CompleteProfile.routeName:
+    case CompleteProfile.routeName: // done
       return completeProfile();
 //------------ Review Routing --------
-    case AddReview.routeName:
+    case AddReview.routeName: // done
       final List<dynamic> args = settings.arguments as List<dynamic>;
       final String type = args[0] as String;
       return addReviewRoute(type);
 //--------- payment Routing ----------
-    case CongratulationScreen.routeName:
+    case CongratulationScreen.routeName: // done
       return congratulationRoute();
-    case EReceiptScreen.routeName:
+    case EReceiptScreen.routeName: // done
       return eReceiptRoute();
-    case AddNewCardScreen.routeName:
+    case AddNewCardScreen.routeName: // done
       return addNewCardRoute();
-    case PaymentMethodsScreen.routeName:
+    case PaymentMethodsScreen.routeName:// done
       return paymentMethodsRoute();
 //------ sports club Routing -------
-    case SportsClubScreen.routeName:
+    case SportsClubScreen.routeName: // done
       return sportsClubRoute();
 //------- featured Routing -------
-    case FeaturedScreen.routeName:
+    case FeaturedScreen.routeName: //done
       final List<dynamic> args = settings.arguments as List<dynamic>;
       final List<String> filterType = args[0] as List<String>;
       final String featuredType = args[1] as String;
       return featuredRoute(filterType, featuredType);
 //-------- profile Routing -------
-    case MyProfile.routeName:
+    case MyProfile.routeName: //done
       return myProfileRoute();
-    case SettingsScreen.routeName:
+    case SettingsScreen.routeName://done
       return settingsRoute();
-    case HelpCenter.routeName:
+    case HelpCenter.routeName://done
       final List<dynamic> args = settings.arguments as List<dynamic>;
       final List<String> filterType = args[0] as List<String>;
       return helpCenterRoute(filterType);
-    case PrivacyPolicy.routeName:
+    case PrivacyPolicy.routeName://done
       return privacyPolicyRoute();
-//------ Search Routing ----------
-    case SearchScreen.routeName:
+//------ Search Routing ----------  // N
+    case SearchScreen.routeName: //done
       return searchScreenRoute();
-    case FilterScreen.routeName:
+    case FilterScreen.routeName:   // N //done
       return filterScreenRoute();
-//------ Notification Routing ------
-    case NotificationScreen.routeName:
+//------ Notification Routing ------ // N
+    case NotificationScreen.routeName: //done
       return notificationScreenRoute();
-//------ Favorite Routing ------
-    case FavoriteScreen.routeName:
+//------ Favorite Routing ------ // N
+    case FavoriteScreen.routeName: //done
       return favoriteScreenRoute();
 //------------------------------------------- trainer section -----------------------
 //-------- Home Routing -----------
-    case TrainerHomeScreen.routeName:
+    case TrainerHomeScreen.routeName: // done
       return trainerHomeRoute();
 //-------- Preferences Routing -----------
-    case TrainerPreferenceScreen.routeName:
+    case TrainerPreferenceScreen.routeName: // done
       return trainerPreferencesScreenRoute();
 //-------- Complete Profile Routing -----------
-    case TrainerCompleteProfile.routeName:
+    case TrainerCompleteProfile.routeName: // done
       return trainerCompleteProfileRoute();
 //-------- My Services Routing -----------
-    case MyServicesScreen.routeName:
-      return trainerMyServicesScreen();
+    case MyServicesScreen.routeName: // done
+      return trainerMyServicesRoute();
 //-------- Add Program Routing -----------
-    case AddProgramScreen.routeName:
+    case AddProgramScreen.routeName: // todo
       return addProgramRoute();
 //-------- Revenue Routing -----------
     case RevenueScreen.routeName:

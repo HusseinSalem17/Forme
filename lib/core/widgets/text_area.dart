@@ -17,10 +17,8 @@ class TextArea extends StatelessWidget {
     required this.title,
     this.titleColor = AppColors.n400,
     this.controller,
-
     this.hintText = 'Enter here',
     this.enabled = true,
-
   });
 
   @override
@@ -32,31 +30,23 @@ class TextArea extends StatelessWidget {
           height: MediaQuery.sizeOf(context).height / 4.h,
           width: MediaQuery.sizeOf(context).width,
           decoration: BoxDecoration(
-
               color: enabled
                   ? AppColors.background
                   : AppColors.n20FillBodyInSmallCardColor,
-              color: AppColors.background,
-
               border: Border.all(color: AppColors.n40BorderColor, width: 1),
               borderRadius: BorderRadius.circular(4.dg)),
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 8.h),
             child: TextField(
               controller: controller,
-
               enabled: enabled,
-
               style: TextStyles.textStyleRegular.copyWith(
                   fontSize: 14.sp, color: AppColors.n900PrimaryTextColor),
               cursorColor: AppColors.p300PrimaryColor,
               keyboardType: TextInputType.multiline,
               maxLines: 6,
               decoration: InputDecoration(
-
                 hintText: hintText,
-
-                hintText: 'Enter here',
 
                 hintStyle:
                     TextStyles.textStyleRegular.copyWith(fontSize: 14.sp),
