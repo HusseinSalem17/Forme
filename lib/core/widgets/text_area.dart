@@ -8,10 +8,8 @@ class TextArea extends StatelessWidget {
   final String title;
   final Color titleColor;
   final TextEditingController? controller;
-
   final String hintText;
   final bool enabled;
-
   const TextArea({
     super.key,
     required this.title,

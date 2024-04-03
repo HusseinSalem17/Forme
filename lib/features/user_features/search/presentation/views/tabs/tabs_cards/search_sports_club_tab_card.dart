@@ -42,7 +42,14 @@ class SearchSportsClubTabCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
         children: [
-          CardImageSection(height: size.height / 2, width: size.width / 4, bottomPadding: 0, leftPaddingIcon: 110, id: model.id, category: model.category),
+          CardImageSection(
+            height: size.height / 2,
+            width: size.width / 4,
+            bottomPadding: 0,
+            leftPaddingIcon: 110,
+            id: model.id,
+            category: model.category,
+          ),
           Padding(
             padding: EdgeInsets.only(top: 8.h, bottom: 8.h, left: 8.w),
             child: Column(
