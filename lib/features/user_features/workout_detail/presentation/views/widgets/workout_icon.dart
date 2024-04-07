@@ -24,7 +24,7 @@ class WorkoutIcon extends StatelessWidget {
               padding: EdgeInsets.all(8.h),
               child: SvgPicture.asset(
                 'assets/image/Icon/$icon.svg',
-                color: AppColors.p300PrimaryColor,
+                color: AppColors.primaryColor,
               ),
             ),
           ),

@@ -35,7 +35,7 @@ class HomeAppBar extends StatelessWidget {
                 Container(
                   height: 40.h,
                   width: 46.w,
-                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(4.dg), color: AppColors.p300PrimaryColor),
+                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(4.dg), color: AppColors.primaryColor),
                   child: Padding(
                     padding: const EdgeInsets.all(16.0),
                     child: SvgPicture.asset(

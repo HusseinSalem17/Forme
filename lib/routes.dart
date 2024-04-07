@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:forme_app/core/widgets/import_media.dart';
-import 'package:forme_app/features/Authentication/presentation/views/forgot_password.dart';
-import 'package:forme_app/features/Authentication/presentation/views/new_password.dart';
-import 'package:forme_app/features/Authentication/presentation/views/sign_up_view.dart';
-import 'package:forme_app/features/Authentication/presentation/views/sign_in_view.dart';
-import 'package:forme_app/features/Authentication/presentation/views/verify_code.dart';
+import 'package:forme_app/features/Authentication/presentation/views/new_password_screen.dart';
+import 'package:forme_app/features/Authentication/presentation/views/sign_up_screen.dart';
+import 'package:forme_app/features/Authentication/presentation/views/verify_code_screen.dart';
 import 'package:forme_app/features/trainer_features/Transformations/presentation/view/Transformations_screen.dart';
 import 'package:forme_app/features/trainer_features/Transformations/presentation/view/screens/add_transformation.dart';
 import 'package:forme_app/features/trainer_features/add_workout/presentation/view/add_workout.dart';
@@ -34,6 +32,8 @@ import 'package:forme_app/features/user_features/search/presentation/views/filte
 import 'package:forme_app/features/user_features/sports_club/presentation/views/sports_club.dart';
 import 'package:forme_app/splash_screen.dart';
 import 'package:forme_app/onboarding_screens/views/onboarding_screen.dart';
+import 'features/authentication/presentation/views/forgot_password_screen.dart';
+import 'features/authentication/presentation/views/sign_in_screen.dart';
 import 'features/trainer_features/Revenue/presentation/views/revenue_screen.dart';
 import 'features/trainer_features/Trainee_profile/presentation/views/trainee_profile_screen.dart';
 import 'features/trainer_features/Trainer_Notification/presentation/views/trainer_notification_screen.dart';
@@ -64,7 +64,7 @@ Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
       return signInRoute();
     case SignUpScreen.routeName:
       return signUpRoute();
-    case ForgetPasswordScreen.routeName:
+    case ForgotPasswordScreen.routeName:
       return forgotPasswordRoute();
     case VerifyCodeScreen.routeName:
       return verifyCodeRoute();
@@ -229,7 +229,7 @@ MaterialPageRoute<dynamic> signInRoute() {
 
 MaterialPageRoute<dynamic> forgotPasswordRoute() {
   return MaterialPageRoute(
-    builder: (context) => const ForgetPasswordScreen(),
+    builder: (context) => const ForgotPasswordScreen(),
   );
 }
 

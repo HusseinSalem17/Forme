@@ -44,9 +44,9 @@ class _SelectPackageState extends State<SelectPackage> {
                       isChat = val!;
                     });
                   },
-                  activeColor: AppColors.p300PrimaryColor,
+                  activeColor: AppColors.primaryColor,
                 ),
-                Text(widget.text1, style: TextStyles.textStyleRegular.copyWith(color: AppColors.n900PrimaryTextColor)),
+                Text(widget.text1, style: TextStyles.textStyleRegular.copyWith(color: AppColors.n900Black)),
               ],
             ),
             widget.isInput
@@ -69,9 +69,9 @@ class _SelectPackageState extends State<SelectPackage> {
                       isCall = val!;
                     });
                   },
-                  activeColor: AppColors.p300PrimaryColor,
+                  activeColor: AppColors.primaryColor,
                 ),
-                Text(widget.text2, style: TextStyles.textStyleRegular.copyWith(color: AppColors.n900PrimaryTextColor)),
+                Text(widget.text2, style: TextStyles.textStyleRegular.copyWith(color: AppColors.n900Black)),
               ],
             ),
             widget.isInput ? TextFieldWithCustomLabel(isEnabled: isCall) : Container(),
@@ -90,9 +90,9 @@ class _SelectPackageState extends State<SelectPackage> {
                       isVideo = val!;
                     });
                   },
-                  activeColor: AppColors.p300PrimaryColor,
+                  activeColor: AppColors.primaryColor,
                 ),
-                Text(widget.text3, style: TextStyles.textStyleRegular.copyWith(color: AppColors.n900PrimaryTextColor)),
+                Text(widget.text3, style: TextStyles.textStyleRegular.copyWith(color: AppColors.n900Black)),
               ],
             ),
             widget.isInput
@@ -115,9 +115,9 @@ class _SelectPackageState extends State<SelectPackage> {
                       isInPerson = val!;
                     });
                   },
-                  activeColor: AppColors.p300PrimaryColor,
+                  activeColor: AppColors.primaryColor,
                 ),
-                Text(widget.text4, style: TextStyles.textStyleRegular.copyWith(color: AppColors.n900PrimaryTextColor)),
+                Text(widget.text4, style: TextStyles.textStyleRegular.copyWith(color: AppColors.n900Black)),
               ],
             ),
             widget.isInput
@@ -138,9 +138,9 @@ class _SelectPackageState extends State<SelectPackage> {
                         isText5 = val!;
                       });
                     },
-                    activeColor: AppColors.p300PrimaryColor,
+                    activeColor: AppColors.primaryColor,
                   ),
-                  Text(widget.text5, style: TextStyles.textStyleRegular.copyWith(color: AppColors.n900PrimaryTextColor)),
+                  Text(widget.text5, style: TextStyles.textStyleRegular.copyWith(color: AppColors.n900Black)),
                 ],
               )
             : Container(),

@@ -90,7 +90,7 @@ class WorkoutTabCard extends StatelessWidget {
                         child: Text(
                           model.trainerName,
                           style: TextStyles.cardTextStyle.copyWith(
-                            color: AppColors.n100Color,
+                            color: AppColors.n100Gray,
                             fontSize: 11,
                           ),
                         ),
@@ -105,7 +105,7 @@ class WorkoutTabCard extends StatelessWidget {
                         Text(
                           model.price,
                           style: TextStyles.blackCardTextStyle.copyWith(
-                            color: AppColors.p300PrimaryColor
+                            color: AppColors.primaryColor
                           ),
                         ),
                         if (model.isBestSeller) const WorkoutCardType(type: 'Best Seller')

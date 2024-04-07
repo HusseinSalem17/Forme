@@ -20,13 +20,13 @@ class TrainersTab extends StatelessWidget {
                 child: Text(
                   'Specialist ',
                   style: TextStyles.textStyleBold.copyWith(
-                      fontSize: 14.sp, color: AppColors.n900PrimaryTextColor),
+                      fontSize: 14.sp, color: AppColors.n900Black),
                 ),
               ),
               Text(
                 '(10)',
                 style: TextStyles.textStyleBold.copyWith(
-                    fontSize: 14.sp, color: AppColors.p300PrimaryColor),
+                    fontSize: 14.sp, color: AppColors.primaryColor),
               ),
             ],
           ),

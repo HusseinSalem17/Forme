@@ -34,7 +34,7 @@ class WorkoutLesson extends StatelessWidget {
                   child: Text(
                     '01',
                     style: TextStyles.textStyleBold.copyWith(
-                        fontSize: 14.sp, color: AppColors.p300PrimaryColor),
+                        fontSize: 14.sp, color: AppColors.primaryColor),
                   ),
                 ),
               ),
@@ -47,7 +47,7 @@ class WorkoutLesson extends StatelessWidget {
                     'Harmony Flow Hour',
                     style: TextStyles.textStyleBold.copyWith(
                         fontSize: 14.sp,
-                        color: AppColors.n900PrimaryTextColor),
+                        color: AppColors.n900Black),
                   ),
                   Text(
                     '10:00',

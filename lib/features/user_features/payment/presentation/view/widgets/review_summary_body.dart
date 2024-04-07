@@ -59,7 +59,7 @@ class ReviewSummaryBody extends StatelessWidget {
                             backgroundColor: Colors.white,
                             child: Icon(
                               Icons.favorite_border,
-                              color: AppColors.p300PrimaryColor,
+                              color: AppColors.primaryColor,
                               size: 15,
                             ),
                           ),
@@ -86,7 +86,7 @@ class ReviewSummaryBody extends StatelessWidget {
                                   style: TextStyles.textStyleSemiBold.copyWith(
                                       fontSize: 8.sp,
                                       fontWeight: FontWeight.w400,
-                                      color: AppColors.p300PrimaryColor),
+                                      color: AppColors.primaryColor),
                                 ),
                               ),
                             ),
@@ -212,7 +212,7 @@ class ReviewSummaryBody extends StatelessWidget {
           text2,
           style: TextStyles.textStyleSemiBold.copyWith(
             fontSize: 14,
-            color: AppColors.neutralsN9,
+            color: AppColors.n900Black,
           ),
         ),
       ],

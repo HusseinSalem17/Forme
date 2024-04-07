@@ -41,8 +41,8 @@ void dispose() {
       child: TextFormField(
         controller: _controller,
         focusNode: _focusNode,
-        cursorColor: AppColors.p300PrimaryColor,
-        style: TextStyles.textStyleRegular.copyWith(color: AppColors.n900PrimaryTextColor, fontSize: 14.sp),
+        cursorColor: AppColors.primaryColor,
+        style: TextStyles.textStyleRegular.copyWith(color: AppColors.n900Black, fontSize: 14.sp),
         keyboardType: TextInputType.text,
         textInputAction: TextInputAction.search,
         decoration: InputDecoration(
@@ -66,20 +66,20 @@ void dispose() {
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(4.dg),
             borderSide: const BorderSide(
-              color: AppColors.p300PrimaryColor,
+              color: AppColors.primaryColor,
             ),
           ),
           errorMaxLines: 1,
           prefixIcon: Padding(
             padding: EdgeInsets.only(left: 12.0.w, right: 5.w),
-            child: SvgPicture.asset('assets/image/Icon/search.svg', color: _focusNode.hasFocus ? AppColors.p300PrimaryColor : AppColors.n200BodyContentColor,),
+            child: SvgPicture.asset('assets/image/Icon/search.svg', color: _focusNode.hasFocus ? AppColors.primaryColor : AppColors.n200BodyContentColor,),
           ),
           prefixIconConstraints: const BoxConstraints(minWidth: 20, minHeight: 20),
           suffixIcon: _controller.text.isNotEmpty
               ? Padding(
                   padding: EdgeInsets.only(left: 12.0.w, right: 12.w),
                   child: IconButton(
-                    icon: Icon(Icons.cancel_outlined, color: AppColors.p300PrimaryColor, size: 18.spMax),
+                    icon: Icon(Icons.cancel_outlined, color: AppColors.primaryColor, size: 18.spMax),
                     onPressed: () {
                       // clear search text
                       setState(() {

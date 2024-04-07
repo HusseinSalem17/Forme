@@ -6,7 +6,7 @@ import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/functions/validators.dart';
 import 'package:forme_app/features/user_features/join_program_feature/formatters/add_new_card_formatters.dart';
 
-import '../../../../join_program_feature/presentation/views/widgets/card_text_form_field.dart';
+import '../../../../../../core/widgets/app_fields/custom_text_form_field.dart';
 
 class CustomCreditCard extends StatefulWidget {
   const CustomCreditCard({Key? key}) : super(key: key);
@@ -34,7 +34,7 @@ class _CustomCreditCardState extends State<CustomCreditCard> {
           children: [
             SizedBox(height: 24.h,),
             CreditCardWidget(
-              cardBgColor: AppColors.p300PrimaryColor,
+              cardBgColor: AppColors.primaryColor,
               padding: 0,
               cardNumber: cardNumber,
               expiryDate: expiryDate,
@@ -44,7 +44,7 @@ class _CustomCreditCardState extends State<CustomCreditCard> {
               isHolderNameVisible: true,
               onCreditCardWidgetChange: (value) {},
             ),
-            CardTextFromField(
+            CustomTextFromField(
               subTitle: 'Card Holder Name',
               hintText: 'Enter Your Name',
               onChange: (val) {
@@ -52,7 +52,7 @@ class _CustomCreditCardState extends State<CustomCreditCard> {
                 setState(() {});
               },
             ),
-            CardTextFromField(
+            CustomTextFromField(
               subTitle: 'Card Number',
               hintText: 'xxxx xxxx xxxx xxxx',
               onChange: (val) {
@@ -75,7 +75,7 @@ class _CustomCreditCardState extends State<CustomCreditCard> {
               mainAxisSize: MainAxisSize.min,
               children: [
                 Expanded(
-                  child: CardTextFromField(
+                  child: CustomTextFromField(
                     subTitle: 'Expiry Date',
                     hintText: '02/30',
                     inputFormats: [
@@ -89,7 +89,7 @@ class _CustomCreditCardState extends State<CustomCreditCard> {
                 ),
                 const SizedBox(width: 16),
                 Expanded(
-                  child: CardTextFromField(
+                  child: CustomTextFromField(
                     subTitle: 'CVV',
                     hintText: '000',
                     onChange: (value) {

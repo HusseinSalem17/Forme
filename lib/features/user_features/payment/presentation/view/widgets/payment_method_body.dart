@@ -29,7 +29,7 @@ class _PaymentMethodBodyState extends State<PaymentMethodBody> {
   String currantOption = options[0];
   final subTitleStyle = TextStyles.textStyleSemiBold.copyWith(
     fontSize: 16,
-    color: AppColors.neutralsN9,
+    color: AppColors.n900Black,
   );
   final sizeBox = SizedBox(height: 16.h);
 

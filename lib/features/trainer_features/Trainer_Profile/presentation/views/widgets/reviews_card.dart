@@ -37,7 +37,7 @@ class ReviewsCard extends StatelessWidget {
                   ),
                   Text(
                     model.name,
-                    style: TextStyles.textStyleRegular.copyWith(fontSize: 14.sp, color: AppColors.n900PrimaryTextColor),
+                    style: TextStyles.textStyleRegular.copyWith(fontSize: 14.sp, color: AppColors.n900Black),
                   ),
                 ],
               ),
@@ -82,7 +82,7 @@ class ReviewsCard extends StatelessWidget {
               ),
               Text(
                 model.rating.toString(),
-                style: TextStyles.textStyleBold.copyWith(fontSize: 11.sp, color: AppColors.n100Color),
+                style: TextStyles.textStyleBold.copyWith(fontSize: 11.sp, color: AppColors.n100Gray),
               ),
             ],
           ),

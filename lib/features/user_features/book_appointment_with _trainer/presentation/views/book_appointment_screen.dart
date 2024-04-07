@@ -70,7 +70,7 @@ class BookAppointmentScreen extends StatelessWidget {
                             Text(
                               'Kareem Muhamed',
                               style: TextStyles.textStyleSemiBold.copyWith(
-                                color: AppColors.neutralsN9,
+                                color: AppColors.n900Black,
                                 fontWeight: FontWeight.w600,
                               ),
                             ),
@@ -78,7 +78,7 @@ class BookAppointmentScreen extends StatelessWidget {
                             Text(
                               'Trainer',
                               style: TextStyles.textStyleSemiBold.copyWith(
-                                color: AppColors.n70HintColor,
+                                color: AppColors.n70Gray,
                                 fontWeight: FontWeight.w400,
                               ),
                             )
@@ -107,7 +107,7 @@ class BookAppointmentScreen extends StatelessWidget {
                                       'BOOK APPOINTMENT',
                                       style:
                                           TextStyles.textStyleRegular.copyWith(
-                                        color: AppColors.n70HintColor,
+                                        color: AppColors.n70Gray,
                                       ),
                                     ),
                                   ),
@@ -118,7 +118,7 @@ class BookAppointmentScreen extends StatelessWidget {
                                       'Day',
                                       style:
                                           TextStyles.textStyleSemiBold.copyWith(
-                                        color: AppColors.neutralsN9,
+                                        color: AppColors.n900Black,
                                       ),
                                     ),
                                   ),
@@ -135,7 +135,7 @@ class BookAppointmentScreen extends StatelessWidget {
                                             width: 71,
                                             height: 43,
                                             decoration: ShapeDecoration(
-                                              color: AppColors.p300PrimaryColor,
+                                              color: AppColors.primaryColor,
                                               shadows: [
                                                 BoxShadow(
                                                   color: AppColors
@@ -165,7 +165,7 @@ class BookAppointmentScreen extends StatelessWidget {
                                                       .textStyleRegular
                                                       .copyWith(
                                                     color:
-                                                        AppColors.n70HintColor,
+                                                        AppColors.n70Gray,
                                                     fontSize: 12,
                                                   ),
                                                 ),

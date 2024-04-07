@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 
-import '../../../../../core/utils/constant.dart';
+import '../../../../../core/utils/constants.dart';
 
 
 

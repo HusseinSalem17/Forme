@@ -100,7 +100,7 @@ class _FavCardImageSectionState extends State<FavCardImageSection> {
                                       color: AppColors.n20FillBodyInSmallCardColor,
                                       borderRadius: BorderRadius.circular(100),
                                       border: Border.all(
-                                        color: AppColors.p300PrimaryColor,
+                                        color: AppColors.primaryColor,
                                       ),
                                     ),
                                     child: TextButton(
@@ -111,7 +111,7 @@ class _FavCardImageSectionState extends State<FavCardImageSection> {
                                         'Cancel',
                                         style: TextStyles.textStyleSemiBold.copyWith(
                                           fontSize: 12,
-                                          color: AppColors.p300PrimaryColor,
+                                          color: AppColors.primaryColor,
                                         ),
                                       ),
                                     ),
@@ -156,7 +156,7 @@ class _FavCardImageSectionState extends State<FavCardImageSection> {
                 backgroundColor: Colors.white,
                 child: Icon(
                   Icons.favorite,
-                  color: AppColors.p300PrimaryColor,
+                  color: AppColors.primaryColor,
                   size: 15,
                 ),
               ),

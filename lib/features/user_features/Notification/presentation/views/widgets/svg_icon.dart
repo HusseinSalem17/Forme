@@ -25,7 +25,7 @@ class SvgIcon extends StatelessWidget {
         padding: EdgeInsets.all(8.0.h),
         child: SvgPicture.asset(
           'assets/images/$iconName.svg',
-          color: AppColors.p300PrimaryColor,
+          color: AppColors.primaryColor,
         ),
       ),
     );

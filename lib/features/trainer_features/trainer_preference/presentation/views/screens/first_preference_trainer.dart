@@ -25,7 +25,7 @@ class FirstPreferenceTrainer extends StatelessWidget {
                 'Tell us about yourself',
                 textAlign: TextAlign.start,
                 style: TextStyles.textStyleBold.copyWith(
-                  color: AppColors.n900PrimaryTextColor,
+                  color: AppColors.n900Black,
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w600,
                 ),
@@ -42,7 +42,7 @@ class FirstPreferenceTrainer extends StatelessWidget {
                 'Do you have previous experience with individuals with severe injuries?',
                 textAlign: TextAlign.start,
                 style: TextStyles.textStyleBold.copyWith(
-                  color: AppColors.n900PrimaryTextColor,
+                  color: AppColors.n900Black,
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w600,
                 ),
@@ -59,7 +59,7 @@ class FirstPreferenceTrainer extends StatelessWidget {
                 'Do you have previous experience with people with physical disabilities?',
                 textAlign: TextAlign.start,
                 style: TextStyles.textStyleBold.copyWith(
-                  color: AppColors.n900PrimaryTextColor,
+                  color: AppColors.n900Black,
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w600,
                 ),
@@ -76,7 +76,7 @@ class FirstPreferenceTrainer extends StatelessWidget {
                 'What language do you speak?',
                 textAlign: TextAlign.start,
                 style: TextStyles.textStyleBold.copyWith(
-                  color: AppColors.n900PrimaryTextColor,
+                  color: AppColors.n900Black,
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w600,
                 ),
@@ -93,7 +93,7 @@ class FirstPreferenceTrainer extends StatelessWidget {
                 'Add links to your social media accounts',
                 textAlign: TextAlign.start,
                 style: TextStyles.textStyleBold.copyWith(
-                  color: AppColors.n900PrimaryTextColor,
+                  color: AppColors.n900Black,
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w600,
                 ),

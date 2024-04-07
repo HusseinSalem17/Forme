@@ -44,7 +44,7 @@ class RemoveFromCardSection extends StatelessWidget {
                     model.title,
                     style: TextStyles.textStyleSemiBold.copyWith(
                       fontSize: 14.sp,
-                      color: AppColors.n900PrimaryTextColor,
+                      color: AppColors.n900Black,
                     ),
                   ),
                   Row(
@@ -55,7 +55,7 @@ class RemoveFromCardSection extends StatelessWidget {
                         child: Text(
                           model.address,
                           style: TextStyles.cardTextStyle.copyWith(
-                            color: AppColors.n100Color,
+                            color: AppColors.n100Gray,
                             fontSize: 11.sp,
                           ),
                         ),
@@ -72,7 +72,7 @@ class RemoveFromCardSection extends StatelessWidget {
                             Text(
                               'Yous Clients: ',
                               style: TextStyles.textStyleRegular.copyWith(
-                                color: AppColors.n100Color,
+                                color: AppColors.n100Gray,
                                 fontSize: 11.sp,
                               ),
                             ),

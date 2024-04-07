@@ -33,14 +33,14 @@ class CustomTable extends StatelessWidget {
               child: Text('156,213',
                   style: TextStyles.textStyleRegular.copyWith(
                       fontSize: 14.sp,
-                      color: AppColors.n900PrimaryTextColor,
+                      color: AppColors.n900Black,
                       height: 2)),
             ),
             TableCell(
               child: Text('Beginner',
                   style: TextStyles.textStyleRegular.copyWith(
                       fontSize: 14.sp,
-                      color: AppColors.n900PrimaryTextColor)),
+                      color: AppColors.n900Black)),
             ),
           ],
         ),
@@ -64,14 +64,14 @@ class CustomTable extends StatelessWidget {
               child: Text('1.2 Hours',
                   style: TextStyles.textStyleRegular.copyWith(
                       fontSize: 14.sp,
-                      color: AppColors.n900PrimaryTextColor,
+                      color: AppColors.n900Black,
                       height: 2)),
             ),
             TableCell(
               child: Text('10',
                   style: TextStyles.textStyleRegular.copyWith(
                       fontSize: 14.sp,
-                      color: AppColors.n900PrimaryTextColor)),
+                      color: AppColors.n900Black)),
             ),
           ],
         ),

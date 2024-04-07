@@ -23,7 +23,7 @@ class ClubCard extends StatelessWidget {
             ? EdgeInsets.only(left: 21.w, bottom: 2.w, right: 2.w, top: 2.w)
             : EdgeInsets.only(left: 21.w),
         decoration: BoxDecoration(
-          color: active ? AppColors.secondaryColor : AppColors.p300PrimaryColor,
+          color: active ? AppColors.secondaryColor : AppColors.primaryColor,
           borderRadius: BorderRadius.circular(8.dg),
           boxShadow: [
             BoxShadow(
@@ -46,14 +46,14 @@ class ClubCard extends StatelessWidget {
               Text(
                 model.plan,
                 style: TextStyles.textStyleRegular.copyWith(
-                    fontSize: 12.sp, color: AppColors.p300PrimaryColor),
+                    fontSize: 12.sp, color: AppColors.primaryColor),
               ),
               Row(
                 children: [
                   Text(
                     '${model.time} - ',
                     style: TextStyles.textStyleBold.copyWith(
-                        fontSize: 14.sp, color: AppColors.n900PrimaryTextColor),
+                        fontSize: 14.sp, color: AppColors.n900Black),
                   ),
                   Text(
                     '${model.price}\$  ',

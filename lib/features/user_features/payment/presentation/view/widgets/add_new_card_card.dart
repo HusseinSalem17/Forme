@@ -36,7 +36,7 @@ GestureDetector addNewCardCard(void Function()? onTap) {
                     'Add New Card',
                     style: TextStyles.textStyleSemiBold.copyWith(
                       fontSize: 14,
-                      color: AppColors.n100Color,
+                      color: AppColors.n100Gray,
                     ),
                   ),
                 ],

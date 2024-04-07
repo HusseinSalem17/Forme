@@ -51,7 +51,7 @@ class CustomTabBar extends StatelessWidget {
                   tabs[index],
                   style: TextStyles.textStyleRegular.copyWith(
                     color: index == selectedIndex
-                        ? AppColors.p300PrimaryColor
+                        ? AppColors.primaryColor
                         : AppColors.n400color,
                     fontSize: 14.sp,
                   ),

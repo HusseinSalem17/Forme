@@ -5,8 +5,9 @@ import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
 import 'package:forme_app/core/widgets/button_container.dart';
 import 'package:forme_app/core/widgets/simple_app_bar.dart';
-import 'package:forme_app/features/Authentication/presentation/views/forgot_password.dart';
-import 'package:forme_app/features/Authentication/presentation/views/widgets/custom_text_from_field.dart';
+import 'package:forme_app/features/authentication/presentation/views/forgot_password_screen.dart';
+import 'package:forme_app/features/authentication/presentation/views/widgets/custom_text_from_field.dart';
+
 
 class PasswordManager extends StatelessWidget {
   static const routeName = '/password-manager-screen';
@@ -34,14 +35,14 @@ class PasswordManager extends StatelessWidget {
                     GestureDetector(
                       onTap: () {
                         Navigator.of(context).push(
-                            PageSlideTransition(const ForgetPasswordScreen()));
+                            PageSlideTransition(const ForgotPasswordScreen()));
                       },
                       child: Padding(
                         padding: EdgeInsets.only(top: 16.h),
                         child: Text(
                           "Forget password?",
                           style: TextStyles.textStyleRegular.copyWith(
-                            color: AppColors.p300PrimaryColor,
+                            color: AppColors.primaryColor,
                             fontSize: 12.sp,
                             decoration: TextDecoration.underline,
                           ),

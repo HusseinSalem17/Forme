@@ -23,7 +23,7 @@ class CoachPlanDetailsSection extends StatelessWidget {
             '\$20',
             style: TextStyles.heading4Bold.copyWith(
               fontSize: 16,
-              color: AppColors.p300PrimaryColor,
+              color: AppColors.primaryColor,
             ),
           ),
           SizedBox(
@@ -81,7 +81,7 @@ class CoachPlanDetailsSection extends StatelessWidget {
                         Text(
                           'Kareem Muhamed',
                           style: TextStyles.textStyleRegular.copyWith(
-                            color: AppColors.neutralsN9,
+                            color: AppColors.n900Black,
                           ),
                         ),
                         SizedBox(height: 4.h),
@@ -139,7 +139,7 @@ class CoachPlanDetailsSection extends StatelessWidget {
                 'Payment Plans',
                 style: TextStyles.descriptionStyle.copyWith(
                     fontWeight: FontWeight.w600,
-                    color: AppColors.neutralsN9),
+                    color: AppColors.n900Black),
               )
             ],
           ),
@@ -159,7 +159,7 @@ class CoachPlanDetailsSection extends StatelessWidget {
           color: AppColors.n20FillBodyInSmallCardColor),
       child: Icon(
         icon,
-        color: AppColors.p300PrimaryColor,
+        color: AppColors.primaryColor,
       ),
     );
   }

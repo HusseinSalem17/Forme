@@ -36,7 +36,7 @@ class CancellationScreen extends StatelessWidget {
               TextSpan(
                 text: 'Hussein Salem',
                 style: TextStyle(
-                  color: AppColors.p300PrimaryColor,
+                  color: AppColors.primaryColor,
                   fontSize: 18,
                   fontWeight: FontWeight.w700,
                 ),
@@ -66,7 +66,7 @@ class CancellationScreen extends StatelessWidget {
                   ),
                   Text(
                     'Note to Trainer',
-                    style: TextStyles.textStyleSemiBold.copyWith(fontSize: 14.sp, color: AppColors.n900PrimaryTextColor),
+                    style: TextStyles.textStyleSemiBold.copyWith(fontSize: 14.sp, color: AppColors.n900Black),
                   ),
                   SizedBox(
                     height: 8.h,

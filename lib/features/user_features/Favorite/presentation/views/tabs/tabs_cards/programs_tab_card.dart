@@ -88,14 +88,14 @@ class ProgramsTabCard extends StatelessWidget {
                             Text(
                               'Yous Clients: ',
                               style: TextStyles.cardTextStyle.copyWith(
-                                color: AppColors.n100Color,
+                                color: AppColors.n100Gray,
                                 fontSize: 11,
                               ),
                             ),
                             Text(
                               model.clientsNumber,
                               style: TextStyles.cardTextStyle.copyWith(
-                                color: AppColors.p300PrimaryColor,
+                                color: AppColors.primaryColor,
                                 fontWeight: FontWeight.w700,
                                 fontSize: 11,
                               ),

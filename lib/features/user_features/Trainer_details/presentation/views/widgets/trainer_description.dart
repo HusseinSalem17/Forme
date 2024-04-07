@@ -27,12 +27,12 @@ class TrainerDescription extends StatelessWidget {
           ),
           lessStyle: TextStyles.textStyleRegular.copyWith(
             fontSize: 12.sp,
-            color: AppColors.p300PrimaryColor,
+            color: AppColors.primaryColor,
             decoration: TextDecoration.underline,
           ),
           moreStyle: TextStyles.textStyleRegular.copyWith(
             fontSize: 12.sp,
-            color: AppColors.p300PrimaryColor,
+            color: AppColors.primaryColor,
             decoration: TextDecoration.underline,
           ),
         ),

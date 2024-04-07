@@ -29,7 +29,7 @@ class ProgramsCardType extends StatelessWidget {
             Container(
               width: 0.5,
               height: 9,
-              color: AppColors.p300PrimaryColor,
+              color: AppColors.primaryColor,
             ),
             Text(
               state,

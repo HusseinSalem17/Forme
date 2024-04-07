@@ -31,7 +31,7 @@ class _CompleteVerificationScreenState extends State<CompleteVerificationScreen>
                     children: [
                       Row(
                         children: [
-                          Text('(optional)', style: TextStyles.textStyleMedium.copyWith(color: AppColors.n100Color, fontSize: 11.sp)),
+                          Text('(optional)', style: TextStyles.textStyleMedium.copyWith(color: AppColors.n100Gray, fontSize: 11.sp)),
                         ],
                       ),
                       SizedBox(height: 8.h),
@@ -59,7 +59,7 @@ class _CompleteVerificationScreenState extends State<CompleteVerificationScreen>
                                 'please upload your ID for verification',
                                 textAlign: TextAlign.start,
                                 style: TextStyles.textStyleSemiBold.copyWith(
-                                  color: AppColors.n900PrimaryTextColor,
+                                  color: AppColors.n900Black,
                                   fontSize: 13.sp,
                                 ),
                               ),
@@ -81,14 +81,14 @@ class _CompleteVerificationScreenState extends State<CompleteVerificationScreen>
                             TextSpan(
                               text: 'Upload Documents For Verification ',
                               style: TextStyles.textStyleSemiBold.copyWith(
-                                color: AppColors.n900PrimaryTextColor,
+                                color: AppColors.n900Black,
                                 fontSize: 14.sp,
                               ),
                             ),
                             TextSpan(
                               text: '(like Experience Certificate or course)',
                               style: TextStyles.textStyleRegular.copyWith(
-                                color: AppColors.n100Color,
+                                color: AppColors.n100Gray,
                                 fontSize: 12.sp,
                               ),
                             ),

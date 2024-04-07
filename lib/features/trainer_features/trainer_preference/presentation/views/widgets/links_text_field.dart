@@ -33,12 +33,12 @@ class LinksTextFieldState extends State<LinksTextField> {
       textAlign: TextAlign.start,
       controller: widget.controller,
       autovalidateMode: AutovalidateMode.onUserInteraction,
-      cursorColor: AppColors.p300PrimaryColor,
+      cursorColor: AppColors.primaryColor,
       style: TextStyles.textStyleRegular
           .copyWith(
             fontSize: 14.sp,
           )
-          .copyWith(color: AppColors.n900PrimaryTextColor),
+          .copyWith(color: AppColors.n900Black),
       keyboardType: TextInputType.emailAddress,
       decoration: InputDecoration(
         filled: true,
@@ -53,7 +53,7 @@ class LinksTextFieldState extends State<LinksTextField> {
         border: textFieldBorder(),
         enabledBorder: textFieldBorder(),
         focusedBorder: textFieldBorder(
-          color: AppColors.p300PrimaryColor,
+          color: AppColors.primaryColor,
           width: 2.0,
         ),
         errorBorder: textFieldBorder(

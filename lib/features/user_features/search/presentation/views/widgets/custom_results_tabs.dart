@@ -27,7 +27,7 @@ class SearchResultsTab extends StatelessWidget {
                 children: [
                   Text(
                     "Results for \"$searchText\" ",
-                    style: TextStyles.textStyleSemiBold.copyWith(color: AppColors.n900PrimaryTextColor, fontSize: 16.sp),
+                    style: TextStyles.textStyleSemiBold.copyWith(color: AppColors.n900Black, fontSize: 16.sp),
                   ),
                   Text(
                     "$searchResults Results Found",

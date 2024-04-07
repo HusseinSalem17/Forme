@@ -49,7 +49,7 @@ class ProfileScreen extends StatelessWidget {
                 child: Text('Profile',
                     style: TextStyles.textStyleBold.copyWith(
                         fontSize: 18.sp,
-                        color: AppColors.n900PrimaryTextColor))),
+                        color: AppColors.n900Black))),
             Padding(
               padding: EdgeInsets.symmetric(vertical: 16.h),
               child: SizedBox(
@@ -67,7 +67,7 @@ class ProfileScreen extends StatelessWidget {
             Text('Ahmed Ramy',
                 style: TextStyles.textStyleBold.copyWith(
                     fontSize: 14.sp,
-                    color: AppColors.n900PrimaryTextColor,
+                    color: AppColors.n900Black,
                     height: 2)),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 24.w),
@@ -116,7 +116,7 @@ class ProfileScreen extends StatelessWidget {
                   }
                 },
                     index != 9
-                        ? AppColors.n900PrimaryTextColor
+                        ? AppColors.n900Black
                         : AppColors.d300Danger);
               })),
             )

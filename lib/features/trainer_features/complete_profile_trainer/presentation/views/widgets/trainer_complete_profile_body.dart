@@ -42,11 +42,11 @@ class _TrainerCompleteProfileBodyState extends State<TrainerCompleteProfileBody>
             padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 16.0),
             scrollDirection: Axis.vertical,
             children: [
-              const HeaderText(
-                title: 'Complete Your Profile',
-                subtitle:
-                'Don’t worry, only you can see your personal data. No one else will be able to see it.',
-              ),
+              // const HeaderText(
+              //   title: 'Complete Your Profile',
+              //   subtitle:
+              //   'Don’t worry, only you can see your personal data. No one else will be able to see it.',
+              // ),
               SizedBox(height: 16.0.h),
               ProfileImagePicker(
                 imageFile: _imageFile,

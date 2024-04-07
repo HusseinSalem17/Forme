@@ -37,9 +37,9 @@ class _CustomSearchTextFieldState extends State<CustomSearchTextField> {
       width: 260.w,
       child: TextFormField(
         focusNode: _focusNode,
-        cursorColor: AppColors.p300PrimaryColor,
+        cursorColor: AppColors.primaryColor,
         style: TextStyles.textStyleRegular
-            .copyWith(color: AppColors.n900PrimaryTextColor, fontSize: 14.sp),
+            .copyWith(color: AppColors.n900Black, fontSize: 14.sp),
         keyboardType: TextInputType.text,
         decoration: InputDecoration(
           contentPadding:
@@ -62,7 +62,7 @@ class _CustomSearchTextFieldState extends State<CustomSearchTextField> {
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(4.dg),
             borderSide: const BorderSide(
-              color: AppColors.p300PrimaryColor,
+              color: AppColors.primaryColor,
             ),
           ),
           errorMaxLines: 1,
@@ -71,7 +71,7 @@ class _CustomSearchTextFieldState extends State<CustomSearchTextField> {
             child: SvgPicture.asset(
               'assets/image/Icon/search.svg',
               color: _isFocused
-                  ? AppColors.p300PrimaryColor
+                  ? AppColors.primaryColor
                   : AppColors.n200BodyContentColor,
             ),
           ),

@@ -35,7 +35,7 @@ class MapPopupMenu extends StatelessWidget {
           SvgPicture.asset(
             'assets/image/Icon/pin-map.svg',
             height: 24.h,
-            colorFilter: const ColorFilter.mode(AppColors.p300PrimaryColor, BlendMode.srcIn),
+            colorFilter: const ColorFilter.mode(AppColors.primaryColor, BlendMode.srcIn),
           ),
           SizedBox(
             width: 4.w,

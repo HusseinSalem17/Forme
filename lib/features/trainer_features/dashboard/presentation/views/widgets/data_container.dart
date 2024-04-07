@@ -23,12 +23,12 @@ Padding dataContainer(
                     Text(title1,
                         style: TextStyles.textStyleRegular.copyWith(
                             fontSize: 14.sp,
-                            color: AppColors.n900PrimaryTextColor)),
+                            color: AppColors.n900Black)),
                     Text(rate1,
                         style: TextStyles.textStyleRegular.copyWith(
                             height: 2,
                             fontSize: 14.sp,
-                            color: AppColors.p300PrimaryColor)),
+                            color: AppColors.primaryColor)),
                   ],
                 ),
                 const Divider(
@@ -41,12 +41,12 @@ Padding dataContainer(
                     Text(title2,
                         style: TextStyles.textStyleRegular.copyWith(
                             fontSize: 14.sp,
-                            color: AppColors.n900PrimaryTextColor)),
+                            color: AppColors.n900Black)),
                     Text(rate2,
                         style: TextStyles.textStyleRegular.copyWith(
                             height: 2,
                             fontSize: 14.sp,
-                            color: AppColors.p300PrimaryColor)),
+                            color: AppColors.primaryColor)),
                   ],
                 )
               ],

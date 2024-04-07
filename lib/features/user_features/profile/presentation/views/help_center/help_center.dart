@@ -45,7 +45,7 @@ class _HelpCenterState extends State<HelpCenter> {
                       'Help Center',
                       style: TextStyles.textStyleBold.copyWith(
                           fontSize: 18.sp,
-                          color: AppColors.n900PrimaryTextColor),
+                          color: AppColors.n900Black),
                     ),
                     const Spacer(),
                     SizedBox(width: 32.w),

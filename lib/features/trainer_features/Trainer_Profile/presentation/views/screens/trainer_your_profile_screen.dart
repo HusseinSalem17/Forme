@@ -36,7 +36,7 @@ class TrainerYourProfileScreen extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      SvgPicture.asset('assets/image/Icon/hash.svg', color: AppColors.n900PrimaryTextColor,),
+                      SvgPicture.asset('assets/image/Icon/hash.svg', color: AppColors.n900Black,),
                       SizedBox(
                         width: 16.w,
                       ),
@@ -47,7 +47,7 @@ class TrainerYourProfileScreen extends StatelessWidget {
                           children: <TextSpan>[
                             TextSpan(
                               text: textId,
-                              style: TextStyles.textStyleSemiBold.copyWith(color: AppColors.p300PrimaryColor, fontSize: 16.sp, fontWeight: FontWeight.w600),
+                              style: TextStyles.textStyleSemiBold.copyWith(color: AppColors.primaryColor, fontSize: 16.sp, fontWeight: FontWeight.w600),
                             ),
                           ],
                         ),
@@ -75,7 +75,7 @@ class TrainerYourProfileScreen extends StatelessWidget {
                           dismissDirection: DismissDirection.up,
                           behavior: SnackBarBehavior.floating,
                           showCloseIcon: true,
-                          closeIconColor: AppColors.n100Color,
+                          closeIconColor: AppColors.n100Gray,
                           backgroundColor: AppColors.p75PrimaryColor,
                         ),
                       );

@@ -9,7 +9,7 @@ class TypeAndState extends StatelessWidget {
     super.key,
     required this.type,
     required this.state,
-    this.stateColor = AppColors.p300PrimaryColor,
+    this.stateColor = AppColors.primaryColor,
   });
 
   @override
@@ -33,7 +33,7 @@ class TypeAndState extends StatelessWidget {
             Container(
               width: 0.5,
               height: 9,
-              color: AppColors.p300PrimaryColor,
+              color: AppColors.primaryColor,
             ),
             Text(
               state,
@@ -42,7 +42,7 @@ class TypeAndState extends StatelessWidget {
                       ? AppColors.greenColor
                       : state == 'Close'
                           ? AppColors.d300Danger
-                          : AppColors.p300PrimaryColor),
+                          : AppColors.primaryColor),
             ),
           ],
         ),

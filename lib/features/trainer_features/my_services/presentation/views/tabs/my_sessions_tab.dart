@@ -58,13 +58,13 @@ class _MySessionsTabState extends State<MySessionsTab> with SingleTickerProvider
                   ),
                   indicatorPadding: const EdgeInsets.symmetric(vertical: 4),
                   indicatorSize: TabBarIndicatorSize.tab,
-                  labelColor: AppColors.n900PrimaryTextColor,
+                  labelColor: AppColors.n900Black,
                   tabs: [
                     Tab(
                       child: Text(
                         'Upcoming',
                         style: TextStyles.textStyleRegular.copyWith(
-                          color: tabController.index == 0 ? AppColors.n900PrimaryTextColor : AppColors.n400color,
+                          color: tabController.index == 0 ? AppColors.n900Black : AppColors.n400color,
                           fontSize: 14.sp,
                         ),
                       ),

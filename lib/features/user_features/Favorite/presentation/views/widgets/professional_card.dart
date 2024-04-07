@@ -21,7 +21,7 @@ class ProfessionalCard extends StatelessWidget {
                   ),
                   const Text('Professional Trainer',
                       style:TextStyle(
-                          fontSize: 11, color: AppColors.p300PrimaryColor)),
+                          fontSize: 11, color: AppColors.primaryColor)),
                 ],
               ),
             );

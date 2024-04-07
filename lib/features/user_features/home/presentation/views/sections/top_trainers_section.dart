@@ -28,7 +28,7 @@ class TopTrainersSection extends StatelessWidget {
                 style: TextStyles.textStyleBold.copyWith(
                   fontWeight: FontWeight.w600,
                   fontSize: 14.sp,
-                  color: AppColors.neutralsN9,
+                  color: AppColors.n900Black,
                 ),
               ),
               GestureDetector(
@@ -76,7 +76,7 @@ class TopTrainersSection extends StatelessWidget {
                       const SizedBox(height: 4),
                       Text(
                         truncateText(topTrainersData[index].name, 8),
-                        style: TextStyles.textStyleRegular.copyWith(fontSize: 12, color: AppColors.neutralsN9),
+                        style: TextStyles.textStyleRegular.copyWith(fontSize: 12, color: AppColors.n900Black),
                       )
                     ],
                   ),

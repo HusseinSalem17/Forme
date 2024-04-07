@@ -42,7 +42,7 @@ class RevenueCard extends StatelessWidget {
           Text(
             value,
             style: TextStyles.textStyleMedium.copyWith(
-                fontSize: 22.sp, color: AppColors.n900PrimaryTextColor),
+                fontSize: 22.sp, color: AppColors.n900Black),
           ),
           Padding(
             padding: EdgeInsets.only(bottom: 16.h),
@@ -86,7 +86,7 @@ class RevenueCard extends StatelessWidget {
                   LineChartBarData(
                     spots: spots,
                     isCurved: true,
-                    color: AppColors.p300PrimaryColor,
+                    color: AppColors.primaryColor,
                     barWidth: 2.h,
                     isStrokeCapRound: true,
                     //dot section
@@ -100,7 +100,7 @@ class RevenueCard extends StatelessWidget {
                         const color = AppColors.background; // Color of the dot
                         final strokeWidth = 2.0.h; // Stroke width of the dot
                         const strokeColor = AppColors
-                            .p300PrimaryColor; // Stroke color of the dot
+                            .primaryColor; // Stroke color of the dot
 
                         return FlDotCirclePainter(
                           radius: radius,
@@ -115,7 +115,7 @@ class RevenueCard extends StatelessWidget {
                       show: true,
                       gradient: LinearGradient(
                         colors: [
-                          AppColors.p300PrimaryColor.withOpacity(0.5),
+                          AppColors.primaryColor.withOpacity(0.5),
                           AppColors.background.withOpacity(0.5)
                         ],
                         begin: Alignment.topCenter,

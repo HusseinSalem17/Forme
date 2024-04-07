@@ -5,7 +5,7 @@ import 'package:forme_app/onboarding_screens/data/bloc/onboarding_states.dart';
 
 import '../../../core/utils/app_colors.dart';
 import '../../../core/utils/text_styles.dart';
-import 'buttons/skip_button.dart';
+import 'skip_button.dart';
 
 class PageViewContent extends StatelessWidget {
   const PageViewContent({
@@ -74,7 +74,7 @@ class PageViewContent extends StatelessWidget {
                 TextSpan(
                   text: description,
                   style: TextStyles.textStyleRegular.copyWith(
-                    color: AppColors.n70HintColor,
+                    color: AppColors.n70Gray,
                     fontSize: 14.sp,
                   ),
                 ),

@@ -16,12 +16,12 @@ class CustomTabBar extends StatelessWidget {
     return TabBar(
       enableFeedback: true,
       labelPadding: EdgeInsets.zero,
-      labelColor: AppColors.p300PrimaryColor,
-      unselectedLabelColor: AppColors.n900PrimaryTextColor,
+      labelColor: AppColors.primaryColor,
+      unselectedLabelColor: AppColors.n900Black,
       labelStyle: TextStyles.textStyleRegular
           .copyWith(fontWeight: FontWeight.w400, fontSize: 16.sp),
       indicatorSize: TabBarIndicatorSize.tab,
-      indicatorColor: AppColors.p300PrimaryColor,
+      indicatorColor: AppColors.primaryColor,
       
       tabs: List<Widget>.generate(
         titles.length,

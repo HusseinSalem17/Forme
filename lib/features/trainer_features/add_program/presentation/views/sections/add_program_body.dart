@@ -156,7 +156,7 @@ class _AddProgramBodyState extends State<AddProgramBody> {
               Text(
                 'Payment Plans',
                 style: TextStyles.textStyleBold.copyWith(
-                    fontSize: 14.sp, color: AppColors.n900PrimaryTextColor),
+                    fontSize: 14.sp, color: AppColors.n900Black),
               )
             ],
           ),

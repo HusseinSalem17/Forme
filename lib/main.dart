@@ -17,6 +17,10 @@ import 'package:forme_app/splash_screen.dart';
 import 'core/utils/functions/service_locator.dart';
 import 'core/utils/scroll_behavior.dart';
 
+
+import 'features/Authentication/presentation/views/new_password_screen.dart';
+
+
 void main() {
   setupServiceLocator();
   SystemChrome.setSystemUIOverlayStyle(
@@ -65,7 +69,7 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           theme: Themes.customLightTheme,
           //onGenerateRoute: (settings) => generateRoute(settings, context),
-          home: const SplashScreen(),
+          home:  const NewPasswordScreen(),
         ),
       ),
     );

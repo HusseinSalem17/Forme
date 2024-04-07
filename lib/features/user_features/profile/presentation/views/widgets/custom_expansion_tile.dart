@@ -10,7 +10,7 @@ Padding customExpansionTile(Widget question, String answer) {
       decoration: BoxDecoration(
           border: Border.all(color: AppColors.n40BorderColor, width: 1)),
       child: ExpansionTile(
-        iconColor: AppColors.p300PrimaryColor,
+        iconColor: AppColors.primaryColor,
         childrenPadding: EdgeInsets.only(right: 16.w, left: 16.w, bottom: 16.w),
         shape: const RoundedRectangleBorder(
           side: BorderSide(width: 0, color: Colors.transparent),

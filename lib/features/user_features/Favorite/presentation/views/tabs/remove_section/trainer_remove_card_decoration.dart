@@ -46,7 +46,7 @@ class TrainerRemoveCardDecoration extends StatelessWidget {
                       ProfessionalCard(),
                       Icon(
                         Icons.favorite,
-                        color: AppColors.p300PrimaryColor,
+                        color: AppColors.primaryColor,
                         size: 15,
                       )
                     ],
@@ -61,7 +61,7 @@ class TrainerRemoveCardDecoration extends StatelessWidget {
                   Text(
                     'Trainer',
                     style: TextStyles.cardTextStyle.copyWith(
-                      color: AppColors.n100Color,
+                      color: AppColors.n100Gray,
                       fontSize: 11,
                     ),
                   ),
@@ -79,7 +79,7 @@ class TrainerRemoveCardDecoration extends StatelessWidget {
                       ),
                       Text(
                         '${model.rating}',
-                        style: TextStyles.textStyleRegular.copyWith(fontSize: 11, color: AppColors.n900PrimaryTextColor),
+                        style: TextStyles.textStyleRegular.copyWith(fontSize: 11, color: AppColors.n900Black),
                       ),
                       Text(
                         ' | ',

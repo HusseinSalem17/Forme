@@ -23,7 +23,7 @@ class CustomRadioListTile extends StatelessWidget {
       decoration: BoxDecoration(
         border: Border.all(
           color: value == groupValue
-              ? AppColors.p300PrimaryColor
+              ? AppColors.primaryColor
               : AppColors.n50dropShadowColor,
           width: 1,
         ),
@@ -44,7 +44,7 @@ class CustomRadioListTile extends StatelessWidget {
                   shape: BoxShape.circle,
                   border: Border.all(
                     color: value == groupValue
-                        ? AppColors.p300PrimaryColor
+                        ? AppColors.primaryColor
                         : AppColors.n40BorderColor,
                     width: 1.0,
                   ),
@@ -56,7 +56,7 @@ class CustomRadioListTile extends StatelessWidget {
                     height: 11.0,
                     decoration: const BoxDecoration(
                       shape: BoxShape.circle,
-                      color: AppColors.p300PrimaryColor,
+                      color: AppColors.primaryColor,
                     ),
                   )
                       : null,
@@ -67,7 +67,7 @@ class CustomRadioListTile extends StatelessWidget {
                 title,
                 style: TextStyles.textStyleBold.copyWith(
                   fontSize:12.sp,
-                  color: AppColors.n900PrimaryTextColor,
+                  color: AppColors.n900Black,
                 ),
               ),
             ],

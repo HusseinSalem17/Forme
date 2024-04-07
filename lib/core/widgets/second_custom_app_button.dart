@@ -20,7 +20,7 @@ class SecondCustomAppButton extends StatelessWidget {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(40.dg),
             color: AppColors.background,
-            border: Border.all(width: 2.0, color: AppColors.p300PrimaryColor),
+            border: Border.all(width: 2.0, color: AppColors.primaryColor),
             boxShadow: [
               BoxShadow(
                 color: Colors.black.withOpacity(0.1),
@@ -32,7 +32,7 @@ class SecondCustomAppButton extends StatelessWidget {
           child: Center(
             child: Text(
               title,
-              style: TextStyles.textStyleMedium.copyWith(fontSize: 14.sp, color: AppColors.p300PrimaryColor, height: 1),
+              style: TextStyles.textStyleMedium.copyWith(fontSize: 14.sp, color: AppColors.primaryColor, height: 1),
             ),
           ),
         ),

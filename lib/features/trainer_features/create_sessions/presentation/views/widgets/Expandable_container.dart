@@ -73,12 +73,12 @@ class _ExpandableListViewState extends State<ExpandableListView> {
               border: Border(
                 left: BorderSide(
                   width: 4,
-                  color: expandFlag ? AppColors.p300PrimaryColor.withOpacity(0.75) : AppColors.n100Color,
+                  color: expandFlag ? AppColors.primaryColor.withOpacity(0.75) : AppColors.n100Gray,
                 ),
               ),
               boxShadow: const [
                 BoxShadow(
-                  color: AppColors.n100Color,
+                  color: AppColors.n100Gray,
                   blurRadius: 2,
                   spreadRadius: 0.025,
                   offset: Offset(0, 0.2),
@@ -103,7 +103,7 @@ class _ExpandableListViewState extends State<ExpandableListView> {
                     value: onOffSwitch,
                     onChanged: onChanged,
                     trackColor: AppColors.n40BorderColor,
-                    activeColor: AppColors.p300PrimaryColor,
+                    activeColor: AppColors.primaryColor,
                   ),
                   IconButton(
                     icon: Icon(
@@ -134,7 +134,7 @@ class _ExpandableListViewState extends State<ExpandableListView> {
                     trailing: IconButton(
                       icon: const Icon(
                         Icons.add_circle_outline_outlined,
-                        color: AppColors.p300PrimaryColor,
+                        color: AppColors.primaryColor,
                       ),
                       onPressed: () {
                         // Add a new session when the add icon is pressed
@@ -207,7 +207,7 @@ class ExpandableContainer extends StatelessWidget {
           ),
           boxShadow: [
             BoxShadow(
-              color: AppColors.n100Color,
+              color: AppColors.n100Gray,
               blurRadius: 2,
               spreadRadius: 0.025,
               offset: Offset(0, 0.2),

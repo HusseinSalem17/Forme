@@ -55,7 +55,7 @@ class CustomRadioListTile extends StatelessWidget {
                     title,
                     style: TextStyles.textStyleSemiBold.copyWith(
                       fontSize: 14,
-                      color: AppColors.n100Color,
+                      color: AppColors.n100Gray,
                     ),
                   ),
                 ],
@@ -68,7 +68,7 @@ class CustomRadioListTile extends StatelessWidget {
                       child: Text(
                         'Change',
                         style: TextStyles.textStyleRegular.copyWith(
-                          color: AppColors.p300PrimaryColor,
+                          color: AppColors.primaryColor,
                         ),
                       ),
                     )
@@ -88,7 +88,7 @@ class CustomRadioListTile extends StatelessWidget {
         shape: BoxShape.circle,
         border: Border.all(
           color: value == groupValue
-              ? AppColors.p300PrimaryColor
+              ? AppColors.primaryColor
               : AppColors.n40BorderColor,
           width: 1.0,
         ),
@@ -100,7 +100,7 @@ class CustomRadioListTile extends StatelessWidget {
                 height: 11.0,
                 decoration: const BoxDecoration(
                   shape: BoxShape.circle,
-                  color: AppColors.p300PrimaryColor,
+                  color: AppColors.primaryColor,
                 ),
               )
             : null,

@@ -38,7 +38,7 @@ class RemoveCardImage extends StatelessWidget {
               backgroundColor: Colors.white,
               child: const Icon(
                 Icons.favorite,
-                color: AppColors.p300PrimaryColor,
+                color: AppColors.primaryColor,
                 size: 15,
               ),
             ),

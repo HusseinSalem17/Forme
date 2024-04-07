@@ -36,7 +36,7 @@ class _EditTransformationState extends State<EditTransformation> {
                 "Edit Transformations",
                 style: TextStyles.textStyleBold.copyWith(
                   fontSize: 18.sp,
-                  color: AppColors.n900PrimaryTextColor,
+                  color: AppColors.n900Black,
                 ),
               ),
               const Spacer(),

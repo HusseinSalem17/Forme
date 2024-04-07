@@ -40,7 +40,7 @@ dependencies:
   tabbar_gradient_indicator: ^1.0.1
   wheel_slider: ^1.1.1
   flutter_credit_card: ^4.0.1
-  intl: ^0.17.0
+  intl: ^0.19.0
 
   google_maps_flutter: ^2.5.3
   geolocator: ^10.1.0
@@ -54,7 +54,6 @@ dependencies:
   fl_chart: ^0.66.2
 #  time_range_picker: ^2.2.0
   video_player: ^2.8.4
-
 
 
 dev_dependencies:
@@ -74,6 +73,7 @@ flutter:
     - assets/image/profile/
     - assets/image/temp/
     - assets/image/gif/
+    - assets/image/auth_icons/
 
   fonts:
     - family: RobotoRegular

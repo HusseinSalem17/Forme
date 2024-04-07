@@ -86,7 +86,7 @@ class SportsClubTabCard extends StatelessWidget {
                         child: Text(
                           model.address,
                           style: TextStyles.cardTextStyle.copyWith(
-                            color: AppColors.n100Color,
+                            color: AppColors.n100Gray,
                             fontSize: 11,
                           ),
                         ),

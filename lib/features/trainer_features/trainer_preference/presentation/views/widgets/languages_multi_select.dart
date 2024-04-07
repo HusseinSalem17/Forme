@@ -46,7 +46,7 @@ class _LanguagesMultiSelectState extends State<LanguagesMultiSelect> {
           children: widget.items
               .map((item) => CheckboxListTile(
                     value: _selectedItems.contains(item),
-                    activeColor: AppColors.p300PrimaryColor,
+                    activeColor: AppColors.primaryColor,
                     title: Text(
                       item,
                       style: TextStyles.textStyleRegular.copyWith(color: Colors.black),
@@ -65,14 +65,14 @@ class _LanguagesMultiSelectState extends State<LanguagesMultiSelect> {
               onPressed: _cancel,
               child: Text(
                 'Cancel',
-                style: TextStyles.textStyleSemiBold.copyWith(color: AppColors.p300PrimaryColor),
+                style: TextStyles.textStyleSemiBold.copyWith(color: AppColors.primaryColor),
               ),
             ),
             TextButton(
               onPressed: _submit,
               child: Text(
                 'Submit',
-                style: TextStyles.textStyleSemiBold.copyWith(color: AppColors.p300PrimaryColor),
+                style: TextStyles.textStyleSemiBold.copyWith(color: AppColors.primaryColor),
               ),
             ),
           ],

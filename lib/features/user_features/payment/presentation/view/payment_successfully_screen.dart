@@ -66,7 +66,7 @@ class PaymentSuccessfullyScreen extends StatelessWidget {
                         child: Text('Go to Home',
                             style: TextStyles.textStyleRegular.copyWith(
                                 fontSize: 14.sp,
-                                color: AppColors.p300PrimaryColor)))
+                                color: AppColors.primaryColor)))
                   ],
                 )),
           ),

@@ -12,12 +12,12 @@ class TextAreaField extends StatelessWidget {
     return TextFormField(
       maxLines: 6,
       autovalidateMode: AutovalidateMode.onUserInteraction,
-      cursorColor: AppColors.p300PrimaryColor,
+      cursorColor: AppColors.primaryColor,
       style: TextStyles.textStyleRegular
           .copyWith(
             fontSize: 14.sp,
           )
-          .copyWith(color: AppColors.n900PrimaryTextColor),
+          .copyWith(color: AppColors.n900Black),
       keyboardType: TextInputType.multiline,
       decoration: InputDecoration(
           filled: true,
@@ -35,7 +35,7 @@ class TextAreaField extends StatelessWidget {
           border: textFieldBorder(),
           enabledBorder: textFieldBorder(),
           focusedBorder: textFieldBorder(
-            color: AppColors.p300PrimaryColor,
+            color: AppColors.primaryColor,
             width: 2.0,
           ),
           errorBorder: textFieldBorder(

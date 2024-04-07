@@ -19,7 +19,7 @@ class PaymentSuccessfullyBody extends StatelessWidget {
               width: 142,
               height: 142,
               decoration: BoxDecoration(
-                  color: AppColors.p300PrimaryColor,
+                  color: AppColors.primaryColor,
                   borderRadius: BorderRadius.circular(71)),
               child: Center(
                 child: SvgPicture.asset(
@@ -42,13 +42,13 @@ class PaymentSuccessfullyBody extends StatelessWidget {
             Text(
               'You have successfully booked appointment with',
               style: TextStyles.textStyleRegular.copyWith(
-                color: AppColors.n70HintColor,
+                color: AppColors.n70Gray,
               ),
             ),
             Text(
               'Coach (name)',
               style: TextStyles.textStyleSemiBold.copyWith(
-                color: AppColors.neutralsN9,
+                color: AppColors.n900Black,
                 fontWeight: FontWeight.w600,
               ),
             ),
@@ -102,7 +102,7 @@ Widget buildRowIcons(
       SvgPicture.asset(
         imgPath,
         colorFilter: const ColorFilter.mode(
-          AppColors.p300PrimaryColor,
+          AppColors.primaryColor,
           BlendMode.srcIn,
         ),
         width: width,
@@ -115,7 +115,7 @@ Widget buildRowIcons(
         text,
         style: TextStyles.textStyleSemiBold.copyWith(
           fontSize: 14,
-          color: AppColors.neutralsN9,
+          color: AppColors.n900Black,
         ),
       )
     ],

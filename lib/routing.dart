@@ -1,9 +1,9 @@
 // import 'package:flutter/material.dart';
-// import 'package:forme_app/features/Authentication/presentation/views/forgot_password.dart';
-// import 'package:forme_app/features/Authentication/presentation/views/new_password.dart';
-// import 'package:forme_app/features/Authentication/presentation/views/sign_up_view.dart';
-// import 'package:forme_app/features/Authentication/presentation/views/sign_in_view.dart';
-// import 'package:forme_app/features/Authentication/presentation/views/verify_code.dart';
+// import 'package:forme_app/features/authentication/presentation/views/forgot_password.dart';
+// import 'package:forme_app/features/authentication/presentation/views/new_password_screen.dart';
+// import 'package:forme_app/features/authentication/presentation/views/sign_up_screen.dart';
+// import 'package:forme_app/features/authentication/presentation/views/sign_in_screen.dart';
+// import 'package:forme_app/features/authentication/presentation/views/verify_code_screen.dart';
 // import 'package:forme_app/features/user_features/book_appointment_with%20_trainer/presentation/views/book_appointment_screen.dart';
 // import 'package:forme_app/features/user_features/join_program_feature/presentation/views/book_onling_coach_screen.dart';
 // import 'package:forme_app/features/user_features/maps_feature/presentation/views/map_screen.dart';

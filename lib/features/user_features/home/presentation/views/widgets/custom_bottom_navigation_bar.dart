@@ -45,9 +45,9 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
           BlocProvider.of<HomeBloc>(context).getCurrentIndex(index);
         });
       },
-      unselectedItemColor: AppColors.n100Color,
+      unselectedItemColor: AppColors.n100Gray,
       type: BottomNavigationBarType.fixed,
-      selectedItemColor: AppColors.p300PrimaryColor,
+      selectedItemColor: AppColors.primaryColor,
       showUnselectedLabels: true,
     );
   }
@@ -59,7 +59,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
         'assets/image/Icon/$icon.svg',
         height: 20.h,
         width: 20.w,
-        color: isSelected ? AppColors.p300PrimaryColor : AppColors.n100Color,
+        color: isSelected ? AppColors.primaryColor : AppColors.n100Gray,
       ),
       label: label,
     );

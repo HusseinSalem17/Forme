@@ -50,7 +50,7 @@ class _CustomDropList extends State<CustomDropList> {
         isExpanded: true,
         autovalidateMode: AutovalidateMode.onUserInteraction,
         style: TextStyles.textStyleMedium.copyWith(
-          color: AppColors.n900PrimaryTextColor,
+          color: AppColors.n900Black,
           fontSize: 14.sp,
         ),
         decoration: InputDecoration(
@@ -60,7 +60,7 @@ class _CustomDropList extends State<CustomDropList> {
           border: textFieldBorder(),
           enabledBorder: textFieldBorder(),
           focusedBorder: textFieldBorder(
-            color: AppColors.p300PrimaryColor,
+            color: AppColors.primaryColor,
             width: 2,
           ),
           errorBorder: textFieldBorder(
@@ -79,11 +79,11 @@ class _CustomDropList extends State<CustomDropList> {
         iconStyleData: const IconStyleData(
           openMenuIcon: Icon(
             FontAwesomeIcons.chevronDown,
-            color: AppColors.p300PrimaryColor,
+            color: AppColors.primaryColor,
           ),
           icon: Icon(
             FontAwesomeIcons.chevronRight,
-            color: AppColors.n70HintColor,
+            color: AppColors.n70Gray,
           ),
           iconSize: 16,
         ),
@@ -93,7 +93,7 @@ class _CustomDropList extends State<CustomDropList> {
             borderRadius: BorderRadius.circular(4),
             boxShadow: [
               BoxShadow(
-                color: AppColors.n100Color.withOpacity(0.25),
+                color: AppColors.n100Gray.withOpacity(0.25),
                 blurRadius: 4,
                 offset: const Offset(0, 2),
               ),

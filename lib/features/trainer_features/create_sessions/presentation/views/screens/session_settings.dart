@@ -50,7 +50,7 @@ class _SessionSettingsScreenState extends State<SessionSettingsScreen> {
                   const SizedBox(height: 16),
                   const Divider(color: AppColors.n20FillBodyInSmallCardColor, thickness: 2),
                   const SizedBox(height: 24),
-                  Text('Set Session Duration and Fees', style: TextStyles.textStyleRegular.copyWith(color: AppColors.n900PrimaryTextColor, fontSize: 16.sp)),
+                  Text('Set Session Duration and Fees', style: TextStyles.textStyleRegular.copyWith(color: AppColors.n900Black, fontSize: 16.sp)),
                   SizedBox(height: 8.h),
                   Text(
                     'Define how long your session will be. Default(15 minutes).',
@@ -65,7 +65,7 @@ class _SessionSettingsScreenState extends State<SessionSettingsScreen> {
                         TextSpan(
                           text: '(Minutes)',
                           style: TextStyles.textStyleRegular.copyWith(
-                            color: AppColors.n100Color,
+                            color: AppColors.n100Gray,
                             fontSize: 12.sp,
                           ),
                         ),
@@ -85,7 +85,7 @@ class _SessionSettingsScreenState extends State<SessionSettingsScreen> {
                         TextSpan(
                           text: '(Multi Choice)',
                           style: TextStyles.textStyleRegular.copyWith(
-                            color: AppColors.n100Color,
+                            color: AppColors.n100Gray,
                             fontSize: 12.sp,
                           ),
                         ),
@@ -101,7 +101,7 @@ class _SessionSettingsScreenState extends State<SessionSettingsScreen> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text('Enter Target Age', style: TextStyles.textStyleRegular.copyWith(color: AppColors.n400color, fontSize: 14.sp, fontWeight: FontWeight.w600)),
-                      Text('(Optional)', style: TextStyles.textStyleRegular.copyWith(color: AppColors.n100Color, fontSize: 12.sp)),
+                      Text('(Optional)', style: TextStyles.textStyleRegular.copyWith(color: AppColors.n100Gray, fontSize: 12.sp)),
                     ],
                   ),
                   SizedBox(height: 16.h),
@@ -109,7 +109,7 @@ class _SessionSettingsScreenState extends State<SessionSettingsScreen> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       const SmallTextField(text: 'Minimum'),
-                      Icon(Icons.arrow_forward, color: AppColors.n900PrimaryTextColor, size: 24.sp),
+                      Icon(Icons.arrow_forward, color: AppColors.n900Black, size: 24.sp),
                       const SmallTextField(text: 'maximum'),
                     ],
                   ),

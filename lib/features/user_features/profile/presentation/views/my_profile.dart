@@ -76,7 +76,7 @@ class _MyProfileState extends State<MyProfile> {
               Text(
                 "My Profile",
                 style: TextStyles.textStyleBold.copyWith(
-                    fontSize: 18.sp, color: AppColors.n900PrimaryTextColor),
+                    fontSize: 18.sp, color: AppColors.n900Black),
               ),
               const Spacer(),
               IconButton(
@@ -166,7 +166,7 @@ class _MyProfileState extends State<MyProfile> {
                     SizedBox(width: 8.h),
                     Container(
                       decoration: BoxDecoration(
-                        color: AppColors.p300PrimaryColor,
+                        color: AppColors.primaryColor,
                         borderRadius: BorderRadius.circular(4.dg),
                       ),
                       padding: EdgeInsets.all(10.h),
@@ -199,7 +199,7 @@ class _MyProfileState extends State<MyProfile> {
                     SizedBox(width: 8.h),
                     Container(
                       decoration: BoxDecoration(
-                        color: AppColors.p300PrimaryColor,
+                        color: AppColors.primaryColor,
                         borderRadius: BorderRadius.circular(4.dg),
                       ),
                       padding: EdgeInsets.all(10.h),

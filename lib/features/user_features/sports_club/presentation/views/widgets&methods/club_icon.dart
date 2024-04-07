@@ -20,7 +20,7 @@ Column clubIcon(ClubIconModel model) {
         ),
         Text(model.title,
             style: TextStyles.textStyleRegular.copyWith(
-                fontSize: 15.sp, color: AppColors.n900PrimaryTextColor))
+                fontSize: 15.sp, color: AppColors.n900Black))
       ],
     );
   }

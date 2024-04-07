@@ -111,7 +111,7 @@ class _TargetAgeSectionState extends State<TargetAgeSection> {
           border: textFieldBorder(),
           enabledBorder: textFieldBorder(),
           focusedBorder: textFieldBorder(
-            color: AppColors.p300PrimaryColor,
+            color: AppColors.primaryColor,
             width: 2.0,
           ),
           errorBorder: textFieldBorder(

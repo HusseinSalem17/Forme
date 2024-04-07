@@ -22,7 +22,7 @@ Future<dynamic> popUp(BuildContext context, String title, String text, String bu
                 Text(
                   title,
                   textAlign: TextAlign.center,
-                  style: TextStyles.textStyleMedium.copyWith(fontSize: 16.sp, color: AppColors.n900PrimaryTextColor),
+                  style: TextStyles.textStyleMedium.copyWith(fontSize: 16.sp, color: AppColors.n900Black),
                 ),
                 const Divider(
                   color: AppColors.n30StrokeColor,

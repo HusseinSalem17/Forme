@@ -48,7 +48,7 @@ class _MySessionsCardState extends State<MySessionsCard> {
                   Text(
                     'Hussein Salem',
                     style: TextStyle(
-                      color: AppColors.n900PrimaryTextColor,
+                      color: AppColors.n900Black,
                       fontSize: 12.sp,
                       fontWeight: FontWeight.w500,
                     ),
@@ -56,7 +56,7 @@ class _MySessionsCardState extends State<MySessionsCard> {
                   Text(
                     'Video Call',
                     style: TextStyle(
-                      color: AppColors.n100Color,
+                      color: AppColors.n100Gray,
                       fontSize: 12.sp,
                       fontWeight: FontWeight.w500,
                     ),
@@ -64,7 +64,7 @@ class _MySessionsCardState extends State<MySessionsCard> {
                   Text(
                     '15 Nov',
                     style: TextStyle(
-                      color: AppColors.p300PrimaryColor,
+                      color: AppColors.primaryColor,
                       fontSize: 12.sp,
                       fontWeight: FontWeight.w500,
                     ),
@@ -78,7 +78,7 @@ class _MySessionsCardState extends State<MySessionsCard> {
                   Text(
                     'Period',
                     style: TextStyle(
-                      color: AppColors.n100Color,
+                      color: AppColors.n100Gray,
                       fontSize: 12.sp,
                       fontWeight: FontWeight.w500,
                     ),
@@ -88,7 +88,7 @@ class _MySessionsCardState extends State<MySessionsCard> {
                       Text(
                         '7:00',
                         style: TextStyle(
-                          color: AppColors.n900PrimaryTextColor,
+                          color: AppColors.n900Black,
                           fontSize: 12.sp,
                           fontWeight: FontWeight.w500,
                         ),
@@ -96,7 +96,7 @@ class _MySessionsCardState extends State<MySessionsCard> {
                       Text(
                         ' - ',
                         style: TextStyle(
-                          color: AppColors.n900PrimaryTextColor,
+                          color: AppColors.n900Black,
                           fontSize: 12.sp,
                           fontWeight: FontWeight.w500,
                         ),
@@ -104,7 +104,7 @@ class _MySessionsCardState extends State<MySessionsCard> {
                       Text(
                         '7:15',
                         style: TextStyle(
-                          color: AppColors.n900PrimaryTextColor,
+                          color: AppColors.n900Black,
                           fontSize: 12.sp,
                           fontWeight: FontWeight.w500,
                         ),
@@ -112,7 +112,7 @@ class _MySessionsCardState extends State<MySessionsCard> {
                       Text(
                         ' AM',
                         style: TextStyle(
-                          color: AppColors.n900PrimaryTextColor,
+                          color: AppColors.n900Black,
                           fontSize: 12.sp,
                           fontWeight: FontWeight.w500,
                         ),

@@ -68,7 +68,7 @@ class ContactUsTab extends StatelessWidget {
                       Text(contacts[index],
                           style: TextStyles.textStyleBold.copyWith(
                               fontSize: 14.sp,
-                              color: AppColors.n900PrimaryTextColor)),
+                              color: AppColors.n900Black)),
                     ],
                   ),
                   answers[index]);

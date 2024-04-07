@@ -124,7 +124,7 @@ class _MapScreenState extends State<MapScreen> {
               : loading
               ? const Center(
             child: CircularProgressIndicator(
-              color: AppColors.p300PrimaryColor,
+              color: AppColors.primaryColor,
             ),
           )
               : buildErrorMessage(),
@@ -135,7 +135,7 @@ class _MapScreenState extends State<MapScreen> {
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: AppColors.p300PrimaryColor,
+        backgroundColor: AppColors.primaryColor,
         onPressed: () => _goToMyCurrentLocation(),
         child: const Icon(
           Icons.place,

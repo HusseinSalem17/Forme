@@ -47,14 +47,14 @@ Container clubTrainerCard(BuildContext context) {
                   ),
                   Text('Professional Trainer',
                       style: TextStyle(
-                          fontSize: 11.sp, color: AppColors.p300PrimaryColor)),
+                          fontSize: 11.sp, color: AppColors.primaryColor)),
                 ],
               ),
             ),
             Text(
               'Ahmed Ramy',
               style: TextStyles.textStyleRegular.copyWith(
-                  fontSize: 14.sp, color: AppColors.n900PrimaryTextColor),
+                  fontSize: 14.sp, color: AppColors.n900Black),
             ),
             Text(
               'Trainer',
@@ -77,7 +77,7 @@ Container clubTrainerCard(BuildContext context) {
                 Text(
                   '3.5',
                   style: TextStyles.textStyleRegular.copyWith(
-                      fontSize: 11.sp, color: AppColors.n900PrimaryTextColor),
+                      fontSize: 11.sp, color: AppColors.n900Black),
                 ),
                 Text(
                   ' | ',

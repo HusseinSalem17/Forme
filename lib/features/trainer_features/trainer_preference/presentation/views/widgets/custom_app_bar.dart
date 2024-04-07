@@ -44,7 +44,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
               Text(
                 '${state.page + 1}/2',
                 style: TextStyles.textStyleRegular.copyWith(
-                  color: AppColors.p300PrimaryColor,
+                  color: AppColors.primaryColor,
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w400,
                 ),

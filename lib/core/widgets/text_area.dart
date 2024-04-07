@@ -39,8 +39,8 @@ class TextArea extends StatelessWidget {
               controller: controller,
               enabled: enabled,
               style: TextStyles.textStyleRegular.copyWith(
-                  fontSize: 14.sp, color: AppColors.n900PrimaryTextColor),
-              cursorColor: AppColors.p300PrimaryColor,
+                  fontSize: 14.sp, color: AppColors.n900Black),
+              cursorColor: AppColors.primaryColor,
               keyboardType: TextInputType.multiline,
               maxLines: 6,
               decoration: InputDecoration(
