@@ -39,7 +39,7 @@ class _FilterTypeState extends State<FilterType> {
               child: Container(
                 height: 40,
                 decoration: BoxDecoration(
-                  color: selectedIndex == index ? AppColors.p300PrimaryColor : AppColors.n20FillBodyInSmallCardColor,
+                  color: selectedIndex == index ? AppColors.primaryColor : AppColors.n20FillBodyInSmallCardColor,
                   borderRadius: BorderRadius.circular(30),
                 ),
                 child: TextButton(
@@ -393,7 +393,7 @@ class _FilterTypeState extends State<FilterType> {
                     category,
                     style: TextStyles.textStyleRegular.copyWith(
                       fontSize: 16.sp,
-                      color: selectedIndex == index ? AppColors.background : AppColors.n100Color,
+                      color: selectedIndex == index ? AppColors.background : AppColors.n100Gray,
                     ),
                   ),
                 ),

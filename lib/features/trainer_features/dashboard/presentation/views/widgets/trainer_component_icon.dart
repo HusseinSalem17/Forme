@@ -35,7 +35,7 @@ GestureDetector trainerComponentIcon(
               title,
               textAlign: TextAlign.center,
               style: TextStyles.textStyleRegular.copyWith(
-                  fontSize: 12.sp, color: AppColors.n900PrimaryTextColor),
+                  fontSize: 12.sp, color: AppColors.n900Black),
             )
           ],
         ),

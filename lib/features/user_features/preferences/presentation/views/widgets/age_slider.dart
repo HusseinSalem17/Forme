@@ -72,23 +72,23 @@ class _AgeSliderState extends State<AgeSlider> {
                   _scrollIndex == index
                       ? TextStyles.textStyleRegular.copyWith(
                           fontSize: 56.sp,
-                          color: AppColors.p300PrimaryColor,
+                          color: AppColors.primaryColor,
                           fontWeight: FontWeight.w600)
                       : _scrollIndex == index + 1 || _scrollIndex == index - 1
                           ? TextStyles.textStyleRegular.copyWith(
                               fontSize: 48.sp,
-                              color: AppColors.n900PrimaryTextColor,
+                              color: AppColors.n900Black,
                             )
                           : _scrollIndex == index + 2 ||
                                   _scrollIndex == index - 2
                               ? TextStyles.textStyleRegular.copyWith(
                                   fontSize: 40.sp,
-                                  color: AppColors.n900PrimaryTextColor
+                                  color: AppColors.n900Black
                                       .withOpacity(0.4),
                                 )
                               : TextStyles.textStyleRegular.copyWith(
                                   fontSize: 32.sp,
-                                  color: AppColors.n900PrimaryTextColor
+                                  color: AppColors.n900Black
                                       .withOpacity(0.1),
                                 ),
                 );
@@ -102,7 +102,7 @@ class _AgeSliderState extends State<AgeSlider> {
               width: 120.w,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(5.r),
-                  color: AppColors.p300PrimaryColor),
+                  color: AppColors.primaryColor),
             ),
           ),
           Positioned(
@@ -112,7 +112,7 @@ class _AgeSliderState extends State<AgeSlider> {
               width: 120.w,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(5.r),
-                  color: AppColors.p300PrimaryColor),
+                  color: AppColors.primaryColor),
             ),
           ),
         ],

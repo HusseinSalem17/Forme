@@ -37,11 +37,11 @@ class _ReviewsRadioState extends State<ReviewsRadio> {
                   ),
                 ),
                 SizedBox(width: 16.w),
-                Text('4.5 and above', style: TextStyles.textStyleRegular.copyWith(color: AppColors.n900PrimaryTextColor)),
+                Text('4.5 and above', style: TextStyles.textStyleRegular.copyWith(color: AppColors.n900Black)),
               ],
             ),
             Radio(
-              activeColor: AppColors.p300PrimaryColor,
+              activeColor: AppColors.primaryColor,
               value: 5,
               groupValue: reviews,
               onChanged: (value) {
@@ -73,11 +73,11 @@ class _ReviewsRadioState extends State<ReviewsRadio> {
                   ),
                 ),
                 SizedBox(width: 16.w),
-                Text('4 - 4.5', style: TextStyles.textStyleRegular.copyWith(color: AppColors.n900PrimaryTextColor)),
+                Text('4 - 4.5', style: TextStyles.textStyleRegular.copyWith(color: AppColors.n900Black)),
               ],
             ),
             Radio(
-              activeColor: AppColors.p300PrimaryColor,
+              activeColor: AppColors.primaryColor,
               value: 4,
               groupValue: reviews,
               onChanged: (value) {
@@ -108,11 +108,11 @@ class _ReviewsRadioState extends State<ReviewsRadio> {
                   ),
                 ),
                 SizedBox(width: 16.w),
-                Text('3.5 - 4', style: TextStyles.textStyleRegular.copyWith(color: AppColors.n900PrimaryTextColor)),
+                Text('3.5 - 4', style: TextStyles.textStyleRegular.copyWith(color: AppColors.n900Black)),
               ],
             ),
             Radio(
-              activeColor: AppColors.p300PrimaryColor,
+              activeColor: AppColors.primaryColor,
               value: 3,
               groupValue: reviews,
               onChanged: (value) {
@@ -143,11 +143,11 @@ class _ReviewsRadioState extends State<ReviewsRadio> {
                   ),
                 ),
                 SizedBox(width: 16.w),
-                Text('3 - 3.5', style: TextStyles.textStyleRegular.copyWith(color: AppColors.n900PrimaryTextColor)),
+                Text('3 - 3.5', style: TextStyles.textStyleRegular.copyWith(color: AppColors.n900Black)),
               ],
             ),
             Radio(
-              activeColor: AppColors.p300PrimaryColor,
+              activeColor: AppColors.primaryColor,
               value: 2,
               groupValue: reviews,
               onChanged: (value) {
@@ -178,11 +178,11 @@ class _ReviewsRadioState extends State<ReviewsRadio> {
                   ),
                 ),
                 SizedBox(width: 16.w),
-                Text('2 - 2.5', style: TextStyles.textStyleRegular.copyWith(color: AppColors.n900PrimaryTextColor)),
+                Text('2 - 2.5', style: TextStyles.textStyleRegular.copyWith(color: AppColors.n900Black)),
               ],
             ),
             Radio(
-              activeColor: AppColors.p300PrimaryColor,
+              activeColor: AppColors.primaryColor,
               value: 1,
               groupValue: reviews,
               onChanged: (value) {

@@ -49,7 +49,7 @@ class SettingsScreen extends StatelessWidget {
                 }
               },
                   index != 3
-                      ? AppColors.n900PrimaryTextColor
+                      ? AppColors.n900Black
                       : AppColors.d300Danger);
             })),
           ),

@@ -135,7 +135,7 @@ class _CountryCodePickerState extends State<CustomPhoneField> {
                   child: TextFormField(
                     enabled: widget.enabled,
                     style: TextStyles.textStyleRegular.copyWith(
-                      color: AppColors.n900PrimaryTextColor,
+                      color: AppColors.n900Black,
                       fontSize: 14.sp,
                     ),
                     controller: _phoneNumberTextFieldController,

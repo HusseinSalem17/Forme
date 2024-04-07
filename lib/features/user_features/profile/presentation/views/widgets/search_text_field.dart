@@ -14,9 +14,9 @@ class SearchTextField extends StatelessWidget {
     return SizedBox(
       width: double.infinity,
       child: TextFormField(
-        cursorColor: AppColors.p300PrimaryColor,
+        cursorColor: AppColors.primaryColor,
         style: TextStyles.textStyleRegular
-            .copyWith(color: AppColors.n900PrimaryTextColor, fontSize: 14.sp),
+            .copyWith(color: AppColors.n900Black, fontSize: 14.sp),
         keyboardType: TextInputType.text,
         decoration: InputDecoration(
             filled: true,
@@ -40,7 +40,7 @@ class SearchTextField extends StatelessWidget {
             focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(4.dg),
               borderSide: const BorderSide(
-                color: AppColors.p300PrimaryColor,
+                color: AppColors.primaryColor,
               ),
             ),
             errorMaxLines: 1,

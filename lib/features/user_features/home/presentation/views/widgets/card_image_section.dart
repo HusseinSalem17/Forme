@@ -38,7 +38,7 @@ class CardImageSection extends StatelessWidget {
               backgroundColor: Colors.white,
               child: Icon(
                 Icons.favorite_border,
-                color: AppColors.p300PrimaryColor,
+                color: AppColors.primaryColor,
                 size: 15,
               ),
             ),

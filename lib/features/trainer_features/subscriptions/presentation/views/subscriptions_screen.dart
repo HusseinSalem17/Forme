@@ -36,7 +36,7 @@ class SubscriptionsScreen extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      SvgPicture.asset('assets/image/Icon/hash.svg', color: AppColors.n900PrimaryTextColor),
+                      SvgPicture.asset('assets/image/Icon/hash.svg', color: AppColors.n900Black),
                       SizedBox(
                         width: 16.w,
                       ),
@@ -47,7 +47,7 @@ class SubscriptionsScreen extends StatelessWidget {
                           children: <TextSpan>[
                             TextSpan(
                               text: textId,
-                              style: TextStyles.textStyleSemiBold.copyWith(color: AppColors.p300PrimaryColor),
+                              style: TextStyles.textStyleSemiBold.copyWith(color: AppColors.primaryColor),
                             ),
                           ],
                         ),
@@ -75,7 +75,7 @@ class SubscriptionsScreen extends StatelessWidget {
                           dismissDirection: DismissDirection.up,
                           behavior: SnackBarBehavior.floating,
                           showCloseIcon: true,
-                          closeIconColor: AppColors.n100Color,
+                          closeIconColor: AppColors.n100Gray,
                           backgroundColor: AppColors.p75PrimaryColor,
                         ),
                       );

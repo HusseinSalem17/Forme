@@ -45,7 +45,7 @@ class PlansListViewState extends State<PlansListView> {
                       ],
                       border: Border.all(
                         color: selectedIndex == index
-                            ? AppColors.p300PrimaryColor
+                            ? AppColors.primaryColor
                             : Colors.transparent,
                         width: 2,
                       ),
@@ -62,7 +62,7 @@ class PlansListViewState extends State<PlansListView> {
                             'Plan ${index + 1}',
                             style: TextStyles.textStyleRegular.copyWith(
                               color: selectedIndex == index
-                                  ? AppColors.p300PrimaryColor
+                                  ? AppColors.primaryColor
                                   : AppColors.n200BodyContentColor,
                               fontSize: 12,
                             ),
@@ -73,7 +73,7 @@ class PlansListViewState extends State<PlansListView> {
                           Text(
                             '1 Month - 20\$',
                             style: TextStyles.textStyleRegular.copyWith(
-                              color: AppColors.neutralsN9,
+                              color: AppColors.n900Black,
                             ),
                           ),
                         ],
@@ -84,7 +84,7 @@ class PlansListViewState extends State<PlansListView> {
                     height: 58.h,
                     width: 21.w,
                     decoration: const BoxDecoration(
-                      color: AppColors.p300PrimaryColor,
+                      color: AppColors.primaryColor,
                       borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(8),
                         bottomLeft: Radius.circular(8),

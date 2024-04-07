@@ -75,7 +75,7 @@ class _TraineeProfileScreenState extends State<TraineeProfileScreen> {
               Text(
                 "Hussein Salem",
                 style: TextStyles.textStyleBold.copyWith(
-                    fontSize: 18.sp, color: AppColors.n900PrimaryTextColor),
+                    fontSize: 18.sp, color: AppColors.n900Black),
               ),
               const Spacer(),
               IconButton(
@@ -128,7 +128,7 @@ class _TraineeProfileScreenState extends State<TraineeProfileScreen> {
                   },
                 ),
                 SizedBox(height: 16.0.h),
-                Center(child: Text('husseinsalem910@gmail.com', style: TextStyles.textStyleSemiBold.copyWith(fontSize: 14.sp, color: AppColors.n900PrimaryTextColor))),
+                Center(child: Text('husseinsalem910@gmail.com', style: TextStyles.textStyleSemiBold.copyWith(fontSize: 14.sp, color: AppColors.n900Black))),
                 SizedBox(height: 32.0.h),
                 CustomTextField(
                   controller: _nameController,
@@ -167,7 +167,7 @@ class _TraineeProfileScreenState extends State<TraineeProfileScreen> {
                     SizedBox(width: 8.h),
                     Container(
                       decoration: BoxDecoration(
-                        color: AppColors.p300PrimaryColor,
+                        color: AppColors.primaryColor,
                         borderRadius: BorderRadius.circular(4.dg),
                       ),
                       padding: EdgeInsets.all(10.h),
@@ -200,7 +200,7 @@ class _TraineeProfileScreenState extends State<TraineeProfileScreen> {
                     SizedBox(width: 8.h),
                     Container(
                       decoration: BoxDecoration(
-                        color: AppColors.p300PrimaryColor,
+                        color: AppColors.primaryColor,
                         borderRadius: BorderRadius.circular(4.dg),
                       ),
                       padding: EdgeInsets.all(10.h),

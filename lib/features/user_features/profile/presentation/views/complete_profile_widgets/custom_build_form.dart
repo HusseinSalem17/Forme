@@ -44,7 +44,7 @@ class CustomBuildForm extends StatelessWidget {
                       Text(
                         '(optional)',
                         style: TextStyles.textStyleRegular.copyWith(
-                          color: AppColors.n100Color,
+                          color: AppColors.n100Gray,
                           fontSize: 12.sp,
                         ),
                       )
@@ -65,7 +65,7 @@ class CustomBuildForm extends StatelessWidget {
                         TextSpan(
                           text: subTitle,
                           style: TextStyles.textStyleSemiBold.copyWith(
-                            color: AppColors.n100Color,
+                            color: AppColors.n100Gray,
                             fontSize: 12.sp,
                           ),
                         ),

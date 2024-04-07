@@ -43,7 +43,7 @@ class WarningNotification extends StatelessWidget {
                 onPressed: () {},
                 icon: const Icon(
                   FontAwesomeIcons.chevronRight,
-                  color: AppColors.n900PrimaryTextColor,
+                  color: AppColors.n900Black,
                   size: 18,
                 ))
           ],

@@ -19,7 +19,7 @@ class TextArea extends StatelessWidget {
       child: Padding(
         padding: EdgeInsets.all(16.h),
         child: TextField(
-          cursorColor: AppColors.p300PrimaryColor,
+          cursorColor: AppColors.primaryColor,
           keyboardType: TextInputType.multiline,
           maxLines: 6,
           decoration: InputDecoration(

@@ -5,7 +5,6 @@ import 'package:forme_app/core/utils/app_colors.dart';
 
 class DotIndicator extends StatelessWidget {
   final int page;
-  //final bool isActive;
   const DotIndicator({super.key, required this.page});
 
   @override
@@ -18,7 +17,7 @@ class DotIndicator extends StatelessWidget {
         dotsCount: 3,
         decorator: DotsDecorator(
           color: AppColors.n50dropShadowColor,
-          activeColor: AppColors.p300PrimaryColor,
+          activeColor: AppColors.primaryColor,
           size: const Size.square(12.0),
           activeSize: const Size(36.0, 12.0),
           activeShape: RoundedRectangleBorder(

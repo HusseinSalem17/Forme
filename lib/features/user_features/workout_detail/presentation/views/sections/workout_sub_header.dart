@@ -20,7 +20,7 @@ Column workoutSubHeader(){
       child: Text(
         'Pulse Fitness Center',
         style: TextStyles.textStyleMedium.copyWith(
-            fontSize: 16.sp, color: AppColors.n900PrimaryTextColor),
+            fontSize: 16.sp, color: AppColors.n900Black),
       ),
     ),
     SizedBox(

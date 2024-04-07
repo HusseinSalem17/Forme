@@ -17,7 +17,7 @@ class WorkoutTab extends StatelessWidget {
           Text(
             'Lessons',
             style: TextStyles.textStyleBold
-                .copyWith(fontSize: 14.sp, color: AppColors.n900PrimaryTextColor),
+                .copyWith(fontSize: 14.sp, color: AppColors.n900Black),
           ),
           Expanded(
             child: ListView.builder(

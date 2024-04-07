@@ -97,7 +97,7 @@ class SearchWorkoutTabCard extends StatelessWidget {
                       child: Text(
                         model.trainerName,
                         style: TextStyles.cardTextStyle.copyWith(
-                          color: AppColors.n100Color,
+                          color: AppColors.n100Gray,
                           fontSize: 11,
                         ),
                       ),

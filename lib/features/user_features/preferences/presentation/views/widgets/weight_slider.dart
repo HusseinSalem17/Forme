@@ -26,20 +26,20 @@ class _WeightSliderState extends State<WeightSlider> {
           children: [
             Text(_weightValue.toString(),
                 style: TextStyles.textStyleMedium.copyWith(
-                    fontSize: 88.sp, color: AppColors.p300PrimaryColor)),
+                    fontSize: 88.sp, color: AppColors.primaryColor)),
             Padding(
               padding: EdgeInsets.only(bottom: 22.h),
               child: Text('kg',
                   textAlign: TextAlign.end,
                   style: TextStyles.textStyleMedium.copyWith(
-                      fontSize: 14.sp, color: AppColors.p300PrimaryColor)),
+                      fontSize: 14.sp, color: AppColors.primaryColor)),
             ),
           ],
         ),
         WheelSlider(
           totalCount: 500,
           initValue: 65,
-          lineColor: AppColors.p300PrimaryColor,
+          lineColor: AppColors.primaryColor,
           onValueChanged: (val) {
             setState(() {
               _weightValue = val;

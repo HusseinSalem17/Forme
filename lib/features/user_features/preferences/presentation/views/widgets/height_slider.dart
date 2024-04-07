@@ -62,22 +62,22 @@ class _HeightSliderState extends State<HeightSlider> {
                 _scrollIndex == index
                     ? TextStyles.textStyleRegular.copyWith(
                         fontSize: 50.sp,
-                        color: AppColors.p300PrimaryColor,
+                        color: AppColors.primaryColor,
                         fontWeight: FontWeight.w600)
                     : _scrollIndex == index + 1 || _scrollIndex == index - 1
                         ? TextStyles.textStyleRegular.copyWith(
                             fontSize: 42.sp,
-                            color: AppColors.n900PrimaryTextColor,
+                            color: AppColors.n900Black,
                           )
                         : _scrollIndex == index + 2 || _scrollIndex == index - 2
                             ? TextStyles.textStyleRegular.copyWith(
                                 fontSize: 34.sp,
-                                color: AppColors.n900PrimaryTextColor
+                                color: AppColors.n900Black
                                     .withOpacity(0.4),
                               )
                             : TextStyles.textStyleRegular.copyWith(
                                 fontSize: 26.sp,
-                                color: AppColors.n900PrimaryTextColor
+                                color: AppColors.n900Black
                                     .withOpacity(0.15),
                               ));
           }),
@@ -89,7 +89,7 @@ class _HeightSliderState extends State<HeightSlider> {
             width: 120.w,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(5.r),
-                color: AppColors.p300PrimaryColor),
+                color: AppColors.primaryColor),
           ),
         ),
         Positioned(
@@ -99,7 +99,7 @@ class _HeightSliderState extends State<HeightSlider> {
             width: 120.w,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(5.r),
-                color: AppColors.p300PrimaryColor),
+                color: AppColors.primaryColor),
           ),
         ),
         Positioned(
@@ -107,7 +107,7 @@ class _HeightSliderState extends State<HeightSlider> {
             left: 102.w,
             child: Text('cm',
                 style: TextStyles.textStyleMedium
-                    .copyWith(color: AppColors.p300PrimaryColor,fontSize:12.sp))),
+                    .copyWith(color: AppColors.primaryColor,fontSize:12.sp))),
       ]),
     );
   }

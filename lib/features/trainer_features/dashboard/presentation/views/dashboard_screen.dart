@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:forme_app/core/transitions/page_slide.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
-import 'package:forme_app/core/utils/text_styles_20231128011153.dart';
 import 'package:forme_app/features/trainer_features/Revenue/presentation/views/revenue_screen.dart';
 import 'package:forme_app/features/trainer_features/Transformations/presentation/view/Transformations_screen.dart';
 import 'package:forme_app/features/trainer_features/add_program/presentation/views/add_program_screen.dart';
@@ -11,6 +10,8 @@ import 'package:forme_app/features/trainer_features/add_workout/presentation/vie
 import 'package:forme_app/features/trainer_features/dashboard/presentation/views/widgets/data_container.dart';
 import 'package:forme_app/features/trainer_features/dashboard/presentation/views/widgets/trainer_card.dart';
 import 'package:forme_app/features/trainer_features/dashboard/presentation/views/widgets/trainer_component_icon.dart';
+
+import '../../../../../core/utils/text_styles.dart';
 
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({super.key});
@@ -64,8 +65,8 @@ class DashboardScreen extends StatelessWidget {
                     width: 8.w,
                   ),
                   Text('Hi, Ahmed Ramy',
-                      style: TextStyles.textStyleRegular16
-                          .copyWith(color: AppColors.n900PrimaryTextColor)),
+                      style: TextStyles.textStyleRegular
+                          .copyWith(color: AppColors.n900Black)),
                   const Spacer(),
                   SvgPicture.asset('assets/image/Icon/alarm.svg')
                 ],
@@ -137,16 +138,16 @@ class DashboardScreen extends StatelessWidget {
                 child: Row(
                   children: [
                     Text('Upcoming Sessions',
-                        style: TextStyles.textStyleRegular16
-                            .copyWith(color: AppColors.n900PrimaryTextColor)),
+                        style: TextStyles.textStyleRegular
+                            .copyWith(color: AppColors.n900Black)),
                     const Spacer(),
                     GestureDetector(
                       child: Row(
                         children: [
                           Text(
                             'See All',
-                            style: TextStyles.textStyleRegular14.copyWith(
-                                color: AppColors.p300PrimaryColor, height: 2),
+                            style: TextStyles.textStyleRegular.copyWith(
+                                color: AppColors.primaryColor, height: 2),
                           ),
                           SvgPicture.asset('assets/image/profile/arrow.svg'),
                         ],

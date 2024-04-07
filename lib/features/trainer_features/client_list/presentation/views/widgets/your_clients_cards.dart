@@ -44,7 +44,7 @@ class YourClientsCard extends StatelessWidget {
                   children: [
                     Text(
                       model.clientName,
-                      style: TextStyles.textStyleRegular.copyWith(fontSize: 14.sp, color: AppColors.n900PrimaryTextColor),
+                      style: TextStyles.textStyleRegular.copyWith(fontSize: 14.sp, color: AppColors.n900Black),
                     ),
                     Row(
                       children: [
@@ -82,7 +82,7 @@ class YourClientsCard extends StatelessWidget {
                 PopupMenuButton(
                   icon: const Icon(
                     Icons.more_vert,
-                    color: AppColors.n100Color,
+                    color: AppColors.n100Gray,
                   ),
                   color: AppColors.background,
                   surfaceTintColor: Colors.transparent,

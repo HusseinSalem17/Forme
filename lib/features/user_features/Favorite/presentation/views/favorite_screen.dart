@@ -25,7 +25,7 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
         appBar: AppBar(
           centerTitle: true,
           title: Text("Favorite", style: TextStyles.textStyleBold.copyWith(
-                  fontSize: 18.sp, color: AppColors.n900PrimaryTextColor),),
+                  fontSize: 18.sp, color: AppColors.n900Black),),
           bottom: PreferredSize(
             preferredSize: const Size.fromHeight(40),
             child: Container(

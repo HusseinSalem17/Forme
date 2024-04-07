@@ -47,7 +47,7 @@ class EmptyContentScreen extends StatelessWidget {
                   ),
                   Text(
                     'Sorry, no content here!',
-                    style: TextStyles.textStyleSemiBold.copyWith(color: AppColors.n900PrimaryTextColor, fontWeight: FontWeight.w400, fontSize: 16.sp),
+                    style: TextStyles.textStyleSemiBold.copyWith(color: AppColors.n900Black, fontWeight: FontWeight.w400, fontSize: 16.sp),
                   ),
                 ],
               ),

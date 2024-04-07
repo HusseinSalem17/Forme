@@ -56,7 +56,7 @@ class SuccessStory extends StatelessWidget {
                 child: Text('Details',
                     style: TextStyles.textStyleMedium.copyWith(
                         fontSize: 14.sp,
-                        color: AppColors.n900PrimaryTextColor)),
+                        color: AppColors.n900Black)),
               ),
             )),
         SliverToBoxAdapter(

@@ -27,7 +27,7 @@ Row clubTextList(List<String> title, List<String> values) {
               return Text(
                 values[index],
                 style: TextStyles.textStyleRegular.copyWith(height: 2,
-                    fontSize: 12.sp, color: AppColors.n900PrimaryTextColor),
+                    fontSize: 12.sp, color: AppColors.n900Black),
               );
             },
           ),

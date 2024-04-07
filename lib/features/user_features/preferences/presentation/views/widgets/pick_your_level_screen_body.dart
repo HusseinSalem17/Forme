@@ -40,7 +40,7 @@ class _PickYourLevelScreenBodyState extends State<PickYourLevelScreenBody> {
           Text(
             'This helps us create your personalized plan',
             style: TextStyles.textStyleRegular.copyWith(
-              color: AppColors.n70HintColor,
+              color: AppColors.n70Gray,
               fontSize:14.sp
             ),
           ),

@@ -53,7 +53,7 @@ class _ClientListScreenState extends State<ClientListScreen> with SingleTickerPr
                     indicatorColor: Colors.transparent,
                     dividerColor: Colors.transparent,
                     tabAlignment: TabAlignment.fill,
-                    labelColor: AppColors.n900PrimaryTextColor,
+                    labelColor: AppColors.n900Black,
                     unselectedLabelColor: AppColors.n400color,
                     labelStyle: TextStyles.textStyleRegular.copyWith(
                       fontSize: 14.sp,

@@ -26,7 +26,7 @@ class ImageSelectionBottomSheet extends StatelessWidget {
           Text(
             'Choose Profile Photo',
             style: TextStyles.textStyleBold.copyWith(
-              color: AppColors.n900PrimaryTextColor,
+              color: AppColors.n900Black,
               fontSize: 16.sp
             ),
           ),
@@ -37,7 +37,7 @@ class ImageSelectionBottomSheet extends StatelessWidget {
               Expanded(
                 child: CircleAvatar(
                   radius: 30.r,
-                  backgroundColor: AppColors.p300PrimaryColor,
+                  backgroundColor: AppColors.primaryColor,
                   child: IconButton(
                     onPressed: () {
                       takePhoto(context, ImageSource.camera, onImageSelected);
@@ -57,7 +57,7 @@ class ImageSelectionBottomSheet extends StatelessWidget {
               Expanded(
                 child: CircleAvatar(
                   radius: 30.r,
-                  backgroundColor: AppColors.p300PrimaryColor,
+                  backgroundColor: AppColors.primaryColor,
                   child: IconButton(
                     onPressed: () {
                       takePhoto(context, ImageSource.gallery, onImageSelected);

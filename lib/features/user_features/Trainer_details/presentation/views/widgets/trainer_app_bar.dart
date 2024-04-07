@@ -42,7 +42,7 @@ class TrainerDetailsAppBar extends StatelessWidget {
                       Text(
                         'Ahmed Ramy',
                         style: TextStyles.cardTextStyle.copyWith(
-                            color: AppColors.n900PrimaryTextColor,
+                            color: AppColors.n900Black,
                             fontSize: 16,
                             fontWeight: FontWeight.w600),
                       ),
@@ -53,7 +53,7 @@ class TrainerDetailsAppBar extends StatelessWidget {
                         children: [
                           SvgPicture.asset(
                             'assets/image/Icon/pin-map.svg',
-                            color: AppColors.p300PrimaryColor,
+                            color: AppColors.primaryColor,
                           ),
                           const SizedBox(
                             width: 3,

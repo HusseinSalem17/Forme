@@ -51,7 +51,7 @@ class AvailabilityScreen extends StatelessWidget {
                           children: [
                             SvgPicture.asset(
                               'assets/image/Icon/settings.svg',
-                              color: AppColors.n900PrimaryTextColor,
+                              color: AppColors.n900Black,
                             ),
                             SizedBox(
                               width: 8.w,

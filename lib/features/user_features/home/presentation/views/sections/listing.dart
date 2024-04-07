@@ -31,7 +31,7 @@ class Listing extends StatelessWidget {
                 style: TextStyles.textStyleBold.copyWith(
                   fontWeight: FontWeight.w600,
                   fontSize:14.sp,
-                  color: AppColors.neutralsN9,
+                  color: AppColors.n900Black,
                 ),
               ),
               GestureDetector(

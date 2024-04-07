@@ -48,7 +48,7 @@ class EReceiptScreen extends StatelessWidget {
                 textAlign: TextAlign.center,
                 'E-Receipt',
                 style: TextStyles.textStyleBold.copyWith(
-                    fontSize: 18.sp, color: AppColors.n900PrimaryTextColor)),
+                    fontSize: 18.sp, color: AppColors.n900Black)),
             const Spacer(),
             SizedBox(
               width: 32.w,

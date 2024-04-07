@@ -68,7 +68,7 @@ class CustomTable{
                 firstText,
                 style: TextStyles.textStyleRegular.copyWith(
                   fontSize: 14,
-                  color: AppColors.n900PrimaryTextColor,
+                  color: AppColors.n900Black,
                 ),
               ),
               const SizedBox(

@@ -49,7 +49,7 @@ class SearchTrainerTabCard extends StatelessWidget {
               children: [
                 Text(
                   model.name,
-                  style: TextStyles.textStyleRegular.copyWith(fontSize: 14.sp, color: AppColors.n900PrimaryTextColor),
+                  style: TextStyles.textStyleRegular.copyWith(fontSize: 14.sp, color: AppColors.n900Black),
                 ),
                 Text(
                   model.category,

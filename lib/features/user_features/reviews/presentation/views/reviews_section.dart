@@ -27,14 +27,14 @@ class ReviewsSection extends StatelessWidget {
               children: [
                 Text(
                   'Reviews',
-                  style: TextStyles.textStyleBold.copyWith(fontSize: 14.sp, color: AppColors.n900PrimaryTextColor),
+                  style: TextStyles.textStyleBold.copyWith(fontSize: 14.sp, color: AppColors.n900Black),
                 ),
                 const Spacer(),
                 SvgPicture.asset('assets/image/Icon/tabler_pencil-minus.svg'),
                 GestureDetector(
                   child: Text(
                     'add review',
-                    style: TextStyles.textStyleBold.copyWith(fontSize: 11.sp, color: AppColors.p300PrimaryColor),
+                    style: TextStyles.textStyleBold.copyWith(fontSize: 11.sp, color: AppColors.primaryColor),
                   ),
                   onTap: () {
                     Navigator.of(context).push(PageSlideTransition(AddReview(

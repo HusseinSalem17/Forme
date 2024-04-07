@@ -36,7 +36,7 @@ class _TransformationsScreenState extends State<TransformationsScreen> {
               "Transformations",
               style: TextStyles.textStyleBold.copyWith(
                 fontSize: 18.sp,
-                color: AppColors.n900PrimaryTextColor,
+                color: AppColors.n900Black,
               ),
             ),
             const Spacer(),
@@ -102,7 +102,7 @@ class _TransformationsScreenState extends State<TransformationsScreen> {
                     'Sorry, on content here!',
                     style: TextStyles.textStyleRegular.copyWith(
                       fontSize: 16.sp,
-                      color: AppColors.n900PrimaryTextColor,
+                      color: AppColors.n900Black,
                     ),
                   ),
                 ],

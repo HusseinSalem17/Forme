@@ -20,7 +20,7 @@ class FitnessTrainerSection extends StatelessWidget {
           children: [
             Text(
               'Ahmed Ramy',
-              style: TextStyles.textStyleRegular.copyWith(fontSize: 14.sp, color: AppColors.n900PrimaryTextColor),
+              style: TextStyles.textStyleRegular.copyWith(fontSize: 14.sp, color: AppColors.n900Black),
             ),
             Text(
               'GYM Owner',

@@ -68,7 +68,7 @@ class _MyProfileTrainerState extends State<MyProfileTrainer> {
               Text(
                 "My Profile",
                 style: TextStyles.textStyleBold.copyWith(
-                    fontSize: 18.sp, color: AppColors.n900PrimaryTextColor),
+                    fontSize: 18.sp, color: AppColors.n900Black),
               ),
               const Spacer(),
               IconButton(

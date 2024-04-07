@@ -20,7 +20,7 @@ class WorkoutIcon extends StatelessWidget {
             decoration: BoxDecoration(borderRadius: BorderRadius.circular(20), color: AppColors.n20FillBodyInSmallCardColor),
             child: SvgPicture.asset(
               'assets/image/Icon/$icon.svg',
-              color: AppColors.p300PrimaryColor,
+              color: AppColors.primaryColor,
               fit: BoxFit.none,
             ),
           ),

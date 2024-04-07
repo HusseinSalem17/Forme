@@ -32,7 +32,7 @@ class ReviewWidget extends StatelessWidget {
               Text(
                 model.name,
                 style: TextStyles.textStyleMedium.copyWith(
-                  color: AppColors.n900PrimaryTextColor,
+                  color: AppColors.n900Black,
                   fontSize: 14.sp,
                 ),
               ),

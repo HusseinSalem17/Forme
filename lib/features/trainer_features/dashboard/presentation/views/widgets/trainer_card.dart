@@ -34,7 +34,7 @@ GestureDetector trainerCard(String icon, String title, BuildContext context, voi
             Text(
               title,
               textAlign: TextAlign.center,
-              style: TextStyles.textStyleRegular.copyWith(fontSize: 14.sp, color: AppColors.n900PrimaryTextColor),
+              style: TextStyles.textStyleRegular.copyWith(fontSize: 14.sp, color: AppColors.n900Black),
             )
           ],
         )),

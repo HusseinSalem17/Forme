@@ -31,7 +31,7 @@ class TopTrainerIcon extends StatelessWidget {
                     Text(
                       topTrainersData[index].name,
                       style: TextStyles.textStyleRegular
-                          .copyWith(fontSize: 12, color: AppColors.neutralsN9),
+                          .copyWith(fontSize: 12, color: AppColors.n900Black),
                     )
                   ],
                 ),

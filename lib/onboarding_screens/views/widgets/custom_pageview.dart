@@ -37,7 +37,7 @@ class CustomPageView extends StatelessWidget {
           image: AssetsImages.onBoardingScreen1,
           blackText: "Embrace Fitness at ",
           blackTextStyle: TextStyles.headerStyle
-              .copyWith(color: AppColors.n900PrimaryTextColor),
+              .copyWith(color: AppColors.n900Black),
           blueText: "Any Age \nand in Every Sport",
           blueTextStyle: TextStyles.headerStyle,
           description:
@@ -52,7 +52,7 @@ class CustomPageView extends StatelessWidget {
           blackTextStyle: TextStyles.headerStyle,
           blueText: "\nat Your Fingertips",
           blueTextStyle: TextStyles.headerStyle
-              .copyWith(color: AppColors.n900PrimaryTextColor),
+              .copyWith(color: AppColors.n900Black),
           description:
               'Discover skilled trainers, connect, and enroll in personalized fitness programs and courses.',
         ),
@@ -63,7 +63,7 @@ class CustomPageView extends StatelessWidget {
           image: AssetsImages.onBoardingScreen3,
           blackText: "Find Nearby",
           blackTextStyle: TextStyles.headerStyle
-              .copyWith(color: AppColors.n900PrimaryTextColor),
+              .copyWith(color: AppColors.n900Black),
           blueText: " Training Facilities, \nBook Memberships",
           blueTextStyle: TextStyles.headerStyle,
           description:

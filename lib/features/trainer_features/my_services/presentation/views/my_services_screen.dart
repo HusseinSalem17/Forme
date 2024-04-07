@@ -30,7 +30,7 @@ class MyServicesScreen extends StatelessWidget {
                 padding: EdgeInsets.only(right: 8.h),
                 child: CustomAppBarArrowButton(
                   icon: Icons.add_circle,
-                  color: AppColors.p300PrimaryColor,
+                  color: AppColors.primaryColor,
                   size: 30,
                   onTap: () {
                     Navigator.of(context).push(PageSlideTransition(const CreateSessionScreen()));

@@ -32,7 +32,7 @@ class _CancellationRadioState extends State<CancellationRadio> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Radio(
-                activeColor: AppColors.p300PrimaryColor,
+                activeColor: AppColors.primaryColor,
                 value: 1,
                 groupValue: reviews,
                 onChanged: (value) {
@@ -46,7 +46,7 @@ class _CancellationRadioState extends State<CancellationRadio> {
               ),
               Text(
                 "Financial Reason",
-                style: TextStyles.textStyleRegular.copyWith(fontSize: 14.sp, color: AppColors.n900PrimaryTextColor),
+                style: TextStyles.textStyleRegular.copyWith(fontSize: 14.sp, color: AppColors.n900Black),
               ),
             ],
           ),
@@ -63,7 +63,7 @@ class _CancellationRadioState extends State<CancellationRadio> {
           child: Row(
             children: [
               Radio(
-                activeColor: AppColors.p300PrimaryColor,
+                activeColor: AppColors.primaryColor,
                 value: 2,
                 groupValue: reviews,
                 onChanged: (value) {
@@ -77,7 +77,7 @@ class _CancellationRadioState extends State<CancellationRadio> {
               ),
               Text(
                 "Lack Of Time",
-                style: TextStyles.textStyleRegular.copyWith(fontSize: 14.sp, color: AppColors.n900PrimaryTextColor),
+                style: TextStyles.textStyleRegular.copyWith(fontSize: 14.sp, color: AppColors.n900Black),
               ),
             ],
           ),
@@ -94,7 +94,7 @@ class _CancellationRadioState extends State<CancellationRadio> {
           child: Row(
             children: [
               Radio(
-                activeColor: AppColors.p300PrimaryColor,
+                activeColor: AppColors.primaryColor,
                 value: 3,
                 groupValue: reviews,
                 onChanged: (value) {
@@ -108,7 +108,7 @@ class _CancellationRadioState extends State<CancellationRadio> {
               ),
               Text(
                 "Relocation",
-                style: TextStyles.textStyleRegular.copyWith(fontSize: 14.sp, color: AppColors.n900PrimaryTextColor),
+                style: TextStyles.textStyleRegular.copyWith(fontSize: 14.sp, color: AppColors.n900Black),
               ),
             ],
           ),
@@ -125,7 +125,7 @@ class _CancellationRadioState extends State<CancellationRadio> {
           child: Row(
             children: [
               Radio(
-                activeColor: AppColors.p300PrimaryColor,
+                activeColor: AppColors.primaryColor,
                 value: 4,
                 groupValue: reviews,
                 onChanged: (value) {
@@ -139,7 +139,7 @@ class _CancellationRadioState extends State<CancellationRadio> {
               ),
               Text(
                 "Change in Fitness Goals",
-                style: TextStyles.textStyleRegular.copyWith(fontSize: 14.sp, color: AppColors.n900PrimaryTextColor),
+                style: TextStyles.textStyleRegular.copyWith(fontSize: 14.sp, color: AppColors.n900Black),
               ),
             ],
           ),
@@ -156,7 +156,7 @@ class _CancellationRadioState extends State<CancellationRadio> {
           child: Row(
             children: [
               Radio(
-                activeColor: AppColors.p300PrimaryColor,
+                activeColor: AppColors.primaryColor,
                 value: 5,
                 groupValue: reviews,
                 onChanged: (value) {
@@ -170,7 +170,7 @@ class _CancellationRadioState extends State<CancellationRadio> {
               ),
               Text(
                 "Alternative Fitness Option",
-                style: TextStyles.textStyleRegular.copyWith(fontSize: 14.sp, color: AppColors.n900PrimaryTextColor),
+                style: TextStyles.textStyleRegular.copyWith(fontSize: 14.sp, color: AppColors.n900Black),
               ),
             ],
           ),
@@ -187,7 +187,7 @@ class _CancellationRadioState extends State<CancellationRadio> {
           child: Row(
             children: [
               Radio(
-                activeColor: AppColors.p300PrimaryColor,
+                activeColor: AppColors.primaryColor,
                 value: 6,
                 groupValue: reviews,
                 onChanged: (value) {
@@ -201,7 +201,7 @@ class _CancellationRadioState extends State<CancellationRadio> {
               ),
               Text(
                 "Other",
-                style: TextStyles.textStyleRegular.copyWith(fontSize: 14.sp, color: AppColors.n900PrimaryTextColor),
+                style: TextStyles.textStyleRegular.copyWith(fontSize: 14.sp, color: AppColors.n900Black),
               ),
             ],
           ),

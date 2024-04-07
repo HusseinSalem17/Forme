@@ -25,19 +25,19 @@ Padding clubSubHeader() {
               Text(
                 'Pulse Fitness Center',
                 style: TextStyles.textStyleMedium.copyWith(
-                    fontSize: 16.sp, color: AppColors.n900PrimaryTextColor),
+                    fontSize: 16.sp, color: AppColors.n900Black),
               ),
               Row(
                 children: [
                   SvgPicture.asset('assets/image/Icon/pin-map.svg',
-                      color: AppColors.p300PrimaryColor),
+                      color: AppColors.primaryColor),
                   SizedBox(
                     width: 6.w,
                   ),
                   Text(
                     'Port Said, EGY',
                     style: TextStyles.textStyleRegular.copyWith(
-                        fontSize: 11.sp, color: AppColors.p300PrimaryColor),
+                        fontSize: 11.sp, color: AppColors.primaryColor),
                   ),
                 ],
               ),

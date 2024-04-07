@@ -24,7 +24,7 @@ class TrainerIcon extends StatelessWidget {
         ),
         Text(
           model.number,
-          style: TextStyles.textStyleBold.copyWith(fontSize: 12.sp, color: AppColors.p300PrimaryColor),
+          style: TextStyles.textStyleBold.copyWith(fontSize: 12.sp, color: AppColors.primaryColor),
         ),
         Text(model.type, style: TextStyles.textStyleRegular.copyWith(fontSize: 9.sp))
       ],

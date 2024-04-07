@@ -13,8 +13,13 @@ import 'package:forme_app/features/user_features/profile/presentation/manager/my
 import 'package:forme_app/onboarding_screens/data/bloc/onboarding_blocs.dart';
 import 'package:flutter/services.dart';
 import 'package:forme_app/routes.dart';
+import 'package:forme_app/splash_screen.dart';
 import 'core/utils/functions/service_locator.dart';
 import 'core/utils/scroll_behavior.dart';
+
+
+import 'features/Authentication/presentation/views/new_password_screen.dart';
+
 
 void main() {
   setupServiceLocator();
@@ -63,7 +68,8 @@ class MyApp extends StatelessWidget {
           scrollBehavior: CustomScrollBehavior(),
           debugShowCheckedModeBanner: false,
           theme: Themes.customLightTheme,
-          onGenerateRoute: (settings) => generateRoute(settings, context),
+          //onGenerateRoute: (settings) => generateRoute(settings, context),
+          home:  const NewPasswordScreen(),
         ),
       ),
     );

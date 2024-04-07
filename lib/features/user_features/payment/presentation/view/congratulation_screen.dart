@@ -38,7 +38,7 @@ class CongratulationScreen extends StatelessWidget {
                       Image.asset('assets/image/congratulations.png'),
                       Text(
                         'Congratulations!',
-                        style: TextStyles.textStyleBold.copyWith(fontSize: 22.sp, color: AppColors.n900PrimaryTextColor),
+                        style: TextStyles.textStyleBold.copyWith(fontSize: 22.sp, color: AppColors.n900Black),
                       ),
                       Text(
                         textAlign: TextAlign.center,
@@ -78,7 +78,7 @@ class CongratulationScreen extends StatelessWidget {
                           onPressed: () {
                             Navigator.of(context).push(PageSlideTransition(const HomeScreen()));
                           },
-                          child: Text('Go to Home', style: TextStyles.textStyleRegular.copyWith(fontSize: 14.sp, color: AppColors.p300PrimaryColor)))
+                          child: Text('Go to Home', style: TextStyles.textStyleRegular.copyWith(fontSize: 14.sp, color: AppColors.primaryColor)))
                     ],
                   )),
             )

@@ -43,7 +43,7 @@ class _DocumentsPickerState extends State<DocumentsPicker> {
                     Text(
                       "upload ",
                       style: TextStyles.textStyleRegular.copyWith(
-                        color: AppColors.n900PrimaryTextColor,
+                        color: AppColors.n900Black,
                         fontSize: 14.sp,
                       ),
                     ),
@@ -102,12 +102,12 @@ class _DocumentsPickerState extends State<DocumentsPicker> {
       case 'pdf':
         icon = const Icon(FontAwesomeIcons.filePdf);
         containerColor = AppColors.p50PrimaryColor;
-        iconColor = AppColors.p300PrimaryColor;
+        iconColor = AppColors.primaryColor;
         break;
       case 'doc' || 'docx':
         icon = const Icon(FontAwesomeIcons.fileWord);
         containerColor = AppColors.p50PrimaryColor;
-        iconColor = AppColors.p300PrimaryColor;
+        iconColor = AppColors.primaryColor;
         break;
       case 'xls' || 'xlsx':
         icon = const Icon(FontAwesomeIcons.fileExcel);
@@ -132,7 +132,7 @@ class _DocumentsPickerState extends State<DocumentsPicker> {
       default:
         icon = const Icon(FontAwesomeIcons.file);
         containerColor = const Color(0xFFD9D9D9);
-        iconColor = AppColors.n900PrimaryTextColor;
+        iconColor = AppColors.n900Black;
         break;
     }
     return Padding(

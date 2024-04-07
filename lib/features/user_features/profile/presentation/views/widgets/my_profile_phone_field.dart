@@ -18,7 +18,7 @@ class MyProfilePhoneField extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text('Phone Number', style: TextStyles.textStyleBold.copyWith(fontSize: 14.sp, color: AppColors.n900PrimaryTextColor)),
+        Text('Phone Number', style: TextStyles.textStyleBold.copyWith(fontSize: 14.sp, color: AppColors.n900Black)),
         SizedBox(height: 10.h),
         Container(
           decoration: BoxDecoration(color: AppColors.fillColor, borderRadius: BorderRadius.circular(4.dg), border: Border.all(width: 1, color: AppColors.n40BorderColor)),
@@ -26,7 +26,7 @@ class MyProfilePhoneField extends StatelessWidget {
           child: Row(children: [
             Text(
               phone,
-              style: TextStyles.textStyleRegular.copyWith(fontSize: 14.sp, color: AppColors.n900PrimaryTextColor),
+              style: TextStyles.textStyleRegular.copyWith(fontSize: 14.sp, color: AppColors.n900Black),
             ),
             const Spacer(),
             GestureDetector(
@@ -47,7 +47,7 @@ class MyProfilePhoneField extends StatelessWidget {
                               Text(
                                 'Add Your New Number',
                                 textAlign: TextAlign.center,
-                                style: TextStyles.textStyleMedium.copyWith(fontSize: 16.sp, color: AppColors.n900PrimaryTextColor),
+                                style: TextStyles.textStyleMedium.copyWith(fontSize: 16.sp, color: AppColors.n900Black),
                               ),
                               const Divider(
                                 color: AppColors.n30StrokeColor,
@@ -64,7 +64,7 @@ class MyProfilePhoneField extends StatelessWidget {
                                   border: textFieldBorder(),
                                   enabledBorder: textFieldBorder(),
                                   focusedBorder: textFieldBorder(
-                                    color: AppColors.p300PrimaryColor,
+                                    color: AppColors.primaryColor,
                                     width: 2.0,
                                   ),
                                   errorBorder: textFieldBorder(
@@ -88,7 +88,7 @@ class MyProfilePhoneField extends StatelessWidget {
                                   CustomAppButton(
                                     title: 'Change',
                                     widthDivider: 2.2,
-                                    color: AppColors.p300PrimaryColor,
+                                    color: AppColors.primaryColor,
                                     height: 40,
                                     fontSize: 14,
                                     padding: 0,
@@ -104,7 +104,7 @@ class MyProfilePhoneField extends StatelessWidget {
               },
               child: Text(
                 'Change',
-                style: TextStyles.textStyleRegular.copyWith(fontSize: 14.sp, color: AppColors.p300PrimaryColor),
+                style: TextStyles.textStyleRegular.copyWith(fontSize: 14.sp, color: AppColors.primaryColor),
               ),
             ),
           ]),

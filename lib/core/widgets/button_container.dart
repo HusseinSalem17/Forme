@@ -9,7 +9,7 @@ class ButtonContainer extends StatelessWidget {
   final bool havePrice;
   final Color color;
   final void Function()? onTap;
-  const ButtonContainer({super.key, required this.buttonTitle, this.havePrice = false, this.onTap, this.color = AppColors.p300PrimaryColor});
+  const ButtonContainer({super.key, required this.buttonTitle, this.havePrice = false, this.onTap, this.color = AppColors.primaryColor});
 
 
   @override
@@ -42,7 +42,7 @@ class ButtonContainer extends StatelessWidget {
                     ),
                     Text(
                       '\$1500',
-                      style: TextStyles.textStyleBold.copyWith(fontSize: 14.sp, color: AppColors.p300PrimaryColor),
+                      style: TextStyles.textStyleBold.copyWith(fontSize: 14.sp, color: AppColors.primaryColor),
                     )
                   ],
                 ),

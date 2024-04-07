@@ -26,7 +26,7 @@ class AnimatedStepperLine extends StatelessWidget {
         ),
         AnimatedContainer(
           decoration: BoxDecoration(
-            color: AppColors.p300PrimaryColor,
+            color: AppColors.primaryColor,
             borderRadius: BorderRadius.circular(10),
           ),
           width: (state.page + 1) * 110.w,

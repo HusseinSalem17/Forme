@@ -16,7 +16,7 @@ class ProgramFilesScreen extends StatelessWidget {
         title: Text(
           'Program Files',
           style: TextStyles.textStyleSemiBold.copyWith(
-            color: AppColors.n900PrimaryTextColor,
+            color: AppColors.n900Black,
             fontSize: 18.sp,
           ),
         ),
@@ -49,14 +49,14 @@ class ProgramFilesScreen extends StatelessWidget {
                             TextSpan(
                               text: 'Upload program files for quick and easy access through the chat ',
                               style: TextStyles.textStyleSemiBold.copyWith(
-                                color: AppColors.n900PrimaryTextColor,
+                                color: AppColors.n900Black,
                                 fontSize: 14.sp,
                               ),
                             ),
                             TextSpan(
                               text: ' (like Training Schedule, Fitness Assessment, GoalSetting).',
                               style: TextStyles.textStyleRegular.copyWith(
-                                color: AppColors.n100Color,
+                                color: AppColors.n100Gray,
                                 fontSize: 12.sp,
                               ),
                             ),

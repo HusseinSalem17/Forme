@@ -105,7 +105,7 @@ class TrainerTabCard extends StatelessWidget {
                                                   color: AppColors.n20FillBodyInSmallCardColor,
                                                   borderRadius: BorderRadius.circular(100),
                                                   border: Border.all(
-                                                    color: AppColors.p300PrimaryColor,
+                                                    color: AppColors.primaryColor,
                                                   ),
                                                 ),
                                                 child: TextButton(
@@ -116,7 +116,7 @@ class TrainerTabCard extends StatelessWidget {
                                                     'Cancel',
                                                     style: TextStyles.textStyleSemiBold.copyWith(
                                                       fontSize: 12,
-                                                      color: AppColors.p300PrimaryColor,
+                                                      color: AppColors.primaryColor,
                                                     ),
                                                   ),
                                                 ),
@@ -158,7 +158,7 @@ class TrainerTabCard extends StatelessWidget {
                           },
                           child: const Icon(
                             Icons.favorite,
-                            color: AppColors.p300PrimaryColor,
+                            color: AppColors.primaryColor,
                             size: 20,
                           ),
                         )
@@ -175,7 +175,7 @@ class TrainerTabCard extends StatelessWidget {
                   Text(
                     'Trainer',
                     style: TextStyles.cardTextStyle.copyWith(
-                      color: AppColors.n100Color,
+                      color: AppColors.n100Gray,
                       fontSize: 11,
                     ),
                   ),
@@ -193,7 +193,7 @@ class TrainerTabCard extends StatelessWidget {
                       ),
                       Text(
                         '${model.rating}',
-                        style: TextStyles.textStyleRegular.copyWith(fontSize: 11, color: AppColors.n900PrimaryTextColor),
+                        style: TextStyles.textStyleRegular.copyWith(fontSize: 11, color: AppColors.n900Black),
                       ),
                       Text(
                         ' | ',

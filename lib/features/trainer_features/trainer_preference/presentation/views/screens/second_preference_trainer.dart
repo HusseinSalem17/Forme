@@ -48,7 +48,7 @@ class _SecondPreferenceTrainerState extends State<SecondPreferenceTrainer> {
                           'please upload your ID for verification',
                           textAlign: TextAlign.start,
                           style: TextStyles.textStyleSemiBold.copyWith(
-                            color: AppColors.n900PrimaryTextColor,
+                            color: AppColors.n900Black,
                             fontSize: 13.sp,
                           ),
                         ),
@@ -70,14 +70,14 @@ class _SecondPreferenceTrainerState extends State<SecondPreferenceTrainer> {
                       TextSpan(
                         text: 'Upload Documents For Verification ',
                         style: TextStyles.textStyleSemiBold.copyWith(
-                          color: AppColors.n900PrimaryTextColor,
+                          color: AppColors.n900Black,
                           fontSize: 14.sp,
                         ),
                       ),
                       TextSpan(
                         text: '(like Experience Certificate or course)',
                         style: TextStyles.textStyleRegular.copyWith(
-                          color: AppColors.n100Color,
+                          color: AppColors.n100Gray,
                           fontSize: 12.sp,
                         ),
                       ),

@@ -11,6 +11,7 @@ class CardReviewSection extends StatelessWidget {
     this.rating = 4.9,
     this.review = 17,
   });
+
   String type;
   String state;
   double rating;
@@ -35,6 +36,7 @@ class CardReviewSection extends StatelessWidget {
             ),
             Text(
               '$rating ($review Reviews)',
+              overflow: TextOverflow.clip,
               style: TextStyles.cardTextStyle.copyWith(
                 color: AppColors.n200BodyContentColor,
                 fontSize: 9,

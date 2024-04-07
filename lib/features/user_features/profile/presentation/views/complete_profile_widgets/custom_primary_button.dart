@@ -23,7 +23,7 @@ class CustomPrimaryButton extends StatelessWidget {
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
           elevation: 0,
-          backgroundColor: AppColors.p300PrimaryColor,
+          backgroundColor: AppColors.primaryColor,
           shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.all(
               Radius.circular(40),
@@ -37,7 +37,7 @@ class CustomPrimaryButton extends StatelessWidget {
             return state is CompleteProfileLoading
                 ? const CircularProgressIndicator(
                     valueColor: AlwaysStoppedAnimation<Color>(
-                      AppColors.p300PrimaryColor,
+                      AppColors.primaryColor,
                     ),
                   )
                 : Text(

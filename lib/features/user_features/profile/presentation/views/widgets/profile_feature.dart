@@ -15,7 +15,7 @@ GestureDetector profileFeature(String icon, String title, void Function()? onTap
               padding: EdgeInsets.only(right: 16.w),
               child: SvgPicture.asset(
                 'assets/image/profile/$icon.svg',
-                color: textColor != AppColors.d300Danger?AppColors.p300PrimaryColor:AppColors.d300Danger,
+                color: textColor != AppColors.d300Danger?AppColors.primaryColor:AppColors.d300Danger,
               ),
             ),
             Text(
