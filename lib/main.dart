@@ -3,6 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:forme_app/core/utils/app_theme.dart';
 import 'package:forme_app/features/trainer_features/Trainer_Profile/presentation/manager/my_profile_cubit/cubit/my_profile_cubit.dart';
+import 'package:forme_app/features/trainer_features/Transformations/presentation/view/Transformations_screen.dart';
+import 'package:forme_app/features/trainer_features/add_program/presentation/views/add_program_screen.dart';
 import 'package:forme_app/features/trainer_features/dashboard/presentation/views/manager/bloc/trainer_home_bloc.dart';
 import 'package:forme_app/features/trainer_features/trainee_profile/presentation/manager/trainee_profile_cubit.dart';
 import 'package:forme_app/features/user_features/home/presentation/manager/bloc/home_bloc.dart';
@@ -69,7 +71,7 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           theme: Themes.customLightTheme,
           //onGenerateRoute: (settings) => generateRoute(settings, context),
-          home:  const NewPasswordScreen(),
+          home:  const AddProgramScreen(),
         ),
       ),
     );
