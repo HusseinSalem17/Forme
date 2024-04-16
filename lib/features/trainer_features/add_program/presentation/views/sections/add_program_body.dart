@@ -10,10 +10,9 @@ import 'package:forme_app/core/widgets/text_area.dart';
 import 'package:forme_app/features/trainer_features/add_program/presentation/views/sections/payment_plan_section.dart';
 import 'package:forme_app/features/trainer_features/add_program/presentation/views/sections/select_gender_section.dart';
 import 'package:forme_app/features/trainer_features/add_program/presentation/views/sections/target_age_section.dart';
-import 'package:forme_app/features/user_features/profile/presentation/views/complete_profile_widgets/image_selection_bottom_sheet.dart';
+import 'package:forme_app/features/trainee_features/profile/presentation/views/complete_profile_widgets/image_selection_bottom_sheet.dart';
 import 'package:image_picker/image_picker.dart';
 
-import '../../../../../../core/utils/styles.dart';
 
 class AddProgramBody extends StatefulWidget {
   final XFile? imageFile;
@@ -35,7 +34,7 @@ class _AddProgramBodyState extends State<AddProgramBody> {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          color: AppColors.n20FillBodyInSmallCardColor,
+          color: AppColors.n20Gray,
           borderRadius: BorderRadius.circular(14.dg)),
       child: Padding(
         padding: EdgeInsets.all(10.h),
@@ -66,7 +65,7 @@ class _AddProgramBodyState extends State<AddProgramBody> {
                 height: 150,
                 decoration: BoxDecoration(
                     border:
-                        Border.all(color: AppColors.n40BorderColor, width: 1.h),
+                        Border.all(color: AppColors.n40Gray, width: 1.h),
                     borderRadius: BorderRadius.circular(8.dg)),
                 padding: EdgeInsets.all(38.h),
                 child: SvgPicture.asset('assets/image/Icon/addImage.svg')),
@@ -140,12 +139,12 @@ class _AddProgramBodyState extends State<AddProgramBody> {
           selectGenderSection(),
           const Divider(
             thickness: 1,
-            color: AppColors.n40BorderColor,
+            color: AppColors.n40Gray,
           ),
           const TargetAgeSection(),
           const Divider(
             thickness: 1,
-            color: AppColors.n40BorderColor,
+            color: AppColors.n40Gray,
           ),
           Row(
             children: [

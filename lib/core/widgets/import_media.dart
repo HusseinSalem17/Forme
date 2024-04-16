@@ -48,7 +48,7 @@ class _ImportMediaState extends State<ImportMedia> {
               height: MediaQuery.sizeOf(context).height / 5,
               decoration: BoxDecoration(
                   border:
-                      Border.all(color: AppColors.n40BorderColor, width: 1.h),
+                      Border.all(color: AppColors.n40Gray, width: 1.h),
                   borderRadius: BorderRadius.circular(8.dg)),
               child: _filePath != null
                   ? _filePath!.endsWith('.mp4')

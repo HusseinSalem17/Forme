@@ -102,13 +102,13 @@ class _ExpandableListViewState extends State<ExpandableListView> {
                   CupertinoSwitch(
                     value: onOffSwitch,
                     onChanged: onChanged,
-                    trackColor: AppColors.n40BorderColor,
+                    trackColor: AppColors.n40Gray,
                     activeColor: AppColors.primaryColor,
                   ),
                   IconButton(
                     icon: Icon(
                       expandFlag ? Icons.keyboard_arrow_down : Icons.keyboard_arrow_up,
-                      color: onOffSwitch ? AppColors.n400color : AppColors.n40BorderColor,
+                      color: onOffSwitch ? AppColors.n400color : AppColors.n40Gray,
                       size: 35.sp,
                     ),
                     onPressed: () {
@@ -213,7 +213,7 @@ class ExpandableContainer extends StatelessWidget {
               offset: Offset(0, 0.2),
             ),
           ],
-          color: AppColors.n20FillBodyInSmallCardColor,
+          color: AppColors.n20Gray,
           border: Border(
             left: BorderSide(
               width: 4,

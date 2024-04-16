@@ -19,7 +19,7 @@ class _MySessionsCardState extends State<MySessionsCard> {
         margin: EdgeInsets.symmetric(vertical: 6.h),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
-          color: AppColors.n20FillBodyInSmallCardColor,
+          color: AppColors.n20Gray,
         ),
         child: Padding(
           padding: const EdgeInsets.all(8.0),

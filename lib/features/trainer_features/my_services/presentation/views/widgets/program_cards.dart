@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
-import 'package:forme_app/features/user_features/Favorite/presentation/views/widgets/workout_card_type.dart';
-import 'package:forme_app/features/user_features/home/presentation/views/widgets/card_review_section.dart';
+import 'package:forme_app/features/trainee_features/Favorite/presentation/views/widgets/workout_card_type.dart';
+import 'package:forme_app/features/trainee_features/home/presentation/views/widgets/special_card_review.dart';
 
 class CardsItem extends StatelessWidget {
   const CardsItem({
@@ -72,7 +72,7 @@ class CardsItem extends StatelessWidget {
                 ),
                 const SizedBox(height: 4),
                 isPrograms
-                    ? CardReviewSection(
+                    ? SpecialCardReview(
                         type: type,
                         state: state,
                         rating: rating,
@@ -93,7 +93,7 @@ class CardsItem extends StatelessWidget {
                               ),
                               Text(
                                 '$rating ($reviews Reviews)',
-                                style: TextStyles.cardTextStyle.copyWith(color: AppColors.n200BodyContentColor, fontSize: 9, fontWeight: FontWeight.w400),
+                                style: TextStyles.cardTextStyle.copyWith(color: AppColors.n200Gray, fontSize: 9, fontWeight: FontWeight.w400),
                               ),
                             ],
                           )
@@ -110,7 +110,7 @@ class CardsItem extends StatelessWidget {
                     Text(
                       'Your Clients: ',
                       style: TextStyles.cardTextStyle.copyWith(
-                        color: AppColors.n200BodyContentColor,
+                        color: AppColors.n200Gray,
                         fontSize: 11,
                       ),
                     ),
@@ -133,14 +133,14 @@ class CardsItem extends StatelessWidget {
                         ? Text(
                             ' /$duration',
                             style: TextStyles.cardTextStyle.copyWith(
-                              color: AppColors.n200BodyContentColor,
+                              color: AppColors.n200Gray,
                               fontSize: 9,
                             ),
                           )
                         : Text(
                             ' /$videos videos',
                             style: TextStyles.cardTextStyle.copyWith(
-                              color: AppColors.n200BodyContentColor,
+                              color: AppColors.n200Gray,
                               fontSize: 9,
                             ),
                           ),

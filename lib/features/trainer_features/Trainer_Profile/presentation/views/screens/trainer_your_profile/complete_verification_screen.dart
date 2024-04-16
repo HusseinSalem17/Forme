@@ -66,7 +66,7 @@ class _CompleteVerificationScreenState extends State<CompleteVerificationScreen>
                               Text(
                                 'The uploaded ID will not be display in \nyour profile',
                                 style: TextStyles.textStyleRegular.copyWith(
-                                  color: AppColors.n200BodyContentColor,
+                                  color: AppColors.n200Gray,
                                   fontSize: 11.sp,
                                 ),
                               ),

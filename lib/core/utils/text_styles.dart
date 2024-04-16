@@ -86,6 +86,12 @@ abstract class TextStyles {
     fontFamily: 'RobotoBold',
     color: AppColors.n100Gray,
   );
+  static const largeBold = TextStyle(
+    fontFamily: 'RobotoBold',
+    fontSize: 16,
+    color: AppColors.n900Black,
+  );
+  // roboto
   static const textStyleSemiBold = TextStyle(
     fontFamily: 'Roboto',
     color: AppColors.n100Gray,

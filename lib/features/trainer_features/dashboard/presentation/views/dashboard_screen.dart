@@ -68,14 +68,14 @@ class DashboardScreen extends StatelessWidget {
                       style: TextStyles.textStyleRegular
                           .copyWith(color: AppColors.n900Black)),
                   const Spacer(),
-                  SvgPicture.asset('assets/image/Icon/alarm.svg')
+                  SvgPicture.asset('assets/image/Icon/alarm_icon.svg')
                 ],
               ),
               Padding(
                 padding: EdgeInsets.symmetric(vertical: 24.h),
                 child: Container(
                   decoration: BoxDecoration(
-                    color: AppColors.n20FillBodyInSmallCardColor,
+                    color: AppColors.n20Gray,
                     border: Border.all(width: 1.sp, color: AppColors.border30),
                     borderRadius: BorderRadius.circular(16.dg),
                   ),

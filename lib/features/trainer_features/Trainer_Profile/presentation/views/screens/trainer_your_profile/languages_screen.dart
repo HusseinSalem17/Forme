@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:forme_app/core/widgets/button_container.dart';
 
 import '../../../../../../../core/widgets/simple_app_bar.dart';
-import '../../../../../../user_features/profile/presentation/views/widgets/search_text_field.dart';
+import '../../../../../../trainee_features/profile/presentation/views/widgets/search_text_field.dart';
 import '../../../../../create_sessions/presentation/views/widgets/select_package.dart';
 
 class LanguagesSearchScreen extends StatelessWidget {

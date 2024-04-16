@@ -75,7 +75,7 @@ class CreateSessionScreen extends StatelessWidget {
               ],
             ),
             const Divider(
-              color: AppColors.n20FillBodyInSmallCardColor,
+              color: AppColors.n20Gray,
             ),
             GestureDetector(
               onTap: () {
@@ -116,7 +116,7 @@ class CreateSessionScreen extends StatelessWidget {
               ),
             ),
             const Divider(
-              color: AppColors.n20FillBodyInSmallCardColor,
+              color: AppColors.n20Gray,
             ),
           ],
         ),

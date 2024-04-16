@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../features/trainer_features/Revenue/presentation/views/revenue_screen.dart';
 import '../features/trainer_features/Trainee_profile/presentation/views/trainee_profile_screen.dart';
 import '../features/trainer_features/Trainer_Notification/presentation/views/trainer_notification_screen.dart';

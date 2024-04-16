@@ -8,8 +8,8 @@ import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/utils/text_styles.dart';
 import '../../../../../core/widgets/app_fields/custom_text_field.dart';
 import '../../../../../core/widgets/custom_app_bar_arrow_button.dart';
-import '../../../../user_features/profile/presentation/views/complete_profile_widgets/profile_image_picker.dart';
-import '../../../../user_features/profile/presentation/views/widgets/my_profile_phone_field.dart';
+import '../../../../trainee_features/profile/presentation/views/complete_profile_widgets/profile_image_picker.dart';
+import '../../../../trainee_features/profile/presentation/views/widgets/my_profile_phone_field.dart';
 import '../manager/trainee_profile_cubit.dart';
 
 class TraineeProfileScreen extends StatefulWidget {

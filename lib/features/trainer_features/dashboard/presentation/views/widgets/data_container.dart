@@ -9,7 +9,7 @@ Padding dataContainer(
       padding: EdgeInsets.only(top: 24.h),
       child: Container(
           decoration: BoxDecoration(
-            color: AppColors.n20FillBodyInSmallCardColor,
+            color: AppColors.n20Gray,
             border: Border.all(width: 1.sp, color: AppColors.border30),
             borderRadius: BorderRadius.circular(16.dg),
           ),
@@ -33,7 +33,7 @@ Padding dataContainer(
                 ),
                 const Divider(
                   thickness: 1,
-                  color: AppColors.n40BorderColor,
+                  color: AppColors.n40Gray,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
