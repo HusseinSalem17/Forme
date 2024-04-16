@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:forme_app/features/Authentication/presentation/views/new_password_screen.dart';
+import 'package:forme_app/features/Authentication/presentation/views/verify_code_screen.dart';
 import 'package:forme_app/features/Authentication/presentation/views/widgets/custom_auth_button.dart';
 import 'package:forme_app/features/authentication/presentation/views/widgets/slider_type_choice.dart';
 
@@ -8,7 +10,7 @@ import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/icons_image_pathes.dart';
 import '../../../../core/utils/text_styles.dart';
 import '../../../../core/widgets/app_fields/custom_text_form_field.dart';
-import '../../../user_features/preferences/presentation/views/preferences_screen.dart';
+import '../../../trainee_features/preferences/presentation/views/preferences_screen.dart';
 
 class ForgotPasswordScreen extends StatelessWidget {
   static const routeName = '/trainee/forgot-password-screen';
@@ -67,7 +69,7 @@ class ForgotPasswordScreen extends StatelessWidget {
                 onPressed: () {
                   Navigator.of(context).push(
                     PageSlideTransition(
-                      const PreferencesScreen(),
+                      const VerifyCodeScreen(),
                     ),
                   );
                 },

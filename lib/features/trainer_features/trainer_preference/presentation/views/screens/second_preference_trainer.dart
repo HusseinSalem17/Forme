@@ -55,7 +55,7 @@ class _SecondPreferenceTrainerState extends State<SecondPreferenceTrainer> {
                         Text(
                           'The uploaded ID will ot be display in \nyour profile', // Display selected items
                           style: TextStyles.textStyleRegular.copyWith(
-                            color: AppColors.n200BodyContentColor,
+                            color: AppColors.n200Gray,
                             fontSize: 11.sp,
                           ),
                         ),

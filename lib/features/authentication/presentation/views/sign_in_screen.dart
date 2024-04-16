@@ -16,7 +16,7 @@ import '../../../../core/transitions/page_slide.dart';
 import '../../../../core/utils/text_styles.dart';
 import '../../../../core/widgets/app_fields/custom_password_form_field.dart';
 import '../../../../core/widgets/app_fields/custom_text_form_field.dart';
-import '../../../user_features/preferences/presentation/views/preferences_screen.dart';
+import '../../../trainee_features/preferences/presentation/views/preferences_screen.dart';
 
 class SignInScreen extends StatelessWidget {
   static const routeName = '/trainee/singing-screen';

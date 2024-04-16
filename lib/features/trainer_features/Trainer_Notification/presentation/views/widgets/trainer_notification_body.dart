@@ -4,7 +4,7 @@ import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
 import 'package:forme_app/core/widgets/custom_app_bar_arrow_button.dart';
 import 'package:forme_app/features/trainer_features/Trainer_Notification/data/trainer_notification_items.dart';
-import 'package:forme_app/features/user_features/Notification/presentation/views/widgets/svg_icon.dart';
+import 'package:forme_app/features/trainee_features/Notification/presentation/views/widgets/svg_icon.dart';
 
 
 class TrainerNotificationScreenBody extends StatefulWidget {
@@ -98,7 +98,7 @@ class _TrainerNotificationScreenBodyState extends State<TrainerNotificationScree
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(title, style: TextStyles.textStyleSemiBold.copyWith(color: AppColors.n200BodyContentColor)),
+              Text(title, style: TextStyles.textStyleSemiBold.copyWith(color: AppColors.n200Gray)),
               ElevatedButton(
                 onPressed: () {
                   setState(() {

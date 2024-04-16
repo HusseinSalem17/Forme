@@ -14,9 +14,9 @@ class TextFieldWithCustomLabel extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.all(Radius.circular(8.dg)),
         border: Border.all(
-          color: isEnabled ? AppColors.primaryColor : AppColors.n20FillBodyInSmallCardColor,
+          color: isEnabled ? AppColors.primaryColor : AppColors.n20Gray,
         ),
-        color: isEnabled ? AppColors.background : AppColors.n20FillBodyInSmallCardColor,
+        color: isEnabled ? AppColors.background : AppColors.n20Gray,
       ),
       child: TextFormField(
         enabled: isEnabled,
@@ -29,7 +29,7 @@ class TextFieldWithCustomLabel extends StatelessWidget {
           isDense: true,
           floatingLabelBehavior: FloatingLabelBehavior.auto,
           labelStyle: TextStyles.textStyleMedium.copyWith(
-            color: isEnabled ? AppColors.n200BodyContentColor : AppColors.n100Gray,
+            color: isEnabled ? AppColors.n200Gray : AppColors.n100Gray,
             fontSize: 12.sp,
             fontWeight: FontWeight.w400,
           ),

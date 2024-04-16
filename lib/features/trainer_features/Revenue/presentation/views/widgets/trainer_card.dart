@@ -9,7 +9,7 @@ Container trainerCard(BuildContext context, String name, String image,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(8.dg),
             border: Border.all(
-                width: 1.h, color: AppColors.n20FillBodyInSmallCardColor),
+                width: 1.h, color: AppColors.n20Gray),
             color: AppColors.n10Color),
         padding: EdgeInsets.all(8.h),
         child: Row(

@@ -162,7 +162,7 @@ class _YourClubsCardsState extends State<YourClubsCards> {
                                       child: Container(
                                         height: 40,
                                         decoration: BoxDecoration(
-                                          color: AppColors.n20FillBodyInSmallCardColor,
+                                          color: AppColors.n20Gray,
                                           borderRadius: BorderRadius.circular(100),
                                           border: Border.all(
                                             color: AppColors.primaryColor,

@@ -14,7 +14,7 @@ GestureDetector iconWidget({
     child: Container(
       decoration: BoxDecoration(
         shape: BoxShape.circle,
-        border: Border.all(color: AppColors.n40BorderColor, width: 1),
+        border: Border.all(color: AppColors.n40Gray, width: 1),
       ),
       width: 60,
       height: 60,

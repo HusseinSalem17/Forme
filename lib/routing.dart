@@ -4,9 +4,9 @@
 // import 'package:forme_app/features/authentication/presentation/views/sign_up_screen.dart';
 // import 'package:forme_app/features/authentication/presentation/views/sign_in_screen.dart';
 // import 'package:forme_app/features/authentication/presentation/views/verify_code_screen.dart';
-// import 'package:forme_app/features/user_features/book_appointment_with%20_trainer/presentation/views/book_appointment_screen.dart';
-// import 'package:forme_app/features/user_features/join_program_feature/presentation/views/book_onling_coach_screen.dart';
-// import 'package:forme_app/features/user_features/maps_feature/presentation/views/map_screen.dart';
+// import 'package:forme_app/features/trainee_features/book_appointment_with%20_trainer/presentation/views/book_appointment_screen.dart';
+// import 'package:forme_app/features/trainee_features/join_program_feature/presentation/views/book_onling_coach_screen.dart';
+// import 'package:forme_app/features/trainee_features/maps_feature/presentation/views/map_screen.dart';
 // import 'package:forme_app/splash_screen.dart';
 // import 'package:forme_app/onboarding_screens/views/onboarding_screen.dart';
 //

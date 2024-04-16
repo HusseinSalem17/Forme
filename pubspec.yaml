@@ -54,6 +54,7 @@ dependencies:
   fl_chart: ^0.66.2
 #  time_range_picker: ^2.2.0
   video_player: ^2.8.4
+  searchfield: ^1.0.1
 
 
 dev_dependencies:
@@ -74,6 +75,7 @@ flutter:
     - assets/image/temp/
     - assets/image/gif/
     - assets/image/auth_icons/
+    - assets/image/home_screen_icons/
 
   fonts:
     - family: RobotoRegular

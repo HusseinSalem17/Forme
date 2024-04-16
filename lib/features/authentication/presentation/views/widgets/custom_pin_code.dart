@@ -42,11 +42,11 @@ class CustomPinCodeTextField extends StatelessWidget {
         fieldHeight: 50.h,
         fieldWidth: 73.5.w,
         borderWidth: 0.w,
-        activeColor: AppColors.n20FillBodyInSmallCardColor,
-        inactiveColor: AppColors.n20FillBodyInSmallCardColor,
-        activeFillColor: AppColors.n20FillBodyInSmallCardColor,
-        selectedFillColor: AppColors.n20FillBodyInSmallCardColor,
-        inactiveFillColor: AppColors.n20FillBodyInSmallCardColor,
+        activeColor: AppColors.n20Gray,
+        inactiveColor: AppColors.n20Gray,
+        activeFillColor: AppColors.n20Gray,
+        selectedFillColor: AppColors.n20Gray,
+        inactiveFillColor: AppColors.n20Gray,
       ),
     );
   }

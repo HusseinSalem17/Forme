@@ -6,7 +6,7 @@ import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
 import 'package:forme_app/features/trainer_features/client_list/data/client_requests_model.dart';
 import 'package:forme_app/features/trainer_features/my_services/presentation/views/screens/cancellation_screen.dart';
-import 'package:forme_app/features/user_features/Trainer_details/presentation/views/widgets/custom_clip_rect.dart';
+import 'package:forme_app/features/trainee_features/Trainer_details/presentation/views/widgets/custom_clip_rect.dart';
 
 
 class ClientsRequestsCard extends StatelessWidget {
