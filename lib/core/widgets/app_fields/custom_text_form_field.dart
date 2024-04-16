@@ -63,7 +63,7 @@ class CustomTextFromField extends StatelessWidget {
   OutlineInputBorder buildOutlineInputBorder() {
     return OutlineInputBorder(
             borderRadius: BorderRadius.circular(4),
-            borderSide: const BorderSide(color: AppColors.n40BorderColor),
+            borderSide: const BorderSide(color: AppColors.n40Gray),
           );
   }
 }

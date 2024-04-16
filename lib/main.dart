@@ -2,23 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:forme_app/core/utils/app_theme.dart';
+import 'package:forme_app/features/trainee_features/home/presentation/views/bottom_bar_screens.dart';
 import 'package:forme_app/features/trainer_features/Trainer_Profile/presentation/manager/my_profile_cubit/cubit/my_profile_cubit.dart';
 import 'package:forme_app/features/trainer_features/dashboard/presentation/views/manager/bloc/trainer_home_bloc.dart';
 import 'package:forme_app/features/trainer_features/trainee_profile/presentation/manager/trainee_profile_cubit.dart';
-import 'package:forme_app/features/user_features/home/presentation/manager/bloc/home_bloc.dart';
-import 'package:forme_app/features/user_features/preferences/presentation/manager/preferences_bloc.dart';
-import 'package:forme_app/features/user_features/profile/data/repos/complete_profile_repo_impl.dart';
-import 'package:forme_app/features/user_features/profile/presentation/manager/complete_profile_cubit/complete_profile_cubit.dart';
-import 'package:forme_app/features/user_features/profile/presentation/manager/my_profile_cubit/cubit/my_profile_cubit.dart';
+import 'package:forme_app/features/trainee_features/home/presentation/manager/bloc/home_bloc.dart';
+import 'package:forme_app/features/trainee_features/preferences/presentation/manager/preferences_bloc.dart';
+import 'package:forme_app/features/trainee_features/profile/data/repos/complete_profile_repo_impl.dart';
+import 'package:forme_app/features/trainee_features/profile/presentation/manager/complete_profile_cubit/complete_profile_cubit.dart';
+import 'package:forme_app/features/trainee_features/profile/presentation/manager/my_profile_cubit/cubit/my_profile_cubit.dart';
 import 'package:forme_app/onboarding_screens/data/bloc/onboarding_blocs.dart';
 import 'package:flutter/services.dart';
-import 'package:forme_app/routes.dart';
 import 'package:forme_app/splash_screen.dart';
 import 'core/utils/functions/service_locator.dart';
 import 'core/utils/scroll_behavior.dart';
-
-
-import 'features/Authentication/presentation/views/new_password_screen.dart';
+import 'features/trainer_features/complete_profile_trainer/presentation/views/trainer_complete_profile.dart';
 
 
 void main() {
@@ -69,7 +67,7 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           theme: Themes.customLightTheme,
           //onGenerateRoute: (settings) => generateRoute(settings, context),
-          home:  const NewPasswordScreen(),
+          home:  const SplashScreen(),
         ),
       ),
     );

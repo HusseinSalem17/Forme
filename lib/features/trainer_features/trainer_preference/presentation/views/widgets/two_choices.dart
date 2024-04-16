@@ -29,7 +29,7 @@ class _TwoChoicesState extends State<TwoChoices> {
               color: widget.isMultiChoice?multiChoice1 == 1?AppColors.p50PrimaryColor : AppColors.background:selectedButton == 1 ? AppColors.p50PrimaryColor : AppColors.background,
               borderRadius: BorderRadius.circular(10),
               border: Border.all(
-                color: widget.isMultiChoice?multiChoice1 == 1?AppColors.primaryColor : AppColors.n200BodyContentColor:selectedButton == 1 ? AppColors.primaryColor : AppColors.n200BodyContentColor,
+                color: widget.isMultiChoice?multiChoice1 == 1?AppColors.primaryColor : AppColors.n200Gray:selectedButton == 1 ? AppColors.primaryColor : AppColors.n200Gray,
               ),
             ),
             child: TextButton(
@@ -53,14 +53,14 @@ class _TwoChoicesState extends State<TwoChoices> {
                 children: [
                   widget.isIcon?Icon(
                     Icons.male,
-                    color: widget.isMultiChoice?multiChoice1 == 1 ?AppColors.primaryColor : AppColors.n200BodyContentColor:selectedButton == 1 ? AppColors.primaryColor : AppColors.n200BodyContentColor,
+                    color: widget.isMultiChoice?multiChoice1 == 1 ?AppColors.primaryColor : AppColors.n200Gray:selectedButton == 1 ? AppColors.primaryColor : AppColors.n200Gray,
                     size: 20.sp,
                   ):Container(),
                   Text(
                     widget.text1,
                     style: TextStyles.textStyleSemiBold.copyWith(
                       fontSize: 14.sp,
-                      color: widget.isMultiChoice?multiChoice1 == 1 ?AppColors.primaryColor : AppColors.n200BodyContentColor:selectedButton == 1 ? AppColors.primaryColor : AppColors.n200BodyContentColor,
+                      color: widget.isMultiChoice?multiChoice1 == 1 ?AppColors.primaryColor : AppColors.n200Gray:selectedButton == 1 ? AppColors.primaryColor : AppColors.n200Gray,
                     ),
                   ),
                 ],
@@ -75,7 +75,7 @@ class _TwoChoicesState extends State<TwoChoices> {
             decoration: BoxDecoration(
               color: widget.isMultiChoice?multiChoice2 == 1?AppColors.p50PrimaryColor : AppColors.background:selectedButton == 2 ? AppColors.p50PrimaryColor : AppColors.background,
               border: Border.all(
-                color: widget.isMultiChoice?multiChoice2 == 1?AppColors.primaryColor : AppColors.n200BodyContentColor:selectedButton == 2 ? AppColors.primaryColor : AppColors.n200BodyContentColor,
+                color: widget.isMultiChoice?multiChoice2 == 1?AppColors.primaryColor : AppColors.n200Gray:selectedButton == 2 ? AppColors.primaryColor : AppColors.n200Gray,
               ),
               borderRadius: BorderRadius.circular(10),
             ),
@@ -100,14 +100,14 @@ class _TwoChoicesState extends State<TwoChoices> {
                 children: [
                   widget.isIcon?Icon(
                     Icons.female,
-                    color: widget.isMultiChoice?multiChoice2==1?AppColors.primaryColor : AppColors.n200BodyContentColor:selectedButton == 2 ? AppColors.primaryColor : AppColors.n200BodyContentColor,
+                    color: widget.isMultiChoice?multiChoice2==1?AppColors.primaryColor : AppColors.n200Gray:selectedButton == 2 ? AppColors.primaryColor : AppColors.n200Gray,
                     size: 20.sp,
                   ):Container(),
                   Text(
                     widget.text2,
                     style: TextStyles.textStyleSemiBold.copyWith(
                       fontSize: 14.sp,
-                      color: widget.isMultiChoice?multiChoice2==1?AppColors.primaryColor : AppColors.n200BodyContentColor:selectedButton == 2 ? AppColors.primaryColor : AppColors.n200BodyContentColor,
+                      color: widget.isMultiChoice?multiChoice2==1?AppColors.primaryColor : AppColors.n200Gray:selectedButton == 2 ? AppColors.primaryColor : AppColors.n200Gray,
                     ),
                   ),
                 ],

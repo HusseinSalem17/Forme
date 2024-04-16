@@ -5,7 +5,7 @@ import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
 import 'package:forme_app/core/widgets/custom_app_bar_arrow_button.dart';
 import 'package:forme_app/core/widgets/text_area.dart';
-import 'package:forme_app/features/user_features/profile/presentation/views/complete_profile_widgets/image_selection_bottom_sheet.dart';
+import 'package:forme_app/features/trainee_features/profile/presentation/views/complete_profile_widgets/image_selection_bottom_sheet.dart';
 
 class EditTransformation extends StatefulWidget {
   const EditTransformation({super.key});
@@ -81,7 +81,7 @@ class _EditTransformationState extends State<EditTransformation> {
             padding: EdgeInsets.all(14.w),
             child: Container(
               decoration: BoxDecoration(
-                  color: AppColors.n20FillBodyInSmallCardColor,
+                  color: AppColors.n20Gray,
                   borderRadius: BorderRadius.circular(14.dg)),
               child: Padding(
                 padding: EdgeInsets.all(10.h),
@@ -114,7 +114,7 @@ class _EditTransformationState extends State<EditTransformation> {
                         height: 150,
                         decoration: BoxDecoration(
                             border: Border.all(
-                                color: AppColors.n40BorderColor, width: 1.h),
+                                color: AppColors.n40Gray, width: 1.h),
                             borderRadius: BorderRadius.circular(8.dg)),
                         padding: EdgeInsets.all(38.h),
                         child:

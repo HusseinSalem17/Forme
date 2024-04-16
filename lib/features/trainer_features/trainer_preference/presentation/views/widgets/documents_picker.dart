@@ -32,7 +32,7 @@ class _DocumentsPickerState extends State<DocumentsPicker> {
           child: DottedBorder(
             borderType: BorderType.RRect,
             radius: Radius.circular(6.r),
-            color: AppColors.n40BorderColor,
+            color: AppColors.n40Gray,
             child: Center(
               child: Container(
                 padding: const EdgeInsets.all(0),

@@ -11,25 +11,25 @@ import 'package:forme_app/features/trainer_features/dashboard/presentation/views
 import 'package:forme_app/features/trainer_features/my_services/presentation/views/my_services_screen.dart';
 import 'package:forme_app/features/trainer_features/subscriptions/presentation/views/subscriptions_screen.dart';
 import 'package:forme_app/features/trainer_features/trainer_preference/presentation/views/trainer_preference_screen.dart';
-import 'package:forme_app/features/user_features/Favorite/presentation/views/favorite_screen.dart';
-import 'package:forme_app/features/user_features/Notification/presentation/views/notification_screen.dart';
-import 'package:forme_app/features/user_features/Payment/presentation/view/ereceipt_screen.dart';
-import 'package:forme_app/features/user_features/Trainer_details/presentation/views/success_story.dart';
-import 'package:forme_app/features/user_features/Trainer_details/presentation/views/trainer_details_view.dart';
-import 'package:forme_app/features/user_features/featured/presentation/featured_screen.dart';
-import 'package:forme_app/features/user_features/home/presentation/views/home_view.dart';
-import 'package:forme_app/features/user_features/payment/presentation/view/add_new_card_screen.dart';
-import 'package:forme_app/features/user_features/payment/presentation/view/congratulation_screen.dart';
-import 'package:forme_app/features/user_features/payment/presentation/view/payment_successfully_screen.dart';
-import 'package:forme_app/features/user_features/profile/presentation/views/complete_profile.dart';
-import 'package:forme_app/features/user_features/profile/presentation/views/help_center/help_center.dart';
-import 'package:forme_app/features/user_features/profile/presentation/views/my_profile.dart';
-import 'package:forme_app/features/user_features/profile/presentation/views/privacy_policy.dart';
-import 'package:forme_app/features/user_features/profile/presentation/views/settings_screen.dart';
-import 'package:forme_app/features/user_features/reviews/presentation/views/add_review.dart';
-import 'package:forme_app/features/user_features/search/presentation/search_screen.dart';
-import 'package:forme_app/features/user_features/search/presentation/views/filter/filter_screen.dart';
-import 'package:forme_app/features/user_features/sports_club/presentation/views/sports_club.dart';
+import 'package:forme_app/features/trainee_features/Favorite/presentation/views/favorite_screen.dart';
+import 'package:forme_app/features/trainee_features/Notification/presentation/views/notification_screen.dart';
+import 'package:forme_app/features/trainee_features/Payment/presentation/view/ereceipt_screen.dart';
+import 'package:forme_app/features/trainee_features/Trainer_details/presentation/views/success_story.dart';
+import 'package:forme_app/features/trainee_features/Trainer_details/presentation/views/trainer_details_view.dart';
+import 'package:forme_app/features/trainee_features/featured/presentation/featured_screen.dart';
+import 'package:forme_app/features/trainee_features/home/presentation/views/bottom_bar_screens.dart';
+import 'package:forme_app/features/trainee_features/payment/presentation/view/add_new_card_screen.dart';
+import 'package:forme_app/features/trainee_features/payment/presentation/view/congratulation_screen.dart';
+import 'package:forme_app/features/trainee_features/payment/presentation/view/payment_successfully_screen.dart';
+import 'package:forme_app/features/trainee_features/profile/presentation/views/complete_profile.dart';
+import 'package:forme_app/features/trainee_features/profile/presentation/views/help_center/help_center.dart';
+import 'package:forme_app/features/trainee_features/profile/presentation/views/my_profile.dart';
+import 'package:forme_app/features/trainee_features/profile/presentation/views/privacy_policy.dart';
+import 'package:forme_app/features/trainee_features/profile/presentation/views/settings_screen.dart';
+import 'package:forme_app/features/trainee_features/reviews/presentation/views/add_review.dart';
+import 'package:forme_app/features/trainee_features/search/presentation/search_screen.dart';
+import 'package:forme_app/features/trainee_features/search/presentation/views/filter/filter_screen.dart';
+import 'package:forme_app/features/trainee_features/sports_club/presentation/views/sports_club.dart';
 import 'package:forme_app/splash_screen.dart';
 import 'package:forme_app/onboarding_screens/views/onboarding_screen.dart';
 import 'features/authentication/presentation/views/forgot_password_screen.dart';
@@ -42,8 +42,8 @@ import 'features/trainer_features/add_program/presentation/views/add_program_scr
 import 'features/trainer_features/client_list/presentation/views/client_list_screen.dart';
 import 'features/trainer_features/complete_profile_trainer/presentation/views/trainer_complete_profile.dart';
 import 'features/trainer_features/create_sessions/presentation/views/create_session.dart';
-import 'features/user_features/payment/presentation/view/payment_methods_screen.dart';
-import 'features/user_features/preferences/presentation/views/preferences_screen.dart';
+import 'features/trainee_features/payment/presentation/view/payment_methods_screen.dart';
+import 'features/trainee_features/preferences/presentation/views/preferences_screen.dart';
 
 Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
   switch (settings.name) {
@@ -147,28 +147,28 @@ Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
 
       return trainerMyServicesScreen();
 //-------- Add Program Routing -----------
-    case AddProgramScreen.routeName: // todo
+    case AddProgramScreen.routeName: // done
       return addProgramRoute();
 //-------- Revenue Routing -----------
-    case RevenueScreen.routeName:
+    case RevenueScreen.routeName: // done
       return revenueScreenRoute();
 //-------- Client list Routing -----------
-    case ClientListScreen.routeName:
+    case ClientListScreen.routeName: // done
       return trainerClientListScreen();
 //-------- Create Session Routing -----------
-    case CreateSessionScreen.routeName:
+    case CreateSessionScreen.routeName: // done
       return createSessionRoute();
 //-------- Subscriptions Routing -----------
-    case SubscriptionsScreen.routeName:
+    case SubscriptionsScreen.routeName: // done
       return subscriptionsScreenRoute();
 //-------- Notification Routing -----------
-    case TrainerNotificationScreen.routeName:
+    case TrainerNotificationScreen.routeName: // done
       return trainerNotificationScreenRoute();
 //-------- Trainee Profile Routing -----------
-    case TraineeProfileScreen.routeName:
+    case TraineeProfileScreen.routeName: // done
       return traineeProfileScreenRoute();
 //-------- Trainer Profile Routing -----------
-    case TrainerProfileScreen.routeName:
+    case TrainerProfileScreen.routeName: // done
       return trainerProfileScreenRoute();
 //-------- Transformations Routing -----------
     case TransformationsScreen.routeName:

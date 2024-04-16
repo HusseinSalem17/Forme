@@ -34,7 +34,7 @@ class FirstPreferenceTrainer extends StatelessWidget {
               const TextAreaField(hintText: 'Please share a brief description about yourself'),
               SizedBox(height: 16.h),
               const Divider(
-                color: AppColors.n40BorderColor,
+                color: AppColors.n40Gray,
                 thickness: 1,
               ),
               SizedBox(height: 16.h),
@@ -51,7 +51,7 @@ class FirstPreferenceTrainer extends StatelessWidget {
               const TwoChoices(text1: 'Yes', text2: 'No'),
               SizedBox(height: 16.h),
               const Divider(
-                color: AppColors.n40BorderColor,
+                color: AppColors.n40Gray,
                 thickness: 1,
               ),
               SizedBox(height: 16.h),
@@ -68,7 +68,7 @@ class FirstPreferenceTrainer extends StatelessWidget {
               const TwoChoices(text1: 'Yes', text2: 'No'),
               SizedBox(height: 16.h),
               const Divider(
-                color: AppColors.n40BorderColor,
+                color: AppColors.n40Gray,
                 thickness: 1,
               ),
               SizedBox(height: 16.h),
@@ -85,7 +85,7 @@ class FirstPreferenceTrainer extends StatelessWidget {
               const PickLanguages(),
               SizedBox(height: 8.h),
               const Divider(
-                color: AppColors.n40BorderColor,
+                color: AppColors.n40Gray,
                 thickness: 1,
               ),
               SizedBox(height: 16.h),

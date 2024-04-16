@@ -13,11 +13,11 @@ abstract class AppColors {
   static const n70Gray = Color(0xffA6AAB1);
   static const fillColor = Color(0xffFAFAFB);
   static const background = Colors.white;
-  static const n40BorderColor = Color(0xffd9d9d9);
+  static const n40Gray = Color(0xffd9d9d9);
   static const n80NavColor = Color(0xff979ba3);
   static const n50dropShadowColor = Color(0xffc1c4c9);
-  static const n200BodyContentColor = Color(0xff6a717c);
-  static const n20FillBodyInSmallCardColor = Color(0xfff5f6f6);
+  static const n200Gray = Color(0xff6a717c);
+  static const n20Gray = Color(0xfff5f6f6);
   static const n20FillBodyInBigCardColor = Color(0xfffafafb);
   static const n30StrokeColor = Color(0xffebecee);
   static const n800BodyInProgramsColor = Color(0xff131e30);
