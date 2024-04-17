@@ -13,7 +13,6 @@ import 'package:forme_app/features/trainer_features/add_program/presentation/vie
 import 'package:forme_app/features/trainee_features/profile/presentation/views/complete_profile_widgets/image_selection_bottom_sheet.dart';
 import 'package:image_picker/image_picker.dart';
 
-
 class AddProgramBody extends StatefulWidget {
   final XFile? imageFile;
   final void Function(XFile?) onImageSelected;
@@ -29,7 +28,7 @@ class AddProgramBody extends StatefulWidget {
 
 class _AddProgramBodyState extends State<AddProgramBody> {
   String? programType;
-
+  List<int> paymentItems = List<int>.generate(10, (int index) => index);
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -154,16 +153,53 @@ class _AddProgramBodyState extends State<AddProgramBody> {
               ),
               Text(
                 'Payment Plans',
-                style: TextStyles.textStyleBold.copyWith(
-                    fontSize: 14.sp, color: AppColors.n900Black),
+                style: TextStyles.textStyleBold
+                    .copyWith(fontSize: 14.sp, color: AppColors.n900Black),
               )
             ],
           ),
-          const PaymentPlanItem()
+          Column(
+            children: List<Widget>.generate(paymentItems.length, (int index) {
+              return PaymentPlanItem(
+                onTap: () {
+                  setState(() {
+                    paymentItems.removeAt(index);
+                  });
+                },
+              );
+            }),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 10),
+            child: GestureDetector(
+              onTap: () {
+                setState(() {
+                  paymentItems.add(paymentItems.length + 1);
+                });
+              },
+              child: Container(
+                width: MediaQuery.sizeOf(context).width,
+                height: 70,
+                decoration: BoxDecoration(
+                    border: Border.all(color: AppColors.n200BodyContentColor),
+                    color: AppColors.n20FillBodyInBigCardColor,
+                    borderRadius: BorderRadius.circular(16.dg)),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    SvgPicture.asset('assets/image/Icon/add.svg'),
+                    Text(
+                      'Add New Plan',
+                      style: TextStyles.textStyleRegular.copyWith(
+                          fontSize: 14.sp, color: AppColors.n900Black),
+                    )
+                  ],
+                ),
+              ),
+            ),
+          )
         ]),
       ),
     );
   }
 }
-
-

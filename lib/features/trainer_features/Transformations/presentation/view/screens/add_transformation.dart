@@ -4,6 +4,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
 import 'package:forme_app/core/widgets/custom_app_bar_arrow_button.dart';
+import 'package:forme_app/core/widgets/import_media.dart';
 import 'package:forme_app/core/widgets/text_area.dart';
 import 'package:forme_app/features/trainee_features/profile/presentation/views/complete_profile_widgets/image_selection_bottom_sheet.dart';
 
@@ -83,6 +84,7 @@ class _AddTransformationState extends State<AddTransformation> {
                 child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+
                       Text(
                         'Upload Image or Video',
                         style: TextStyles.textStyleBold
@@ -130,3 +132,15 @@ class _AddTransformationState extends State<AddTransformation> {
         ));
   }
 }
+// showModalBottomSheet(
+//                           context: context,
+//                           shape: const RoundedRectangleBorder(
+//                             borderRadius: BorderRadius.only(
+//                               topLeft: Radius.circular(20),
+//                               topRight: Radius.circular(20),
+//                             ),
+//                           ),
+//                           builder: (builder) => ImageSelectionBottomSheet(
+//                             onImageSelected: widget.onImageSelected,
+//                           ),
+//                         ),
