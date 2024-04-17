@@ -32,7 +32,7 @@ class TwoButtonsContainer extends StatelessWidget {
           CustomAppButton(
             title: firstButtonTitle,
             onTap: onTap,
-            color: AppColors.n20FillBodyInSmallCardColor,
+            color: AppColors.n20Gray,
             titleColor: AppColors.primaryColor,
             widthDivider: 2.25.h,
             isShadow: false,

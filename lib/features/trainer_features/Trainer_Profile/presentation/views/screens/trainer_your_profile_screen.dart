@@ -28,7 +28,7 @@ class TrainerYourProfileScreen extends StatelessWidget {
           Container(
             height: 48.h,
             width: MediaQuery.of(context).size.width,
-            color: AppColors.n20FillBodyInSmallCardColor,
+            color: AppColors.n20Gray,
             child: Padding(
               padding: EdgeInsets.only(top: 8.0.h, left: 16.w, right: 16.w),
               child: Row(
@@ -100,25 +100,25 @@ class TrainerYourProfileScreen extends StatelessWidget {
                   Navigator.of(context).push(PageSlideTransition(const MyProfileTrainer()));
                 }),
                 const Divider(
-                  color: AppColors.n20FillBodyInSmallCardColor,
+                  color: AppColors.n20Gray,
                 ),
                 CustomGestureDetectorRow(title: "Languages", imageAddress: 'assets/image/profile/languages.svg', onTap:(){
                   Navigator.of(context).push(PageSlideTransition(const LanguagesSearchScreen()));
                 }),
                 const Divider(
-                  color: AppColors.n20FillBodyInSmallCardColor,
+                  color: AppColors.n20Gray,
                 ),
                 CustomGestureDetectorRow(title: "Social Media Links", imageAddress: 'assets/image/profile/social-media.svg', onTap:(){
                   Navigator.of(context).push(PageSlideTransition(const SocialMediaLinksScreen()));
                 }),
                 const Divider(
-                  color: AppColors.n20FillBodyInSmallCardColor,
+                  color: AppColors.n20Gray,
                 ),
                 CustomGestureDetectorRow(title: "Complete Verification", imageAddress: 'assets/image/Icon/verified_black.svg', onTap: () {
                   Navigator.of(context).push(PageSlideTransition(const CompleteVerificationScreen()));
                 }),
                 const Divider(
-                  color: AppColors.n20FillBodyInSmallCardColor,
+                  color: AppColors.n20Gray,
                 ),
               ],
             ),

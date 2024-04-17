@@ -134,7 +134,7 @@ class _PaymentPlanItemState extends State<PaymentPlanItem> {
       decoration: BoxDecoration(
           border: Border.all(
             width: 1,
-            color: AppColors.n40BorderColor,
+            color: AppColors.n40Gray,
           ),
           borderRadius: BorderRadius.circular(4.dg),
           color: AppColors.background),
@@ -146,7 +146,7 @@ class _PaymentPlanItemState extends State<PaymentPlanItem> {
           Text(title,
               style: TextStyles.textStyleRegular.copyWith(
                   fontSize: 12.sp,
-                  color: AppColors.n200BodyContentColor,
+                  color: AppColors.n200Gray,
                   height: 1)),
           TextField(
             controller: controller,
@@ -155,7 +155,7 @@ class _PaymentPlanItemState extends State<PaymentPlanItem> {
             decoration: InputDecoration(
               hintText: '0',
               hintStyle: TextStyles.textStyleRegular.copyWith(
-                  fontSize: 12.sp, color: AppColors.n200BodyContentColor),
+                  fontSize: 12.sp, color: AppColors.n200Gray),
               border: InputBorder.none,
               enabledBorder: InputBorder.none,
               focusedBorder: InputBorder.none,

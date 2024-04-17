@@ -73,7 +73,7 @@ class _GenderCheckButtonState extends State<GenderCheckButton> {
               width: MediaQuery.sizeOf(context).width / 2.6,
               decoration: BoxDecoration(
                   color: AppColors.background,
-                  border: Border.all(width: 1, color: AppColors.n40BorderColor),
+                  border: Border.all(width: 1, color: AppColors.n40Gray),
                   borderRadius: BorderRadius.circular(4.dg)),
               padding: EdgeInsets.symmetric(vertical: 8.h),
               margin: EdgeInsets.symmetric(vertical: 10.h),

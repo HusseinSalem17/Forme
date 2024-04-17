@@ -4,8 +4,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:forme_app/features/Authentication/presentation/views/widgets/header_text.dart';
 import 'package:forme_app/features/trainer_features/complete_profile_trainer/presentation/manager/cubit/trainer_complete_profile_cubit.dart';
-import 'package:forme_app/features/user_features/profile/presentation/views/complete_profile_widgets/custom_primary_button.dart';
-import 'package:forme_app/features/user_features/profile/presentation/views/complete_profile_widgets/profile_image_picker.dart';
+import 'package:forme_app/features/trainee_features/profile/presentation/views/complete_profile_widgets/custom_primary_button.dart';
+import 'package:forme_app/features/trainee_features/profile/presentation/views/complete_profile_widgets/profile_image_picker.dart';
 import 'package:image_picker/image_picker.dart';
 
 import '../../../data/models/trainer_complete_profile_data.dart';

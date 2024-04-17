@@ -28,7 +28,7 @@ class SubscriptionsScreen extends StatelessWidget {
           Container(
             height: 48.h,
             width: MediaQuery.of(context).size.width,
-            color: AppColors.n20FillBodyInSmallCardColor,
+            color: AppColors.n20Gray,
             child: Padding(
               padding: EdgeInsets.only(top: 8.0.h, left: 16.w, right: 16.w),
               child: Row(
@@ -103,7 +103,7 @@ class SubscriptionsScreen extends StatelessWidget {
                       Navigator.of(context).push(PageSlideTransition(const YourClubsScreen()));
                     }),
                 const Divider(
-                  color: AppColors.n20FillBodyInSmallCardColor,
+                  color: AppColors.n20Gray,
                 ),
                 CustomGestureDetectorRow(
                   title: "Clients Subscriptions",
@@ -113,7 +113,7 @@ class SubscriptionsScreen extends StatelessWidget {
                   },
                 ),
                 const Divider(
-                  color: AppColors.n20FillBodyInSmallCardColor,
+                  color: AppColors.n20Gray,
                 ),
               ],
             ),

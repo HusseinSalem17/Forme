@@ -31,7 +31,7 @@ class EmptyContentScreen extends StatelessWidget {
                 children: [
                   CircleAvatar(
                     radius: 90.dg,
-                    backgroundColor: AppColors.n40BorderColor,
+                    backgroundColor: AppColors.n40Gray,
                     child: CircleAvatar(
                       radius: 87.dg,
                       backgroundColor: AppColors.n10Color,
