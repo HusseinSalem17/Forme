@@ -4,14 +4,16 @@ import 'package:flutter_svg/svg.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
 
+import '../../../features/trainee_features/home/presentation/views/cusotm_home_search_screen.dart';
+
 class CustomSearchTextField extends StatefulWidget {
   const CustomSearchTextField({Key? key}) : super(key: key);
 
   @override
-  _CustomSearchTextFieldState createState() => _CustomSearchTextFieldState();
+  CustomSearchTextFieldState createState() => CustomSearchTextFieldState();
 }
 
-class _CustomSearchTextFieldState extends State<CustomSearchTextField> {
+class CustomSearchTextFieldState extends State<CustomSearchTextField> {
   final FocusNode _focusNode = FocusNode();
   bool _isFocused = false;
 
@@ -36,6 +38,12 @@ class _CustomSearchTextFieldState extends State<CustomSearchTextField> {
     return SizedBox(
       width: 260.w,
       child: TextFormField(
+        onTap: () {
+          showSearch(
+            context: context,
+            delegate: CustomSearchHomeScreen(),
+          );
+        },
         focusNode: _focusNode,
         cursorColor: AppColors.primaryColor,
         style: TextStyles.textStyleRegular
@@ -50,13 +58,13 @@ class _CustomSearchTextFieldState extends State<CustomSearchTextField> {
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(4.dg),
             borderSide: const BorderSide(
-              color: AppColors.n40BorderColor,
+              color: AppColors.n40Gray,
             ),
           ),
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(4.dg),
             borderSide: const BorderSide(
-              color: AppColors.n40BorderColor,
+              color: AppColors.n40Gray,
             ),
           ),
           focusedBorder: OutlineInputBorder(
@@ -70,13 +78,13 @@ class _CustomSearchTextFieldState extends State<CustomSearchTextField> {
             padding: EdgeInsets.only(left: 12.0.w, right: 5.w),
             child: SvgPicture.asset(
               'assets/image/Icon/search.svg',
-              color: _isFocused
-                  ? AppColors.primaryColor
-                  : AppColors.n200BodyContentColor,
+              color: _isFocused ? AppColors.primaryColor : AppColors.n200Gray,
             ),
           ),
-          prefixIconConstraints:
-              BoxConstraints(minWidth: 20.w, minHeight: 20.h),
+          prefixIconConstraints: BoxConstraints(
+            minWidth: 20.w,
+            minHeight: 20.h,
+          ),
         ),
       ),
     );

@@ -4,7 +4,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/styles.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
-import 'package:forme_app/features/user_features/profile/presentation/views/complete_profile_widgets/custom_build_form.dart';
+import 'package:forme_app/features/trainee_features/profile/presentation/views/complete_profile_widgets/custom_build_form.dart';
 
 class ProgramCapacityField extends StatelessWidget {
   const ProgramCapacityField({

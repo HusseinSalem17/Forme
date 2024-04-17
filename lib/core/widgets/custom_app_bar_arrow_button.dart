@@ -11,7 +11,9 @@ class CustomAppBarArrowButton extends StatelessWidget {
   const CustomAppBarArrowButton({
     super.key,
     required this.onTap,
-    this.icon = Icons.arrow_back_rounded, this.color = Colors.black, this.size = 17,
+    this.icon = Icons.arrow_back_rounded,
+    this.color = Colors.black,
+    this.size = 17,
   });
 
   @override
@@ -20,11 +22,11 @@ class CustomAppBarArrowButton extends StatelessWidget {
       splashColor: Colors.transparent,
       highlightColor: Colors.transparent,
       icon: Container(
-        width: 32.w,
-        height: 32.h,
+        width: 32,
+        height: 32,
         decoration: BoxDecoration(
           color: Colors.white,
-          borderRadius: BorderRadius.circular(16.r),
+          borderRadius: BorderRadius.circular(16),
           boxShadow: [
             BoxShadow(
               color: AppColors.n50dropShadowColor.withOpacity(0.5),

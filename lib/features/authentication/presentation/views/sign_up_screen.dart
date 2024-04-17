@@ -12,7 +12,7 @@ import '../../../../core/transitions/page_slide.dart';
 import '../../../../core/utils/text_styles.dart';
 import '../../../../core/widgets/app_fields/custom_password_form_field.dart';
 import '../../../../core/widgets/app_fields/custom_text_form_field.dart';
-import '../../../user_features/preferences/presentation/views/preferences_screen.dart';
+import '../../../trainee_features/preferences/presentation/views/preferences_screen.dart';
 
 class SignUpScreen extends StatefulWidget {
   static const routeName = '/trainee/Sing-up-screen';
@@ -90,7 +90,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       });
                     },
                     checkColor: Colors.black,
-                    borderColor: AppColors.n40BorderColor,
+                    borderColor: AppColors.n40Gray,
                     borderWidth: 2.0,
                     size: 16.0,
                   ),

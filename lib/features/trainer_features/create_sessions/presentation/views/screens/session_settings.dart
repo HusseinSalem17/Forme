@@ -48,7 +48,7 @@ class _SessionSettingsScreenState extends State<SessionSettingsScreen> {
                     text4: 'In Person',
                   ),
                   const SizedBox(height: 16),
-                  const Divider(color: AppColors.n20FillBodyInSmallCardColor, thickness: 2),
+                  const Divider(color: AppColors.n20Gray, thickness: 2),
                   const SizedBox(height: 24),
                   Text('Set Session Duration and Fees', style: TextStyles.textStyleRegular.copyWith(color: AppColors.n900Black, fontSize: 16.sp)),
                   SizedBox(height: 8.h),
@@ -75,7 +75,7 @@ class _SessionSettingsScreenState extends State<SessionSettingsScreen> {
                   SizedBox(height: 16.h),
                   const DurationTextField(),
                   SizedBox(height: 16.h),
-                  const Divider(color: AppColors.n20FillBodyInSmallCardColor, thickness: 2),
+                  const Divider(color: AppColors.n20Gray, thickness: 2),
                   SizedBox(height: 24.h),
                   RichText(
                     text: TextSpan(
@@ -95,7 +95,7 @@ class _SessionSettingsScreenState extends State<SessionSettingsScreen> {
                   SizedBox(height: 16.h),
                   const TwoChoices(text1: 'Male', text2: 'Female', isIcon: true, isMultiChoice: true),
                   SizedBox(height: 16.h),
-                  const Divider(color: AppColors.n20FillBodyInSmallCardColor, thickness: 2),
+                  const Divider(color: AppColors.n20Gray, thickness: 2),
                   SizedBox(height: 24.h),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -114,7 +114,7 @@ class _SessionSettingsScreenState extends State<SessionSettingsScreen> {
                     ],
                   ),
                   SizedBox(height: 16.h),
-                  const Divider(color: AppColors.n20FillBodyInSmallCardColor, thickness: 2),
+                  const Divider(color: AppColors.n20Gray, thickness: 2),
                   SizedBox(height: 24.h),
                   Text('Client should do the following before the session starts',
                       style: TextStyles.textStyleRegular.copyWith(color: AppColors.n400color, fontSize: 14.sp, fontWeight: FontWeight.w600)),

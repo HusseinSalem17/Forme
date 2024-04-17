@@ -23,7 +23,7 @@ class _AddWorkoutBodyState extends State<AddWorkoutBody> {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          color: AppColors.n20FillBodyInSmallCardColor,
+          color: AppColors.n20Gray,
           borderRadius: BorderRadius.circular(14.dg)),
       child: Padding(
         padding: EdgeInsets.all(10.h),
