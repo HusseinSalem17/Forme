@@ -67,7 +67,7 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           theme: Themes.customLightTheme,
           //onGenerateRoute: (settings) => generateRoute(settings, context),
-          home:  const SplashScreen(),
+          home:  const HomeScreen(),
         ),
       ),
     );

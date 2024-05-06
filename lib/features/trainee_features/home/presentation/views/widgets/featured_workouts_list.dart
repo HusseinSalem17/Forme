@@ -25,7 +25,9 @@ class FeaturedWorkoutsList extends StatelessWidget {
           itemCount: 50,
           itemBuilder: (context, index) {
             return Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8),
+              padding: index == 0
+                  ? const EdgeInsets.only(left: 24)
+                  : const EdgeInsets.symmetric(horizontal: 8),
               child: FeaturedWorkoutsCardItem(size: size),
             );
           },

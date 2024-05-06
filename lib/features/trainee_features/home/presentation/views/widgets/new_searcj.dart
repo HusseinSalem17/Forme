@@ -65,9 +65,12 @@ class _SearchFieldSampleState extends State<SearchFieldSample> {
             SearchField(
               controller: searchController,
               searchInputDecoration: InputDecoration(
-
                   constraints: const BoxConstraints(
-                      maxHeight: 40, minHeight: 30, maxWidth: 90, minWidth: 80),
+                    maxHeight: 40,
+                    minHeight: 30,
+                    maxWidth: 90,
+                    minWidth: 80,
+                  ),
                   contentPadding: const EdgeInsets.only(left: 8),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(4.dg),
@@ -88,7 +91,7 @@ class _SearchFieldSampleState extends State<SearchFieldSample> {
                     ),
                   ),
                   prefixIcon: Padding(
-                    padding: const EdgeInsets.only(left: 12,right: 5),
+                    padding: const EdgeInsets.only(left: 12, right: 5),
                     child: SvgPicture.asset(
                       width: 10,
                       height: 10,
@@ -132,21 +135,17 @@ class _SearchFieldSampleState extends State<SearchFieldSample> {
                     ),
                   )),
               maxSuggestionsInViewPort: 30,
-
               hint: 'Basic SearchField',
               suggestions:
                   suggestions.map(SearchFieldListItem<String>.new).toList(),
               onScroll: (_, __) {
                 SystemChannels.textInput.invokeMethod('TextInput.hide');
               },
-              suggestionItemDecoration: SuggestionDecoration(
-
-                borderRadius: BorderRadius.circular(16)
-                  // color: Colors.red
-                  ),
-              suggestionsDecoration: SuggestionDecoration(
-                width: 300
-              ),
+              suggestionItemDecoration:
+                  SuggestionDecoration(borderRadius: BorderRadius.circular(16)
+                      // color: Colors.red
+                      ),
+              suggestionsDecoration: SuggestionDecoration(width: 300),
             ),
           ],
         ),

@@ -15,6 +15,27 @@ class CustomSearchHomeScreen extends SearchDelegate {
     'Marv Levy',
     'Bobby Bowden',
     'Jon Gruden',
+    'United States',
+    'Germany',
+    'Washington',
+    'Paris',
+    'Jakarta',
+    'Australia',
+    'India',
+    'Czech Republic',
+    'Lorem Ipsum',
+    'United States',
+    'Germany',
+    'Washington',
+    'Paris',
+    'Jakarta',
+    'Australia',
+    'United States',
+    'Germany',
+    'Washington',
+    'Paris',
+    'Jakarta',
+    'Australia',
   ];
 
   @override
@@ -55,7 +76,6 @@ class CustomSearchHomeScreen extends SearchDelegate {
         ),
       );
 
-
   @override
   List<Widget>? buildActions(BuildContext context) {
     return [
@@ -65,11 +85,12 @@ class CustomSearchHomeScreen extends SearchDelegate {
           width: 18,
           height: 18,
           decoration: BoxDecoration(
-              border: Border.all(color: AppColors.primaryColor, width: 1),
-              borderRadius: BorderRadius.circular(18 / 2)),
+            border: Border.all(color: AppColors.primaryColor, width: 1),
+            borderRadius: BorderRadius.circular(18 / 2),
+          ),
           child: GestureDetector(
-            onTap: (){
-              query='';
+            onTap: () {
+              query = '';
             },
             child: const Icon(
               Icons.clear,
