@@ -4,14 +4,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
-import 'package:forme_app/features/trainee_features/home/presentation/views/widgets/special_card_review.dart';
+import 'package:forme_app/features/trainee_features/home/presentation/views/widgets/special_programs_card_review.dart';
 
 Column workoutSubHeader(){
   return Column(children:[
     SizedBox(
       height: 26.h,
     ),
-    SpecialCardReview(),
+    SpecialProgramsCardReview(),
     SizedBox(
       height: 16.h,
     ),

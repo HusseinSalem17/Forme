@@ -22,7 +22,7 @@ class _AboutTrainerScreenState extends State<AboutTrainerScreen> {
         SingleChildScrollView(
           child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             const AboutTrainer(),
-            const ProgramsCardList(),
+            const SpecialProgramsList(),
             const ReviewsSection(
               type: 'workout',
             ),

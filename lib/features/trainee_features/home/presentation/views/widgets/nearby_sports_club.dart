@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:forme_app/core/utils/app_colors.dart';
-import 'package:forme_app/core/utils/text_styles.dart';
 import 'package:forme_app/features/trainee_features/home/presentation/views/sections/vertical_list_of_items.dart';
+
+import 'nearby_sports_club_item.dart';
 
 class NearbySpotsClub extends StatelessWidget {
   final double listHeight;
@@ -16,13 +15,12 @@ class NearbySpotsClub extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SliverList(
-      delegate: SliverChildBuilderDelegate(
-        (context, index) {
-          return const VerticalCardsList();
-        },
-        childCount: 50,
-      ),
+    Size size = MediaQuery.of(context).size;
+    return SliverList.builder(
+      itemBuilder: (context, index) {
+        return VerticalCardItem(size: size);
+      },
+      itemCount: 50,
     );
   }
 }

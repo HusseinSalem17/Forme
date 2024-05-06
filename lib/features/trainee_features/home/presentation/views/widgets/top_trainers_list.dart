@@ -50,7 +50,12 @@ class TopTrainersList extends StatelessWidget {
               BuildContext context,
               index,
             ) {
-              return TopTrainerItem(index: index);
+              return Padding(
+                padding: index == 0
+                    ? const EdgeInsets.only(left: 24)
+                    : const EdgeInsets.symmetric(horizontal: 8),
+                child: TopTrainerItem(index: index),
+              );
             },
           ),
         )

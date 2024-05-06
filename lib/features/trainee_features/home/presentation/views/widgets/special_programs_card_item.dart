@@ -6,8 +6,8 @@ import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/icons_image_pathes.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
 import '../../../../../../core/test_models/top_trainers_model.dart';
-import 'card_image_section.dart';
-import 'special_card_review.dart';
+import 'list_card_image.dart';
+import 'special_programs_card_review.dart';
 
 class SpecialProgramsCardItem extends StatelessWidget {
   const SpecialProgramsCardItem({
@@ -48,7 +48,7 @@ class SpecialProgramsCardItem extends StatelessWidget {
                 fit: StackFit.passthrough,
                 clipBehavior: Clip.none,
                 children: [
-                  CardImageSection(
+                  ListCardImage(
                    imageUrl:  topTrainersData[1].imageUrl,
                     leftPaddingIcon: 154,
                     height: size.height / 3.75 / 2,
@@ -83,7 +83,7 @@ class SpecialProgramsCardItem extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const SpecialCardReview(),
+                      const SpecialProgramsCardReview(),
                       Text(
                         'Mindful Movement',
                         style: TextStyles.smallBold.copyWith(

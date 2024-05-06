@@ -21,66 +21,63 @@ class TopTrainerItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 8),
-      child: Column(
-        children: [
-          Stack(
-            children: [
-              Container(
-                width: 64,
-                height: 64,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(32),
-                ),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(32),
-                  child: Image.asset(
-                    topTrainersData[index].imageUrl,
-                    fit: BoxFit.cover,
-                  ),
+    return Column(
+      children: [
+        Stack(
+          children: [
+            Container(
+              width: 64,
+              height: 64,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(32),
+              ),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(32),
+                child: Image.asset(
+                  topTrainersData[index].imageUrl,
+                  fit: BoxFit.cover,
                 ),
               ),
-              if (topTrainersData[index].isExpert)
-                Positioned(
-                  bottom: 0,
-                  right: 0,
-                  child: Stack(
-                    fit: StackFit.passthrough,
-                    clipBehavior: Clip.antiAliasWithSaveLayer,
-                    children: [
-                      Positioned(
-                        bottom: 0,
-                        right: 0,
-                        child: Container(
-                          width: 17,
-                          height: 17,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(17 / 2),
-                            color: Colors.white,
-                          ),
+            ),
+            if (topTrainersData[index].isExpert)
+              Positioned(
+                bottom: 0,
+                right: 0,
+                child: Stack(
+                  fit: StackFit.passthrough,
+                  clipBehavior: Clip.antiAliasWithSaveLayer,
+                  children: [
+                    Positioned(
+                      bottom: 0,
+                      right: 0,
+                      child: Container(
+                        width: 17,
+                        height: 17,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(17 / 2),
+                          color: Colors.white,
                         ),
                       ),
-                      SvgPicture.asset(
-                        expertIcon,
-                        height: 20,
-                        width: 20,
-                      )
-                    ],
-                  ),
+                    ),
+                    SvgPicture.asset(
+                      expertIcon,
+                      height: 20,
+                      width: 20,
+                    )
+                  ],
                 ),
-            ],
+              ),
+          ],
+        ),
+        const SizedBox(height: 4),
+        Text(
+          truncateText(topTrainersData[index].name, 8),
+          style: TextStyles.smallRegular.copyWith(
+            fontSize: 12,
+            color: AppColors.n900Black,
           ),
-          const SizedBox(height: 4),
-          Text(
-            truncateText(topTrainersData[index].name, 8),
-            style: TextStyles.smallRegular.copyWith(
-              fontSize: 12,
-              color: AppColors.n900Black,
-            ),
-          )
-        ],
-      ),
+        )
+      ],
     );
   }
 }

@@ -20,7 +20,6 @@ import 'core/utils/functions/service_locator.dart';
 import 'core/utils/scroll_behavior.dart';
 import 'features/trainer_features/complete_profile_trainer/presentation/views/trainer_complete_profile.dart';
 
-
 void main() {
   setupServiceLocator();
   SystemChrome.setSystemUIOverlayStyle(
@@ -37,42 +36,42 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
-      providers: [
-        BlocProvider(
-          create: (context) => TraineeProfileCubit(),
-        ),
-        BlocProvider(
-          create: (context) => OnBoardingBloc(),
-        ),
-        BlocProvider(
-          create: (context) => PreferencesBloc(),
-        ),
-        BlocProvider(
-          create: (context) => CompleteProfileCubit(getIt.get<CompleteProfileRepoImpl>()),
-        ),
-        BlocProvider(
-          create: (context) => MyProfileCubit(),
-        ),
-        BlocProvider(
-          create: (context) => HomeBloc(),
-        ),
-        BlocProvider(
-          create: (context) => TrainerHomeBloc(),
-        ),
-        BlocProvider(
-          create: (context) => MyProfileTrainerCubit(),
-        ),
-      ],
-      child: ScreenUtilInit(
-        builder: (context, child) => MaterialApp(
-          scrollBehavior: CustomScrollBehavior(),
-          debugShowCheckedModeBanner: false,
-          theme: Themes.customLightTheme,
-          //onGenerateRoute: (settings) => generateRoute(settings, context),
+        providers: [
+          BlocProvider(
+            create: (context) => TraineeProfileCubit(),
+          ),
+          BlocProvider(
+            create: (context) => OnBoardingBloc(),
+          ),
+          BlocProvider(
+            create: (context) => PreferencesBloc(),
+          ),
+          BlocProvider(
+            create: (context) =>
+                CompleteProfileCubit(getIt.get<CompleteProfileRepoImpl>()),
+          ),
+          BlocProvider(
+            create: (context) => MyProfileCubit(),
+          ),
+          BlocProvider(
+            create: (context) => HomeBloc(),
+          ),
+          BlocProvider(
+            create: (context) => TrainerHomeBloc(),
+          ),
+          BlocProvider(
+            create: (context) => MyProfileTrainerCubit(),
+          ),
+        ],
+        child: ScreenUtilInit(
+          builder: (context, child) => MaterialApp(
+            scrollBehavior: CustomScrollBehavior(),
+            debugShowCheckedModeBanner: false,
+            theme: Themes.customLightTheme,
+            //onGenerateRoute: (settings) => generateRoute(settings, context),
 
-          home:  const SplashScreen(),
-        ),
-      ),
-    );
+            home: const SplashScreen(),
+          ),
+        ));
   }
 }

@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
 
-class TypeAndState extends StatelessWidget {
+class CoachTypeReview extends StatelessWidget {
   final String type, state;
   final Color stateColor;
 
-  const TypeAndState({
+  const CoachTypeReview({
     super.key,
     required this.type,
     required this.state,

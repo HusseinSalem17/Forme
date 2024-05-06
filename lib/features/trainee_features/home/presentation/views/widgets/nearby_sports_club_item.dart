@@ -4,18 +4,16 @@ import 'package:flutter_svg/svg.dart';
 import 'package:forme_app/core/transitions/page_slide.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
-import 'package:forme_app/features/trainee_features/home/presentation/views/widgets/type_and_state.dart';
+import 'package:forme_app/features/trainee_features/home/presentation/views/widgets/coach_type_review.dart';
 import 'package:forme_app/features/trainee_features/sports_club/presentation/views/sports_club.dart';
 import '../../../../../../core/test_models/top_trainers_model.dart';
-import 'card_image_section.dart';
+import 'list_card_image.dart';
 import 'package:figma_squircle/figma_squircle.dart';
 
 class VerticalCardItem extends StatelessWidget {
-  //final void Function()? onTap;
   const VerticalCardItem({
     super.key,
     required this.size,
-    //required this.onTap
   });
 
   final Size size;
@@ -24,14 +22,17 @@ class VerticalCardItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.of(context)
-            .push(PageSlideTransition(const SportsClubScreen()));
+        Navigator.of(context).push(
+          PageSlideTransition(
+            const SportsClubScreen(),
+          ),
+        );
       }, //onTap,
       child: Wrap(
         children: [
           Container(
-            margin: const EdgeInsets.symmetric(vertical: 5),
-            width: size.width/1.1,
+            margin: const EdgeInsets.symmetric(vertical: 5, horizontal: 24),
+            width: double.infinity,
             height: size.height / 6.25,
             decoration: ShapeDecoration(
               shadows: [
@@ -57,8 +58,8 @@ class VerticalCardItem extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  CardImageSection(
-                    imageUrl:  topTrainersData[0].imageUrl,
+                  ListCardImage(
+                    imageUrl: topTrainersData[0].imageUrl,
                     height: size.height / 2,
                     width: size.width / 3,
                     bottomPadding: 0,
@@ -72,11 +73,13 @@ class VerticalCardItem extends StatelessWidget {
                       children: [
                         Row(
                           children: [
-                            const TypeAndState(
-                              type: 'Yoga',
+                            const CoachTypeReview(
+                              type: 'Yoga & Gym',
                               state: 'Open',
                             ),
-                            SizedBox(width: 70,),
+                            const SizedBox(
+                              width: 30,
+                            ),
                             const Icon(
                               Icons.star_rounded,
                               size: 14,
