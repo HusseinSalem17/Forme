@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 
-class CardImageSection extends StatelessWidget {
-  const CardImageSection({
+class ListCardImage extends StatelessWidget {
+  const ListCardImage({
     super.key,
     required this.height,
     required this.width,

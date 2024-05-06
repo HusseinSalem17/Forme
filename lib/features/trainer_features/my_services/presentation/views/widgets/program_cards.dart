@@ -4,7 +4,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
 import 'package:forme_app/features/trainee_features/Favorite/presentation/views/widgets/workout_card_type.dart';
-import 'package:forme_app/features/trainee_features/home/presentation/views/widgets/special_card_review.dart';
+import 'package:forme_app/features/trainee_features/home/presentation/views/widgets/special_programs_card_review.dart';
 
 class CardsItem extends StatelessWidget {
   const CardsItem({
@@ -72,7 +72,7 @@ class CardsItem extends StatelessWidget {
                 ),
                 const SizedBox(height: 4),
                 isPrograms
-                    ? SpecialCardReview(
+                    ? SpecialProgramsCardReview(
                         type: type,
                         state: state,
                         rating: rating,

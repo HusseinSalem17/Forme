@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
-import 'package:forme_app/features/trainee_features/home/presentation/views/widgets/type_and_state.dart';
+import 'package:forme_app/features/trainee_features/home/presentation/views/widgets/coach_type_review.dart';
 
 class FeaturedCardReview extends StatelessWidget {
   final String type;

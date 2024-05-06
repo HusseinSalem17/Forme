@@ -5,8 +5,7 @@ import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/icons_image_pathes.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
 import '../../../../../../core/test_models/top_trainers_model.dart';
-import 'card_image_section.dart';
-import 'special_card_review.dart';
+import 'list_card_image.dart';
 import 'featured_card_review.dart';
 
 class FeaturedWorkoutsCardItem extends StatelessWidget {
@@ -48,8 +47,8 @@ class FeaturedWorkoutsCardItem extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisSize: MainAxisSize.min,
               children: [
-                CardImageSection(
-                  imageUrl:  topTrainersData[5].imageUrl,
+                ListCardImage(
+                  imageUrl: topTrainersData[5].imageUrl,
                   height: size.height / 3.75 / 2,
                   width: size.width / 2,
                 ),

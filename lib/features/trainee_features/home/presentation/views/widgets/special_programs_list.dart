@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:forme_app/core/transitions/page_slide.dart';
-import 'package:forme_app/features/trainee_features/home/presentation/views/widgets/featured_workouts_card_item.dart';
 import 'package:forme_app/features/trainee_features/home/presentation/views/widgets/special_programs_card_item.dart';
 import 'package:forme_app/features/trainee_features/workout_detail/presentation/views/workout_detail.dart';
 
-class ProgramsCardList extends StatelessWidget {
-  const ProgramsCardList({Key? key}) : super(key: key);
+class SpecialProgramsList extends StatelessWidget {
+  const SpecialProgramsList({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +24,9 @@ class ProgramsCardList extends StatelessWidget {
           itemCount: 50,
           itemBuilder: (context, index) {
             return Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8),
+              padding: index == 0
+                  ? const EdgeInsets.only(left: 24)
+                  : const EdgeInsets.symmetric(horizontal: 8),
               child: SpecialProgramsCardItem(size: size),
             );
           },

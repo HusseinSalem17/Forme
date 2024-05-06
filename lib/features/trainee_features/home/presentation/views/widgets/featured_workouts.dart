@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
-import 'package:forme_app/features/trainee_features/home/presentation/views/sections/vertical_list_of_items.dart';
 import 'package:forme_app/features/trainee_features/home/presentation/views/widgets/featured_workouts_list.dart';
-import 'package:forme_app/features/trainee_features/home/presentation/views/widgets/special_programs_list.dart';
 
 class FeaturedWorkouts extends StatelessWidget {
   final void Function()? onTap;
