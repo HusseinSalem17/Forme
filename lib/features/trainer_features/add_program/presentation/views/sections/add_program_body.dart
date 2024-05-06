@@ -181,7 +181,7 @@ class _AddProgramBodyState extends State<AddProgramBody> {
                 width: MediaQuery.sizeOf(context).width,
                 height: 70,
                 decoration: BoxDecoration(
-                    border: Border.all(color: AppColors.n200BodyContentColor),
+                    border: Border.all(color: AppColors.n200Gray),
                     color: AppColors.n20FillBodyInBigCardColor,
                     borderRadius: BorderRadius.circular(16.dg)),
                 child: Row(

@@ -8,6 +8,7 @@ import 'package:forme_app/core/utils/text_styles.dart';
 
 class PaymentPlanItem extends StatefulWidget {
   final void Function()? onTap;
+
   const PaymentPlanItem({super.key, required this.onTap});
 
   @override
@@ -21,6 +22,7 @@ class _PaymentPlanItemState extends State<PaymentPlanItem> {
   late TextEditingController _secondController;
 
   bool _isChecked = false;
+
   @override
   void initState() {
     super.initState();
@@ -80,8 +82,7 @@ class _PaymentPlanItemState extends State<PaymentPlanItem> {
                 children: [
                   Text("Offer",
                       style: TextStyles.textStyleRegular.copyWith(
-                          fontSize: 12.sp,
-                          color: AppColors.n200BodyContentColor)),
+                          fontSize: 12.sp, color: AppColors.n200Gray)),
                   Checkbox(
                     value: _isChecked,
                     activeColor: AppColors.primaryColor,
@@ -145,17 +146,15 @@ class _PaymentPlanItemState extends State<PaymentPlanItem> {
         children: [
           Text(title,
               style: TextStyles.textStyleRegular.copyWith(
-                  fontSize: 12.sp,
-                  color: AppColors.n200Gray,
-                  height: 1)),
+                  fontSize: 12.sp, color: AppColors.n200Gray, height: 1)),
           TextField(
             controller: controller,
             focusNode: focusNode,
             keyboardType: TextInputType.number,
             decoration: InputDecoration(
               hintText: '0',
-              hintStyle: TextStyles.textStyleRegular.copyWith(
-                  fontSize: 12.sp, color: AppColors.n200Gray),
+              hintStyle: TextStyles.textStyleRegular
+                  .copyWith(fontSize: 12.sp, color: AppColors.n200Gray),
               border: InputBorder.none,
               enabledBorder: InputBorder.none,
               focusedBorder: InputBorder.none,
