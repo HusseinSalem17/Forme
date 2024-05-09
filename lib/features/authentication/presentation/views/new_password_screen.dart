@@ -43,12 +43,14 @@ class NewPasswordScreen extends StatelessWidget {
               ),
               const SizedBox(height: 24),
               const SizedBox(height: 16),
-              const CustomPasswordFromField(
+              CustomPasswordFromField(
+                textEditingController: TextEditingController(),
                 subTitle: 'Password',
                 hintText: '********',
               ),
               const SizedBox(height: 16),
-              const CustomPasswordFromField(
+              CustomPasswordFromField(
+                textEditingController: TextEditingController(),
                 subTitle: 'Re-Enter Password',
                 hintText: '********',
               ),

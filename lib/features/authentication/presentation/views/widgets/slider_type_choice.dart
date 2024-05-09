@@ -1,13 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:forme_app/core/user_type.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/icons_image_pathes.dart';
 import 'custom_selected_type_item.dart';
 
 class SliderTypeChoice extends StatefulWidget {
+  final void Function(UserType userType)
+      onUserTypeSelected; // Callback function
+
   const SliderTypeChoice({
-    super.key,
-  });
+    Key? key,
+    required this.onUserTypeSelected, // Constructor parameter
+  }) : super(key: key);
 
   @override
   State<SliderTypeChoice> createState() => _SingInAndUpHeader();
@@ -28,6 +33,9 @@ class _SingInAndUpHeader extends State<SliderTypeChoice>
       _start -= 140.w;
       if (_start <= 80.w) _start = 80.w;
     });
+    widget.onUserTypeSelected(
+      UserType.trainer,
+    ); // Notify parent with selected user type
   }
 
   void _moveRight() {
@@ -37,6 +45,9 @@ class _SingInAndUpHeader extends State<SliderTypeChoice>
         _start = 220.w;
       }
     });
+    widget.onUserTypeSelected(
+      UserType.trainee,
+    ); // Notify parent with selected user type
   }
 
   @override

@@ -6,15 +6,15 @@ import 'package:forme_app/onboarding_screens/data/bloc/onboarding_states.dart';
 import 'package:forme_app/onboarding_screens/views/widgets/custom_pageview.dart';
 import 'package:forme_app/onboarding_screens/views/widgets/pageview_buttons.dart';
 
-class OnBoardingView extends StatefulWidget {
+class OnBoardingScreen extends StatefulWidget {
   static const routeName = '/on-boarding-view';
-  const OnBoardingView({super.key});
+  const OnBoardingScreen({super.key});
 
   @override
-  State<OnBoardingView> createState() => _WelcomeState();
+  State<OnBoardingScreen> createState() => _WelcomeState();
 }
 
-class _WelcomeState extends State<OnBoardingView> {
+class _WelcomeState extends State<OnBoardingScreen> {
   PageController pageController = PageController(initialPage: 0);
 
   @override

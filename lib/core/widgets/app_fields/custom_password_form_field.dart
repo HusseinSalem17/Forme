@@ -4,13 +4,15 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
 
-class CustomPasswordFromField extends StatefulWidget {
+class CustomPasswordFromField extends StatelessWidget {
   final String hintText;
   final String subTitle;
   final ValueChanged<String>? onChange;
   final List<TextInputFormatter>? inputFormats;
   final TextInputType? textInputType;
   final VoidCallback? onEditingComplete;
+  final String? Function(String?)? validator;
+  final TextEditingController textEditingController;
 
   const CustomPasswordFromField({
     super.key,
@@ -20,18 +22,12 @@ class CustomPasswordFromField extends StatefulWidget {
     this.inputFormats,
     this.textInputType,
     this.onEditingComplete,
+    this.validator,
+    required this.textEditingController,
   });
 
   @override
-  State<CustomPasswordFromField> createState() =>
-      _CustomPasswordFromFieldState();
-}
-
-class _CustomPasswordFromFieldState extends State<CustomPasswordFromField> {
-  bool showPassword = false;
-
-  @override
-  Widget build(BuildContext context) {
+  build(BuildContext context) {
     final subTitleStyle = TextStyles.textStyleSemiBold.copyWith(
       fontSize: 16,
       color: AppColors.n900Black,
@@ -40,38 +36,44 @@ class _CustomPasswordFromFieldState extends State<CustomPasswordFromField> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          widget.subTitle,
+          subTitle,
           style: subTitleStyle,
         ),
         SizedBox(height: 10.h),
         TextFormField(
+          controller: textEditingController,
+          validator: validator,
           keyboardType: TextInputType.visiblePassword,
           textInputAction: TextInputAction.done,
-          obscureText: !showPassword,
+          obscureText: false,
           decoration: InputDecoration(
               contentPadding: const EdgeInsets.symmetric(
                 horizontal: 12,
                 vertical: 11.5,
               ),
-              hintText: widget.hintText,
+              hintText: hintText,
               hintStyle: TextStyles.textStyleRegular.copyWith(
                 fontSize: 14,
               ),
               enabledBorder: buildOutlineInputBorder(),
               focusedBorder: buildOutlineInputBorder(),
-              suffixIcon: IconButton(
-                icon: Icon(
-                  showPassword ? Icons.visibility : Icons.visibility_off,
+              errorBorder: buildOutlineInputBorder().copyWith(
+                borderSide: const BorderSide(
+                  color: AppColors.d300Danger,
                 ),
-                onPressed: () {
-                  setState(() {
-                    showPassword = !showPassword;
-                  });
-                },
+              ),
+              focusedErrorBorder:  buildOutlineInputBorder().copyWith(
+                borderSide: const BorderSide(
+                  color: AppColors.d300Danger,
+                ),
+              ),
+              suffixIcon: IconButton(
+                icon: const Icon(Icons.visibility),
+                onPressed: () {},
               )),
-          onChanged: widget.onChange,
-          inputFormatters: widget.inputFormats,
-          onEditingComplete: widget.onEditingComplete,
+          onChanged: onChange,
+          inputFormatters: inputFormats,
+          onEditingComplete: onEditingComplete,
         ),
       ],
     );

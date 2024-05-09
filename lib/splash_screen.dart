@@ -26,7 +26,7 @@ class SplashScreen extends StatelessWidget {
       pageTransitionType: PageTransitionType.rightToLeftWithFade,
       animationDuration: const Duration(milliseconds: 800),
       curve: Curves.easeIn,
-      nextScreen: isRegistered ? const SignInScreen() : const OnBoardingView(),
+      nextScreen: isRegistered ?  SignInScreen() : const OnBoardingScreen(),
     );
   }
 }
