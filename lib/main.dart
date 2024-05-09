@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:forme_app/core/utils/app_theme.dart';
+import 'package:forme_app/features/Authentication/presentation/manager/auth_bloc.dart';
+import 'package:forme_app/features/Authentication/presentation/views/sign_up_screen.dart';
 import 'package:forme_app/features/trainee_features/home/presentation/views/bottom_bar_screens.dart';
 import 'package:forme_app/features/trainer_features/Trainer_Profile/presentation/manager/my_profile_cubit/cubit/my_profile_cubit.dart';
 import 'package:forme_app/features/trainer_features/Transformations/presentation/view/Transformations_screen.dart';
@@ -16,26 +18,39 @@ import 'package:forme_app/features/trainee_features/profile/presentation/manager
 import 'package:forme_app/onboarding_screens/data/bloc/onboarding_blocs.dart';
 import 'package:flutter/services.dart';
 import 'package:forme_app/splash_screen.dart';
+import 'app_routing/auth_routes.dart';
+import 'app_routing/main_route.dart';
+import 'core/user_type.dart';
 import 'core/utils/functions/service_locator.dart';
 import 'core/utils/scroll_behavior.dart';
+import 'features/Authentication/presentation/views/sign_in_screen.dart';
 import 'features/trainer_features/complete_profile_trainer/presentation/views/trainer_complete_profile.dart';
+import 'local_storage_data/auth_local/registration_data_local.dart';
 
-void main() {
+void main() async {
   setupServiceLocator();
+  WidgetsFlutterBinding.ensureInitialized();
+
+  // Retrieve the saved user type from local storage
+  UserType? initialUserType = await RegistrationDataLocal.getUserType();
   SystemChrome.setSystemUIOverlayStyle(
     const SystemUiOverlayStyle(
       statusBarColor: Colors.white,
     ),
   );
-  runApp(const MyApp());
+  runApp(MyApp(initialUserType: initialUserType));
+  print(initialUserType);
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  final UserType? initialUserType;
+
+  const MyApp({Key? key, this.initialUserType}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
+    return ScreenUtilInit(
+      builder: (context, child) => MultiBlocProvider(
         providers: [
           BlocProvider(
             create: (context) => TraineeProfileCubit(),
@@ -62,16 +77,29 @@ class MyApp extends StatelessWidget {
           BlocProvider(
             create: (context) => MyProfileTrainerCubit(),
           ),
-        ],
-        child: ScreenUtilInit(
-          builder: (context, child) => MaterialApp(
-            scrollBehavior: CustomScrollBehavior(),
-            debugShowCheckedModeBanner: false,
-            theme: Themes.customLightTheme,
-            //onGenerateRoute: (settings) => generateRoute(settings, context),
-
-            home: const SplashScreen(),
+          BlocProvider(
+            create: (_) => AuthBloc(),
           ),
-        ));
+        ],
+        child: MaterialApp(
+          scrollBehavior: CustomScrollBehavior(),
+          debugShowCheckedModeBanner: false,
+          theme: Themes.customLightTheme,
+          //onGenerateRoute: (settings) => generateRoute(settings, context),
+          onGenerateRoute: (settings) {
+            if (initialUserType == null) {
+              return AuthRoutes().generateRoute(settings);
+            } else {
+              return AppRouter(
+                userType: initialUserType!,
+                context: context,
+              ).generateRoute(settings);
+            }
+          },
+
+          //home: SignUpScreen(),
+        ),
+      ),
+    );
   }
 }

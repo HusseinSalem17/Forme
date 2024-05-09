@@ -55,6 +55,7 @@ dependencies:
 #  time_range_picker: ^2.2.0
   video_player: ^2.8.4
   searchfield: ^1.0.1
+  shared_preferences: ^2.2.3
 
 
 dev_dependencies:

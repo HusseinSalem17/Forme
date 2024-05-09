@@ -14,6 +14,7 @@ import '../../../trainee_features/preferences/presentation/views/preferences_scr
 
 class ForgotPasswordScreen extends StatelessWidget {
   static const routeName = '/trainee/forgot-password-screen';
+
   const ForgotPasswordScreen({Key? key}) : super(key: key);
 
   @override
@@ -25,7 +26,7 @@ class ForgotPasswordScreen extends StatelessWidget {
         iconTheme: const IconThemeData(
             color: AppColors.n900Black,
             size: 25 // Change the color of the AppBar icon
-        ),
+            ),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24),
@@ -51,6 +52,7 @@ class ForgotPasswordScreen extends StatelessWidget {
               ),
               const SizedBox(height: 32),
               CustomTextFromField(
+                textEditingController: TextEditingController(),
                 subTitle: 'Email',
                 hintText: 'yourname@gmail.com',
                 validator: (val) {
@@ -62,7 +64,6 @@ class ForgotPasswordScreen extends StatelessWidget {
                 },
               ),
               const SizedBox(height: 24),
-
               CustomAuthButton(
                 text: "Send Code",
                 isActive: true,
@@ -74,7 +75,6 @@ class ForgotPasswordScreen extends StatelessWidget {
                   );
                 },
               ),
-
             ],
           ),
         ),

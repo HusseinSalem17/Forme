@@ -12,6 +12,7 @@ class CustomTextFromField extends StatelessWidget {
   final TextInputType? textInputType;
   final VoidCallback? onEditingComplete;
   final String? Function(String?)? validator;
+  final TextEditingController textEditingController;
 
   const CustomTextFromField({
     super.key,
@@ -20,7 +21,9 @@ class CustomTextFromField extends StatelessWidget {
     this.onChange,
     this.inputFormats,
     this.textInputType,
-    this.onEditingComplete, this.validator,
+    this.onEditingComplete,
+    this.validator,
+    required this.textEditingController,
   });
 
   @override
@@ -38,11 +41,11 @@ class CustomTextFromField extends StatelessWidget {
         ),
         const SizedBox(height: 8),
         TextFormField(
+          controller: textEditingController,
           validator: validator,
           decoration: InputDecoration(
             contentPadding: const EdgeInsets.symmetric(
               horizontal: 12,
-
             ),
             hintText: hintText,
             hintStyle: TextStyles.textStyleRegular.copyWith(
@@ -50,6 +53,16 @@ class CustomTextFromField extends StatelessWidget {
             ),
             enabledBorder: buildOutlineInputBorder(),
             focusedBorder: buildOutlineInputBorder(),
+            errorBorder: buildOutlineInputBorder().copyWith(
+              borderSide: const BorderSide(
+                color: AppColors.d300Danger,
+              ),
+            ),
+            focusedErrorBorder:  buildOutlineInputBorder().copyWith(
+              borderSide: const BorderSide(
+                color: AppColors.d300Danger,
+              ),
+            ),
           ),
           keyboardType: textInputType,
           onChanged: onChange,
@@ -62,8 +75,8 @@ class CustomTextFromField extends StatelessWidget {
 
   OutlineInputBorder buildOutlineInputBorder() {
     return OutlineInputBorder(
-            borderRadius: BorderRadius.circular(4),
-            borderSide: const BorderSide(color: AppColors.n40Gray),
-          );
+      borderRadius: BorderRadius.circular(4),
+      borderSide: const BorderSide(color: AppColors.n40Gray),
+    );
   }
 }

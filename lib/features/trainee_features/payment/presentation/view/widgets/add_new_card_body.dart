@@ -32,7 +32,9 @@ class _CustomCreditCardState extends State<CustomCreditCard> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: 24.h,),
+            SizedBox(
+              height: 24.h,
+            ),
             CreditCardWidget(
               cardBgColor: AppColors.primaryColor,
               padding: 0,
@@ -45,6 +47,7 @@ class _CustomCreditCardState extends State<CustomCreditCard> {
               onCreditCardWidgetChange: (value) {},
             ),
             CustomTextFromField(
+              textEditingController: TextEditingController(),
               subTitle: 'Card Holder Name',
               hintText: 'Enter Your Name',
               onChange: (val) {
@@ -53,6 +56,7 @@ class _CustomCreditCardState extends State<CustomCreditCard> {
               },
             ),
             CustomTextFromField(
+              textEditingController: TextEditingController(),
               subTitle: 'Card Number',
               hintText: 'xxxx xxxx xxxx xxxx',
               onChange: (val) {
@@ -76,6 +80,7 @@ class _CustomCreditCardState extends State<CustomCreditCard> {
               children: [
                 Expanded(
                   child: CustomTextFromField(
+                    textEditingController: TextEditingController(),
                     subTitle: 'Expiry Date',
                     hintText: '02/30',
                     inputFormats: [
@@ -90,6 +95,7 @@ class _CustomCreditCardState extends State<CustomCreditCard> {
                 const SizedBox(width: 16),
                 Expanded(
                   child: CustomTextFromField(
+                    textEditingController: TextEditingController(),
                     subTitle: 'CVV',
                     hintText: '000',
                     onChange: (value) {
