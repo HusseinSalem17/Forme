@@ -31,7 +31,7 @@ class EmptyContentScreen extends StatelessWidget {
                 children: [
                   CircleAvatar(
                     radius: 90.dg,
-                    backgroundColor: AppColors.n40BorderColor,
+                    backgroundColor: AppColors.n40Gray,
                     child: CircleAvatar(
                       radius: 87.dg,
                       backgroundColor: AppColors.n10Color,
@@ -47,7 +47,7 @@ class EmptyContentScreen extends StatelessWidget {
                   ),
                   Text(
                     'Sorry, no content here!',
-                    style: TextStyles.textStyleSemiBold.copyWith(color: AppColors.n900PrimaryTextColor, fontWeight: FontWeight.w400, fontSize: 16.sp),
+                    style: TextStyles.textStyleSemiBold.copyWith(color: AppColors.n900Black, fontWeight: FontWeight.w400, fontSize: 16.sp),
                   ),
                 ],
               ),

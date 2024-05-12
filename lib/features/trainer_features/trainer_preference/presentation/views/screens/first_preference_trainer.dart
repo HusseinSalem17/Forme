@@ -25,7 +25,7 @@ class FirstPreferenceTrainer extends StatelessWidget {
                 'Tell us about yourself',
                 textAlign: TextAlign.start,
                 style: TextStyles.textStyleBold.copyWith(
-                  color: AppColors.n900PrimaryTextColor,
+                  color: AppColors.n900Black,
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w600,
                 ),
@@ -34,7 +34,7 @@ class FirstPreferenceTrainer extends StatelessWidget {
               const TextAreaField(hintText: 'Please share a brief description about yourself'),
               SizedBox(height: 16.h),
               const Divider(
-                color: AppColors.n40BorderColor,
+                color: AppColors.n40Gray,
                 thickness: 1,
               ),
               SizedBox(height: 16.h),
@@ -42,7 +42,7 @@ class FirstPreferenceTrainer extends StatelessWidget {
                 'Do you have previous experience with individuals with severe injuries?',
                 textAlign: TextAlign.start,
                 style: TextStyles.textStyleBold.copyWith(
-                  color: AppColors.n900PrimaryTextColor,
+                  color: AppColors.n900Black,
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w600,
                 ),
@@ -51,7 +51,7 @@ class FirstPreferenceTrainer extends StatelessWidget {
               const TwoChoices(text1: 'Yes', text2: 'No'),
               SizedBox(height: 16.h),
               const Divider(
-                color: AppColors.n40BorderColor,
+                color: AppColors.n40Gray,
                 thickness: 1,
               ),
               SizedBox(height: 16.h),
@@ -59,7 +59,7 @@ class FirstPreferenceTrainer extends StatelessWidget {
                 'Do you have previous experience with people with physical disabilities?',
                 textAlign: TextAlign.start,
                 style: TextStyles.textStyleBold.copyWith(
-                  color: AppColors.n900PrimaryTextColor,
+                  color: AppColors.n900Black,
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w600,
                 ),
@@ -68,7 +68,7 @@ class FirstPreferenceTrainer extends StatelessWidget {
               const TwoChoices(text1: 'Yes', text2: 'No'),
               SizedBox(height: 16.h),
               const Divider(
-                color: AppColors.n40BorderColor,
+                color: AppColors.n40Gray,
                 thickness: 1,
               ),
               SizedBox(height: 16.h),
@@ -76,7 +76,7 @@ class FirstPreferenceTrainer extends StatelessWidget {
                 'What language do you speak?',
                 textAlign: TextAlign.start,
                 style: TextStyles.textStyleBold.copyWith(
-                  color: AppColors.n900PrimaryTextColor,
+                  color: AppColors.n900Black,
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w600,
                 ),
@@ -85,7 +85,7 @@ class FirstPreferenceTrainer extends StatelessWidget {
               const PickLanguages(),
               SizedBox(height: 8.h),
               const Divider(
-                color: AppColors.n40BorderColor,
+                color: AppColors.n40Gray,
                 thickness: 1,
               ),
               SizedBox(height: 16.h),
@@ -93,7 +93,7 @@ class FirstPreferenceTrainer extends StatelessWidget {
                 'Add links to your social media accounts',
                 textAlign: TextAlign.start,
                 style: TextStyles.textStyleBold.copyWith(
-                  color: AppColors.n900PrimaryTextColor,
+                  color: AppColors.n900Black,
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w600,
                 ),

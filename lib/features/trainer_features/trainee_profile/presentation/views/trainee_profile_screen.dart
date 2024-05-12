@@ -3,13 +3,13 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:forme_app/core/widgets/app_drop_list/custom_drop_list.dart';
+import 'package:forme_app/features/trainee_features/profile/presentation/views/complete_profile_widgets/profile_image_picker.dart';
+import 'package:forme_app/features/trainee_features/profile/presentation/views/widgets/my_profile_phone_field.dart';
 import 'package:image_picker/image_picker.dart';
 import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/utils/text_styles.dart';
 import '../../../../../core/widgets/app_fields/custom_text_field.dart';
 import '../../../../../core/widgets/custom_app_bar_arrow_button.dart';
-import '../../../../user_features/profile/presentation/views/complete_profile_widgets/profile_image_picker.dart';
-import '../../../../user_features/profile/presentation/views/widgets/my_profile_phone_field.dart';
 import '../manager/trainee_profile_cubit.dart';
 
 class TraineeProfileScreen extends StatefulWidget {
@@ -75,7 +75,7 @@ class _TraineeProfileScreenState extends State<TraineeProfileScreen> {
               Text(
                 "Hussein Salem",
                 style: TextStyles.textStyleBold.copyWith(
-                    fontSize: 18.sp, color: AppColors.n900PrimaryTextColor),
+                    fontSize: 18.sp, color: AppColors.n900Black),
               ),
               const Spacer(),
               IconButton(
@@ -128,7 +128,11 @@ class _TraineeProfileScreenState extends State<TraineeProfileScreen> {
                   },
                 ),
                 SizedBox(height: 16.0.h),
-                Center(child: Text('husseinsalem910@gmail.com', style: TextStyles.textStyleSemiBold.copyWith(fontSize: 14.sp, color: AppColors.n900PrimaryTextColor))),
+                Center(
+                    child: Text('husseinsalem910@gmail.com',
+                        style: TextStyles.textStyleSemiBold.copyWith(
+                            fontSize: 14.sp,
+                            color: AppColors.primaryColor))),
                 SizedBox(height: 32.0.h),
                 CustomTextField(
                   controller: _nameController,
@@ -167,7 +171,7 @@ class _TraineeProfileScreenState extends State<TraineeProfileScreen> {
                     SizedBox(width: 8.h),
                     Container(
                       decoration: BoxDecoration(
-                        color: AppColors.p300PrimaryColor,
+                        color: AppColors.primaryColor,
                         borderRadius: BorderRadius.circular(4.dg),
                       ),
                       padding: EdgeInsets.all(10.h),
@@ -200,7 +204,7 @@ class _TraineeProfileScreenState extends State<TraineeProfileScreen> {
                     SizedBox(width: 8.h),
                     Container(
                       decoration: BoxDecoration(
-                        color: AppColors.p300PrimaryColor,
+                        color: AppColors.primaryColor,
                         borderRadius: BorderRadius.circular(4.dg),
                       ),
                       padding: EdgeInsets.all(10.h),

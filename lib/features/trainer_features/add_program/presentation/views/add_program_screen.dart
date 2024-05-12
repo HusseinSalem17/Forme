@@ -34,7 +34,7 @@ class _AddProgramScreenState extends State<AddProgramScreen> {
             Text(
               'Add Program',
               style: TextStyles.textStyleBold.copyWith(
-                  fontSize: 18.sp, color: AppColors.n900PrimaryTextColor),
+                  fontSize: 18.sp, color: AppColors.n900Black),
             ),
             const Spacer(),
             GestureDetector(

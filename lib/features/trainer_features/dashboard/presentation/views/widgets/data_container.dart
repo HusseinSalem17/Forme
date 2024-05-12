@@ -9,7 +9,7 @@ Padding dataContainer(
       padding: EdgeInsets.only(top: 24.h),
       child: Container(
           decoration: BoxDecoration(
-            color: AppColors.n20FillBodyInSmallCardColor,
+            color: AppColors.n20Gray,
             border: Border.all(width: 1.sp, color: AppColors.border30),
             borderRadius: BorderRadius.circular(16.dg),
           ),
@@ -23,17 +23,17 @@ Padding dataContainer(
                     Text(title1,
                         style: TextStyles.textStyleRegular.copyWith(
                             fontSize: 14.sp,
-                            color: AppColors.n900PrimaryTextColor)),
+                            color: AppColors.n900Black)),
                     Text(rate1,
                         style: TextStyles.textStyleRegular.copyWith(
                             height: 2,
                             fontSize: 14.sp,
-                            color: AppColors.p300PrimaryColor)),
+                            color: AppColors.primaryColor)),
                   ],
                 ),
                 const Divider(
                   thickness: 1,
-                  color: AppColors.n40BorderColor,
+                  color: AppColors.n40Gray,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -41,12 +41,12 @@ Padding dataContainer(
                     Text(title2,
                         style: TextStyles.textStyleRegular.copyWith(
                             fontSize: 14.sp,
-                            color: AppColors.n900PrimaryTextColor)),
+                            color: AppColors.n900Black)),
                     Text(rate2,
                         style: TextStyles.textStyleRegular.copyWith(
                             height: 2,
                             fontSize: 14.sp,
-                            color: AppColors.p300PrimaryColor)),
+                            color: AppColors.primaryColor)),
                   ],
                 )
               ],

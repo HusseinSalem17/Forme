@@ -9,7 +9,7 @@ class TwoButtonsContainer extends StatelessWidget {
   final bool havePrice;
   final Color color;
   final void Function()? onTap;
-  const TwoButtonsContainer({super.key, required this.firstButtonTitle, this.havePrice = false, this.onTap, this.color = AppColors.p300PrimaryColor, required this.secondButtonTitle});
+  const TwoButtonsContainer({super.key, required this.firstButtonTitle, this.havePrice = false, this.onTap, this.color = AppColors.primaryColor, required this.secondButtonTitle});
 
   @override
   Widget build(BuildContext context) {
@@ -32,8 +32,8 @@ class TwoButtonsContainer extends StatelessWidget {
           CustomAppButton(
             title: firstButtonTitle,
             onTap: onTap,
-            color: AppColors.n20FillBodyInSmallCardColor,
-            titleColor: AppColors.p300PrimaryColor,
+            color: AppColors.n20Gray,
+            titleColor: AppColors.primaryColor,
             widthDivider: 2.25.h,
             isShadow: false,
           ),

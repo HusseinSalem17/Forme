@@ -5,7 +5,7 @@ import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/functions/validators.dart';
 import 'package:forme_app/core/utils/styles.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
-import 'package:forme_app/features/user_features/profile/presentation/views/complete_profile_widgets/custom_build_form.dart';
+import 'package:forme_app/features/trainee_features/profile/presentation/views/complete_profile_widgets/custom_build_form.dart';
 
 class CustomTextField extends StatefulWidget {
   const CustomTextField(
@@ -21,7 +21,7 @@ class CustomTextField extends StatefulWidget {
       this.subTitle ='',
       this.optional = false,
       this.enabled = true,
-      this.titleColor = AppColors.n900PrimaryTextColor})
+      this.titleColor = AppColors.n900Black})
       : super(key: key);
 
   final void Function(String)? onChanged;
@@ -53,10 +53,10 @@ class CustomTextFieldState extends State<CustomTextField> {
         textAlign: TextAlign.start,
         controller: widget.controller,
         autovalidateMode: AutovalidateMode.onUserInteraction,
-        cursorColor: AppColors.p300PrimaryColor,
+        cursorColor: AppColors.primaryColor,
         enabled: widget.enabled,
         style: TextStyles.textStyleRegular
-            .copyWith(fontSize: 14.sp, color: AppColors.n900PrimaryTextColor),
+            .copyWith(fontSize: 14.sp, color: AppColors.n900Black),
         keyboardType: widget.keyboardType,
         obscureText: widget.keyboardType == TextInputType.visiblePassword &&
             _obscureText,
@@ -76,7 +76,7 @@ class CustomTextFieldState extends State<CustomTextField> {
           border: textFieldBorder(),
           enabledBorder: textFieldBorder(),
           focusedBorder: textFieldBorder(
-            color: AppColors.p300PrimaryColor,
+            color: AppColors.primaryColor,
             width: 2.0,
           ),
           errorBorder: textFieldBorder(

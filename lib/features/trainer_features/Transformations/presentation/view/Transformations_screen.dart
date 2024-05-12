@@ -9,7 +9,7 @@ import 'package:forme_app/features/trainer_features/Transformations/presentation
 import 'package:forme_app/features/trainer_features/Transformations/presentation/view/screens/edit_transformation.dart';
 
 class TransformationsScreen extends StatefulWidget {
-  static const routeName = '/revenue-screen';
+  static const routeName = '/transformation-screen';
   const TransformationsScreen({Key? key}) : super(key: key);
 
   @override
@@ -36,7 +36,7 @@ class _TransformationsScreenState extends State<TransformationsScreen> {
               "Transformations",
               style: TextStyles.textStyleBold.copyWith(
                 fontSize: 18.sp,
-                color: AppColors.n900PrimaryTextColor,
+                color: AppColors.n900Black,
               ),
             ),
             const Spacer(),
@@ -57,10 +57,10 @@ class _TransformationsScreenState extends State<TransformationsScreen> {
                     ),
                   ],
                 ),
-                child: SvgPicture.asset(
-                  "assets/image/Icon/add_icon.svg",
-                  height: 30.h,
-                  width: 30.w,
+                child: Center(
+                  child: SvgPicture.asset(
+                    "assets/image/Icon/add.svg",
+                  ),
                 ),
               ),
               onPressed: () {
@@ -102,7 +102,7 @@ class _TransformationsScreenState extends State<TransformationsScreen> {
                     'Sorry, on content here!',
                     style: TextStyles.textStyleRegular.copyWith(
                       fontSize: 16.sp,
-                      color: AppColors.n900PrimaryTextColor,
+                      color: AppColors.n900Black,
                     ),
                   ),
                 ],

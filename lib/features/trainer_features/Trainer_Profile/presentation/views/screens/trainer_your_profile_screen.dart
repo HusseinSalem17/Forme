@@ -28,7 +28,7 @@ class TrainerYourProfileScreen extends StatelessWidget {
           Container(
             height: 48.h,
             width: MediaQuery.of(context).size.width,
-            color: AppColors.n20FillBodyInSmallCardColor,
+            color: AppColors.n20Gray,
             child: Padding(
               padding: EdgeInsets.only(top: 8.0.h, left: 16.w, right: 16.w),
               child: Row(
@@ -36,7 +36,7 @@ class TrainerYourProfileScreen extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      SvgPicture.asset('assets/image/Icon/hash.svg', color: AppColors.n900PrimaryTextColor,),
+                      SvgPicture.asset('assets/image/Icon/hash.svg', color: AppColors.n900Black,),
                       SizedBox(
                         width: 16.w,
                       ),
@@ -47,7 +47,7 @@ class TrainerYourProfileScreen extends StatelessWidget {
                           children: <TextSpan>[
                             TextSpan(
                               text: textId,
-                              style: TextStyles.textStyleSemiBold.copyWith(color: AppColors.p300PrimaryColor, fontSize: 16.sp, fontWeight: FontWeight.w600),
+                              style: TextStyles.textStyleSemiBold.copyWith(color: AppColors.primaryColor, fontSize: 16.sp, fontWeight: FontWeight.w600),
                             ),
                           ],
                         ),
@@ -75,7 +75,7 @@ class TrainerYourProfileScreen extends StatelessWidget {
                           dismissDirection: DismissDirection.up,
                           behavior: SnackBarBehavior.floating,
                           showCloseIcon: true,
-                          closeIconColor: AppColors.n100Color,
+                          closeIconColor: AppColors.n100Gray,
                           backgroundColor: AppColors.p75PrimaryColor,
                         ),
                       );
@@ -100,25 +100,25 @@ class TrainerYourProfileScreen extends StatelessWidget {
                   Navigator.of(context).push(PageSlideTransition(const MyProfileTrainer()));
                 }),
                 const Divider(
-                  color: AppColors.n20FillBodyInSmallCardColor,
+                  color: AppColors.n20Gray,
                 ),
                 CustomGestureDetectorRow(title: "Languages", imageAddress: 'assets/image/profile/languages.svg', onTap:(){
                   Navigator.of(context).push(PageSlideTransition(const LanguagesSearchScreen()));
                 }),
                 const Divider(
-                  color: AppColors.n20FillBodyInSmallCardColor,
+                  color: AppColors.n20Gray,
                 ),
                 CustomGestureDetectorRow(title: "Social Media Links", imageAddress: 'assets/image/profile/social-media.svg', onTap:(){
                   Navigator.of(context).push(PageSlideTransition(const SocialMediaLinksScreen()));
                 }),
                 const Divider(
-                  color: AppColors.n20FillBodyInSmallCardColor,
+                  color: AppColors.n20Gray,
                 ),
                 CustomGestureDetectorRow(title: "Complete Verification", imageAddress: 'assets/image/Icon/verified_black.svg', onTap: () {
                   Navigator.of(context).push(PageSlideTransition(const CompleteVerificationScreen()));
                 }),
                 const Divider(
-                  color: AppColors.n20FillBodyInSmallCardColor,
+                  color: AppColors.n20Gray,
                 ),
               ],
             ),

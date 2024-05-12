@@ -4,7 +4,7 @@ import 'package:simple_star_rating/simple_star_rating.dart';
 
 import '../../../../../../core/utils/app_colors.dart';
 import '../../../../../../core/utils/text_styles.dart';
-import '../../../../../user_features/Trainer_details/presentation/views/widgets/custom_clip_rect.dart';
+import '../../../../../trainee_features/Trainer_details/presentation/views/widgets/custom_clip_rect.dart';
 import '../../../data/reviews_card_model.dart';
 
 class ReviewsCard extends StatelessWidget {
@@ -20,7 +20,7 @@ class ReviewsCard extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8),
         border: Border.all(
-          color: AppColors.n20FillBodyInSmallCardColor,
+          color: AppColors.n20Gray,
         ),
         color: AppColors.n10Color,
       ),
@@ -37,7 +37,7 @@ class ReviewsCard extends StatelessWidget {
                   ),
                   Text(
                     model.name,
-                    style: TextStyles.textStyleRegular.copyWith(fontSize: 14.sp, color: AppColors.n900PrimaryTextColor),
+                    style: TextStyles.textStyleRegular.copyWith(fontSize: 14.sp, color: AppColors.n900Black),
                   ),
                 ],
               ),
@@ -45,7 +45,7 @@ class ReviewsCard extends StatelessWidget {
                 children: [
                   Text(
                     model.date,
-                    style: TextStyles.textStyleRegular.copyWith(fontSize: 12.sp, color: AppColors.n200BodyContentColor),
+                    style: TextStyles.textStyleRegular.copyWith(fontSize: 12.sp, color: AppColors.n200Gray),
                   ),
                 ],
               ),
@@ -56,7 +56,7 @@ class ReviewsCard extends StatelessWidget {
           ),
           Text(
             model.reviewDescription,
-            style: TextStyles.textStyleRegular.copyWith(fontSize: 12.sp, color: AppColors.n200BodyContentColor),
+            style: TextStyles.textStyleRegular.copyWith(fontSize: 12.sp, color: AppColors.n200Gray),
           ),
           SizedBox(
             height: 10.h,
@@ -74,7 +74,7 @@ class ReviewsCard extends StatelessWidget {
                 ),
                 nonFilledIcon: const Icon(
                   Icons.star_rate_rounded,
-                  color: AppColors.n20FillBodyInSmallCardColor,
+                  color: AppColors.n20Gray,
                 ),
               ),
               SizedBox(
@@ -82,7 +82,7 @@ class ReviewsCard extends StatelessWidget {
               ),
               Text(
                 model.rating.toString(),
-                style: TextStyles.textStyleBold.copyWith(fontSize: 11.sp, color: AppColors.n100Color),
+                style: TextStyles.textStyleBold.copyWith(fontSize: 11.sp, color: AppColors.n100Gray),
               ),
             ],
           ),

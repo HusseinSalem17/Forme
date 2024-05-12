@@ -9,7 +9,7 @@ Container trainerCard(BuildContext context, String name, String image,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(8.dg),
             border: Border.all(
-                width: 1.h, color: AppColors.n20FillBodyInSmallCardColor),
+                width: 1.h, color: AppColors.n20Gray),
             color: AppColors.n10Color),
         padding: EdgeInsets.all(8.h),
         child: Row(
@@ -32,14 +32,14 @@ Container trainerCard(BuildContext context, String name, String image,
                 Text(
                   name,
                   style: TextStyles.textStyleRegular.copyWith(
-                      fontSize: 14.sp, color: AppColors.n900PrimaryTextColor),
+                      fontSize: 14.sp, color: AppColors.n900Black),
                 ),
                 Row(
                   children: [
                     Text(
                       state,
                       style: TextStyles.textStyleRegular.copyWith(
-                          fontSize: 9.sp, color: AppColors.p300PrimaryColor),
+                          fontSize: 9.sp, color: AppColors.primaryColor),
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 4),
@@ -77,7 +77,7 @@ Container trainerCard(BuildContext context, String name, String image,
             ),
             const Icon(
               Icons.more_vert,
-              color: AppColors.n100Color,
+              color: AppColors.n100Gray,
             ),
           ],
         ));

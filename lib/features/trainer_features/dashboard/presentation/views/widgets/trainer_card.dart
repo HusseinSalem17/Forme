@@ -10,7 +10,7 @@ GestureDetector trainerCard(String icon, String title, BuildContext context, voi
     child: Container(
         width: MediaQuery.sizeOf(context).width / 2 - 40.w,
         decoration: BoxDecoration(
-          color: AppColors.n20FillBodyInSmallCardColor,
+          color: AppColors.n20Gray,
           border: Border.all(width: 1.sp, color: AppColors.border30),
           borderRadius: BorderRadius.circular(8.dg),
         ),
@@ -34,7 +34,7 @@ GestureDetector trainerCard(String icon, String title, BuildContext context, voi
             Text(
               title,
               textAlign: TextAlign.center,
-              style: TextStyles.textStyleRegular.copyWith(fontSize: 14.sp, color: AppColors.n900PrimaryTextColor),
+              style: TextStyles.textStyleRegular.copyWith(fontSize: 14.sp, color: AppColors.n900Black),
             )
           ],
         )),

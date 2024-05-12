@@ -17,7 +17,7 @@ class CustomPopupMenu extends StatelessWidget {
         PopupMenuButton(
           icon: const Icon(
             Icons.more_vert,
-            color: AppColors.n100Color,
+            color: AppColors.n100Gray,
           ),
           color: AppColors.background,
           surfaceTintColor: Colors.transparent,

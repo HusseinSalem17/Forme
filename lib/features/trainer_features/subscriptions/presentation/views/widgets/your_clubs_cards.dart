@@ -72,7 +72,7 @@ class _YourClubsCardsState extends State<YourClubsCards> {
                         widget.model.title,
                         style: TextStyles.textStyleSemiBold.copyWith(
                           fontSize: 14.sp,
-                          color: AppColors.n900PrimaryTextColor,
+                          color: AppColors.n900Black,
                         ),
                       ),
                       Row(
@@ -83,7 +83,7 @@ class _YourClubsCardsState extends State<YourClubsCards> {
                             child: Text(
                               widget.model.address,
                               style: TextStyles.cardTextStyle.copyWith(
-                                color: AppColors.n100Color,
+                                color: AppColors.n100Gray,
                                 fontSize: 11.sp,
                               ),
                             ),
@@ -100,7 +100,7 @@ class _YourClubsCardsState extends State<YourClubsCards> {
                                 Text(
                                   'Yous Clients: ',
                                   style: TextStyles.textStyleRegular.copyWith(
-                                    color: AppColors.n100Color,
+                                    color: AppColors.n100Gray,
                                     fontSize: 11.sp,
                                   ),
                                 ),
@@ -162,10 +162,10 @@ class _YourClubsCardsState extends State<YourClubsCards> {
                                       child: Container(
                                         height: 40,
                                         decoration: BoxDecoration(
-                                          color: AppColors.n20FillBodyInSmallCardColor,
+                                          color: AppColors.n20Gray,
                                           borderRadius: BorderRadius.circular(100),
                                           border: Border.all(
-                                            color: AppColors.p300PrimaryColor,
+                                            color: AppColors.primaryColor,
                                           ),
                                         ),
                                         child: TextButton(
@@ -176,7 +176,7 @@ class _YourClubsCardsState extends State<YourClubsCards> {
                                             'Cancel',
                                             style: TextStyles.textStyleSemiBold.copyWith(
                                               fontSize: 12,
-                                              color: AppColors.p300PrimaryColor,
+                                              color: AppColors.primaryColor,
                                             ),
                                           ),
                                         ),

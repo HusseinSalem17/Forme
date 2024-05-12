@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
-import 'package:forme_app/features/user_features/profile/presentation/views/complete_profile_widgets/image_selection_bottom_sheet.dart';
+import 'package:forme_app/features/trainee_features/profile/presentation/views/complete_profile_widgets/image_selection_bottom_sheet.dart';
 import 'package:image_picker/image_picker.dart';
 
 class IdImagePicker extends StatelessWidget {
@@ -65,7 +65,7 @@ class IdImagePicker extends StatelessWidget {
         borderRadius: BorderRadius.circular(6.r),
         color: AppColors.background,
         border: Border.all(
-          color: AppColors.n40BorderColor,
+          color: AppColors.n40Gray,
           width: 1.0,
         ),
       ),

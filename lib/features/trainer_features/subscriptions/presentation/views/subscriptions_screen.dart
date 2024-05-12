@@ -28,7 +28,7 @@ class SubscriptionsScreen extends StatelessWidget {
           Container(
             height: 48.h,
             width: MediaQuery.of(context).size.width,
-            color: AppColors.n20FillBodyInSmallCardColor,
+            color: AppColors.n20Gray,
             child: Padding(
               padding: EdgeInsets.only(top: 8.0.h, left: 16.w, right: 16.w),
               child: Row(
@@ -36,7 +36,7 @@ class SubscriptionsScreen extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      SvgPicture.asset('assets/image/Icon/hash.svg', color: AppColors.n900PrimaryTextColor),
+                      SvgPicture.asset('assets/image/Icon/hash.svg', color: AppColors.n900Black),
                       SizedBox(
                         width: 16.w,
                       ),
@@ -47,7 +47,7 @@ class SubscriptionsScreen extends StatelessWidget {
                           children: <TextSpan>[
                             TextSpan(
                               text: textId,
-                              style: TextStyles.textStyleSemiBold.copyWith(color: AppColors.p300PrimaryColor),
+                              style: TextStyles.textStyleSemiBold.copyWith(color: AppColors.primaryColor),
                             ),
                           ],
                         ),
@@ -75,7 +75,7 @@ class SubscriptionsScreen extends StatelessWidget {
                           dismissDirection: DismissDirection.up,
                           behavior: SnackBarBehavior.floating,
                           showCloseIcon: true,
-                          closeIconColor: AppColors.n100Color,
+                          closeIconColor: AppColors.n100Gray,
                           backgroundColor: AppColors.p75PrimaryColor,
                         ),
                       );
@@ -103,7 +103,7 @@ class SubscriptionsScreen extends StatelessWidget {
                       Navigator.of(context).push(PageSlideTransition(const YourClubsScreen()));
                     }),
                 const Divider(
-                  color: AppColors.n20FillBodyInSmallCardColor,
+                  color: AppColors.n20Gray,
                 ),
                 CustomGestureDetectorRow(
                   title: "Clients Subscriptions",
@@ -113,7 +113,7 @@ class SubscriptionsScreen extends StatelessWidget {
                   },
                 ),
                 const Divider(
-                  color: AppColors.n20FillBodyInSmallCardColor,
+                  color: AppColors.n20Gray,
                 ),
               ],
             ),

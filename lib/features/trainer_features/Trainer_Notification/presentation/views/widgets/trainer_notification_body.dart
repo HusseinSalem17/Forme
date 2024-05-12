@@ -4,7 +4,7 @@ import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
 import 'package:forme_app/core/widgets/custom_app_bar_arrow_button.dart';
 import 'package:forme_app/features/trainer_features/Trainer_Notification/data/trainer_notification_items.dart';
-import 'package:forme_app/features/user_features/Notification/presentation/views/widgets/svg_icon.dart';
+import 'package:forme_app/features/trainee_features/Notification/presentation/views/widgets/svg_icon.dart';
 
 
 class TrainerNotificationScreenBody extends StatefulWidget {
@@ -51,7 +51,7 @@ class _TrainerNotificationScreenBodyState extends State<TrainerNotificationScree
         centerTitle: true,
         title: Text(
           "Notification",
-          style: TextStyles.textStyleSemiBold.copyWith(color: AppColors.n900PrimaryTextColor),
+          style: TextStyles.textStyleSemiBold.copyWith(color: AppColors.n900Black),
         ),
         actions: [
           Visibility(
@@ -63,7 +63,7 @@ class _TrainerNotificationScreenBodyState extends State<TrainerNotificationScree
                 width: 66.w,
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
-                  color: AppColors.p300PrimaryColor,
+                  color: AppColors.primaryColor,
                   borderRadius: BorderRadius.circular(15.r),
                 ),
                 child: Text(
@@ -98,7 +98,7 @@ class _TrainerNotificationScreenBodyState extends State<TrainerNotificationScree
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(title, style: TextStyles.textStyleSemiBold.copyWith(color: AppColors.n200BodyContentColor)),
+              Text(title, style: TextStyles.textStyleSemiBold.copyWith(color: AppColors.n200Gray)),
               ElevatedButton(
                 onPressed: () {
                   setState(() {
@@ -120,7 +120,7 @@ class _TrainerNotificationScreenBodyState extends State<TrainerNotificationScree
                     ? Text(
                         "Mark all as read",
                         style: TextStyle(
-                          color: markAllAsRead ? AppColors.n100Color : AppColors.p300PrimaryColor,
+                          color: markAllAsRead ? AppColors.n100Gray : AppColors.primaryColor,
                         ),
                       )
                     : Container(),
@@ -149,11 +149,11 @@ class _TrainerNotificationScreenBodyState extends State<TrainerNotificationScree
           ),
           subtitle: Text(
             item.description,
-            style: TextStyles.descriptionStyle.copyWith(color: item.isUnread ? AppColors.p300PrimaryColor : AppColors.n100Color),
+            style: TextStyles.descriptionStyle.copyWith(color: item.isUnread ? AppColors.primaryColor : AppColors.n100Gray),
           ),
           trailing: Text(
             item.time,
-            style: TextStyles.descriptionStyle.copyWith(color: item.isUnread ? AppColors.p300PrimaryColor : AppColors.n100Color),
+            style: TextStyles.descriptionStyle.copyWith(color: item.isUnread ? AppColors.primaryColor : AppColors.n100Gray),
           ),
           onTap: () {
             // Handle item click to mark as read

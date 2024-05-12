@@ -73,12 +73,12 @@ class _ExpandableListViewState extends State<ExpandableListView> {
               border: Border(
                 left: BorderSide(
                   width: 4,
-                  color: expandFlag ? AppColors.p300PrimaryColor.withOpacity(0.75) : AppColors.n100Color,
+                  color: expandFlag ? AppColors.primaryColor.withOpacity(0.75) : AppColors.n100Gray,
                 ),
               ),
               boxShadow: const [
                 BoxShadow(
-                  color: AppColors.n100Color,
+                  color: AppColors.n100Gray,
                   blurRadius: 2,
                   spreadRadius: 0.025,
                   offset: Offset(0, 0.2),
@@ -102,13 +102,13 @@ class _ExpandableListViewState extends State<ExpandableListView> {
                   CupertinoSwitch(
                     value: onOffSwitch,
                     onChanged: onChanged,
-                    trackColor: AppColors.n40BorderColor,
-                    activeColor: AppColors.p300PrimaryColor,
+                    trackColor: AppColors.n40Gray,
+                    activeColor: AppColors.primaryColor,
                   ),
                   IconButton(
                     icon: Icon(
                       expandFlag ? Icons.keyboard_arrow_down : Icons.keyboard_arrow_up,
-                      color: onOffSwitch ? AppColors.n400color : AppColors.n40BorderColor,
+                      color: onOffSwitch ? AppColors.n400color : AppColors.n40Gray,
                       size: 35.sp,
                     ),
                     onPressed: () {
@@ -134,7 +134,7 @@ class _ExpandableListViewState extends State<ExpandableListView> {
                     trailing: IconButton(
                       icon: const Icon(
                         Icons.add_circle_outline_outlined,
-                        color: AppColors.p300PrimaryColor,
+                        color: AppColors.primaryColor,
                       ),
                       onPressed: () {
                         // Add a new session when the add icon is pressed
@@ -207,13 +207,13 @@ class ExpandableContainer extends StatelessWidget {
           ),
           boxShadow: [
             BoxShadow(
-              color: AppColors.n100Color,
+              color: AppColors.n100Gray,
               blurRadius: 2,
               spreadRadius: 0.025,
               offset: Offset(0, 0.2),
             ),
           ],
-          color: AppColors.n20FillBodyInSmallCardColor,
+          color: AppColors.n20Gray,
           border: Border(
             left: BorderSide(
               width: 4,

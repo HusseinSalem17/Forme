@@ -14,7 +14,7 @@ class CustomAppButton extends StatelessWidget {
     required this.title,
     this.onTap,
     this.widthDivider = 1,
-    this.color = AppColors.p300PrimaryColor,
+    this.color = AppColors.primaryColor,
     this.titleColor = AppColors.background,
     this.height = 48,
     this.padding = 16,

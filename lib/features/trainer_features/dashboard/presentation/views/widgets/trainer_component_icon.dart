@@ -19,7 +19,7 @@ GestureDetector trainerComponentIcon(
               decoration: BoxDecoration(
                 border: Border.all(width: 1.sp, color: AppColors.border30),
                 borderRadius: BorderRadius.circular(50.dg),
-                color: AppColors.n20FillBodyInSmallCardColor,
+                color: AppColors.n20Gray,
                 boxShadow: [
                   BoxShadow(
                     color: AppColors.n50dropShadowColor.withOpacity(0.5),
@@ -35,7 +35,7 @@ GestureDetector trainerComponentIcon(
               title,
               textAlign: TextAlign.center,
               style: TextStyles.textStyleRegular.copyWith(
-                  fontSize: 12.sp, color: AppColors.n900PrimaryTextColor),
+                  fontSize: 12.sp, color: AppColors.n900Black),
             )
           ],
         ),

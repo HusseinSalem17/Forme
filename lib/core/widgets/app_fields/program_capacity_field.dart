@@ -4,7 +4,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/styles.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
-import 'package:forme_app/features/user_features/profile/presentation/views/complete_profile_widgets/custom_build_form.dart';
+import 'package:forme_app/features/trainee_features/profile/presentation/views/complete_profile_widgets/custom_build_form.dart';
 
 class ProgramCapacityField extends StatelessWidget {
   const ProgramCapacityField({
@@ -21,10 +21,10 @@ class ProgramCapacityField extends StatelessWidget {
         textAlign: TextAlign.start,
         //controller: widget.controller,
         autovalidateMode: AutovalidateMode.onUserInteraction,
-        cursorColor: AppColors.p300PrimaryColor,
+        cursorColor: AppColors.primaryColor,
         //enabled: widget.enabled,
         style: TextStyles.textStyleRegular.copyWith(
-            fontSize: 14.sp, color: AppColors.n900PrimaryTextColor),
+            fontSize: 14.sp, color: AppColors.n900Black),
         keyboardType: TextInputType.number,
     
         decoration: InputDecoration(
@@ -41,7 +41,7 @@ class ProgramCapacityField extends StatelessWidget {
           border: textFieldBorder(),
           enabledBorder: textFieldBorder(),
           focusedBorder: textFieldBorder(
-            color: AppColors.p300PrimaryColor,
+            color: AppColors.primaryColor,
             width: 2.0,
           ),
           errorBorder: textFieldBorder(

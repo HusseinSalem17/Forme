@@ -19,22 +19,22 @@ class DurationTextField extends StatelessWidget {
         children: [
           Expanded(
             child: TextFormField(
-              cursorColor: AppColors.p300PrimaryColor,
-              style: TextStyles.textStyleRegular.copyWith(color: AppColors.n900PrimaryTextColor, fontSize: 14.sp),
+              cursorColor: AppColors.primaryColor,
+              style: TextStyles.textStyleRegular.copyWith(color: AppColors.n900Black, fontSize: 14.sp),
               decoration: InputDecoration(
                 contentPadding: EdgeInsets.symmetric(vertical: 8.h),
                 hintText: 'Enter Duration',
-                hintStyle: TextStyles.textStyleMedium.copyWith(color: AppColors.n200BodyContentColor, fontSize: 14.sp, fontWeight: FontWeight.w400),
+                hintStyle: TextStyles.textStyleMedium.copyWith(color: AppColors.n200Gray, fontSize: 14.sp, fontWeight: FontWeight.w400),
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(6.dg)),
                   borderSide: const BorderSide(
-                    color: AppColors.n40BorderColor,
+                    color: AppColors.n40Gray,
                   ),
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(6.dg)),
                   borderSide: const BorderSide(
-                    color: AppColors.p300PrimaryColor,
+                    color: AppColors.primaryColor,
                   ),
                 ),
                 prefixIcon: Padding(

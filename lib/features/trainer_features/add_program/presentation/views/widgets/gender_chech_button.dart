@@ -45,9 +45,9 @@ class _GenderCheckButtonState extends State<GenderCheckButton> {
           ? Container(
               width: MediaQuery.sizeOf(context).width / 2.6,
               decoration: BoxDecoration(
-                  color: AppColors.p300PrimaryColor.withOpacity(0.1),
+                  color: AppColors.primaryColor.withOpacity(0.1),
                   border:
-                      Border.all(width: 2, color: AppColors.p300PrimaryColor),
+                      Border.all(width: 2, color: AppColors.primaryColor),
                   borderRadius: BorderRadius.circular(4.dg)),
               padding: EdgeInsets.symmetric(vertical: 8.h),
               margin: EdgeInsets.symmetric(vertical: 10.h),
@@ -55,7 +55,7 @@ class _GenderCheckButtonState extends State<GenderCheckButton> {
                   Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                 ColorFiltered(
                   colorFilter: const ColorFilter.mode(
-                      AppColors.p300PrimaryColor, BlendMode.srcIn),
+                      AppColors.primaryColor, BlendMode.srcIn),
                   child:
                       SvgPicture.asset('assets/image/Icon/${widget.icon}.svg'),
                 ),
@@ -65,7 +65,7 @@ class _GenderCheckButtonState extends State<GenderCheckButton> {
                 Text(
                   widget.gender,
                   style: TextStyles.textStyleRegular.copyWith(
-                      fontSize: 14.sp, color: AppColors.p300PrimaryColor),
+                      fontSize: 14.sp, color: AppColors.primaryColor),
                 )
               ]),
             )
@@ -73,7 +73,7 @@ class _GenderCheckButtonState extends State<GenderCheckButton> {
               width: MediaQuery.sizeOf(context).width / 2.6,
               decoration: BoxDecoration(
                   color: AppColors.background,
-                  border: Border.all(width: 1, color: AppColors.n40BorderColor),
+                  border: Border.all(width: 1, color: AppColors.n40Gray),
                   borderRadius: BorderRadius.circular(4.dg)),
               padding: EdgeInsets.symmetric(vertical: 8.h),
               margin: EdgeInsets.symmetric(vertical: 10.h),
@@ -81,7 +81,7 @@ class _GenderCheckButtonState extends State<GenderCheckButton> {
                   Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                 ColorFiltered(
                   colorFilter: const ColorFilter.mode(
-                      AppColors.n900PrimaryTextColor, BlendMode.srcIn),
+                      AppColors.n900Black, BlendMode.srcIn),
                   child:
                       SvgPicture.asset('assets/image/Icon/${widget.icon}.svg'),
                 ),
@@ -91,7 +91,7 @@ class _GenderCheckButtonState extends State<GenderCheckButton> {
                 Text(
                   widget.gender,
                   style: TextStyles.textStyleRegular.copyWith(
-                      fontSize: 14.sp, color: AppColors.n900PrimaryTextColor),
+                      fontSize: 14.sp, color: AppColors.n900Black),
                 )
               ]),
             ),

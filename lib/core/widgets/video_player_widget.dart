@@ -22,7 +22,7 @@ class VideoPlayerWidget extends StatelessWidget {
                   if (snapshot.connectionState == ConnectionState.waiting) {
                     return const Center(
                         child: CircularProgressIndicator(
-                            color: AppColors.p300PrimaryColor));
+                            color: AppColors.primaryColor));
                   } else if (snapshot.hasError) {
                     return const Center(child: Text('Error loading video'));
                   } else {
