@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:forme_app/app_routing/trainee_routes.dart';
 import 'package:forme_app/app_routing/trainer_routes.dart';
+import 'package:forme_app/features/trainee_features/complete_profile_trainee/presentation/views/trainer_complete_profile.dart';
 
 import '../core/user_type.dart';
 import '../features/trainee_features/home/presentation/views/bottom_bar_screens.dart';
@@ -8,16 +9,17 @@ import '../features/trainer_features/dashboard/presentation/views/home_view.dart
 
 class AppRouter {
   final BuildContext context;
-  final UserType userType;
+  UserType userType;
 
   AppRouter({
-    required this.userType,
+    this.userType = UserType.trainer,
     required this.context,
   });
 
   Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case '/':
+      
         return userType == UserType.trainer
             ? TrainerRoutes().generateRoute(
                 const RouteSettings(

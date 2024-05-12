@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 
-import '../../../../../core/utils/constants.dart';
+import '../../../../../core/utils/api_end_points.dart';
 
 
 
@@ -23,12 +23,12 @@ class PlacesWebservices {
       ) async {
     try {
       Response response = await dio.get(
-        suggestionsBaseUrl,
+        EndPoint.suggestionsBaseUrl,
         queryParameters: {
           'input': place,
           'types': 'address',
           'components': 'country:eg',
-          'key': googleApiKey,
+          'key': EndPoint.googleApiKey,
           'sessiontoken': sessionToken,
         },
       );
