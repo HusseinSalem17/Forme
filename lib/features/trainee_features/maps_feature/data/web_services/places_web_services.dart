@@ -1,8 +1,5 @@
 import 'package:dio/dio.dart';
-
-import '../../../../../core/utils/constants.dart';
-
-
+import 'package:forme_app/core/utils/constants.dart';
 
 
 class PlacesWebservices {
