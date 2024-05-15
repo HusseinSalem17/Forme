@@ -47,14 +47,14 @@ class _CompleteProfileBodyState extends State<CompleteProfileBody> {
               //       'Don’t worry, only you can see your personal data. No one else will be able to see it.',
               // ),
               SizedBox(height: 16.0.h),
-              ProfileImagePicker(
-                imageFile: _imageFile,
-                onImageSelected: (file) {
-                  setState(() {
-                    _imageFile = file;
-                  });
-                },
-              ),
+              // ProfileImagePicker(
+              //   imageFile: _imageFile,
+              //   onImageSelected: (file) {
+              //     setState(() {
+              //       _imageFile = file;
+              //     });
+              //   },
+              // ),
               SizedBox(height: 32.0.h),
               buildBodyFields(
                 name: name,

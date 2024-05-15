@@ -1,3 +1,4 @@
+
 part of 'trainee_profile_cubit.dart';
 
 sealed class TraineeProfileState extends Equatable {

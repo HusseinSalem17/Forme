@@ -1,7 +1,7 @@
-import 'trainer_complete_profile_model/session.dart';
-import 'trainer_complete_profile_model/user.dart';
+import 'session.dart';
+import 'user.dart';
 
-class TrainerCompleteProfileModel {
+class TrainerModel {
   User? user;
   String? slug;
   String? bio;
@@ -26,7 +26,7 @@ class TrainerCompleteProfileModel {
   int? avgRatings;
   int? numberOfRatings;
 
-  TrainerCompleteProfileModel({
+  TrainerModel({
     this.user,
     this.slug,
     this.bio,
@@ -52,8 +52,8 @@ class TrainerCompleteProfileModel {
     this.numberOfRatings,
   });
 
-  factory TrainerCompleteProfileModel.fromJson(Map<String, dynamic> json) {
-    return TrainerCompleteProfileModel(
+  factory TrainerModel.fromJson(Map<String, dynamic> json) {
+    return TrainerModel(
       user: json['user'] == null
           ? null
           : User.fromJson(json['user'] as Map<String, dynamic>),

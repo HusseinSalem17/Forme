@@ -2,9 +2,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:forme_app/features/trainee_features/profile/presentation/views/complete_profile_widgets/custom_primary_button.dart';
+import 'package:forme_app/core/widgets/button_container.dart';
+import 'package:forme_app/core/widgets/custom_app_button.dart';
+
 import 'package:forme_app/features/trainer_features/complete_profile_trainer/presentation/manager/cubit/trainer_complete_profile_cubit.dart';
+
 import 'package:image_picker/image_picker.dart';
+import '../../../../../trainee_features/profile/presentation/views/complete_profile_widgets/custom_primary_button.dart';
 import '../../../../../trainee_features/profile/presentation/views/complete_profile_widgets/profile_image_picker.dart';
 import 'trainer_body_fields.dart';
 
@@ -34,12 +38,12 @@ class _TrainerCompleteProfileBodyState
         TrainerCompleteProfileState>(
       listener: (context, state) {
         if (state is TrainerCompleteProfileSuccess) {
-          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
             content: Text('success'),
           ));
         } else if (state is TrainerCompleteProfileFailure) {
-          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-            content: Text('failuer'),
+          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+            content: Text('failuer#'),
           ));
         }
       },
@@ -97,9 +101,9 @@ class _TrainerCompleteProfileBodyState
               SizedBox(height: 32.0.h),
               state is TrainerCompleteProfileLoading
                   ? const CircularProgressIndicator()
-                  : CustomPrimaryButton(
-                      text: 'Complete Profile',
-                      onPressed: () {
+                  : CustomAppButton(
+                      title: 'Complete Profile',
+                      onTap: () {
                         context
                             .read<TrainerCompleteProfileCubit>()
                             .postTrainerCopleteProfile();

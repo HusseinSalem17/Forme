@@ -1,7 +1,8 @@
+import 'package:dartz/dartz.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:forme_app/core/api/api_consumer.dart';
-import 'package:forme_app/features/trainer_features/complete_profile_trainer/data/models/trainer_complete_profile_model.dart';
-
+import 'package:forme_app/core/models/trainer_model.dart';
 part 'trainer_complete_profile_state.dart';
 
 class TrainerCompleteProfileCubit extends Cubit<TrainerCompleteProfileState> {
@@ -30,8 +31,8 @@ class TrainerCompleteProfileCubit extends Cubit<TrainerCompleteProfileState> {
         },
         "sport_field": sportField
       });
-      //final trainerModel = TrainerCompleteProfileModel.fromJson(response);
-
+      //final trainerModel = TrainerModel.fromJson(response);
+      //debugPrint(trainerModel.user?.username);
       emit(TrainerCompleteProfileSuccess(message: 'success'));
     } catch (e) {
       emit(TrainerCompleteProfileFailure(errMessage: 'failure'));

@@ -19,6 +19,7 @@ import 'app_routing/main_route.dart';
 import 'core/user_type.dart';
 import 'core/utils/functions/service_locator.dart';
 import 'core/utils/scroll_behavior.dart';
+import 'features/trainer_features/complete_profile_trainer/presentation/views/trainer_complete_profile.dart';
 import 'local_storage_data/auth_local/registration_data_local.dart';
 
 void main() async {
@@ -79,19 +80,19 @@ class MyApp extends StatelessWidget {
           scrollBehavior: CustomScrollBehavior(),
           debugShowCheckedModeBanner: false,
           theme: Themes.customLightTheme,
-          // onGenerateRoute: (settings) => generateRoute(settings, context),
-          onGenerateRoute: (settings) {
-            if (initialUserType == null) {
-              return AuthRoutes().generateRoute(settings);
-            } else {
-              return AppRouter(
-                userType: initialUserType!,
-                context: context,
-              ).generateRoute(settings);
-            }
-          },
 
-          // home: const TrainerCompleteProfile(),
+          // onGenerateRoute: (settings) {
+          //   if (initialUserType == null) {
+          //     return AuthRoutes().generateRoute(settings);
+          //   } else {
+          //     return AppRouter(
+          //       userType: initialUserType!,
+          //       context: context,
+          //     ).generateRoute(settings);
+          //   }
+          // },
+
+          home: const TrainerCompleteProfile(),
         ),
       ),
     );
