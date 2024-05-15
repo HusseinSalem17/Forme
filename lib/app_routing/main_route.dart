@@ -19,7 +19,6 @@ class AppRouter {
   Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case '/':
-      
         return userType == UserType.trainer
             ? TrainerRoutes().generateRoute(
                 const RouteSettings(

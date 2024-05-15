@@ -4,7 +4,8 @@ import 'package:flutter_svg/svg.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
 
-GestureDetector profileFeature(String icon, String title, void Function()? onTap, Color textColor) {
+GestureDetector profileFeature(
+    String icon, String title, void Function()? onTap, Color textColor) {
   return GestureDetector(
     onTap: onTap,
     child: Column(
@@ -15,16 +16,21 @@ GestureDetector profileFeature(String icon, String title, void Function()? onTap
               padding: EdgeInsets.only(right: 16.w),
               child: SvgPicture.asset(
                 'assets/image/profile/$icon.svg',
-                color: textColor != AppColors.d300Danger?AppColors.primaryColor:AppColors.d300Danger,
+                color: textColor != AppColors.d300Danger
+                    ? AppColors.primaryColor
+                    : AppColors.d300Danger,
               ),
             ),
             Text(
               title,
-              style: TextStyles.textStyleRegular.copyWith(height: 3, fontSize: 16.w, color: textColor),
+              style: TextStyles.textStyleRegular
+                  .copyWith(height: 3, fontSize: 16.w, color: textColor),
             ),
             const Spacer(),
             Visibility(
-              visible: textColor != AppColors.d300Danger ? true : false, // Set this to your condition
+              visible: textColor != AppColors.d300Danger
+                  ? true
+                  : false, // Set this to your condition
               child: SvgPicture.asset('assets/image/profile/arrow.svg'),
             )
           ],

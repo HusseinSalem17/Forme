@@ -17,7 +17,8 @@ class CustomClipRect extends StatelessWidget {
     return Container(
       height: height.h,
       width: width.h,
-      decoration: BoxDecoration(borderRadius: BorderRadius.circular(56.dg), color: Colors.white),
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(56.dg), color: Colors.white),
       child: Padding(
         padding: EdgeInsets.all(4.h),
         child: ClipRRect(

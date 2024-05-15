@@ -53,8 +53,8 @@ class _RevenueScreenState extends State<RevenueScreen>
               const Spacer(),
               Text(
                 'Revenue',
-                style: TextStyles.textStyleBold.copyWith(
-                    fontSize: 18.sp, color: AppColors.n900Black),
+                style: TextStyles.textStyleBold
+                    .copyWith(fontSize: 18.sp, color: AppColors.n900Black),
               ),
               const Spacer(),
               SizedBox(width: 32.w),

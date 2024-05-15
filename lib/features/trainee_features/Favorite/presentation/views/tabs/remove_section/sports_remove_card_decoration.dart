@@ -6,9 +6,9 @@ import 'package:forme_app/features/trainee_features/Favorite/data/sports_club_ca
 import 'package:forme_app/features/trainee_features/Favorite/presentation/views/widgets/programs_card_type.dart';
 import 'package:forme_app/features/trainee_features/Favorite/presentation/views/widgets/remove_card_image.dart';
 
-
 class SportsClubRemoveCardDecoration extends StatelessWidget {
-  const SportsClubRemoveCardDecoration({super.key, required this.size, required this.model});
+  const SportsClubRemoveCardDecoration(
+      {super.key, required this.size, required this.model});
   final Size size;
   final SportsClubCardModel model;
 
@@ -25,7 +25,11 @@ class SportsClubRemoveCardDecoration extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisSize: MainAxisSize.min,
           children: [
-            RemoveCardImage(height: size.height / 2, width: size.width / 3, bottomPadding: 0, leftPaddingIcon: 110),
+            RemoveCardImage(
+                height: size.height / 2,
+                width: size.width / 3,
+                bottomPadding: 0,
+                leftPaddingIcon: 110),
             Padding(
               padding: const EdgeInsets.only(top: 8, bottom: 8, left: 8),
               child: Column(
@@ -35,7 +39,8 @@ class SportsClubRemoveCardDecoration extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      ProgramsCardType(type: model.typeCard, state: model.state),
+                      ProgramsCardType(
+                          type: model.typeCard, state: model.state),
                       const Icon(
                         Icons.star_rounded,
                         size: 14,
@@ -82,7 +87,10 @@ class SportsClubRemoveCardDecoration extends StatelessWidget {
                       ),
                       Text(
                         model.period,
-                        style: TextStyles.cardTextStyle.copyWith(fontSize: 8, fontWeight: FontWeight.w400, color: AppColors.n200Gray),
+                        style: TextStyles.cardTextStyle.copyWith(
+                            fontSize: 8,
+                            fontWeight: FontWeight.w400,
+                            color: AppColors.n200Gray),
                       ),
                     ],
                   )

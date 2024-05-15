@@ -4,7 +4,8 @@ import 'package:flutter_svg/svg.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
 
-GestureDetector trainerCard(String icon, String title, BuildContext context, void Function()? onTap) {
+GestureDetector trainerCard(
+    String icon, String title, BuildContext context, void Function()? onTap) {
   return GestureDetector(
     onTap: onTap,
     child: Container(
@@ -34,7 +35,8 @@ GestureDetector trainerCard(String icon, String title, BuildContext context, voi
             Text(
               title,
               textAlign: TextAlign.center,
-              style: TextStyles.textStyleRegular.copyWith(fontSize: 14.sp, color: AppColors.n900Black),
+              style: TextStyles.textStyleRegular
+                  .copyWith(fontSize: 14.sp, color: AppColors.n900Black),
             )
           ],
         )),

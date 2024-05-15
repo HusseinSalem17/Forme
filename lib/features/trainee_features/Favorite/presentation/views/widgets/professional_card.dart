@@ -8,22 +8,21 @@ class ProfessionalCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
-                  color: AppColors.fillColor,
-                  ),
-              padding: const EdgeInsets.all(8),
-              child: Row(
-                children: [
-                  SvgPicture.asset('assets/image/Icon/verified.svg'),
-                  const SizedBox(
-                    width: 6,
-                  ),
-                  const Text('Professional Trainer',
-                      style:TextStyle(
-                          fontSize: 11, color: AppColors.primaryColor)),
-                ],
-              ),
-            );
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(12),
+        color: AppColors.fillColor,
+      ),
+      padding: const EdgeInsets.all(8),
+      child: Row(
+        children: [
+          SvgPicture.asset('assets/image/Icon/verified.svg'),
+          const SizedBox(
+            width: 6,
+          ),
+          const Text('Professional Trainer',
+              style: TextStyle(fontSize: 11, color: AppColors.primaryColor)),
+        ],
+      ),
+    );
   }
 }

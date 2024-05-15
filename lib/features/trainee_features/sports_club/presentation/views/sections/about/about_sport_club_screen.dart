@@ -37,12 +37,14 @@ class AboutSportsClubTab extends StatelessWidget {
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           Text(
             'Description',
-            style: TextStyles.textStyleBold.copyWith(fontSize: 14.sp, color: AppColors.n900Black),
+            style: TextStyles.textStyleBold
+                .copyWith(fontSize: 14.sp, color: AppColors.n900Black),
           ),
           const TrainerDescription(),
           Text(
             'Working Hours',
-            style: TextStyles.textStyleBold.copyWith(fontSize: 14.sp, color: AppColors.n900Black),
+            style: TextStyles.textStyleBold
+                .copyWith(fontSize: 14.sp, color: AppColors.n900Black),
           ),
           const Divider(
             thickness: 1,
@@ -53,7 +55,8 @@ class AboutSportsClubTab extends StatelessWidget {
             padding: EdgeInsets.only(top: 24.h, bottom: 8.h),
             child: Text(
               'GYM Owner',
-              style: TextStyles.textStyleBold.copyWith(fontSize: 14.sp, color: AppColors.n900Black),
+              style: TextStyles.textStyleBold
+                  .copyWith(fontSize: 14.sp, color: AppColors.n900Black),
             ),
           ),
           trainerSection(),
@@ -61,7 +64,8 @@ class AboutSportsClubTab extends StatelessWidget {
             padding: EdgeInsets.only(top: 24.h, bottom: 8.h),
             child: Text(
               'Facilities',
-              style: TextStyles.textStyleBold.copyWith(fontSize: 14.sp, color: AppColors.n900Black),
+              style: TextStyles.textStyleBold
+                  .copyWith(fontSize: 14.sp, color: AppColors.n900Black),
             ),
           ),
           facilitiesSection(),
@@ -69,7 +73,8 @@ class AboutSportsClubTab extends StatelessWidget {
             padding: EdgeInsets.only(top: 24.h, bottom: 8.h),
             child: Text(
               'Branches',
-              style: TextStyles.textStyleBold.copyWith(fontSize: 14.sp, color: AppColors.n900Black),
+              style: TextStyles.textStyleBold
+                  .copyWith(fontSize: 14.sp, color: AppColors.n900Black),
             ),
           ),
           Padding(

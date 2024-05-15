@@ -61,5 +61,4 @@ List<ClientsSubscriptionsCardsModel> clientsSubscriptionsCardsModel = [
     subscriptionType: 'Yoga',
     subscriptionDate: '3 months',
   ),
-
 ];

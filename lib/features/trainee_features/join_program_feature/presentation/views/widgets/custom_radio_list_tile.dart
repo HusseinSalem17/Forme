@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
 
-
 class CustomRadioListTile extends StatelessWidget {
   final String value;
   final String groupValue;
@@ -87,9 +86,8 @@ class CustomRadioListTile extends StatelessWidget {
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         border: Border.all(
-          color: value == groupValue
-              ? AppColors.primaryColor
-              : AppColors.n40Gray,
+          color:
+              value == groupValue ? AppColors.primaryColor : AppColors.n40Gray,
           width: 1.0,
         ),
       ),

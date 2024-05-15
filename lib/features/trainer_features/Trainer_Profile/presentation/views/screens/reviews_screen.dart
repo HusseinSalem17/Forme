@@ -14,7 +14,7 @@ class ReviewsScreen extends StatelessWidget {
     return Scaffold(
       appBar: simpleAppBar(context, 'Reviews'),
       body: Padding(
-        padding: const EdgeInsets.only(top:32),
+        padding: const EdgeInsets.only(top: 32),
         child: Column(
           children: [
             Expanded(
@@ -23,8 +23,7 @@ class ReviewsScreen extends StatelessWidget {
                 itemBuilder: (context, index) {
                   return Padding(
                     padding: EdgeInsets.symmetric(horizontal: 24.w),
-                    child: 
-                    ReviewsCard(
+                    child: ReviewsCard(
                       model: reviewsCardModel[index],
                       size: size,
                     ),

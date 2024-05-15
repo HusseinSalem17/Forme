@@ -2,23 +2,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:forme_app/features/Authentication/presentation/views/widgets/header_text.dart';
-import 'package:forme_app/features/trainer_features/complete_profile_trainer/presentation/manager/cubit/trainer_complete_profile_cubit.dart';
 import 'package:forme_app/features/trainee_features/profile/presentation/views/complete_profile_widgets/custom_primary_button.dart';
-import 'package:forme_app/features/trainee_features/profile/presentation/views/complete_profile_widgets/profile_image_picker.dart';
+import 'package:forme_app/features/trainer_features/complete_profile_trainer/presentation/manager/cubit/trainer_complete_profile_cubit.dart';
 import 'package:image_picker/image_picker.dart';
-
-import '../../../data/models/trainer_complete_profile_data.dart';
+import '../../../../../trainee_features/profile/presentation/views/complete_profile_widgets/profile_image_picker.dart';
 import 'trainer_body_fields.dart';
 
 class TrainerCompleteProfileBody extends StatefulWidget {
   const TrainerCompleteProfileBody({Key? key}) : super(key: key);
 
   @override
-  State<TrainerCompleteProfileBody> createState() => _TrainerCompleteProfileBodyState();
+  State<TrainerCompleteProfileBody> createState() =>
+      _TrainerCompleteProfileBodyState();
 }
 
-class _TrainerCompleteProfileBodyState extends State<TrainerCompleteProfileBody> {
+class _TrainerCompleteProfileBodyState
+    extends State<TrainerCompleteProfileBody> {
   String? name, phone, gender, country, sportFields;
   XFile? _imageFile;
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
@@ -31,15 +30,25 @@ class _TrainerCompleteProfileBodyState extends State<TrainerCompleteProfileBody>
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<TrainerCompleteProfileCubit, TrainerCompleteProfileState>(
+    return BlocConsumer<TrainerCompleteProfileCubit,
+        TrainerCompleteProfileState>(
       listener: (context, state) {
-        // ... (unchanged)
+        if (state is TrainerCompleteProfileSuccess) {
+          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+            content: Text('success'),
+          ));
+        } else if (state is TrainerCompleteProfileFailure) {
+          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+            content: Text('failuer'),
+          ));
+        }
       },
       builder: (context, state) {
         return Form(
           key: _formKey,
           child: ListView(
-            padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 16.0),
+            padding:
+                const EdgeInsets.symmetric(horizontal: 24.0, vertical: 16.0),
             scrollDirection: Axis.vertical,
             children: [
               // const HeaderText(
@@ -58,51 +67,44 @@ class _TrainerCompleteProfileBodyState extends State<TrainerCompleteProfileBody>
               ),
               SizedBox(height: 32.0.h),
               buildTrainerBodyFields(
-                name: name,
-                phone: phone,
-                gender: gender,
-                country: country,
-                sportFields: sportFields,
                 onNameChanged: (value) {
                   setState(() {
-                    name = value;
+                    context.read<TrainerCompleteProfileCubit>().name = value;
                   });
                 },
                 onPhoneChanged: (value) {
                   setState(() {
-                    phone = value;
+                    context.read<TrainerCompleteProfileCubit>().phone = value;
                   });
                 },
                 onGenderChanged: (value) {
                   setState(() {
-                    gender = value;
+                    context.read<TrainerCompleteProfileCubit>().gender = value;
                   });
                 },
                 onCountryChanged: (value) {
                   setState(() {
-                    country = value;
+                    context.read<TrainerCompleteProfileCubit>().country = value;
                   });
                 },
                 onSportFieldChanged: (value) {
-                  setState(() {});
+                  setState(() {
+                    context.read<TrainerCompleteProfileCubit>().sportField =
+                        value;
+                  });
                 },
               ),
               SizedBox(height: 32.0.h),
-              CustomPrimaryButton(
-                text: 'Complete Profile',
-                onPressed: () {
-                  if (_formKey.currentState!.validate()) {
-                    TrainerCompleteProfileData data = TrainerCompleteProfileData(
-                      name: name!,
-                      gender: gender!,
-                      country: country!,
-                      phone: phone!,
-                      sportField: sportFields!,
-                    );
-                    BlocProvider.of<TrainerCompleteProfileCubit>(context).handleTrainerCompleteProfile(data: data);
-                  }
-                },
-              ),
+              state is TrainerCompleteProfileLoading
+                  ? const CircularProgressIndicator()
+                  : CustomPrimaryButton(
+                      text: 'Complete Profile',
+                      onPressed: () {
+                        context
+                            .read<TrainerCompleteProfileCubit>()
+                            .postTrainerCopleteProfile();
+                      },
+                    ),
             ],
           ),
         );

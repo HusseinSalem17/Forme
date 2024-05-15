@@ -74,8 +74,8 @@ class _TraineeProfileScreenState extends State<TraineeProfileScreen> {
               const Spacer(),
               Text(
                 "Hussein Salem",
-                style: TextStyles.textStyleBold.copyWith(
-                    fontSize: 18.sp, color: AppColors.n900Black),
+                style: TextStyles.textStyleBold
+                    .copyWith(fontSize: 18.sp, color: AppColors.n900Black),
               ),
               const Spacer(),
               IconButton(
@@ -131,8 +131,7 @@ class _TraineeProfileScreenState extends State<TraineeProfileScreen> {
                 Center(
                     child: Text('husseinsalem910@gmail.com',
                         style: TextStyles.textStyleSemiBold.copyWith(
-                            fontSize: 14.sp,
-                            color: AppColors.primaryColor))),
+                            fontSize: 14.sp, color: AppColors.primaryColor))),
                 SizedBox(height: 32.0.h),
                 CustomTextField(
                   controller: _nameController,

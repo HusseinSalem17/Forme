@@ -93,7 +93,10 @@ class CardsItem extends StatelessWidget {
                               ),
                               Text(
                                 '$rating ($reviews Reviews)',
-                                style: TextStyles.cardTextStyle.copyWith(color: AppColors.n200Gray, fontSize: 9, fontWeight: FontWeight.w400),
+                                style: TextStyles.cardTextStyle.copyWith(
+                                    color: AppColors.n200Gray,
+                                    fontSize: 9,
+                                    fontWeight: FontWeight.w400),
                               ),
                             ],
                           )
@@ -116,7 +119,10 @@ class CardsItem extends StatelessWidget {
                     ),
                     Text(
                       '$clients clients',
-                      style: TextStyles.cardTextStyle.copyWith(color: AppColors.p200PrimaryColor, fontSize: 11, fontWeight: FontWeight.w700),
+                      style: TextStyles.cardTextStyle.copyWith(
+                          color: AppColors.p200PrimaryColor,
+                          fontSize: 11,
+                          fontWeight: FontWeight.w700),
                     )
                   ],
                 ),

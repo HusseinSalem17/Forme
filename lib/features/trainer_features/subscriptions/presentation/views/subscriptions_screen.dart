@@ -36,18 +36,21 @@ class SubscriptionsScreen extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      SvgPicture.asset('assets/image/Icon/hash.svg', color: AppColors.n900Black),
+                      SvgPicture.asset('assets/image/Icon/hash.svg',
+                          color: AppColors.n900Black),
                       SizedBox(
                         width: 16.w,
                       ),
                       RichText(
                         text: TextSpan(
                           text: 'Trainer ID: ',
-                          style: TextStyles.textStyleRegular.copyWith(color: Colors.black),
+                          style: TextStyles.textStyleRegular
+                              .copyWith(color: Colors.black),
                           children: <TextSpan>[
                             TextSpan(
                               text: textId,
-                              style: TextStyles.textStyleSemiBold.copyWith(color: AppColors.primaryColor),
+                              style: TextStyles.textStyleSemiBold
+                                  .copyWith(color: AppColors.primaryColor),
                             ),
                           ],
                         ),
@@ -60,17 +63,26 @@ class SubscriptionsScreen extends StatelessWidget {
                       Clipboard.setData(ClipboardData(text: textId));
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
-                          margin: EdgeInsets.only(bottom: MediaQuery.of(context).size.height - 50.h),
+                          margin: EdgeInsets.only(
+                              bottom:
+                                  MediaQuery.of(context).size.height - 50.h),
                           content: Row(
                             children: [
-                              SvgPicture.asset('assets/image/Icon/correct-icon.svg'),
+                              SvgPicture.asset(
+                                  'assets/image/Icon/correct-icon.svg'),
                               SizedBox(
                                 width: 8.0.w,
                               ),
-                              Text('Trainer ID Copied successfully.', style: TextStyles.textStyleSemiBold.copyWith(fontSize: 12.sp, color: AppColors.n400color)),
+                              Text('Trainer ID Copied successfully.',
+                                  style: TextStyles.textStyleSemiBold.copyWith(
+                                      fontSize: 12.sp,
+                                      color: AppColors.n400color)),
                             ],
                           ),
-                          shape: ContinuousRectangleBorder(borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10.dg), bottomRight: Radius.circular(10.dg))),
+                          shape: ContinuousRectangleBorder(
+                              borderRadius: BorderRadius.only(
+                                  bottomLeft: Radius.circular(10.dg),
+                                  bottomRight: Radius.circular(10.dg))),
                           duration: const Duration(seconds: 2),
                           dismissDirection: DismissDirection.up,
                           behavior: SnackBarBehavior.floating,
@@ -91,7 +103,8 @@ class SubscriptionsScreen extends StatelessWidget {
               children: [
                 Text(
                   'Retrieve your trainer ID from your profile or simply click the copy icon above, then share it through your personal page to showcase clients who have chosen you as their coach within the club.',
-                  style: TextStyles.textStyleRegular.copyWith(color: Colors.black),
+                  style:
+                      TextStyles.textStyleRegular.copyWith(color: Colors.black),
                 ),
                 SizedBox(
                   height: 32.h,
@@ -100,7 +113,8 @@ class SubscriptionsScreen extends StatelessWidget {
                     title: "Your Clubs",
                     imageAddress: 'assets/image/Icon/club.svg',
                     onTap: () {
-                      Navigator.of(context).push(PageSlideTransition(const YourClubsScreen()));
+                      Navigator.of(context)
+                          .push(PageSlideTransition(const YourClubsScreen()));
                     }),
                 const Divider(
                   color: AppColors.n20Gray,
@@ -109,7 +123,8 @@ class SubscriptionsScreen extends StatelessWidget {
                   title: "Clients Subscriptions",
                   imageAddress: 'assets/image/Icon/users.svg',
                   onTap: () {
-                    Navigator.of(context).push(PageSlideTransition(const ClientsSubscriptionsScreen()));
+                    Navigator.of(context).push(PageSlideTransition(
+                        const ClientsSubscriptionsScreen()));
                   },
                 ),
                 const Divider(

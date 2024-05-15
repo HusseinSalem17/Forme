@@ -7,6 +7,7 @@ import '../../../../../../core/utils/icons_image_pathes.dart';
 import '../../../../../../core/utils/text_styles.dart';
 import 'custom_search_widget.dart';
 import 'map_popup_menu.dart';
+
 class CustomHomeAppBar extends StatelessWidget {
   const CustomHomeAppBar({
     super.key,

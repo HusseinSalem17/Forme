@@ -16,7 +16,8 @@ class AvailabilityScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColors.background,
       appBar: AppBar(
-        title: Text('Availability', style: TextStyles.heading4Bold.copyWith(fontSize: 18.sp)),
+        title: Text('Availability',
+            style: TextStyles.heading4Bold.copyWith(fontSize: 18.sp)),
         backgroundColor: AppColors.background,
         centerTitle: true,
         leading: CustomAppBarArrowButton(
@@ -58,7 +59,8 @@ class AvailabilityScreen extends StatelessWidget {
                             ),
                             Text(
                               'Session Settings',
-                              style: TextStyles.textStyleRegular.copyWith(color: Colors.black),
+                              style: TextStyles.textStyleRegular
+                                  .copyWith(color: Colors.black),
                             ),
                           ],
                         ),
@@ -67,7 +69,8 @@ class AvailabilityScreen extends StatelessWidget {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => const SessionSettingsScreen(),
+                                builder: (context) =>
+                                    const SessionSettingsScreen(),
                               ),
                             );
                           },
@@ -80,9 +83,7 @@ class AvailabilityScreen extends StatelessWidget {
               ),
               const SizedBox(height: 16),
               const Expanded(child: ExpandableContainerScreen()),
-              SizedBox(
-                height: 100.h
-              ),
+              SizedBox(height: 100.h),
             ],
           ),
         ),

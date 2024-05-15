@@ -21,7 +21,9 @@ class ButtonContainer extends StatelessWidget {
               offset: const Offset(0, 2),
             ),
           ],
-          borderRadius: BorderRadius.only(topLeft: Radius.circular(20.dg), topRight: Radius.circular(20.dg))),
+          borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(20.dg),
+              topRight: Radius.circular(20.dg))),
       padding: EdgeInsets.all(23.h),
       child: CustomAppButton(title: buttonTitle),
     );

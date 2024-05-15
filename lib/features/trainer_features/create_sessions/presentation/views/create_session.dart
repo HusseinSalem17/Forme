@@ -23,7 +23,8 @@ class CreateSessionScreen extends StatelessWidget {
             Navigator.pop(context);
           },
         ),
-        title: Text('Create Session', style: TextStyles.heading4Bold.copyWith(fontSize: 18.sp)),
+        title: Text('Create Session',
+            style: TextStyles.heading4Bold.copyWith(fontSize: 18.sp)),
       ),
       body: Padding(
         padding: EdgeInsets.only(top: 8.0.h, left: 16.w, right: 16.w),
@@ -56,7 +57,8 @@ class CreateSessionScreen extends StatelessWidget {
                       ),
                       Text(
                         'Availability',
-                        style: TextStyles.textStyleRegular.copyWith(color: Colors.black),
+                        style: TextStyles.textStyleRegular
+                            .copyWith(color: Colors.black),
                       ),
                     ],
                   ),
@@ -97,7 +99,8 @@ class CreateSessionScreen extends StatelessWidget {
                       ),
                       Text(
                         'Session Settings',
-                        style: TextStyles.textStyleRegular.copyWith(color: Colors.black),
+                        style: TextStyles.textStyleRegular
+                            .copyWith(color: Colors.black),
                       ),
                     ],
                   ),

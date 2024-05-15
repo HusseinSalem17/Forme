@@ -7,7 +7,8 @@ class SecondCustomAppButton extends StatelessWidget {
   final String title;
   final double widthDivider;
   final void Function()? onTap;
-  const SecondCustomAppButton({super.key, required this.title, this.onTap, this.widthDivider = 1});
+  const SecondCustomAppButton(
+      {super.key, required this.title, this.onTap, this.widthDivider = 1});
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +33,8 @@ class SecondCustomAppButton extends StatelessWidget {
           child: Center(
             child: Text(
               title,
-              style: TextStyles.textStyleMedium.copyWith(fontSize: 14.sp, color: AppColors.primaryColor, height: 1),
+              style: TextStyles.textStyleMedium.copyWith(
+                  fontSize: 14.sp, color: AppColors.primaryColor, height: 1),
             ),
           ),
         ),

@@ -33,8 +33,7 @@ class _AddProgramBodyState extends State<AddProgramBody> {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          color: AppColors.n20Gray,
-          borderRadius: BorderRadius.circular(14.dg)),
+          color: AppColors.n20Gray, borderRadius: BorderRadius.circular(14.dg)),
       child: Padding(
         padding: EdgeInsets.all(10.h),
         child: Column(children: [
@@ -63,8 +62,7 @@ class _AddProgramBodyState extends State<AddProgramBody> {
                 width: double.infinity,
                 height: 150,
                 decoration: BoxDecoration(
-                    border:
-                        Border.all(color: AppColors.n40Gray, width: 1.h),
+                    border: Border.all(color: AppColors.n40Gray, width: 1.h),
                     borderRadius: BorderRadius.circular(8.dg)),
                 padding: EdgeInsets.all(38.h),
                 child: SvgPicture.asset('assets/image/Icon/addImage.svg')),

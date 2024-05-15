@@ -4,17 +4,17 @@ import 'package:forme_app/features/trainee_features/sports_club/data/models/club
 import 'package:forme_app/features/trainee_features/sports_club/presentation/views/widgets&methods/club_icon.dart';
 
 Center facilitiesSection() {
-    return Center(
-      child: Wrap(
-        spacing: 16.0.h,
-        runSpacing: 8.0.h,
-        crossAxisAlignment: WrapCrossAlignment.center,
-        children: List<Widget>.generate(
-          clubIconData.length,
-          (int index) {
-            return clubIcon(clubIconData[index]);
-          },
-        ),
+  return Center(
+    child: Wrap(
+      spacing: 16.0.h,
+      runSpacing: 8.0.h,
+      crossAxisAlignment: WrapCrossAlignment.center,
+      children: List<Widget>.generate(
+        clubIconData.length,
+        (int index) {
+          return clubIcon(clubIconData[index]);
+        },
       ),
-    );
-  }
+    ),
+  );
+}

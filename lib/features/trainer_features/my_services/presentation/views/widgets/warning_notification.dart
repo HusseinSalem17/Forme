@@ -4,7 +4,6 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
 
-
 class WarningNotification extends StatelessWidget {
   const WarningNotification({super.key});
 
@@ -37,7 +36,10 @@ class WarningNotification extends StatelessWidget {
             ),
             Text(
               'Set up a payment method for trainees to \nsend payments and show your programs \nand workouts in the app effortlessly.',
-              style: TextStyles.textStyleRegular.copyWith(color: AppColors.n400color, fontSize: 12, fontWeight: FontWeight.w400),
+              style: TextStyles.textStyleRegular.copyWith(
+                  color: AppColors.n400color,
+                  fontSize: 12,
+                  fontWeight: FontWeight.w400),
             ),
             IconButton(
                 onPressed: () {},

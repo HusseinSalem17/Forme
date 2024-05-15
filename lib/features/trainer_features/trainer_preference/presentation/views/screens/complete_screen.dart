@@ -5,15 +5,16 @@ import 'package:forme_app/core/utils/text_styles.dart';
 import 'package:forme_app/core/widgets/button_container.dart';
 import 'package:lottie/lottie.dart';
 
-
 class CompletePreferenceScreen extends StatefulWidget {
   const CompletePreferenceScreen({super.key});
 
   @override
-  State<CompletePreferenceScreen> createState() => _CompletePreferenceScreenState();
+  State<CompletePreferenceScreen> createState() =>
+      _CompletePreferenceScreenState();
 }
 
-class _CompletePreferenceScreenState extends State<CompletePreferenceScreen> with SingleTickerProviderStateMixin {
+class _CompletePreferenceScreenState extends State<CompletePreferenceScreen>
+    with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   @override
   void initState() {
@@ -53,7 +54,8 @@ class _CompletePreferenceScreenState extends State<CompletePreferenceScreen> wit
               Text(
                 'The completion of your account information was successful.',
                 textAlign: TextAlign.center,
-                style: TextStyles.textStyleSemiBold.copyWith(color: Colors.black),
+                style:
+                    TextStyles.textStyleSemiBold.copyWith(color: Colors.black),
               ),
               Text(
                 'We are excited to have you with us!',

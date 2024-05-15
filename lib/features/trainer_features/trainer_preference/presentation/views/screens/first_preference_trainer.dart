@@ -7,7 +7,6 @@ import 'package:forme_app/features/trainer_features/trainer_preference/presentat
 import 'package:forme_app/features/trainer_features/trainer_preference/presentation/views/widgets/text_area_field.dart';
 import 'package:forme_app/features/trainer_features/trainer_preference/presentation/views/widgets/two_choices.dart';
 
-
 class FirstPreferenceTrainer extends StatelessWidget {
   const FirstPreferenceTrainer({super.key});
 
@@ -31,7 +30,8 @@ class FirstPreferenceTrainer extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 10.h),
-              const TextAreaField(hintText: 'Please share a brief description about yourself'),
+              const TextAreaField(
+                  hintText: 'Please share a brief description about yourself'),
               SizedBox(height: 16.h),
               const Divider(
                 color: AppColors.n40Gray,

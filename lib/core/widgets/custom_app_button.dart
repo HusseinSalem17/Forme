@@ -40,14 +40,18 @@ class CustomAppButton extends StatelessWidget {
                       blurRadius: 4,
                       offset: const Offset(0, -2),
                     )
-                  : const BoxShadow(color: Colors.transparent, blurRadius: 0, offset: Offset(0, 0)),
+                  : const BoxShadow(
+                      color: Colors.transparent,
+                      blurRadius: 0,
+                      offset: Offset(0, 0)),
             ],
           ),
           padding: EdgeInsets.all(padding.h),
           child: Center(
             child: Text(
               title,
-              style: TextStyles.textStyleMedium.copyWith(fontSize: fontSize.sp, color: titleColor, height: 1),
+              style: TextStyles.textStyleMedium.copyWith(
+                  fontSize: fontSize.sp, color: titleColor, height: 1),
             ),
           ),
         ),

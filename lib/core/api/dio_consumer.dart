@@ -4,7 +4,6 @@ import 'package:forme_app/core/api/api_interceptors.dart';
 import 'package:forme_app/core/errors/failures.dart';
 import 'package:forme_app/core/utils/constants.dart';
 
-
 class DioConsumer extends ApiConsumer {
   final Dio dio;
 

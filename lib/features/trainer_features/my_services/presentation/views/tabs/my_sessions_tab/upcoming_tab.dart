@@ -20,7 +20,9 @@ class UpcomingTab extends StatelessWidget {
                 itemBuilder: (context, index) {
                   return Padding(
                     padding: EdgeInsets.symmetric(horizontal: 16.w),
-                    child: const MySessionsCard(isCancelled: true,),
+                    child: const MySessionsCard(
+                      isCancelled: true,
+                    ),
                   );
                 },
               ),

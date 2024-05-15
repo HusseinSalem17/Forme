@@ -13,11 +13,13 @@ class WorkoutIcon extends StatelessWidget {
     return GestureDetector(
         onTap: onTap,
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal:8.h),
+          padding: EdgeInsets.symmetric(horizontal: 8.h),
           child: Container(
             height: 32.h,
             width: 32.h,
-            decoration: BoxDecoration(borderRadius: BorderRadius.circular(20), color: AppColors.n20Gray),
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                color: AppColors.n20Gray),
             child: SvgPicture.asset(
               'assets/image/Icon/$icon.svg',
               color: AppColors.primaryColor,

@@ -25,8 +25,8 @@ class _WeightSliderState extends State<WeightSlider> {
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             Text(_weightValue.toString(),
-                style: TextStyles.textStyleMedium.copyWith(
-                    fontSize: 88.sp, color: AppColors.primaryColor)),
+                style: TextStyles.textStyleMedium
+                    .copyWith(fontSize: 88.sp, color: AppColors.primaryColor)),
             Padding(
               padding: EdgeInsets.only(bottom: 22.h),
               child: Text('kg',

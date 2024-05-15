@@ -45,15 +45,15 @@ class ClubCard extends StatelessWidget {
             children: [
               Text(
                 model.plan,
-                style: TextStyles.textStyleRegular.copyWith(
-                    fontSize: 12.sp, color: AppColors.primaryColor),
+                style: TextStyles.textStyleRegular
+                    .copyWith(fontSize: 12.sp, color: AppColors.primaryColor),
               ),
               Row(
                 children: [
                   Text(
                     '${model.time} - ',
-                    style: TextStyles.textStyleBold.copyWith(
-                        fontSize: 14.sp, color: AppColors.n900Black),
+                    style: TextStyles.textStyleBold
+                        .copyWith(fontSize: 14.sp, color: AppColors.n900Black),
                   ),
                   Text(
                     '${model.price}\$  ',

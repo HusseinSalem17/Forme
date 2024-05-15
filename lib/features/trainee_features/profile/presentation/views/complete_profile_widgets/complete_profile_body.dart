@@ -9,9 +9,8 @@ import 'package:forme_app/features/trainee_features/profile/presentation/views/c
 import 'package:forme_app/features/trainee_features/profile/presentation/views/complete_profile_widgets/profile_image_picker.dart';
 import 'package:image_picker/image_picker.dart';
 
-
 class CompleteProfileBody extends StatefulWidget {
-  const  CompleteProfileBody({Key? key}) : super(key: key);
+  const CompleteProfileBody({Key? key}) : super(key: key);
 
   @override
   State<CompleteProfileBody> createState() => _CompleteProfileBodyState();

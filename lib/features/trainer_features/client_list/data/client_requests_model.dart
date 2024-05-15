@@ -1,7 +1,11 @@
 class ClientsRequestsModel {
   int id;
   String clientName, clientLevel, clientType;
-  ClientsRequestsModel({required this.id, required this.clientName, required this.clientLevel, required this.clientType});
+  ClientsRequestsModel(
+      {required this.id,
+      required this.clientName,
+      required this.clientLevel,
+      required this.clientType});
 }
 
 List<ClientsRequestsModel> clientsRequestsModel = [

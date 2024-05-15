@@ -14,8 +14,7 @@ class TextArea extends StatelessWidget {
       height: 161.h,
       width: MediaQuery.sizeOf(context).width,
       decoration: BoxDecoration(
-          color: AppColors.n20Gray,
-          borderRadius: BorderRadius.circular(15.dg)),
+          color: AppColors.n20Gray, borderRadius: BorderRadius.circular(15.dg)),
       child: Padding(
         padding: EdgeInsets.all(16.h),
         child: TextField(

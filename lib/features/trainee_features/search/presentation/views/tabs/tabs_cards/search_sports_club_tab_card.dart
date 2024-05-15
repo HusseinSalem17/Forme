@@ -9,7 +9,8 @@ import 'package:forme_app/features/trainee_features/search/data/sports_club_sear
 import 'package:forme_app/features/trainee_features/search/presentation/views/widgets/image_section.dart';
 
 class SearchSportsClubTabCard extends StatelessWidget {
-  const SearchSportsClubTabCard({super.key, required this.size, required this.model});
+  const SearchSportsClubTabCard(
+      {super.key, required this.size, required this.model});
   final Size size;
   final SportsClubSearchCardModel model;
 
@@ -61,7 +62,8 @@ class SearchSportsClubTabCard extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      ProgramsCardType(type: model.typeCard, state: model.state),
+                      ProgramsCardType(
+                          type: model.typeCard, state: model.state),
                       Row(
                         children: [
                           Icon(
@@ -113,7 +115,10 @@ class SearchSportsClubTabCard extends StatelessWidget {
                     ),
                     Text(
                       model.period,
-                      style: TextStyles.cardTextStyle.copyWith(fontSize: 8.sp, fontWeight: FontWeight.w400, color: AppColors.n200Gray),
+                      style: TextStyles.cardTextStyle.copyWith(
+                          fontSize: 8.sp,
+                          fontWeight: FontWeight.w400,
+                          color: AppColors.n200Gray),
                     ),
                   ],
                 )

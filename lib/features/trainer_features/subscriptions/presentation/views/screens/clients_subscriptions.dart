@@ -14,7 +14,7 @@ class ClientsSubscriptionsScreen extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: AppColors.background,
-      appBar:AppBar(
+      appBar: AppBar(
         backgroundColor: AppColors.background,
         centerTitle: true,
         leading: CustomAppBarArrowButton(
@@ -22,10 +22,11 @@ class ClientsSubscriptionsScreen extends StatelessWidget {
             Navigator.pop(context);
           },
         ),
-        title: Text('Clients Subscriptions', style: TextStyles.heading4Bold.copyWith(fontSize: 18.sp)),
+        title: Text('Clients Subscriptions',
+            style: TextStyles.heading4Bold.copyWith(fontSize: 18.sp)),
       ),
       body: Padding(
-        padding: const EdgeInsets.only(top:8.0),
+        padding: const EdgeInsets.only(top: 8.0),
         child: Column(
           children: [
             Expanded(

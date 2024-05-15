@@ -72,7 +72,19 @@ class _DocumentsPickerState extends State<DocumentsPicker> {
     isPickerOpen = true;
     FilePickerResult? newResult = await FilePicker.platform.pickFiles(
       type: FileType.custom,
-      allowedExtensions: ['pdf', 'doc', 'docx', 'xls', 'xlsx', 'ppt', 'pptx', 'txt', 'jpg', 'jpeg', 'png'],
+      allowedExtensions: [
+        'pdf',
+        'doc',
+        'docx',
+        'xls',
+        'xlsx',
+        'ppt',
+        'pptx',
+        'txt',
+        'jpg',
+        'jpeg',
+        'png'
+      ],
       allowMultiple: true,
     );
     isPickerOpen = false;

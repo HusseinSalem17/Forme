@@ -67,18 +67,18 @@ class CustomSearchDelegate extends SearchDelegate {
   @override
   Widget buildResults(BuildContext context) {
     List<String> matchQuery = [];
-    for (var fruit in countries){
-      if (fruit.toLowerCase().contains(query.toLowerCase())){
+    for (var fruit in countries) {
+      if (fruit.toLowerCase().contains(query.toLowerCase())) {
         matchQuery.add(fruit);
       }
     }
-    return ListView.builder(itemCount: matchQuery.length,
-      itemBuilder: (context,index){
+    return ListView.builder(
+      itemCount: matchQuery.length,
+      itemBuilder: (context, index) {
         var result = matchQuery[index];
         return ListTile(
           title: Text(result),
         );
-
       },
     );
   }
@@ -86,18 +86,18 @@ class CustomSearchDelegate extends SearchDelegate {
   @override
   Widget buildSuggestions(BuildContext context) {
     List<String> matchQuery = [];
-    for (var fruit in countries){
-      if (fruit.toLowerCase().contains(query.toLowerCase())){
+    for (var fruit in countries) {
+      if (fruit.toLowerCase().contains(query.toLowerCase())) {
         matchQuery.add(fruit);
       }
     }
-    return ListView.builder(itemCount: matchQuery.length,
-      itemBuilder: (context,index){
+    return ListView.builder(
+      itemCount: matchQuery.length,
+      itemBuilder: (context, index) {
         var result = matchQuery[index];
         return ListTile(
           title: Text(result),
         );
-
       },
     );
   }

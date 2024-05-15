@@ -43,7 +43,8 @@ class _CustomAuthButtonState extends State<CustomAuthButton> {
         onPressed: widget.isActive ? widget.onPressed : null,
         child: Text(
           widget.text,
-          style: TextStyles.textStyleMedium.copyWith(color: AppColors.background,fontSize:16.sp),
+          style: TextStyles.textStyleMedium
+              .copyWith(color: AppColors.background, fontSize: 16.sp),
         ),
       ),
     );

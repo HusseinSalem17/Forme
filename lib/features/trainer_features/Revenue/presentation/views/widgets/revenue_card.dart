@@ -34,15 +34,15 @@ class RevenueCard extends StatelessWidget {
               offset: const Offset(0, 0),
             ),
           ]),
-      margin: EdgeInsets.only(left: 8.h, top: 24.h,right: 8.h),
+      margin: EdgeInsets.only(left: 8.h, top: 24.h, right: 8.h),
       padding: EdgeInsets.all(16.h),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
             value,
-            style: TextStyles.textStyleMedium.copyWith(
-                fontSize: 22.sp, color: AppColors.n900Black),
+            style: TextStyles.textStyleMedium
+                .copyWith(fontSize: 22.sp, color: AppColors.n900Black),
           ),
           Padding(
             padding: EdgeInsets.only(bottom: 16.h),
@@ -99,8 +99,8 @@ class RevenueCard extends StatelessWidget {
                         final radius = 4.0.dg; // Size of the dot
                         const color = AppColors.background; // Color of the dot
                         final strokeWidth = 2.0.h; // Stroke width of the dot
-                        const strokeColor = AppColors
-                            .primaryColor; // Stroke color of the dot
+                        const strokeColor =
+                            AppColors.primaryColor; // Stroke color of the dot
 
                         return FlDotCirclePainter(
                           radius: radius,

@@ -7,8 +7,8 @@ Padding customExpansionTile(Widget question, String answer) {
   return Padding(
     padding: EdgeInsets.symmetric(vertical: 8.w),
     child: Container(
-      decoration: BoxDecoration(
-          border: Border.all(color: AppColors.n40Gray, width: 1)),
+      decoration:
+          BoxDecoration(border: Border.all(color: AppColors.n40Gray, width: 1)),
       child: ExpansionTile(
         iconColor: AppColors.primaryColor,
         childrenPadding: EdgeInsets.only(right: 16.w, left: 16.w, bottom: 16.w),
@@ -23,8 +23,8 @@ Padding customExpansionTile(Widget question, String answer) {
           ),
           Text(
             answer,
-            style: TextStyles.textStyleRegular.copyWith(
-                fontSize: 12.sp, color: AppColors.n200Gray),
+            style: TextStyles.textStyleRegular
+                .copyWith(fontSize: 12.sp, color: AppColors.n200Gray),
           ),
         ],
       ),

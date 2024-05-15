@@ -66,7 +66,6 @@ String? validatePassword(String? value) {
   return null; // Return null if the password has the desired strength
 }
 
-
 String formatCardNumber(String cardNumber) {
   if (cardNumber.length <= 4) {
     return cardNumber;

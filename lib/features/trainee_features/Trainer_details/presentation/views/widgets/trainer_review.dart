@@ -49,7 +49,8 @@ class ReviewWidget extends StatelessWidget {
             padding: EdgeInsets.symmetric(vertical: 8.h),
             child: Text(
               model.review,
-              style: TextStyles.textStyleRegular.copyWith(fontSize: 12.sp, color: AppColors.n200Gray),
+              style: TextStyles.textStyleRegular
+                  .copyWith(fontSize: 12.sp, color: AppColors.n200Gray),
             ),
           ),
           Row(

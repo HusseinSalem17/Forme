@@ -9,11 +9,8 @@ import 'package:forme_app/features/trainee_features/preferences/presentation/vie
 import '../../manager/preferences_state.dart';
 import 'animated_stepper_line.dart';
 
-
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const CustomAppBar({
-    super.key
-  });
+  const CustomAppBar({super.key});
 
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
