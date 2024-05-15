@@ -45,9 +45,8 @@ class WorkoutLesson extends StatelessWidget {
                 children: [
                   Text(
                     'Harmony Flow Hour',
-                    style: TextStyles.textStyleBold.copyWith(
-                        fontSize: 14.sp,
-                        color: AppColors.n900Black),
+                    style: TextStyles.textStyleBold
+                        .copyWith(fontSize: 14.sp, color: AppColors.n900Black),
                   ),
                   Text(
                     '10:00',
@@ -58,7 +57,10 @@ class WorkoutLesson extends StatelessWidget {
                 ],
               ),
               const Spacer(),
-              SvgPicture.asset('assets/image/Icon/play.svg',width: 24.h,),
+              SvgPicture.asset(
+                'assets/image/Icon/play.svg',
+                width: 24.h,
+              ),
               //SvgPicture.asset('assets/image/Icon/lock-video.svg'),
             ],
           ),

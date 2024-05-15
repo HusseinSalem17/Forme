@@ -2,13 +2,13 @@ import 'package:dio/dio.dart';
 import 'package:forme_app/core/api/api_consumer.dart';
 import 'package:forme_app/core/api/api_interceptors.dart';
 import 'package:forme_app/core/errors/failures.dart';
-import 'package:forme_app/core/utils/api_end_points.dart';
+import 'package:forme_app/core/utils/constants.dart';
 
 class DioConsumer extends ApiConsumer {
   final Dio dio;
 
   DioConsumer({required this.dio}) {
-    dio.options.baseUrl = EndPoint.baseUrl;
+    dio.options.baseUrl = baseUrl;
     dio.interceptors.add(ApiInterceptor());
     dio.interceptors.add(LogInterceptor(
       request: true,

@@ -22,7 +22,6 @@ class CustomTabBar extends StatelessWidget {
           .copyWith(fontWeight: FontWeight.w400, fontSize: 16.sp),
       indicatorSize: TabBarIndicatorSize.tab,
       indicatorColor: AppColors.primaryColor,
-      
       tabs: List<Widget>.generate(
         titles.length,
         (int index) {

@@ -22,8 +22,7 @@ class CustomTable extends StatelessWidget {
             ),
             TableCell(
               child: Text('Level',
-                  style: TextStyles.textStyleRegular
-                      .copyWith(fontSize: 14.sp)),
+                  style: TextStyles.textStyleRegular.copyWith(fontSize: 14.sp)),
             ),
           ],
         ),
@@ -32,15 +31,12 @@ class CustomTable extends StatelessWidget {
             TableCell(
               child: Text('156,213',
                   style: TextStyles.textStyleRegular.copyWith(
-                      fontSize: 14.sp,
-                      color: AppColors.n900Black,
-                      height: 2)),
+                      fontSize: 14.sp, color: AppColors.n900Black, height: 2)),
             ),
             TableCell(
               child: Text('Beginner',
-                  style: TextStyles.textStyleRegular.copyWith(
-                      fontSize: 14.sp,
-                      color: AppColors.n900Black)),
+                  style: TextStyles.textStyleRegular
+                      .copyWith(fontSize: 14.sp, color: AppColors.n900Black)),
             ),
           ],
         ),
@@ -53,8 +49,7 @@ class CustomTable extends StatelessWidget {
             ),
             TableCell(
               child: Text('Workout',
-                  style: TextStyles.textStyleRegular
-                      .copyWith(fontSize: 14.sp)),
+                  style: TextStyles.textStyleRegular.copyWith(fontSize: 14.sp)),
             ),
           ],
         ),
@@ -63,15 +58,12 @@ class CustomTable extends StatelessWidget {
             TableCell(
               child: Text('1.2 Hours',
                   style: TextStyles.textStyleRegular.copyWith(
-                      fontSize: 14.sp,
-                      color: AppColors.n900Black,
-                      height: 2)),
+                      fontSize: 14.sp, color: AppColors.n900Black, height: 2)),
             ),
             TableCell(
               child: Text('10',
-                  style: TextStyles.textStyleRegular.copyWith(
-                      fontSize: 14.sp,
-                      color: AppColors.n900Black)),
+                  style: TextStyles.textStyleRegular
+                      .copyWith(fontSize: 14.sp, color: AppColors.n900Black)),
             ),
           ],
         ),

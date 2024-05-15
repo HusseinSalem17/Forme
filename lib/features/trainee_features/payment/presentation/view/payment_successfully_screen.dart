@@ -11,7 +11,6 @@ import '../../../../../core/widgets/custom_app_button.dart';
 import '../../../home/presentation/views/bottom_bar_screens.dart';
 import 'ereceipt_screen.dart';
 
-
 class PaymentSuccessfullyScreen extends StatelessWidget {
   static const routeName = '/payment-successfully-screen';
 

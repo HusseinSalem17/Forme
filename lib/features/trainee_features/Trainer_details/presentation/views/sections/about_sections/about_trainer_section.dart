@@ -29,7 +29,8 @@ class AboutTrainer extends StatelessWidget {
           const TrainerDescription(),
           Text(
             'Programs',
-            style: TextStyles.textStyleBold.copyWith(fontSize: 14.sp, color: AppColors.n900Black),
+            style: TextStyles.textStyleBold
+                .copyWith(fontSize: 14.sp, color: AppColors.n900Black),
           ),
           const Divider(
             thickness: 2,

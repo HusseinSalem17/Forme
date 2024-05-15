@@ -40,7 +40,8 @@ class _LanguagesMultiSelectState extends State<LanguagesMultiSelect> {
     return AlertDialog(
       backgroundColor: Colors.white,
       surfaceTintColor: Colors.transparent,
-      title: Text('Select Languages', style: TextStyles.textStyleRegular.copyWith(color: Colors.black)),
+      title: Text('Select Languages',
+          style: TextStyles.textStyleRegular.copyWith(color: Colors.black)),
       content: SingleChildScrollView(
         child: ListBody(
           children: widget.items
@@ -49,7 +50,8 @@ class _LanguagesMultiSelectState extends State<LanguagesMultiSelect> {
                     activeColor: AppColors.primaryColor,
                     title: Text(
                       item,
-                      style: TextStyles.textStyleRegular.copyWith(color: Colors.black),
+                      style: TextStyles.textStyleRegular
+                          .copyWith(color: Colors.black),
                     ),
                     controlAffinity: ListTileControlAffinity.trailing,
                     onChanged: (isChecked) => _itemChange(item, isChecked!),
@@ -65,14 +67,16 @@ class _LanguagesMultiSelectState extends State<LanguagesMultiSelect> {
               onPressed: _cancel,
               child: Text(
                 'Cancel',
-                style: TextStyles.textStyleSemiBold.copyWith(color: AppColors.primaryColor),
+                style: TextStyles.textStyleSemiBold
+                    .copyWith(color: AppColors.primaryColor),
               ),
             ),
             TextButton(
               onPressed: _submit,
               child: Text(
                 'Submit',
-                style: TextStyles.textStyleSemiBold.copyWith(color: AppColors.primaryColor),
+                style: TextStyles.textStyleSemiBold
+                    .copyWith(color: AppColors.primaryColor),
               ),
             ),
           ],

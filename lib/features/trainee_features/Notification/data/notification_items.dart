@@ -5,5 +5,6 @@ class NotificationItem {
   final String description;
   bool isUnread;
 
-  NotificationItem(this.icon, this.title, this.time, this.description) : isUnread = true;
+  NotificationItem(this.icon, this.title, this.time, this.description)
+      : isUnread = true;
 }

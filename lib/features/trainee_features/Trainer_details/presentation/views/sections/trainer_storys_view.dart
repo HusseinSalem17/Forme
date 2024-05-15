@@ -19,7 +19,8 @@ class TrainerStorysScreen extends StatelessWidget {
         itemCount: 4,
         itemBuilder: (context, index) => GestureDetector(
             onTap: () {
-              Navigator.of(context).push(PageSlideTransition(const SuccessStory()));
+              Navigator.of(context)
+                  .push(PageSlideTransition(const SuccessStory()));
             },
             child: Image.asset('assets/image/temp/image$index.png')),
       ),

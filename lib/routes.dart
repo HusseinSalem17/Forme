@@ -51,7 +51,7 @@ Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
       return forgotPasswordRoute();
     case VerifyCodeScreen.routeName: //done
       return verifyCodeRoute();
-    case NewPasswordScreen.routeName://done
+    case NewPasswordScreen.routeName: //done
       return newPasswordRoute();
 //------------------------------------------- user section ------------------------
 //////////////// REMOVED //////////////////

@@ -14,7 +14,6 @@ class TrainerDescription extends StatelessWidget {
     return SizedBox(
       height: 91.h,
       child: SingleChildScrollView(
-        
         child: ReadMoreText(
           'Lorem ipsum dolor sit amet consectetur. Etiam morbi ut urna mi. Quis aliquam mattis consectetur varius a nunc id posuere Lorem ipsum dolor sit amet consectetur. Etiam morbi ut urna mi. Quis aliquam mattis consectetur varius a nunc id posuere Lorem ipsum dolor sit amet consectetur. Etiam morbi ut urna mi. Quis aliquam mattis consectetur varius a nunc id posuere Lorem ipsum dolor sit amet consectetur. Etiam morbi ut urna mi. Quis aliquam mattis consectetur varius a nunc id posuere Lorem ipsum dolor sit amet consectetur. Etiam morbi ut urna mi. Quis aliquam mattis consectetur varius a nunc id posuere Lorem ipsum dolor sit amet consectetur. Etiam morbi ut urna mi. Quis aliquam mattis consectetur varius a nunc id posuere Lorem ipsum dolor sit amet consectetur. Etiam morbi ut urna mi. Quis aliquam mattis consectetur varius a nunc id posuere Lorem ipsum dolor sit amet consectetur. Etiam morbi ut urna mi. Quis aliquam mattis consectetur varius a nunc id posuere Lorem ipsum dolor sit amet consectetur. Etiam morbi ut urna mi. Quis aliquam mattis consectetur varius a nunc id posuere ',
           trimLines: 3,

@@ -6,7 +6,6 @@ import 'package:forme_app/features/trainer_features/trainer_preference/presentat
 import 'package:forme_app/features/trainer_features/trainer_preference/presentation/views/screens/first_preference_trainer.dart';
 import 'package:forme_app/features/trainer_features/trainer_preference/presentation/views/screens/second_preference_trainer.dart';
 
-
 class CustomPreferencesPageView extends StatelessWidget {
   final PageController pageViewController;
 
@@ -27,10 +26,7 @@ class CustomPreferencesPageView extends StatelessWidget {
               TrainerPreferenceEvent(),
             );
           },
-          children: const [
-            FirstPreferenceTrainer(),
-            SecondPreferenceTrainer()
-          ],
+          children: const [FirstPreferenceTrainer(), SecondPreferenceTrainer()],
         );
       },
     );

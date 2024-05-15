@@ -16,19 +16,22 @@ class WorkoutAboutTab extends StatelessWidget {
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         Text(
           'Description',
-          style: TextStyles.textStyleBold.copyWith(fontSize: 14.sp, color: AppColors.n900Black),
+          style: TextStyles.textStyleBold
+              .copyWith(fontSize: 14.sp, color: AppColors.n900Black),
         ),
         const TrainerDescription(),
         Text(
           'Fitness Trainer',
-          style: TextStyles.textStyleBold.copyWith(fontSize: 14.sp, color: AppColors.n900Black),
+          style: TextStyles.textStyleBold
+              .copyWith(fontSize: 14.sp, color: AppColors.n900Black),
         ),
         const FitnessTrainerSection(),
         Padding(
           padding: EdgeInsets.only(top: 24.h, bottom: 8.h),
           child: Text(
             'Info',
-            style: TextStyles.textStyleBold.copyWith(fontSize: 14.sp, color: AppColors.n900Black),
+            style: TextStyles.textStyleBold
+                .copyWith(fontSize: 14.sp, color: AppColors.n900Black),
           ),
         ),
         const CustomTable()

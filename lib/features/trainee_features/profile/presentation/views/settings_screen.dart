@@ -47,10 +47,7 @@ class SettingsScreen extends StatelessWidget {
                       'Yes, Delete',
                     );
                 }
-              },
-                  index != 3
-                      ? AppColors.n900Black
-                      : AppColors.d300Danger);
+              }, index != 3 ? AppColors.n900Black : AppColors.d300Danger);
             })),
           ),
         ));

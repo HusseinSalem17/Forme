@@ -5,9 +5,9 @@ import 'package:flutter/services.dart';
 class CardNumberFormatter extends TextInputFormatter {
   @override
   TextEditingValue formatEditUpdate(
-      TextEditingValue oldValue,
-      TextEditingValue newValue,
-      ) {
+    TextEditingValue oldValue,
+    TextEditingValue newValue,
+  ) {
     final text = newValue.text;
 
     if (text.length <= 4) {
@@ -34,9 +34,9 @@ class CardNumberFormatter extends TextInputFormatter {
 class ExpireDateFormatter extends TextInputFormatter {
   @override
   TextEditingValue formatEditUpdate(
-      TextEditingValue oldValue,
-      TextEditingValue newValue,
-      ) {
+    TextEditingValue oldValue,
+    TextEditingValue newValue,
+  ) {
     final String newText = newValue.text;
 
     // Allow only numeric characters
@@ -58,4 +58,3 @@ class ExpireDateFormatter extends TextInputFormatter {
     );
   }
 }
-

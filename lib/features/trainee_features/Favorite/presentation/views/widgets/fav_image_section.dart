@@ -65,7 +65,8 @@ class _FavCardImageSectionState extends State<FavCardImageSection> {
                             child: Text(
                               'Remove From Favorites?',
                               textAlign: TextAlign.center,
-                              style: TextStyles.blackCardTextStyle.copyWith(fontSize: 16),
+                              style: TextStyles.blackCardTextStyle
+                                  .copyWith(fontSize: 16),
                             ),
                           ),
                           const Padding(
@@ -109,7 +110,8 @@ class _FavCardImageSectionState extends State<FavCardImageSection> {
                                       },
                                       child: Text(
                                         'Cancel',
-                                        style: TextStyles.textStyleSemiBold.copyWith(
+                                        style: TextStyles.textStyleSemiBold
+                                            .copyWith(
                                           fontSize: 12,
                                           color: AppColors.primaryColor,
                                         ),
@@ -136,7 +138,8 @@ class _FavCardImageSectionState extends State<FavCardImageSection> {
                                       },
                                       child: Text(
                                         'Yes, Remove',
-                                        style: TextStyles.textStyleSemiBold.copyWith(
+                                        style: TextStyles.textStyleSemiBold
+                                            .copyWith(
                                           fontSize: 12,
                                           color: AppColors.background,
                                         ),

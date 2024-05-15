@@ -75,8 +75,8 @@ class _MyProfileState extends State<MyProfile> {
               const Spacer(),
               Text(
                 "My Profile",
-                style: TextStyles.textStyleBold.copyWith(
-                    fontSize: 18.sp, color: AppColors.n900Black),
+                style: TextStyles.textStyleBold
+                    .copyWith(fontSize: 18.sp, color: AppColors.n900Black),
               ),
               const Spacer(),
               IconButton(

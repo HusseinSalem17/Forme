@@ -14,8 +14,7 @@ class CustomBottomNavigationBar extends StatefulWidget {
     required this.labels,
     required this.isTrainer,
   }) : super(key: key);
-  final List<String>
-      icons;
+  final List<String> icons;
   final List<String> labels;
   final bool isTrainer;
   @override
@@ -26,23 +25,22 @@ class CustomBottomNavigationBar extends StatefulWidget {
 class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
   @override
   Widget build(BuildContext context) {
-    
     return BottomNavigationBar(
       items: List<BottomNavigationBarItem>.generate(
         5,
         (int index) {
-          return customNavigationBarItem(widget.icons[index], widget.labels[index]);
+          return customNavigationBarItem(
+              widget.icons[index], widget.labels[index]);
         },
       ),
-      currentIndex: widget.isTrainer 
-    ? BlocProvider.of<TrainerHomeBloc>(context).currentIndex 
-    : BlocProvider.of<HomeBloc>(context).currentIndex,
+      currentIndex: widget.isTrainer
+          ? BlocProvider.of<TrainerHomeBloc>(context).currentIndex
+          : BlocProvider.of<HomeBloc>(context).currentIndex,
       onTap: (index) {
         setState(() {
           widget.isTrainer
               ? BlocProvider.of<TrainerHomeBloc>(context).getCurrentIndex(index)
-              :
-          BlocProvider.of<HomeBloc>(context).getCurrentIndex(index);
+              : BlocProvider.of<HomeBloc>(context).getCurrentIndex(index);
         });
       },
       unselectedItemColor: AppColors.n100Gray,
@@ -53,7 +51,11 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
   }
 
   BottomNavigationBarItem customNavigationBarItem(String icon, String label) {
-    final bool isSelected = widget.isTrainer? BlocProvider.of<TrainerHomeBloc>(context).currentIndex == widget.icons.indexOf(icon): BlocProvider.of<HomeBloc>(context).currentIndex == widget.icons.indexOf(icon);
+    final bool isSelected = widget.isTrainer
+        ? BlocProvider.of<TrainerHomeBloc>(context).currentIndex ==
+            widget.icons.indexOf(icon)
+        : BlocProvider.of<HomeBloc>(context).currentIndex ==
+            widget.icons.indexOf(icon);
     return BottomNavigationBarItem(
       icon: SvgPicture.asset(
         'assets/image/Icon/$icon.svg',

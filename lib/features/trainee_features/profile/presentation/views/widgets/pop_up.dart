@@ -5,7 +5,8 @@ import 'package:forme_app/core/utils/text_styles.dart';
 import 'package:forme_app/core/widgets/custom_app_button.dart';
 import 'package:forme_app/core/widgets/second_custom_app_button.dart';
 
-Future<dynamic> popUp(BuildContext context, String title, String text, String buttonTitle) {
+Future<dynamic> popUp(
+    BuildContext context, String title, String text, String buttonTitle) {
   return showModalBottomSheet(
       backgroundColor: AppColors.background,
       isScrollControlled: true,
@@ -15,14 +16,18 @@ Future<dynamic> popUp(BuildContext context, String title, String text, String bu
         return Container(
             height: MediaQuery.sizeOf(context).height / 5,
             width: double.infinity,
-            decoration: BoxDecoration(borderRadius: BorderRadius.only(topLeft: Radius.circular(20.dg), topRight: Radius.circular(20.dg))),
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(20.dg),
+                    topRight: Radius.circular(20.dg))),
             padding: EdgeInsets.symmetric(horizontal: 8.h, vertical: 16.h),
             child: Column(
               children: [
                 Text(
                   title,
                   textAlign: TextAlign.center,
-                  style: TextStyles.textStyleMedium.copyWith(fontSize: 16.sp, color: AppColors.n900Black),
+                  style: TextStyles.textStyleMedium
+                      .copyWith(fontSize: 16.sp, color: AppColors.n900Black),
                 ),
                 const Divider(
                   color: AppColors.n30StrokeColor,

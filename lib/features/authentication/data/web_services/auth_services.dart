@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:forme_app/core/user_type.dart';
-import 'package:forme_app/core/utils/api_end_points.dart';
+import 'package:forme_app/core/utils/constants.dart';
 import 'package:forme_app/features/authentication/data/models/requset_otp_model.dart';
 
 import '../models/response_otp_successful.dart';
@@ -49,7 +49,7 @@ class AuthServices {
       );
 
       Response response = await dio.post(
-        '${EndPoint.baseUrl}/auth/request_otp/',
+        '$baseUrl/auth/request_otp/',
         options: Options(
           headers: {
             'Content-Type': 'application/json', // Set the content type header
@@ -57,7 +57,6 @@ class AuthServices {
         ),
         data: request.toJson(),
       );
-
 
       return ResponseOtpSuccessful.fromJson(response.data);
     } catch (error) {

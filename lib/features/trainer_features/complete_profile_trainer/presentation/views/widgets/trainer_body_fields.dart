@@ -11,18 +11,13 @@ import '../../../../../../core/widgets/app_fields/custom_phone_field.dart';
 import '../../../../../../core/widgets/app_fields/custom_text_field.dart';
 
 Widget buildTrainerBodyFields({
-  required String? name,
-  required String? phone,
-  required String? gender,
-  required String? country,
-  required String? sportFields,
   required ValueChanged<String> onNameChanged,
   required ValueChanged<String> onPhoneChanged,
   required ValueChanged<String> onGenderChanged,
   required ValueChanged<String> onCountryChanged,
   required ValueChanged<String> onSportFieldChanged,
 }) {
-  final List<String> genderItems = ['Male', 'Female'];
+  final List<String> genderItems = ['male', 'female'];
   final List<String> countryItems = ['Egypt', 'USA'];
   final List<String> sportFieldItems = [
     'Fitness',

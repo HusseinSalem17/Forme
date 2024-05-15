@@ -14,10 +14,14 @@ class WorkoutCardType extends StatelessWidget {
         borderRadius: BorderRadius.circular(10),
       ),
       child: Padding(
-        padding: type == 'Best Seller' ? const EdgeInsets.symmetric(horizontal: 6, vertical: 4) : const EdgeInsets.all(4),
+        padding: type == 'Best Seller'
+            ? const EdgeInsets.symmetric(horizontal: 6, vertical: 4)
+            : const EdgeInsets.all(4),
         child: Text(
           type,
-          style: type == 'Best Seller' ? TextStyles.cardTextStyle.copyWith(color: AppColors.d50Danger) : TextStyles.cardTextStyle,
+          style: type == 'Best Seller'
+              ? TextStyles.cardTextStyle.copyWith(color: AppColors.d50Danger)
+              : TextStyles.cardTextStyle,
         ),
       ),
     );

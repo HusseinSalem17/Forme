@@ -13,7 +13,8 @@ class MySessionsTab extends StatefulWidget {
   State<MySessionsTab> createState() => _MySessionsTabState();
 }
 
-class _MySessionsTabState extends State<MySessionsTab> with SingleTickerProviderStateMixin {
+class _MySessionsTabState extends State<MySessionsTab>
+    with SingleTickerProviderStateMixin {
   late TabController tabController;
 
   @override
@@ -30,6 +31,7 @@ class _MySessionsTabState extends State<MySessionsTab> with SingleTickerProvider
     tabController.dispose();
     super.dispose();
   }
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -64,7 +66,9 @@ class _MySessionsTabState extends State<MySessionsTab> with SingleTickerProvider
                       child: Text(
                         'Upcoming',
                         style: TextStyles.textStyleRegular.copyWith(
-                          color: tabController.index == 0 ? AppColors.n900Black : AppColors.n400color,
+                          color: tabController.index == 0
+                              ? AppColors.n900Black
+                              : AppColors.n400color,
                           fontSize: 14.sp,
                         ),
                       ),
@@ -73,7 +77,9 @@ class _MySessionsTabState extends State<MySessionsTab> with SingleTickerProvider
                       child: Text(
                         'Completed',
                         style: TextStyles.textStyleRegular.copyWith(
-                          color: tabController.index == 1 ? AppColors.s500Success : AppColors.n400color,
+                          color: tabController.index == 1
+                              ? AppColors.s500Success
+                              : AppColors.n400color,
                           fontSize: 14.sp,
                         ),
                       ),
@@ -82,7 +88,9 @@ class _MySessionsTabState extends State<MySessionsTab> with SingleTickerProvider
                       child: Text(
                         'Cancelled',
                         style: TextStyles.textStyleRegular.copyWith(
-                          color: tabController.index == 2 ? AppColors.d500Danger : AppColors.n400color,
+                          color: tabController.index == 2
+                              ? AppColors.d500Danger
+                              : AppColors.n400color,
                           fontSize: 14.sp,
                         ),
                       ),

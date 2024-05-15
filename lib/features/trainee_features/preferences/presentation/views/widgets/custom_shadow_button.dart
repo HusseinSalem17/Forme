@@ -50,10 +50,12 @@ class CustomShadowButton extends StatelessWidget {
               onTap: onTap,
               splashColor: Colors.grey.withOpacity(1), // Add a splash color
               child: CustomAppButton(
-                title: buttonTitle ?? '', // Use the null-aware operator ?? to provide a default value
+                title: buttonTitle ??
+                    '', // Use the null-aware operator ?? to provide a default value
               ),
             ),
-            if (buttonSubTitle != null) // Perform a null check before using buttonSubTitle
+            if (buttonSubTitle !=
+                null) // Perform a null check before using buttonSubTitle
               Padding(
                 padding: EdgeInsets.only(top: 16.h),
                 child: GestureDetector(
@@ -63,7 +65,7 @@ class CustomShadowButton extends StatelessWidget {
                     style: TextStyles.textStyleRegular
                         .copyWith(color: AppColors.primaryColor, height: 1),
                     textAlign: TextAlign.center,
-                  ), 
+                  ),
                 ),
               )
           ],

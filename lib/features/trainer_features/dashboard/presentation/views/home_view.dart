@@ -23,14 +23,14 @@ class _TrainerHomeScreenState extends State<TrainerHomeScreen> {
     const SafeArea(child: ClientListScreen()),
     const SafeArea(child: Center(child: Text('4'))),
     const SafeArea(child: TrainerProfileScreen()),
-
   ];
 
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<TrainerHomeBloc, TrainerHomeState>(
       builder: (context, state) {
-        int currentIndex = BlocProvider.of<TrainerHomeBloc>(context).currentIndex;
+        int currentIndex =
+            BlocProvider.of<TrainerHomeBloc>(context).currentIndex;
         return Scaffold(
           body: _pages[currentIndex],
           bottomNavigationBar: const CustomBottomNavigationBar(

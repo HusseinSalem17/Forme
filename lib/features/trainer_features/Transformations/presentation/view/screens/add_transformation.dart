@@ -84,7 +84,6 @@ class _AddTransformationState extends State<AddTransformation> {
                 child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-
                       Text(
                         'Upload Image or Video',
                         style: TextStyles.textStyleBold
@@ -111,8 +110,7 @@ class _AddTransformationState extends State<AddTransformation> {
                             height: 150,
                             decoration: BoxDecoration(
                                 border: Border.all(
-                                    color: AppColors.n40Gray,
-                                    width: 1.h),
+                                    color: AppColors.n40Gray, width: 1.h),
                                 borderRadius: BorderRadius.circular(8.dg)),
                             padding: EdgeInsets.all(38.h),
                             child: SvgPicture.asset(

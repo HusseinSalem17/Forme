@@ -6,7 +6,6 @@ import 'package:forme_app/features/trainee_features/search/presentation/views/ta
 import 'package:forme_app/features/trainee_features/search/presentation/views/tabs/search_trainer_tab.dart';
 import 'package:forme_app/features/trainee_features/search/presentation/views/tabs/search_workout_tab.dart';
 
-
 class ResultsSearchScreen extends StatelessWidget {
   static const routeName = '/search-screen';
 

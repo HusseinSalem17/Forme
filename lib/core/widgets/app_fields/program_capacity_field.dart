@@ -23,10 +23,10 @@ class ProgramCapacityField extends StatelessWidget {
         autovalidateMode: AutovalidateMode.onUserInteraction,
         cursorColor: AppColors.primaryColor,
         //enabled: widget.enabled,
-        style: TextStyles.textStyleRegular.copyWith(
-            fontSize: 14.sp, color: AppColors.n900Black),
+        style: TextStyles.textStyleRegular
+            .copyWith(fontSize: 14.sp, color: AppColors.n900Black),
         keyboardType: TextInputType.number,
-    
+
         decoration: InputDecoration(
           filled: true,
           fillColor: Colors.white,
@@ -35,7 +35,6 @@ class ProgramCapacityField extends StatelessWidget {
             top: 8.h,
             bottom: 8.h,
           ),
-          
           hintText: '0',
           hintStyle: TextStyles.hintStyle,
           border: textFieldBorder(),

@@ -120,11 +120,11 @@ class _SignInFormState extends State<SignInForm> {
               if (_formKey.currentState!.validate()) {
                 // Dispatch LoginEvent with email and password
                 context.read<AuthBloc>().add(
-                  LoginEvent(
-                    email: emailController.text,
-                    password: passwordController.text,
-                  ),
-                );
+                      LoginEvent(
+                        email: emailController.text,
+                        password: passwordController.text,
+                      ),
+                    );
               }
             },
           ),

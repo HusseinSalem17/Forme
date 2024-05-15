@@ -18,7 +18,7 @@ class CustomTextField extends StatefulWidget {
       this.confirmPasswordController,
       this.errorText,
       required this.title,
-      this.subTitle ='',
+      this.subTitle = '',
       this.optional = false,
       this.enabled = true,
       this.titleColor = AppColors.n900Black})
@@ -26,7 +26,7 @@ class CustomTextField extends StatefulWidget {
 
   final void Function(String)? onChanged;
   final String? hintText, errorText;
-  final String title,subTitle;
+  final String title, subTitle;
   final bool optional;
   final TextEditingController? controller;
   final TextInputType? keyboardType;

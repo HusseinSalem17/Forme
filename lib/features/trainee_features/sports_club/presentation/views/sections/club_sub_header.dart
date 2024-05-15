@@ -7,7 +7,7 @@ import 'package:forme_app/features/trainee_features/home/presentation/views/widg
 
 Padding clubSubHeader() {
   return Padding(
-    padding: EdgeInsets.symmetric(horizontal: 20.h,vertical: 4.h),
+    padding: EdgeInsets.symmetric(horizontal: 20.h, vertical: 4.h),
     child: Column(children: [
       SizedBox(
         height: 26.h,
@@ -24,8 +24,8 @@ Padding clubSubHeader() {
             children: [
               Text(
                 'Pulse Fitness Center',
-                style: TextStyles.textStyleMedium.copyWith(
-                    fontSize: 16.sp, color: AppColors.n900Black),
+                style: TextStyles.textStyleMedium
+                    .copyWith(fontSize: 16.sp, color: AppColors.n900Black),
               ),
               Row(
                 children: [

@@ -6,14 +6,9 @@ import 'package:forme_app/core/utils/icons_image_pathes.dart';
 
 class CustomButtonScanFace extends StatelessWidget {
   final String icon;
-  final double height,width;
-  const CustomButtonScanFace({
-    super.key,
-    required this.icon,
-    this.height = 48,
-    this.width =48
-
-  });
+  final double height, width;
+  const CustomButtonScanFace(
+      {super.key, required this.icon, this.height = 48, this.width = 48});
 
   @override
   Widget build(BuildContext context) {

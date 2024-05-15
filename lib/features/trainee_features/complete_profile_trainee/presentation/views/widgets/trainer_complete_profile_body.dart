@@ -15,10 +15,12 @@ class TrainerCompleteProfileBody extends StatefulWidget {
   const TrainerCompleteProfileBody({Key? key}) : super(key: key);
 
   @override
-  State<TrainerCompleteProfileBody> createState() => _TrainerCompleteProfileBodyState();
+  State<TrainerCompleteProfileBody> createState() =>
+      _TrainerCompleteProfileBodyState();
 }
 
-class _TrainerCompleteProfileBodyState extends State<TrainerCompleteProfileBody> {
+class _TrainerCompleteProfileBodyState
+    extends State<TrainerCompleteProfileBody> {
   String? name, phone, gender, country, sportFields;
   XFile? _imageFile;
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
@@ -31,7 +33,8 @@ class _TrainerCompleteProfileBodyState extends State<TrainerCompleteProfileBody>
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<TrainerCompleteProfileCubit, TrainerCompleteProfileState>(
+    return BlocConsumer<TrainerCompleteProfileCubit,
+        TrainerCompleteProfileState>(
       listener: (context, state) {
         // ... (unchanged)
       },
@@ -39,7 +42,8 @@ class _TrainerCompleteProfileBodyState extends State<TrainerCompleteProfileBody>
         return Form(
           key: _formKey,
           child: ListView(
-            padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 16.0),
+            padding:
+                const EdgeInsets.symmetric(horizontal: 24.0, vertical: 16.0),
             scrollDirection: Axis.vertical,
             children: [
               // const HeaderText(

@@ -5,6 +5,7 @@ import 'package:forme_app/core/utils/text_styles.dart';
 import 'package:forme_app/core/widgets/custom_app_bar_arrow_button.dart';
 import 'package:forme_app/features/trainer_features/subscriptions/data/your_clubs_cards_model.dart';
 import 'package:forme_app/features/trainer_features/subscriptions/presentation/views/widgets/your_clubs_cards.dart';
+
 class YourClubsScreen extends StatelessWidget {
   const YourClubsScreen({super.key});
 
@@ -21,11 +22,12 @@ class YourClubsScreen extends StatelessWidget {
             Navigator.pop(context);
           },
         ),
-        title: Text('Your Clubs', style: TextStyles.heading4Bold.copyWith(fontSize: 18.sp)),
+        title: Text('Your Clubs',
+            style: TextStyles.heading4Bold.copyWith(fontSize: 18.sp)),
         toolbarHeight: 80.h,
       ),
       body: Padding(
-        padding: const EdgeInsets.only(top:8.0, left: 11, right: 17),
+        padding: const EdgeInsets.only(top: 8.0, left: 11, right: 17),
         child: Column(
           children: [
             Expanded(

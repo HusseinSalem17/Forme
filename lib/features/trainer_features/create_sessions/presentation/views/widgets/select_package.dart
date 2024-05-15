@@ -46,7 +46,9 @@ class _SelectPackageState extends State<SelectPackage> {
                   },
                   activeColor: AppColors.primaryColor,
                 ),
-                Text(widget.text1, style: TextStyles.textStyleRegular.copyWith(color: AppColors.n900Black)),
+                Text(widget.text1,
+                    style: TextStyles.textStyleRegular
+                        .copyWith(color: AppColors.n900Black)),
               ],
             ),
             widget.isInput
@@ -71,10 +73,14 @@ class _SelectPackageState extends State<SelectPackage> {
                   },
                   activeColor: AppColors.primaryColor,
                 ),
-                Text(widget.text2, style: TextStyles.textStyleRegular.copyWith(color: AppColors.n900Black)),
+                Text(widget.text2,
+                    style: TextStyles.textStyleRegular
+                        .copyWith(color: AppColors.n900Black)),
               ],
             ),
-            widget.isInput ? TextFieldWithCustomLabel(isEnabled: isCall) : Container(),
+            widget.isInput
+                ? TextFieldWithCustomLabel(isEnabled: isCall)
+                : Container(),
           ],
         ),
         SizedBox(height: 8.h),
@@ -92,7 +98,9 @@ class _SelectPackageState extends State<SelectPackage> {
                   },
                   activeColor: AppColors.primaryColor,
                 ),
-                Text(widget.text3, style: TextStyles.textStyleRegular.copyWith(color: AppColors.n900Black)),
+                Text(widget.text3,
+                    style: TextStyles.textStyleRegular
+                        .copyWith(color: AppColors.n900Black)),
               ],
             ),
             widget.isInput
@@ -117,7 +125,9 @@ class _SelectPackageState extends State<SelectPackage> {
                   },
                   activeColor: AppColors.primaryColor,
                 ),
-                Text(widget.text4, style: TextStyles.textStyleRegular.copyWith(color: AppColors.n900Black)),
+                Text(widget.text4,
+                    style: TextStyles.textStyleRegular
+                        .copyWith(color: AppColors.n900Black)),
               ],
             ),
             widget.isInput
@@ -140,7 +150,9 @@ class _SelectPackageState extends State<SelectPackage> {
                     },
                     activeColor: AppColors.primaryColor,
                   ),
-                  Text(widget.text5, style: TextStyles.textStyleRegular.copyWith(color: AppColors.n900Black)),
+                  Text(widget.text5,
+                      style: TextStyles.textStyleRegular
+                          .copyWith(color: AppColors.n900Black)),
                 ],
               )
             : Container(),

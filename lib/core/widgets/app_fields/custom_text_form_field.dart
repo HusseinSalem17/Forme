@@ -58,7 +58,7 @@ class CustomTextFromField extends StatelessWidget {
                 color: AppColors.d300Danger,
               ),
             ),
-            focusedErrorBorder:  buildOutlineInputBorder().copyWith(
+            focusedErrorBorder: buildOutlineInputBorder().copyWith(
               borderSide: const BorderSide(
                 color: AppColors.d300Danger,
               ),

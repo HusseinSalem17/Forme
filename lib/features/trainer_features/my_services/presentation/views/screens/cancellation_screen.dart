@@ -9,7 +9,7 @@ import 'package:forme_app/features/trainer_features/trainer_preference/presentat
 
 class CancellationScreen extends StatelessWidget {
   const CancellationScreen({super.key});
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,7 +55,8 @@ class CancellationScreen extends StatelessWidget {
                 children: [
                   Text(
                     "Please select a reason for cancellation: ",
-                    style: TextStyles.textStyleRegular.copyWith(fontSize: 14.sp),
+                    style:
+                        TextStyles.textStyleRegular.copyWith(fontSize: 14.sp),
                   ),
                   SizedBox(
                     height: 16.h,
@@ -66,7 +67,8 @@ class CancellationScreen extends StatelessWidget {
                   ),
                   Text(
                     'Note to Trainer',
-                    style: TextStyles.textStyleSemiBold.copyWith(fontSize: 14.sp, color: AppColors.n900Black),
+                    style: TextStyles.textStyleSemiBold
+                        .copyWith(fontSize: 14.sp, color: AppColors.n900Black),
                   ),
                   SizedBox(
                     height: 8.h,
@@ -79,14 +81,14 @@ class CancellationScreen extends StatelessWidget {
               ),
             ),
           ),
-                  Align(
-                    alignment: Alignment.bottomCenter,
-                    child: ButtonContainer(
-                      buttonTitle: 'Cancel Session',
-                      color: AppColors.d300Danger,
-                      onTap: () {},
-                    ),
-                  ),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: ButtonContainer(
+              buttonTitle: 'Cancel Session',
+              color: AppColors.d300Danger,
+              onTap: () {},
+            ),
+          ),
         ],
       ),
     );

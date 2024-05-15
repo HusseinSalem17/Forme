@@ -122,7 +122,9 @@ class _MySessionsCardState extends State<MySessionsCard> {
                 ],
               ),
               widget.isCancelled
-                  ? const CustomPopupMenu(isCancellation: true,)
+                  ? const CustomPopupMenu(
+                      isCancellation: true,
+                    )
                   : const CustomPopupMenu(),
             ],
           ),

@@ -19,7 +19,8 @@ class WorkoutReviewTab extends StatelessWidget {
             padding: EdgeInsets.symmetric(vertical: 16.h),
             child: Text(
               'Reviews',
-              style: TextStyles.textStyleBold.copyWith(fontSize: 14.sp, color: AppColors.n900Black),
+              style: TextStyles.textStyleBold
+                  .copyWith(fontSize: 14.sp, color: AppColors.n900Black),
             ),
           ),
           Expanded(

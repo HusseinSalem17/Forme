@@ -48,8 +48,7 @@ class ProfileScreen extends StatelessWidget {
             Center(
                 child: Text('Profile',
                     style: TextStyles.textStyleBold.copyWith(
-                        fontSize: 18.sp,
-                        color: AppColors.n900Black))),
+                        fontSize: 18.sp, color: AppColors.n900Black))),
             Padding(
               padding: EdgeInsets.symmetric(vertical: 16.h),
               child: SizedBox(
@@ -66,9 +65,7 @@ class ProfileScreen extends StatelessWidget {
             ),
             Text('Ahmed Ramy',
                 style: TextStyles.textStyleBold.copyWith(
-                    fontSize: 14.sp,
-                    color: AppColors.n900Black,
-                    height: 2)),
+                    fontSize: 14.sp, color: AppColors.n900Black, height: 2)),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 24.w),
               child: Column(
@@ -114,10 +111,7 @@ class ProfileScreen extends StatelessWidget {
                       popUp(context, 'Logout',
                           'Are you sure you want to log out?', 'Log Out');
                   }
-                },
-                    index != 9
-                        ? AppColors.n900Black
-                        : AppColors.d300Danger);
+                }, index != 9 ? AppColors.n900Black : AppColors.d300Danger);
               })),
             )
           ],

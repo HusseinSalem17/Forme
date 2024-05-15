@@ -32,8 +32,8 @@ class _AddWorkoutScreenState extends State<AddWorkoutScreen> {
             const Spacer(),
             Text(
               'Add Workout',
-              style: TextStyles.textStyleBold.copyWith(
-                  fontSize: 18.sp, color: AppColors.n900Black),
+              style: TextStyles.textStyleBold
+                  .copyWith(fontSize: 18.sp, color: AppColors.n900Black),
             ),
             const Spacer(),
             GestureDetector(

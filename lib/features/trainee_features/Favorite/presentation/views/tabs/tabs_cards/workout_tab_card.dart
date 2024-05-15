@@ -7,7 +7,6 @@ import 'package:forme_app/features/trainee_features/Favorite/data/workout_card_m
 import 'package:forme_app/features/trainee_features/Favorite/presentation/views/widgets/fav_image_section.dart';
 import 'package:forme_app/features/trainee_features/Favorite/presentation/views/widgets/workout_card_type.dart';
 
-
 class WorkoutTabCard extends StatelessWidget {
   const WorkoutTabCard({
     super.key,
@@ -47,7 +46,14 @@ class WorkoutTabCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisSize: MainAxisSize.min,
           children: [
-            FavCardImageSection(height: size.height / 2, width: size.width / 4, bottomPadding: 0, leftPaddingIcon: 110, id: model.id, category: model.category,),
+            FavCardImageSection(
+              height: size.height / 2,
+              width: size.width / 4,
+              bottomPadding: 0,
+              leftPaddingIcon: 110,
+              id: model.id,
+              category: model.category,
+            ),
             Padding(
               padding: const EdgeInsets.only(top: 8, bottom: 8, left: 20),
               child: Column(
@@ -71,7 +77,10 @@ class WorkoutTabCard extends StatelessWidget {
                             ),
                             Text(
                               model.reviews,
-                              style: TextStyles.cardTextStyle.copyWith(color: AppColors.n200Gray, fontSize: 9, fontWeight: FontWeight.w400),
+                              style: TextStyles.cardTextStyle.copyWith(
+                                  color: AppColors.n200Gray,
+                                  fontSize: 9,
+                                  fontWeight: FontWeight.w400),
                             ),
                           ],
                         )
@@ -104,11 +113,11 @@ class WorkoutTabCard extends StatelessWidget {
                       children: [
                         Text(
                           model.price,
-                          style: TextStyles.blackCardTextStyle.copyWith(
-                            color: AppColors.primaryColor
-                          ),
+                          style: TextStyles.blackCardTextStyle
+                              .copyWith(color: AppColors.primaryColor),
                         ),
-                        if (model.isBestSeller) const WorkoutCardType(type: 'Best Seller')
+                        if (model.isBestSeller)
+                          const WorkoutCardType(type: 'Best Seller')
                       ],
                     ),
                   )

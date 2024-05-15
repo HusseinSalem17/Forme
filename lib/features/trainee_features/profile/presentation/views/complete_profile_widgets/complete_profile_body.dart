@@ -9,9 +9,8 @@ import 'package:forme_app/features/trainee_features/profile/presentation/views/c
 import 'package:forme_app/features/trainee_features/profile/presentation/views/complete_profile_widgets/profile_image_picker.dart';
 import 'package:image_picker/image_picker.dart';
 
-
 class CompleteProfileBody extends StatefulWidget {
-  const  CompleteProfileBody({Key? key}) : super(key: key);
+  const CompleteProfileBody({Key? key}) : super(key: key);
 
   @override
   State<CompleteProfileBody> createState() => _CompleteProfileBodyState();
@@ -48,14 +47,14 @@ class _CompleteProfileBodyState extends State<CompleteProfileBody> {
               //       'Don’t worry, only you can see your personal data. No one else will be able to see it.',
               // ),
               SizedBox(height: 16.0.h),
-              ProfileImagePicker(
-                imageFile: _imageFile,
-                onImageSelected: (file) {
-                  setState(() {
-                    _imageFile = file;
-                  });
-                },
-              ),
+              // ProfileImagePicker(
+              //   imageFile: _imageFile,
+              //   onImageSelected: (file) {
+              //     setState(() {
+              //       _imageFile = file;
+              //     });
+              //   },
+              // ),
               SizedBox(height: 32.0.h),
               buildBodyFields(
                 name: name,

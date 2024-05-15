@@ -9,8 +9,12 @@ class ButtonContainer extends StatelessWidget {
   final bool havePrice;
   final Color color;
   final void Function()? onTap;
-  const ButtonContainer({super.key, required this.buttonTitle, this.havePrice = false, this.onTap, this.color = AppColors.primaryColor});
-
+  const ButtonContainer(
+      {super.key,
+      required this.buttonTitle,
+      this.havePrice = false,
+      this.onTap,
+      this.color = AppColors.primaryColor});
 
   @override
   Widget build(BuildContext context) {
@@ -26,8 +30,14 @@ class ButtonContainer extends StatelessWidget {
               offset: const Offset(0, 2),
             ),
           ],
-          borderRadius: BorderRadius.only(topLeft: Radius.circular(20.dg), topRight: Radius.circular(20.dg))),
-      padding: EdgeInsets.only(left: 24.h, right: 24.h, top: 20.h, bottom: (MediaQuery.sizeOf(context).height / 6.h) - 68.h),
+          borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(20.dg),
+              topRight: Radius.circular(20.dg))),
+      padding: EdgeInsets.only(
+          left: 24.h,
+          right: 24.h,
+          top: 20.h,
+          bottom: (MediaQuery.sizeOf(context).height / 6.h) - 68.h),
       child: havePrice
           ? Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -38,11 +48,13 @@ class ButtonContainer extends StatelessWidget {
                   children: [
                     Text(
                       'Total price',
-                      style: TextStyles.textStyleRegular.copyWith(fontSize: 14.sp),
+                      style:
+                          TextStyles.textStyleRegular.copyWith(fontSize: 14.sp),
                     ),
                     Text(
                       '\$1500',
-                      style: TextStyles.textStyleBold.copyWith(fontSize: 14.sp, color: AppColors.primaryColor),
+                      style: TextStyles.textStyleBold.copyWith(
+                          fontSize: 14.sp, color: AppColors.primaryColor),
                     )
                   ],
                 ),

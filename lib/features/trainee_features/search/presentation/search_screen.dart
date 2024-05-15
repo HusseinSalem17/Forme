@@ -5,7 +5,6 @@ import 'package:forme_app/core/widgets/custom_app_bar_arrow_button.dart';
 import 'views/recent_and_result/results_search_screen.dart';
 import 'views/widgets/custom_search_text_field.dart';
 
-
 class SearchScreen extends StatelessWidget {
   static const routeName = '/search-screen';
   const SearchScreen({super.key});
@@ -26,7 +25,9 @@ class SearchScreen extends StatelessWidget {
                   Navigator.pop(context);
                 },
               ),
-              const CustomSearchTextField(isSearchScreen: true,),
+              const CustomSearchTextField(
+                isSearchScreen: true,
+              ),
             ],
           ),
         ),

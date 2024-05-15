@@ -1,9 +1,5 @@
 import 'package:dio/dio.dart';
-
-import '../../../../../core/utils/api_end_points.dart';
-
-
-
+import 'package:forme_app/core/utils/constants.dart';
 
 class PlacesWebservices {
   late Dio dio;
@@ -18,17 +14,17 @@ class PlacesWebservices {
   }
 
   Future<List<dynamic>> fetchSuggestions(
-      String place,
-      String sessionToken,
-      ) async {
+    String place,
+    String sessionToken,
+  ) async {
     try {
       Response response = await dio.get(
-        EndPoint.suggestionsBaseUrl,
+        suggestionsBaseUrl,
         queryParameters: {
           'input': place,
           'types': 'address',
           'components': 'country:eg',
-          'key': EndPoint.googleApiKey,
+          'key': googleApiKey,
           'sessiontoken': sessionToken,
         },
       );

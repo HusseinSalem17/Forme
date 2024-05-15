@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/features/trainer_features/trainer_preference/presentation/manager/trainer_preference_state.dart';
 
-
 class AnimatedStepperLine extends StatelessWidget {
   final TrainerPreferenceState state;
 

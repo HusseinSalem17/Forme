@@ -4,7 +4,6 @@ import 'package:forme_app/features/trainee_features/search/presentation/views/ta
 
 import '../widgets/custom_results_tabs.dart';
 
-
 class SearchTrainerTab extends StatelessWidget {
   const SearchTrainerTab({super.key});
 
@@ -12,11 +11,11 @@ class SearchTrainerTab extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return SearchResultsTab(
-      searchText: "Hussein",
-      searchResults: trainerSearchCardModel.length,
-      itemBuilder: (context, item) => SearchTrainerTabCard(
-        size: size,
-        model: trainerSearchCardModel[item],
-      ));
+        searchText: "Hussein",
+        searchResults: trainerSearchCardModel.length,
+        itemBuilder: (context, item) => SearchTrainerTabCard(
+              size: size,
+              model: trainerSearchCardModel[item],
+            ));
   }
 }

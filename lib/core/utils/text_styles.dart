@@ -41,7 +41,6 @@ abstract class TextStyles {
     fontWeight: FontWeight.w700,
   );
 
-
 //hint style
   static TextStyle hintStyle = TextStyle(
     fontFamily: 'RobotoRegular',

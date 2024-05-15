@@ -131,8 +131,7 @@ class _TraineeProfileScreenState extends State<TraineeProfileScreen> {
                 Center(
                     child: Text('husseinsalem910@gmail.com',
                         style: TextStyles.textStyleSemiBold.copyWith(
-                            fontSize: 14.sp,
-                            color: AppColors.primaryColor))),
+                            fontSize: 14.sp, color: AppColors.n900Black))),
                 SizedBox(height: 32.0.h),
                 CustomTextField(
                   controller: _nameController,
