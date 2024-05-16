@@ -6,7 +6,7 @@ import 'package:forme_app/features/trainee_features/profile/data/models/Complete
 import 'package:forme_app/features/trainee_features/profile/presentation/manager/complete_profile_cubit/complete_profile_cubit.dart';
 import 'package:forme_app/features/trainee_features/profile/presentation/views/complete_profile_widgets/body_fields.dart';
 import 'package:forme_app/features/trainee_features/profile/presentation/views/complete_profile_widgets/custom_primary_button.dart';
-import 'package:forme_app/features/trainee_features/profile/presentation/views/complete_profile_widgets/profile_image_picker.dart';
+import 'package:forme_app/core/widgets/image_picker/profile_image_picker.dart';
 import 'package:image_picker/image_picker.dart';
 
 class CompleteProfileBody extends StatefulWidget {

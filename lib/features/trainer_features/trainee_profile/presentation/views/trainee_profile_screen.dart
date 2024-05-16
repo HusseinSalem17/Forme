@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:forme_app/core/widgets/app_drop_list/custom_drop_list.dart';
-import 'package:forme_app/features/trainee_features/profile/presentation/views/complete_profile_widgets/profile_image_picker.dart';
+import 'package:forme_app/core/widgets/image_picker/profile_image_picker.dart';
 import 'package:forme_app/features/trainee_features/profile/presentation/views/widgets/my_profile_phone_field.dart';
 import 'package:image_picker/image_picker.dart';
 import '../../../../../core/utils/app_colors.dart';
@@ -131,7 +131,8 @@ class _TraineeProfileScreenState extends State<TraineeProfileScreen> {
                 Center(
                     child: Text('husseinsalem910@gmail.com',
                         style: TextStyles.textStyleSemiBold.copyWith(
-                            fontSize: 14.sp, color: AppColors.n900Black))),
+                            fontSize: 14.sp,
+                            color: AppColors.n900Black))),
                 SizedBox(height: 32.0.h),
                 CustomTextField(
                   controller: _nameController,

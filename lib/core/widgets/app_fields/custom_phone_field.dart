@@ -128,6 +128,7 @@ class _CountryCodePickerState extends State<CustomPhoneField> {
             optional: widget.optional,
             titleVisibility: widget.titleVisibility,
             title: widget.title,
+            titleColor: AppColors.n900Black,
             child: Column(
               children: [
                 Directionality(

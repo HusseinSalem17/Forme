@@ -46,6 +46,7 @@ class _CustomDropList extends State<CustomDropList> {
   Widget build(BuildContext context) {
     return CustomBuildForm(
       title: widget.title,
+      titleColor: AppColors.n900Black,
       child: DropdownButtonFormField2<String>(
         isExpanded: true,
         autovalidateMode: AutovalidateMode.onUserInteraction,

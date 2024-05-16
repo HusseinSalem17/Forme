@@ -6,7 +6,7 @@ import 'package:forme_app/core/utils/text_styles.dart';
 import 'package:forme_app/core/widgets/custom_app_bar_arrow_button.dart';
 import 'package:forme_app/core/widgets/import_media.dart';
 import 'package:forme_app/core/widgets/text_area.dart';
-import 'package:forme_app/features/trainee_features/profile/presentation/views/complete_profile_widgets/image_selection_bottom_sheet.dart';
+import 'package:forme_app/core/widgets/image_picker/image_selection_bottom_sheet.dart';
 
 class AddTransformation extends StatefulWidget {
   static const routeName = '/addTransformation-screen';
