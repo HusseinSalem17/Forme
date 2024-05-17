@@ -9,9 +9,9 @@ import 'package:forme_app/features/trainee_features/Favorite/presentation/views/
 import 'package:forme_app/features/trainee_features/search/data/program_search_card_model.dart';
 import 'package:forme_app/features/trainee_features/search/presentation/views/widgets/image_section.dart';
 
-
 class SearchProgramsTabCard extends StatelessWidget {
-  const SearchProgramsTabCard({super.key, required this.size, required this.model});
+  const SearchProgramsTabCard(
+      {super.key, required this.size, required this.model});
   final ProgramsSearchCardModel model;
   final Size size;
   @override
@@ -43,7 +43,13 @@ class SearchProgramsTabCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
         children: [
-          CardImageSection(height: size.height / 2, width: size.width / 4, bottomPadding: 0, leftPaddingIcon: 110, id: model.id, category: model.category),
+          CardImageSection(
+              height: size.height / 2,
+              width: size.width / 4,
+              bottomPadding: 0,
+              leftPaddingIcon: 110,
+              id: model.id,
+              category: model.category),
           Padding(
             padding: EdgeInsets.only(top: 8.h, bottom: 8.h, left: 20.w),
             child: Column(
@@ -124,11 +130,15 @@ class SearchProgramsTabCard extends StatelessWidget {
                           ),
                           Text(
                             model.period,
-                            style: TextStyles.cardTextStyle.copyWith(fontSize: 8, fontWeight: FontWeight.w400, color: AppColors.n200Gray),
+                            style: TextStyles.cardTextStyle.copyWith(
+                                fontSize: 8,
+                                fontWeight: FontWeight.w400,
+                                color: AppColors.n200Gray),
                           ),
                         ],
                       ),
-                      if (model.isBestSeller) const WorkoutCardType(type: 'Best Seller')
+                      if (model.isBestSeller)
+                        const WorkoutCardType(type: 'Best Seller')
                     ],
                   ),
                 )

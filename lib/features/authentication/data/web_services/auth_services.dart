@@ -58,7 +58,6 @@ class AuthServices {
         data: request.toJson(),
       );
 
-
       return ResponseOtpSuccessful.fromJson(response.data);
     } catch (error) {
       print(error.toString());

@@ -1,3 +1,4 @@
+
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -26,7 +27,7 @@ class ProfileImagePicker extends StatelessWidget {
             backgroundImage: imageFile == null
                 ? null
                 : FileImage(
-                    File(imageFile!.path),//picked image
+                    File(imageFile!.path), //picked image
                   ),
             child: imageFile == null ? defaultImage() : null,
           ),

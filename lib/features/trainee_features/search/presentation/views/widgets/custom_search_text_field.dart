@@ -29,10 +29,10 @@ class _CustomSearchTextFieldState extends State<CustomSearchTextField> {
   }
 
   @override
-void dispose() {
-  _focusNode.dispose();
-  super.dispose();
-}
+  void dispose() {
+    _focusNode.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +42,8 @@ void dispose() {
         controller: _controller,
         focusNode: _focusNode,
         cursorColor: AppColors.primaryColor,
-        style: TextStyles.textStyleRegular.copyWith(color: AppColors.n900Black, fontSize: 14.sp),
+        style: TextStyles.textStyleRegular
+            .copyWith(color: AppColors.n900Black, fontSize: 14.sp),
         keyboardType: TextInputType.text,
         textInputAction: TextInputAction.search,
         decoration: InputDecoration(
@@ -72,14 +73,21 @@ void dispose() {
           errorMaxLines: 1,
           prefixIcon: Padding(
             padding: EdgeInsets.only(left: 12.0.w, right: 5.w),
-            child: SvgPicture.asset('assets/image/Icon/search.svg', color: _focusNode.hasFocus ? AppColors.primaryColor : AppColors.n200Gray,),
+            child: SvgPicture.asset(
+              'assets/image/Icon/search.svg',
+              color: _focusNode.hasFocus
+                  ? AppColors.primaryColor
+                  : AppColors.n200Gray,
+            ),
           ),
-          prefixIconConstraints: const BoxConstraints(minWidth: 20, minHeight: 20),
+          prefixIconConstraints:
+              const BoxConstraints(minWidth: 20, minHeight: 20),
           suffixIcon: _controller.text.isNotEmpty
               ? Padding(
                   padding: EdgeInsets.only(left: 12.0.w, right: 12.w),
                   child: IconButton(
-                    icon: Icon(Icons.cancel_outlined, color: AppColors.primaryColor, size: 18.spMax),
+                    icon: Icon(Icons.cancel_outlined,
+                        color: AppColors.primaryColor, size: 18.spMax),
                     onPressed: () {
                       // clear search text
                       setState(() {
@@ -89,7 +97,8 @@ void dispose() {
                   ),
                 )
               : null,
-          suffixIconConstraints: const BoxConstraints(minWidth: 20, minHeight: 20),
+          suffixIconConstraints:
+              const BoxConstraints(minWidth: 20, minHeight: 20),
         ),
       ),
     );

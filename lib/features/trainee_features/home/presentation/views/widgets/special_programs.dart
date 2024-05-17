@@ -41,7 +41,6 @@ class SpecialPrograms extends StatelessWidget {
             ],
           ),
         ),
-
         const SpecialProgramsList(),
       ],
     );

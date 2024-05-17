@@ -1,7 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:forme_app/core/utils/constants.dart';
 
-
 class PlacesWebservices {
   late Dio dio;
 
@@ -15,9 +14,9 @@ class PlacesWebservices {
   }
 
   Future<List<dynamic>> fetchSuggestions(
-      String place,
-      String sessionToken,
-      ) async {
+    String place,
+    String sessionToken,
+  ) async {
     try {
       Response response = await dio.get(
         suggestionsBaseUrl,

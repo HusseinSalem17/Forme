@@ -20,7 +20,8 @@ class _AboutTrainerScreenState extends State<AboutTrainerScreen> {
     return Stack(
       children: [
         SingleChildScrollView(
-          child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+          child:
+              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             const AboutTrainer(),
             const SpecialProgramsList(),
             const ReviewsSection(

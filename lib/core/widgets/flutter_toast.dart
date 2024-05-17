@@ -1,11 +1,11 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:forme_app/core/utils/app_colors.dart';
 
 toastInfo({
   required String msg,
-  Color backgroundColor = Colors.black,
+  Color backgroundColor = AppColors.n900Black,
   Color textColor = Colors.white,
 }) {
   return Fluttertoast.showToast(

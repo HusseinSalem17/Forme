@@ -11,11 +11,11 @@ class SearchSportsClubTab extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return SearchResultsTab(
-      searchText: "GYM",
-      searchResults: sportsClubSearchCardModel.length,
-      itemBuilder: (context, item) => SearchSportsClubTabCard(
-        size: size,
-        model: sportsClubSearchCardModel[item],
-      ));
+        searchText: "GYM",
+        searchResults: sportsClubSearchCardModel.length,
+        itemBuilder: (context, item) => SearchSportsClubTabCard(
+              size: size,
+              model: sportsClubSearchCardModel[item],
+            ));
   }
 }

@@ -5,13 +5,18 @@ import 'package:flutter_svg/svg.dart';
 import '../../../../../../core/utils/text_styles.dart';
 
 class CustomGestureDetectorRow extends StatefulWidget {
-  const CustomGestureDetectorRow({super.key, required this.title, required this.imageAddress, required this.onTap});
+  const CustomGestureDetectorRow(
+      {super.key,
+      required this.title,
+      required this.imageAddress,
+      required this.onTap});
   final String title;
   final String imageAddress;
   final Function()? onTap;
 
   @override
-  State<CustomGestureDetectorRow> createState() => _CustomGestureDetectorRowState();
+  State<CustomGestureDetectorRow> createState() =>
+      _CustomGestureDetectorRowState();
 }
 
 class _CustomGestureDetectorRowState extends State<CustomGestureDetectorRow> {
@@ -30,7 +35,8 @@ class _CustomGestureDetectorRowState extends State<CustomGestureDetectorRow> {
               ),
               Text(
                 widget.title,
-                style: TextStyles.textStyleRegular.copyWith(color: Colors.black, fontSize: 16.sp),
+                style: TextStyles.textStyleRegular
+                    .copyWith(color: Colors.black, fontSize: 16.sp),
               ),
             ],
           ),

@@ -21,15 +21,15 @@ class LanguagesSearchScreen extends StatelessWidget {
               children: [
                 const Center(child: SearchTextField()),
                 SizedBox(height: 16.h),
-                      const SelectPackage(
-                        isLanguages: true,
-                        isInput: false,
-                        text1: 'English',
-                        text2: 'Arabic',
-                        text3: 'French',
-                        text4: 'Indian',
-                        text5: 'Germany',
-                      ),
+                const SelectPackage(
+                  isLanguages: true,
+                  isInput: false,
+                  text1: 'English',
+                  text2: 'Arabic',
+                  text3: 'French',
+                  text4: 'Indian',
+                  text5: 'Germany',
+                ),
               ],
             ),
           ),
@@ -38,7 +38,8 @@ class LanguagesSearchScreen extends StatelessWidget {
             child: ButtonContainer(
               buttonTitle: 'Save Changes',
               onTap: () {},
-            ),),
+            ),
+          ),
         ],
       ),
     );

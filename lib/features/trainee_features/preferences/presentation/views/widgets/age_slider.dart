@@ -83,13 +83,11 @@ class _AgeSliderState extends State<AgeSlider> {
                                   _scrollIndex == index - 2
                               ? TextStyles.textStyleRegular.copyWith(
                                   fontSize: 40.sp,
-                                  color: AppColors.n900Black
-                                      .withOpacity(0.4),
+                                  color: AppColors.n900Black.withOpacity(0.4),
                                 )
                               : TextStyles.textStyleRegular.copyWith(
                                   fontSize: 32.sp,
-                                  color: AppColors.n900Black
-                                      .withOpacity(0.1),
+                                  color: AppColors.n900Black.withOpacity(0.1),
                                 ),
                 );
               },

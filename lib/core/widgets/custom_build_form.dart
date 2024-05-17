@@ -4,7 +4,7 @@ import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
 
 class CustomBuildForm extends StatelessWidget {
-  final String title,subTitle;
+  final String title, subTitle;
   final Color? titleColor;
   final double topPadding, bottomPadding;
   final bool optional, titleVisibility;
@@ -61,7 +61,6 @@ class CustomBuildForm extends StatelessWidget {
                             fontSize: 14.sp,
                           ),
                         ),
-                        
                         TextSpan(
                           text: subTitle,
                           style: TextStyles.textStyleSemiBold.copyWith(

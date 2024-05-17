@@ -14,10 +14,9 @@ class RegistrationDataLocal {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     String? userTypeString = prefs.getString(_userTypeKey);
     if (userTypeString != null) {
-      return UserType.values.firstWhere((type) => type.toString() == userTypeString);
+      return UserType.values
+          .firstWhere((type) => type.toString() == userTypeString);
     }
     return null;
   }
 }
-
-

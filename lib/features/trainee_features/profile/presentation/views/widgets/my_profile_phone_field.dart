@@ -18,15 +18,21 @@ class MyProfilePhoneField extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text('Phone Number', style: TextStyles.textStyleBold.copyWith(fontSize: 14.sp, color: AppColors.n900Black)),
+        Text('Phone Number',
+            style: TextStyles.textStyleBold
+                .copyWith(fontSize: 14.sp, color: AppColors.n900Black)),
         SizedBox(height: 10.h),
         Container(
-          decoration: BoxDecoration(color: AppColors.fillColor, borderRadius: BorderRadius.circular(4.dg), border: Border.all(width: 1, color: AppColors.n40Gray)),
+          decoration: BoxDecoration(
+              color: AppColors.fillColor,
+              borderRadius: BorderRadius.circular(4.dg),
+              border: Border.all(width: 1, color: AppColors.n40Gray)),
           padding: EdgeInsets.all(12.h),
           child: Row(children: [
             Text(
               phone,
-              style: TextStyles.textStyleRegular.copyWith(fontSize: 14.sp, color: AppColors.n900Black),
+              style: TextStyles.textStyleRegular
+                  .copyWith(fontSize: 14.sp, color: AppColors.n900Black),
             ),
             const Spacer(),
             GestureDetector(
@@ -34,20 +40,27 @@ class MyProfilePhoneField extends StatelessWidget {
                 showModalBottomSheet(
                     backgroundColor: AppColors.background,
                     isScrollControlled: true,
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(16)),
                     context: context,
                     builder: (context) {
                       return Container(
                           height: MediaQuery.sizeOf(context).height / 4,
                           width: double.infinity,
-                          decoration: BoxDecoration(borderRadius: BorderRadius.only(topLeft: Radius.circular(20.dg), topRight: Radius.circular(20.dg))),
-                          padding: EdgeInsets.symmetric(horizontal: 8.h, vertical: 24.h),
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(20.dg),
+                                  topRight: Radius.circular(20.dg))),
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 8.h, vertical: 24.h),
                           child: Column(
                             children: [
                               Text(
                                 'Add Your New Number',
                                 textAlign: TextAlign.center,
-                                style: TextStyles.textStyleMedium.copyWith(fontSize: 16.sp, color: AppColors.n900Black),
+                                style: TextStyles.textStyleMedium.copyWith(
+                                    fontSize: 16.sp,
+                                    color: AppColors.n900Black),
                               ),
                               const Divider(
                                 color: AppColors.n30StrokeColor,
@@ -76,7 +89,8 @@ class MyProfilePhoneField extends StatelessWidget {
                                   }),
                               const Spacer(),
                               Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
                                 children: [
                                   SecondCustomAppButton(
                                     title: 'Cancel',
@@ -104,7 +118,8 @@ class MyProfilePhoneField extends StatelessWidget {
               },
               child: Text(
                 'Change',
-                style: TextStyles.textStyleRegular.copyWith(fontSize: 14.sp, color: AppColors.primaryColor),
+                style: TextStyles.textStyleRegular
+                    .copyWith(fontSize: 14.sp, color: AppColors.primaryColor),
               ),
             ),
           ]),

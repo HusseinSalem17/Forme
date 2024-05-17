@@ -3,7 +3,13 @@ import 'package:forme_app/features/trainee_features/Notification/presentation/ma
 import 'package:forme_app/features/trainee_features/Notification/presentation/manager/bloc/notification_states.dart';
 
 class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
-  NotificationBloc() : super(NotificationState(icon: 'icon', title: '30% Discount', description: 'description 1', isUnread: false, time: '2d')) {
+  NotificationBloc()
+      : super(NotificationState(
+            icon: 'icon',
+            title: '30% Discount',
+            description: 'description 1',
+            isUnread: false,
+            time: '2d')) {
     on<NotificationEvent>((event, emit) {
       emit(NotificationState(
         icon: state.icon,

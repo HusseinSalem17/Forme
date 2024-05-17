@@ -42,7 +42,13 @@ class ProgramsTabCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisSize: MainAxisSize.min,
           children: [
-            FavCardImageSection(height: size.height / 2, width: size.width / 4, bottomPadding: 0, leftPaddingIcon: 110, id: model.id, category: model.category),
+            FavCardImageSection(
+                height: size.height / 2,
+                width: size.width / 4,
+                bottomPadding: 0,
+                leftPaddingIcon: 110,
+                id: model.id,
+                category: model.category),
             Padding(
               padding: const EdgeInsets.only(top: 8, bottom: 8, left: 20),
               child: Column(
@@ -123,11 +129,15 @@ class ProgramsTabCard extends StatelessWidget {
                             ),
                             Text(
                               model.period,
-                              style: TextStyles.cardTextStyle.copyWith(fontSize: 8, fontWeight: FontWeight.w400, color: AppColors.n200Gray),
+                              style: TextStyles.cardTextStyle.copyWith(
+                                  fontSize: 8,
+                                  fontWeight: FontWeight.w400,
+                                  color: AppColors.n200Gray),
                             ),
                           ],
                         ),
-                        if (model.isBestSeller) const WorkoutCardType(type: 'Best Seller')
+                        if (model.isBestSeller)
+                          const WorkoutCardType(type: 'Best Seller')
                       ],
                     ),
                   )

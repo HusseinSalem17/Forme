@@ -34,6 +34,4 @@ class FeaturedScreen extends StatelessWidget {
           ),
         ));
   }
-
-  
 }

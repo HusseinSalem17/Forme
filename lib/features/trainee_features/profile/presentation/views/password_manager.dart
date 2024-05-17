@@ -8,7 +8,6 @@ import 'package:forme_app/core/widgets/simple_app_bar.dart';
 import 'package:forme_app/features/authentication/presentation/views/forgot_password_screen.dart';
 import 'package:forme_app/features/authentication/presentation/views/widgets/custom_text_from_field.dart';
 
-
 class PasswordManager extends StatelessWidget {
   static const routeName = '/password-manager-screen';
   const PasswordManager({super.key});

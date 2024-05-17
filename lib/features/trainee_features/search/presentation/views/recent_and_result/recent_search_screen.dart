@@ -22,7 +22,8 @@ class RecentSearchScreen extends StatelessWidget {
                 children: [
                   Text(
                     'Recent Search',
-                    style: TextStyles.textStyleSemiBold.copyWith(color: AppColors.n900Black, fontSize: 16.sp),
+                    style: TextStyles.textStyleSemiBold
+                        .copyWith(color: AppColors.n900Black, fontSize: 16.sp),
                   ),
                   SizedBox(height: 16.h),
                   Column(

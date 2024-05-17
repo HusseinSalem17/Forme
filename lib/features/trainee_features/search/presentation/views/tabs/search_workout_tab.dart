@@ -12,7 +12,6 @@ class SearchWorkoutTab extends StatefulWidget {
 }
 
 class _SearchWorkoutTabState extends State<SearchWorkoutTab> {
-
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;

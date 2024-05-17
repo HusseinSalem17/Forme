@@ -11,13 +11,15 @@ class FavProgramsTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-  Size size = MediaQuery.of(context).size;
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
       body: Column(
         children: [
           Padding(
             padding: EdgeInsets.only(top: 18.5, bottom: 22, left: 24.w),
-            child: const FilterType(type: 'programs',categories:['All', 'GYM', 'YOGA', 'Running', 'Boxing']),
+            child: const FilterType(
+                type: 'programs',
+                categories: ['All', 'GYM', 'YOGA', 'Running', 'Boxing']),
           ),
           CustomExpandedListView(
             itemCount: programsCardModel.length,

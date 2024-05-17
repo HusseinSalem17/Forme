@@ -37,7 +37,6 @@ class FeaturedCardReview extends StatelessWidget {
                     color: AppColors.primaryColor,
                   ),
                 ),
-
               ],
             ),
           ),

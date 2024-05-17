@@ -31,13 +31,17 @@ class ReviewsCard extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  CustomClipRect(imagePath: 'assets/image/workout_image.jpg',height: 40.h, width: 40.w),
+                  CustomClipRect(
+                      imagePath: 'assets/image/workout_image.jpg',
+                      height: 40.h,
+                      width: 40.w),
                   SizedBox(
                     width: 10.w,
                   ),
                   Text(
                     model.name,
-                    style: TextStyles.textStyleRegular.copyWith(fontSize: 14.sp, color: AppColors.n900Black),
+                    style: TextStyles.textStyleRegular
+                        .copyWith(fontSize: 14.sp, color: AppColors.n900Black),
                   ),
                 ],
               ),
@@ -45,7 +49,8 @@ class ReviewsCard extends StatelessWidget {
                 children: [
                   Text(
                     model.date,
-                    style: TextStyles.textStyleRegular.copyWith(fontSize: 12.sp, color: AppColors.n200Gray),
+                    style: TextStyles.textStyleRegular
+                        .copyWith(fontSize: 12.sp, color: AppColors.n200Gray),
                   ),
                 ],
               ),
@@ -56,7 +61,8 @@ class ReviewsCard extends StatelessWidget {
           ),
           Text(
             model.reviewDescription,
-            style: TextStyles.textStyleRegular.copyWith(fontSize: 12.sp, color: AppColors.n200Gray),
+            style: TextStyles.textStyleRegular
+                .copyWith(fontSize: 12.sp, color: AppColors.n200Gray),
           ),
           SizedBox(
             height: 10.h,
@@ -82,7 +88,8 @@ class ReviewsCard extends StatelessWidget {
               ),
               Text(
                 model.rating.toString(),
-                style: TextStyles.textStyleBold.copyWith(fontSize: 11.sp, color: AppColors.n100Gray),
+                style: TextStyles.textStyleBold
+                    .copyWith(fontSize: 11.sp, color: AppColors.n100Gray),
               ),
             ],
           ),

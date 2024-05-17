@@ -6,7 +6,8 @@ import 'package:forme_app/core/utils/text_styles.dart';
 import 'package:forme_app/features/trainer_features/subscriptions/data/your_clubs_cards_model.dart';
 
 class RemoveFromCardSection extends StatelessWidget {
-  const RemoveFromCardSection({super.key, required this.size, required this.model});
+  const RemoveFromCardSection(
+      {super.key, required this.size, required this.model});
   final Size size;
   final YourClubsCardsModel model;
 

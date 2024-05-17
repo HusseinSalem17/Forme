@@ -7,7 +7,8 @@ import 'package:forme_app/features/trainee_features/Favorite/presentation/views/
 import 'package:forme_app/features/trainee_features/Favorite/presentation/views/widgets/workout_card_type.dart';
 
 class WorkoutRemoveCardDecoration extends StatelessWidget {
-  const WorkoutRemoveCardDecoration({super.key, required this.model, required this.size});
+  const WorkoutRemoveCardDecoration(
+      {super.key, required this.model, required this.size});
   final WorkoutCardModel model;
   final Size size;
 
@@ -24,7 +25,11 @@ class WorkoutRemoveCardDecoration extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisSize: MainAxisSize.min,
           children: [
-            RemoveCardImage(height: size.height / 2, width: size.width / 3, bottomPadding: 0, leftPaddingIcon: 110),
+            RemoveCardImage(
+                height: size.height / 2,
+                width: size.width / 3,
+                bottomPadding: 0,
+                leftPaddingIcon: 110),
             Padding(
               padding: const EdgeInsets.only(top: 8, bottom: 8, left: 8),
               child: Column(
@@ -44,7 +49,10 @@ class WorkoutRemoveCardDecoration extends StatelessWidget {
                       ),
                       Text(
                         model.reviews,
-                        style: TextStyles.cardTextStyle.copyWith(color: AppColors.n200Gray, fontSize: 9, fontWeight: FontWeight.w400),
+                        style: TextStyles.cardTextStyle.copyWith(
+                            color: AppColors.n200Gray,
+                            fontSize: 9,
+                            fontWeight: FontWeight.w400),
                       )
                     ],
                   ),
@@ -77,7 +85,8 @@ class WorkoutRemoveCardDecoration extends StatelessWidget {
                           fontWeight: FontWeight.w600,
                         ),
                       ),
-                      if (model.isBestSeller) const WorkoutCardType(type: 'Best Seller')
+                      if (model.isBestSeller)
+                        const WorkoutCardType(type: 'Best Seller')
                     ],
                   )
                 ],

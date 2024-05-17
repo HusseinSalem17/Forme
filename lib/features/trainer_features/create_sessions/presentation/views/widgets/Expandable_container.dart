@@ -3,14 +3,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
-import 'package:forme_app/features/trainer_features/create_sessions/presentation/views/widgets/f_time_range.dart';
 
 class ExpandableContainerScreen extends StatelessWidget {
   const ExpandableContainerScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    List days = ['Saturday', 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+    List days = [
+      'Saturday',
+      'Sunday',
+      'Monday',
+      'Tuesday',
+      'Wednesday',
+      'Thursday',
+      'Friday'
+    ];
     return Scaffold(
       backgroundColor: AppColors.background,
       body: SizedBox(
@@ -69,11 +76,14 @@ class _ExpandableListViewState extends State<ExpandableListView> {
             padding: const EdgeInsets.all(5.0),
             decoration: BoxDecoration(
               color: AppColors.n10Color,
-              borderRadius: expandFlag ? _collapsedBorderRadius : _expandedBorderRadius,
+              borderRadius:
+                  expandFlag ? _collapsedBorderRadius : _expandedBorderRadius,
               border: Border(
                 left: BorderSide(
                   width: 4,
-                  color: expandFlag ? AppColors.primaryColor.withOpacity(0.75) : AppColors.n100Gray,
+                  color: expandFlag
+                      ? AppColors.primaryColor.withOpacity(0.75)
+                      : AppColors.n100Gray,
                 ),
               ),
               boxShadow: const [
@@ -107,8 +117,11 @@ class _ExpandableListViewState extends State<ExpandableListView> {
                   ),
                   IconButton(
                     icon: Icon(
-                      expandFlag ? Icons.keyboard_arrow_down : Icons.keyboard_arrow_up,
-                      color: onOffSwitch ? AppColors.n400color : AppColors.n40Gray,
+                      expandFlag
+                          ? Icons.keyboard_arrow_down
+                          : Icons.keyboard_arrow_up,
+                      color:
+                          onOffSwitch ? AppColors.n400color : AppColors.n40Gray,
                       size: 35.sp,
                     ),
                     onPressed: () {
@@ -126,11 +139,13 @@ class _ExpandableListViewState extends State<ExpandableListView> {
           ExpandableContainer(
             expanded: expandFlag,
             child: Padding(
-              padding:  EdgeInsets.symmetric(vertical :8.0.h),
+              padding: EdgeInsets.symmetric(vertical: 8.0.h),
               child: Column(
                 children: [
                   ListTile(
-                    title: Text('Set available Time', style: TextStyles.textStyleRegular.copyWith(color: AppColors.n400color)),
+                    title: Text('Set available Time',
+                        style: TextStyles.textStyleRegular
+                            .copyWith(color: AppColors.n400color)),
                     trailing: IconButton(
                       icon: const Icon(
                         Icons.add_circle_outline_outlined,
@@ -144,7 +159,7 @@ class _ExpandableListViewState extends State<ExpandableListView> {
                       },
                     ),
                   ),
-              
+
                   // Display added sessions dynamically
                   ListView.builder(
                     shrinkWrap: true,

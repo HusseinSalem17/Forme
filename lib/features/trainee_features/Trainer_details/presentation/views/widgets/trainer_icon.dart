@@ -16,7 +16,9 @@ class TrainerIcon extends StatelessWidget {
         Container(
           height: 56.h,
           width: 56.h,
-          decoration: BoxDecoration(color: AppColors.n20Gray, borderRadius: BorderRadius.circular(30.dg)),
+          decoration: BoxDecoration(
+              color: AppColors.n20Gray,
+              borderRadius: BorderRadius.circular(30.dg)),
           child: Padding(
             padding: EdgeInsets.all(14.h),
             child: SvgPicture.asset('assets/image/Icon/${model.icon}.svg'),
@@ -24,9 +26,11 @@ class TrainerIcon extends StatelessWidget {
         ),
         Text(
           model.number,
-          style: TextStyles.textStyleBold.copyWith(fontSize: 12.sp, color: AppColors.primaryColor),
+          style: TextStyles.textStyleBold
+              .copyWith(fontSize: 12.sp, color: AppColors.primaryColor),
         ),
-        Text(model.type, style: TextStyles.textStyleRegular.copyWith(fontSize: 9.sp))
+        Text(model.type,
+            style: TextStyles.textStyleRegular.copyWith(fontSize: 9.sp))
       ],
     );
   }

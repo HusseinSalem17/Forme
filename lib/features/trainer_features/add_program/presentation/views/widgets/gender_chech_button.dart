@@ -46,8 +46,7 @@ class _GenderCheckButtonState extends State<GenderCheckButton> {
               width: MediaQuery.sizeOf(context).width / 2.6,
               decoration: BoxDecoration(
                   color: AppColors.primaryColor.withOpacity(0.1),
-                  border:
-                      Border.all(width: 2, color: AppColors.primaryColor),
+                  border: Border.all(width: 2, color: AppColors.primaryColor),
                   borderRadius: BorderRadius.circular(4.dg)),
               padding: EdgeInsets.symmetric(vertical: 8.h),
               margin: EdgeInsets.symmetric(vertical: 10.h),
@@ -64,8 +63,8 @@ class _GenderCheckButtonState extends State<GenderCheckButton> {
                 ),
                 Text(
                   widget.gender,
-                  style: TextStyles.textStyleRegular.copyWith(
-                      fontSize: 14.sp, color: AppColors.primaryColor),
+                  style: TextStyles.textStyleRegular
+                      .copyWith(fontSize: 14.sp, color: AppColors.primaryColor),
                 )
               ]),
             )
@@ -90,8 +89,8 @@ class _GenderCheckButtonState extends State<GenderCheckButton> {
                 ),
                 Text(
                   widget.gender,
-                  style: TextStyles.textStyleRegular.copyWith(
-                      fontSize: 14.sp, color: AppColors.n900Black),
+                  style: TextStyles.textStyleRegular
+                      .copyWith(fontSize: 14.sp, color: AppColors.n900Black),
                 )
               ]),
             ),

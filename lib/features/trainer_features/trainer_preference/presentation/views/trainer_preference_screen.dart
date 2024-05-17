@@ -13,7 +13,8 @@ class TrainerPreferenceScreen extends StatefulWidget {
   const TrainerPreferenceScreen({Key? key}) : super(key: key);
 
   @override
-  State<TrainerPreferenceScreen> createState() => _TrainerPreferenceScreenState();
+  State<TrainerPreferenceScreen> createState() =>
+      _TrainerPreferenceScreenState();
 }
 
 PageController pageViewController = PageController(initialPage: 0);
@@ -39,18 +40,24 @@ class _TrainerPreferenceScreenState extends State<TrainerPreferenceScreen> {
               child: ButtonContainer(
                 buttonTitle: 'Next',
                 onTap: () {
-                  if (BlocProvider.of<TrainerPreferenceBloc>(context).state.page < 1) {
-                  pageViewController.animateToPage(
-                    BlocProvider.of<TrainerPreferenceBloc>(context).state.page + 1,
-                    duration: const Duration(milliseconds: 700),
-                    curve: Curves.easeIn,
-                  );}
-                  else  {Navigator.of(context)
-                    .pushReplacement(PageSlideTransition(const CompletePreferenceScreen()));}
+                  if (BlocProvider.of<TrainerPreferenceBloc>(context)
+                          .state
+                          .page <
+                      1) {
+                    pageViewController.animateToPage(
+                      BlocProvider.of<TrainerPreferenceBloc>(context)
+                              .state
+                              .page +
+                          1,
+                      duration: const Duration(milliseconds: 700),
+                      curve: Curves.easeIn,
+                    );
+                  } else {
+                    Navigator.of(context).pushReplacement(
+                        PageSlideTransition(const CompletePreferenceScreen()));
+                  }
                 },
-              )
-        
-              )
+              ))
         ],
       ),
     );

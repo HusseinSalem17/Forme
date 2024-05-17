@@ -8,7 +8,6 @@ import 'package:forme_app/features/trainee_features/preferences/presentation/vie
 
 import '../manager/preferences_bloc.dart';
 
-
 class PreferencesScreen extends StatefulWidget {
   static const routeName = '/preferences-screen';
 
@@ -41,18 +40,19 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
               child: ButtonContainer(
                 buttonTitle: 'Next',
                 onTap: () {
-                  if (BlocProvider.of<PreferencesBloc>(context).state.page < 4) {
-                  pageViewController.animateToPage(
-                    BlocProvider.of<PreferencesBloc>(context).state.page + 1,
-                    duration: const Duration(milliseconds: 700),
-                    curve: Curves.easeIn,
-                  );}
-                  else  {Navigator.of(context)
-                    .pushReplacement(PageSlideTransition(const HomeScreen()));}
+                  if (BlocProvider.of<PreferencesBloc>(context).state.page <
+                      4) {
+                    pageViewController.animateToPage(
+                      BlocProvider.of<PreferencesBloc>(context).state.page + 1,
+                      duration: const Duration(milliseconds: 700),
+                      curve: Curves.easeIn,
+                    );
+                  } else {
+                    Navigator.of(context).pushReplacement(
+                        PageSlideTransition(const HomeScreen()));
+                  }
                 },
-              )
-        
-              )
+              ))
         ],
       ),
     );

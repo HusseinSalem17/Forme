@@ -25,10 +25,8 @@ class ImageSelectionBottomSheet extends StatelessWidget {
         children: [
           Text(
             'Choose Profile Photo',
-            style: TextStyles.textStyleBold.copyWith(
-              color: AppColors.n900Black,
-              fontSize: 16.sp
-            ),
+            style: TextStyles.textStyleBold
+                .copyWith(color: AppColors.n900Black, fontSize: 16.sp),
           ),
           SizedBox(height: 24.h),
           Row(

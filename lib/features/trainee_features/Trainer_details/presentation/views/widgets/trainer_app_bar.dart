@@ -13,9 +13,8 @@ class TrainerDetailsAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 24.w,vertical: 24.h),
+      padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 24.h),
       child: Column(children: [
-      
         Padding(
           padding: EdgeInsets.symmetric(vertical: 24.h),
           child: Row(

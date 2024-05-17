@@ -6,7 +6,8 @@ import 'package:forme_app/features/trainee_features/Favorite/presentation/views/
 import 'package:simple_star_rating/simple_star_rating.dart';
 
 class TrainerRemoveCardDecoration extends StatelessWidget {
-  const TrainerRemoveCardDecoration({super.key, required this.model, required this.size});
+  const TrainerRemoveCardDecoration(
+      {super.key, required this.model, required this.size});
   final TrainerCardModel model;
   final Size size;
 
@@ -79,7 +80,8 @@ class TrainerRemoveCardDecoration extends StatelessWidget {
                       ),
                       Text(
                         '${model.rating}',
-                        style: TextStyles.textStyleRegular.copyWith(fontSize: 11, color: AppColors.n900Black),
+                        style: TextStyles.textStyleRegular
+                            .copyWith(fontSize: 11, color: AppColors.n900Black),
                       ),
                       Text(
                         ' | ',

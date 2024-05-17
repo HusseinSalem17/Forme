@@ -38,12 +38,14 @@ class CongratulationScreen extends StatelessWidget {
                       Image.asset('assets/image/congratulations.png'),
                       Text(
                         'Congratulations!',
-                        style: TextStyles.textStyleBold.copyWith(fontSize: 22.sp, color: AppColors.n900Black),
+                        style: TextStyles.textStyleBold.copyWith(
+                            fontSize: 22.sp, color: AppColors.n900Black),
                       ),
                       Text(
                         textAlign: TextAlign.center,
                         'You have successfully made payment and enrolled the workout activity.',
-                        style: TextStyles.textStyleRegular.copyWith(fontSize: 14.sp),
+                        style: TextStyles.textStyleRegular
+                            .copyWith(fontSize: 14.sp),
                       )
                     ],
                   ),
@@ -64,7 +66,9 @@ class CongratulationScreen extends StatelessWidget {
                           offset: const Offset(0, 2),
                         ),
                       ],
-                      borderRadius: BorderRadius.only(topLeft: Radius.circular(20.dg), topRight: Radius.circular(20.dg))),
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(20.dg),
+                          topRight: Radius.circular(20.dg))),
                   padding: EdgeInsets.all(24.h),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -72,13 +76,18 @@ class CongratulationScreen extends StatelessWidget {
                       CustomAppButton(
                           title: 'View E-Receipt',
                           onTap: () {
-                            Navigator.of(context).push(PageSlideTransition(EReceiptScreen()));
+                            Navigator.of(context)
+                                .push(PageSlideTransition(EReceiptScreen()));
                           }),
                       TextButton(
                           onPressed: () {
-                            Navigator.of(context).push(PageSlideTransition(const HomeScreen()));
+                            Navigator.of(context)
+                                .push(PageSlideTransition(const HomeScreen()));
                           },
-                          child: Text('Go to Home', style: TextStyles.textStyleRegular.copyWith(fontSize: 14.sp, color: AppColors.primaryColor)))
+                          child: Text('Go to Home',
+                              style: TextStyles.textStyleRegular.copyWith(
+                                  fontSize: 14.sp,
+                                  color: AppColors.primaryColor)))
                     ],
                   )),
             )

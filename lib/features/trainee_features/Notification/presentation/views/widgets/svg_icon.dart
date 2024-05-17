@@ -10,11 +10,10 @@ class SvgIcon extends StatelessWidget {
     Key? key,
     required this.iconName,
   }) : super(key: key);
-  
 
   @override
   Widget build(BuildContext context) {
-    return  Container(
+    return Container(
       width: 40.w,
       height: 40.h,
       decoration: const BoxDecoration(

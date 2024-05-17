@@ -5,7 +5,6 @@ class CustomExpandedListView extends StatelessWidget {
   final int itemCount;
   final Widget Function(BuildContext context, int index) itemBuilder;
 
-
   const CustomExpandedListView({
     Key? key,
     required this.itemCount,

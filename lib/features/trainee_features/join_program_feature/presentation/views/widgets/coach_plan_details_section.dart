@@ -138,8 +138,7 @@ class CoachPlanDetailsSection extends StatelessWidget {
               Text(
                 'Payment Plans',
                 style: TextStyles.descriptionStyle.copyWith(
-                    fontWeight: FontWeight.w600,
-                    color: AppColors.n900Black),
+                    fontWeight: FontWeight.w600, color: AppColors.n900Black),
               )
             ],
           ),
@@ -150,13 +149,13 @@ class CoachPlanDetailsSection extends StatelessWidget {
       ),
     );
   }
+
   Container buildContainerBackgroundIcon(IconData icon) {
     return Container(
       width: 40,
       height: 40,
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20),
-          color: AppColors.n20Gray),
+          borderRadius: BorderRadius.circular(20), color: AppColors.n20Gray),
       child: Icon(
         icon,
         color: AppColors.primaryColor,

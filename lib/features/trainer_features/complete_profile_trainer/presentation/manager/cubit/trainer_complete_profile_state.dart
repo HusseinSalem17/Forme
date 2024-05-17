@@ -1,24 +1,24 @@
 part of 'trainer_complete_profile_cubit.dart';
 
-sealed class TrainerCompleteProfileState extends Equatable {
-  const TrainerCompleteProfileState();
-
-  @override
-  List<Object> get props => [];
-}
+class TrainerCompleteProfileState {}
 
 final class TrainerCompleteProfileInitial extends TrainerCompleteProfileState {}
+
+final class TrainerimageUploadLoading extends TrainerCompleteProfileState {}
+
+final class TrainerimageUploadSuccess extends TrainerCompleteProfileState {}
+
+final class TrainerimageUploadFailure extends TrainerCompleteProfileState {}
 
 final class TrainerCompleteProfileLoading extends TrainerCompleteProfileState {}
 
 final class TrainerCompleteProfileFailure extends TrainerCompleteProfileState {
   final String errMessage;
 
-  const TrainerCompleteProfileFailure({required this.errMessage});
+  TrainerCompleteProfileFailure({required this.errMessage});
 }
 
 final class TrainerCompleteProfileSuccess extends TrainerCompleteProfileState {
   final String message;
-
-  const TrainerCompleteProfileSuccess({required this.message});
+  TrainerCompleteProfileSuccess({required this.message});
 }

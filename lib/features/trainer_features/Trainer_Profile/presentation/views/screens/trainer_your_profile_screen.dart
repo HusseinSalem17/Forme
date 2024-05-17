@@ -36,18 +36,27 @@ class TrainerYourProfileScreen extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      SvgPicture.asset('assets/image/Icon/hash.svg', color: AppColors.n900Black,),
+                      SvgPicture.asset(
+                        'assets/image/Icon/hash.svg',
+                        color: AppColors.n900Black,
+                      ),
                       SizedBox(
                         width: 16.w,
                       ),
                       RichText(
                         text: TextSpan(
                           text: 'Trainer ID: ',
-                          style: TextStyles.textStyleRegular.copyWith(color: AppColors.n600color, fontSize: 16.sp, fontWeight: FontWeight.w600),
+                          style: TextStyles.textStyleRegular.copyWith(
+                              color: AppColors.n600color,
+                              fontSize: 16.sp,
+                              fontWeight: FontWeight.w600),
                           children: <TextSpan>[
                             TextSpan(
                               text: textId,
-                              style: TextStyles.textStyleSemiBold.copyWith(color: AppColors.primaryColor, fontSize: 16.sp, fontWeight: FontWeight.w600),
+                              style: TextStyles.textStyleSemiBold.copyWith(
+                                  color: AppColors.primaryColor,
+                                  fontSize: 16.sp,
+                                  fontWeight: FontWeight.w600),
                             ),
                           ],
                         ),
@@ -60,17 +69,26 @@ class TrainerYourProfileScreen extends StatelessWidget {
                       Clipboard.setData(ClipboardData(text: textId));
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
-                          margin: EdgeInsets.only(bottom: MediaQuery.of(context).size.height - 50.h),
+                          margin: EdgeInsets.only(
+                              bottom:
+                                  MediaQuery.of(context).size.height - 50.h),
                           content: Row(
                             children: [
-                              SvgPicture.asset('assets/image/Icon/correct-icon.svg'),
+                              SvgPicture.asset(
+                                  'assets/image/Icon/correct-icon.svg'),
                               SizedBox(
                                 width: 8.0.w,
                               ),
-                              Text('Trainer ID Copied successfully.', style: TextStyles.textStyleSemiBold.copyWith(fontSize: 12.sp, color: AppColors.n400color)),
+                              Text('Trainer ID Copied successfully.',
+                                  style: TextStyles.textStyleSemiBold.copyWith(
+                                      fontSize: 12.sp,
+                                      color: AppColors.n400color)),
                             ],
                           ),
-                          shape: ContinuousRectangleBorder(borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10.dg), bottomRight: Radius.circular(10.dg))),
+                          shape: ContinuousRectangleBorder(
+                              borderRadius: BorderRadius.only(
+                                  bottomLeft: Radius.circular(10.dg),
+                                  bottomRight: Radius.circular(10.dg))),
                           duration: const Duration(seconds: 2),
                           dismissDirection: DismissDirection.up,
                           behavior: SnackBarBehavior.floating,
@@ -91,32 +109,51 @@ class TrainerYourProfileScreen extends StatelessWidget {
               children: [
                 Text(
                   'Retrieve your trainer ID from your profile or simply click the copy icon above, then share it through your personal page to showcase clients who have chosen you as their coach within the club.',
-                  style: TextStyles.textStyleRegular.copyWith(color: Colors.black, fontSize: 14.sp, fontWeight: FontWeight.w400),
+                  style: TextStyles.textStyleRegular.copyWith(
+                      color: Colors.black,
+                      fontSize: 14.sp,
+                      fontWeight: FontWeight.w400),
                 ),
                 SizedBox(
                   height: 32.h,
                 ),
-                CustomGestureDetectorRow(title: "Edit Profile", imageAddress: 'assets/image/profile/profile_user.svg', onTap:(){
-                  Navigator.of(context).push(PageSlideTransition(const MyProfileTrainer()));
-                }),
+                CustomGestureDetectorRow(
+                    title: "Edit Profile",
+                    imageAddress: 'assets/image/profile/profile_user.svg',
+                    onTap: () {
+                      Navigator.of(context)
+                          .push(PageSlideTransition(const MyProfileTrainer()));
+                    }),
                 const Divider(
                   color: AppColors.n20Gray,
                 ),
-                CustomGestureDetectorRow(title: "Languages", imageAddress: 'assets/image/profile/languages.svg', onTap:(){
-                  Navigator.of(context).push(PageSlideTransition(const LanguagesSearchScreen()));
-                }),
+                CustomGestureDetectorRow(
+                    title: "Languages",
+                    imageAddress: 'assets/image/profile/languages.svg',
+                    onTap: () {
+                      Navigator.of(context).push(
+                          PageSlideTransition(const LanguagesSearchScreen()));
+                    }),
                 const Divider(
                   color: AppColors.n20Gray,
                 ),
-                CustomGestureDetectorRow(title: "Social Media Links", imageAddress: 'assets/image/profile/social-media.svg', onTap:(){
-                  Navigator.of(context).push(PageSlideTransition(const SocialMediaLinksScreen()));
-                }),
+                CustomGestureDetectorRow(
+                    title: "Social Media Links",
+                    imageAddress: 'assets/image/profile/social-media.svg',
+                    onTap: () {
+                      Navigator.of(context).push(
+                          PageSlideTransition(const SocialMediaLinksScreen()));
+                    }),
                 const Divider(
                   color: AppColors.n20Gray,
                 ),
-                CustomGestureDetectorRow(title: "Complete Verification", imageAddress: 'assets/image/Icon/verified_black.svg', onTap: () {
-                  Navigator.of(context).push(PageSlideTransition(const CompleteVerificationScreen()));
-                }),
+                CustomGestureDetectorRow(
+                    title: "Complete Verification",
+                    imageAddress: 'assets/image/Icon/verified_black.svg',
+                    onTap: () {
+                      Navigator.of(context).push(PageSlideTransition(
+                          const CompleteVerificationScreen()));
+                    }),
                 const Divider(
                   color: AppColors.n20Gray,
                 ),

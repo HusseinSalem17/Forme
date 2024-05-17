@@ -41,13 +41,13 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
             child: Text(
               widget.title,
               style: TextStyles.textStyleBold
-                  .copyWith(color: AppColors.n900Black,fontSize:14.sp),
+                  .copyWith(color: AppColors.n900Black, fontSize: 14.sp),
             ),
           ),
           TextFormField(
             cursorColor: AppColors.primaryColor,
             style: TextStyles.textStyleRegular
-                .copyWith(color: AppColors.n900Black,fontSize:14.sp),
+                .copyWith(color: AppColors.n900Black, fontSize: 14.sp),
             keyboardType: widget.type == 'password'
                 ? TextInputType.visiblePassword
                 : TextInputType.emailAddress,

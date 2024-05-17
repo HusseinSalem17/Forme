@@ -4,9 +4,8 @@ import 'package:flutter_svg/svg.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
 import 'package:forme_app/core/widgets/custom_app_bar_arrow_button.dart';
-import 'package:forme_app/core/widgets/import_media.dart';
 import 'package:forme_app/core/widgets/text_area.dart';
-import 'package:forme_app/features/trainee_features/profile/presentation/views/complete_profile_widgets/image_selection_bottom_sheet.dart';
+import 'package:forme_app/core/widgets/image_picker/image_selection_bottom_sheet.dart';
 
 class AddTransformation extends StatefulWidget {
   static const routeName = '/addTransformation-screen';
@@ -84,7 +83,6 @@ class _AddTransformationState extends State<AddTransformation> {
                 child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-
                       Text(
                         'Upload Image or Video',
                         style: TextStyles.textStyleBold
@@ -111,8 +109,7 @@ class _AddTransformationState extends State<AddTransformation> {
                             height: 150,
                             decoration: BoxDecoration(
                                 border: Border.all(
-                                    color: AppColors.n40Gray,
-                                    width: 1.h),
+                                    color: AppColors.n40Gray, width: 1.h),
                                 borderRadius: BorderRadius.circular(8.dg)),
                             padding: EdgeInsets.all(38.h),
                             child: SvgPicture.asset(

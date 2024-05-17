@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
 
-class CustomTable{
+class CustomTable {
   Widget buildTable() {
     return Table(
       border: const TableBorder(
@@ -22,12 +22,13 @@ class CustomTable{
       ],
     );
   }
+
   Widget buildTableCell(
-      String firstText,
-      String secondText, {
-        bool isFirstColumn = false,
-        bool isLastColumn = false,
-      }) {
+    String firstText,
+    String secondText, {
+    bool isFirstColumn = false,
+    bool isLastColumn = false,
+  }) {
     BorderSide borderSide = const BorderSide(
       color: Color(0xFFEBECEE),
       width: 1.2,

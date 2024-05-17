@@ -5,11 +5,13 @@ import 'package:forme_app/core/utils/text_styles.dart';
 import 'package:forme_app/features/trainer_features/trainer_preference/presentation/views/widgets/documents_picker.dart';
 import 'package:forme_app/features/trainer_features/trainer_preference/presentation/views/widgets/id_image_picker.dart';
 import 'package:image_picker/image_picker.dart';
+
 class SecondPreferenceTrainer extends StatefulWidget {
   const SecondPreferenceTrainer({super.key});
 
   @override
-  State<SecondPreferenceTrainer> createState() => _SecondPreferenceTrainerState();
+  State<SecondPreferenceTrainer> createState() =>
+      _SecondPreferenceTrainerState();
 }
 
 class _SecondPreferenceTrainerState extends State<SecondPreferenceTrainer> {

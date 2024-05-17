@@ -7,7 +7,6 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import '../../../../../core/request_permissions/user_current_location.dart';
 import '../../../../../core/utils/app_colors.dart';
 
-
 class MapScreen extends StatefulWidget {
   static const routeName = '/map-screen';
 
@@ -54,7 +53,7 @@ class _MapScreenState extends State<MapScreen> {
     } else {
       setState(() {
         errorMessage =
-        'Failed to get location. Please enable location services and try again.';
+            'Failed to get location. Please enable location services and try again.';
       });
     }
 
@@ -122,12 +121,12 @@ class _MapScreenState extends State<MapScreen> {
           position != null
               ? buildMap()
               : loading
-              ? const Center(
-            child: CircularProgressIndicator(
-              color: AppColors.primaryColor,
-            ),
-          )
-              : buildErrorMessage(),
+                  ? const Center(
+                      child: CircularProgressIndicator(
+                        color: AppColors.primaryColor,
+                      ),
+                    )
+                  : buildErrorMessage(),
           const Padding(
             padding: EdgeInsets.only(top: 40),
             child: FloatingSearchBar(),

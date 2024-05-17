@@ -24,7 +24,8 @@ class MyServicesScreen extends StatelessWidget {
           appBar: AppBar(
             backgroundColor: AppColors.background,
             centerTitle: true,
-            title: Text("My Services", style: TextStyles.heading4Bold.copyWith(fontSize: 18.sp)),
+            title: Text("My Services",
+                style: TextStyles.heading4Bold.copyWith(fontSize: 18.sp)),
             actions: [
               Padding(
                 padding: EdgeInsets.only(right: 8.h),
@@ -33,7 +34,8 @@ class MyServicesScreen extends StatelessWidget {
                   color: AppColors.primaryColor,
                   size: 30,
                   onTap: () {
-                    Navigator.of(context).push(PageSlideTransition(const CreateSessionScreen()));
+                    Navigator.of(context)
+                        .push(PageSlideTransition(const CreateSessionScreen()));
                   },
                 ),
               ),

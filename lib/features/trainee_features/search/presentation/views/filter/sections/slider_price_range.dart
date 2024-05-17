@@ -24,11 +24,13 @@ class _SliderPriceRangeState extends State<SliderPriceRange> {
             children: [
               Text(
                 ' \$${_values.start.round()}',
-                style: TextStyles.textStyleSemiBold.copyWith(color: AppColors.n900Black, fontSize: 16.sp),
+                style: TextStyles.textStyleSemiBold
+                    .copyWith(color: AppColors.n900Black, fontSize: 16.sp),
               ),
               Text(
                 ' \$${_values.end.round()}',
-                style: TextStyles.textStyleSemiBold.copyWith(color: AppColors.n900Black, fontSize: 16.sp),
+                style: TextStyles.textStyleSemiBold
+                    .copyWith(color: AppColors.n900Black, fontSize: 16.sp),
               )
             ],
           ),

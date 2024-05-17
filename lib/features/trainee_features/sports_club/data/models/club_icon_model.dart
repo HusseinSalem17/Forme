@@ -13,5 +13,4 @@ List<ClubIconModel> clubIconData = [
   ClubIconModel(icon: 'trainees', title: 'facility'),
   ClubIconModel(icon: 'trainees', title: 'facility'),
   ClubIconModel(icon: 'trainees', title: 'facility'),
-  
 ];

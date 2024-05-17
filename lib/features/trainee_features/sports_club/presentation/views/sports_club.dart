@@ -81,6 +81,4 @@ class SportsClubScreen extends StatelessWidget {
               ],
             ))));
   }
-
-  
 }
