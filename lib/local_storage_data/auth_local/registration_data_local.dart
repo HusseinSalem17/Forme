@@ -18,6 +18,10 @@ class RegistrationDataLocal {
     }
     return null;
   }
+  static Future<void> clearUserType() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.remove(_userTypeKey);
+  }
 }
 
 

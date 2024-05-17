@@ -55,9 +55,11 @@ class SignUpEvent extends AuthEvent {
 class RequestOTPEvent extends AuthEvent {
   final String email;
   final UserType userType;
+  final String password;
 
-  RequestOTPEvent({
+  RequestOTPEvent( {
     required this.email,
     required this.userType,
+    required this.password,
   });
 }

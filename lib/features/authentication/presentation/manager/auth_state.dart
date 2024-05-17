@@ -15,7 +15,15 @@ class SignInFailure extends AuthState {
   SignInFailure({required this.errMsg});
 }
 
-class SignUpSuccess extends AuthState {}
+class SignUpSuccess extends AuthState {
+  final String email;
+  final String password;
+
+  SignUpSuccess({
+    required this.email,
+    required this.password,
+  });
+}
 
 class SignUpFailure extends AuthState {
   final String errMsg;
@@ -23,7 +31,12 @@ class SignUpFailure extends AuthState {
   SignUpFailure({required this.errMsg});
 }
 
-class RequestOTPSuccess extends AuthState {}
+class RequestOTPSuccess extends AuthState {
+  final String email;
+  final String password;
+
+  RequestOTPSuccess({required this.email, required this.password});
+}
 
 class RequestOTPFailure extends AuthState {
   final String errMsg;

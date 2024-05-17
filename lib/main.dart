@@ -39,7 +39,6 @@ void main() async {
     ),
   );
   runApp(MyApp(initialUserType: initialUserType));
-  print(initialUserType);
 }
 
 class MyApp extends StatelessWidget {
@@ -97,7 +96,7 @@ class MyApp extends StatelessWidget {
             }
           },
 
-          //home: SignUpScreen(),
+          home: SignUpScreen(),
         ),
       ),
     );

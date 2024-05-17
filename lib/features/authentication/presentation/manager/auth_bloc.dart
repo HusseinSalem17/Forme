@@ -22,12 +22,14 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   FutureOr<void> requestOtpEventCalled(event, emit) async {
     emit(AuthLoading());
     try {
-      print(event.email);
-      print(event.userType);
       await authRepo.requestOTP(event.email, event.userType);
 
       // Save user type locally
       await RegistrationDataLocal.saveUserType(event.userType);
+      emit(RequestOTPSuccess(
+        email: event.email,
+        password: event.password,
+      ));
     } on Exception catch (e) {
       print(e.toString());
       emit(
@@ -44,15 +46,18 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         event.isPasswordsMatch()) {
       emit(AuthLoading());
       try {
-        emit(SignUpSuccess());
+        emit(SignUpSuccess(
+          password: event.password,
+          email: event.email,
+        ));
       } catch (error) {
         emit(SignUpFailure(errMsg: 'An unexpected error occurred.'));
       }
     } else {
       if (!event.isEmailValid()) {
-        emit(SignInFailure(errMsg: 'Please enter a valid email.'));
+        emit(SignUpFailure(errMsg: 'Please enter a valid email.'));
       } else if (!event.isPasswordValid()) {
-        emit(SignInFailure(
+        emit(SignUpFailure(
             errMsg:
                 'Password must contain at least one uppercase letter, one lowercase letter, one digit, and one special character.'));
       }

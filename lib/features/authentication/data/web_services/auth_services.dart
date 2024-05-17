@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:forme_app/core/user_type.dart';
-import 'package:forme_app/core/utils/constants.dart';
 import 'package:forme_app/features/authentication/data/models/requset_otp_model.dart';
 
+import '../../../../core/secrets/secrets_api_keys.dart';
 import '../models/response_otp_successful.dart';
 
 class AuthServices {
@@ -49,7 +49,7 @@ class AuthServices {
       );
 
       Response response = await dio.post(
-        '$baseUrl/auth/request_otp/',
+        '${SecretsApiKeys.baseUrl}/auth/request_otp/',
         options: Options(
           headers: {
             'Content-Type': 'application/json', // Set the content type header
@@ -62,7 +62,7 @@ class AuthServices {
       return ResponseOtpSuccessful.fromJson(response.data);
     } catch (error) {
       print(error.toString());
-      throw error;
+      rethrow;
     }
   }
 }
