@@ -5,6 +5,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:forme_app/core/api/dio_consumer.dart';
 import 'package:forme_app/core/utils/app_theme.dart';
 import 'package:forme_app/features/Authentication/presentation/manager/auth_bloc.dart';
+import 'package:forme_app/features/trainee_features/complete_profile_trainee/presentation/manager/cubit/trainee_complete_profile_cubit.dart';
+import 'package:forme_app/features/trainee_features/complete_profile_trainee/presentation/views/trainer_complete_profile.dart';
 import 'package:forme_app/features/trainer_features/Trainer_Profile/presentation/manager/my_profile_cubit/cubit/my_profile_cubit.dart';
 import 'package:forme_app/features/trainer_features/complete_profile_trainer/presentation/manager/cubit/trainer_complete_profile_cubit.dart';
 import 'package:forme_app/features/trainer_features/dashboard/presentation/views/manager/bloc/trainer_home_bloc.dart';
@@ -61,6 +63,10 @@ class MyApp extends StatelessWidget {
                 TrainerCompleteProfileCubit(DioConsumer(dio: Dio())),
           ),
           BlocProvider(
+            create: (context) =>
+                TraineeCompleteProfileCubit(DioConsumer(dio: Dio())),
+          ),
+          BlocProvider(
             create: (context) => MyProfileCubit(),
           ),
           BlocProvider(
@@ -92,7 +98,7 @@ class MyApp extends StatelessWidget {
           //   }
           // },
 
-          home: const TrainerCompleteProfile(),
+          home: const TraineeCompleteProfile(),
         ),
       ),
     );
