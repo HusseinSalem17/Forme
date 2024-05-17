@@ -8,21 +8,18 @@ import '../../../../../../core/widgets/app_drop_list/custom_drop_list.dart';
 import '../../../../../../core/widgets/app_fields/custom_phone_field.dart';
 import '../../../../../../core/widgets/app_fields/custom_text_field.dart';
 
-Widget buildBodyFields({
-  required String? name,
-  required String? phone,
-  required String? gender,
-  required String? country,
+Widget buildTraineeBodyFields({
   required ValueChanged<String> onNameChanged,
   required ValueChanged<String> onPhoneChanged,
   required ValueChanged<String> onGenderChanged,
   required ValueChanged<String> onCountryChanged,
 }) {
-  final List<String> genderItems = ['Male', 'Female'];
+  final List<String> genderItems = ['male', 'female'];
   final List<String> countryItems = ['Egypt', 'USA'];
 
   return Column(
     children: [
+      //! name
       CustomTextField(
         title: 'Full Name',
         hintText: 'Hussein Salem Eldeskey',
@@ -30,6 +27,7 @@ Widget buildBodyFields({
         onChanged: onNameChanged,
       ),
       SizedBox(height: 16.h),
+      //! number
       CustomPhoneField(
         title: 'Phone Number',
         initialCountry: 'EG',
@@ -50,6 +48,7 @@ Widget buildBodyFields({
         onChanged: onPhoneChanged,
       ),
       SizedBox(height: 16.h),
+      //! gender
       CustomDropList(
         title: "Gender",
         hint: const Text('Select Your Gender'),
@@ -70,6 +69,7 @@ Widget buildBodyFields({
         },
       ),
       SizedBox(height: 16.h),
+      //! country
       CustomDropList(
         title: "Country",
         hint: const Text('Select Country'),

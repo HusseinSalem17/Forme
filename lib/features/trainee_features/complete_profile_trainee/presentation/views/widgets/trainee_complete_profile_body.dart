@@ -6,20 +6,21 @@ import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
 import 'package:forme_app/core/widgets/custom_app_button.dart';
 import 'package:forme_app/core/widgets/flutter_toast.dart';
-import 'package:forme_app/features/trainer_features/complete_profile_trainer/presentation/manager/cubit/trainer_complete_profile_cubit.dart';
-import '../../../../../../core/widgets/image_picker/profile_image_picker.dart';
-import 'trainer_body_fields.dart';
+import 'package:forme_app/features/trainee_features/complete_profile_trainee/presentation/manager/cubit/trainee_complete_profile_cubit.dart';
+import 'package:forme_app/features/trainee_features/complete_profile_trainee/presentation/views/widgets/trainee_body_fields.dart';
 
-class TrainerCompleteProfileBody extends StatefulWidget {
-  const TrainerCompleteProfileBody({Key? key}) : super(key: key);
+import '../../../../../../core/widgets/image_picker/profile_image_picker.dart';
+
+class TraineeCompleteProfileBody extends StatefulWidget {
+  const TraineeCompleteProfileBody({Key? key}) : super(key: key);
 
   @override
-  State<TrainerCompleteProfileBody> createState() =>
-      _TrainerCompleteProfileBodyState();
+  State<TraineeCompleteProfileBody> createState() =>
+      _TraineeCompleteProfileBodyState();
 }
 
-class _TrainerCompleteProfileBodyState
-    extends State<TrainerCompleteProfileBody> {
+class _TraineeCompleteProfileBodyState
+    extends State<TraineeCompleteProfileBody> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   @override
@@ -30,12 +31,12 @@ class _TrainerCompleteProfileBodyState
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<TrainerCompleteProfileCubit,
-        TrainerCompleteProfileState>(
+    return BlocConsumer<TraineeCompleteProfileCubit,
+        TraineeCompleteProfileState>(
       listener: (context, state) {
-        if (state is TrainerCompleteProfileSuccess) {
+        if (state is TraineeCompleteProfileSuccess) {
           toastInfo(msg: 'success');
-        } else if (state is TrainerCompleteProfileFailure) {
+        } else if (state is TraineeCompleteProfileFailure) {
           toastInfo(msg: 'failuer#');
         }
       },
@@ -70,51 +71,45 @@ class _TrainerCompleteProfileBodyState
               ),
               SizedBox(height: 16.0.h),
               ProfileImagePicker(
-                imageFile: context.read<TrainerCompleteProfileCubit>().image,
+                imageFile: context.read<TraineeCompleteProfileCubit>().image,
                 onImageSelected: (file) {
                   setState(() {
-                    context.read<TrainerCompleteProfileCubit>().image = file;
+                    context.read<TraineeCompleteProfileCubit>().image = file;
                   });
                 },
               ),
               SizedBox(height: 32.0.h),
-              buildTrainerBodyFields(
+              buildTraineeBodyFields(
                 onNameChanged: (value) {
                   setState(() {
-                    context.read<TrainerCompleteProfileCubit>().name = value;
+                    context.read<TraineeCompleteProfileCubit>().name = value;
                   });
                 },
                 onPhoneChanged: (value) {
                   setState(() {
-                    context.read<TrainerCompleteProfileCubit>().phone = value;
+                    context.read<TraineeCompleteProfileCubit>().phone = value;
                   });
                 },
                 onGenderChanged: (value) {
                   setState(() {
-                    context.read<TrainerCompleteProfileCubit>().gender = value;
+                    context.read<TraineeCompleteProfileCubit>().gender = value;
                   });
                 },
                 onCountryChanged: (value) {
                   setState(() {
-                    context.read<TrainerCompleteProfileCubit>().country = value;
-                  });
-                },
-                onSportFieldChanged: (value) {
-                  setState(() {
-                    context.read<TrainerCompleteProfileCubit>().sportField =
-                        value;
+                    context.read<TraineeCompleteProfileCubit>().country = value;
                   });
                 },
               ),
               SizedBox(height: 32.0.h),
               CustomAppButton(
                 title: 'Complete Profile',
-                isLoad: state is TrainerCompleteProfileLoading,
+                isLoad: state is TraineeCompleteProfileLoading,
                 onTap: () {
                   if (_formKey.currentState!.validate()) {
                     context
-                        .read<TrainerCompleteProfileCubit>()
-                        .postTrainerCompleteProfile();
+                        .read<TraineeCompleteProfileCubit>()
+                        .postTraineeCompleteProfile();
                   }
                 },
               ),

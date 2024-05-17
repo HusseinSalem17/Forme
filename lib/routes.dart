@@ -1,20 +1,16 @@
 import 'package:flutter/material.dart';
-
 import 'package:forme_app/features/Authentication/presentation/views/new_password_screen.dart';
 import 'package:forme_app/features/Authentication/presentation/views/sign_up_screen.dart';
 import 'package:forme_app/features/Authentication/presentation/views/verify_code_screen.dart';
+import 'package:forme_app/features/trainee_features/complete_profile_trainee/presentation/views/trainer_complete_profile.dart';
 import 'package:forme_app/features/trainer_features/Transformations/presentation/view/Transformations_screen.dart';
 import 'package:forme_app/features/trainer_features/Transformations/presentation/view/screens/add_transformation.dart';
 import 'package:forme_app/features/trainer_features/add_workout/presentation/view/add_workout.dart';
-
 import 'package:forme_app/features/trainer_features/dashboard/presentation/views/home_view.dart';
 import 'package:forme_app/features/trainer_features/my_services/presentation/views/my_services_screen.dart';
 import 'package:forme_app/features/trainer_features/subscriptions/presentation/views/subscriptions_screen.dart';
 import 'package:forme_app/features/trainer_features/trainer_preference/presentation/views/trainer_preference_screen.dart';
-
 import 'package:forme_app/features/trainee_features/payment/presentation/view/payment_successfully_screen.dart';
-import 'package:forme_app/features/trainee_features/profile/presentation/views/complete_profile.dart';
-
 import 'package:forme_app/splash_screen.dart';
 import 'package:forme_app/onboarding_screens/views/onboarding_screen.dart';
 import 'features/authentication/presentation/views/forgot_password_screen.dart';
@@ -113,7 +109,7 @@ Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
 
 MaterialPageRoute<dynamic> completeProfile() {
   return MaterialPageRoute(
-    builder: (context) => const CompleteProfile(),
+    builder: (context) => const TraineeCompleteProfile(),
   );
 }
 

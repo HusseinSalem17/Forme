@@ -10,7 +10,7 @@ import 'package:forme_app/core/widgets/app_fields/custom_text_field.dart';
 import 'package:forme_app/core/widgets/image_picker/profile_image_picker.dart';
 import 'package:forme_app/features/trainee_features/profile/presentation/views/widgets/my_profile_phone_field.dart';
 import 'package:image_picker/image_picker.dart';
-import '../manager/my_profile_cubit/cubit/my_profile_cubit.dart';
+import '../manager/cubit/my_profile_cubit.dart';
 
 class MyProfile extends StatefulWidget {
   static const routeName = '/my-profile-screen';
