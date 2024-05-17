@@ -4,6 +4,12 @@ class TrainerCompleteProfileState {}
 
 final class TrainerCompleteProfileInitial extends TrainerCompleteProfileState {}
 
+final class TrainerimageUploadLoading extends TrainerCompleteProfileState {}
+
+final class TrainerimageUploadSuccess extends TrainerCompleteProfileState {}
+
+final class TrainerimageUploadFailure extends TrainerCompleteProfileState {}
+
 final class TrainerCompleteProfileLoading extends TrainerCompleteProfileState {}
 
 final class TrainerCompleteProfileFailure extends TrainerCompleteProfileState {

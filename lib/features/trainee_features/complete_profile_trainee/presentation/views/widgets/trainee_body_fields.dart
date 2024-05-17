@@ -4,54 +4,22 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/styles.dart';
-
 import '../../../../../../core/widgets/app_drop_list/custom_drop_list.dart';
-
 import '../../../../../../core/widgets/app_fields/custom_phone_field.dart';
 import '../../../../../../core/widgets/app_fields/custom_text_field.dart';
 
-Widget buildTrainerBodyFields({
-  required String? name,
-  required String? phone,
-  required String? gender,
-  required String? country,
-  required String? sportFields,
+Widget buildTraineeBodyFields({
   required ValueChanged<String> onNameChanged,
   required ValueChanged<String> onPhoneChanged,
   required ValueChanged<String> onGenderChanged,
   required ValueChanged<String> onCountryChanged,
-  required ValueChanged<String> onSportFieldChanged,
 }) {
-  final List<String> genderItems = ['Male', 'Female'];
+  final List<String> genderItems = ['male', 'female'];
   final List<String> countryItems = ['Egypt', 'USA'];
-  final List<String> sportFieldItems = [
-    'Fitness',
-    'Football',
-    'Tennis',
-    'Swimming',
-    'Basketball',
-    'Volleyball',
-    'Handball',
-    'Running',
-    'Cycling',
-    'Boxing',
-    'Yoga',
-    'Pilates',
-    'Dancing',
-    'Golf',
-    'Horse Riding',
-    'Skiing',
-    'Skating',
-    'Surfing',
-    'Sailing',
-    'Bowling',
-    'Billiards',
-    'Chess',
-    'Shooting'
-  ];
 
   return Column(
     children: [
+      //! name
       CustomTextField(
         title: 'Full Name',
         hintText: 'Hussein Salem Eldeskey',
@@ -59,6 +27,7 @@ Widget buildTrainerBodyFields({
         onChanged: onNameChanged,
       ),
       SizedBox(height: 16.h),
+      //! number
       CustomPhoneField(
         title: 'Phone Number',
         initialCountry: 'EG',
@@ -79,6 +48,7 @@ Widget buildTrainerBodyFields({
         onChanged: onPhoneChanged,
       ),
       SizedBox(height: 16.h),
+      //! gender
       CustomDropList(
         title: "Gender",
         hint: const Text('Select Your Gender'),
@@ -99,6 +69,7 @@ Widget buildTrainerBodyFields({
         },
       ),
       SizedBox(height: 16.h),
+      //! country
       CustomDropList(
         title: "Country",
         hint: const Text('Select Country'),
@@ -116,27 +87,6 @@ Widget buildTrainerBodyFields({
         },
         onChanged: (value) {
           onCountryChanged(value ?? '');
-        },
-        onSaved: (value) {},
-      ),
-      SizedBox(height: 16.h),
-      CustomDropList(
-        title: "Sport Field",
-        hint: const Text('Select Sport Field'),
-        items: sportFieldItems
-            .map((e) => DropdownMenuItem<String>(
-                  value: e,
-                  child: Text(e),
-                ))
-            .toList(),
-        validator: (value) {
-          if (value == null) {
-            return 'Please select sport field.';
-          }
-          return null;
-        },
-        onChanged: (value) {
-          onSportFieldChanged(value ?? '');
         },
         onSaved: (value) {},
       ),

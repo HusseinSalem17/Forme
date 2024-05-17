@@ -1,4 +1,4 @@
-part of 'trainer_complete_profile_cubit.dart';
+part of 'trainee_complete_profile_cubit.dart';
 
 class TraineeCompleteProfileState {}
 
@@ -14,6 +14,5 @@ final class TraineeCompleteProfileFailure extends TraineeCompleteProfileState {
 
 final class TraineeCompleteProfileSuccess extends TraineeCompleteProfileState {
   final String message;
-
   TraineeCompleteProfileSuccess({required this.message});
 }

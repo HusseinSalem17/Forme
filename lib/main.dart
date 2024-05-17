@@ -11,7 +11,7 @@ import 'package:forme_app/features/trainer_features/dashboard/presentation/views
 import 'package:forme_app/features/trainer_features/trainee_profile/presentation/manager/trainee_profile_cubit.dart';
 import 'package:forme_app/features/trainee_features/home/presentation/manager/bloc/home_bloc.dart';
 import 'package:forme_app/features/trainee_features/preferences/presentation/manager/preferences_bloc.dart';
-import 'package:forme_app/features/trainee_features/profile/presentation/manager/my_profile_cubit/cubit/my_profile_cubit.dart';
+import 'package:forme_app/features/trainee_features/profile/presentation/manager/cubit/my_profile_cubit.dart';
 import 'package:forme_app/onboarding_screens/data/bloc/onboarding_blocs.dart';
 import 'package:flutter/services.dart';
 import 'app_routing/auth_routes.dart';

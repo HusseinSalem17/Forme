@@ -5,7 +5,7 @@ import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/functions/validators.dart';
 import 'package:forme_app/core/utils/styles.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
-import 'package:forme_app/features/trainee_features/profile/presentation/views/complete_profile_widgets/custom_build_form.dart';
+import 'package:forme_app/core/widgets/custom_build_form.dart';
 
 class CustomTextField extends StatefulWidget {
   const CustomTextField(

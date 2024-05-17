@@ -8,15 +8,14 @@
 // class TrainerCompleteProfileRepoImpl implements TrainerCompleteProfileRepo {
 //   const TrainerCompleteProfileRepoImpl();
 //   @override
-//   Either<Failure, String> handleTrainerCompleteProfile(
-//       {required TrainerCompleteProfileData data}) {
+//   Either<Failure, String> handleTraineeCompleteProfile(
+//       {required TraineeCompleteProfileData data}) {
 //     try {
 //       String name = data.name;
 //       String? photo = data.photo;
 //       String phone = data.phone;
 //       String gender = data.gender;
 //       String country = data.country;
-//       String sportField = data.sportField;
 //       if (name.isEmpty) {
 //         toastInfo(msg: data.name);
 //         return left(ServerFailure(data.name));
@@ -27,10 +26,6 @@
 //       }
 //       if (country.isEmpty) {
 //         toastInfo(msg: data.country);
-//         return left(ServerFailure(data.name));
-//       }
-//       if (sportField.isEmpty) {
-//         toastInfo(msg: data.sportField);
 //         return left(ServerFailure(data.name));
 //       }
 //       return right('success');
