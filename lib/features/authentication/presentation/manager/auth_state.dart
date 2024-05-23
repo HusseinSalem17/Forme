@@ -3,43 +3,56 @@ part of 'auth_bloc.dart';
 @immutable
 sealed class AuthState {}
 
-class AuthInitial extends AuthState {}
+final class AuthInitial extends AuthState {}
 
-class AuthLoading extends AuthState {}
+final class AuthLoading extends AuthState {}
 
-class SignInSuccess extends AuthState {}
+/// login states
+final class SignInSuccess extends AuthState {}
 
-class SignInFailure extends AuthState {
+final class SignInFailure extends AuthState {
   final String errMsg;
 
   SignInFailure({required this.errMsg});
 }
 
-class SignUpSuccess extends AuthState {
-  final String email;
-  final String password;
-
-  SignUpSuccess({
-    required this.email,
-    required this.password,
-  });
+final class SignUpSuccess extends AuthState {
+  SignUpSuccess();
 }
 
-class SignUpFailure extends AuthState {
+final class SignUpFailure extends AuthState {
   final String errMsg;
 
   SignUpFailure({required this.errMsg});
 }
 
-class RequestOTPSuccess extends AuthState {
+/// request otp states
+final class RequestOTPSuccess extends AuthState {
   final String email;
   final String password;
+  final UserType userType;
 
-  RequestOTPSuccess({required this.email, required this.password});
+  RequestOTPSuccess({
+    required this.email,
+    required this.password,
+    required this.userType,
+  });
 }
 
-class RequestOTPFailure extends AuthState {
+final class RequestOTPFailure extends AuthState {
   final String errMsg;
 
-  RequestOTPFailure({required this.errMsg});
+  RequestOTPFailure({
+    required this.errMsg,
+  });
+}
+
+/// verify otp states
+final class VerifyOTPSuccess extends AuthState {}
+
+final class VerifyOTPFailure extends AuthState {
+  final String errMsg;
+  VerifyOTPFailure({
+    required this.errMsg,
+  });
 }

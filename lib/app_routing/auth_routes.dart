@@ -5,6 +5,7 @@ import '../features/Authentication/presentation/views/new_password_screen.dart';
 import '../features/Authentication/presentation/views/sign_in_screen.dart';
 import '../features/Authentication/presentation/views/sign_up_screen.dart';
 import '../features/Authentication/presentation/views/verify_code_screen.dart';
+import '../features/trainee_features/preferences/presentation/views/preferences_screen.dart';
 import '../onboarding_screens/views/onboarding_screen.dart';
 import '../splash_screen.dart';
 
@@ -13,7 +14,7 @@ class AuthRoutes {
     return MaterialPageRoute(
       builder: (_) => const Scaffold(
         body: Center(
-          child: Text('Error: Route not found'),
+          child: Text('Error: Route not found in auth route'),
         ),
       ),
     );
@@ -50,6 +51,11 @@ class AuthRoutes {
         return MaterialPageRoute(
           builder: (context) => const NewPasswordScreen(),
         );
+      case PreferencesScreen.routeName:
+        return MaterialPageRoute(
+          builder: (context) => const PreferencesScreen(),
+        );
+
       default:
         return _errorRoute();
     }

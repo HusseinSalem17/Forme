@@ -3,7 +3,7 @@ part of 'auth_bloc.dart';
 @immutable
 sealed class AuthEvent {}
 
-class LoginEvent extends AuthEvent {
+final class LoginEvent extends AuthEvent {
   final String email;
   final String password;
 
@@ -23,15 +23,17 @@ class LoginEvent extends AuthEvent {
   }
 }
 
-class SignUpEvent extends AuthEvent {
+final class SignUpEvent extends AuthEvent {
   final String? email;
   final String? password1;
   final String? password2;
+  final UserType? userType;
 
   SignUpEvent({
     this.email,
     this.password1,
     this.password2,
+    this.userType,
   });
 
   bool isEmailValid() {
@@ -52,14 +54,23 @@ class SignUpEvent extends AuthEvent {
   }
 }
 
-class RequestOTPEvent extends AuthEvent {
+final class RequestOTPEvent extends AuthEvent {
   final String email;
   final UserType userType;
   final String password;
 
-  RequestOTPEvent( {
+  RequestOTPEvent({
     required this.email,
     required this.userType,
     required this.password,
+  });
+}
+
+final class VerifyOTPEvent extends AuthEvent {
+  final String otp;
+  final String email;
+  VerifyOTPEvent({
+    required this.otp,
+    required this.email,
   });
 }

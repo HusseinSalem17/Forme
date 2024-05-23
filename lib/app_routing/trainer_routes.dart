@@ -20,7 +20,7 @@ class TrainerRoutes {
     return MaterialPageRoute(
       builder: (_) => const Scaffold(
         body: Center(
-          child: Text('Error: Route not found'),
+          child: Text('Error: Route not found in trainer route'),
         ),
       ),
     );

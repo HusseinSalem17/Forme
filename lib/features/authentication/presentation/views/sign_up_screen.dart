@@ -15,6 +15,7 @@ import '../../../../core/transitions/page_slide.dart';
 import '../../../../core/utils/text_styles.dart';
 import '../../../../core/widgets/app_fields/custom_password_form_field.dart';
 import '../../../../core/widgets/app_fields/custom_text_form_field.dart';
+import '../../../../core/widgets/loader.dart';
 import '../manager/auth_bloc.dart';
 
 class SignUpScreen extends StatefulWidget {
@@ -73,9 +74,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
           },
           builder: (context, state) {
             if (state is AuthLoading) {
-              return const Center(
-                child: CircularProgressIndicator.adaptive(),
-              );
+              return const Loader();
             }
             return SingleChildScrollView(
               child: Form(

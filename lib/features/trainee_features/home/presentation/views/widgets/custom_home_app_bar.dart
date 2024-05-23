@@ -5,7 +5,8 @@ import 'package:flutter_svg/svg.dart';
 import '../../../../../../core/utils/app_colors.dart';
 import '../../../../../../core/utils/icons_image_pathes.dart';
 import '../../../../../../core/utils/text_styles.dart';
-import '../../../../../../local_storage_data/auth_local/registration_data_local.dart';
+import '../../../../../../local_storage_data/auth_local/tokens.dart';
+import '../../../../../../local_storage_data/auth_local/user_type.dart';
 import 'custom_search_widget.dart';
 import 'map_popup_menu.dart';
 
@@ -27,6 +28,7 @@ class CustomHomeAppBar extends StatelessWidget {
         GestureDetector(
           onTap: () {
             RegistrationDataLocal.clearUserType();
+            UserTokenLocal.clearTokens();
           },
           child: Container(
             margin: const EdgeInsets.only(right: 24),
