@@ -114,7 +114,7 @@ class _TrainerCompleteProfileBodyState
                   if (_formKey.currentState!.validate()) {
                     context
                         .read<TrainerCompleteProfileCubit>()
-                        .postTrainerCompleteProfile();
+                        .patchTrainerCompleteProfile();
                   }
                 },
               ),

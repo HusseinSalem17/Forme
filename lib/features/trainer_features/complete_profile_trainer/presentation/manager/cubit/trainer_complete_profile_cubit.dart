@@ -1,6 +1,6 @@
-
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:forme_app/core/api/api_consumer.dart';
+import 'package:forme_app/core/utils/functions/utils.dart';
 import 'package:image_picker/image_picker.dart';
 part 'trainer_complete_profile_state.dart';
 
@@ -16,7 +16,7 @@ class TrainerCompleteProfileCubit extends Cubit<TrainerCompleteProfileState> {
   String gender = "";
   String sportField = "";
   XFile? image;
-  postTrainerCompleteProfile() async {
+  patchTrainerCompleteProfile() async {
     try {
       emit(TrainerCompleteProfileLoading());
 
@@ -27,7 +27,7 @@ class TrainerCompleteProfileCubit extends Cubit<TrainerCompleteProfileState> {
               "date_of_birth": dateOfBirth,
               "country": country,
               "phone_number": phone,
-              "profile_picture": image,
+              "profile_picture": "data:${image!.path.split('/').last};base64,${await Utils().convertXFileToBase64(image!)}",
               "gender": gender
             },
             "sport_field": sportField

@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:forme_app/core/transitions/page_slide.dart';
 import 'package:forme_app/core/widgets/button_container.dart';
-import 'package:forme_app/features/trainer_features/trainer_preference/presentation/manager/trainer_preference_bloc.dart';
+import 'package:forme_app/features/trainer_features/trainer_preference/presentation/manager/cubit/trainer_preference_cubit.dart';
+
 import 'package:forme_app/features/trainer_features/trainer_preference/presentation/views/screens/complete_screen.dart';
 import 'package:forme_app/features/trainer_features/trainer_preference/presentation/views/widgets/custom_app_bar.dart';
 import 'package:forme_app/features/trainer_features/trainer_preference/presentation/views/widgets/custom_preferences_page_veiw.dart';
@@ -36,28 +37,24 @@ class _TrainerPreferenceScreenState extends State<TrainerPreferenceScreen> {
             pageViewController: pageViewController,
           ),
           Align(
-              alignment: Alignment.bottomCenter,
-              child: ButtonContainer(
-                buttonTitle: 'Next',
-                onTap: () {
-                  if (BlocProvider.of<TrainerPreferenceBloc>(context)
-                          .state
-                          .page <
-                      1) {
-                    pageViewController.animateToPage(
-                      BlocProvider.of<TrainerPreferenceBloc>(context)
-                              .state
-                              .page +
-                          1,
-                      duration: const Duration(milliseconds: 700),
-                      curve: Curves.easeIn,
-                    );
-                  } else {
-                    Navigator.of(context).pushReplacement(
-                        PageSlideTransition(const CompletePreferenceScreen()));
-                  }
-                },
-              ))
+            alignment: Alignment.bottomCenter,
+            child: ButtonContainer(
+              buttonTitle: 'Next',
+              onTap: () {
+                if (context.read<TrainerPreferenceCubit>().page < 1) {
+                  pageViewController.animateToPage(
+                    context.read<TrainerPreferenceCubit>().page + 1,
+                    duration: const Duration(milliseconds: 700),
+                    curve: Curves.easeIn,
+                  );
+                } else {
+                  Navigator.of(context).pushReplacement(
+                      PageSlideTransition(const CompletePreferenceScreen()));
+                }
+                
+              },
+            ),
+          )
         ],
       ),
     );
