@@ -1,5 +1,4 @@
 import 'package:dartz/dartz.dart';
-import 'package:dio/dio.dart';
 import 'package:forme_app/core/user_type.dart';
 import 'package:forme_app/features/authentication/data/models/otp_response_success.dart';
 import 'package:forme_app/features/authentication/data/models/token_response_success.dart';
@@ -25,7 +24,7 @@ class AuthRepositoryImplementation extends AuthRepository {
       return right(response);
     } catch (e) {
       return left(CustomError(
-        DioErrorHandler.handleError(e, 'Error occurred while requesting OTP'),
+        ServerErrorHandler.handleError(e, 'Error occurred while requesting OTP'),
       ));
     }
   }
@@ -40,7 +39,7 @@ class AuthRepositoryImplementation extends AuthRepository {
       return right(response);
     } catch (e) {
       return left(CustomError(
-        DioErrorHandler.handleError(e, 'Error occurred while verifying OTP'),
+        ServerErrorHandler.handleError(e, 'Error occurred while verifying OTP'),
       ));
     }
   }
@@ -60,7 +59,7 @@ class AuthRepositoryImplementation extends AuthRepository {
       return right(response);
     } catch (e) {
       return left(CustomError(
-        DioErrorHandler.handleError(e, 'Error occurred while signing up'),
+        ServerErrorHandler.handleError(e, 'Error occurred while signing up'),
       ));
     }
   }
@@ -80,7 +79,7 @@ class AuthRepositoryImplementation extends AuthRepository {
       return right(response);
     } catch (e) {
       return left(CustomError(
-        DioErrorHandler.handleError(e, 'Error occurred while logging in'),
+        ServerErrorHandler.handleError(e, 'Error occurred while logging in'),
       ));
     }
   }

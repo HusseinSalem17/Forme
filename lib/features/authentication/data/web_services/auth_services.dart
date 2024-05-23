@@ -44,7 +44,7 @@ class AuthServices {
       return OtpResponseSuccessful.fromJson(response.data);
     } catch (error) {
       throw CustomError(
-        DioErrorHandler.handleError(error, 'Error occurred while requesting OTP'),
+        ServerErrorHandler.handleError(error, 'Error occurred while requesting OTP'),
       );
     }
   }
@@ -69,7 +69,7 @@ class AuthServices {
       return VerifyOtpResponseSuccess.fromJson(response.data);
     } catch (error) {
       throw CustomError(
-        DioErrorHandler.handleError(error, 'Error occurred while verifying OTP'),
+        ServerErrorHandler.handleError(error, 'Error occurred while verifying OTP'),
       );
     }
   }
@@ -89,7 +89,7 @@ class AuthServices {
       );
     } catch (error) {
       throw CustomError(
-        DioErrorHandler.handleError(error, 'Error occurred while signing up'),
+        ServerErrorHandler.handleError(error, 'Error occurred while signing up'),
       );
     }
   }
@@ -109,7 +109,7 @@ class AuthServices {
       );
     } catch (error) {
       throw CustomError(
-        DioErrorHandler.handleError(error, 'Error occurred while logging in'),
+        ServerErrorHandler.handleError(error, 'Error occurred while logging in'),
       );
     }
   }
@@ -145,7 +145,7 @@ class AuthServices {
       return TokenResponseSuccess.fromJson(response.data);
     } catch (error) {
       throw CustomError(
-        DioErrorHandler.handleError(error, errorMessage),
+        ServerErrorHandler.handleError(error, errorMessage),
       );
     }
   }

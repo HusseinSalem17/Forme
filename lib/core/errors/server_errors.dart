@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 
-class DioErrorHandler {
+class ServerErrorHandler {
   static String handleError(dynamic error, String defaultMessage) {
     if (error is DioException) {
       return _handleDioError(error, defaultMessage);
