@@ -46,10 +46,6 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         emit(RequestOTPFailure(errMsg: error.message));
       },
       (success) async {
-        // Save user type locally
-        await RegistrationDataLocal.saveUserType(
-          event.userType,
-        );
         emit(RequestOTPSuccess(
           email: event.email,
           password: event.password,
@@ -78,6 +74,9 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
           success.access,
           success.refresh,
         );
+        await RegistrationDataLocal.saveUserType(
+          event.userType!,
+        );
         emit(SignUpSuccess());
       },
     );
@@ -85,23 +84,28 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
   Future<void> loginEventCalled(
       LoginEvent event, Emitter<AuthState> emit) async {
-    if (event.isEmailValid() && event.isPasswordValid()) {
-      emit(AuthLoading());
-      try {
-        // Perform any additional login logic here if needed
+    emit(AuthLoading());
+    final result = await authRepo.loginAccount(
+      event.email,
+      event.password,
+      event.userType,
+    );
+    await result.fold(
+      (error) async {
+        emit(SignInFailure(errMsg: error.message));
+      },
+      (success) async {
+        print('SignInSuccess emitted');
+        await UserTokenLocal.saveTokens(
+          success.access,
+          success.refresh,
+        );
+        await RegistrationDataLocal.saveUserType(
+          event.userType,
+        );
+        print('i am saving data ');
         emit(SignInSuccess());
-      } catch (error) {
-        emit(SignInFailure(errMsg: 'An unexpected error occurred.'));
-      }
-    } else {
-      if (!event.isEmailValid()) {
-        emit(SignInFailure(errMsg: 'Please enter a valid email.'));
-      } else if (!event.isPasswordValid()) {
-        emit(SignInFailure(
-          errMsg:
-              'Password must contain at least one uppercase letter, one lowercase letter, one digit, and one special character.',
-        ));
-      }
-    }
+      },
+    );
   }
 }

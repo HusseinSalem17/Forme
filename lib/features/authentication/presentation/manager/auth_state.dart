@@ -16,9 +16,7 @@ final class SignInFailure extends AuthState {
   SignInFailure({required this.errMsg});
 }
 
-final class SignUpSuccess extends AuthState {
-  SignUpSuccess();
-}
+final class SignUpSuccess extends AuthState {}
 
 final class SignUpFailure extends AuthState {
   final String errMsg;

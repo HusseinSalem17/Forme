@@ -12,6 +12,7 @@ import 'package:forme_app/features/authentication/presentation/views/widgets/cus
 import 'package:forme_app/features/authentication/presentation/views/widgets/icon_widget.dart';
 import 'package:forme_app/features/authentication/presentation/views/widgets/slider_type_choice.dart';
 import '../../../../core/transitions/page_slide.dart';
+import '../../../../core/utils/show_snackbar.dart';
 import '../../../../core/utils/text_styles.dart';
 import '../../../../core/widgets/app_fields/custom_password_form_field.dart';
 import '../../../../core/widgets/app_fields/custom_text_form_field.dart';
@@ -70,6 +71,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
               Navigator.of(context).pushReplacementNamed(
                 VerifyCodeScreen.routeName,
               );
+            } else if (state is RequestOTPFailure) {
+              customSnackBar(context, state.errMsg);
             }
           },
           builder: (context, state) {

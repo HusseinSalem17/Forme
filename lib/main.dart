@@ -38,6 +38,7 @@ void main() async {
 
   if (accessToken == null || refreshToken == null || initialUserType == null) {
     // Tokens are null, navigate to the authentication flow
+    print('access of refresh of user type is null');
 
     runApp(const MyApp(initialUserType: null));
   } else {
@@ -97,6 +98,7 @@ class MyApp extends StatelessWidget {
           //onGenerateRoute: (settings) => generateRoute(settings, context),
           onGenerateRoute: (settings) {
             if (initialUserType == null) {
+              print('you are null');
               return AuthRoutes().generateRoute(settings);
             } else {
               return AppRouter(

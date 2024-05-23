@@ -1,9 +1,10 @@
 import 'package:dio/dio.dart';
 import 'package:forme_app/core/user_type.dart';
-import 'package:forme_app/features/authentication/data/models/requset_otp_model.dart';
-import 'package:forme_app/features/authentication/data/models/token_response_model.dart';
-import 'package:forme_app/features/authentication/data/models/verify_otp_success.dart';
-import 'package:forme_app/features/authentication/data/models/response_otp_success.dart';
+import 'package:forme_app/features/authentication/data/models/request_register.dart';
+import 'package:forme_app/features/authentication/data/models/requset_otp.dart';
+import 'package:forme_app/features/authentication/data/models/token_response_success.dart';
+import 'package:forme_app/features/authentication/data/models/verify_otp_response_success.dart';
+import 'package:forme_app/features/authentication/data/models/otp_response_success.dart';
 import 'package:forme_app/core/secrets/secrets_api_keys.dart';
 import '../../../../core/errors/exceptions.dart';
 import '../../../../core/errors/server_errors.dart';
@@ -20,7 +21,7 @@ class AuthServices {
     dio = Dio(options);
   }
 
-  Future<ResponseOtpSuccessful> requestOTP({
+  Future<OtpResponseSuccessful> requestOTP({
     required String email,
     required UserType userType,
   }) async {
@@ -40,14 +41,15 @@ class AuthServices {
         data: request.toJson(),
       );
 
-      return ResponseOtpSuccessful.fromJson(response.data);
-    } on DioException catch (error) {
+      return OtpResponseSuccessful.fromJson(response.data);
+    } catch (error) {
       throw CustomError(
-          DioErrorHandler.handleDioError(error, 'Not valid email'));
+        DioErrorHandler.handleError(error, 'Error occurred while requesting OTP'),
+      );
     }
   }
 
-  Future<VerifyOtpSuccess> verifyOtp({
+  Future<VerifyOtpResponseSuccess> verifyOtp({
     required String otp,
     required String email,
   }) async {
@@ -64,39 +66,86 @@ class AuthServices {
           'otp': otp,
         },
       );
-      return VerifyOtpSuccess.fromJson(response.data);
-    } on DioException catch (error) {
-      print('dio errorrrrrrr');
+      return VerifyOtpResponseSuccess.fromJson(response.data);
+    } catch (error) {
       throw CustomError(
-          DioErrorHandler.handleDioError(error, 'Failed to verify OTP'));
+        DioErrorHandler.handleError(error, 'Error occurred while verifying OTP'),
+      );
     }
   }
 
-  Future<TokenResponse> signUpAccount({
+  Future<TokenResponseSuccess> signUpAccount({
     required String password,
     required String email,
     required UserType userType,
   }) async {
     try {
+      return await _authenticate(
+        endpoint: 'register',
+        password: password,
+        email: email,
+        userType: userType,
+        errorMessage: 'Cannot create account',
+      );
+    } catch (error) {
+      throw CustomError(
+        DioErrorHandler.handleError(error, 'Error occurred while signing up'),
+      );
+    }
+  }
+
+  Future<TokenResponseSuccess> loginAccount({
+    required String password,
+    required String email,
+    required UserType userType,
+  }) async {
+    try {
+      return await _authenticate(
+        endpoint: 'login',
+        password: password,
+        email: email,
+        userType: userType,
+        errorMessage: 'Make sure the password and email are correct',
+      );
+    } catch (error) {
+      throw CustomError(
+        DioErrorHandler.handleError(error, 'Error occurred while logging in'),
+      );
+    }
+  }
+
+  Future<TokenResponseSuccess> _authenticate({
+    required String endpoint,
+    required String password,
+    required String email,
+    required UserType userType,
+    required String errorMessage,
+  }) async {
+    try {
+      RequestRegister requestRegister = RequestRegister(
+        email: email,
+        password: password,
+        userType: userType,
+      );
+
+      print('Authenticating with endpoint: $endpoint');
+      print('Request Data: ${requestRegister.toJson()}');
+
       Response response = await dio.post(
-        '${SecretsApiKeys.baseUrl}/auth/register/',
+        '${SecretsApiKeys.baseUrl}/auth/$endpoint/',
         options: Options(
           headers: {
-            'Content-Type': 'application/json', // Set the content type header
+            'Content-Type': 'application/json',
           },
         ),
-        data: {
-          'email': email,
-          'password': password,
-          'user_type': 'trainee',
-        },
+        data: requestRegister.toJson(),
       );
-      return TokenResponse.fromJson(response.data);
-    } on DioException catch (error) {
-      print('dio error\'s');
-      print(error.toString());
+
+      print('Response Data: ${response.data}');
+      return TokenResponseSuccess.fromJson(response.data);
+    } catch (error) {
       throw CustomError(
-        DioErrorHandler.handleDioError(error, 'can not create account'),
+        DioErrorHandler.handleError(error, errorMessage),
       );
     }
   }

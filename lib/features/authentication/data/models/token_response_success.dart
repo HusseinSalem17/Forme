@@ -1,14 +1,14 @@
-class TokenResponse {
+class TokenResponseSuccess {
   final String access;
   final String refresh;
 
-  TokenResponse({
+  TokenResponseSuccess({
     required this.access,
     required this.refresh,
   });
 
-  factory TokenResponse.fromJson(Map<String, dynamic> json) {
-    return TokenResponse(
+  factory TokenResponseSuccess.fromJson(Map<String, dynamic> json) {
+    return TokenResponseSuccess(
       access: json['access'],
       refresh: json['refresh'],
     );

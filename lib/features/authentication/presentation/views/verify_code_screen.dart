@@ -49,7 +49,7 @@ class _VerifyCodeScreenState extends State<VerifyCodeScreen> {
         child: BlocConsumer<AuthBloc, AuthState>(
           listener: (context, state) {
             if (state is VerifyOTPFailure) {
-              showSnackBar(context, state.errMsg);
+              customSnackBar(context, state.errMsg);
             }
             if (state is SignUpSuccess) {
               Navigator.pushReplacementNamed(

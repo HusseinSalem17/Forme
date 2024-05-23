@@ -1,7 +1,15 @@
 import 'package:dio/dio.dart';
 
 class DioErrorHandler {
-  static String handleDioError(DioException error, String bad) {
+  static String handleError(dynamic error, String defaultMessage) {
+    if (error is DioException) {
+      return _handleDioError(error, defaultMessage);
+    } else {
+      return defaultMessage;
+    }
+  }
+
+  static String _handleDioError(DioException error, String bad) {
     switch (error.type) {
       case DioExceptionType.connectionTimeout:
         return "Connection timeout with the server";

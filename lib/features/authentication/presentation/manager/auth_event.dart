@@ -6,10 +6,12 @@ sealed class AuthEvent {}
 final class LoginEvent extends AuthEvent {
   final String email;
   final String password;
+  final UserType userType;
 
   LoginEvent({
     required this.email,
     required this.password,
+    required this.userType,
   });
 
   bool isEmailValid() {
