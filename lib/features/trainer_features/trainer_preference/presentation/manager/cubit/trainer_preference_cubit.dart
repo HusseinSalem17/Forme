@@ -25,40 +25,31 @@ class TrainerPreferenceCubit extends Cubit<TrainerPreferenceState> {
 
   putTrainerPreference() async {
     try {
-      emit(TrainerPreferenceState());
-      await api.put(
-        '/auth/update_preference_trainer/',
-        data: {
-          "bio": bioController.text,
-          "exp_injuries": expInjuries.getOption() == 1
-              ? true
-              : (expInjuries.getOption() == 2 ? false : null),
-          "physical_disabilities": physicalDisabilities.getOption() == 1
-              ? true
-              : (physicalDisabilities.getOption() == 2 ? false : null),
-          "languages": languages,
-          "id_card":
-              "data:${idImage!.path.split('/').last};base64,${await Utils().convertXFileToBase64(idImage!)}",
-          "facebook_url": "https://www.facebook.com/",
-          "instagram_url": "https://www.facebook.com/",
-          "youtube_url": "https://www.facebook.com/"
-        },
-      );
-    } catch (e) {
-      debugPrint('$e catch error when put trainer preferences data');
-    }
-  }
-
-  putTrainerPreferenceDocuments() async {
-    try {
-      emit(TrainerPreferenceState());
+      emit(TrainerPreferenceLoading());
       await api.put('/auth/update_preference_trainer/',
           data: {
-            "documents": Utils().convertToMultiperFile(files),
+            if (bioController.text.isNotEmpty) 'bio': bioController.text,
+            if (expInjuries.getOption() != 0)
+              'exp_injuries': expInjuries.getOption() == 1 ? true : false,
+            if (physicalDisabilities.getOption() != 0)
+              'physical_disabilities':
+                  physicalDisabilities.getOption() == 1 ? true : false,
+            if (languages.isNotEmpty) 'languages': languages,
+            if (idImage != null)
+              'id_card':
+                  "data:${idImage!.path.split('/').last};base64,${await Utils().convertXFileToBase64(idImage!)}",
+            if (files.isNotEmpty)
+              'documents': Utils().convertToMultiperFile(files),
+            if (facebookUrl.text.isNotEmpty) 'facebook_url': facebookUrl.text,
+            if (instagramUrl.text.isNotEmpty)
+              'instagram_url': instagramUrl.text,
+            if (youtubeUrl.text.isNotEmpty) 'youtube_url': youtubeUrl.text,
           },
-          isFromData: true);
+          isFromData: files.isNotEmpty ? true : false);
+      emit(TrainerPreferenceSuccess());
     } catch (e) {
-      debugPrint('$e catch error when put trainer preferences documents');
+      emit(TrainerPreferenceFailure(errorMessage: e.toString()));
+      debugPrint('$e catch error when put trainer preferences data');
     }
   }
 }

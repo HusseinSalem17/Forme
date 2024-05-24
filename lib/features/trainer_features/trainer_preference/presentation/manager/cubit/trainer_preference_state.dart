@@ -7,3 +7,13 @@ class TrainerPreferenceState {
 }
 
 final class TrainerPreferenceInitial extends TrainerPreferenceState {}
+
+final class TrainerPreferenceLoading extends TrainerPreferenceState {}
+
+final class TrainerPreferenceSuccess extends TrainerPreferenceState {}
+
+final class TrainerPreferenceFailure extends TrainerPreferenceState {
+  final String errorMessage;
+
+  TrainerPreferenceFailure({super.page, required this.errorMessage});
+}

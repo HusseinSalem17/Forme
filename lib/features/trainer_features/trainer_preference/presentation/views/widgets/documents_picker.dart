@@ -37,14 +37,14 @@ class _DocumentsPickerState extends State<DocumentsPicker> {
 
   Widget _buildUploadButton() {
     return TextButton(
-      onPressed: pickFiles,
+      onPressed: _pickFiles,
       child: DottedBorder(
         borderType: BorderType.RRect,
         radius: Radius.circular(6.r),
         color: AppColors.n40Gray,
         child: Center(
           child: SizedBox(
-            height: 59.h,
+            height: 48.h,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -76,7 +76,7 @@ class _DocumentsPickerState extends State<DocumentsPicker> {
     );
   }
 
-  Future pickFiles() async {
+  Future _pickFiles() async {
     List<File> files = [];
     FilePickerResult? result = await FilePicker.platform.pickFiles(
       type: FileType.custom,
@@ -101,6 +101,7 @@ class _DocumentsPickerState extends State<DocumentsPicker> {
         files.addAll(result.paths.map((path) => File(path!)).toList());
       });
       context.read<TrainerPreferenceCubit>().files.addAll(files);
+      
     }
   }
 

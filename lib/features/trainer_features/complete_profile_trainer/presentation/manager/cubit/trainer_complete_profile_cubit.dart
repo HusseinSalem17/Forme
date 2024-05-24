@@ -10,24 +10,25 @@ class TrainerCompleteProfileCubit extends Cubit<TrainerCompleteProfileState> {
   TrainerCompleteProfileCubit(this.api) : super(TrainerCompleteProfileState());
 
   String name = "";
-  String dateOfBirth = "";
+  String? dateOfBirth;
   String country = "";
-  String phone = "";
+  String? phone;
   String gender = "";
   String sportField = "";
   XFile? image;
   patchTrainerCompleteProfile() async {
     try {
       emit(TrainerCompleteProfileLoading());
-
       await api.patch('/auth/complete_profile_trainer/',
           data: {
             "user": {
               "username": name,
-              "date_of_birth": dateOfBirth,
+              if (dateOfBirth != null) "date_of_birth": dateOfBirth,
               "country": country,
-              "phone_number": phone,
-              "profile_picture": "data:${image!.path.split('/').last};base64,${await Utils().convertXFileToBase64(image!)}",
+              if (phone != null) "phone_number": phone,
+              if (image != null)
+                "profile_picture":
+                    "data:${image!.path.split('/').last};base64,${await Utils().convertXFileToBase64(image!)}",
               "gender": gender
             },
             "sport_field": sportField

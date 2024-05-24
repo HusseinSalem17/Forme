@@ -13,6 +13,7 @@ import 'package:forme_app/features/trainer_features/trainee_profile/presentation
 import 'package:forme_app/features/trainee_features/home/presentation/manager/bloc/home_bloc.dart';
 import 'package:forme_app/features/trainee_features/profile/presentation/manager/cubit/my_profile_cubit.dart';
 import 'package:forme_app/features/trainer_features/trainer_preference/presentation/manager/cubit/trainer_preference_cubit.dart';
+import 'package:forme_app/features/trainer_features/trainer_preference/presentation/views/trainer_preference_screen.dart';
 import 'package:forme_app/onboarding_screens/data/bloc/onboarding_blocs.dart';
 import 'package:flutter/services.dart';
 import 'app_routing/auth_routes.dart';
@@ -86,18 +87,18 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           theme: Themes.customLightTheme,
 
-          onGenerateRoute: (settings) {
-            if (initialUserType == null) {
-              return AuthRoutes().generateRoute(settings);
-            } else {
-              return AppRouter(
-                userType: initialUserType!,
-                context: context,
-              ).generateRoute(settings);
-            }
-          },
+          // onGenerateRoute: (settings) {
+          //   if (initialUserType == null) {
+          //     return AuthRoutes().generateRoute(settings);
+          //   } else {
+          //     return AppRouter(
+          //       userType: initialUserType!,
+          //       context: context,
+          //     ).generateRoute(settings);
+          //   }
+          // },
 
-          //home: const TrainerPreferenceScreen(),
+          home: const TrainerPreferenceScreen(),
         ),
       ),
     );

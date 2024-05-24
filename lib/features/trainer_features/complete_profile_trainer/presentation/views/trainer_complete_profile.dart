@@ -7,10 +7,8 @@ class TrainerCompleteProfile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SafeArea(
-      child: Scaffold(
-        body: TrainerCompleteProfileBody(),
-      ),
+    return const Scaffold(
+      body: TrainerCompleteProfileBody(),
     );
   }
 }
