@@ -83,8 +83,8 @@ class _LottieAnimation extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Lottie.asset(
-      'assets/image/gif/done.json',
+    return Lottie.network(
+      'https://forme-app-7pffc.ondigitalocean.app/media/done.json',
       height: 220.h,
       width: 220.w,
       controller: controller,
