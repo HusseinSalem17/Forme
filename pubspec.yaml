@@ -28,6 +28,7 @@ dependencies:
     sdk: flutter
   flutter_bloc: ^8.1.3
   flutter_credit_card: ^4.0.1
+  flutter_holo_date_picker: ^1.1.3
   flutter_screenutil: ^5.9.0
   flutter_svg: ^2.0.9
   fluttertoast: ^8.2.4
@@ -71,7 +72,6 @@ flutter:
     - assets/image/onboarding/
     - assets/image/profile/
     - assets/image/temp/
-    - assets/image/gif/
     - assets/image/auth_icons/
     - assets/image/home_screen_icons/
 

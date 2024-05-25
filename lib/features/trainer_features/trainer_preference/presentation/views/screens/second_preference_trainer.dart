@@ -91,7 +91,7 @@ class _SecondPreferenceTrainerState extends State<SecondPreferenceTrainer> {
                     ],
                   ),
                 ),
-                SizedBox(height: 24.h),
+                SizedBox(height: 10.h),
                 const DocumentsPicker(),
                 Container(
                   height: MediaQuery.sizeOf(context).height / 6.h,

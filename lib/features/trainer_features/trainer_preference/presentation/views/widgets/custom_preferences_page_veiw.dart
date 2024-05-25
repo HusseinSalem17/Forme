@@ -17,6 +17,7 @@ class CustomPreferencesPageView extends StatelessWidget {
     return PageView(
       controller: pageViewController,
       onPageChanged: (int currentIndex) {
+        
         context.read<TrainerPreferenceCubit>().page = currentIndex;
       },
       children: const [FirstPreferenceTrainer(), SecondPreferenceTrainer()],

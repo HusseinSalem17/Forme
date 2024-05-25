@@ -171,7 +171,7 @@ class _PickLanguagesState extends State<PickLanguages> {
           _getSelectedLanguagesText(),
           style: TextStyle(
             color: AppColors.n400color,
-            fontSize: 12.sp,
+            fontSize: 9.sp,
           ),
         ),
       ],

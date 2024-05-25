@@ -42,6 +42,7 @@ class _DocumentsPickerState extends State<DocumentsPicker> {
         borderType: BorderType.RRect,
         radius: Radius.circular(6.r),
         color: AppColors.n40Gray,
+        padding: const EdgeInsets.all(0),
         child: Center(
           child: SizedBox(
             height: 48.h,

@@ -8,7 +8,7 @@ import 'package:forme_app/core/utils/text_styles.dart';
 import 'package:forme_app/core/widgets/custom_app_button.dart';
 import 'package:forme_app/core/widgets/flutter_toast.dart';
 import 'package:forme_app/features/trainer_features/complete_profile_trainer/presentation/manager/cubit/trainer_complete_profile_cubit.dart';
-import 'package:forme_app/features/trainer_features/dashboard/presentation/views/dashboard_screen.dart';
+import 'package:forme_app/features/trainer_features/dashboard/presentation/views/home_view.dart';
 import '../../../../../../core/widgets/image_picker/profile_image_picker.dart';
 import 'trainer_body_fields.dart';
 
@@ -37,7 +37,7 @@ class _TrainerCompleteProfileBodyState
       listener: (context, state) {
         if (state is TrainerCompleteProfileSuccess) {
           Navigator.of(context)
-              .pushReplacement(PageSlideTransition(const DashboardScreen()));
+              .pushReplacement(PageSlideTransition(const TrainerHomeScreen()));
         } else if (state is TrainerCompleteProfileFailure) {
           showCustomSnackbar(
               context,
@@ -76,6 +76,7 @@ class _TrainerCompleteProfileBodyState
                 ),
               ),
               SizedBox(height: 16.0.h),
+              //! picker image
               ProfileImagePicker(
                 imageFile: context.read<TrainerCompleteProfileCubit>().image,
                 onImageSelected: (file) {
