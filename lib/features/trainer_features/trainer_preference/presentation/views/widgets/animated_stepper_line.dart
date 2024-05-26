@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
-import 'package:forme_app/features/trainer_features/trainer_preference/presentation/manager/trainer_preference_state.dart';
+import 'package:forme_app/features/trainer_features/trainer_preference/presentation/manager/cubit/trainer_preference_cubit.dart';
 
 class AnimatedStepperLine extends StatelessWidget {
-  final TrainerPreferenceState state;
-
   const AnimatedStepperLine({
     super.key,
-    required this.state,
   });
 
   @override
@@ -28,7 +26,7 @@ class AnimatedStepperLine extends StatelessWidget {
             color: AppColors.primaryColor,
             borderRadius: BorderRadius.circular(10),
           ),
-          width: (state.page + 1) * 110.w,
+          width: (context.read<TrainerPreferenceCubit>().page + 1) * 110.w,
           height: 4,
           duration: const Duration(milliseconds: 500),
         )

@@ -2,11 +2,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:forme_app/core/transitions/page_slide.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
 import 'package:forme_app/core/widgets/custom_app_button.dart';
 import 'package:forme_app/core/widgets/flutter_toast.dart';
 import 'package:forme_app/features/trainer_features/complete_profile_trainer/presentation/manager/cubit/trainer_complete_profile_cubit.dart';
+import 'package:forme_app/features/trainer_features/dashboard/presentation/views/home_view.dart';
 import '../../../../../../core/widgets/image_picker/profile_image_picker.dart';
 import 'trainer_body_fields.dart';
 
@@ -34,9 +36,14 @@ class _TrainerCompleteProfileBodyState
         TrainerCompleteProfileState>(
       listener: (context, state) {
         if (state is TrainerCompleteProfileSuccess) {
-          toastInfo(msg: 'success');
+          Navigator.of(context)
+              .pushReplacement(PageSlideTransition(const TrainerHomeScreen()));
         } else if (state is TrainerCompleteProfileFailure) {
-          toastInfo(msg: 'failuer#');
+          showCustomSnackbar(
+              context,
+              "Network problem. Please check your internet connection and try again.",
+              AppColors.w75Color,
+              1);
         }
       },
       builder: (context, state) {
@@ -69,6 +76,7 @@ class _TrainerCompleteProfileBodyState
                 ),
               ),
               SizedBox(height: 16.0.h),
+              //! picker image
               ProfileImagePicker(
                 imageFile: context.read<TrainerCompleteProfileCubit>().image,
                 onImageSelected: (file) {
@@ -114,7 +122,7 @@ class _TrainerCompleteProfileBodyState
                   if (_formKey.currentState!.validate()) {
                     context
                         .read<TrainerCompleteProfileCubit>()
-                        .postTrainerCompleteProfile();
+                        .patchTrainerCompleteProfile();
                   }
                 },
               ),

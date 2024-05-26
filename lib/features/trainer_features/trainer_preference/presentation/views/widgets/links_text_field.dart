@@ -68,11 +68,14 @@ class LinksTextFieldState extends State<LinksTextField> {
         ),
       ),
       onChanged: widget.onChanged,
-      validator: widget.validator ??
-          (value) {
-            validateEmail(value);
-            return null;
-          },
+      validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return '';
+                  } else if (!isValidURL(value)) {
+                    return 'Please enter a valid URL';
+                  }
+                  return null;
+                },
     );
   }
 }

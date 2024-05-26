@@ -26,6 +26,14 @@ bool passwordsMatch(String password, String confirmPassword) {
   return password == confirmPassword;
 }
 
+bool isValidURL(String url) {
+  final RegExp urlRegExp = RegExp(
+    r'^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$',
+    caseSensitive: false,
+  );
+  return urlRegExp.hasMatch(url);
+}
+
 String? validatePassword(String? value) {
   if (value == null || value.isEmpty) {
     return 'Password is required';

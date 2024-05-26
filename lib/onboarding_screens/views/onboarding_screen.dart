@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:forme_app/onboarding_screens/data/bloc/onboarding_blocs.dart';
 import 'package:forme_app/onboarding_screens/data/bloc/onboarding_states.dart';
 import 'package:forme_app/onboarding_screens/views/widgets/custom_pageview.dart';

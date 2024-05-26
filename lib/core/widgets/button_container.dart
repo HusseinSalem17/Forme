@@ -6,13 +6,14 @@ import 'package:forme_app/core/widgets/custom_app_button.dart';
 
 class ButtonContainer extends StatelessWidget {
   final String buttonTitle;
-  final bool havePrice;
+  final bool havePrice,isLoad;
   final Color color;
   final void Function()? onTap;
   const ButtonContainer(
       {super.key,
       required this.buttonTitle,
       this.havePrice = false,
+      this.isLoad = false,
       this.onTap,
       this.color = AppColors.primaryColor});
 
@@ -59,6 +60,7 @@ class ButtonContainer extends StatelessWidget {
                   ],
                 ),
                 CustomAppButton(
+                  isLoad: isLoad,
                   title: buttonTitle,
                   onTap: onTap,
                   widthDivider: 1.2.h,
@@ -66,6 +68,7 @@ class ButtonContainer extends StatelessWidget {
               ],
             )
           : CustomAppButton(
+            isLoad: isLoad,
               title: buttonTitle,
               onTap: onTap,
               color: color,

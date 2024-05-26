@@ -35,7 +35,7 @@ class _TraineeCompleteProfileBodyState
         TraineeCompleteProfileState>(
       listener: (context, state) {
         if (state is TraineeCompleteProfileSuccess) {
-          toastInfo(msg: 'success');
+          toastInfo(msg: 'send and get response');
         } else if (state is TraineeCompleteProfileFailure) {
           toastInfo(msg: 'failuer#');
         }
