@@ -56,11 +56,14 @@ class _CustomAppButtonState extends State<CustomAppButton> {
           child: widget.isLoad
               ? Padding(
                   padding: EdgeInsets.symmetric(
-                      horizontal: MediaQuery.sizeOf(context).width / 2.7),
-                  child: const LoadingIndicator(
-                    indicatorType: Indicator.circleStrokeSpin,
-                    colors: [AppColors.background],
-                    strokeWidth: 3,
+                      horizontal: MediaQuery.sizeOf(context).width / 2.85),
+                  child: const AspectRatio(
+                    aspectRatio: 1,
+                    child: LoadingIndicator(
+                      indicatorType: Indicator.circleStrokeSpin,
+                      colors: [AppColors.background],
+                      strokeWidth: 3,
+                    ),
                   ),
                 )
               : Center(

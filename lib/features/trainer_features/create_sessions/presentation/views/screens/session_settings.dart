@@ -105,11 +105,11 @@ class _SessionSettingsScreenState extends State<SessionSettingsScreen> {
                     ),
                   ),
                   SizedBox(height: 16.h),
-                  const TwoChoices(
-                      text1: 'Male',
-                      text2: 'Female',
-                      isIcon: true,
-                      isMultiChoice: true),
+                  // const TwoChoices(
+                  //     option1Text: 'Male',
+                  //     option2Text: 'Female',
+                  //     showIcon: true,
+                  //     allowMultiChoice: true),
                   SizedBox(height: 16.h),
                   const Divider(color: AppColors.n20Gray, thickness: 2),
                   SizedBox(height: 24.h),

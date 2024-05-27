@@ -44,7 +44,7 @@ abstract class TextStyles {
 //hint style
   static TextStyle hintStyle = TextStyle(
     fontFamily: 'RobotoRegular',
-    fontSize: 14.sp,
+    fontSize: 12.sp,
     color: AppColors.n70Gray,
   );
 

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
+import 'package:forme_app/features/trainer_features/trainer_preference/presentation/manager/cubit/trainer_preference_cubit.dart';
 
 class LanguagesMultiSelect extends StatefulWidget {
   final List<String> items;
@@ -32,6 +34,7 @@ class _LanguagesMultiSelectState extends State<LanguagesMultiSelect> {
 
 // this function is called when the Submit button is tapped
   void _submit() {
+    context.read<TrainerPreferenceCubit>().languages = _selectedItems;
     Navigator.pop(context, _selectedItems);
   }
 

@@ -4,25 +4,42 @@ import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
 
 class TwoChoices extends StatefulWidget {
-  final String text1;
-  final String text2;
-  final bool isIcon;
-  final bool isMultiChoice;
-  const TwoChoices(
-      {super.key,
-      required this.text1,
-      required this.text2,
-      this.isIcon = false,
-      this.isMultiChoice = false});
+  final String option1Text;
+  final String option2Text;
+  final bool showIcon;
+  final bool allowMultiChoice;
+  final TwoChoicesController controller;
+
+  const TwoChoices({
+    super.key,
+    required this.option1Text,
+    required this.option2Text,
+    this.showIcon = false,
+    this.allowMultiChoice = false,
+    required this.controller,
+  });
 
   @override
   State<TwoChoices> createState() => _TwoChoicesState();
 }
 
 class _TwoChoicesState extends State<TwoChoices> {
-  int selectedButton = 0;
-  int multiChoice1 = 0;
-  int multiChoice2 = 0;
+  @override
+  void initState() {
+    super.initState();
+    widget.controller.addListener(_updateState);
+  }
+
+  @override
+  void dispose() {
+    widget.controller.removeListener(_updateState);
+    super.dispose();
+  }
+
+  void _updateState() {
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -31,65 +48,61 @@ class _TwoChoicesState extends State<TwoChoices> {
           child: Container(
             height: 40,
             decoration: BoxDecoration(
-              color: widget.isMultiChoice
-                  ? multiChoice1 == 1
+              color: widget.allowMultiChoice
+                  ? widget.controller.multiChoiceOption1 == 1
                       ? AppColors.p50PrimaryColor
                       : AppColors.background
-                  : selectedButton == 1
+                  : widget.controller.selectedOption == 1
                       ? AppColors.p50PrimaryColor
                       : AppColors.background,
               borderRadius: BorderRadius.circular(10),
               border: Border.all(
-                color: widget.isMultiChoice
-                    ? multiChoice1 == 1
+                color: widget.allowMultiChoice
+                    ? widget.controller.multiChoiceOption1 == 1
                         ? AppColors.primaryColor
                         : AppColors.n200Gray
-                    : selectedButton == 1
+                    : widget.controller.selectedOption == 1
                         ? AppColors.primaryColor
                         : AppColors.n200Gray,
               ),
             ),
             child: TextButton(
               onLongPress: () {
-                setState(() {
-                  if (widget.isMultiChoice) {
-                    multiChoice1 = 0;
-                  }
-                });
+                if (widget.allowMultiChoice) {
+                  widget.controller.resetMultiChoiceOption1();
+                }
               },
               onPressed: () {
-                setState(() {
-                  selectedButton = 1;
-                  if (widget.isMultiChoice) {
-                    multiChoice1 = 1;
-                  }
-                });
+                widget.controller.selectOption(1);
+                if (widget.allowMultiChoice) {
+                  widget.controller.selectMultiChoiceOption1(1);
+                }
               },
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  widget.isIcon
+                  widget.showIcon
                       ? Icon(
                           Icons.male,
-                          color: widget.isMultiChoice
-                              ? multiChoice1 == 1
+                          color: widget.allowMultiChoice
+                              ? widget.controller.multiChoiceOption1 == 1
                                   ? AppColors.primaryColor
                                   : AppColors.n200Gray
-                              : selectedButton == 1
+                              : widget.controller.selectedOption == 1
                                   ? AppColors.primaryColor
                                   : AppColors.n200Gray,
                           size: 20.sp,
                         )
                       : Container(),
                   Text(
-                    widget.text1,
+                    widget.option1Text,
                     style: TextStyles.textStyleSemiBold.copyWith(
                       fontSize: 14.sp,
-                      color: widget.isMultiChoice
-                          ? multiChoice1 == 1
+                      color: widget.allowMultiChoice
+                          ? widget.controller.multiChoiceOption1 == 1
                               ? AppColors.primaryColor
                               : AppColors.n200Gray
-                          : selectedButton == 1
+                          : widget.controller.selectedOption == 1
                               ? AppColors.primaryColor
                               : AppColors.n200Gray,
                     ),
@@ -104,19 +117,19 @@ class _TwoChoicesState extends State<TwoChoices> {
           child: Container(
             height: 40,
             decoration: BoxDecoration(
-              color: widget.isMultiChoice
-                  ? multiChoice2 == 1
+              color: widget.allowMultiChoice
+                  ? widget.controller.multiChoiceOption2 == 1
                       ? AppColors.p50PrimaryColor
                       : AppColors.background
-                  : selectedButton == 2
+                  : widget.controller.selectedOption == 2
                       ? AppColors.p50PrimaryColor
                       : AppColors.background,
               border: Border.all(
-                color: widget.isMultiChoice
-                    ? multiChoice2 == 1
+                color: widget.allowMultiChoice
+                    ? widget.controller.multiChoiceOption2 == 1
                         ? AppColors.primaryColor
                         : AppColors.n200Gray
-                    : selectedButton == 2
+                    : widget.controller.selectedOption == 2
                         ? AppColors.primaryColor
                         : AppColors.n200Gray,
               ),
@@ -124,45 +137,41 @@ class _TwoChoicesState extends State<TwoChoices> {
             ),
             child: TextButton(
               onLongPress: () {
-                setState(() {
-                  if (widget.isMultiChoice) {
-                    multiChoice2 = 0;
-                  }
-                });
+                if (widget.allowMultiChoice) {
+                  widget.controller.resetMultiChoiceOption2();
+                }
               },
               onPressed: () {
-                setState(() {
-                  selectedButton = 2;
-                  if (widget.isMultiChoice) {
-                    multiChoice2 = 1;
-                  }
-                });
+                widget.controller.selectOption(2);
+                if (widget.allowMultiChoice) {
+                  widget.controller.selectMultiChoiceOption2(1);
+                }
               },
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  widget.isIcon
+                  widget.showIcon
                       ? Icon(
                           Icons.female,
-                          color: widget.isMultiChoice
-                              ? multiChoice2 == 1
+                          color: widget.allowMultiChoice
+                              ? widget.controller.multiChoiceOption2 == 1
                                   ? AppColors.primaryColor
                                   : AppColors.n200Gray
-                              : selectedButton == 2
+                              : widget.controller.selectedOption == 2
                                   ? AppColors.primaryColor
                                   : AppColors.n200Gray,
                           size: 20.sp,
                         )
                       : Container(),
                   Text(
-                    widget.text2,
+                    widget.option2Text,
                     style: TextStyles.textStyleSemiBold.copyWith(
                       fontSize: 14.sp,
-                      color: widget.isMultiChoice
-                          ? multiChoice2 == 1
+                      color: widget.allowMultiChoice
+                          ? widget.controller.multiChoiceOption2 == 1
                               ? AppColors.primaryColor
                               : AppColors.n200Gray
-                          : selectedButton == 2
+                          : widget.controller.selectedOption == 2
                               ? AppColors.primaryColor
                               : AppColors.n200Gray,
                     ),
@@ -174,5 +183,43 @@ class _TwoChoicesState extends State<TwoChoices> {
         ),
       ],
     );
+  }
+}
+
+class TwoChoicesController extends ChangeNotifier {
+  int _selectedOption = 0;
+  int _multiChoiceOption1 = 1;
+  int _multiChoiceOption2 = 2;
+
+  int get selectedOption => _selectedOption;
+  int get multiChoiceOption1 => _multiChoiceOption1;
+  int get multiChoiceOption2 => _multiChoiceOption2;
+
+  void selectOption(int option) {
+    _selectedOption = option;
+    notifyListeners();
+  }
+
+  int getOption() =>_selectedOption;
+  
+
+  void selectMultiChoiceOption1(int value) {
+    _multiChoiceOption1 = value;
+    notifyListeners();
+  }
+
+  void selectMultiChoiceOption2(int value) {
+    _multiChoiceOption2 = value;
+    notifyListeners();
+  }
+
+  void resetMultiChoiceOption1() {
+    _multiChoiceOption1 = 0;
+    notifyListeners();
+  }
+
+  void resetMultiChoiceOption2() {
+    _multiChoiceOption2 = 0;
+    notifyListeners();
   }
 }

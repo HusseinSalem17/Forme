@@ -1,15 +1,23 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/styles.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
 
 class TextAreaField extends StatelessWidget {
-  const TextAreaField({super.key, required this.hintText});
+  const TextAreaField({
+    Key? key,
+    required this.hintText,
+    this.controller,
+  }) : super(key: key);
   final String hintText;
+  final TextEditingController? controller;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: controller,
       maxLines: 6,
       autovalidateMode: AutovalidateMode.onUserInteraction,
       cursorColor: AppColors.primaryColor,
@@ -26,6 +34,7 @@ class TextAreaField extends StatelessWidget {
             left: 0.w,
             top: 8.h,
             bottom: 8.h,
+            right: 8.h
           ),
           prefix: Padding(
             padding: EdgeInsets.only(left: 16.w),
