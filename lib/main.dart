@@ -19,6 +19,7 @@ import 'core/user_type.dart';
 import 'core/utils/functions/service_locator.dart';
 import 'core/utils/scroll_behavior.dart';
 
+import 'features/trainee_features/preferences/presentation/views/preferences_screen.dart';
 import 'local_storage_data/auth_local/tokens.dart';
 import 'local_storage_data/auth_local/user_type.dart';
 
@@ -93,19 +94,19 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           theme: Themes.customLightTheme,
           //onGenerateRoute: (settings) => generateRoute(settings, context),
-          onGenerateRoute: (settings) {
-            if (initialUserType == null) {
-              print('you are null');
-              return AuthRoutes().generateRoute(settings);
-            } else {
-              return AppRouter(
-                userType: initialUserType!,
-                context: context,
-              ).generateRoute(settings);
-            }
-          },
+          // onGenerateRoute: (settings) {
+          //   if (initialUserType == null) {
+          //     print('you are null');
+          //     return AuthRoutes().generateRoute(settings);
+          //   } else {
+          //     return AppRouter(
+          //       userType: initialUserType!,
+          //       context: context,
+          //     ).generateRoute(settings);
+          //   }
+          // },
 
-          //home: SignUpScreen(),
+          home: PreferencesScreen(),
         ),
       ),
     );
