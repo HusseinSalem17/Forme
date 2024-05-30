@@ -56,23 +56,48 @@ final class SignUpEvent extends AuthEvent {
   }
 }
 
-final class RequestOTPEvent extends AuthEvent {
+final class RequestOTPForSignUpEvent extends AuthEvent {
   final String email;
   final UserType userType;
   final String password;
 
-  RequestOTPEvent({
+  RequestOTPForSignUpEvent({
     required this.email,
     required this.userType,
     required this.password,
   });
 }
 
-final class VerifyOTPEvent extends AuthEvent {
+final class VerifyOTPForSignUpEvent extends AuthEvent {
   final String otp;
   final String email;
-  VerifyOTPEvent({
+  VerifyOTPForSignUpEvent({
     required this.otp,
     required this.email,
+  });
+}
+
+final class RequestOTPForForgetPasswordEvent extends AuthEvent {
+  final String email;
+  RequestOTPForForgetPasswordEvent({
+    required this.email,
+  });
+}
+
+final class VerifyOTPForForgetPasswordEvent extends AuthEvent {
+  final String otp;
+  final String email;
+  VerifyOTPForForgetPasswordEvent({
+    required this.otp,
+    required this.email,
+  });
+}
+
+final class SetNewPasswordEvent extends AuthEvent {
+  final String email;
+  final String password;
+  SetNewPasswordEvent({
+    required this.email,
+    required this.password,
   });
 }

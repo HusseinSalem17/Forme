@@ -67,11 +67,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
         padding: const EdgeInsets.symmetric(horizontal: 24),
         child: BlocConsumer<AuthBloc, AuthState>(
           listener: (context, state) {
-            if (state is RequestOTPSuccess) {
+            if (state is RequestOTPSuccessSignUp) {
               Navigator.of(context).pushReplacementNamed(
                 VerifyCodeScreen.routeName,
               );
-            } else if (state is RequestOTPFailure) {
+            } else if (state is RequestOTPFailureSignUp) {
               customSnackBar(context, state.errMsg);
             }
           },
@@ -197,7 +197,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           final email = emailController.text;
                           final password1 = password1Controller.text;
                           context.read<AuthBloc>().add(
-                                RequestOTPEvent(
+                                RequestOTPForSignUpEvent(
                                   email: email,
                                   userType: selectedUserType,
                                   password: password1,

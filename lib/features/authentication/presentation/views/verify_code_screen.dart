@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:forme_app/core/user_type.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/show_snackbar.dart';
+import 'package:forme_app/features/Authentication/presentation/views/new_password_screen.dart';
 import 'package:forme_app/features/Authentication/presentation/views/widgets/custom_auth_button.dart';
 import 'package:forme_app/features/Authentication/presentation/views/widgets/custom_pin_code.dart';
 import 'package:forme_app/features/trainee_features/preferences/presentation/views/preferences_screen.dart';
@@ -48,7 +49,7 @@ class _VerifyCodeScreenState extends State<VerifyCodeScreen> {
         padding: const EdgeInsets.symmetric(horizontal: 24),
         child: BlocConsumer<AuthBloc, AuthState>(
           listener: (context, state) {
-            if (state is VerifyOTPFailure) {
+            if (state is VerifyOTPFailureSignUp) {
               customSnackBar(context, state.errMsg);
             }
             if (state is SignUpSuccess) {
@@ -57,7 +58,7 @@ class _VerifyCodeScreenState extends State<VerifyCodeScreen> {
                 PreferencesScreen.routeName,
               );
             }
-            if (state is VerifyOTPSuccess) {
+            if (state is VerifyOTPSuccessSignUp) {
               print('VerifyOTPSuccess: Adding SignUpEvent');
               context.read<AuthBloc>().add(
                     SignUpEvent(
@@ -67,12 +68,19 @@ class _VerifyCodeScreenState extends State<VerifyCodeScreen> {
                     ),
                   );
             }
+            if (state is VerifyOTPForgetPasswordSuccess){
+              print('VerifyOTPSuccess: for forget password i will take you to enter new password');
+              Navigator.pushReplacementNamed(context, NewPasswordScreen.routeName);
+            }
           },
           builder: (context, state) {
-            if (state is RequestOTPSuccess) {
+            if (state is RequestOTPSuccessSignUp) {
               email = state.email;
               password = state.password;
-              userType = state.userType;
+              userType = state.userType!;
+            }
+            if (state is RequestOTPSuccessForForgetPassword) {
+              email = state.email;
             }
             if (state is AuthLoading) {
               return const Loader();
@@ -119,7 +127,7 @@ class _VerifyCodeScreenState extends State<VerifyCodeScreen> {
                   ),
                   onTap: () {
                     context.read<AuthBloc>().add(
-                          RequestOTPEvent(
+                          RequestOTPForSignUpEvent(
                             email: email,
                             userType: userType,
                             password: password,
@@ -133,9 +141,15 @@ class _VerifyCodeScreenState extends State<VerifyCodeScreen> {
                     text: 'Verify',
                     isActive: true,
                     onPressed: () {
-                      print('Verifying OTP: ${otpController.text.trim()}');
+                      print('your email is $email');
+                      // context.read<AuthBloc>().add(
+                      //       VerifyOTPEvent(
+                      //         otp: otpController.text.trim(),
+                      //         email: email,
+                      //       ),
+                      //     );
                       context.read<AuthBloc>().add(
-                            VerifyOTPEvent(
+                            VerifyOTPForForgetPasswordEvent(
                               otp: otpController.text.trim(),
                               email: email,
                             ),

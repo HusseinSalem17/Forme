@@ -1,10 +1,10 @@
-class OtpResponseSuccessful {
+class OtpResponseSuccessfulModel {
   String message;
 
-  OtpResponseSuccessful({required this.message});
+  OtpResponseSuccessfulModel({required this.message});
 
-  factory OtpResponseSuccessful.fromJson(Map<String, dynamic> json) {
-    return OtpResponseSuccessful(
+  factory OtpResponseSuccessfulModel.fromJson(Map<String, dynamic> json) {
+    return OtpResponseSuccessfulModel(
       message: json['message'],
     );
   }
