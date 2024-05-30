@@ -14,7 +14,7 @@ abstract class AuthRepository {
     UserType userType,
   );
 
-  Future<Either<CustomError, VerifyOtpResponseSuccessModel>> verifyOTP(
+  Future<Either<CustomError, VerifyOtpResponseSuccessModel>> verifyOTPForSignUp(
     String email,
     String otp,
   );
@@ -35,12 +35,16 @@ abstract class AuthRepository {
       requestOTPForForgetPassword(
     String email,
   );
-  // Future<Either<CustomError, VerifyOtpResponseSuccessModel>> verifyOTPForgetPassword(
-  //     String email,
-  //     String otp,
-  //     );
+  Future<Either<CustomError, VerifyOtpResponseSuccessModel>> verifyOTPForgetPassword(
+      String email,
+      String otp,
+      );
   Future<Either<CustomError, SetNewPasswordSuccessModel>> setNewPassword(
       String email,
       String password,
+      );
+  Future<Either<CustomError, VerifyOtpResponseSuccessModel>> verifyOTP(
+      String email,
+      String otp,
       );
 }

@@ -9,7 +9,7 @@ import 'package:forme_app/features/authentication/data/models/otp_response_succe
 import 'package:forme_app/core/secrets/secrets_api_keys.dart';
 import '../../../../core/errors/exceptions.dart';
 import '../../../../core/errors/server_errors.dart';
-
+import '../../presentation/manager/auth_bloc.dart';
 
 class AuthServices {
   late Dio dio;

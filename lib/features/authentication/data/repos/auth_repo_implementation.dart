@@ -13,6 +13,19 @@ class AuthRepositoryImplementation extends AuthRepository {
   final AuthServices authServices = AuthServices();
 
   @override
+  Future<Either<CustomError, VerifyOtpResponseSuccessModel>> verifyOTP(
+      String email, String otp) async {
+    try {
+      final response = await authServices.verifyOtp(otp: otp, email: email);
+      return right(response);
+    } catch (e) {
+      return left(CustomError(
+        ServerErrorHandler.handleError(e, 'Error occurred while verifying OTP'),
+      ));
+    }
+  }
+
+  @override
   Future<Either<CustomError, OtpResponseSuccessfulModel>> requestOTPForSignUp(
     String email,
     UserType userType,
@@ -32,7 +45,7 @@ class AuthRepositoryImplementation extends AuthRepository {
   }
 
   @override
-  Future<Either<CustomError, VerifyOtpResponseSuccessModel>> verifyOTP(
+  Future<Either<CustomError, VerifyOtpResponseSuccessModel>> verifyOTPForSignUp(
     String email,
     String otp,
   ) async {
@@ -101,21 +114,21 @@ class AuthRepositoryImplementation extends AuthRepository {
     }
   }
 
-  // @override
-  // Future<Either<CustomError, VerifyOtpResponseSuccessModel>>
-  //     verifyOTPForgetPassword(
-  //   String email,
-  //   String otp,
-  // ) async {
-  //   try {
-  //     final response = await authServices.verifyOtp(otp: otp, email: email);
-  //     return right(response);
-  //   } catch (e) {
-  //     return left(CustomError(
-  //       ServerErrorHandler.handleError(e, 'Error occurred while verifying OTP'),
-  //     ));
-  //   }
-  // }
+  @override
+  Future<Either<CustomError, VerifyOtpResponseSuccessModel>>
+      verifyOTPForgetPassword(
+    String email,
+    String otp,
+  ) async {
+    try {
+      final response = await authServices.verifyOtp(otp: otp, email: email);
+      return right(response);
+    } catch (e) {
+      return left(CustomError(
+        ServerErrorHandler.handleError(e, 'Error occurred while verifying OTP'),
+      ));
+    }
+  }
 
   @override
   Future<Either<CustomError, SetNewPasswordSuccessModel>> setNewPassword(

@@ -23,10 +23,10 @@ class VerifyCodeScreen extends StatefulWidget {
 
 class _VerifyCodeScreenState extends State<VerifyCodeScreen> {
   late TextEditingController otpController = TextEditingController();
-
   String email = '';
   String password = '';
   UserType userType = UserType.trainee;
+  bool isSignUp = true;
 
   @override
   void dispose() {
@@ -52,25 +52,23 @@ class _VerifyCodeScreenState extends State<VerifyCodeScreen> {
             if (state is VerifyOTPFailureSignUp) {
               customSnackBar(context, state.errMsg);
             }
+            if (state is VerifyOTPSuccess) {
+              if (state.isSignUp) {
+                context.read<AuthBloc>().add(SignUpEvent(
+                      password1: password,
+                      email: email,
+                      userType: userType,
+                    ));
+              } else {
+                Navigator.pushReplacementNamed(
+                    context, NewPasswordScreen.routeName);
+              }
+            }
             if (state is SignUpSuccess) {
               Navigator.pushReplacementNamed(
                 context,
                 PreferencesScreen.routeName,
               );
-            }
-            if (state is VerifyOTPSuccessSignUp) {
-              print('VerifyOTPSuccess: Adding SignUpEvent');
-              context.read<AuthBloc>().add(
-                    SignUpEvent(
-                      password1: password,
-                      email: email,
-                      userType: userType,
-                    ),
-                  );
-            }
-            if (state is VerifyOTPForgetPasswordSuccess){
-              print('VerifyOTPSuccess: for forget password i will take you to enter new password');
-              Navigator.pushReplacementNamed(context, NewPasswordScreen.routeName);
             }
           },
           builder: (context, state) {
@@ -78,9 +76,11 @@ class _VerifyCodeScreenState extends State<VerifyCodeScreen> {
               email = state.email;
               password = state.password;
               userType = state.userType!;
+              isSignUp = true;
             }
             if (state is RequestOTPSuccessForForgetPassword) {
               email = state.email;
+              isSignUp = false;
             }
             if (state is AuthLoading) {
               return const Loader();
@@ -126,13 +126,21 @@ class _VerifyCodeScreenState extends State<VerifyCodeScreen> {
                     ),
                   ),
                   onTap: () {
-                    context.read<AuthBloc>().add(
-                          RequestOTPForSignUpEvent(
-                            email: email,
-                            userType: userType,
-                            password: password,
-                          ),
-                        );
+                    if (isSignUp) {
+                      context.read<AuthBloc>().add(
+                            RequestOTPForSignUpEvent(
+                              email: email,
+                              userType: userType,
+                              password: password,
+                            ),
+                          );
+                    } else {
+                      context.read<AuthBloc>().add(
+                            RequestOTPForForgetPasswordEvent(
+                              email: email,
+                            ),
+                          );
+                    }
                   },
                 ),
                 Padding(
@@ -141,17 +149,12 @@ class _VerifyCodeScreenState extends State<VerifyCodeScreen> {
                     text: 'Verify',
                     isActive: true,
                     onPressed: () {
-                      print('your email is $email');
-                      // context.read<AuthBloc>().add(
-                      //       VerifyOTPEvent(
-                      //         otp: otpController.text.trim(),
-                      //         email: email,
-                      //       ),
-                      //     );
+                      print('your email signup in verify screen is $email');
                       context.read<AuthBloc>().add(
-                            VerifyOTPForForgetPasswordEvent(
+                            VerifyOTPEvent(
                               otp: otpController.text.trim(),
                               email: email,
+                              isSignUp: isSignUp,
                             ),
                           );
                     },

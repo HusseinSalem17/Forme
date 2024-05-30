@@ -17,10 +17,21 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     on<LoginEvent>(loginEventCalled);
     on<SignUpEvent>(signUpEventCalled);
     on<RequestOTPForSignUpEvent>(requestOtpForSignUpEventCalled);
-    on<VerifyOTPForSignUpEvent>(verifyOTPForSignUpEventCalled);
+    // on<VerifyOTPForSignUpEvent>(verifyOTPForSignUpEventCalled);
     on<RequestOTPForForgetPasswordEvent>(requestOtpForForgetPasswordEventCalled);
-    on<VerifyOTPForForgetPasswordEvent>(verifyOTPForForgetPasswordEventCalled);
+    // on<VerifyOTPForForgetPasswordEvent>(verifyOTPForForgetPasswordEventCalled);
     on<SetNewPasswordEvent>(setNewPasswordEventCalled);
+    on<VerifyOTPEvent>(_onVerifyOTPEvent);
+  }
+  Future<void> _onVerifyOTPEvent(VerifyOTPEvent event, Emitter<AuthState> emit) async {
+    emit(AuthLoading());
+
+    final result = await authRepo.verifyOTP(event.email, event.otp);
+
+    result.fold(
+          (error) => emit(VerifyOTPFailureSignUp(errMsg: error.message)),
+          (success) => emit(VerifyOTPSuccess(email: event.email, isSignUp: event.isSignUp)),
+    );
   }
 
   FutureOr<void> setNewPasswordEventCalled(event, emit) async {
@@ -41,7 +52,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   FutureOr<void> verifyOTPForForgetPasswordEventCalled(event, emit) async {
     emit(AuthLoading());
     final result =
-        await authRepo.verifyOTP(event.email, event.otp);
+        await authRepo.verifyOTPForgetPassword(event.email, event.otp);
     result.fold(
       (error) {
         emit(VerifyOTPFailureSignUp(errMsg: error.message));
@@ -72,7 +83,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     Emitter<AuthState> emit,
   ) async {
     emit(AuthLoading());
-    final result = await authRepo.verifyOTP(event.email, event.otp);
+    final result = await authRepo.verifyOTPForSignUp(event.email, event.otp);
     result.fold(
       (error) {
         emit(VerifyOTPFailureSignUp(errMsg: error.message));

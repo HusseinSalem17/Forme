@@ -84,3 +84,12 @@ final class SetNewPasswordFailure extends AuthState {
     required this.errMsg,
   });
 }
+class VerifyOTPSuccess extends AuthState {
+final String email;
+final bool isSignUp;
+
+VerifyOTPSuccess({
+required this.email,
+required this.isSignUp,
+});
+}

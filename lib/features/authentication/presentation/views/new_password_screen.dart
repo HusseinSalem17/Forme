@@ -63,7 +63,7 @@ class _NewPasswordScreenState extends State<NewPasswordScreen> {
             if (state is AuthLoading) {
               return const Loader();
             }
-            if (state is VerifyOTPForgetPasswordSuccess) {
+            if (state is VerifyOTPSuccess) {
               print('ia am on the correct state');
               email = state.email;
             }

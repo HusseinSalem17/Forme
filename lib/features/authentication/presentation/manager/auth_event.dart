@@ -101,3 +101,15 @@ final class SetNewPasswordEvent extends AuthEvent {
     required this.password,
   });
 }
+
+class VerifyOTPEvent extends AuthEvent {
+final String otp;
+final String email;
+final bool isSignUp;
+
+VerifyOTPEvent({
+required this.otp,
+required this.email,
+required this.isSignUp,
+});
+}
