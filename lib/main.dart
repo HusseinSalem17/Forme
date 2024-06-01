@@ -3,9 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:forme_app/core/utils/app_theme.dart';
 import 'package:forme_app/features/Authentication/presentation/manager/auth_bloc.dart';
-
 import 'package:forme_app/features/trainer_features/Trainer_Profile/presentation/manager/my_profile_cubit/cubit/my_profile_cubit.dart';
-
 import 'package:forme_app/features/trainer_features/dashboard/presentation/views/manager/bloc/trainer_home_bloc.dart';
 import 'package:forme_app/features/trainer_features/trainee_profile/presentation/manager/trainee_profile_cubit.dart';
 import 'package:forme_app/features/trainee_features/home/presentation/manager/bloc/home_bloc.dart';
@@ -15,13 +13,13 @@ import 'package:forme_app/features/trainee_features/profile/presentation/manager
 import 'package:forme_app/features/trainee_features/profile/presentation/manager/my_profile_cubit/cubit/my_profile_cubit.dart';
 import 'package:forme_app/onboarding_screens/data/bloc/onboarding_blocs.dart';
 import 'package:flutter/services.dart';
-
 import 'app_routing/auth_routes.dart';
 import 'app_routing/main_route.dart';
 import 'core/user_type.dart';
 import 'core/utils/functions/service_locator.dart';
 import 'core/utils/scroll_behavior.dart';
 
+import 'features/trainee_features/preferences/presentation/views/preferences_screen.dart';
 import 'local_storage_data/auth_local/tokens.dart';
 import 'local_storage_data/auth_local/user_type.dart';
 import 'main_helper/app_initialization.dart';
@@ -47,6 +45,7 @@ class MyApp extends StatelessWidget {
           scrollBehavior: CustomScrollBehavior(),
           debugShowCheckedModeBanner: false,
           theme: Themes.customLightTheme,
+
           onGenerateRoute: (settings) {
             if (initialUserType == null) {
               print('User type is null');
@@ -58,6 +57,7 @@ class MyApp extends StatelessWidget {
               ).generateRoute(settings);
             }
           },
+
         ),
       ),
     );

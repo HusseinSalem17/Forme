@@ -6,26 +6,45 @@ import 'package:forme_app/features/authentication/data/models/verify_otp_respons
 
 import '../../../../core/errors/exceptions.dart';
 
+import '../models/set_new_password_success.dart';
+
 abstract class AuthRepository {
-  Future<Either<CustomError, OtpResponseSuccessful>> requestOTP(
+  Future<Either<CustomError, OtpResponseSuccessfulModel>> requestOTPForSignUp(
     String email,
     UserType userType,
   );
 
-  Future<Either<CustomError, VerifyOtpResponseSuccess>> verifyOTP(
+  Future<Either<CustomError, VerifyOtpResponseSuccessModel>> verifyOTPForSignUp(
     String email,
     String otp,
   );
 
-  Future<Either<CustomError, TokenResponseSuccess>> signUpAccount(
+  Future<Either<CustomError, TokenResponseSuccessModel>> signUpAccount(
     String email,
     String password,
     UserType userType,
   );
-  Future<Either<CustomError, TokenResponseSuccess>> loginAccount(
+
+  Future<Either<CustomError, TokenResponseSuccessModel>> loginAccount(
+    String email,
+    String password,
+    UserType userType,
+  );
+
+  Future<Either<CustomError, OtpResponseSuccessfulModel>>
+      requestOTPForForgetPassword(
+    String email,
+  );
+  Future<Either<CustomError, VerifyOtpResponseSuccessModel>> verifyOTPForgetPassword(
+      String email,
+      String otp,
+      );
+  Future<Either<CustomError, SetNewPasswordSuccessModel>> setNewPassword(
       String email,
       String password,
-      UserType userType,
       );
-
+  Future<Either<CustomError, VerifyOtpResponseSuccessModel>> verifyOTP(
+      String email,
+      String otp,
+      );
 }

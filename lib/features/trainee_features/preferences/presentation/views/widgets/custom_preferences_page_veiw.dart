@@ -5,8 +5,11 @@ import 'package:forme_app/features/trainee_features/preferences/presentation/man
 import 'package:forme_app/features/trainee_features/preferences/presentation/manager/preferences_state.dart';
 import 'package:forme_app/features/trainee_features/preferences/presentation/views/widgets/age_slider.dart';
 import 'package:forme_app/features/trainee_features/preferences/presentation/views/widgets/height_slider.dart';
+import 'package:forme_app/features/trainee_features/preferences/presentation/views/widgets/pick_your_age_screen_body.dart';
 import 'package:forme_app/features/trainee_features/preferences/presentation/views/widgets/pick_your_goal_screen_body.dart';
+import 'package:forme_app/features/trainee_features/preferences/presentation/views/widgets/pick_your_height_screen_body.dart';
 import 'package:forme_app/features/trainee_features/preferences/presentation/views/widgets/pick_your_level_screen_body.dart';
+import 'package:forme_app/features/trainee_features/preferences/presentation/views/widgets/pick_your_weight_screen_body.dart';
 import 'package:forme_app/features/trainee_features/preferences/presentation/views/widgets/weight_slider.dart';
 
 class CustomPreferencesPageView extends StatelessWidget {
@@ -29,27 +32,12 @@ class CustomPreferencesPageView extends StatelessWidget {
               PreferencesEvent(),
             );
           },
-          children: [
-            Container(
-              color: Colors.white,
-              child: const Center(
-                child: AgeSlider(),
-              ),
-            ),
-            Container(
-              color: Colors.white,
-              child: const Center(
-                child: WeightSlider(),
-              ),
-            ),
-            Container(
-              color: Colors.white,
-              child: const Center(
-                child: HeightSlider(),
-              ),
-            ),
-            const PickYourGoalScreenBody(),
-            const PickYourLevelScreenBody(),
+          children: const [
+            PickYourAgeScreenBody(),
+            PickYourWeightScreenBody(),
+            PickYourHeightScreenBody(),
+            PickYourGoalScreenBody(),
+            PickYourLevelScreenBody(),
           ],
         );
       },

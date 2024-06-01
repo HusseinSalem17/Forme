@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:forme_app/features/trainee_features/home/presentation/views/sections/vertical_list_of_items.dart';
-
 import 'nearby_sports_club_item.dart';
 
 class NearbySpotsClub extends StatelessWidget {

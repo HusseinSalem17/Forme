@@ -1,10 +1,10 @@
-class VerifyOtpResponseSuccess {
+class VerifyOtpResponseSuccessModel {
   String message;
 
-  VerifyOtpResponseSuccess({required this.message});
+  VerifyOtpResponseSuccessModel({required this.message});
 
-  factory VerifyOtpResponseSuccess.fromJson(Map<String, dynamic> json) {
-    return VerifyOtpResponseSuccess(
+  factory VerifyOtpResponseSuccessModel.fromJson(Map<String, dynamic> json) {
+    return VerifyOtpResponseSuccessModel(
       message: json['message'],
     );
   }

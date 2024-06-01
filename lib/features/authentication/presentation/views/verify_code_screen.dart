@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:forme_app/core/user_type.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/show_snackbar.dart';
+import 'package:forme_app/features/Authentication/presentation/views/new_password_screen.dart';
 import 'package:forme_app/features/Authentication/presentation/views/widgets/custom_auth_button.dart';
 import 'package:forme_app/features/Authentication/presentation/views/widgets/custom_pin_code.dart';
 import 'package:forme_app/features/trainee_features/preferences/presentation/views/preferences_screen.dart';
@@ -22,10 +23,10 @@ class VerifyCodeScreen extends StatefulWidget {
 
 class _VerifyCodeScreenState extends State<VerifyCodeScreen> {
   late TextEditingController otpController = TextEditingController();
-
   String email = '';
   String password = '';
   UserType userType = UserType.trainee;
+  bool isSignUp = true;
 
   @override
   void dispose() {
@@ -48,8 +49,20 @@ class _VerifyCodeScreenState extends State<VerifyCodeScreen> {
         padding: const EdgeInsets.symmetric(horizontal: 24),
         child: BlocConsumer<AuthBloc, AuthState>(
           listener: (context, state) {
-            if (state is VerifyOTPFailure) {
+            if (state is VerifyOTPFailureSignUp) {
               customSnackBar(context, state.errMsg);
+            }
+            if (state is VerifyOTPSuccess) {
+              if (state.isSignUp) {
+                context.read<AuthBloc>().add(SignUpEvent(
+                      password1: password,
+                      email: email,
+                      userType: userType,
+                    ));
+              } else {
+                Navigator.pushReplacementNamed(
+                    context, NewPasswordScreen.routeName);
+              }
             }
             if (state is SignUpSuccess) {
               Navigator.pushReplacementNamed(
@@ -57,22 +70,17 @@ class _VerifyCodeScreenState extends State<VerifyCodeScreen> {
                 PreferencesScreen.routeName,
               );
             }
-            if (state is VerifyOTPSuccess) {
-              print('VerifyOTPSuccess: Adding SignUpEvent');
-              context.read<AuthBloc>().add(
-                    SignUpEvent(
-                      password1: password,
-                      email: email,
-                      userType: userType,
-                    ),
-                  );
-            }
           },
           builder: (context, state) {
-            if (state is RequestOTPSuccess) {
+            if (state is RequestOTPSuccessSignUp) {
               email = state.email;
               password = state.password;
-              userType = state.userType;
+              userType = state.userType!;
+              isSignUp = true;
+            }
+            if (state is RequestOTPSuccessForForgetPassword) {
+              email = state.email;
+              isSignUp = false;
             }
             if (state is AuthLoading) {
               return const Loader();
@@ -118,13 +126,21 @@ class _VerifyCodeScreenState extends State<VerifyCodeScreen> {
                     ),
                   ),
                   onTap: () {
-                    context.read<AuthBloc>().add(
-                          RequestOTPEvent(
-                            email: email,
-                            userType: userType,
-                            password: password,
-                          ),
-                        );
+                    if (isSignUp) {
+                      context.read<AuthBloc>().add(
+                            RequestOTPForSignUpEvent(
+                              email: email,
+                              userType: userType,
+                              password: password,
+                            ),
+                          );
+                    } else {
+                      context.read<AuthBloc>().add(
+                            RequestOTPForForgetPasswordEvent(
+                              email: email,
+                            ),
+                          );
+                    }
                   },
                 ),
                 Padding(
@@ -133,11 +149,12 @@ class _VerifyCodeScreenState extends State<VerifyCodeScreen> {
                     text: 'Verify',
                     isActive: true,
                     onPressed: () {
-                      print('Verifying OTP: ${otpController.text.trim()}');
+                      print('your email signup in verify screen is $email');
                       context.read<AuthBloc>().add(
                             VerifyOTPEvent(
                               otp: otpController.text.trim(),
                               email: email,
+                              isSignUp: isSignUp,
                             ),
                           );
                     },
