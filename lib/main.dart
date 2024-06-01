@@ -6,6 +6,10 @@ import 'app_routing/auth_routes.dart';
 import 'app_routing/main_route.dart';
 import 'core/user_type.dart';
 import 'core/utils/scroll_behavior.dart';
+
+import 'features/trainee_features/preferences/presentation/views/preferences_screen.dart';
+import 'local_storage_data/auth_local/tokens.dart';
+import 'local_storage_data/auth_local/user_type.dart';
 import 'main_helper/app_initialization.dart';
 import 'main_helper/bloc_providers.dart';
 
