@@ -20,7 +20,7 @@
 // import 'features/authentication/presentation/views/forgot_password_screen.dart';
 // import 'features/authentication/presentation/views/sign_in_screen.dart';
 // import 'features/trainer_features/Revenue/presentation/views/revenue_screen.dart';
-// import 'features/trainer_features/Trainee_profile/presentation/views/trainee_profile_screen.dart';
+// import 'features/trainer_features/Trainee_profile/presentation/views/trainee_profile_screen_t.dart';
 // import 'features/trainer_features/Trainer_Notification/presentation/views/trainer_notification_screen.dart';
 // import 'features/trainer_features/Trainer_Profile/presentation/views/trainer_profile_screen.dart';
 // import 'features/trainer_features/add_program/presentation/views/add_program_screen.dart';
