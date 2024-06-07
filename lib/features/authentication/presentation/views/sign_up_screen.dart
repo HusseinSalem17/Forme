@@ -12,6 +12,7 @@ import 'package:forme_app/features/authentication/presentation/views/widgets/cus
 import 'package:forme_app/features/authentication/presentation/views/widgets/icon_widget.dart';
 import 'package:forme_app/features/authentication/presentation/views/widgets/slider_type_choice.dart';
 import '../../../../core/transitions/page_slide.dart';
+import '../../../../core/utils/bloc/checkbox_bloc.dart';
 import '../../../../core/utils/show_snackbar.dart';
 import '../../../../core/utils/text_styles.dart';
 import '../../../../core/widgets/app_fields/custom_password_form_field.dart';
@@ -21,15 +22,13 @@ import '../manager/auth_bloc.dart';
 
 class SignUpScreen extends StatefulWidget {
   static const routeName = '/trainee/Sing-up-screen';
-
   const SignUpScreen({super.key});
 
   @override
-  State<SignUpScreen> createState() => _SignUpScreenState();
+  SignUpScreenState createState() => SignUpScreenState();
 }
 
-class _SignUpScreenState extends State<SignUpScreen> {
-  late bool isChecked = false;
+class SignUpScreenState extends State<SignUpScreen> {
   late TextEditingController emailController;
   late TextEditingController password1Controller;
   late TextEditingController password2Controller;
@@ -150,17 +149,19 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        CustomCheckbox(
-                          value: isChecked,
-                          onChanged: (newValue) {
-                            setState(() {
-                              isChecked = newValue;
-                            });
+                        BlocBuilder<CheckboxBloc, CheckboxState>(
+                          builder: (context, state) {
+                            return CustomCheckbox(
+                              value: state is CheckboxCheckedState,
+                              onChanged: (newValue) {
+                                context.read<CheckboxBloc>().add(ToggleCheckboxEvent());
+                              },
+                              checkColor: Colors.black,
+                              borderColor: AppColors.n40Gray,
+                              borderWidth: 2.0,
+                              size: 16.0,
+                            );
                           },
-                          checkColor: Colors.black,
-                          borderColor: AppColors.n40Gray,
-                          borderWidth: 2.0,
-                          size: 16.0,
                         ),
                         const SizedBox(width: 10),
                         SizedBox(
@@ -197,12 +198,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           final email = emailController.text;
                           final password1 = password1Controller.text;
                           context.read<AuthBloc>().add(
-                                RequestOTPForSignUpEvent(
-                                  email: email,
-                                  userType: selectedUserType,
-                                  password: password1,
-                                ),
-                              );
+                            RequestOTPForSignUpEvent(
+                              email: email,
+                              userType: selectedUserType,
+                              password: password1,
+                            ),
+                          );
                         }
                       },
                     ),

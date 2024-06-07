@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:forme_app/core/utils/bloc/checkbox_bloc.dart';
 
 import '../features/Authentication/presentation/views/forgot_password_screen.dart';
 import '../features/Authentication/presentation/views/new_password_screen.dart';
@@ -37,7 +39,10 @@ class AuthRoutes {
         );
       case SignUpScreen.routeName:
         return MaterialPageRoute(
-          builder: (context) => const SignUpScreen(),
+          builder: (context) => BlocProvider(
+            create: (context) => CheckboxBloc(),
+            child: const SignUpScreen(),
+          ),
         );
       case ForgotPasswordScreen.routeName:
         return MaterialPageRoute(
