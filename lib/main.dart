@@ -45,9 +45,12 @@ void main() async {
     runApp(MyApp(initialUserType: initialUserType));
   }
 }
+
 class MyApp extends StatelessWidget {
   final UserType? initialUserType;
+
   const MyApp({Key? key, this.initialUserType}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
@@ -86,7 +89,6 @@ class MyApp extends StatelessWidget {
           scrollBehavior: CustomScrollBehavior(),
           debugShowCheckedModeBanner: false,
           theme: Themes.customLightTheme,
-
           onGenerateRoute: (settings) {
             if (initialUserType == null) {
               print('you are null');
@@ -98,8 +100,6 @@ class MyApp extends StatelessWidget {
               ).generateRoute(settings);
             }
           },
-
-
         ),
       ),
     );
