@@ -17,9 +17,9 @@ class PlacesWebservices {
   }
 
   Future<List<dynamic>> fetchSuggestions(
-      String place,
-      String sessionToken,
-      ) async {
+    String place,
+    String sessionToken,
+  ) async {
     try {
       Response response = await dio.get(
         SecretsApiKeys.suggestionsBaseUrl,

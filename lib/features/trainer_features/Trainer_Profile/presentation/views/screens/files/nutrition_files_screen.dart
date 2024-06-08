@@ -28,56 +28,55 @@ class NutritionFilesScreen extends StatelessWidget {
         ),
         actions: [
           IconButton(
-            onPressed: () {},
-            icon: SvgPicture.asset('assets/image/Icon/done.svg')
-          ),
+              onPressed: () {},
+              icon: SvgPicture.asset('assets/image/Icon/done.svg')),
         ],
-      
       ),
       body: SingleChildScrollView(
-          child: Padding(
-            padding: EdgeInsets.symmetric(vertical: 32.h),
-            child: Column(
-              children: [
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 24.w),
-                  child: Column(
-                    children: [
-                      RichText(
-                        text: TextSpan(
-                          children: [
-                            TextSpan(
-                              text: 'Upload Nutrition files for quick and easy access through the chat ',
-                              style: TextStyles.textStyleSemiBold.copyWith(
-                                color: AppColors.n900Black,
-                                fontSize: 14.sp,
-                              ),
+        child: Padding(
+          padding: EdgeInsets.symmetric(vertical: 32.h),
+          child: Column(
+            children: [
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 24.w),
+                child: Column(
+                  children: [
+                    RichText(
+                      text: TextSpan(
+                        children: [
+                          TextSpan(
+                            text:
+                                'Upload Nutrition files for quick and easy access through the chat ',
+                            style: TextStyles.textStyleSemiBold.copyWith(
+                              color: AppColors.n900Black,
+                              fontSize: 14.sp,
                             ),
-                            TextSpan(
-                              text: ' (like HealthyRecipes, NutritionGuide).',
-                              style: TextStyles.textStyleRegular.copyWith(
-                                color: AppColors.n100Gray,
-                                fontSize: 12.sp,
-                              ),
+                          ),
+                          TextSpan(
+                            text: ' (like HealthyRecipes, NutritionGuide).',
+                            style: TextStyles.textStyleRegular.copyWith(
+                              color: AppColors.n100Gray,
+                              fontSize: 12.sp,
                             ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
-                SizedBox(height: 10.h),
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 14.w),
-                  child: const DocumentsPicker(),
-                ),
-                Container(
-                  height: MediaQuery.sizeOf(context).height / 6.h,
-                )
-              ],
-            ),
+              ),
+              SizedBox(height: 10.h),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 14.w),
+                child: const DocumentsPicker(),
+              ),
+              Container(
+                height: MediaQuery.sizeOf(context).height / 6.h,
+              )
+            ],
           ),
         ),
+      ),
     );
   }
 }

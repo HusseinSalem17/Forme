@@ -7,7 +7,7 @@ import 'package:forme_app/core/widgets/custom_app_bar_arrow_button.dart';
 import 'package:forme_app/core/widgets/text_area.dart';
 import 'package:forme_app/features/trainee_features/sports_club/presentation/views/sections/club_sub_header.dart';
 import 'package:forme_app/features/trainee_features/workout_detail/presentation/views/sections/workout_sub_header.dart';
-import 'package:simple_star_rating/simple_star_rating.dart';
+// import 'package:simple_star_rating/simple_star_rating.dart';
 
 class AddReview extends StatelessWidget {
   static const routeName = '/add-review-screen';
@@ -46,29 +46,36 @@ class AddReview extends StatelessWidget {
             ),
             SliverToBoxAdapter(
               child: Container(
-                decoration: BoxDecoration(borderRadius: BorderRadius.circular(32.dg), color: AppColors.background),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(32.dg),
+                    color: AppColors.background),
                 child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: 24.w),
                   child: Column(children: [
                     type == "club" ? clubSubHeader() : workoutSubHeader(),
                     Padding(
                       padding: EdgeInsets.only(top: 21.h),
-                      child: Text('Your Overall rating of this product', style: TextStyles.textStyleRegular.copyWith(fontSize: 14.sp)),
+                      child: Text('Your Overall rating of this product',
+                          style: TextStyles.textStyleRegular
+                              .copyWith(fontSize: 14.sp)),
                     ),
-                    SimpleStarRating(
-                      allowHalfRating: true,
-                      isReadOnly: false,
-                      starCount: 5,
-                      //rating: model.rating,
-                      size: 70,
-                      spacing: 1,
-                    ),
+                    // SimpleStarRating(
+                    //   allowHalfRating: true,
+                    //   isReadOnly: false,
+                    //   starCount: 5,
+                    //   //rating: model.rating,
+                    //   size: 70,
+                    //   spacing: 1,
+                    // ),
                     Padding(
                       padding: EdgeInsets.only(top: 30.h, bottom: 8.h),
                       child: Align(
                         alignment: Alignment.centerLeft,
-                        child: Text('Add detailed reviews', style: TextStyles.textStyleBold.copyWith(fontSize: 14.sp, color: AppColors.n900Black)),
-                      ),),
+                        child: Text('Add detailed reviews',
+                            style: TextStyles.textStyleBold.copyWith(
+                                fontSize: 14.sp, color: AppColors.n900Black)),
+                      ),
+                    ),
                     const TextArea(
                       title: 'Add detailed reviews',
                     ),

@@ -164,8 +164,7 @@ class BookAppointmentScreen extends StatelessWidget {
                                                   style: TextStyles
                                                       .textStyleRegular
                                                       .copyWith(
-                                                    color:
-                                                        AppColors.n70Gray,
+                                                    color: AppColors.n70Gray,
                                                     fontSize: 12,
                                                   ),
                                                 ),

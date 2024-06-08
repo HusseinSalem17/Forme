@@ -8,7 +8,8 @@ class SearchResultsTab extends StatelessWidget {
   final int searchResults;
   final Widget Function(BuildContext context, int index) itemBuilder;
 
-  const SearchResultsTab({super.key, 
+  const SearchResultsTab({
+    super.key,
     required this.searchText,
     required this.searchResults,
     required this.itemBuilder,
@@ -27,19 +28,21 @@ class SearchResultsTab extends StatelessWidget {
                 children: [
                   Text(
                     "Results for \"$searchText\" ",
-                    style: TextStyles.textStyleSemiBold.copyWith(color: AppColors.n900Black, fontSize: 16.sp),
+                    style: TextStyles.textStyleSemiBold
+                        .copyWith(color: AppColors.n900Black, fontSize: 16.sp),
                   ),
                   Text(
                     "$searchResults Results Found",
-                    style: TextStyles.textStyleRegular.copyWith(color: AppColors.secondaryColor, fontSize: 14.sp),
+                    style: TextStyles.textStyleRegular.copyWith(
+                        color: AppColors.secondaryColor, fontSize: 14.sp),
                   ),
                 ],
               ),
             ),
           ),
           const SliverToBoxAdapter(
-            child: SizedBox(height: 16), 
-          ), // Add this line to add space between the text and the cards 
+            child: SizedBox(height: 16),
+          ), // Add this line to add space between the text and the cards
           SliverList(
             delegate: SliverChildBuilderDelegate(
               (BuildContext context, int index) {

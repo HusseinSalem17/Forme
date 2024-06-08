@@ -5,6 +5,10 @@ class TrainerNotificationState {
   String description;
   bool isUnread;
 
-
-  TrainerNotificationState({ required this.icon, required this.title, required this.time, required this.description, required this.isUnread});
+  TrainerNotificationState(
+      {required this.icon,
+      required this.title,
+      required this.time,
+      required this.description,
+      required this.isUnread});
 }

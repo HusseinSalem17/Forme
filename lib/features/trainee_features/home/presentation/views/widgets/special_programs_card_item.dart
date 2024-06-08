@@ -49,7 +49,7 @@ class SpecialProgramsCardItem extends StatelessWidget {
                 clipBehavior: Clip.none,
                 children: [
                   ListCardImage(
-                   imageUrl:  topTrainersData[1].imageUrl,
+                    imageUrl: topTrainersData[1].imageUrl,
                     leftPaddingIcon: 154,
                     height: size.height / 3.75 / 2,
                     width: size.width,
@@ -62,9 +62,8 @@ class SpecialProgramsCardItem extends StatelessWidget {
                       width: 64,
                       height: 64,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(32),
-                        color: AppColors.n20FillBodyInBigCardColor
-                      ),
+                          borderRadius: BorderRadius.circular(32),
+                          color: AppColors.n20FillBodyInBigCardColor),
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(32),
                         child: Image.asset(
@@ -86,9 +85,8 @@ class SpecialProgramsCardItem extends StatelessWidget {
                       const SpecialProgramsCardReview(),
                       Text(
                         'Mindful Movement',
-                        style: TextStyles.smallBold.copyWith(
-                          color: AppColors.n900Black
-                        ),
+                        style: TextStyles.smallBold
+                            .copyWith(color: AppColors.n900Black),
                       ),
                       const SizedBox(
                         height: 4,

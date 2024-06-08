@@ -9,13 +9,12 @@ class CustomRadioListTile extends StatelessWidget {
   final String title;
   final ValueChanged<String?> onChanged;
 
-  const CustomRadioListTile({
-    super.key,
-    required this.value,
-    required this.groupValue,
-    required this.onChanged,
-    required this.title
-  });
+  const CustomRadioListTile(
+      {super.key,
+      required this.value,
+      required this.groupValue,
+      required this.onChanged,
+      required this.title});
 
   @override
   Widget build(BuildContext context) {
@@ -52,13 +51,13 @@ class CustomRadioListTile extends StatelessWidget {
                 child: Center(
                   child: value == groupValue
                       ? Container(
-                    width: 11.0,
-                    height: 11.0,
-                    decoration: const BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: AppColors.primaryColor,
-                    ),
-                  )
+                          width: 11.0,
+                          height: 11.0,
+                          decoration: const BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: AppColors.primaryColor,
+                          ),
+                        )
                       : null,
                 ),
               ),
@@ -66,7 +65,7 @@ class CustomRadioListTile extends StatelessWidget {
               Text(
                 title,
                 style: TextStyles.textStyleBold.copyWith(
-                  fontSize:12.sp,
+                  fontSize: 12.sp,
                   color: AppColors.n900Black,
                 ),
               ),

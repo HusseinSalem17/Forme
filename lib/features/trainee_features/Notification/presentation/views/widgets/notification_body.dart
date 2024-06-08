@@ -13,19 +13,26 @@ class NotificationScreenBody extends StatefulWidget {
 
 class _NotificationScreenBodyState extends State<NotificationScreenBody> {
   List<NotificationItem> items1 = [
-    NotificationItem("Group", "Tutor Appointment Booked", "1h", "Lorem ipsum dolor sit amet consectetur."),
-    NotificationItem("Schedulecalender", "30% Discount Gym", "1h", "Lorem ipsum dolor sit amet consectetur. Sed eget odio hac scelerisque"),
-    NotificationItem("Group", "Tutor Appointment Booked", "1h", "Lorem ipsum dolor sit amet consectetur. lectus posuere at scelerisque.")
+    NotificationItem("Group", "Tutor Appointment Booked", "1h",
+        "Lorem ipsum dolor sit amet consectetur."),
+    NotificationItem("Schedulecalender", "30% Discount Gym", "1h",
+        "Lorem ipsum dolor sit amet consectetur. Sed eget odio hac scelerisque"),
+    NotificationItem("Group", "Tutor Appointment Booked", "1h",
+        "Lorem ipsum dolor sit amet consectetur. lectus posuere at scelerisque.")
   ];
   List<NotificationItem> items2 = [
-    NotificationItem("Group", "Gym", "1d", "Lorem ipsum dolor sit amet consectetur. lectlamcorper ac egestas mi."),
-    NotificationItem("Schedulecalender", "Tutor Appointment Booked", "1d", "Description 2"),
-    NotificationItem("Icons.local_offer", "60% Discount Gym", "1d", "Description 3"),
+    NotificationItem("Group", "Gym", "1d",
+        "Lorem ipsum dolor sit amet consectetur. lectlamcorper ac egestas mi."),
+    NotificationItem(
+        "Schedulecalender", "Tutor Appointment Booked", "1d", "Description 2"),
+    NotificationItem(
+        "Icons.local_offer", "60% Discount Gym", "1d", "Description 3"),
   ];
   List<NotificationItem> items3 = [
     NotificationItem("Group", "Tines", "2d", "Description 1"),
     NotificationItem("Schedulecalender", "Football 2", "2d", "Description 2"),
-    NotificationItem("Group", "Tutor Appointment Booked 3", "2d", "Description 3"),
+    NotificationItem(
+        "Group", "Tutor Appointment Booked 3", "2d", "Description 3"),
   ];
 
   int unreadNotification = 0;
@@ -33,7 +40,9 @@ class _NotificationScreenBodyState extends State<NotificationScreenBody> {
 
   @override
   Widget build(BuildContext context) {
-    unreadNotification = items1.where((item) => item.isUnread).length + items2.where((item) => item.isUnread).length + items3.where((item) => item.isUnread).length;
+    unreadNotification = items1.where((item) => item.isUnread).length +
+        items2.where((item) => item.isUnread).length +
+        items3.where((item) => item.isUnread).length;
 
     return Scaffold(
       appBar: AppBar(
@@ -48,7 +57,8 @@ class _NotificationScreenBodyState extends State<NotificationScreenBody> {
         centerTitle: true,
         title: Text(
           "Notification",
-          style: TextStyles.textStyleSemiBold.copyWith(color: AppColors.n900Black),
+          style:
+              TextStyles.textStyleSemiBold.copyWith(color: AppColors.n900Black),
         ),
         actions: [
           Visibility(
@@ -95,14 +105,17 @@ class _NotificationScreenBodyState extends State<NotificationScreenBody> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(title, style: TextStyles.textStyleSemiBold.copyWith(color: AppColors.n200Gray)),
+              Text(title,
+                  style: TextStyles.textStyleSemiBold
+                      .copyWith(color: AppColors.n200Gray)),
               ElevatedButton(
                 onPressed: () {
                   setState(() {
                     markAllAsRead = true;
                     unreadNotification = 0;
                     for (var sectionItems in [items1, items2, items3]) {
-                      unreadNotification -= sectionItems.where((item) => item.isUnread).length;
+                      unreadNotification -=
+                          sectionItems.where((item) => item.isUnread).length;
                       for (var item in sectionItems) {
                         item.isUnread = false;
                       }
@@ -117,7 +130,9 @@ class _NotificationScreenBodyState extends State<NotificationScreenBody> {
                     ? Text(
                         "Mark all as read",
                         style: TextStyle(
-                          color: markAllAsRead ? AppColors.n100Gray : AppColors.primaryColor,
+                          color: markAllAsRead
+                              ? AppColors.n100Gray
+                              : AppColors.primaryColor,
                         ),
                       )
                     : Container(),
@@ -129,7 +144,8 @@ class _NotificationScreenBodyState extends State<NotificationScreenBody> {
           shrinkWrap: true,
           physics: const NeverScrollableScrollPhysics(),
           itemCount: sectionItems.length,
-          itemBuilder: (context, index) => buildNotificationItem(sectionItems[index]),
+          itemBuilder: (context, index) =>
+              buildNotificationItem(sectionItems[index]),
         ),
       ],
     );
@@ -146,11 +162,17 @@ class _NotificationScreenBodyState extends State<NotificationScreenBody> {
           ),
           subtitle: Text(
             item.description,
-            style: TextStyles.descriptionStyle.copyWith(color: item.isUnread ? AppColors.primaryColor : AppColors.n100Gray),
+            style: TextStyles.descriptionStyle.copyWith(
+                color: item.isUnread
+                    ? AppColors.primaryColor
+                    : AppColors.n100Gray),
           ),
           trailing: Text(
             item.time,
-            style: TextStyles.descriptionStyle.copyWith(color: item.isUnread ? AppColors.primaryColor : AppColors.n100Gray),
+            style: TextStyles.descriptionStyle.copyWith(
+                color: item.isUnread
+                    ? AppColors.primaryColor
+                    : AppColors.n100Gray),
           ),
           onTap: () {
             // Handle item click to mark as read

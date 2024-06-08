@@ -26,10 +26,7 @@ class CustomSelectedType extends StatelessWidget {
         children: [
           SvgPicture.asset(
             icon,
-            colorFilter: ColorFilter.mode(
-                color,
-                BlendMode.srcATop
-            ),
+            colorFilter: ColorFilter.mode(color, BlendMode.srcATop),
           ),
           const SizedBox(
             width: 12,

@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:forme_app/features/trainer_features/my_services/data/my_workout_card_model.dart';
 import 'package:forme_app/features/trainer_features/my_services/presentation/views/widgets/program_cards.dart';
 
-
 class MyWorkoutTab extends StatelessWidget {
   const MyWorkoutTab({super.key});
 

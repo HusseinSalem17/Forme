@@ -4,7 +4,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
 
-
 class CancellationRadio extends StatefulWidget {
   const CancellationRadio({super.key});
 
@@ -46,7 +45,8 @@ class _CancellationRadioState extends State<CancellationRadio> {
               ),
               Text(
                 "Financial Reason",
-                style: TextStyles.textStyleRegular.copyWith(fontSize: 14.sp, color: AppColors.n900Black),
+                style: TextStyles.textStyleRegular
+                    .copyWith(fontSize: 14.sp, color: AppColors.n900Black),
               ),
             ],
           ),
@@ -77,7 +77,8 @@ class _CancellationRadioState extends State<CancellationRadio> {
               ),
               Text(
                 "Lack Of Time",
-                style: TextStyles.textStyleRegular.copyWith(fontSize: 14.sp, color: AppColors.n900Black),
+                style: TextStyles.textStyleRegular
+                    .copyWith(fontSize: 14.sp, color: AppColors.n900Black),
               ),
             ],
           ),
@@ -108,7 +109,8 @@ class _CancellationRadioState extends State<CancellationRadio> {
               ),
               Text(
                 "Relocation",
-                style: TextStyles.textStyleRegular.copyWith(fontSize: 14.sp, color: AppColors.n900Black),
+                style: TextStyles.textStyleRegular
+                    .copyWith(fontSize: 14.sp, color: AppColors.n900Black),
               ),
             ],
           ),
@@ -139,7 +141,8 @@ class _CancellationRadioState extends State<CancellationRadio> {
               ),
               Text(
                 "Change in Fitness Goals",
-                style: TextStyles.textStyleRegular.copyWith(fontSize: 14.sp, color: AppColors.n900Black),
+                style: TextStyles.textStyleRegular
+                    .copyWith(fontSize: 14.sp, color: AppColors.n900Black),
               ),
             ],
           ),
@@ -170,7 +173,8 @@ class _CancellationRadioState extends State<CancellationRadio> {
               ),
               Text(
                 "Alternative Fitness Option",
-                style: TextStyles.textStyleRegular.copyWith(fontSize: 14.sp, color: AppColors.n900Black),
+                style: TextStyles.textStyleRegular
+                    .copyWith(fontSize: 14.sp, color: AppColors.n900Black),
               ),
             ],
           ),
@@ -201,7 +205,8 @@ class _CancellationRadioState extends State<CancellationRadio> {
               ),
               Text(
                 "Other",
-                style: TextStyles.textStyleRegular.copyWith(fontSize: 14.sp, color: AppColors.n900Black),
+                style: TextStyles.textStyleRegular
+                    .copyWith(fontSize: 14.sp, color: AppColors.n900Black),
               ),
             ],
           ),

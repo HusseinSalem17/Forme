@@ -39,9 +39,7 @@ class TextList extends StatelessWidget {
               return Text(
                 values[index],
                 style: TextStyles.textStyleBold.copyWith(
-                    height: 3,
-                    fontSize: 14.sp,
-                    color: AppColors.n900Black),
+                    height: 3, fontSize: 14.sp, color: AppColors.n900Black),
               );
             },
           ),

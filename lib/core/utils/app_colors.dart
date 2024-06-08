@@ -28,7 +28,10 @@ abstract class AppColors {
   static const n900Black = Color(0xff071225);
   static const r200ErrorColor = Color(0xffEB4A4A);
   static const starColor = Color(0xffFFCF24);
+  static const w75Color = Color(0xffFBF8B2);
+  static const yellowColor = Color(0xffFFD400);
   static const greenColor = Color(0xff25D02C);
+  static const s75green = Color(0xffA6ECA8);
   static const d50Danger = Color(0xffF18181);
   static const d100Danger = Color(0xffFDE9E9);
   static const d300Danger = Color(0xffE72525);

@@ -39,10 +39,8 @@ class _PickYourLevelScreenBodyState extends State<PickYourLevelScreenBody> {
           ),
           Text(
             'This helps us create your personalized plan',
-            style: TextStyles.textStyleRegular.copyWith(
-              color: AppColors.n70Gray,
-              fontSize:14.sp
-            ),
+            style: TextStyles.textStyleRegular
+                .copyWith(color: AppColors.n70Gray, fontSize: 14.sp),
           ),
           SizedBox(
             height: 100.h,

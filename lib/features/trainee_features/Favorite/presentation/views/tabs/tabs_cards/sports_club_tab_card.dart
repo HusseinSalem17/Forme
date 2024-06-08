@@ -42,7 +42,13 @@ class SportsClubTabCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisSize: MainAxisSize.min,
           children: [
-            FavCardImageSection(height: size.height / 2, width: size.width / 4, bottomPadding: 0, leftPaddingIcon: 110, id: model.id, category: model.category),
+            FavCardImageSection(
+                height: size.height / 2,
+                width: size.width / 4,
+                bottomPadding: 0,
+                leftPaddingIcon: 110,
+                id: model.id,
+                category: model.category),
             Padding(
               padding: const EdgeInsets.only(top: 8, bottom: 8, left: 8),
               child: Column(
@@ -50,11 +56,12 @@ class SportsClubTabCard extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   SizedBox(
-                    width: size.width /2,
+                    width: size.width / 2,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        ProgramsCardType(type: model.typeCard, state: model.state),
+                        ProgramsCardType(
+                            type: model.typeCard, state: model.state),
                         Row(
                           children: [
                             const Icon(
@@ -106,7 +113,10 @@ class SportsClubTabCard extends StatelessWidget {
                       ),
                       Text(
                         model.period,
-                        style: TextStyles.cardTextStyle.copyWith(fontSize: 8, fontWeight: FontWeight.w400, color: AppColors.n200Gray),
+                        style: TextStyles.cardTextStyle.copyWith(
+                            fontSize: 8,
+                            fontWeight: FontWeight.w400,
+                            color: AppColors.n200Gray),
                       ),
                     ],
                   )

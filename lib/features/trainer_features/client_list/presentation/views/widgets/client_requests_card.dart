@@ -8,9 +8,9 @@ import 'package:forme_app/features/trainer_features/client_list/data/client_requ
 import 'package:forme_app/features/trainer_features/my_services/presentation/views/screens/cancellation_screen.dart';
 import 'package:forme_app/features/trainee_features/Trainer_details/presentation/views/widgets/custom_clip_rect.dart';
 
-
 class ClientsRequestsCard extends StatelessWidget {
-  const ClientsRequestsCard({super.key, required this.size, required this.model});
+  const ClientsRequestsCard(
+      {super.key, required this.size, required this.model});
   final Size size;
   final ClientsRequestsModel model;
 
@@ -19,9 +19,9 @@ class ClientsRequestsCard extends StatelessWidget {
     return Container(
       margin: EdgeInsets.symmetric(vertical: 6.h),
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
-          color: AppColors.n10Color,
-        ),
+        borderRadius: BorderRadius.circular(10),
+        color: AppColors.n10Color,
+      ),
       child: Padding(
         padding: EdgeInsets.only(top: 8.0.h, bottom: 8.h, left: 6.w),
         child: Row(
@@ -30,7 +30,12 @@ class ClientsRequestsCard extends StatelessWidget {
           children: [
             Row(
               children: [
-                const Center(child: CustomClipRect(height: 58, width: 58, imagePath: 'assets/image/workout_image.jpg',)),
+                const Center(
+                    child: CustomClipRect(
+                  height: 58,
+                  width: 58,
+                  imagePath: 'assets/image/workout_image.jpg',
+                )),
                 SizedBox(
                   width: 8.w,
                 ),
@@ -40,19 +45,19 @@ class ClientsRequestsCard extends StatelessWidget {
                   children: [
                     Text(
                       model.clientName,
-                      style: TextStyles.textStyleRegular.copyWith(fontSize: 14.sp, color: AppColors.n900Black),
+                      style: TextStyles.textStyleRegular.copyWith(
+                          fontSize: 14.sp, color: AppColors.n900Black),
                     ),
                     Row(
                       children: [
                         Text(
                           model.clientLevel,
                           style: TextStyles.textStyleRegular.copyWith(
-                            fontSize: 11.sp,
-                            color: AppColors.p200PrimaryColor
-                          ),
+                              fontSize: 11.sp,
+                              color: AppColors.p200PrimaryColor),
                         ),
                         Padding(
-                          padding: const EdgeInsets.symmetric(horizontal:4.0),
+                          padding: const EdgeInsets.symmetric(horizontal: 4.0),
                           child: Container(
                             width: 1.w,
                             height: 12.h,
@@ -62,9 +67,7 @@ class ClientsRequestsCard extends StatelessWidget {
                         Text(
                           model.clientType,
                           style: TextStyles.textStyleRegular.copyWith(
-                            fontSize: 11.sp,
-                            color: AppColors.n80NavColor
-                          ),
+                              fontSize: 11.sp, color: AppColors.n80NavColor),
                         ),
                       ],
                     )
@@ -104,18 +107,19 @@ class ClientsRequestsCard extends StatelessWidget {
                       ),
                     ),
                     PopupMenuItem(
-                            height: 35,
-                            child: const Text(
-                              'Cancel',
-                              style: TextStyle(color: AppColors.d300Danger),
-                            ),
-                            onTap: () {
-                              if (kDebugMode) {
-                                print('Cancel');
-                              }
-                              Navigator.of(context).push(PageSlideTransition(const CancellationScreen()));
-                            },
-                          ),
+                      height: 35,
+                      child: const Text(
+                        'Cancel',
+                        style: TextStyle(color: AppColors.d300Danger),
+                      ),
+                      onTap: () {
+                        if (kDebugMode) {
+                          print('Cancel');
+                        }
+                        Navigator.of(context).push(
+                            PageSlideTransition(const CancellationScreen()));
+                      },
+                    ),
                   ],
                 ),
               ],

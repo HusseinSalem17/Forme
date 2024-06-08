@@ -7,10 +7,10 @@ import 'package:forme_app/core/utils/text_styles.dart';
 import 'package:forme_app/core/widgets/custom_app_bar_arrow_button.dart';
 import 'package:forme_app/core/widgets/app_drop_list/custom_drop_list.dart';
 import 'package:forme_app/core/widgets/app_fields/custom_text_field.dart';
-import 'package:forme_app/features/trainee_features/profile/presentation/views/complete_profile_widgets/profile_image_picker.dart';
+import 'package:forme_app/core/widgets/image_picker/profile_image_picker.dart';
 import 'package:forme_app/features/trainee_features/profile/presentation/views/widgets/my_profile_phone_field.dart';
 import 'package:image_picker/image_picker.dart';
-import '../manager/my_profile_cubit/cubit/my_profile_cubit.dart';
+import '../manager/cubit/my_profile_cubit.dart';
 
 class MyProfile extends StatefulWidget {
   static const routeName = '/my-profile-screen';
@@ -75,8 +75,8 @@ class _MyProfileState extends State<MyProfile> {
               const Spacer(),
               Text(
                 "My Profile",
-                style: TextStyles.textStyleBold.copyWith(
-                    fontSize: 18.sp, color: AppColors.n900Black),
+                style: TextStyles.textStyleBold
+                    .copyWith(fontSize: 18.sp, color: AppColors.n900Black),
               ),
               const Spacer(),
               IconButton(

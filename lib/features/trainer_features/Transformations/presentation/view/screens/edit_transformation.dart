@@ -7,7 +7,6 @@ import 'package:forme_app/core/widgets/custom_app_bar_arrow_button.dart';
 import 'package:forme_app/core/widgets/import_media.dart';
 import 'package:forme_app/core/widgets/text_area.dart';
 
-
 class EditTransformation extends StatefulWidget {
   const EditTransformation({Key? key}) : super(key: key);
 

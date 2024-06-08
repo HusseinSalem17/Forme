@@ -5,7 +5,7 @@ class TrainerSearchCardModel {
     required this.id,
     required this.name,
     required this.category,
-    });
+  });
 }
 
 List<TrainerSearchCardModel> trainerSearchCardModel = [

@@ -18,14 +18,14 @@ class GalleryTab extends StatelessWidget {
                 padding: EdgeInsets.symmetric(vertical: 16.w),
                 child: Text(
                   'Gallery ',
-                  style: TextStyles.textStyleBold.copyWith(
-                      fontSize: 14.sp, color: AppColors.n900Black),
+                  style: TextStyles.textStyleBold
+                      .copyWith(fontSize: 14.sp, color: AppColors.n900Black),
                 ),
               ),
               Text(
                 '(6)',
-                style: TextStyles.textStyleBold.copyWith(
-                    fontSize: 14.sp, color: AppColors.primaryColor),
+                style: TextStyles.textStyleBold
+                    .copyWith(fontSize: 14.sp, color: AppColors.primaryColor),
               ),
             ],
           ),

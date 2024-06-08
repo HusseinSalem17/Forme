@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
-import 'package:forme_app/features/trainee_features/profile/presentation/views/complete_profile_widgets/custom_build_form.dart';
+import 'package:forme_app/core/widgets/custom_build_form.dart';
 
 class TextArea extends StatelessWidget {
   final String title;
@@ -28,9 +28,7 @@ class TextArea extends StatelessWidget {
           height: MediaQuery.sizeOf(context).height / 4.h,
           width: MediaQuery.sizeOf(context).width,
           decoration: BoxDecoration(
-              color: enabled
-                  ? AppColors.background
-                  : AppColors.n20Gray,
+              color: enabled ? AppColors.background : AppColors.n20Gray,
               border: Border.all(color: AppColors.n40Gray, width: 1),
               borderRadius: BorderRadius.circular(4.dg)),
           child: Padding(
@@ -38,14 +36,13 @@ class TextArea extends StatelessWidget {
             child: TextField(
               controller: controller,
               enabled: enabled,
-              style: TextStyles.textStyleRegular.copyWith(
-                  fontSize: 14.sp, color: AppColors.n900Black),
+              style: TextStyles.textStyleRegular
+                  .copyWith(fontSize: 14.sp, color: AppColors.n900Black),
               cursorColor: AppColors.primaryColor,
               keyboardType: TextInputType.multiline,
               maxLines: 6,
               decoration: InputDecoration(
                 hintText: hintText,
-
                 hintStyle:
                     TextStyles.textStyleRegular.copyWith(fontSize: 14.sp),
                 border: InputBorder.none,

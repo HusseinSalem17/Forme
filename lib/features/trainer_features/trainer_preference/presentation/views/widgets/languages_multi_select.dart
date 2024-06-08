@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
+import 'package:forme_app/features/trainer_features/trainer_preference/presentation/manager/cubit/trainer_preference_cubit.dart';
 
 class LanguagesMultiSelect extends StatefulWidget {
   final List<String> items;
@@ -32,6 +34,7 @@ class _LanguagesMultiSelectState extends State<LanguagesMultiSelect> {
 
 // this function is called when the Submit button is tapped
   void _submit() {
+    context.read<TrainerPreferenceCubit>().languages = _selectedItems;
     Navigator.pop(context, _selectedItems);
   }
 
@@ -40,7 +43,8 @@ class _LanguagesMultiSelectState extends State<LanguagesMultiSelect> {
     return AlertDialog(
       backgroundColor: Colors.white,
       surfaceTintColor: Colors.transparent,
-      title: Text('Select Languages', style: TextStyles.textStyleRegular.copyWith(color: Colors.black)),
+      title: Text('Select Languages',
+          style: TextStyles.textStyleRegular.copyWith(color: Colors.black)),
       content: SingleChildScrollView(
         child: ListBody(
           children: widget.items
@@ -49,7 +53,8 @@ class _LanguagesMultiSelectState extends State<LanguagesMultiSelect> {
                     activeColor: AppColors.primaryColor,
                     title: Text(
                       item,
-                      style: TextStyles.textStyleRegular.copyWith(color: Colors.black),
+                      style: TextStyles.textStyleRegular
+                          .copyWith(color: Colors.black),
                     ),
                     controlAffinity: ListTileControlAffinity.trailing,
                     onChanged: (isChecked) => _itemChange(item, isChecked!),
@@ -65,14 +70,16 @@ class _LanguagesMultiSelectState extends State<LanguagesMultiSelect> {
               onPressed: _cancel,
               child: Text(
                 'Cancel',
-                style: TextStyles.textStyleSemiBold.copyWith(color: AppColors.primaryColor),
+                style: TextStyles.textStyleSemiBold
+                    .copyWith(color: AppColors.primaryColor),
               ),
             ),
             TextButton(
               onPressed: _submit,
               child: Text(
                 'Submit',
-                style: TextStyles.textStyleSemiBold.copyWith(color: AppColors.primaryColor),
+                style: TextStyles.textStyleSemiBold
+                    .copyWith(color: AppColors.primaryColor),
               ),
             ),
           ],

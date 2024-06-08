@@ -8,7 +8,6 @@ import 'package:forme_app/features/trainee_features/Favorite/presentation/views/
 import 'package:forme_app/features/trainee_features/Favorite/presentation/views/tabs/remove_section/sports_remove_card_decoration.dart';
 import 'package:forme_app/features/trainee_features/Favorite/presentation/views/tabs/remove_section/workout_remove_card_decoration.dart';
 
-
 class CardImageSection extends StatefulWidget {
   const CardImageSection({
     super.key,
@@ -66,7 +65,8 @@ class _CardImageSectionState extends State<CardImageSection> {
                             child: Text(
                               'Remove From Favorites?',
                               textAlign: TextAlign.center,
-                              style: TextStyles.blackCardTextStyle.copyWith(fontSize: 16),
+                              style: TextStyles.blackCardTextStyle
+                                  .copyWith(fontSize: 16),
                             ),
                           ),
                           const Padding(
@@ -110,7 +110,8 @@ class _CardImageSectionState extends State<CardImageSection> {
                                       },
                                       child: Text(
                                         'Cancel',
-                                        style: TextStyles.textStyleSemiBold.copyWith(
+                                        style: TextStyles.textStyleSemiBold
+                                            .copyWith(
                                           fontSize: 12,
                                           color: AppColors.primaryColor,
                                         ),
@@ -137,7 +138,8 @@ class _CardImageSectionState extends State<CardImageSection> {
                                       },
                                       child: Text(
                                         'Yes, Remove',
-                                        style: TextStyles.textStyleSemiBold.copyWith(
+                                        style: TextStyles.textStyleSemiBold
+                                            .copyWith(
                                           fontSize: 12,
                                           color: AppColors.background,
                                         ),

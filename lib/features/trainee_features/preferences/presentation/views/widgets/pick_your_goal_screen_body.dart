@@ -40,10 +40,8 @@ class _PickYourGoalScreenBodyState extends State<PickYourGoalScreenBody> {
           ),
           Text(
             'This helps us create your personalized plan',
-            style: TextStyles.textStyleRegular.copyWith(
-              color: AppColors.n70Gray,
-              fontSize:14.sp
-            ),
+            style: TextStyles.textStyleRegular
+                .copyWith(color: AppColors.n70Gray, fontSize: 14.sp),
           ),
           SizedBox(
             height: 58.h,

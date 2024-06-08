@@ -44,13 +44,16 @@ class YourClientsCard extends StatelessWidget {
                   children: [
                     Text(
                       model.clientName,
-                      style: TextStyles.textStyleRegular.copyWith(fontSize: 14.sp, color: AppColors.n900Black),
+                      style: TextStyles.textStyleRegular.copyWith(
+                          fontSize: 14.sp, color: AppColors.n900Black),
                     ),
                     Row(
                       children: [
                         Text(
                           model.clientLevel,
-                          style: TextStyles.textStyleRegular.copyWith(fontSize: 11.sp, color: AppColors.p200PrimaryColor),
+                          style: TextStyles.textStyleRegular.copyWith(
+                              fontSize: 11.sp,
+                              color: AppColors.p200PrimaryColor),
                         ),
                         Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 4.0),
@@ -61,13 +64,20 @@ class YourClientsCard extends StatelessWidget {
                           ),
                         ),
                         RichText(
-                          text: TextSpan(text: model.duration, style: TextStyles.textStyleRegular.copyWith(fontSize: 11.sp, color: AppColors.p200PrimaryColor), children: <TextSpan>[
-                            const TextSpan(text: ' '),
-                            TextSpan(
-                              text: model.clientType,
-                              style: TextStyles.textStyleRegular.copyWith(fontSize: 11.sp, color: AppColors.p200PrimaryColor),
-                            ),
-                          ]),
+                          text: TextSpan(
+                              text: model.duration,
+                              style: TextStyles.textStyleRegular.copyWith(
+                                  fontSize: 11.sp,
+                                  color: AppColors.p200PrimaryColor),
+                              children: <TextSpan>[
+                                const TextSpan(text: ' '),
+                                TextSpan(
+                                  text: model.clientType,
+                                  style: TextStyles.textStyleRegular.copyWith(
+                                      fontSize: 11.sp,
+                                      color: AppColors.p200PrimaryColor),
+                                ),
+                              ]),
                         ),
                       ],
                     )
@@ -116,7 +126,8 @@ class YourClientsCard extends StatelessWidget {
                         if (kDebugMode) {
                           print('Cancel');
                         }
-                        Navigator.of(context).push(PageSlideTransition(const CancellationScreen()));
+                        Navigator.of(context).push(
+                            PageSlideTransition(const CancellationScreen()));
                       },
                     ),
                   ],

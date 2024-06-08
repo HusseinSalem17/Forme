@@ -12,7 +12,7 @@ class YourClientsTab extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColors.background,
       body: Padding(
-        padding: const EdgeInsets.only(top:23.6),
+        padding: const EdgeInsets.only(top: 23.6),
         child: Column(
           children: [
             Expanded(

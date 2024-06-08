@@ -12,7 +12,8 @@ import 'package:forme_app/features/trainee_features/Favorite/presentation/views/
 import 'package:forme_app/features/trainee_features/Favorite/presentation/views/tabs/tabs_cards/workout_tab_card.dart';
 
 class FilterType extends StatefulWidget {
-  const FilterType({Key? key, required this.type, required this.categories}) : super(key: key);
+  const FilterType({Key? key, required this.type, required this.categories})
+      : super(key: key);
   final String type;
   final List<String> categories;
 
@@ -39,7 +40,9 @@ class _FilterTypeState extends State<FilterType> {
               child: Container(
                 height: 40,
                 decoration: BoxDecoration(
-                  color: selectedIndex == index ? AppColors.primaryColor : AppColors.n20Gray,
+                  color: selectedIndex == index
+                      ? AppColors.primaryColor
+                      : AppColors.n20Gray,
                   borderRadius: BorderRadius.circular(30),
                 ),
                 child: TextButton(
@@ -53,7 +56,8 @@ class _FilterTypeState extends State<FilterType> {
                               itemCount: workoutCardData.length,
                               itemBuilder: (context, index) {
                                 return Padding(
-                                  padding: const EdgeInsets.symmetric(horizontal: 8),
+                                  padding:
+                                      const EdgeInsets.symmetric(horizontal: 8),
                                   child: WorkoutTabCard(
                                     size: size,
                                     model: workoutCardData[index],
@@ -68,13 +72,15 @@ class _FilterTypeState extends State<FilterType> {
                               itemCount: workoutCardData.length,
                               itemBuilder: (context, index) {
                                 return Padding(
-                                  padding: const EdgeInsets.symmetric(horizontal: 8),
-                                  child: workoutCardData[index].typeCard == 'GYM'
-                                      ? WorkoutTabCard(
-                                          size: size,
-                                          model: workoutCardData[index],
-                                        )
-                                      : Container(),
+                                  padding:
+                                      const EdgeInsets.symmetric(horizontal: 8),
+                                  child:
+                                      workoutCardData[index].typeCard == 'GYM'
+                                          ? WorkoutTabCard(
+                                              size: size,
+                                              model: workoutCardData[index],
+                                            )
+                                          : Container(),
                                 );
                               },
                             ),
@@ -85,13 +91,15 @@ class _FilterTypeState extends State<FilterType> {
                               itemCount: workoutCardData.length,
                               itemBuilder: (context, index) {
                                 return Padding(
-                                  padding: const EdgeInsets.symmetric(horizontal: 8),
-                                  child: workoutCardData[index].typeCard == 'Yoga'
-                                      ? WorkoutTabCard(
-                                          size: size,
-                                          model: workoutCardData[index],
-                                        )
-                                      : Container(),
+                                  padding:
+                                      const EdgeInsets.symmetric(horizontal: 8),
+                                  child:
+                                      workoutCardData[index].typeCard == 'Yoga'
+                                          ? WorkoutTabCard(
+                                              size: size,
+                                              model: workoutCardData[index],
+                                            )
+                                          : Container(),
                                 );
                               },
                             ),
@@ -102,8 +110,10 @@ class _FilterTypeState extends State<FilterType> {
                               itemCount: workoutCardData.length,
                               itemBuilder: (context, index) {
                                 return Padding(
-                                  padding: const EdgeInsets.symmetric(horizontal: 8),
-                                  child: workoutCardData[index].typeCard == 'Running'
+                                  padding:
+                                      const EdgeInsets.symmetric(horizontal: 8),
+                                  child: workoutCardData[index].typeCard ==
+                                          'Running'
                                       ? WorkoutTabCard(
                                           size: size,
                                           model: workoutCardData[index],
@@ -119,8 +129,10 @@ class _FilterTypeState extends State<FilterType> {
                               itemCount: workoutCardData.length,
                               itemBuilder: (context, index) {
                                 return Padding(
-                                  padding: const EdgeInsets.symmetric(horizontal: 8),
-                                  child: workoutCardData[index].typeCard == 'Boxing'
+                                  padding:
+                                      const EdgeInsets.symmetric(horizontal: 8),
+                                  child: workoutCardData[index].typeCard ==
+                                          'Boxing'
                                       ? WorkoutTabCard(
                                           size: size,
                                           model: workoutCardData[index],
@@ -138,7 +150,8 @@ class _FilterTypeState extends State<FilterType> {
                               itemCount: programsCardModel.length,
                               itemBuilder: (context, index) {
                                 return Padding(
-                                  padding: const EdgeInsets.symmetric(horizontal: 8),
+                                  padding:
+                                      const EdgeInsets.symmetric(horizontal: 8),
                                   child: ProgramsTabCard(
                                     size: size,
                                     model: programsCardModel[index],
@@ -153,7 +166,8 @@ class _FilterTypeState extends State<FilterType> {
                               itemCount: programsCardModel.length,
                               itemBuilder: (context, index) {
                                 return Padding(
-                                  padding: const EdgeInsets.symmetric(horizontal: 8),
+                                  padding:
+                                      const EdgeInsets.symmetric(horizontal: 8),
                                   child: programsCardModel[index].type == 'GYM'
                                       ? ProgramsTabCard(
                                           size: size,
@@ -170,7 +184,8 @@ class _FilterTypeState extends State<FilterType> {
                               itemCount: programsCardModel.length,
                               itemBuilder: (context, index) {
                                 return Padding(
-                                  padding: const EdgeInsets.symmetric(horizontal: 8),
+                                  padding:
+                                      const EdgeInsets.symmetric(horizontal: 8),
                                   child: programsCardModel[index].type == 'Yoga'
                                       ? ProgramsTabCard(
                                           size: size,
@@ -187,13 +202,15 @@ class _FilterTypeState extends State<FilterType> {
                               itemCount: programsCardModel.length,
                               itemBuilder: (context, index) {
                                 return Padding(
-                                  padding: const EdgeInsets.symmetric(horizontal: 8),
-                                  child: programsCardModel[index].type == 'Running'
-                                      ? ProgramsTabCard(
-                                          size: size,
-                                          model: programsCardModel[index],
-                                        )
-                                      : Container(),
+                                  padding:
+                                      const EdgeInsets.symmetric(horizontal: 8),
+                                  child:
+                                      programsCardModel[index].type == 'Running'
+                                          ? ProgramsTabCard(
+                                              size: size,
+                                              model: programsCardModel[index],
+                                            )
+                                          : Container(),
                                 );
                               },
                             ),
@@ -204,13 +221,15 @@ class _FilterTypeState extends State<FilterType> {
                               itemCount: programsCardModel.length,
                               itemBuilder: (context, index) {
                                 return Padding(
-                                  padding: const EdgeInsets.symmetric(horizontal: 8),
-                                  child: programsCardModel[index].type == 'Boxing'
-                                      ? ProgramsTabCard(
-                                          size: size,
-                                          model: programsCardModel[index],
-                                        )
-                                      : Container(),
+                                  padding:
+                                      const EdgeInsets.symmetric(horizontal: 8),
+                                  child:
+                                      programsCardModel[index].type == 'Boxing'
+                                          ? ProgramsTabCard(
+                                              size: size,
+                                              model: programsCardModel[index],
+                                            )
+                                          : Container(),
                                 );
                               },
                             ),
@@ -223,7 +242,8 @@ class _FilterTypeState extends State<FilterType> {
                               itemCount: trainerCardModel.length,
                               itemBuilder: (context, index) {
                                 return Padding(
-                                  padding: const EdgeInsets.symmetric(horizontal: 8),
+                                  padding:
+                                      const EdgeInsets.symmetric(horizontal: 8),
                                   child: TrainerTabCard(
                                     size: size,
                                     model: trainerCardModel[index],
@@ -238,13 +258,15 @@ class _FilterTypeState extends State<FilterType> {
                               itemCount: trainerCardModel.length,
                               itemBuilder: (context, index) {
                                 return Padding(
-                                  padding: const EdgeInsets.symmetric(horizontal: 8),
-                                  child: trainerCardModel[index].category == 'GYM'
-                                      ? TrainerTabCard(
-                                          size: size,
-                                          model: trainerCardModel[index],
-                                        )
-                                      : Container(),
+                                  padding:
+                                      const EdgeInsets.symmetric(horizontal: 8),
+                                  child:
+                                      trainerCardModel[index].category == 'GYM'
+                                          ? TrainerTabCard(
+                                              size: size,
+                                              model: trainerCardModel[index],
+                                            )
+                                          : Container(),
                                 );
                               },
                             ),
@@ -255,13 +277,15 @@ class _FilterTypeState extends State<FilterType> {
                               itemCount: trainerCardModel.length,
                               itemBuilder: (context, index) {
                                 return Padding(
-                                  padding: const EdgeInsets.symmetric(horizontal: 8),
-                                  child: trainerCardModel[index].category == 'Yoga'
-                                      ? TrainerTabCard(
-                                          size: size,
-                                          model: trainerCardModel[index],
-                                        )
-                                      : Container(),
+                                  padding:
+                                      const EdgeInsets.symmetric(horizontal: 8),
+                                  child:
+                                      trainerCardModel[index].category == 'Yoga'
+                                          ? TrainerTabCard(
+                                              size: size,
+                                              model: trainerCardModel[index],
+                                            )
+                                          : Container(),
                                 );
                               },
                             ),
@@ -272,8 +296,10 @@ class _FilterTypeState extends State<FilterType> {
                               itemCount: trainerCardModel.length,
                               itemBuilder: (context, index) {
                                 return Padding(
-                                  padding: const EdgeInsets.symmetric(horizontal: 8),
-                                  child: trainerCardModel[index].category == 'Running'
+                                  padding:
+                                      const EdgeInsets.symmetric(horizontal: 8),
+                                  child: trainerCardModel[index].category ==
+                                          'Running'
                                       ? TrainerTabCard(
                                           size: size,
                                           model: trainerCardModel[index],
@@ -289,8 +315,10 @@ class _FilterTypeState extends State<FilterType> {
                               itemCount: trainerCardModel.length,
                               itemBuilder: (context, index) {
                                 return Padding(
-                                  padding: const EdgeInsets.symmetric(horizontal: 8),
-                                  child: trainerCardModel[index].category == 'Boxing'
+                                  padding:
+                                      const EdgeInsets.symmetric(horizontal: 8),
+                                  child: trainerCardModel[index].category ==
+                                          'Boxing'
                                       ? TrainerTabCard(
                                           size: size,
                                           model: trainerCardModel[index],
@@ -308,7 +336,8 @@ class _FilterTypeState extends State<FilterType> {
                               itemCount: sportsClubCardModel.length,
                               itemBuilder: (context, index) {
                                 return Padding(
-                                  padding: const EdgeInsets.symmetric(horizontal: 8),
+                                  padding:
+                                      const EdgeInsets.symmetric(horizontal: 8),
                                   child: SportsClubTabCard(
                                     size: size,
                                     model: sportsClubCardModel[index],
@@ -323,8 +352,10 @@ class _FilterTypeState extends State<FilterType> {
                               itemCount: sportsClubCardModel.length,
                               itemBuilder: (context, index) {
                                 return Padding(
-                                  padding: const EdgeInsets.symmetric(horizontal: 8),
-                                  child: sportsClubCardModel[index].category == 'GYM'
+                                  padding:
+                                      const EdgeInsets.symmetric(horizontal: 8),
+                                  child: sportsClubCardModel[index].category ==
+                                          'GYM'
                                       ? SportsClubTabCard(
                                           size: size,
                                           model: sportsClubCardModel[index],
@@ -340,8 +371,10 @@ class _FilterTypeState extends State<FilterType> {
                               itemCount: sportsClubCardModel.length,
                               itemBuilder: (context, index) {
                                 return Padding(
-                                  padding: const EdgeInsets.symmetric(horizontal: 8),
-                                  child: sportsClubCardModel[index].category == 'Yoga'
+                                  padding:
+                                      const EdgeInsets.symmetric(horizontal: 8),
+                                  child: sportsClubCardModel[index].category ==
+                                          'Yoga'
                                       ? SportsClubTabCard(
                                           size: size,
                                           model: sportsClubCardModel[index],
@@ -357,8 +390,10 @@ class _FilterTypeState extends State<FilterType> {
                               itemCount: sportsClubCardModel.length,
                               itemBuilder: (context, index) {
                                 return Padding(
-                                  padding: const EdgeInsets.symmetric(horizontal: 8),
-                                  child: sportsClubCardModel[index].category == 'Running'
+                                  padding:
+                                      const EdgeInsets.symmetric(horizontal: 8),
+                                  child: sportsClubCardModel[index].category ==
+                                          'Running'
                                       ? SportsClubTabCard(
                                           size: size,
                                           model: sportsClubCardModel[index],
@@ -374,8 +409,10 @@ class _FilterTypeState extends State<FilterType> {
                               itemCount: sportsClubCardModel.length,
                               itemBuilder: (context, index) {
                                 return Padding(
-                                  padding: const EdgeInsets.symmetric(horizontal: 8),
-                                  child: sportsClubCardModel[index].category == 'Boxing'
+                                  padding:
+                                      const EdgeInsets.symmetric(horizontal: 8),
+                                  child: sportsClubCardModel[index].category ==
+                                          'Boxing'
                                       ? SportsClubTabCard(
                                           size: size,
                                           model: sportsClubCardModel[index],
@@ -393,7 +430,9 @@ class _FilterTypeState extends State<FilterType> {
                     category,
                     style: TextStyles.textStyleRegular.copyWith(
                       fontSize: 16.sp,
-                      color: selectedIndex == index ? AppColors.background : AppColors.n100Gray,
+                      color: selectedIndex == index
+                          ? AppColors.background
+                          : AppColors.n100Gray,
                     ),
                   ),
                 ),

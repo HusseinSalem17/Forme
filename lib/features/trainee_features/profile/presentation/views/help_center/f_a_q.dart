@@ -53,15 +53,12 @@ class FAQsTab extends StatelessWidget {
               children: List<Widget>.generate(questions.length, (int index) {
             return customExpansionTile(
                 Text(questions[index],
-                    style: TextStyles.textStyleBold.copyWith(
-                        fontSize: 14.sp,
-                        color: AppColors.n900Black)),
+                    style: TextStyles.textStyleBold
+                        .copyWith(fontSize: 14.sp, color: AppColors.n900Black)),
                 answers[index]);
           })),
         ),
       ]),
     );
   }
-
-  
 }

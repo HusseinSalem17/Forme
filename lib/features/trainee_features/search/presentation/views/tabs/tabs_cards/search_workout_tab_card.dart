@@ -8,7 +8,6 @@ import 'package:forme_app/features/trainee_features/Favorite/presentation/views/
 import 'package:forme_app/features/trainee_features/search/data/workout_search_card_model.dart';
 import 'package:forme_app/features/trainee_features/search/presentation/views/widgets/image_section.dart';
 
-
 class SearchWorkoutTabCard extends StatelessWidget {
   const SearchWorkoutTabCard({
     super.key,
@@ -78,7 +77,10 @@ class SearchWorkoutTabCard extends StatelessWidget {
                           ),
                           Text(
                             model.reviews,
-                            style: TextStyles.cardTextStyle.copyWith(color: AppColors.n200Gray, fontSize: 9, fontWeight: FontWeight.w400),
+                            style: TextStyles.cardTextStyle.copyWith(
+                                color: AppColors.n200Gray,
+                                fontSize: 9,
+                                fontWeight: FontWeight.w400),
                           ),
                         ],
                       )
@@ -116,7 +118,8 @@ class SearchWorkoutTabCard extends StatelessWidget {
                           fontWeight: FontWeight.w600,
                         ),
                       ),
-                      if (model.isBestSeller) const WorkoutCardType(type: 'Best Seller')
+                      if (model.isBestSeller)
+                        const WorkoutCardType(type: 'Best Seller')
                     ],
                   ),
                 )

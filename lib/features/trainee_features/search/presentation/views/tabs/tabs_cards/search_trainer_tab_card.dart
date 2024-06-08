@@ -8,7 +8,8 @@ import 'package:forme_app/features/trainee_features/search/data/trainer_search_c
 import 'package:forme_app/features/trainee_features/search/presentation/views/widgets/workout_icon.dart';
 
 class SearchTrainerTabCard extends StatelessWidget {
-  const SearchTrainerTabCard({super.key, required this.model, required this.size});
+  const SearchTrainerTabCard(
+      {super.key, required this.model, required this.size});
   final TrainerSearchCardModel model;
   final Size size;
 
@@ -49,7 +50,8 @@ class SearchTrainerTabCard extends StatelessWidget {
               children: [
                 Text(
                   model.name,
-                  style: TextStyles.textStyleRegular.copyWith(fontSize: 14.sp, color: AppColors.n900Black),
+                  style: TextStyles.textStyleRegular
+                      .copyWith(fontSize: 14.sp, color: AppColors.n900Black),
                 ),
                 Text(
                   model.category,

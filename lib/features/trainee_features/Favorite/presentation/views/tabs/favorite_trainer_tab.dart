@@ -17,7 +17,9 @@ class FavTrainerTab extends StatelessWidget {
         children: [
           Padding(
             padding: EdgeInsets.only(top: 18.5, bottom: 22, left: 24.w),
-            child: const FilterType(type: 'trainer',categories:['All', 'GYM', 'YOGA', 'Running', 'Boxing']),
+            child: const FilterType(
+                type: 'trainer',
+                categories: ['All', 'GYM', 'YOGA', 'Running', 'Boxing']),
           ),
           CustomExpandedListView(
             itemCount: trainerCardModel.length,

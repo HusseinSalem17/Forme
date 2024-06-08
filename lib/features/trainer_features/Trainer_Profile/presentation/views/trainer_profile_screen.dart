@@ -60,7 +60,8 @@ class _TrainerProfileScreenState extends State<TrainerProfileScreen> {
                 padding: const EdgeInsets.only(top: 24),
                 child: Text(
                   'Profile',
-                  style: TextStyles.textStyleBold.copyWith(fontSize: 18.sp, color: AppColors.n900Black),
+                  style: TextStyles.textStyleBold
+                      .copyWith(fontSize: 18.sp, color: AppColors.n900Black),
                 ),
               ),
             ),
@@ -78,7 +79,9 @@ class _TrainerProfileScreenState extends State<TrainerProfileScreen> {
                 ),
               ),
             ),
-            Text('Ahmed Ramy', style: TextStyles.textStyleBold.copyWith(fontSize: 14.sp, color: AppColors.n900Black, height: 2)),
+            Text('Ahmed Ramy',
+                style: TextStyles.textStyleBold.copyWith(
+                    fontSize: 14.sp, color: AppColors.n900Black, height: 2)),
             Center(
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -101,15 +104,24 @@ class _TrainerProfileScreenState extends State<TrainerProfileScreen> {
                       ),
                       child: Column(
                         children: [
-                          Text(clientsSubscriptionsCardsModel.length.toString(), style: TextStyles.textStyleBold.copyWith(fontSize: 14.sp, color: AppColors.n900Black, height: 2)),
-                          Text('Subscriptions', style: TextStyles.textStyleRegular.copyWith(fontSize: 14.sp, color: AppColors.n900Black, height: 2)),
+                          Text(clientsSubscriptionsCardsModel.length.toString(),
+                              style: TextStyles.textStyleBold.copyWith(
+                                  fontSize: 14.sp,
+                                  color: AppColors.n900Black,
+                                  height: 2)),
+                          Text('Subscriptions',
+                              style: TextStyles.textStyleRegular.copyWith(
+                                  fontSize: 14.sp,
+                                  color: AppColors.n900Black,
+                                  height: 2)),
                         ],
                       )),
                   Container(
                       margin: EdgeInsets.symmetric(
                         vertical: 24.h,
                       ),
-                      padding: EdgeInsets.symmetric(vertical: 16.h, horizontal: 24.w),
+                      padding: EdgeInsets.symmetric(
+                          vertical: 16.h, horizontal: 24.w),
                       decoration: BoxDecoration(
                         border: Border.all(
                           color: AppColors.n30StrokeColor,
@@ -118,13 +130,22 @@ class _TrainerProfileScreenState extends State<TrainerProfileScreen> {
                       ),
                       child: Column(
                         children: [
-                          Text(myProgramsCardsModel.length.toString(), style: TextStyles.textStyleBold.copyWith(fontSize: 14.sp, color: AppColors.n900Black, height: 2)),
-                          Text('Programs', style: TextStyles.textStyleRegular.copyWith(fontSize: 14.sp, color: AppColors.n900Black, height: 2)),
+                          Text(myProgramsCardsModel.length.toString(),
+                              style: TextStyles.textStyleBold.copyWith(
+                                  fontSize: 14.sp,
+                                  color: AppColors.n900Black,
+                                  height: 2)),
+                          Text('Programs',
+                              style: TextStyles.textStyleRegular.copyWith(
+                                  fontSize: 14.sp,
+                                  color: AppColors.n900Black,
+                                  height: 2)),
                         ],
                       )),
                   Container(
                     margin: EdgeInsets.symmetric(vertical: 24.h),
-                    padding: EdgeInsets.symmetric(vertical: 16.h, horizontal: 24.w),
+                    padding:
+                        EdgeInsets.symmetric(vertical: 16.h, horizontal: 24.w),
                     decoration: BoxDecoration(
                       border: Border(
                         bottom: BorderSide(
@@ -139,7 +160,11 @@ class _TrainerProfileScreenState extends State<TrainerProfileScreen> {
                     ),
                     child: Column(
                       children: [
-                        Text('10', style: TextStyles.textStyleBold.copyWith(fontSize: 14.sp, color: AppColors.n900Black, height: 2)),
+                        Text('10',
+                            style: TextStyles.textStyleBold.copyWith(
+                                fontSize: 14.sp,
+                                color: AppColors.n900Black,
+                                height: 2)),
                         Text(
                           'Sessions',
                           style: TextStyles.textStyleRegular.copyWith(
@@ -163,7 +188,8 @@ class _TrainerProfileScreenState extends State<TrainerProfileScreen> {
                       children: [
                         Text(
                           'Transformations',
-                          style: TextStyles.textStyleRegular.copyWith(fontSize: 16.w, color: AppColors.n900Black),
+                          style: TextStyles.textStyleRegular.copyWith(
+                              fontSize: 16.w, color: AppColors.n900Black),
                         ),
                         GestureDetector(
                           onTap: () {
@@ -173,9 +199,12 @@ class _TrainerProfileScreenState extends State<TrainerProfileScreen> {
                             children: [
                               Text(
                                 'View All',
-                                style: TextStyles.textStyleRegular.copyWith(fontSize: 14.w, color: AppColors.primaryColor),
+                                style: TextStyles.textStyleRegular.copyWith(
+                                    fontSize: 14.w,
+                                    color: AppColors.primaryColor),
                               ),
-                              SvgPicture.asset('assets/image/profile/arrow.svg'),
+                              SvgPicture.asset(
+                                  'assets/image/profile/arrow.svg'),
                             ],
                           ),
                         )
@@ -185,7 +214,11 @@ class _TrainerProfileScreenState extends State<TrainerProfileScreen> {
                       children: [
                         Text(
                           'General',
-                          style: TextStyles.textStyleSemiBold.copyWith(color: AppColors.n900Black, fontWeight: FontWeight.w600, fontSize: 16, height: 3),
+                          style: TextStyles.textStyleSemiBold.copyWith(
+                              color: AppColors.n900Black,
+                              fontWeight: FontWeight.w600,
+                              fontSize: 16,
+                              height: 3),
                         ),
                       ],
                     ),
@@ -195,31 +228,46 @@ class _TrainerProfileScreenState extends State<TrainerProfileScreen> {
               padding: EdgeInsets.symmetric(horizontal: 24.w),
               child: Column(
                   children: List<Widget>.generate(9, (int index) {
-                return profileFeature(featuresIcons[index], features[index], () {
+                return profileFeature(featuresIcons[index], features[index],
+                    () {
                   switch (index) {
                     case 0:
-                      Navigator.of(context).push(PageSlideTransition(const TrainerYourProfileScreen()));
-                    case 1:  
-                      Navigator.of(context).push(PageSlideTransition(const ProgramFilesScreen()));
+                      Navigator.of(context).push(PageSlideTransition(
+                          const TrainerYourProfileScreen()));
+                    case 1:
+                      Navigator.of(context).push(
+                          PageSlideTransition(const ProgramFilesScreen()));
                     case 2:
-                      Navigator.of(context).push(PageSlideTransition(const NutritionFilesScreen()));
+                      Navigator.of(context).push(
+                          PageSlideTransition(const NutritionFilesScreen()));
                     case 3:
-                      Navigator.of(context).push(PageSlideTransition(const ReviewsScreen()));
+                      Navigator.of(context)
+                          .push(PageSlideTransition(const ReviewsScreen()));
 
                     // case 4:
                     //   Navigator.of(context)
                     //       .push(PageSlideTransition(const MyProfile()));
                     case 5:
-                      Navigator.of(context).push(PageSlideTransition(const SettingsScreen()));
+                      Navigator.of(context)
+                          .push(PageSlideTransition(const SettingsScreen()));
 
                     case 6:
-                      Navigator.of(context).push(PageSlideTransition(const HelpCenter(
-                        filterTypes: ['all', 'GYM', 'Swimming', 'Boxing', 'Running'],
+                      Navigator.of(context)
+                          .push(PageSlideTransition(const HelpCenter(
+                        filterTypes: [
+                          'all',
+                          'GYM',
+                          'Swimming',
+                          'Boxing',
+                          'Running'
+                        ],
                       )));
                     case 7:
-                      Navigator.of(context).push(PageSlideTransition(const PrivacyPolicy()));
+                      Navigator.of(context)
+                          .push(PageSlideTransition(const PrivacyPolicy()));
                     case 8:
-                      popUp(context, 'Logout', 'Are you sure you want to log out?', 'Log Out');
+                      popUp(context, 'Logout',
+                          'Are you sure you want to log out?', 'Log Out');
                   }
                 }, index != 8 ? AppColors.n900Black : AppColors.d300Danger);
               })),

@@ -20,11 +20,15 @@ class DurationTextField extends StatelessWidget {
           Expanded(
             child: TextFormField(
               cursorColor: AppColors.primaryColor,
-              style: TextStyles.textStyleRegular.copyWith(color: AppColors.n900Black, fontSize: 14.sp),
+              style: TextStyles.textStyleRegular
+                  .copyWith(color: AppColors.n900Black, fontSize: 14.sp),
               decoration: InputDecoration(
                 contentPadding: EdgeInsets.symmetric(vertical: 8.h),
                 hintText: 'Enter Duration',
-                hintStyle: TextStyles.textStyleMedium.copyWith(color: AppColors.n200Gray, fontSize: 14.sp, fontWeight: FontWeight.w400),
+                hintStyle: TextStyles.textStyleMedium.copyWith(
+                    color: AppColors.n200Gray,
+                    fontSize: 14.sp,
+                    fontWeight: FontWeight.w400),
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(6.dg)),
                   borderSide: const BorderSide(
@@ -39,9 +43,11 @@ class DurationTextField extends StatelessWidget {
                 ),
                 prefixIcon: Padding(
                   padding: EdgeInsets.only(left: 12.0.w, right: 5.w),
-                  child: Icon(Icons.access_time, color: AppColors.n80NavColor, size: 20.sp),
+                  child: Icon(Icons.access_time,
+                      color: AppColors.n80NavColor, size: 20.sp),
                 ),
-                prefixIconConstraints: const BoxConstraints(minWidth: 10, minHeight: 10),
+                prefixIconConstraints:
+                    const BoxConstraints(minWidth: 10, minHeight: 10),
               ),
             ),
           ),

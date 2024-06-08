@@ -11,10 +11,12 @@ class CompleteVerificationScreen extends StatefulWidget {
   const CompleteVerificationScreen({super.key});
 
   @override
-  State<CompleteVerificationScreen> createState() => _CompleteVerificationScreenState();
+  State<CompleteVerificationScreen> createState() =>
+      _CompleteVerificationScreenState();
 }
 
-class _CompleteVerificationScreenState extends State<CompleteVerificationScreen> {
+class _CompleteVerificationScreenState
+    extends State<CompleteVerificationScreen> {
   XFile? imageFile;
   @override
   Widget build(BuildContext context) {
@@ -31,7 +33,9 @@ class _CompleteVerificationScreenState extends State<CompleteVerificationScreen>
                     children: [
                       Row(
                         children: [
-                          Text('(optional)', style: TextStyles.textStyleMedium.copyWith(color: AppColors.n100Gray, fontSize: 11.sp)),
+                          Text('(optional)',
+                              style: TextStyles.textStyleMedium.copyWith(
+                                  color: AppColors.n100Gray, fontSize: 11.sp)),
                         ],
                       ),
                       SizedBox(height: 8.h),

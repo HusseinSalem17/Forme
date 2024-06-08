@@ -6,29 +6,38 @@ import 'package:forme_app/core/widgets/custom_app_bar_arrow_button.dart';
 import 'package:forme_app/features/trainer_features/Trainer_Notification/data/trainer_notification_items.dart';
 import 'package:forme_app/features/trainee_features/Notification/presentation/views/widgets/svg_icon.dart';
 
-
 class TrainerNotificationScreenBody extends StatefulWidget {
   const TrainerNotificationScreenBody({super.key});
 
   @override
-  _TrainerNotificationScreenBodyState createState() => _TrainerNotificationScreenBodyState();
+  _TrainerNotificationScreenBodyState createState() =>
+      _TrainerNotificationScreenBodyState();
 }
 
-class _TrainerNotificationScreenBodyState extends State<TrainerNotificationScreenBody> {
+class _TrainerNotificationScreenBodyState
+    extends State<TrainerNotificationScreenBody> {
   List<TrainerNotificationItem> items1 = [
-    TrainerNotificationItem("Group", "Tutor Appointment Booked", "1h", "Lorem ipsum dolor sit amet consectetur."),
-    TrainerNotificationItem("Schedulecalender", "30% Discount Gym", "1h", "Lorem ipsum dolor sit amet consectetur. Sed eget odio hac scelerisque"),
-    TrainerNotificationItem("Group", "Tutor Appointment Booked", "1h", "Lorem ipsum dolor sit amet consectetur. lectus posuere at scelerisque.")
+    TrainerNotificationItem("Group", "Tutor Appointment Booked", "1h",
+        "Lorem ipsum dolor sit amet consectetur."),
+    TrainerNotificationItem("Schedulecalender", "30% Discount Gym", "1h",
+        "Lorem ipsum dolor sit amet consectetur. Sed eget odio hac scelerisque"),
+    TrainerNotificationItem("Group", "Tutor Appointment Booked", "1h",
+        "Lorem ipsum dolor sit amet consectetur. lectus posuere at scelerisque.")
   ];
   List<TrainerNotificationItem> items2 = [
-    TrainerNotificationItem("Group", "Gym", "1d", "Lorem ipsum dolor sit amet consectetur. lectlamcorper ac egestas mi."),
-    TrainerNotificationItem("Schedulecalender", "Tutor Appointment Booked", "1d", "Description 2"),
-    TrainerNotificationItem("Icons.local_offer", "60% Discount Gym", "1d", "Description 3"),
+    TrainerNotificationItem("Group", "Gym", "1d",
+        "Lorem ipsum dolor sit amet consectetur. lectlamcorper ac egestas mi."),
+    TrainerNotificationItem(
+        "Schedulecalender", "Tutor Appointment Booked", "1d", "Description 2"),
+    TrainerNotificationItem(
+        "Icons.local_offer", "60% Discount Gym", "1d", "Description 3"),
   ];
   List<TrainerNotificationItem> items3 = [
     TrainerNotificationItem("Group", "Tines", "2d", "Description 1"),
-    TrainerNotificationItem("Schedulecalender", "Football 2", "2d", "Description 2"),
-    TrainerNotificationItem("Group", "Tutor Appointment Booked 3", "2d", "Description 3"),
+    TrainerNotificationItem(
+        "Schedulecalender", "Football 2", "2d", "Description 2"),
+    TrainerNotificationItem(
+        "Group", "Tutor Appointment Booked 3", "2d", "Description 3"),
   ];
 
   int unreadNotification = 0;
@@ -36,7 +45,9 @@ class _TrainerNotificationScreenBodyState extends State<TrainerNotificationScree
 
   @override
   Widget build(BuildContext context) {
-    unreadNotification = items1.where((item) => item.isUnread).length + items2.where((item) => item.isUnread).length + items3.where((item) => item.isUnread).length;
+    unreadNotification = items1.where((item) => item.isUnread).length +
+        items2.where((item) => item.isUnread).length +
+        items3.where((item) => item.isUnread).length;
 
     return Scaffold(
       appBar: AppBar(
@@ -51,7 +62,8 @@ class _TrainerNotificationScreenBodyState extends State<TrainerNotificationScree
         centerTitle: true,
         title: Text(
           "Notification",
-          style: TextStyles.textStyleSemiBold.copyWith(color: AppColors.n900Black),
+          style:
+              TextStyles.textStyleSemiBold.copyWith(color: AppColors.n900Black),
         ),
         actions: [
           Visibility(
@@ -89,7 +101,8 @@ class _TrainerNotificationScreenBodyState extends State<TrainerNotificationScree
     );
   }
 
-  Widget buildSection(String title, List<TrainerNotificationItem> sectionItems) {
+  Widget buildSection(
+      String title, List<TrainerNotificationItem> sectionItems) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
@@ -98,14 +111,17 @@ class _TrainerNotificationScreenBodyState extends State<TrainerNotificationScree
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(title, style: TextStyles.textStyleSemiBold.copyWith(color: AppColors.n200Gray)),
+              Text(title,
+                  style: TextStyles.textStyleSemiBold
+                      .copyWith(color: AppColors.n200Gray)),
               ElevatedButton(
                 onPressed: () {
                   setState(() {
                     markAllAsRead = true;
                     unreadNotification = 0;
                     for (var sectionItems in [items1, items2, items3]) {
-                      unreadNotification -= sectionItems.where((item) => item.isUnread).length;
+                      unreadNotification -=
+                          sectionItems.where((item) => item.isUnread).length;
                       for (var item in sectionItems) {
                         item.isUnread = false;
                       }
@@ -120,7 +136,9 @@ class _TrainerNotificationScreenBodyState extends State<TrainerNotificationScree
                     ? Text(
                         "Mark all as read",
                         style: TextStyle(
-                          color: markAllAsRead ? AppColors.n100Gray : AppColors.primaryColor,
+                          color: markAllAsRead
+                              ? AppColors.n100Gray
+                              : AppColors.primaryColor,
                         ),
                       )
                     : Container(),
@@ -132,7 +150,8 @@ class _TrainerNotificationScreenBodyState extends State<TrainerNotificationScree
           shrinkWrap: true,
           physics: const NeverScrollableScrollPhysics(),
           itemCount: sectionItems.length,
-          itemBuilder: (context, index) => buildNotificationItem(sectionItems[index]),
+          itemBuilder: (context, index) =>
+              buildNotificationItem(sectionItems[index]),
         ),
       ],
     );
@@ -149,11 +168,17 @@ class _TrainerNotificationScreenBodyState extends State<TrainerNotificationScree
           ),
           subtitle: Text(
             item.description,
-            style: TextStyles.descriptionStyle.copyWith(color: item.isUnread ? AppColors.primaryColor : AppColors.n100Gray),
+            style: TextStyles.descriptionStyle.copyWith(
+                color: item.isUnread
+                    ? AppColors.primaryColor
+                    : AppColors.n100Gray),
           ),
           trailing: Text(
             item.time,
-            style: TextStyles.descriptionStyle.copyWith(color: item.isUnread ? AppColors.primaryColor : AppColors.n100Gray),
+            style: TextStyles.descriptionStyle.copyWith(
+                color: item.isUnread
+                    ? AppColors.primaryColor
+                    : AppColors.n100Gray),
           ),
           onTap: () {
             // Handle item click to mark as read

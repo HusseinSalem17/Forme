@@ -9,7 +9,13 @@ class TwoButtonsContainer extends StatelessWidget {
   final bool havePrice;
   final Color color;
   final void Function()? onTap;
-  const TwoButtonsContainer({super.key, required this.firstButtonTitle, this.havePrice = false, this.onTap, this.color = AppColors.primaryColor, required this.secondButtonTitle});
+  const TwoButtonsContainer(
+      {super.key,
+      required this.firstButtonTitle,
+      this.havePrice = false,
+      this.onTap,
+      this.color = AppColors.primaryColor,
+      required this.secondButtonTitle});
 
   @override
   Widget build(BuildContext context) {
@@ -25,8 +31,14 @@ class TwoButtonsContainer extends StatelessWidget {
               offset: const Offset(0, 2),
             ),
           ],
-          borderRadius: BorderRadius.only(topLeft: Radius.circular(20.dg), topRight: Radius.circular(20.dg))),
-      padding: EdgeInsets.only(left: 24.h, right: 24.h, top: 20.h, bottom: (MediaQuery.sizeOf(context).height / 6.h) - 68.h),
+          borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(20.dg),
+              topRight: Radius.circular(20.dg))),
+      padding: EdgeInsets.only(
+          left: 24.h,
+          right: 24.h,
+          top: 20.h,
+          bottom: (MediaQuery.sizeOf(context).height / 6.h) - 68.h),
       child: Row(
         children: [
           CustomAppButton(

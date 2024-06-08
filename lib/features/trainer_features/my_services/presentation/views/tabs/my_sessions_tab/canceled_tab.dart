@@ -18,10 +18,9 @@ class CancelledTab extends StatelessWidget {
               child: ListView.builder(
                 itemCount: 10,
                 itemBuilder: (context, index) {
-                  return  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 16.w),
-                    child: const MySessionsCard()
-                  );
+                  return Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 16.w),
+                      child: const MySessionsCard());
                 },
               ),
             ),

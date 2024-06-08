@@ -33,8 +33,8 @@ class _AddProgramScreenState extends State<AddProgramScreen> {
             const Spacer(),
             Text(
               'Add Program',
-              style: TextStyles.textStyleBold.copyWith(
-                  fontSize: 18.sp, color: AppColors.n900Black),
+              style: TextStyles.textStyleBold
+                  .copyWith(fontSize: 18.sp, color: AppColors.n900Black),
             ),
             const Spacer(),
             GestureDetector(
@@ -47,15 +47,15 @@ class _AddProgramScreenState extends State<AddProgramScreen> {
         padding: EdgeInsets.all(14.w),
         child: Center(
             child: SingleChildScrollView(
-              child: AddProgramBody(
-                        imageFile: _imageFile,
-                        onImageSelected: (file) {
+          child: AddProgramBody(
+            imageFile: _imageFile,
+            onImageSelected: (file) {
               setState(() {
                 _imageFile = file;
               });
-                        },
-                      ),
-            )),
+            },
+          ),
+        )),
       ),
     );
   }

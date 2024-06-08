@@ -13,7 +13,8 @@ class ClientListScreen extends StatefulWidget {
   State<ClientListScreen> createState() => _ClientListScreenState();
 }
 
-class _ClientListScreenState extends State<ClientListScreen> with SingleTickerProviderStateMixin {
+class _ClientListScreenState extends State<ClientListScreen>
+    with SingleTickerProviderStateMixin {
   late TabController _tabController;
   @override
   void initState() {
@@ -36,7 +37,8 @@ class _ClientListScreenState extends State<ClientListScreen> with SingleTickerPr
           appBar: AppBar(
             backgroundColor: AppColors.background,
             centerTitle: true,
-            title: Text("Client List", style: TextStyles.heading4Bold.copyWith(fontSize: 18.sp)),
+            title: Text("Client List",
+                style: TextStyles.heading4Bold.copyWith(fontSize: 18.sp)),
           ),
           body: Column(
             children: [

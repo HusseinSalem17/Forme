@@ -207,7 +207,8 @@ class AuthServices {
     }
   }
 
-  Future<SetNewPasswordSuccessModel> setNewPassword(String password, String email) async {
+  Future<SetNewPasswordSuccessModel> setNewPassword(
+      String password, String email) async {
     try {
       print(password);
       print(email);
@@ -222,7 +223,6 @@ class AuthServices {
           'email': email,
           'new_password': password,
         },
-
       );
       return SetNewPasswordSuccessModel.fromJson(response.data);
     } catch (error) {

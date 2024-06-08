@@ -9,10 +9,9 @@ import '../../../../../../../core/utils/text_styles.dart';
 import '../../../../../../../core/widgets/app_drop_list/custom_drop_list.dart';
 import '../../../../../../../core/widgets/app_fields/custom_text_field.dart';
 import '../../../../../../../core/widgets/custom_app_bar_arrow_button.dart';
-import '../../../../../../trainee_features/profile/presentation/views/complete_profile_widgets/profile_image_picker.dart';
+import '../../../../../../../core/widgets/image_picker/profile_image_picker.dart';
 import '../../../../../../trainee_features/profile/presentation/views/widgets/my_profile_phone_field.dart';
 import '../../../manager/my_profile_cubit/cubit/my_profile_cubit.dart';
-
 
 class MyProfileTrainer extends StatefulWidget {
   static const routeName = '/my-profile-screen';
@@ -50,8 +49,32 @@ class _MyProfileTrainerState extends State<MyProfileTrainer> {
   @override
   Widget build(BuildContext context) {
     final List<String> genderItems = ['Male', 'Female'];
-  final List<String> countryItems = ['Egypt', 'USA'];
-  final List<String> sportFieldItems = ['Fitness', 'Football', 'Tennis', 'Swimming', 'Basketball', 'Volleyball', 'Handball', 'Running', 'Cycling', 'Boxing', 'Yoga', 'Pilates', 'Dancing', 'Golf', 'Horse Riding', 'Skiing', 'Skating', 'Surfing', 'Sailing', 'Bowling', 'Billiards', 'Chess', 'Shooting'];
+    final List<String> countryItems = ['Egypt', 'USA'];
+    final List<String> sportFieldItems = [
+      'Fitness',
+      'Football',
+      'Tennis',
+      'Swimming',
+      'Basketball',
+      'Volleyball',
+      'Handball',
+      'Running',
+      'Cycling',
+      'Boxing',
+      'Yoga',
+      'Pilates',
+      'Dancing',
+      'Golf',
+      'Horse Riding',
+      'Skiing',
+      'Skating',
+      'Surfing',
+      'Sailing',
+      'Bowling',
+      'Billiards',
+      'Chess',
+      'Shooting'
+    ];
     bool adjustable = false;
     return Scaffold(
         appBar: AppBar(
@@ -67,8 +90,8 @@ class _MyProfileTrainerState extends State<MyProfileTrainer> {
               const Spacer(),
               Text(
                 "My Profile",
-                style: TextStyles.textStyleBold.copyWith(
-                    fontSize: 18.sp, color: AppColors.n900Black),
+                style: TextStyles.textStyleBold
+                    .copyWith(fontSize: 18.sp, color: AppColors.n900Black),
               ),
               const Spacer(),
               IconButton(
@@ -166,7 +189,8 @@ class _MyProfileTrainerState extends State<MyProfileTrainer> {
                   title: "Country",
                   enabled: adjustable,
                   hint: const Text('Select Country'),
-                  items: countryItems        .map((e) => DropdownMenuItem<String>(
+                  items: countryItems
+                      .map((e) => DropdownMenuItem<String>(
                             value: e,
                             child: Text(e),
                           ))
@@ -209,7 +233,11 @@ class _MyProfileTrainerState extends State<MyProfileTrainer> {
                   onSaved: (value) {},
                 ),
                 SizedBox(height: 16.h),
-                TextArea(title: 'Tell us about yourself', enabled: adjustable, hintText: 'Please share a brief description about yourself',),
+                TextArea(
+                  title: 'Tell us about yourself',
+                  enabled: adjustable,
+                  hintText: 'Please share a brief description about yourself',
+                ),
               ],
             );
             return Form(

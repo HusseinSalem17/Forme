@@ -22,7 +22,8 @@ class _SessionSettingsScreenState extends State<SessionSettingsScreen> {
     return Scaffold(
       backgroundColor: AppColors.background,
       appBar: AppBar(
-        title: Text('Session Settings', style: TextStyles.heading4Bold.copyWith(fontSize: 18.sp)),
+        title: Text('Session Settings',
+            style: TextStyles.heading4Bold.copyWith(fontSize: 18.sp)),
         backgroundColor: AppColors.background,
         centerTitle: true,
         leading: CustomAppBarArrowButton(
@@ -39,7 +40,9 @@ class _SessionSettingsScreenState extends State<SessionSettingsScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('Select Package', style: TextStyles.textStyleSemiBold.copyWith(color: AppColors.n400color)),
+                  Text('Select Package',
+                      style: TextStyles.textStyleSemiBold
+                          .copyWith(color: AppColors.n400color)),
                   const SizedBox(height: 16),
                   const SelectPackage(
                     text1: 'Messaging Session',
@@ -50,17 +53,23 @@ class _SessionSettingsScreenState extends State<SessionSettingsScreen> {
                   const SizedBox(height: 16),
                   const Divider(color: AppColors.n20Gray, thickness: 2),
                   const SizedBox(height: 24),
-                  Text('Set Session Duration and Fees', style: TextStyles.textStyleRegular.copyWith(color: AppColors.n900Black, fontSize: 16.sp)),
+                  Text('Set Session Duration and Fees',
+                      style: TextStyles.textStyleRegular.copyWith(
+                          color: AppColors.n900Black, fontSize: 16.sp)),
                   SizedBox(height: 8.h),
                   Text(
                     'Define how long your session will be. Default(15 minutes).',
-                    style: TextStyles.textStyleRegular.copyWith(color: AppColors.n600color),
+                    style: TextStyles.textStyleRegular
+                        .copyWith(color: AppColors.n600color),
                   ),
                   SizedBox(height: 8.h),
                   RichText(
                     text: TextSpan(
                       text: 'Duration ',
-                      style: TextStyles.textStyleRegular.copyWith(color: AppColors.n400color, fontSize: 14.sp, fontWeight: FontWeight.w600),
+                      style: TextStyles.textStyleRegular.copyWith(
+                          color: AppColors.n400color,
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w600),
                       children: <TextSpan>[
                         TextSpan(
                           text: '(Minutes)',
@@ -80,7 +89,10 @@ class _SessionSettingsScreenState extends State<SessionSettingsScreen> {
                   RichText(
                     text: TextSpan(
                       text: 'Select Target Gender ',
-                      style: TextStyles.textStyleRegular.copyWith(color: AppColors.n400color, fontSize: 14.sp, fontWeight: FontWeight.w600),
+                      style: TextStyles.textStyleRegular.copyWith(
+                          color: AppColors.n400color,
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w600),
                       children: <TextSpan>[
                         TextSpan(
                           text: '(Multi Choice)',
@@ -93,15 +105,25 @@ class _SessionSettingsScreenState extends State<SessionSettingsScreen> {
                     ),
                   ),
                   SizedBox(height: 16.h),
-                  const TwoChoices(text1: 'Male', text2: 'Female', isIcon: true, isMultiChoice: true),
+                  // const TwoChoices(
+                  //     option1Text: 'Male',
+                  //     option2Text: 'Female',
+                  //     showIcon: true,
+                  //     allowMultiChoice: true),
                   SizedBox(height: 16.h),
                   const Divider(color: AppColors.n20Gray, thickness: 2),
                   SizedBox(height: 24.h),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text('Enter Target Age', style: TextStyles.textStyleRegular.copyWith(color: AppColors.n400color, fontSize: 14.sp, fontWeight: FontWeight.w600)),
-                      Text('(Optional)', style: TextStyles.textStyleRegular.copyWith(color: AppColors.n100Gray, fontSize: 12.sp)),
+                      Text('Enter Target Age',
+                          style: TextStyles.textStyleRegular.copyWith(
+                              color: AppColors.n400color,
+                              fontSize: 14.sp,
+                              fontWeight: FontWeight.w600)),
+                      Text('(Optional)',
+                          style: TextStyles.textStyleRegular.copyWith(
+                              color: AppColors.n100Gray, fontSize: 12.sp)),
                     ],
                   ),
                   SizedBox(height: 16.h),
@@ -109,15 +131,20 @@ class _SessionSettingsScreenState extends State<SessionSettingsScreen> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       const SmallTextField(text: 'Minimum'),
-                      Icon(Icons.arrow_forward, color: AppColors.n900Black, size: 24.sp),
+                      Icon(Icons.arrow_forward,
+                          color: AppColors.n900Black, size: 24.sp),
                       const SmallTextField(text: 'maximum'),
                     ],
                   ),
                   SizedBox(height: 16.h),
                   const Divider(color: AppColors.n20Gray, thickness: 2),
                   SizedBox(height: 24.h),
-                  Text('Client should do the following before the session starts',
-                      style: TextStyles.textStyleRegular.copyWith(color: AppColors.n400color, fontSize: 14.sp, fontWeight: FontWeight.w600)),
+                  Text(
+                      'Client should do the following before the session starts',
+                      style: TextStyles.textStyleRegular.copyWith(
+                          color: AppColors.n400color,
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w600)),
                   SizedBox(height: 16.h),
                   const SelectPackage(
                     isInput: false,

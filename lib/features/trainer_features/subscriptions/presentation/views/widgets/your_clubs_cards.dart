@@ -8,7 +8,11 @@ import 'package:forme_app/features/trainer_features/subscriptions/data/your_club
 import 'package:forme_app/features/trainer_features/subscriptions/presentation/views/widgets/remove_from_clubs_section.dart';
 
 class YourClubsCards extends StatefulWidget {
-  const YourClubsCards({super.key, required this.size, required this.model, this.isRemoved = false});
+  const YourClubsCards(
+      {super.key,
+      required this.size,
+      required this.model,
+      this.isRemoved = false});
   final Size size;
   final YourClubsCardsModel model;
   final bool isRemoved;
@@ -122,103 +126,118 @@ class _YourClubsCardsState extends State<YourClubsCards> {
                 ),
               ],
             ),
-            !widget.isRemoved?Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                IconButton(
-                  icon: Icon(
-                    Icons.delete_outline,
-                    color: AppColors.d300Danger,
-                    size: 35.sp,
-                  ),
-                  onPressed: () {
-                    showModalBottomSheet(
-                        context: context,
-                        backgroundColor: AppColors.background.withOpacity(1),
-                        builder: (BuildContext context) {
-                          return Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Text(
-                                  'Remove From Favorites?',
-                                  textAlign: TextAlign.center,
-                                  style: TextStyles.blackCardTextStyle.copyWith(fontSize: 16),
-                                ),
-                              ),
-                              const Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 10),
-                                child: Divider(
-                                  color: AppColors.n30StrokeColor,
-                                ),
-                              ),
-                              RemoveFromCardSection(size: widget.size, model: yourClubsCardsModel[widget.model.id]),
-                              Row(
-                                children: [
-                                  Expanded(
-                                    child: Padding(
+            !widget.isRemoved
+                ? Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      IconButton(
+                        icon: Icon(
+                          Icons.delete_outline,
+                          color: AppColors.d300Danger,
+                          size: 35.sp,
+                        ),
+                        onPressed: () {
+                          showModalBottomSheet(
+                              context: context,
+                              backgroundColor:
+                                  AppColors.background.withOpacity(1),
+                              builder: (BuildContext context) {
+                                return Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Padding(
                                       padding: const EdgeInsets.all(8.0),
-                                      child: Container(
-                                        height: 40,
-                                        decoration: BoxDecoration(
-                                          color: AppColors.n20Gray,
-                                          borderRadius: BorderRadius.circular(100),
-                                          border: Border.all(
-                                            color: AppColors.primaryColor,
-                                          ),
-                                        ),
-                                        child: TextButton(
-                                          onPressed: () {
-                                            Navigator.pop(context);
-                                          },
-                                          child: Text(
-                                            'Cancel',
-                                            style: TextStyles.textStyleSemiBold.copyWith(
-                                              fontSize: 12,
-                                              color: AppColors.primaryColor,
+                                      child: Text(
+                                        'Remove From Favorites?',
+                                        textAlign: TextAlign.center,
+                                        style: TextStyles.blackCardTextStyle
+                                            .copyWith(fontSize: 16),
+                                      ),
+                                    ),
+                                    const Padding(
+                                      padding:
+                                          EdgeInsets.symmetric(horizontal: 10),
+                                      child: Divider(
+                                        color: AppColors.n30StrokeColor,
+                                      ),
+                                    ),
+                                    RemoveFromCardSection(
+                                        size: widget.size,
+                                        model: yourClubsCardsModel[
+                                            widget.model.id]),
+                                    Row(
+                                      children: [
+                                        Expanded(
+                                          child: Padding(
+                                            padding: const EdgeInsets.all(8.0),
+                                            child: Container(
+                                              height: 40,
+                                              decoration: BoxDecoration(
+                                                color: AppColors.n20Gray,
+                                                borderRadius:
+                                                    BorderRadius.circular(100),
+                                                border: Border.all(
+                                                  color: AppColors.primaryColor,
+                                                ),
+                                              ),
+                                              child: TextButton(
+                                                onPressed: () {
+                                                  Navigator.pop(context);
+                                                },
+                                                child: Text(
+                                                  'Cancel',
+                                                  style: TextStyles
+                                                      .textStyleSemiBold
+                                                      .copyWith(
+                                                    fontSize: 12,
+                                                    color:
+                                                        AppColors.primaryColor,
+                                                  ),
+                                                ),
+                                              ),
                                             ),
                                           ),
                                         ),
-                                      ),
-                                    ),
-                                  ),
-                                  Expanded(
-                                    child: Padding(
-                                      padding: const EdgeInsets.all(8.0),
-                                      child: Container(
-                                        height: 40,
-                                        decoration: BoxDecoration(
-                                          color: AppColors.d300Danger,
-                                          borderRadius: BorderRadius.circular(100),
-                                        ),
-                                        child: TextButton(
-                                          onPressed: () {
-                                            Navigator.pop(context);
-                                            setState(() {
-                                              isTabbed = true;
-                                            });
-                                          },
-                                          child: Text(
-                                            'Yes, Remove',
-                                            style: TextStyles.textStyleSemiBold.copyWith(
-                                              fontSize: 12,
-                                              color: AppColors.background,
+                                        Expanded(
+                                          child: Padding(
+                                            padding: const EdgeInsets.all(8.0),
+                                            child: Container(
+                                              height: 40,
+                                              decoration: BoxDecoration(
+                                                color: AppColors.d300Danger,
+                                                borderRadius:
+                                                    BorderRadius.circular(100),
+                                              ),
+                                              child: TextButton(
+                                                onPressed: () {
+                                                  Navigator.pop(context);
+                                                  setState(() {
+                                                    isTabbed = true;
+                                                  });
+                                                },
+                                                child: Text(
+                                                  'Yes, Remove',
+                                                  style: TextStyles
+                                                      .textStyleSemiBold
+                                                      .copyWith(
+                                                    fontSize: 12,
+                                                    color: AppColors.background,
+                                                  ),
+                                                ),
+                                              ),
                                             ),
                                           ),
                                         ),
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              )
-                            ],
-                          );
-                        });
-                  },
-                ),
-              ],
-            ):Container(),
+                                      ],
+                                    )
+                                  ],
+                                );
+                              });
+                        },
+                      ),
+                    ],
+                  )
+                : Container(),
           ],
         ),
       ),

@@ -25,7 +25,8 @@ class VideoPlayerWidget extends StatelessWidget {
                             color: AppColors.primaryColor));
                   } else if (snapshot.hasError) {
                     return const Center(child: Text('Error loading video'));
-                  } else {
+                  }
+                  else {
                     return ClipRRect(
                         borderRadius: BorderRadius.circular(8.dg),
                         child: VideoPlayer(

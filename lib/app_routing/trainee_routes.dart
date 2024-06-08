@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:forme_app/features/Authentication/presentation/views/verify_code_screen.dart';
 import 'package:forme_app/features/trainee_features/book_appointment_with%20_trainer/presentation/views/book_appointment_screen.dart';
+import 'package:forme_app/features/trainee_features/complete_profile_trainee/presentation/views/trainer_complete_profile.dart';
 import 'package:forme_app/features/trainee_features/home/presentation/views/bottom_bar_screens.dart';
 import 'package:forme_app/features/trainee_features/join_program_feature/presentation/views/book_onling_coach_screen.dart';
 import 'package:forme_app/features/trainee_features/maps_feature/presentation/views/map_screen.dart';
@@ -14,7 +15,6 @@ import '../features/trainee_features/featured/presentation/featured_screen.dart'
 import '../features/trainee_features/payment/presentation/view/add_new_card_screen.dart';
 import '../features/trainee_features/payment/presentation/view/congratulation_screen.dart';
 import '../features/trainee_features/payment/presentation/view/payment_methods_screen.dart';
-import '../features/trainee_features/profile/presentation/views/complete_profile.dart';
 import '../features/trainee_features/profile/presentation/views/help_center/help_center.dart';
 import '../features/trainee_features/profile/presentation/views/my_profile.dart';
 import '../features/trainee_features/profile/presentation/views/privacy_policy.dart';
@@ -71,9 +71,9 @@ class TraineeRoutes {
         return MaterialPageRoute(
           builder: (context) => const SuccessStory(),
         );
-      case CompleteProfile.routeName:
+      case TraineeCompleteProfile.routeName:
         return MaterialPageRoute(
-          builder: (context) => const CompleteProfile(),
+          builder: (context) => const TraineeCompleteProfile(),
         );
       case AddReview.routeName:
         final List<dynamic> args = settings.arguments as List<dynamic>;

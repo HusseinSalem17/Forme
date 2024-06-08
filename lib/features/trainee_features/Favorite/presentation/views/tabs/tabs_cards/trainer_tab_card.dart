@@ -5,8 +5,7 @@ import 'package:forme_app/core/utils/text_styles.dart';
 import 'package:forme_app/features/trainee_features/Favorite/data/trainer_card_model.dart';
 import 'package:forme_app/features/trainee_features/Favorite/presentation/views/tabs/remove_section/trainer_remove_card_decoration.dart';
 import 'package:forme_app/features/trainee_features/Favorite/presentation/views/widgets/professional_card.dart';
-import 'package:simple_star_rating/simple_star_rating.dart';
-
+// import 'package:simple_star_rating/simple_star_rating.dart';
 
 class TrainerTabCard extends StatelessWidget {
   const TrainerTabCard({super.key, required this.model, required this.size});
@@ -61,7 +60,7 @@ class TrainerTabCard extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   SizedBox(
-                    width: size.width /2,
+                    width: size.width / 2,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -81,31 +80,37 @@ class TrainerTabCard extends StatelessWidget {
                                         child: Text(
                                           'Remove From Favorites?',
                                           textAlign: TextAlign.center,
-                                          style: TextStyles.blackCardTextStyle.copyWith(fontSize: 16),
+                                          style: TextStyles.blackCardTextStyle
+                                              .copyWith(fontSize: 16),
                                         ),
                                       ),
                                       const Padding(
-                                        padding: EdgeInsets.symmetric(horizontal: 10),
+                                        padding: EdgeInsets.symmetric(
+                                            horizontal: 10),
                                         child: Divider(
                                           color: AppColors.n30StrokeColor,
                                         ),
                                       ),
-                                      TrainerRemoveCardDecoration(
-                                        model: trainerCardModel[model.id],
-                                        size: size,
-                                      ),
+                                      // TrainerRemoveCardDecoration(
+                                      //   model: trainerCardModel[model.id],
+                                      //   size: size,
+                                      // ),
                                       Row(
                                         children: [
                                           Expanded(
                                             child: Padding(
-                                              padding: const EdgeInsets.all(8.0),
+                                              padding:
+                                                  const EdgeInsets.all(8.0),
                                               child: Container(
                                                 height: 40,
                                                 decoration: BoxDecoration(
                                                   color: AppColors.n20Gray,
-                                                  borderRadius: BorderRadius.circular(100),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          100),
                                                   border: Border.all(
-                                                    color: AppColors.primaryColor,
+                                                    color:
+                                                        AppColors.primaryColor,
                                                   ),
                                                 ),
                                                 child: TextButton(
@@ -114,9 +119,12 @@ class TrainerTabCard extends StatelessWidget {
                                                   },
                                                   child: Text(
                                                     'Cancel',
-                                                    style: TextStyles.textStyleSemiBold.copyWith(
+                                                    style: TextStyles
+                                                        .textStyleSemiBold
+                                                        .copyWith(
                                                       fontSize: 12,
-                                                      color: AppColors.primaryColor,
+                                                      color: AppColors
+                                                          .primaryColor,
                                                     ),
                                                   ),
                                                 ),
@@ -125,12 +133,15 @@ class TrainerTabCard extends StatelessWidget {
                                           ),
                                           Expanded(
                                             child: Padding(
-                                              padding: const EdgeInsets.all(8.0),
+                                              padding:
+                                                  const EdgeInsets.all(8.0),
                                               child: Container(
                                                 height: 40,
                                                 decoration: BoxDecoration(
                                                   color: AppColors.d300Danger,
-                                                  borderRadius: BorderRadius.circular(100),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          100),
                                                 ),
                                                 child: TextButton(
                                                   onPressed: () {
@@ -141,9 +152,12 @@ class TrainerTabCard extends StatelessWidget {
                                                   },
                                                   child: Text(
                                                     'Yes, Remove',
-                                                    style: TextStyles.textStyleSemiBold.copyWith(
+                                                    style: TextStyles
+                                                        .textStyleSemiBold
+                                                        .copyWith(
                                                       fontSize: 12,
-                                                      color: AppColors.background,
+                                                      color:
+                                                          AppColors.background,
                                                     ),
                                                   ),
                                                 ),
@@ -181,19 +195,20 @@ class TrainerTabCard extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      SimpleStarRating(
-                        allowHalfRating: true,
-                        starCount: 5,
-                        rating: model.rating,
-                        size: 16,
-                        spacing: 2,
-                      ),
+                      // SimpleStarRating(
+                      //   allowHalfRating: true,
+                      //   starCount: 5,
+                      //   rating: model.rating,
+                      //   size: 16,
+                      //   spacing: 2,
+                      // ),
                       const SizedBox(
                         width: 6,
                       ),
                       Text(
                         '${model.rating}',
-                        style: TextStyles.textStyleRegular.copyWith(fontSize: 11, color: AppColors.n900Black),
+                        style: TextStyles.textStyleRegular
+                            .copyWith(fontSize: 11, color: AppColors.n900Black),
                       ),
                       Text(
                         ' | ',

@@ -35,7 +35,8 @@ class _TrainerDetailsScreenState extends State<TrainerDetailsScreen> {
                     background: TrainerDetailsAppBar(),
                   ),
                   bottom: PreferredSize(
-                    preferredSize: Size.fromHeight(MediaQuery.sizeOf(context).height / 20),
+                    preferredSize:
+                        Size.fromHeight(MediaQuery.sizeOf(context).height / 20),
                     child: Container(
                       width: double.maxFinite,
                       color: AppColors.background,
