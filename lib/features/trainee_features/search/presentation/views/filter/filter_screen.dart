@@ -66,7 +66,7 @@ class _FilterScreenState extends State<FilterScreen> {
                       style: TextStyles.textStyleSemiBold.copyWith(
                           color: AppColors.n900Black, fontSize: 16.sp)),
                   SizedBox(height: 16.h),
-                  const ReviewsRadio(),
+                 // const ReviewsRadio(),
                   Text('Facilities',
                       style: TextStyles.textStyleSemiBold.copyWith(
                           color: AppColors.n900Black, fontSize: 16.sp)),

@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
-import 'package:simple_star_rating/simple_star_rating.dart';
+// import 'package:simple_star_rating/simple_star_rating.dart';
 
 Container clubTrainerCard(BuildContext context) {
   return Container(
@@ -63,13 +63,13 @@ Container clubTrainerCard(BuildContext context) {
           ),
           Row(
             children: [
-              SimpleStarRating(
-                allowHalfRating: true,
-                starCount: 5,
-                rating: 3.5,
-                size: 16,
-                spacing: 2,
-              ),
+              // SimpleStarRating(
+              //   allowHalfRating: true,
+              //   starCount: 5,
+              //   rating: 3.5,
+              //   size: 16,
+              //   spacing: 2,
+              // ),
               const SizedBox(
                 width: 6,
               ),

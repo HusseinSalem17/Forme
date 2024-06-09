@@ -1,5 +1,8 @@
 import 'package:dio/dio.dart';
-import 'package:forme_app/core/utils/constants.dart';
+
+import '../../../../../core/secrets/secrets_api_keys.dart';
+
+
 
 class PlacesWebservices {
   late Dio dio;
@@ -19,12 +22,12 @@ class PlacesWebservices {
   ) async {
     try {
       Response response = await dio.get(
-        suggestionsBaseUrl,
+        SecretsApiKeys.suggestionsBaseUrl,
         queryParameters: {
           'input': place,
           'types': 'address',
           'components': 'country:eg',
-          'key': googleApiKey,
+          'key': SecretsApiKeys.suggestionsBaseUrl,
           'sessiontoken': sessionToken,
         },
       );

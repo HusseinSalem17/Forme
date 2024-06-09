@@ -5,6 +5,8 @@ import 'package:flutter_svg/svg.dart';
 import '../../../../../../core/utils/app_colors.dart';
 import '../../../../../../core/utils/icons_image_pathes.dart';
 import '../../../../../../core/utils/text_styles.dart';
+import '../../../../../../local_storage_data/auth_local/tokens.dart';
+import '../../../../../../local_storage_data/auth_local/user_type.dart';
 import 'custom_search_widget.dart';
 import 'map_popup_menu.dart';
 
@@ -23,9 +25,15 @@ class CustomHomeAppBar extends StatelessWidget {
       leadingWidth: 180,
       toolbarHeight: 70,
       actions: [
-        Container(
-          margin: const EdgeInsets.only(right: 24),
-          child: SvgPicture.asset(alarmIcon),
+        GestureDetector(
+          onTap: () {
+            RegistrationDataLocal.clearUserType();
+            UserTokenLocal.clearTokens();
+          },
+          child: Container(
+            margin: const EdgeInsets.only(right: 24),
+            child: SvgPicture.asset(alarmIcon),
+          ),
         ),
       ],
       leading: Container(

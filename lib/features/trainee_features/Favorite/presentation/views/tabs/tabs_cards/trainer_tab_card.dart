@@ -5,7 +5,7 @@ import 'package:forme_app/core/utils/text_styles.dart';
 import 'package:forme_app/features/trainee_features/Favorite/data/trainer_card_model.dart';
 import 'package:forme_app/features/trainee_features/Favorite/presentation/views/tabs/remove_section/trainer_remove_card_decoration.dart';
 import 'package:forme_app/features/trainee_features/Favorite/presentation/views/widgets/professional_card.dart';
-import 'package:simple_star_rating/simple_star_rating.dart';
+// import 'package:simple_star_rating/simple_star_rating.dart';
 
 class TrainerTabCard extends StatelessWidget {
   const TrainerTabCard({super.key, required this.model, required this.size});
@@ -91,10 +91,10 @@ class TrainerTabCard extends StatelessWidget {
                                           color: AppColors.n30StrokeColor,
                                         ),
                                       ),
-                                      TrainerRemoveCardDecoration(
-                                        model: trainerCardModel[model.id],
-                                        size: size,
-                                      ),
+                                      // TrainerRemoveCardDecoration(
+                                      //   model: trainerCardModel[model.id],
+                                      //   size: size,
+                                      // ),
                                       Row(
                                         children: [
                                           Expanded(
@@ -195,13 +195,13 @@ class TrainerTabCard extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      SimpleStarRating(
-                        allowHalfRating: true,
-                        starCount: 5,
-                        rating: model.rating,
-                        size: 16,
-                        spacing: 2,
-                      ),
+                      // SimpleStarRating(
+                      //   allowHalfRating: true,
+                      //   starCount: 5,
+                      //   rating: model.rating,
+                      //   size: 16,
+                      //   spacing: 2,
+                      // ),
                       const SizedBox(
                         width: 6,
                       ),

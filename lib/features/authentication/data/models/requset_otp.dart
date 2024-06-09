@@ -1,8 +1,8 @@
 import 'package:forme_app/core/user_type.dart';
 
 class RequestOtp {
-  String email;
-  String userType;
+  final String email;
+  final String userType;
 
   RequestOtp({
     required this.email,

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_holo_date_picker/date_picker.dart';
-import 'package:flutter_holo_date_picker/date_picker_theme.dart';
-import 'package:flutter_holo_date_picker/widget/date_picker_widget.dart';
+// import 'package:flutter_holo_date_picker/date_picker.dart';
+// import 'package:flutter_holo_date_picker/date_picker_theme.dart';
+// import 'package:flutter_holo_date_picker/widget/date_picker_widget.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
 
@@ -31,24 +31,24 @@ class _AppDatePickerState extends State<AppDatePicker> {
       surfaceTintColor: Colors.transparent,
       title: Text('Select Date',
           style: TextStyles.textStyleRegular.copyWith(color: Colors.black)),
-      content: DatePickerWidget(
-        looping: false, // default is not looping
-        firstDate: DateTime(1950),
-        lastDate: DateTime(2024, 1, 1),
-        initialDate: DateTime(2002, 2, 18),
-        dateFormat: 'dd/MM/yyyy',
-        locale: DatePicker.localeFromString('en-us'),
-        onChange: (DateTime newDate, _) {
-          setState(() {
-            _selectedDate = newDate;
-          });
-        },
-        pickerTheme: const DateTimePickerTheme(
-          backgroundColor: Colors.transparent,
-          itemTextStyle: TextStyle(color: AppColors.n900Black, fontSize: 19),
-          dividerColor: AppColors.primaryColor,
-        ),
-      ),
+      // content: DatePickerWidget(
+      //   looping: false, // default is not looping
+      //   firstDate: DateTime(1950),
+      //   lastDate: DateTime(2024, 1, 1),
+      //   initialDate: DateTime(2002, 2, 18),
+      //   dateFormat: 'dd/MM/yyyy',
+      //   locale: DatePicker.localeFromString('en-us'),
+      //   onChange: (DateTime newDate, _) {
+      //     setState(() {
+      //       _selectedDate = newDate;
+      //     });
+      //   },
+      //   pickerTheme: const DateTimePickerTheme(
+      //     backgroundColor: Colors.transparent,
+      //     itemTextStyle: TextStyle(color: AppColors.n900Black, fontSize: 19),
+      //     dividerColor: AppColors.primaryColor,
+      //   ),
+      // ),
       actions: [
         Row(
           mainAxisAlignment: MainAxisAlignment.end,

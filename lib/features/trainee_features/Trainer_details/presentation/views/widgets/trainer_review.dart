@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
 import 'package:forme_app/features/trainee_features/Trainer_details/data/models/trainer_review_model.dart';
-import 'package:simple_star_rating/simple_star_rating.dart';
+// import 'package:simple_star_rating/simple_star_rating.dart';
 
 class ReviewWidget extends StatelessWidget {
   final ReviewModel model;
@@ -55,17 +55,17 @@ class ReviewWidget extends StatelessWidget {
           ),
           Row(
             children: [
-              Align(
-                alignment: Alignment.centerLeft,
-                child: SimpleStarRating(
-                  allowHalfRating: true,
-                  isReadOnly: true,
-                  starCount: 5,
-                  rating: model.rating,
-                  size: 16,
-                  spacing: 8,
-                ),
-              ),
+              // Align(
+              //   alignment: Alignment.centerLeft,
+              //   child: SimpleStarRating(
+              //     allowHalfRating: true,
+              //     isReadOnly: true,
+              //     starCount: 5,
+              //     rating: model.rating,
+              //     size: 16,
+              //     spacing: 8,
+              //   ),
+              // ),
               SizedBox(
                 width: 8.w,
               ),

@@ -7,7 +7,7 @@ import 'package:forme_app/core/widgets/custom_app_bar_arrow_button.dart';
 import 'package:forme_app/core/widgets/text_area.dart';
 import 'package:forme_app/features/trainee_features/sports_club/presentation/views/sections/club_sub_header.dart';
 import 'package:forme_app/features/trainee_features/workout_detail/presentation/views/sections/workout_sub_header.dart';
-import 'package:simple_star_rating/simple_star_rating.dart';
+// import 'package:simple_star_rating/simple_star_rating.dart';
 
 class AddReview extends StatelessWidget {
   static const routeName = '/add-review-screen';
@@ -59,14 +59,14 @@ class AddReview extends StatelessWidget {
                           style: TextStyles.textStyleRegular
                               .copyWith(fontSize: 14.sp)),
                     ),
-                    SimpleStarRating(
-                      allowHalfRating: true,
-                      isReadOnly: false,
-                      starCount: 5,
-                      //rating: model.rating,
-                      size: 70,
-                      spacing: 1,
-                    ),
+                    // SimpleStarRating(
+                    //   allowHalfRating: true,
+                    //   isReadOnly: false,
+                    //   starCount: 5,
+                    //   //rating: model.rating,
+                    //   size: 70,
+                    //   spacing: 1,
+                    // ),
                     Padding(
                       padding: EdgeInsets.only(top: 30.h, bottom: 8.h),
                       child: Align(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:forme_app/features/Authentication/presentation/views/verify_code_screen.dart';
 import 'package:forme_app/features/trainee_features/book_appointment_with%20_trainer/presentation/views/book_appointment_screen.dart';
 import 'package:forme_app/features/trainee_features/complete_profile_trainee/presentation/views/trainer_complete_profile.dart';
 import 'package:forme_app/features/trainee_features/home/presentation/views/bottom_bar_screens.dart';
@@ -28,7 +29,7 @@ class TraineeRoutes {
     return MaterialPageRoute(
       builder: (_) => const Scaffold(
         body: Center(
-          child: Text('Error: Route not found'),
+          child: Text('Error: Route not found in trainee route'),
         ),
       ),
     );
@@ -40,6 +41,11 @@ class TraineeRoutes {
         return MaterialPageRoute(
           builder: (context) => const HomeScreen(),
         );
+      case VerifyCodeScreen.routeName:
+        return MaterialPageRoute(
+          builder: (context) => const VerifyCodeScreen(),
+        );
+
       case BookAppointmentScreen.routeName:
         return MaterialPageRoute(
           builder: (context) => const BookAppointmentScreen(),

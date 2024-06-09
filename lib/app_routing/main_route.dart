@@ -22,17 +22,17 @@ class AppRouter {
                 const RouteSettings(
                   name: TrainerHomeScreen.routeName,
                 ),
-                context)
+                context,
+              )
             : TraineeRoutes().generateRoute(
-                const RouteSettings(
-                  name: HomeScreen.routeName,
-                ),
-                context);
+                const RouteSettings(name: HomeScreen.routeName),
+                context,
+              );
       default:
         return MaterialPageRoute(
-          builder: (_) => Scaffold(
+          builder: (_) => const Scaffold(
             body: Center(
-              child: Text('Error: Route not found'),
+              child: Text('Error: Route not found in main route'),
             ),
           ),
         );

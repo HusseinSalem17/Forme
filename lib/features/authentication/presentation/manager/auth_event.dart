@@ -3,13 +3,15 @@ part of 'auth_bloc.dart';
 @immutable
 sealed class AuthEvent {}
 
-class LoginEvent extends AuthEvent {
+final class LoginEvent extends AuthEvent {
   final String email;
   final String password;
+  final UserType userType;
 
   LoginEvent({
     required this.email,
     required this.password,
+    required this.userType,
   });
 
   bool isEmailValid() {
@@ -23,15 +25,17 @@ class LoginEvent extends AuthEvent {
   }
 }
 
-class SignUpEvent extends AuthEvent {
+final class SignUpEvent extends AuthEvent {
   final String? email;
   final String? password1;
   final String? password2;
+  final UserType? userType;
 
   SignUpEvent({
     this.email,
     this.password1,
     this.password2,
+    this.userType,
   });
 
   bool isEmailValid() {
@@ -52,12 +56,60 @@ class SignUpEvent extends AuthEvent {
   }
 }
 
-class RequestOTPEvent extends AuthEvent {
+final class RequestOTPForSignUpEvent extends AuthEvent {
   final String email;
   final UserType userType;
+  final String password;
 
-  RequestOTPEvent({
+  RequestOTPForSignUpEvent({
     required this.email,
     required this.userType,
+    required this.password,
   });
+}
+
+final class VerifyOTPForSignUpEvent extends AuthEvent {
+  final String otp;
+  final String email;
+  VerifyOTPForSignUpEvent({
+    required this.otp,
+    required this.email,
+  });
+}
+
+final class RequestOTPForForgetPasswordEvent extends AuthEvent {
+  final String email;
+  RequestOTPForForgetPasswordEvent({
+    required this.email,
+  });
+}
+
+final class VerifyOTPForForgetPasswordEvent extends AuthEvent {
+  final String otp;
+  final String email;
+  VerifyOTPForForgetPasswordEvent({
+    required this.otp,
+    required this.email,
+  });
+}
+
+final class SetNewPasswordEvent extends AuthEvent {
+  final String email;
+  final String password;
+  SetNewPasswordEvent({
+    required this.email,
+    required this.password,
+  });
+}
+
+class VerifyOTPEvent extends AuthEvent {
+final String otp;
+final String email;
+final bool isSignUp;
+
+VerifyOTPEvent({
+required this.otp,
+required this.email,
+required this.isSignUp,
+});
 }

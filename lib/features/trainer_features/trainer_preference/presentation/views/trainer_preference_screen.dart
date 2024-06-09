@@ -40,10 +40,11 @@ class _TrainerPreferenceScreenState extends State<TrainerPreferenceScreen> {
                 .push(PageSlideTransition(const CompletePreferenceScreen()));
           } else if (state is TrainerPreferenceFailure) {
             showCustomSnackbar(
-                context,
-                "Network problem. Please check your internet connection and try again.",
-                AppColors.w75Color,
-                1);
+              context,
+              "Network problem. Please check your internet connection and try again.",
+              AppColors.w75Color,
+              1,
+            );
           }
         },
         child: Stack(
@@ -61,13 +62,11 @@ class _TrainerPreferenceScreenState extends State<TrainerPreferenceScreen> {
                     buttonTitle: 'Next',
                     onTap: () {
                       if (context.read<TrainerPreferenceCubit>().page < 1) {
-                    
-                          pageViewController.animateToPage(
-                            context.read<TrainerPreferenceCubit>().page + 1,
-                            duration: const Duration(milliseconds: 500),
-                            curve: Curves.easeIn,
-                          );
-                        
+                        pageViewController.animateToPage(
+                          context.read<TrainerPreferenceCubit>().page + 1,
+                          duration: const Duration(milliseconds: 500),
+                          curve: Curves.easeIn,
+                        );
                       } else {
                         context
                             .read<TrainerPreferenceCubit>()

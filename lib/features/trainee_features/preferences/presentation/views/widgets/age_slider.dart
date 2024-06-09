@@ -119,30 +119,11 @@ class _AgeSliderState extends State<AgeSlider> {
   }
 
   Center numbers(int index, TextStyle style) {
-    return Center(child: Text((index + 1).toString(), style: style));
+    return Center(
+      child: Text(
+        (index + 1).toString(),
+        style: style,
+      ),
+    );
   }
 }
-
-// CupertinoPicker(
-//             scrollController: scrollController,
-//             itemExtent: 100.0,
-//             //looping: true,
-//             onSelectedItemChanged: (index) {
-//               setState(() {
-//                 selectedValue = index;
-//               });
-//             },
-//   children: List<Widget>.generate(100, (int index) {
-//     return Center(
-//         child: Text('${index + 1}',
-//             style: index == selectedValue
-//                  Styles.textStyleRegular16.copyWith(
-//                     fontSize: 56.sp,
-//                     color: AppColors.p300PrimaryColor,
-//                     fontWeight: FontWeight.w600)
-//                 : Styles.textStyleRegular16.copyWith(
-//                     fontSize: 48.sp,
-//                     color: AppColors.n900PrimaryTextColor,
-//                   )));
-//   }),
-// ),

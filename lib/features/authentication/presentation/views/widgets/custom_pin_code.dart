@@ -16,6 +16,7 @@ class CustomPinCodeTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PinCodeTextField(
+      autoDisposeControllers: false,
       cursorColor: AppColors.n100Gray,
       animationCurve: Curves.bounceIn,
       animationType: AnimationType.scale,
@@ -28,14 +29,6 @@ class CustomPinCodeTextField extends StatelessWidget {
         color: Colors.black,
       ),
       hintCharacter: '-',
-      onChanged: (value) {
-        // handle the OTP input
-        debugPrint(value);
-      },
-      onCompleted: (value) {
-        // handle the completed OTP
-        debugPrint("Completed: $value");
-      },
       pinTheme: PinTheme(
         borderRadius: BorderRadius.circular(10.r),
         shape: PinCodeFieldShape.box,

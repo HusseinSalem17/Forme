@@ -1,23 +1,50 @@
 import 'package:dartz/dartz.dart';
 import 'package:forme_app/core/user_type.dart';
-import 'package:forme_app/features/authentication/data/models/response_otp_successful.dart';
+import 'package:forme_app/features/authentication/data/models/otp_response_success.dart';
+import 'package:forme_app/features/authentication/data/models/token_response_success.dart';
+import 'package:forme_app/features/authentication/data/models/verify_otp_response_success.dart';
 
-import '../../../../../core/errors/failures.dart';
+import '../../../../core/errors/exceptions.dart';
+
+import '../models/set_new_password_success.dart';
 
 abstract class AuthRepository {
-  Future<Either<Failure, ResponseOtpSuccessful>> requestOTP(
+  Future<Either<CustomError, OtpResponseSuccessfulModel>> requestOTPForSignUp(
     String email,
     UserType userType,
   );
-// Future<Either<Failure, ResponseUserModel>> signIn(
-//     String username,
-//     String password,
-//     );
-//
-// Future<Either<Failure, ResponseUserModel>> signUp(
-//     String username,
-//     String fName,
-//     String lName,
-//     String password,
-//     );
+
+  Future<Either<CustomError, VerifyOtpResponseSuccessModel>> verifyOTPForSignUp(
+    String email,
+    String otp,
+  );
+
+  Future<Either<CustomError, TokenResponseSuccessModel>> signUpAccount(
+    String email,
+    String password,
+    UserType userType,
+  );
+
+  Future<Either<CustomError, TokenResponseSuccessModel>> loginAccount(
+    String email,
+    String password,
+    UserType userType,
+  );
+
+  Future<Either<CustomError, OtpResponseSuccessfulModel>>
+      requestOTPForForgetPassword(
+    String email,
+  );
+  Future<Either<CustomError, VerifyOtpResponseSuccessModel>> verifyOTPForgetPassword(
+      String email,
+      String otp,
+      );
+  Future<Either<CustomError, SetNewPasswordSuccessModel>> setNewPassword(
+      String email,
+      String password,
+      );
+  Future<Either<CustomError, VerifyOtpResponseSuccessModel>> verifyOTP(
+      String email,
+      String otp,
+      );
 }

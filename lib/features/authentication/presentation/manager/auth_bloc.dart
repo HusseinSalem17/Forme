@@ -1,10 +1,10 @@
 import 'dart:async';
-import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:forme_app/core/user_type.dart';
 import 'package:forme_app/features/authentication/data/repos/auth_repo_implementation.dart';
-
-import '../../../../local_storage_data/auth_local/registration_data_local.dart';
+import '../../../../local_storage_data/auth_local/tokens.dart';
+import '../../../../local_storage_data/auth_local/user_type.dart';
 
 part 'auth_event.dart';
 
@@ -15,67 +15,158 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
   AuthBloc() : super(AuthInitial()) {
     on<LoginEvent>(loginEventCalled);
-    on<SignUpEvent>(signupEventCalled);
-    on<RequestOTPEvent>(requestOtpEventCalled);
+    on<SignUpEvent>(signUpEventCalled);
+    on<RequestOTPForSignUpEvent>(requestOtpForSignUpEventCalled);
+    // on<VerifyOTPForSignUpEvent>(verifyOTPForSignUpEventCalled);
+    on<RequestOTPForForgetPasswordEvent>(requestOtpForForgetPasswordEventCalled);
+    // on<VerifyOTPForForgetPasswordEvent>(verifyOTPForForgetPasswordEventCalled);
+    on<SetNewPasswordEvent>(setNewPasswordEventCalled);
+    on<VerifyOTPEvent>(_onVerifyOTPEvent);
   }
-
-  FutureOr<void> requestOtpEventCalled(event, emit) async {
+  Future<void> _onVerifyOTPEvent(VerifyOTPEvent event, Emitter<AuthState> emit) async {
     emit(AuthLoading());
-    try {
-      print(event.email);
-      print(event.userType);
-      await authRepo.requestOTP(event.email, event.userType);
 
-      // Save user type locally
-      await RegistrationDataLocal.saveUserType(event.userType);
-    } on Exception catch (e) {
-      print(e.toString());
-      emit(
-        RequestOTPFailure(
-          errMsg: 'An unexpected error occurred.',
-        ),
-      );
-    }
+    final result = await authRepo.verifyOTP(event.email, event.otp);
+
+    result.fold(
+          (error) => emit(VerifyOTPFailureSignUp(errMsg: error.message)),
+          (success) => emit(VerifyOTPSuccess(email: event.email, isSignUp: event.isSignUp)),
+    );
   }
 
-  FutureOr<void> signupEventCalled(event, emit) {
-    if (event.isEmailValid() &&
-        event.isPasswordValid() &&
-        event.isPasswordsMatch()) {
-      emit(AuthLoading());
-      try {
+  FutureOr<void> setNewPasswordEventCalled(event, emit) async {
+    emit(AuthLoading());
+    final result = await authRepo.setNewPassword(event.email, event.password);
+    result.fold(
+      (error) {
+        print('error here ');
+        emit(SetNewPasswordFailure(errMsg: error.message));
+      },
+      (success) {
+        print('VerifyOTPSuccess emitted');
+        emit(SetNewPasswordSuccess());
+      },
+    );
+  }
+
+  FutureOr<void> verifyOTPForForgetPasswordEventCalled(event, emit) async {
+    emit(AuthLoading());
+    final result =
+        await authRepo.verifyOTPForgetPassword(event.email, event.otp);
+    result.fold(
+      (error) {
+        emit(VerifyOTPFailureSignUp(errMsg: error.message));
+      },
+      (success) {
+        print('VerifyOTPSuccess emitted');
+
+        emit(VerifyOTPForgetPasswordSuccess(email: event.email));
+      },
+    );
+  }
+
+  FutureOr<void> requestOtpForForgetPasswordEventCalled(event, emit) async {
+    emit(AuthLoading());
+    print(event.email);
+    final result = await authRepo.requestOTPForForgetPassword(event.email);
+    result.fold((error) {
+      print('i have error');
+      emit(RequestOTPFailureSignUp(errMsg: error.message));
+    }, (success) {
+      print(' request otp for new password is success');
+      emit(RequestOTPSuccessForForgetPassword(email: event.email));
+    });
+  }
+
+  Future<void> verifyOTPForSignUpEventCalled(
+    VerifyOTPForSignUpEvent event,
+    Emitter<AuthState> emit,
+  ) async {
+    emit(AuthLoading());
+    final result = await authRepo.verifyOTPForSignUp(event.email, event.otp);
+    result.fold(
+      (error) {
+        emit(VerifyOTPFailureSignUp(errMsg: error.message));
+      },
+      (success) {
+        print('VerifyOTPSuccess emitted');
+        emit(VerifyOTPForgetPasswordSuccess(email: event.email));
+      },
+    );
+  }
+
+  Future<void> requestOtpForSignUpEventCalled(
+    RequestOTPForSignUpEvent event,
+    Emitter<AuthState> emit,
+  ) async {
+    emit(AuthLoading());
+    final result =
+        await authRepo.requestOTPForSignUp(event.email, event.userType);
+    await result.fold(
+      (error) async {
+        emit(RequestOTPFailureSignUp(errMsg: error.message));
+      },
+      (success) async {
+        emit(RequestOTPSuccessSignUp(
+          email: event.email,
+          password: event.password,
+          userType: event.userType,
+        ));
+      },
+    );
+  }
+
+  Future<void> signUpEventCalled(
+      SignUpEvent event, Emitter<AuthState> emit) async {
+    emit(AuthLoading());
+    print('SignUpEvent called');
+    final result = await authRepo.signUpAccount(
+      event.email!,
+      event.password1!,
+      event.userType!,
+    );
+    await result.fold(
+      (error) async {
+        emit(SignUpFailure(errMsg: error.message));
+      },
+      (success) async {
+        print('SignUpSuccess emitted');
+        await UserTokenLocal.saveTokens(
+          success.access,
+          success.refresh,
+        );
+        await RegistrationDataLocal.saveUserType(
+          event.userType!,
+        );
         emit(SignUpSuccess());
-      } catch (error) {
-        emit(SignUpFailure(errMsg: 'An unexpected error occurred.'));
-      }
-    } else {
-      if (!event.isEmailValid()) {
-        emit(SignInFailure(errMsg: 'Please enter a valid email.'));
-      } else if (!event.isPasswordValid()) {
-        emit(SignInFailure(
-            errMsg:
-                'Password must contain at least one uppercase letter, one lowercase letter, one digit, and one special character.'));
-      }
-    }
+      },
+    );
   }
 
-  FutureOr<void> loginEventCalled(event, emit) {
-    if (event.isEmailValid() && event.isPasswordValid()) {
-      emit(AuthLoading());
-      try {
-        // Perform any additional login logic here
+  Future<void> loginEventCalled(
+      LoginEvent event, Emitter<AuthState> emit) async {
+    emit(AuthLoading());
+    final result = await authRepo.loginAccount(
+      event.email,
+      event.password,
+      event.userType,
+    );
+    await result.fold(
+      (error) async {
+        emit(SignInFailure(errMsg: error.message));
+      },
+      (success) async {
+        print('SignInSuccess emitted');
+        await UserTokenLocal.saveTokens(
+          success.access,
+          success.refresh,
+        );
+        await RegistrationDataLocal.saveUserType(
+          event.userType,
+        );
+        print('i am saving data ');
         emit(SignInSuccess());
-      } catch (error) {
-        emit(SignInFailure(errMsg: 'An unexpected error occurred.'));
-      }
-    } else {
-      if (!event.isEmailValid()) {
-        emit(SignInFailure(errMsg: 'Please enter a valid email.'));
-      } else if (!event.isPasswordValid()) {
-        emit(SignInFailure(
-            errMsg:
-                'Password must contain at least one uppercase letter, one lowercase letter, one digit, and one special character.'));
-      }
-    }
+      },
+    );
   }
 }
