@@ -1,27 +1,41 @@
+// trainee_complete_profile_body.dart
 import 'package:extended_phone_number_input/phone_number_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:forme_app/core/utils/app_colors.dart';
-import 'package:forme_app/core/utils/text_styles.dart';
-import 'package:forme_app/core/widgets/custom_app_button.dart';
-
 import 'package:forme_app/features/trainee_features/complete_profile_trainee/presentation/views/widgets/trainee_body_fields.dart';
 import 'package:image_picker/image_picker.dart';
 
+import 'package:forme_app/core/utils/app_colors.dart';
+import 'package:forme_app/core/utils/text_styles.dart';
+import 'package:forme_app/core/widgets/custom_app_button.dart';
 import '../../../../../../core/widgets/image_picker/profile_image_picker.dart';
+import '../../manager/trainee_complete_profile_bloc.dart';
 
-class TraineeCompleteProfileBody extends StatefulWidget {
+class TraineeCompleteProfileBody extends StatelessWidget {
   const TraineeCompleteProfileBody({Key? key}) : super(key: key);
 
   @override
-  State<TraineeCompleteProfileBody> createState() =>
-      _TraineeCompleteProfileBodyState();
+  Widget build(BuildContext context) {
+    return BlocProvider(
+      create: (context) => TraineeCompleteProfileBloc(),
+      child: const TraineeCompleteProfileForm(),
+    );
+  }
 }
 
-class _TraineeCompleteProfileBodyState
-    extends State<TraineeCompleteProfileBody> {
-  XFile? _imageFile;
+class TraineeCompleteProfileForm extends StatefulWidget {
+  const TraineeCompleteProfileForm({super.key});
+
+  @override
+  TraineeCompleteProfileFormState createState() =>
+      TraineeCompleteProfileFormState();
+}
+
+class TraineeCompleteProfileFormState
+    extends State<TraineeCompleteProfileForm> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  XFile? imageFile;
   late PhoneNumberInputController phoneNumberController;
   late TextEditingController fullNameController;
   late ValueNotifier<String?> genderNotifier;
@@ -81,12 +95,20 @@ class _TraineeCompleteProfileBodyState
             ),
           ),
           SizedBox(height: 16.0.h),
-          ProfileImagePicker(
-            imageFile: _imageFile,
-            onImageSelected: (file) {
-              setState(() {
-                _imageFile = file;
-              });
+          BlocBuilder<TraineeCompleteProfileBloc, TraineeCompleteProfileState>(
+            builder: (context, state) {
+              if (state is ImagePickedSuccess) {
+                imageFile = state.image;
+              }
+
+              return ProfileImagePicker(
+                imageFile: imageFile,
+                onImageSelected: (file) {
+                  context.read<TraineeCompleteProfileBloc>().add(
+                        ImagePicked(file!),
+                      );
+                },
+              );
             },
           ),
           SizedBox(height: 32.0.h),
@@ -105,6 +127,7 @@ class _TraineeCompleteProfileBodyState
                 print(genderNotifier.value);
                 print(countryNotifier.value);
                 print(phoneNumberController.fullPhoneNumber);
+                print(imageFile?.path);
               }
             },
           ),

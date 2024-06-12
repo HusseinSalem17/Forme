@@ -51,8 +51,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
   FutureOr<void> verifyOTPForForgetPasswordEventCalled(event, emit) async {
     emit(AuthLoading());
-    final result =
-        await authRepo.verifyOTPForgetPassword(event.email, event.otp);
+    final result = await authRepo.verifyOTPForgetPassword(event.email, event.otp);
     result.fold(
       (error) {
         emit(VerifyOTPFailureSignUp(errMsg: error.message));

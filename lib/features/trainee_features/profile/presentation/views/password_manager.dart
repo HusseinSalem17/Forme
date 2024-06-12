@@ -6,7 +6,6 @@ import 'package:forme_app/core/utils/text_styles.dart';
 import 'package:forme_app/core/widgets/button_container.dart';
 import 'package:forme_app/core/widgets/simple_app_bar.dart';
 import 'package:forme_app/features/authentication/presentation/views/forgot_password_screen.dart';
-import 'package:forme_app/features/authentication/presentation/views/widgets/custom_text_from_field.dart';
 
 class PasswordManager extends StatelessWidget {
   static const routeName = '/password-manager-screen';
@@ -24,13 +23,13 @@ class PasswordManager extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
-                    const CustomTextFormField(
-                      title: 'Current Password',
-                      hint: 'enter your current password',
-                      type: 'password',
-                      topPadding: 16,
-                      bottomPadding: 0,
-                    ),
+                    // const CustomTextFormField(
+                    //   title: 'Current Password',
+                    //   hint: 'enter your current password',
+                    //   type: 'password',
+                    //   topPadding: 16,
+                    //   bottomPadding: 0,
+                    // ),
                     GestureDetector(
                       onTap: () {
                         Navigator.of(context).push(
@@ -48,20 +47,20 @@ class PasswordManager extends StatelessWidget {
                         ),
                       ),
                     ),
-                    const CustomTextFormField(
-                      title: 'New Password',
-                      hint: 'enter your new password',
-                      type: 'password',
-                      topPadding: 16,
-                      bottomPadding: 0,
-                    ),
-                    const CustomTextFormField(
-                      title: 'Confirm New Password',
-                      hint: 'confirm your password',
-                      type: 'password',
-                      topPadding: 16,
-                      bottomPadding: 0,
-                    ),
+                    // const CustomTextFormField(
+                    //   title: 'New Password',
+                    //   hint: 'enter your new password',
+                    //   type: 'password',
+                    //   topPadding: 16,
+                    //   bottomPadding: 0,
+                    // ),
+                    // const CustomTextFormField(
+                    //   title: 'Confirm New Password',
+                    //   hint: 'confirm your password',
+                    //   type: 'password',
+                    //   topPadding: 16,
+                    //   bottomPadding: 0,
+                    // ),
                   ],
                 ),
               ),

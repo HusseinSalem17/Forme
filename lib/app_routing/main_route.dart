@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:forme_app/app_routing/trainee_routes.dart';
 import 'package:forme_app/app_routing/trainer_routes.dart';
+import 'package:forme_app/features/trainee_features/complete_profile_trainee/presentation/views/trainee_complete_profile_screen.dart';
 import '../core/user_type.dart';
 import '../features/trainee_features/home/presentation/views/bottom_bar_screens.dart';
 import '../features/trainer_features/dashboard/presentation/views/home_view.dart';
@@ -25,7 +26,7 @@ class AppRouter {
                 context,
               )
             : TraineeRoutes().generateRoute(
-                const RouteSettings(name: HomeScreen.routeName),
+                const RouteSettings(name: TraineeCompleteProfile.routeName),
                 context,
               );
       default:
