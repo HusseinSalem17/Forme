@@ -57,7 +57,7 @@ class TraineeBodyFields extends StatelessWidget {
         CustomDropList(
           title: "Gender",
           hint: const Text('Select Your Gender'),
-          items: ['Male', 'Female']
+          items: ['male', 'female']
               .map((e) => DropdownMenuItem<String>(
                     value: e,
                     child: Text(e),

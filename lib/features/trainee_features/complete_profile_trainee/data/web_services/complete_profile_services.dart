@@ -1,30 +1,20 @@
-import 'dart:io';
-import 'package:dio/dio.dart';
-import 'package:forme_app/core/secrets/secrets_api_keys.dart';
-import 'package:forme_app/features/trainee_features/complete_profile_trainee/data/models/profile_data_model.dart';
+// lib/features/trainee_features/complete_profile_trainee/data/services/complete_profile_services.dart
 
-import '../../../../../core/errors/exceptions.dart';
-import '../../../../../core/errors/server_errors.dart';
-import '../models/profile_data_uploaded_successful_model.dart';
+import 'package:forme_app/features/trainee_features/complete_profile_trainee/data/models/trainee_complete_profile_data_model.dart';
+import '../../../../../core/api_services/api_services.dart';
+import '../../../../../core/secrets/secrets_api_keys.dart';
+import '../models/complete_profile_response.dart';
 
 class CompleteProfileServices {
-  final Dio _dio = Dio();
+  final ApiServices _webServices = ApiServices();
 
-  Future<ProfileDataUploadedSuccessfulModel> uploadProfileData(
+  Future<CompleteProfileResponse> uploadProfileData(
       TraineeCompleteProfileDataModel data) async {
-    try {
-      Response response = await _dio.patch(
-        '${SecretsApiKeys.baseUrl}/auth/complete_profile_trainee/',
-        data: data.toJson(),
-      );
-      return response.data;
-    } catch (error) {
-      throw CustomError(
-        ServerErrorHandler.handleError(
-          error,
-          'Error occurred while upload your data',
-        ),
-      );
-    }
+    final requestData = data.toJson();
+    final response = await _webServices.patch(
+      '${SecretsApiKeys.baseUrl}/auth/complete_profile_trainee/',
+      requestData,
+    );
+    return CompleteProfileResponse.fromJson(response.data);
   }
 }

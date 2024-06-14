@@ -17,7 +17,7 @@ class TraineeCompleteProfileDataModel {
     return {
       'username': username,
       'country': country,
-      'profile_picture': profilePicture,
+      'profile_picture': profilePicture ?? "",
       'phone_number': phoneNumber,
       'gender': gender,
     };

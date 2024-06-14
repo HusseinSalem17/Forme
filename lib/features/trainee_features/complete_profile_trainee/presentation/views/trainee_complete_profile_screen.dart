@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:forme_app/features/trainee_features/complete_profile_trainee/presentation/views/widgets/test.dart';
+import 'package:forme_app/features/trainee_features/complete_profile_trainee/presentation/views/widgets/trainee_complete_profile_body.dart';
 
 class TraineeCompleteProfile extends StatelessWidget {
   static const routeName = '/trainer-complete-Profile';

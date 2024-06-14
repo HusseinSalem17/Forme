@@ -1,27 +1,40 @@
 import 'package:extended_phone_number_input/phone_number_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:forme_app/core/utils/app_colors.dart';
-import 'package:forme_app/core/utils/text_styles.dart';
-import 'package:forme_app/core/widgets/custom_app_button.dart';
-
 import 'package:forme_app/features/trainee_features/complete_profile_trainee/presentation/views/widgets/trainee_body_fields.dart';
 import 'package:image_picker/image_picker.dart';
 
+import 'package:forme_app/core/utils/app_colors.dart';
+import 'package:forme_app/core/utils/text_styles.dart';
+import 'package:forme_app/core/widgets/custom_app_button.dart';
 import '../../../../../../core/widgets/image_picker/profile_image_picker.dart';
+import '../../../data/models/trainee_complete_profile_data_model.dart';
+import '../../manager/trainee_complete_profile_bloc.dart';
 
-class TraineeCompleteProfileBody extends StatefulWidget {
+class TraineeCompleteProfileBody extends StatelessWidget {
   const TraineeCompleteProfileBody({Key? key}) : super(key: key);
 
   @override
-  State<TraineeCompleteProfileBody> createState() =>
-      _TraineeCompleteProfileBodyState();
+  Widget build(BuildContext context) {
+    return BlocProvider(
+      create: (context) => TraineeCompleteProfileBloc(),
+      child: const TraineeCompleteProfileForm(),
+    );
+  }
 }
 
-class _TraineeCompleteProfileBodyState
-    extends State<TraineeCompleteProfileBody> {
-  XFile? _imageFile;
+class TraineeCompleteProfileForm extends StatefulWidget {
+  const TraineeCompleteProfileForm({super.key});
+
+  @override
+  TraineeCompleteProfileFormState createState() => TraineeCompleteProfileFormState();
+}
+
+class TraineeCompleteProfileFormState extends State<TraineeCompleteProfileForm> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  XFile? imageFile;
+  String? imageBase64;
   late PhoneNumberInputController phoneNumberController;
   late TextEditingController fullNameController;
   late ValueNotifier<String?> genderNotifier;
@@ -70,8 +83,7 @@ class _TraineeCompleteProfileBodyState
                     ),
                   ),
                   TextSpan(
-                    text:
-                        '\nDon’t worry, only you can see your personal data. No one else will be able to see it.',
+                    text: '\nDon’t worry, only you can see your personal data. No one else will be able to see it.',
                     style: TextStyles.textStyleRegular.copyWith(
                       fontSize: 14.sp,
                     ),
@@ -81,12 +93,19 @@ class _TraineeCompleteProfileBodyState
             ),
           ),
           SizedBox(height: 16.0.h),
-          ProfileImagePicker(
-            imageFile: _imageFile,
-            onImageSelected: (file) {
-              setState(() {
-                _imageFile = file;
-              });
+          BlocBuilder<TraineeCompleteProfileBloc, TraineeCompleteProfileState>(
+            builder: (context, state) {
+              if (state is ImagePickedSuccess) {
+                imageFile = state.image;
+                imageBase64 = state.imageBase64;
+              }
+
+              return ProfileImagePicker(
+                imageFile: imageFile,
+                onImageSelected: (file) {
+                  context.read<TraineeCompleteProfileBloc>().add(ImagePicked(file!));
+                },
+              );
             },
           ),
           SizedBox(height: 32.0.h),
@@ -105,6 +124,16 @@ class _TraineeCompleteProfileBodyState
                 print(genderNotifier.value);
                 print(countryNotifier.value);
                 print(phoneNumberController.fullPhoneNumber);
+
+                TraineeCompleteProfileDataModel data = TraineeCompleteProfileDataModel(
+                  username: fullNameController.text,
+                  country: countryNotifier.value!,
+                  gender: genderNotifier.value!,
+                  phoneNumber: phoneNumberController.fullPhoneNumber,
+                  profilePicture: imageBase64,
+                );
+
+                context.read<TraineeCompleteProfileBloc>().add(UpdateTraineeProfile(data));
               }
             },
           ),

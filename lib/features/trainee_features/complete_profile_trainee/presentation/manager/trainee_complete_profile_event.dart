@@ -1,4 +1,3 @@
-// trainee_complete_profile_event.dart
 part of 'trainee_complete_profile_bloc.dart';
 
 @immutable
