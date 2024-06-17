@@ -1,9 +1,11 @@
-// import 'package:dartz/dartz.dart';
-// import 'package:forme_app/core/errors/failures.dart';
-// import 'package:forme_app/features/trainer_features/complete_profile_trainer/data/models/trainer_complete_profile_data.dart';
+import 'package:dartz/dartz.dart';
+import 'package:forme_app/core/errors/exceptions.dart';
 
-// abstract class TraineeCompleteProfileRepo {
-//   Either<Failure, String> handleTraineeCompleteProfile({
-//     required TraineeCompleteProfileData data,
-//   });
-// }
+import '../models/trainee_complete_profile_data_model.dart';
+import '../models/complete_profile_response.dart';
+
+abstract class TraineeCompleteProfileRepo {
+  Future<Either<CustomError, CompleteProfileResponse>> updateTraineeCompleteProfile({
+    required TraineeCompleteProfileDataModel data,
+  });
+}

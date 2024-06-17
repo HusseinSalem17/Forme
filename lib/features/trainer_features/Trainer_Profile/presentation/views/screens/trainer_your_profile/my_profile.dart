@@ -15,6 +15,7 @@ import '../../../manager/my_profile_cubit/cubit/my_profile_cubit.dart';
 
 class MyProfileTrainer extends StatefulWidget {
   static const routeName = '/my-profile-screen';
+
   const MyProfileTrainer({super.key});
 
   @override
@@ -24,25 +25,38 @@ class MyProfileTrainer extends StatefulWidget {
 class _MyProfileTrainerState extends State<MyProfileTrainer> {
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _phoneController = TextEditingController();
+
   //final TextEditingController _birthController = TextEditingController();
   //final TextEditingController _countryController = TextEditingController();
   //final TextEditingController _goalController = TextEditingController();
   //final TextEditingController _physicalActivityLevelController =
   //    TextEditingController();
+
   String? name, phone, birth, gender, country;
   XFile? _imageFile;
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  late ValueNotifier<String?> genderNotifier;
+  late ValueNotifier<String?> countryNotifier;
+  late ValueNotifier<String?> sportsFieldNotifier;
+
   @override
   void initState() {
     super.initState();
     // Set default text for the TextField
     _nameController.text = "Hussein Salem";
     _phoneController.text = "0124822101";
+    genderNotifier= ValueNotifier<String?>(null);
+    countryNotifier= ValueNotifier<String?>(null);
+    sportsFieldNotifier= ValueNotifier<String?>(null);
+
   }
 
   @override
   void dispose() {
     _formKey.currentState?.dispose();
+    genderNotifier.dispose();
+    countryNotifier.dispose();
+    sportsFieldNotifier.dispose();
     super.dispose();
   }
 
@@ -183,6 +197,7 @@ class _MyProfileTrainerState extends State<MyProfileTrainer> {
                     });
                   },
                   onSaved: (value) {},
+                  selectedValueNotifier: genderNotifier,
                 ),
                 SizedBox(height: 16.h),
                 CustomDropList(
@@ -207,6 +222,7 @@ class _MyProfileTrainerState extends State<MyProfileTrainer> {
                     });
                   },
                   onSaved: (value) {},
+                  selectedValueNotifier: countryNotifier,
                 ),
                 SizedBox(height: 16.h),
                 CustomDropList(
@@ -231,6 +247,7 @@ class _MyProfileTrainerState extends State<MyProfileTrainer> {
                     });
                   },
                   onSaved: (value) {},
+                  selectedValueNotifier: sportsFieldNotifier,
                 ),
                 SizedBox(height: 16.h),
                 TextArea(

@@ -23,24 +23,23 @@ class MyProfile extends StatefulWidget {
 class _MyProfileState extends State<MyProfile> {
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _phoneController = TextEditingController();
-  //final TextEditingController _birthController = TextEditingController();
   final TextEditingController _heightController = TextEditingController();
   final TextEditingController _weightController = TextEditingController();
-  //final TextEditingController _countryController = TextEditingController();
-  //final TextEditingController _goalController = TextEditingController();
-  //final TextEditingController _physicalActivityLevelController =
-  //    TextEditingController();
+  late ValueNotifier<String?> countryNotifier;
+
   String? name, phone, birth, height, weight, goal, gender, country;
   XFile? _imageFile;
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   @override
   void initState() {
-    super.initState();
-    // Set default text for the TextField
     _nameController.text = "Hussein Salem";
     _phoneController.text = "0124822101";
     _heightController.text = "175";
     _weightController.text = "75";
+    countryNotifier = ValueNotifier<String?>(null);
+    super.initState();
+
+
   }
 
   @override
@@ -233,7 +232,7 @@ class _MyProfileState extends State<MyProfile> {
                       country = value;
                     });
                   },
-                  onSaved: (value) {},
+                  onSaved: (value) {}, selectedValueNotifier: countryNotifier,
                 ),
                 SizedBox(height: 16.h),
                 CustomDropList(
@@ -258,6 +257,7 @@ class _MyProfileState extends State<MyProfile> {
                     });
                   },
                   onSaved: (value) {},
+                  selectedValueNotifier: countryNotifier,
                 ),
                 SizedBox(height: 16.h),
                 CustomDropList(
@@ -282,6 +282,7 @@ class _MyProfileState extends State<MyProfile> {
                     });
                   },
                   onSaved: (value) {},
+                  selectedValueNotifier: countryNotifier,
                 )
               ],
             );

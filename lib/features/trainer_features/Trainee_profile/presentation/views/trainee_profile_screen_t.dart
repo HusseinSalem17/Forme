@@ -14,6 +14,7 @@ import '../manager/trainee_profile_cubit.dart';
 
 class TraineeProfileScreen extends StatefulWidget {
   static const routeName = '/trainee-profile-screen';
+
   const TraineeProfileScreen({super.key});
 
   @override
@@ -23,9 +24,11 @@ class TraineeProfileScreen extends StatefulWidget {
 class _TraineeProfileScreenState extends State<TraineeProfileScreen> {
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _phoneController = TextEditingController();
+
   //final TextEditingController _birthController = TextEditingController();
   final TextEditingController _heightController = TextEditingController();
   final TextEditingController _weightController = TextEditingController();
+
   //final TextEditingController _countryController = TextEditingController();
   //final TextEditingController _goalController = TextEditingController();
   //final TextEditingController _physicalActivityLevelController =
@@ -33,6 +36,9 @@ class _TraineeProfileScreenState extends State<TraineeProfileScreen> {
   String? name, phone, birth, height, weight, goal, gender, country;
   XFile? _imageFile;
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  late ValueNotifier<String?> goalNotifier;
+  late ValueNotifier<String?> physicalActivityLevelNotifier;
+
   @override
   void initState() {
     super.initState();
@@ -41,11 +47,16 @@ class _TraineeProfileScreenState extends State<TraineeProfileScreen> {
     _phoneController.text = "0124822101";
     _heightController.text = "175";
     _weightController.text = "75";
+    goalNotifier = ValueNotifier<String?>(null);
+    physicalActivityLevelNotifier = ValueNotifier<String?>(null);
   }
 
   @override
   void dispose() {
     _formKey.currentState?.dispose();
+    goalNotifier.dispose();
+    physicalActivityLevelNotifier.dispose();
+
     super.dispose();
   }
 
@@ -74,8 +85,8 @@ class _TraineeProfileScreenState extends State<TraineeProfileScreen> {
               const Spacer(),
               Text(
                 "Hussein Salem",
-                style: TextStyles.textStyleBold.copyWith(
-                    fontSize: 18.sp, color: AppColors.n900Black),
+                style: TextStyles.textStyleBold
+                    .copyWith(fontSize: 18.sp, color: AppColors.n900Black),
               ),
               const Spacer(),
               IconButton(
@@ -131,8 +142,7 @@ class _TraineeProfileScreenState extends State<TraineeProfileScreen> {
                 Center(
                     child: Text('husseinsalem910@gmail.com',
                         style: TextStyles.textStyleSemiBold.copyWith(
-                            fontSize: 14.sp,
-                            color: AppColors.n900Black))),
+                            fontSize: 14.sp, color: AppColors.n900Black))),
                 SizedBox(height: 32.0.h),
                 CustomTextField(
                   controller: _nameController,
@@ -263,6 +273,7 @@ class _TraineeProfileScreenState extends State<TraineeProfileScreen> {
                     });
                   },
                   onSaved: (value) {},
+                  selectedValueNotifier: goalNotifier,
                 ),
                 SizedBox(height: 16.h),
                 CustomDropList(
@@ -287,6 +298,7 @@ class _TraineeProfileScreenState extends State<TraineeProfileScreen> {
                     });
                   },
                   onSaved: (value) {},
+                  selectedValueNotifier: physicalActivityLevelNotifier,
                 )
               ],
             );

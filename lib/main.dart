@@ -8,7 +8,7 @@ import 'package:forme_app/features/Authentication/presentation/manager/auth_bloc
 
 import 'package:forme_app/features/trainer_features/Trainer_Profile/presentation/manager/my_profile_cubit/cubit/my_profile_cubit.dart';
 
-import 'package:forme_app/features/trainee_features/complete_profile_trainee/presentation/manager/cubit/trainee_complete_profile_cubit.dart';
+
 import 'package:forme_app/features/trainer_features/complete_profile_trainer/presentation/manager/cubit/trainer_complete_profile_cubit.dart';
 import 'package:forme_app/features/trainer_features/dashboard/presentation/views/manager/bloc/trainer_home_bloc.dart';
 import 'package:forme_app/features/trainer_features/trainee_profile/presentation/manager/trainee_profile_cubit.dart';
@@ -73,10 +73,7 @@ class MyApp extends StatelessWidget {
             create: (context) =>
                 TrainerCompleteProfileCubit(DioFile(dio: Dio())),
           ),
-          BlocProvider(
-            create: (context) =>
-                TraineeCompleteProfileCubit(DioFile(dio: Dio())),
-          ),
+
           BlocProvider(
             create: (context) => MyProfileCubit(),
           ),

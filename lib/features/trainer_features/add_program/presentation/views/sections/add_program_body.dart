@@ -16,10 +16,15 @@ import 'package:image_picker/image_picker.dart';
 class AddProgramBody extends StatefulWidget {
   final XFile? imageFile;
   final void Function(XFile?) onImageSelected;
+  final ValueNotifier<String?> typeNotifier;
+  final ValueNotifier<String?> sportFieldNotifier;
+
   const AddProgramBody({
     super.key,
     required this.imageFile,
     required this.onImageSelected,
+    required this.typeNotifier,
+    required this.sportFieldNotifier,
   });
 
   @override
@@ -29,6 +34,7 @@ class AddProgramBody extends StatefulWidget {
 class _AddProgramBodyState extends State<AddProgramBody> {
   String? programType;
   List<int> paymentItems = List<int>.generate(10, (int index) => index);
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -100,6 +106,7 @@ class _AddProgramBodyState extends State<AddProgramBody> {
               });
             },
             onSaved: (value) {},
+            selectedValueNotifier: widget.typeNotifier,
           ),
           SizedBox(
             height: 16.h,
@@ -125,6 +132,7 @@ class _AddProgramBodyState extends State<AddProgramBody> {
               });
             },
             onSaved: (value) {},
+            selectedValueNotifier: widget.sportFieldNotifier,
           ),
           SizedBox(
             height: 16.h,

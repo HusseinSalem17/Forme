@@ -1,4 +1,5 @@
 // complete_profile_body.dart
+import 'package:extended_phone_number_input/phone_number_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -23,10 +24,31 @@ class TrainerCompleteProfileBody extends StatefulWidget {
 class _TrainerCompleteProfileBodyState
     extends State<TrainerCompleteProfileBody> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  late PhoneNumberInputController phoneNumberController;
+  late TextEditingController fullNameController;
+  late ValueNotifier<String?> genderNotifier;
+  late ValueNotifier<String?> countryNotifier;
+  late ValueNotifier<String?> sportsFieldNotifier;
+
+  @override
+  void initState() {
+    phoneNumberController = PhoneNumberInputController(context);
+    fullNameController = TextEditingController();
+    genderNotifier = ValueNotifier<String?>(null);
+    countryNotifier = ValueNotifier<String?>(null);
+    sportsFieldNotifier = ValueNotifier<String?>(null);
+
+    super.initState();
+  }
 
   @override
   void dispose() {
     _formKey.currentState?.dispose();
+    phoneNumberController.dispose();
+    fullNameController.dispose();
+    genderNotifier.dispose();
+    countryNotifier.dispose();
+    sportsFieldNotifier.dispose();
     super.dispose();
   }
 
@@ -113,6 +135,11 @@ class _TrainerCompleteProfileBodyState
                         value;
                   });
                 },
+                phoneNumberController: phoneNumberController,
+                fullNameController: fullNameController,
+                genderNotifier: genderNotifier,
+                countryNotifier: countryNotifier,
+                sportsFieldNotifier: sportsFieldNotifier,
               ),
               SizedBox(height: 32.0.h),
               CustomAppButton(
