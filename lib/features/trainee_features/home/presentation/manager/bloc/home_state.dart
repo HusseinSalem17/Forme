@@ -1,8 +1,11 @@
 part of 'home_bloc.dart';
 
 @immutable
-sealed class HomeState {}
+abstract class HomeState {}
 
-final class HomeInitial extends HomeState {}
+class HomeInitial extends HomeState {}
 
-class HomeBottomNavigation extends HomeState {}
+class HomeBottomNavigation extends HomeState {
+  final int currentIndex;
+  HomeBottomNavigation(this.currentIndex);
+}

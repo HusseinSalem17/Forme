@@ -4,6 +4,7 @@ import 'package:forme_app/features/trainee_features/Favorite/presentation/views/
 import 'package:forme_app/features/trainee_features/home/presentation/manager/bloc/home_bloc.dart';
 import 'package:forme_app/features/trainee_features/home/presentation/views/trainee_home_screen.dart';
 import 'package:forme_app/features/trainee_features/home/presentation/views/widgets/custom_bottom_navigation_bar.dart';
+import 'package:forme_app/features/trainee_features/home/presentation/views/widgets/custom_bottom_van_bar.dart';
 import 'package:forme_app/features/trainee_features/maps_feature/presentation/views/map_screen.dart';
 import 'package:forme_app/features/trainee_features/profile/presentation/views/profile_screen.dart';
 
@@ -27,12 +28,12 @@ class _TraineeHomeScreenBottomNavState extends State<TraineeHomeScreenBottomNav>
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<HomeBloc, HomeState>(
+    return BlocBuilder<TraineeHomeBloc, HomeState>(
       builder: (context, state) {
-        int currentIndex = BlocProvider.of<HomeBloc>(context).currentIndex;
+        int currentIndex = BlocProvider.of<TraineeHomeBloc>(context).currentIndex;
         return Scaffold(
           body: _pages[currentIndex],
-          bottomNavigationBar: const CustomBottomNavigationBar(
+          bottomNavigationBar: const CustomBottomNavBar(
             isTrainer: false,
             icons: ['home', 'pin-map', 'heart', 'chat', 'profile'],
             labels: ['Home', 'Explore', 'Favorite', 'chat', 'Profile'],

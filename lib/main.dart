@@ -79,7 +79,7 @@ class MyApp extends StatelessWidget {
             create: (context) => MyProfileCubit(),
           ),
           BlocProvider(
-            create: (context) => HomeBloc(),
+            create: (context) => TraineeHomeBloc(),
           ),
           BlocProvider(
             create: (context) => TrainerHomeBloc(),
