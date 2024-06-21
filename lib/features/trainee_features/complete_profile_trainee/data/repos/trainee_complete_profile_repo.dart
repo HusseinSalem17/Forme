@@ -5,7 +5,8 @@ import '../models/trainee_complete_profile_data_model.dart';
 import '../models/complete_profile_response.dart';
 
 abstract class TraineeCompleteProfileRepo {
-  Future<Either<CustomError, CompleteProfileResponse>> updateTraineeCompleteProfile({
+  Future<Either<CustomError, CompleteProfileResponse>>
+      updateTraineeCompleteProfile({
     required TraineeCompleteProfileDataModel data,
   });
 }

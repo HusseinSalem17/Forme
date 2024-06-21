@@ -29,4 +29,26 @@ class ApiServices {
       );
     }
   }
+
+  Future<Response> get(String url) async {
+    try {
+      String? accessToken = await UserTokenLocal.getAccessToken();
+      Response response = await _dio.get(
+        url,
+        options: Options(
+          headers: {
+            HttpHeaders.authorizationHeader: 'Bearer $accessToken',
+          },
+        ),
+      );
+      return response;
+    } catch (error) {
+      throw CustomError(
+        ServerErrorHandler.handleError(
+          error,
+          'Error occurred while fetching your data',
+        ),
+      );
+    }
+  }
 }

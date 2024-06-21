@@ -16,15 +16,13 @@ class TrainerCompleteProfileRepoImpl implements TraineeCompleteProfileRepo {
   }) async {
     try {
       final response = await completeProfileServices.uploadProfileData(data);
-      print('success in repo');
       return right(response);
     } catch (e) {
-      print('error in repo');
       return left(
         CustomError(
           ServerErrorHandler.handleError(
             e,
-            'Error occurred while requesting OTP',
+            'Error occurred while upload trainee profile data',
           ),
         ),
       );
