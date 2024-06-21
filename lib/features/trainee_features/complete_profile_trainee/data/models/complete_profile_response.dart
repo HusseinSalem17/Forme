@@ -1,4 +1,4 @@
-import 'package:forme_app/features/trainee_features/complete_profile_trainee/data/models/user_model.dart';
+import 'package:forme_app/core/models/trainee/user_model.dart';
 
 class CompleteProfileResponse {
   final User user;

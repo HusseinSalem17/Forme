@@ -9,7 +9,7 @@
 .history
 .svn/
 migrate_working_dir/
-lib/core/secrets/
+lib/core/secrets_api_keys/
 
 # IntelliJ related
 *.iml

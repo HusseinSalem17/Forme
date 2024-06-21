@@ -6,10 +6,9 @@ import 'package:forme_app/features/authentication/data/models/set_new_password_s
 import 'package:forme_app/features/authentication/data/models/token_response_success.dart';
 import 'package:forme_app/features/authentication/data/models/verify_otp_response_success.dart';
 import 'package:forme_app/features/authentication/data/models/otp_response_success.dart';
-import 'package:forme_app/core/secrets/secrets_api_keys.dart';
 import '../../../../core/errors/exceptions.dart';
 import '../../../../core/errors/server_errors.dart';
-import '../../presentation/manager/auth_bloc.dart';
+import '../../../../core/secrets_api_keys/secrets_api_keys.dart';
 
 class AuthServices {
   late Dio dio;

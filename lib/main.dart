@@ -35,6 +35,7 @@ void main() async {
   // Check if tokens are null
   String? accessToken = await UserTokenLocal.getAccessToken();
   String? refreshToken = await UserTokenLocal.getRefreshToken();
+  print(accessToken);
   if (accessToken == null || refreshToken == null || initialUserType == null) {
     // Tokens are null, navigate to the authentication flow
     print('access of refresh of user type is null');

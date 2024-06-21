@@ -6,7 +6,7 @@ import 'package:forme_app/core/utils/text_styles.dart';
 import 'package:forme_app/core/widgets/custom_app_bar_arrow_button.dart';
 import 'package:forme_app/core/widgets/custom_app_button.dart';
 import 'package:forme_app/features/trainee_features/Payment/presentation/view/ereceipt_screen.dart';
-import 'package:forme_app/features/trainee_features/home/presentation/views/bottom_bar_screens.dart';
+import 'package:forme_app/features/trainee_features/home/presentation/views/trainee_home_screen_bottom_nav.dart';
 
 class CongratulationScreen extends StatelessWidget {
   static const routeName = '/Congratulation-screen';
@@ -21,7 +21,7 @@ class CongratulationScreen extends StatelessWidget {
           title: Row(children: [
             CustomAppBarArrowButton(onTap: () {
               Navigator.of(context)
-                  .push(PageSlideTransition(const HomeScreen()));
+                  .push(PageSlideTransition(const TraineeHomeScreenBottomNav()));
             }),
           ]),
         ),
@@ -82,7 +82,7 @@ class CongratulationScreen extends StatelessWidget {
                       TextButton(
                           onPressed: () {
                             Navigator.of(context)
-                                .push(PageSlideTransition(const HomeScreen()));
+                                .push(PageSlideTransition(const TraineeHomeScreenBottomNav()));
                           },
                           child: Text('Go to Home',
                               style: TextStyles.textStyleRegular.copyWith(

@@ -10,7 +10,7 @@ import 'package:forme_app/features/Authentication/presentation/views/widgets/ico
 import 'package:forme_app/features/authentication/presentation/views/widgets/custom_button_scanface.dart';
 import 'package:forme_app/features/authentication/presentation/views/widgets/language_icon.dart';
 import 'package:forme_app/features/authentication/presentation/views/widgets/slider_type_choice.dart';
-import 'package:forme_app/features/trainee_features/home/presentation/views/bottom_bar_screens.dart';
+import 'package:forme_app/features/trainee_features/home/presentation/views/trainee_home_screen_bottom_nav.dart';
 
 import '../../../../core/transitions/page_slide.dart';
 import '../../../../core/utils/app_colors.dart';
@@ -76,7 +76,7 @@ class _SignInScreenState extends State<SignInScreen> {
               // Navigate to PreferencesScreen on successful authentication
               Navigator.of(context).push(
                 PageSlideTransition(
-                  const HomeScreen(),
+                  const TraineeHomeScreenBottomNav(),
                 ),
               );
             } else if (state is SignInFailure) {

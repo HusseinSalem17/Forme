@@ -10,8 +10,8 @@ import 'package:forme_app/features/trainee_features/home/presentation/views/widg
 import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/utils/text_styles.dart';
 
-class HomeBody extends StatelessWidget {
-  const HomeBody({super.key});
+class TraineeHomeScreen extends StatelessWidget {
+  const TraineeHomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

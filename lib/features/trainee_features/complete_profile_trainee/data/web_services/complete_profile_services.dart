@@ -2,7 +2,8 @@
 
 import 'package:forme_app/features/trainee_features/complete_profile_trainee/data/models/trainee_complete_profile_data_model.dart';
 import '../../../../../core/api_services/api_services.dart';
-import '../../../../../core/secrets/secrets_api_keys.dart';
+
+import '../../../../../core/secrets_api_keys/secrets_api_keys.dart';
 import '../models/complete_profile_response.dart';
 
 class CompleteProfileServices {
