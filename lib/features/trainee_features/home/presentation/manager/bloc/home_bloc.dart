@@ -11,7 +11,7 @@ part 'home_event.dart';
 
 part 'home_state.dart';
 
-class TraineeHomeBloc extends Bloc<HomeEvent, HomeState> {
+class TraineeHomeBloc extends Bloc<HomeEvent, TraineeHomeState> {
   int currentIndex = 0;
   final HomeRepo homeRepo;
 
@@ -21,18 +21,23 @@ class TraineeHomeBloc extends Bloc<HomeEvent, HomeState> {
       emit(HomeBottomNavigation(currentIndex));
     });
 
-    on<GetTopTrainers>(_onFetchTopTrainers);
+    on<GetTopTrainers>(getTopTrainerCalled);
   }
 
-  void _onFetchTopTrainers(
-      GetTopTrainers event, Emitter<HomeState> emit) async {
+  void getTopTrainerCalled(
+    GetTopTrainers event,
+    Emitter<TraineeHomeState> emit,
+  ) async {
     emit(HomeLoading());
-    Either<CustomError, List<TrainerProfile>> result =
-        await homeRepo.getTopTrainers();
+    final result = await homeRepo.getTopTrainers();
 
     result.fold(
-      (error) => emit(HomeFailure(error.message)),
-      (trainers) => emit(TopTrainersSuccess( trainerProfileData: trainers)),
+      (error) => emit(
+        HomeFailure(error.message),
+      ),
+      (trainers) => emit(
+        TopTrainersSuccess(trainerProfileData: trainers),
+      ),
     );
   }
 }

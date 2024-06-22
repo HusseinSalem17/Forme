@@ -28,7 +28,7 @@ class _TraineeHomeScreenBottomNavState extends State<TraineeHomeScreenBottomNav>
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<TraineeHomeBloc, HomeState>(
+    return BlocBuilder<TraineeHomeBloc, TraineeHomeState>(
       builder: (context, state) {
         int currentIndex = BlocProvider.of<TraineeHomeBloc>(context).currentIndex;
         return Scaffold(

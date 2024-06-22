@@ -32,19 +32,34 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     final result = await authRepo.verifyOTP(event.email, event.otp);
 
     result.fold(
-      (error) => emit(VerifyOTPFailureSignUp(errMsg: error.message)),
-      (success) =>
-          emit(VerifyOTPSuccess(email: event.email, isSignUp: event.isSignUp)),
+      (error) => emit(
+        VerifyOTPFailureSignUp(
+          errMsg: error.message,
+        ),
+      ),
+      (success) => emit(
+        VerifyOTPSuccess(
+          email: event.email,
+          isSignUp: event.isSignUp,
+        ),
+      ),
     );
   }
 
-  FutureOr<void> setNewPasswordEventCalled(event, emit,) async {
+  FutureOr<void> setNewPasswordEventCalled(
+    event,
+    emit,
+  ) async {
     emit(AuthLoading());
     final result = await authRepo.setNewPassword(event.email, event.password);
     result.fold(
       (error) {
         print('error here ');
-        emit(SetNewPasswordFailure(errMsg: error.message));
+        emit(
+          SetNewPasswordFailure(
+            errMsg: error.message,
+          ),
+        );
       },
       (success) {
         print('VerifyOTPSuccess emitted');
@@ -52,7 +67,6 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       },
     );
   }
-
 
   FutureOr<void> requestOtpForForgetPasswordEventCalled(
     RequestOTPForForgetPasswordEvent event,
@@ -63,25 +77,37 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     final result = await authRepo.requestOTPForForgetPassword(event.email);
     result.fold((error) {
       print('i have error');
-      emit(RequestOTPFailureSignUp(errMsg: error.message));
+      emit(
+        RequestOTPFailureSignUp(
+          errMsg: error.message,
+        ),
+      );
     }, (success) {
       print(' request otp for new password is success');
-      emit(RequestOTPSuccessForForgetPassword(email: event.email));
+      emit(
+        RequestOTPSuccessForForgetPassword(
+          email: event.email,
+        ),
+      );
     });
   }
-
-
 
   Future<void> requestOtpForSignUpEventCalled(
     RequestOTPForSignUpEvent event,
     Emitter<AuthState> emit,
   ) async {
     emit(AuthLoading());
-    final result =
-        await authRepo.requestOTPForSignUp(event.email, event.userType);
+    final result = await authRepo.requestOTPForSignUp(
+      event.email,
+      event.userType,
+    );
     await result.fold(
       (error) async {
-        emit(RequestOTPFailureSignUp(errMsg: error.message));
+        emit(
+          RequestOTPFailureSignUp(
+            errMsg: error.message,
+          ),
+        );
       },
       (success) async {
         emit(RequestOTPSuccessSignUp(
@@ -106,7 +132,11 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     );
     await result.fold(
       (error) async {
-        emit(SignUpFailure(errMsg: error.message));
+        emit(
+          SignUpFailure(
+            errMsg: error.message,
+          ),
+        );
       },
       (success) async {
         print('SignUpSuccess emitted');
@@ -134,7 +164,11 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     );
     await result.fold(
       (error) async {
-        emit(SignInFailure(errMsg: error.message));
+        emit(
+          SignInFailure(
+            errMsg: error.message,
+          ),
+        );
       },
       (success) async {
         print('SignInSuccess emitted');

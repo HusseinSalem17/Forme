@@ -1,17 +1,17 @@
 part of 'home_bloc.dart';
 
 @immutable
-abstract class HomeState {}
+abstract class TraineeHomeState {}
 
-class HomeInitial extends HomeState {}
+class HomeInitial extends TraineeHomeState {}
 
-final class HomeBottomNavigation extends HomeState {
+final class HomeBottomNavigation extends TraineeHomeState {
   final int currentIndex;
 
   HomeBottomNavigation(this.currentIndex);
 }
 
-final class TopTrainersSuccess extends HomeState {
+final class TopTrainersSuccess extends TraineeHomeState {
   final List<TrainerProfile> trainerProfileData;
 
   TopTrainersSuccess({
@@ -19,9 +19,9 @@ final class TopTrainersSuccess extends HomeState {
   });
 }
 
-class HomeLoading extends HomeState {}
+class HomeLoading extends TraineeHomeState {}
 
-class HomeFailure extends HomeState {
+class HomeFailure extends TraineeHomeState {
   final String errorMsg;
 
   HomeFailure(this.errorMsg);

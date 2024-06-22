@@ -6,7 +6,7 @@ class User {
   final String? profilePicture;
   final String country;
   final String gender;
-  final String phoneNumber;
+  final String? phoneNumber;
   final DateTime createdAt;
   final DateTime updatedAt;
 
@@ -18,7 +18,7 @@ class User {
     this.profilePicture,
     required this.country,
     required this.gender,
-    required this.phoneNumber,
+    this.phoneNumber,
     required this.createdAt,
     required this.updatedAt,
   });
@@ -30,8 +30,8 @@ class User {
       email: json['email'],
       dateOfBirth: json['date_of_birth'],
       profilePicture: json['profile_picture'],
-      country: json['country'],
-      gender: json['gender'],
+      country: json['country'] ?? '',
+      gender: json['gender'] ?? '',
       phoneNumber: json['phone_number'],
       createdAt: DateTime.parse(json['created_at']),
       updatedAt: DateTime.parse(json['updated_at']),

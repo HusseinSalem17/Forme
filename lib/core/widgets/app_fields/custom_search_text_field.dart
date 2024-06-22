@@ -4,7 +4,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
 
-import '../../../features/trainee_features/home/presentation/views/cusotm_home_search_screen.dart';
+import '../../../features/trainee_features/home/presentation/views/custom_home_search_screen.dart';
 
 class CustomSearchTextField extends StatefulWidget {
   const CustomSearchTextField({Key? key}) : super(key: key);

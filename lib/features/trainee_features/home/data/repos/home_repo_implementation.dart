@@ -17,6 +17,7 @@ class HomeRepoImplementation extends HomeRepo {
       final response = await homeServices.getTopTrainers();
       return right(response);
     } catch (e) {
+      print(e);
       return left(
         CustomError(
           ServerErrorHandler.handleError(

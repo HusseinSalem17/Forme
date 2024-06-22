@@ -26,9 +26,9 @@ class CustomBottomNavBar extends StatefulWidget {
 class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<TraineeHomeBloc, HomeState>(
+    return BlocBuilder<TraineeHomeBloc, TraineeHomeState>(
       builder: (context, homeState) {
-        return BlocBuilder<TraineeHomeBloc, HomeState>(
+        return BlocBuilder<TraineeHomeBloc, TraineeHomeState>(
           builder: (context, trainerState) {
             int currentIndex = widget.isTrainer
                 ? BlocProvider.of<TrainerHomeBloc>(context).currentIndex

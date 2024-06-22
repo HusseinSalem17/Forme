@@ -24,13 +24,13 @@ class TrainerProfile {
   factory TrainerProfile.fromJson(Map<String, dynamic> json) {
     return TrainerProfile(
       user: User.fromJson(json['user']),
-      slug: json['slug'],
-      bio: json['bio'],
-      sportField: json['sport_field'],
+      slug: json['slug'] ?? '',
+      bio: json['bio'] ?? '',
+      sportField: json['sport_field'] ?? '',
       backgroundImage: json['background_image'],
-      verified: json['verified'],
-      avgRatings: json['avg_ratings'],
-      numberOfRatings: json['number_of_ratings'],
+      verified: json['verified'] ?? false,
+      avgRatings: json['avg_ratings'].toDouble(),
+      numberOfRatings: json['number_of_ratings'] ?? 0,
     );
   }
 

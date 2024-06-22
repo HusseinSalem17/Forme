@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:forme_app/core/transitions/page_slide.dart';
 import 'package:forme_app/features/trainee_features/featured/presentation/featured_screen.dart';
+import 'package:forme_app/features/trainee_features/home/presentation/manager/bloc/home_bloc.dart';
 import 'package:forme_app/features/trainee_features/home/presentation/views/widgets/custom_home_app_bar.dart';
 import 'package:forme_app/features/trainee_features/home/presentation/views/widgets/featured_workouts.dart';
 import 'package:forme_app/features/trainee_features/home/presentation/views/widgets/nearby_sports_club.dart';
@@ -10,11 +12,24 @@ import 'package:forme_app/features/trainee_features/home/presentation/views/widg
 import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/utils/text_styles.dart';
 
-class TraineeHomeScreen extends StatelessWidget {
+class TraineeHomeScreen extends StatefulWidget {
   const TraineeHomeScreen({super.key});
 
   @override
+  State<TraineeHomeScreen> createState() => _TraineeHomeScreenState();
+}
+
+class _TraineeHomeScreenState extends State<TraineeHomeScreen> {
+  @override
+  void initState() {
+    context.read<TraineeHomeBloc>().add(GetTopTrainers());
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
+    // Fetch top trainers when the screen is loaded
+
     return Scaffold(
       body: CustomScrollView(
         slivers: [
