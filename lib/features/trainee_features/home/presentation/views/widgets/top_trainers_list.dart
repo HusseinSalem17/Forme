@@ -49,7 +49,7 @@ class TopTrainersList extends StatelessWidget {
           builder: (context, state) {
             if (state is HomeLoading) {
               return const CircularProgressIndicator();
-            } else if (state is TopTrainersSuccess) {
+            } else if (state is GetTopTrainersSuccess) {
               return SizedBox(
                 height: 80.h,
                 child: ListView.builder(

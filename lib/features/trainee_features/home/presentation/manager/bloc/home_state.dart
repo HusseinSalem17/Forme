@@ -11,17 +11,25 @@ final class HomeBottomNavigation extends TraineeHomeState {
   HomeBottomNavigation(this.currentIndex);
 }
 
-final class TopTrainersSuccess extends TraineeHomeState {
+final class GetTopTrainersSuccess extends TraineeHomeState {
   final List<TrainerProfile> trainerProfileData;
 
-  TopTrainersSuccess({
+  GetTopTrainersSuccess({
     required this.trainerProfileData,
   });
 }
 
-class HomeLoading extends TraineeHomeState {}
+final class GetSpecialProgramsSuccess extends TraineeHomeState {
+  final List<TrainerProfileProgram> trainerProfileProgramData;
 
-class HomeFailure extends TraineeHomeState {
+  GetSpecialProgramsSuccess({
+    required this.trainerProfileProgramData,
+  });
+}
+
+final class HomeLoading extends TraineeHomeState {}
+
+final class HomeFailure extends TraineeHomeState {
   final String errorMsg;
 
   HomeFailure(this.errorMsg);

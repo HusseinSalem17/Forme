@@ -46,7 +46,7 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
               onTap: (index) {
                 setState(() {
                   BlocProvider.of<TraineeHomeBloc>(context)
-                      .add(HomeBottomNavEvent(index));
+                      .add(HomeBottomNav(index));
                 });
               },
               unselectedItemColor: AppColors.n100Gray,
