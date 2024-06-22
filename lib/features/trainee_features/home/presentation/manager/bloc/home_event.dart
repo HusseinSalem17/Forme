@@ -7,3 +7,5 @@ class HomeBottomNavEvent extends HomeEvent {
   final int index;
   HomeBottomNavEvent(this.index);
 }
+
+final class GetTopTrainers extends HomeEvent{}

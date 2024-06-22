@@ -24,11 +24,13 @@ import 'core/user_type.dart';
 import 'core/utils/functions/service_locator.dart';
 import 'core/utils/scroll_behavior.dart';
 
+import 'di/init_debendences.dart';
 import 'local_storage_data/auth_local/tokens.dart';
 import 'local_storage_data/auth_local/user_type.dart';
 
 void main() async {
   setupServiceLocator();
+  setupLocator();
   WidgetsFlutterBinding.ensureInitialized();
   // Retrieve the saved user type from local storage
   UserType? initialUserType = await RegistrationDataLocal.getUserType();
@@ -79,7 +81,7 @@ class MyApp extends StatelessWidget {
             create: (context) => MyProfileCubit(),
           ),
           BlocProvider(
-            create: (context) => TraineeHomeBloc(),
+            create: (_) => serviceLocator<TraineeHomeBloc>(),
           ),
           BlocProvider(
             create: (context) => TrainerHomeBloc(),
