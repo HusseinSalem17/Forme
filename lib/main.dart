@@ -2,12 +2,12 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:forme_app/core/api/dio_consumer.dart';
+import 'package:forme_app/core/api/app_dio.dart';
+
 import 'package:forme_app/core/utils/app_theme.dart';
 import 'package:forme_app/features/Authentication/presentation/manager/auth_bloc.dart';
 
-import 'package:forme_app/features/trainer_features/Trainer_Profile/presentation/manager/my_profile_cubit/cubit/my_profile_cubit.dart';
-
+import 'package:forme_app/features/trainer_features/Trainer_Profile/presentation/manager/my_profile_cubit/cubit/profile_cubit.dart';
 
 import 'package:forme_app/features/trainer_features/complete_profile_trainer/presentation/manager/cubit/trainer_complete_profile_cubit.dart';
 import 'package:forme_app/features/trainer_features/dashboard/presentation/views/manager/bloc/trainer_home_bloc.dart';
@@ -18,6 +18,7 @@ import 'package:forme_app/features/trainer_features/trainer_preference/presentat
 
 import 'package:forme_app/onboarding_screens/data/bloc/onboarding_blocs.dart';
 import 'package:flutter/services.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'app_routing/auth_routes.dart';
 import 'app_routing/main_route.dart';
 import 'core/user_type.dart';
@@ -28,6 +29,8 @@ import 'local_storage_data/auth_local/tokens.dart';
 import 'local_storage_data/auth_local/user_type.dart';
 
 void main() async {
+  await Hive.initFlutter();
+  //Hive.registerAdapter(UserAdapter());
   setupServiceLocator();
   WidgetsFlutterBinding.ensureInitialized();
   // Retrieve the saved user type from local storage
@@ -37,7 +40,9 @@ void main() async {
   String? refreshToken = await UserTokenLocal.getRefreshToken();
   if (accessToken == null || refreshToken == null || initialUserType == null) {
     // Tokens are null, navigate to the authentication flow
-    print('access of refresh of user type is null');
+    debugPrint('access of refresh of user type is null');
+    //await Hive.openBox("traineeData");
+    await Hive.openBox("trainerData");
     runApp(const MyApp(initialUserType: null));
   } else {
     // Tokens exist, navigate to the main app flow
@@ -67,13 +72,12 @@ class MyApp extends StatelessWidget {
             create: (context) => OnBoardingBloc(),
           ),
           BlocProvider(
-            create: (context) => TrainerPreferenceCubit(DioFile(dio: Dio())),
+            create: (context) => TrainerPreferenceCubit(AppDio(dio: Dio())),
           ),
           BlocProvider(
             create: (context) =>
-                TrainerCompleteProfileCubit(DioFile(dio: Dio())),
+                TrainerCompleteProfileCubit(AppDio(dio: Dio())),
           ),
-
           BlocProvider(
             create: (context) => MyProfileCubit(),
           ),
@@ -84,7 +88,7 @@ class MyApp extends StatelessWidget {
             create: (context) => TrainerHomeBloc(),
           ),
           BlocProvider(
-            create: (context) => MyProfileTrainerCubit(),
+            create: (context) => ProfileTrainerCubit(AppDio(dio: Dio())),
           ),
           BlocProvider(
             create: (_) => AuthBloc(),
@@ -96,7 +100,7 @@ class MyApp extends StatelessWidget {
           theme: Themes.customLightTheme,
           onGenerateRoute: (settings) {
             if (initialUserType == null) {
-              print('you are null');
+              debugPrint('you are null');
               return AuthRoutes().generateRoute(settings);
             } else {
               return AppRouter(
