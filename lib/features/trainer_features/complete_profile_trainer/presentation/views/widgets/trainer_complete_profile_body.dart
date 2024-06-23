@@ -1,12 +1,15 @@
 // complete_profile_body.dart
+import 'package:extended_phone_number_input/phone_number_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:forme_app/core/transitions/page_slide.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
 import 'package:forme_app/core/widgets/custom_app_button.dart';
 import 'package:forme_app/core/widgets/flutter_toast.dart';
 import 'package:forme_app/features/trainer_features/complete_profile_trainer/presentation/manager/cubit/trainer_complete_profile_cubit.dart';
+import 'package:forme_app/features/trainer_features/dashboard/presentation/views/home_view.dart';
 import '../../../../../../core/widgets/image_picker/profile_image_picker.dart';
 import 'trainer_body_fields.dart';
 
@@ -21,10 +24,31 @@ class TrainerCompleteProfileBody extends StatefulWidget {
 class _TrainerCompleteProfileBodyState
     extends State<TrainerCompleteProfileBody> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  late PhoneNumberInputController phoneNumberController;
+  late TextEditingController fullNameController;
+  late ValueNotifier<String?> genderNotifier;
+  late ValueNotifier<String?> countryNotifier;
+  late ValueNotifier<String?> sportsFieldNotifier;
+
+  @override
+  void initState() {
+    phoneNumberController = PhoneNumberInputController(context);
+    fullNameController = TextEditingController();
+    genderNotifier = ValueNotifier<String?>(null);
+    countryNotifier = ValueNotifier<String?>(null);
+    sportsFieldNotifier = ValueNotifier<String?>(null);
+
+    super.initState();
+  }
 
   @override
   void dispose() {
     _formKey.currentState?.dispose();
+    phoneNumberController.dispose();
+    fullNameController.dispose();
+    genderNotifier.dispose();
+    countryNotifier.dispose();
+    sportsFieldNotifier.dispose();
     super.dispose();
   }
 
@@ -34,8 +58,8 @@ class _TrainerCompleteProfileBodyState
         TrainerCompleteProfileState>(
       listener: (context, state) {
         if (state is TrainerCompleteProfileSuccess) {
-          // Navigator.of(context)
-          //     .pushReplacement(PageSlideTransition(const TrainerHomeScreen()));
+          Navigator.of(context)
+              .pushReplacement(PageSlideTransition(const TrainerHomeScreen()));
         } else if (state is TrainerCompleteProfileFailure) {
           showCustomSnackbar(
               context,
@@ -85,31 +109,46 @@ class _TrainerCompleteProfileBodyState
               ),
               SizedBox(height: 32.0.h),
               buildTrainerBodyFields(
-                  onNameChanged: (value) => context
-                      .read<TrainerCompleteProfileCubit>()
-                      .onNameChanged(value),
-                  onPhoneChanged: (value) => context
-                      .read<TrainerCompleteProfileCubit>()
-                      .onPhoneChanged(value),
-                  onGenderChanged: (value) => context
-                      .read<TrainerCompleteProfileCubit>()
-                      .onGenderChanged(value),
-                  onCountryChanged: (value) => context
-                      .read<TrainerCompleteProfileCubit>()
-                      .onCountryChanged(value),
-                  onSportFieldChanged: (value) => context
-                      .read<TrainerCompleteProfileCubit>()
-                      .onSportFieldChanged(value),
-                  onBrithChanged: (value) => context
-                      .read<TrainerCompleteProfileCubit>()
-                      .onBirthChanged(value)),
+                onNameChanged: (value) {
+                  setState(() {
+                    context.read<TrainerCompleteProfileCubit>().name = value;
+                  });
+                },
+                onPhoneChanged: (value) {
+                  setState(() {
+                    context.read<TrainerCompleteProfileCubit>().phone = value;
+                  });
+                },
+                onGenderChanged: (value) {
+                  setState(() {
+                    context.read<TrainerCompleteProfileCubit>().gender = value;
+                  });
+                },
+                onCountryChanged: (value) {
+                  setState(() {
+                    context.read<TrainerCompleteProfileCubit>().country = value;
+                  });
+                },
+                onSportFieldChanged: (value) {
+                  setState(() {
+                    context.read<TrainerCompleteProfileCubit>().sportField =
+                        value;
+                  });
+                },
+                phoneNumberController: phoneNumberController,
+                fullNameController: fullNameController,
+                genderNotifier: genderNotifier,
+                countryNotifier: countryNotifier,
+                sportsFieldNotifier: sportsFieldNotifier,
+              ),
               SizedBox(height: 32.0.h),
               CustomAppButton(
                 title: 'Complete Profile',
                 isLoad: state is TrainerCompleteProfileLoading,
                 onTap: () {
                   if (_formKey.currentState!.validate()) {
-                    BlocProvider.of<TrainerCompleteProfileCubit>(context)
+                    context
+                        .read<TrainerCompleteProfileCubit>()
                         .patchTrainerCompleteProfile();
                   }
                 },

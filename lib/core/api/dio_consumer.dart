@@ -5,11 +5,10 @@ import 'package:forme_app/core/api/api_interceptors.dart';
 import 'package:forme_app/core/errors/failures.dart';
 import 'package:forme_app/core/secrets/secrets_api_keys.dart';
 
-
-class AppDio extends ApiConsumer {
+class DioFile extends ApiConsumer {
   final Dio dio;
 
-  AppDio({required this.dio}) {
+  DioFile({required this.dio}) {
     dio.options.baseUrl = SecretsApiKeys.baseUrl;
     dio.interceptors.add(ApiInterceptor());
     dio.interceptors.add(LogInterceptor(

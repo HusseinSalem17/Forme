@@ -11,18 +11,14 @@ class Utils {
         filename: image.path.split('/').last);
   }
 
-  Future<String> convertXFileToBase64(XFile? file) async {
+  Future<String> convertXFileToBase64(XFile file) async {
     // Read the file as bytes
-    if (file != null) {
-      Uint8List fileBytes = await file.readAsBytes();
+    Uint8List fileBytes = await file.readAsBytes();
 
-      // Convert bytes to base64 string
-      String base64String = base64Encode(fileBytes);
+    // Convert bytes to base64 string
+    String base64String = base64Encode(fileBytes);
 
-      return base64String;
-    } else {
-      return '';
-    }
+    return base64String;
   }
 
   Future<List<MultipartFile>> convertToMultiperFile(List<File> files) async {

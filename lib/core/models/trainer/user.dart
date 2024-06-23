@@ -1,28 +1,13 @@
-import 'package:hive/hive.dart';
-
-part 'user.g.dart';
-
-@HiveType(typeId: 0)
-class User extends HiveObject {
-  @HiveField(0)
+class User {
   int? id;
-  @HiveField(1)
   String? username;
-  @HiveField(2)
   String? email;
-  @HiveField(3)
   dynamic dateOfBirth;
-  @HiveField(4)
   String? profilePicture;
-  @HiveField(5)
   String? country;
-  @HiveField(6)
   String? gender;
-  @HiveField(7)
   String? phoneNumber;
-  @HiveField(8)
   DateTime? createdAt;
-  @HiveField(9)
   DateTime? updatedAt;
 
   User({

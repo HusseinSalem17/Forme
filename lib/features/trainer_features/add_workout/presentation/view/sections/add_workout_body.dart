@@ -69,7 +69,7 @@ class _AddWorkoutBodyState extends State<AddWorkoutBody> {
               title: 'Workout Title',
               titleColor: AppColors.n400,
               hintText: 'Type here',
-              hintStyle: TextStyles.hintStyle,
+              hintStyle: TextStyles.headerStyle,
             ),
             SizedBox(
               height: 16.h,
@@ -82,7 +82,7 @@ class _AddWorkoutBodyState extends State<AddWorkoutBody> {
                     titleColor: AppColors.n400,
                     hintText: '0.0',
                     keyboardType: TextInputType.number,
-                    hintStyle: TextStyles.hintStyle,
+                    hintStyle: TextStyles.headerStyle,
                   ),
                 ),
                 Column(
@@ -123,7 +123,7 @@ class _AddWorkoutBodyState extends State<AddWorkoutBody> {
                           titleColor: AppColors.n400,
                           hintText: '0.0',
                           keyboardType: TextInputType.number,
-                          hintStyle: TextStyles.hintStyle,
+                          hintStyle: TextStyles.headerStyle,
                         ),
                       ),
                       SizedBox(
@@ -136,7 +136,7 @@ class _AddWorkoutBodyState extends State<AddWorkoutBody> {
                           titleColor: AppColors.n400,
                           hintText: '0.0',
                           keyboardType: TextInputType.number,
-                          hintStyle: TextStyles.hintStyle,
+                          hintStyle: TextStyles.headerStyle,
                         ),
                       ),
                     ],

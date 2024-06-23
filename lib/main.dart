@@ -2,32 +2,32 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:forme_app/core/api/app_dio.dart';
+import 'package:forme_app/core/api/dio_consumer.dart';
 import 'package:forme_app/core/utils/app_theme.dart';
-import 'package:flutter/services.dart';
-import 'package:forme_app/features/authentication/presentation/manager/auth_bloc.dart';
-import 'package:forme_app/features/authentication/presentation/views/sign_in_screen.dart';
-import 'package:forme_app/features/trainee_features/complete_profile_trainee/presentation/manager/cubit/trainee_complete_profile_cubit.dart';
-import 'package:forme_app/features/trainee_features/home/presentation/manager/bloc/home_bloc.dart';
-import 'package:forme_app/features/trainee_features/profile/presentation/manager/cubit/my_profile_cubit.dart';
-import 'package:forme_app/features/trainer_features/Trainee_profile/presentation/manager/trainee_profile_cubit.dart';
-import 'package:forme_app/features/trainer_features/Trainer_Profile/presentation/manager/my_profile_cubit/cubit/profile_cubit.dart';
+import 'package:forme_app/features/Authentication/presentation/manager/auth_bloc.dart';
+
+import 'package:forme_app/features/trainer_features/Trainer_Profile/presentation/manager/my_profile_cubit/cubit/my_profile_cubit.dart';
+
+
 import 'package:forme_app/features/trainer_features/complete_profile_trainer/presentation/manager/cubit/trainer_complete_profile_cubit.dart';
 import 'package:forme_app/features/trainer_features/dashboard/presentation/views/manager/bloc/trainer_home_bloc.dart';
+import 'package:forme_app/features/trainer_features/trainee_profile/presentation/manager/trainee_profile_cubit.dart';
+import 'package:forme_app/features/trainee_features/home/presentation/manager/bloc/home_bloc.dart';
+import 'package:forme_app/features/trainee_features/profile/presentation/manager/cubit/my_profile_cubit.dart';
 import 'package:forme_app/features/trainer_features/trainer_preference/presentation/manager/cubit/trainer_preference_cubit.dart';
+
 import 'package:forme_app/onboarding_screens/data/bloc/onboarding_blocs.dart';
-import 'package:hive_flutter/hive_flutter.dart';
+import 'package:flutter/services.dart';
 import 'app_routing/auth_routes.dart';
 import 'app_routing/main_route.dart';
 import 'core/user_type.dart';
 import 'core/utils/functions/service_locator.dart';
 import 'core/utils/scroll_behavior.dart';
+
 import 'local_storage_data/auth_local/tokens.dart';
 import 'local_storage_data/auth_local/user_type.dart';
 
 void main() async {
-  await Hive.initFlutter();
-  //Hive.registerAdapter(UserAdapter());
   setupServiceLocator();
   WidgetsFlutterBinding.ensureInitialized();
   // Retrieve the saved user type from local storage
@@ -37,7 +37,7 @@ void main() async {
   String? refreshToken = await UserTokenLocal.getRefreshToken();
   if (accessToken == null || refreshToken == null || initialUserType == null) {
     // Tokens are null, navigate to the authentication flow
-    debugPrint('access of refresh of user type is null');
+    print('access of refresh of user type is null');
     runApp(const MyApp(initialUserType: null));
   } else {
     // Tokens exist, navigate to the main app flow
@@ -46,8 +46,6 @@ void main() async {
         statusBarColor: Colors.white,
       ),
     );
-    //await Hive.openBox("traineeData");
-    await Hive.openBox("trainerData");
     runApp(MyApp(initialUserType: initialUserType));
   }
 }
@@ -69,16 +67,13 @@ class MyApp extends StatelessWidget {
             create: (context) => OnBoardingBloc(),
           ),
           BlocProvider(
-            create: (context) => TrainerPreferenceCubit(AppDio(dio: Dio())),
+            create: (context) => TrainerPreferenceCubit(DioFile(dio: Dio())),
           ),
           BlocProvider(
             create: (context) =>
-                TrainerCompleteProfileCubit(AppDio(dio: Dio())),
+                TrainerCompleteProfileCubit(DioFile(dio: Dio())),
           ),
-          BlocProvider(
-            create: (context) =>
-                TraineeCompleteProfileCubit(AppDio(dio: Dio())),
-          ),
+
           BlocProvider(
             create: (context) => MyProfileCubit(),
           ),
@@ -89,7 +84,7 @@ class MyApp extends StatelessWidget {
             create: (context) => TrainerHomeBloc(),
           ),
           BlocProvider(
-            create: (context) => ProfileTrainerCubit(AppDio(dio: Dio())),
+            create: (context) => MyProfileTrainerCubit(),
           ),
           BlocProvider(
             create: (_) => AuthBloc(),
@@ -99,10 +94,9 @@ class MyApp extends StatelessWidget {
           scrollBehavior: CustomScrollBehavior(),
           debugShowCheckedModeBanner: false,
           theme: Themes.customLightTheme,
-          
           onGenerateRoute: (settings) {
             if (initialUserType == null) {
-              debugPrint('you are null');
+              print('you are null');
               return AuthRoutes().generateRoute(settings);
             } else {
               return AppRouter(

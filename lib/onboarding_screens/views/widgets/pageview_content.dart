@@ -31,9 +31,6 @@ class PageViewContent extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SizedBox(
-          height: 25.h,
-        ),
         SkipButton(
           pageController: pageController,
           state: state,

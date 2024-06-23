@@ -9,7 +9,7 @@ import '../../../../../../core/utils/app_colors.dart';
 import '../../../../../../core/utils/text_styles.dart';
 import 'trainer_your_profile/complete_verification_screen.dart';
 import 'trainer_your_profile/languages_screen.dart';
-import 'trainer_your_profile/edit_profile.dart';
+import 'trainer_your_profile/my_profile.dart';
 import 'trainer_your_profile/social_media_links_screen.dart';
 
 class TrainerYourProfileScreen extends StatelessWidget {
@@ -30,7 +30,7 @@ class TrainerYourProfileScreen extends StatelessWidget {
             width: MediaQuery.of(context).size.width,
             color: AppColors.n20Gray,
             child: Padding(
-              padding: EdgeInsets.all(16.w),
+              padding: EdgeInsets.only(top: 8.0.h, left: 16.w, right: 16.w),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -38,6 +38,7 @@ class TrainerYourProfileScreen extends StatelessWidget {
                     children: [
                       SvgPicture.asset(
                         'assets/image/Icon/hash.svg',
+                        color: AppColors.n900Black,
                       ),
                       SizedBox(
                         width: 16.w,
@@ -103,7 +104,7 @@ class TrainerYourProfileScreen extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 24.w,vertical: 12.h),
+            padding: EdgeInsets.only(top: 12.0.h, left: 16.w, right: 16.w),
             child: Column(
               children: [
                 Text(
@@ -114,7 +115,7 @@ class TrainerYourProfileScreen extends StatelessWidget {
                       fontWeight: FontWeight.w400),
                 ),
                 SizedBox(
-                  height: 37.h,
+                  height: 32.h,
                 ),
                 CustomGestureDetectorRow(
                     title: "Edit Profile",
