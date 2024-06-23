@@ -2,25 +2,25 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:forme_app/core/utils/app_colors.dart';
-import 'package:forme_app/core/utils/text_styles.dart';
-import 'package:forme_app/core/widgets/custom_app_bar_arrow_button.dart';
 import 'package:forme_app/core/widgets/app_drop_list/custom_drop_list.dart';
-import 'package:forme_app/core/widgets/app_fields/custom_text_field.dart';
 import 'package:forme_app/core/widgets/image_picker/profile_image_picker.dart';
 import 'package:forme_app/features/trainee_features/profile/presentation/views/widgets/my_profile_phone_field.dart';
 import 'package:image_picker/image_picker.dart';
-import '../manager/cubit/my_profile_cubit.dart';
+import '../../../../../core/utils/app_colors.dart';
+import '../../../../../core/utils/text_styles.dart';
+import '../../../../../core/widgets/app_fields/custom_text_field.dart';
+import '../../../../../core/widgets/custom_app_bar_arrow_button.dart';
+import '../manager/trainee_profile_cubit.dart';
 
-class MyProfile extends StatefulWidget {
-  static const routeName = '/my-profile-screen';
-  const MyProfile({super.key});
+class TraineeProfileScreen extends StatefulWidget {
+  static const routeName = '/trainee-profile-screen';
+  const TraineeProfileScreen({super.key});
 
   @override
-  State<MyProfile> createState() => _MyProfileState();
+  State<TraineeProfileScreen> createState() => _TraineeProfileScreenState();
 }
 
-class _MyProfileState extends State<MyProfile> {
+class _TraineeProfileScreenState extends State<TraineeProfileScreen> {
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _phoneController = TextEditingController();
   //final TextEditingController _birthController = TextEditingController();
@@ -60,7 +60,6 @@ class _MyProfileState extends State<MyProfile> {
       'Improve Endurance',
       'Learn The Basics',
     ];
-    bool adjustable = false;
     return Scaffold(
         appBar: AppBar(
           backgroundColor: AppColors.background,
@@ -74,9 +73,9 @@ class _MyProfileState extends State<MyProfile> {
               ),
               const Spacer(),
               Text(
-                "My Profile",
-                style: TextStyles.textStyleBold
-                    .copyWith(fontSize: 18.sp, color: AppColors.n900Black),
+                "Hussein Salem",
+                style: TextStyles.textStyleBold.copyWith(
+                    fontSize: 18.sp, color: AppColors.n900Black),
               ),
               const Spacer(),
               IconButton(
@@ -98,7 +97,7 @@ class _MyProfileState extends State<MyProfile> {
                   ),
                   padding: EdgeInsets.all(4.h),
                   child: SvgPicture.asset(
-                    "assets/image/Icon/edit.svg",
+                    "assets/image/Icon/message.svg",
                     height: 24.h,
                     width: 24.w,
                   ),
@@ -109,7 +108,7 @@ class _MyProfileState extends State<MyProfile> {
             ],
           ),
         ),
-        body: BlocConsumer<MyProfileCubit, MyProfileState>(
+        body: BlocConsumer<TraineeProfileCubit, TraineeProfileState>(
           listener: (context, state) {
             // ... (unchanged)
           },
@@ -128,14 +127,20 @@ class _MyProfileState extends State<MyProfile> {
                     });
                   },
                 ),
+                SizedBox(height: 16.0.h),
+                Center(
+                    child: Text('husseinsalem910@gmail.com',
+                        style: TextStyles.textStyleSemiBold.copyWith(
+                            fontSize: 14.sp,
+                            color: AppColors.n900Black))),
                 SizedBox(height: 32.0.h),
                 CustomTextField(
                   controller: _nameController,
                   title: 'Full Name',
+                  hintStyle: TextStyles.hintStyle,
                   hintText: 'Hussein Salem Eldesokey',
                   keyboardType: TextInputType.name,
-                  enabled: adjustable,
-                  hintStyle: TextStyles.headerStyle,
+                  enabled: false,
                   onChanged: (value) {
                     setState(() {
                       name = value;
@@ -155,8 +160,9 @@ class _MyProfileState extends State<MyProfile> {
                         controller: _heightController,
                         title: 'Height',
                         hintText: '175',
+                         hintStyle: TextStyles.hintStyle,
                         keyboardType: TextInputType.number,
-                        enabled: adjustable, hintStyle: TextStyles.headerStyle,
+                        enabled: false,
                         onChanged: (value) {
                           setState(() {
                             height = value;
@@ -188,8 +194,9 @@ class _MyProfileState extends State<MyProfile> {
                         controller: _weightController,
                         title: 'weight',
                         hintText: '75',
-                        keyboardType: TextInputType.number, hintStyle: TextStyles.headerStyle,
-                        enabled: adjustable,
+                         hintStyle: TextStyles.hintStyle,
+                        keyboardType: TextInputType.number,
+                        enabled: false,
                         onChanged: (value) {
                           setState(() {
                             height = value;
@@ -213,33 +220,33 @@ class _MyProfileState extends State<MyProfile> {
                   ],
                 ),
                 SizedBox(height: 16.h),
-                CustomDropList(
-                  title: "Country",
-                  enabled: adjustable,
-                  hint: const Text('Select Country'),
-                  items: countryItems
-                      .map((e) => DropdownMenuItem<String>(
-                            value: e,
-                            child: Text(e),
-                          ))
-                      .toList(),
-                  validator: (value) {
-                    if (value == null) {
-                      return 'Please select country.';
-                    }
-                    return null;
-                  },
-                  onChanged: (value) {
-                    setState(() {
-                      country = value;
-                    });
-                  },
-                  onSaved: (value) {},
-                ),
-                SizedBox(height: 16.h),
+                // CustomDropList(
+                //   title: "Country",
+                //   enabled: false,
+                //   hint: const Text('Select Country'),
+                //   items: countryItems
+                //       .map((e) => DropdownMenuItem<String>(
+                //             value: e,
+                //             child: Text(e),
+                //           ))
+                //       .toList(),
+                //   validator: (value) {
+                //     if (value == null) {
+                //       return 'Please select country.';
+                //     }
+                //     return null;
+                //   },
+                //   onChanged: (value) {
+                //     setState(() {
+                //       country = value;
+                //     });
+                //   },
+                //   onSaved: (value) {},
+                // ),
+                // SizedBox(height: 16.h),
                 CustomDropList(
                   title: "Goal",
-                  enabled: adjustable,
+                  enabled: false,
                   hint: const Text('Select Your Goal'),
                   items: goalItems
                       .map((e) => DropdownMenuItem<String>(
@@ -263,7 +270,7 @@ class _MyProfileState extends State<MyProfile> {
                 SizedBox(height: 16.h),
                 CustomDropList(
                   title: "Physical Activity Level",
-                  enabled: adjustable,
+                  enabled: false,
                   hint: const Text('select Physical Activity Level'),
                   items: countryItems
                       .map((e) => DropdownMenuItem<String>(

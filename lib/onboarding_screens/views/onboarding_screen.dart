@@ -24,24 +24,22 @@ class _WelcomeState extends State<OnBoardingScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: BlocBuilder<OnBoardingBloc, OnBoardingState>(
-          builder: (context, OnBoardingState state) {
-            return Stack(
-              children: [
-                CustomPageView(
-                  pageController: pageController,
-                  state: state,
-                ),
-                PageViewButtons(
-                  pageController: pageController,
-                  state: state,
-                ),
-              ],
-            );
-          },
-        ),
+    return Scaffold(
+      body: BlocBuilder<OnBoardingBloc, OnBoardingState>(
+        builder: (context, OnBoardingState state) {
+          return Stack(
+            children: [
+              CustomPageView(
+                pageController: pageController,
+                state: state,
+              ),
+              PageViewButtons(
+                pageController: pageController,
+                state: state,
+              ),
+            ],
+          );
+        },
       ),
     );
   }

@@ -14,8 +14,7 @@ import 'package:forme_app/features/trainee_features/home/presentation/views/bott
 
 import '../../../../core/transitions/page_slide.dart';
 import '../../../../core/utils/app_colors.dart';
-
-import '../../../../core/utils/check_box_bloc/checkbox_bloc.dart';
+import '../../../../core/utils/bloc/checkbox_bloc.dart';
 import '../../../../core/utils/icons_image_pathes.dart';
 import '../../../../core/utils/show_snackbar.dart';
 import '../../../../core/utils/text_styles.dart';

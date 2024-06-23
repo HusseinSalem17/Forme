@@ -65,22 +65,24 @@ class _AddWorkoutBodyState extends State<AddWorkoutBody> {
             SizedBox(
               height: 16.h,
             ),
-            const CustomTextField(
+            CustomTextField(
               title: 'Workout Title',
               titleColor: AppColors.n400,
               hintText: 'Type here',
+              hintStyle: TextStyles.hintStyle,
             ),
             SizedBox(
               height: 16.h,
             ),
             Row(
               children: [
-                const Expanded(
+                Expanded(
                   child: CustomTextField(
                     title: 'Price',
                     titleColor: AppColors.n400,
                     hintText: '0.0',
                     keyboardType: TextInputType.number,
+                    hintStyle: TextStyles.hintStyle,
                   ),
                 ),
                 Column(
@@ -114,25 +116,27 @@ class _AddWorkoutBodyState extends State<AddWorkoutBody> {
                   padding: EdgeInsets.only(bottom: 16.h),
                   child: Row(
                     children: [
-                      const Expanded(
+                      Expanded(
                         child: CustomTextField(
                           title: 'Offer Price ',
                           subTitle: '(EGP)',
                           titleColor: AppColors.n400,
                           hintText: '0.0',
                           keyboardType: TextInputType.number,
+                          hintStyle: TextStyles.hintStyle,
                         ),
                       ),
                       SizedBox(
                         width: 16.h,
                       ),
-                      const Expanded(
+                      Expanded(
                         child: CustomTextField(
                           title: 'Max.Clients',
                           optional: true,
                           titleColor: AppColors.n400,
                           hintText: '0.0',
                           keyboardType: TextInputType.number,
+                          hintStyle: TextStyles.hintStyle,
                         ),
                       ),
                     ],

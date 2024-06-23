@@ -16,7 +16,7 @@ class CustomDropList extends StatefulWidget {
   final String? Function(String?)? validator;
   final Widget? hint;
   final bool enabled;
-  final ValueNotifier<String?> selectedValueNotifier; // Add this line
+  final String? initialValue; // Add initialValue property
 
   const CustomDropList({
     super.key,
@@ -29,17 +29,21 @@ class CustomDropList extends StatefulWidget {
     this.onSaved,
     this.validator,
     this.enabled = true,
-    required this.selectedValueNotifier, // Add this line
+    this.initialValue, // Add initialValue to constructor
   });
 
   @override
-  State<CustomDropList> createState() => _CustomDropListState();
+  State<CustomDropList> createState() => _CustomDropList();
 }
 
-class _CustomDropListState extends State<CustomDropList> {
+class _CustomDropList extends State<CustomDropList> {
+  String? _selectedValue;
+
   @override
   void initState() {
     super.initState();
+    // Set the default selected value here
+    _selectedValue = widget.initialValue;
   }
 
   @override
@@ -47,78 +51,77 @@ class _CustomDropListState extends State<CustomDropList> {
     return CustomBuildForm(
       title: widget.title,
       titleColor: AppColors.n900Black,
-      child: ValueListenableBuilder<String?>(
-        valueListenable: widget.selectedValueNotifier,
-        builder: (context, selectedValue, child) {
-          return DropdownButtonFormField2<String>(
-            isExpanded: true,
-            autovalidateMode: AutovalidateMode.onUserInteraction,
-            style: TextStyles.textStyleMedium.copyWith(
-              color: AppColors.n900Black,
-              fontSize: 14.sp,
-            ),
-            decoration: InputDecoration(
-              filled: true,
-              fillColor: Colors.white,
-              contentPadding: EdgeInsets.only(right: 16, top: 8.h, bottom: 8.h),
-              border: textFieldBorder(),
-              enabledBorder: textFieldBorder(),
-              focusedBorder: textFieldBorder(
-                color: AppColors.primaryColor,
-                width: 2,
+      child: DropdownButtonFormField2<String>(
+        isExpanded: true,
+        autovalidateMode: AutovalidateMode.onUserInteraction,
+        style: TextStyles.textStyleMedium.copyWith(
+          color: AppColors.n900Black,
+          fontSize: 14.sp,
+        ),
+        decoration: InputDecoration(
+          filled: true,
+          fillColor: widget.enabled ? Colors.white : AppColors.n20Gray,
+          contentPadding: EdgeInsets.only(right: 16, top: 8.h, bottom: 8.h),
+          border: textFieldBorder(),
+          enabledBorder: textFieldBorder(),
+          focusedBorder: textFieldBorder(
+            color: AppColors.primaryColor,
+            width: 2,
+          ),
+          errorBorder: textFieldBorder(
+            color: AppColors.r200ErrorColor,
+            width: 2,
+          ),
+        ),
+        hint: widget.hint,
+        items: widget.items,
+        validator: widget.validator,
+        onChanged: widget.enabled ? (value) => _onDropdownChanged(value) : null,
+        onSaved: widget.onSaved,
+        value: _selectedValue, // Set the selected value
+        buttonStyleData: const ButtonStyleData(
+          padding: EdgeInsets.only(right: 8),
+        ),
+        iconStyleData: const IconStyleData(
+          openMenuIcon: Icon(
+            FontAwesomeIcons.chevronDown,
+            color: AppColors.primaryColor,
+          ),
+          icon: Icon(
+            FontAwesomeIcons.chevronRight,
+            color: AppColors.n70Gray,
+          ),
+          iconSize: 16,
+        ),
+        dropdownStyleData: DropdownStyleData(
+          padding: EdgeInsets.symmetric(horizontal: 4.w),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(4),
+            boxShadow: [
+              BoxShadow(
+                color: AppColors.n100Gray.withOpacity(0.25),
+                blurRadius: 4,
+                offset: const Offset(0, 2),
               ),
-              errorBorder: textFieldBorder(
-                color: AppColors.r200ErrorColor,
-                width: 2,
-              ),
-            ),
-            hint: widget.hint,
-            items: widget.items,
-            value: selectedValue, // Bind the selected value to the dropdown
-            validator: widget.validator,
-            onChanged: widget.enabled
-                ? (value) {
-              widget.selectedValueNotifier.value = value;
-              if (widget.onChanged != null) {
-                widget.onChanged!(value);
-              }
-            }
-                : null,
-            onSaved: widget.onSaved,
-            buttonStyleData: const ButtonStyleData(
-              padding: EdgeInsets.only(right: 8),
-            ),
-            iconStyleData: const IconStyleData(
-              openMenuIcon: Icon(
-                FontAwesomeIcons.chevronDown,
-                color: AppColors.primaryColor,
-              ),
-              icon: Icon(
-                FontAwesomeIcons.chevronRight,
-                color: AppColors.n70Gray,
-              ),
-              iconSize: 16,
-            ),
-            dropdownStyleData: DropdownStyleData(
-              padding: EdgeInsets.symmetric(horizontal: 4.w),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(4),
-                boxShadow: [
-                  BoxShadow(
-                    color: AppColors.n100Gray.withOpacity(0.25),
-                    blurRadius: 4,
-                    offset: const Offset(0, 2),
-                  ),
-                ],
-              ),
-            ),
-            menuItemStyleData: MenuItemStyleData(
-              padding: EdgeInsets.symmetric(horizontal: 16.w),
-            ),
-            isDense: true, // Set to true to reduce the height
-          );
-        },
+            ],
+          ),
+        ),
+        menuItemStyleData: MenuItemStyleData(
+          padding: EdgeInsets.symmetric(horizontal: 16.w),
+        ),
+        isDense: true, // Set to true to reduce the height
       ),
     );
+  }
+
+  void _onDropdownChanged(String? value) {
+    setState(() {
+      _selectedValue = value;
+    });
+
+    // Call the provided onChanged callback if available
+    if (widget.onChanged != null) {
+      widget.onChanged!(_selectedValue);
+    }
   }
 }

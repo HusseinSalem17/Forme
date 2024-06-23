@@ -12,7 +12,7 @@ import 'package:forme_app/features/authentication/presentation/views/widgets/cus
 import 'package:forme_app/features/authentication/presentation/views/widgets/icon_widget.dart';
 import 'package:forme_app/features/authentication/presentation/views/widgets/slider_type_choice.dart';
 import '../../../../core/transitions/page_slide.dart';
-import '../../../../core/utils/check_box_bloc/checkbox_bloc.dart';
+import '../../../../core/utils/bloc/checkbox_bloc.dart';
 import '../../../../core/utils/show_snackbar.dart';
 import '../../../../core/utils/text_styles.dart';
 import '../../../../core/widgets/app_fields/custom_password_form_field.dart';

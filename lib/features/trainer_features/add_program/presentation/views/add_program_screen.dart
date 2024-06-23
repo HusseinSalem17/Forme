@@ -18,23 +18,6 @@ class AddProgramScreen extends StatefulWidget {
 
 class _AddProgramScreenState extends State<AddProgramScreen> {
   XFile? _imageFile;
-  late ValueNotifier<String?> typeNotifier;
-  late ValueNotifier<String?> sportFieldNotifier;
-
-  @override
-  void initState() {
-    typeNotifier = ValueNotifier<String?>(null);
-    sportFieldNotifier = ValueNotifier<String?>(null);
-    super.initState();
-  }
-
-  @override
-  void dispose() {
-    typeNotifier.dispose();
-    sportFieldNotifier.dispose();
-    super.dispose();
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -71,8 +54,6 @@ class _AddProgramScreenState extends State<AddProgramScreen> {
                 _imageFile = file;
               });
             },
-            typeNotifier: typeNotifier,
-            sportFieldNotifier: sportFieldNotifier,
           ),
         )),
       ),

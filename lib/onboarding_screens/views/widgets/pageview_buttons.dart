@@ -56,7 +56,7 @@ class PageViewButtons extends StatelessWidget {
               } else {
                 Navigator.of(context).pushReplacement(
                   PageSlideTransition(
-                    SignInScreen(),
+                    const SignInScreen(),
                   ),
                 );
               }
