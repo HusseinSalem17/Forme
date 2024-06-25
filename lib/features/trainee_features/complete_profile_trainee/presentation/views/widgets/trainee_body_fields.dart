@@ -11,7 +11,6 @@ import '../../../../../../core/widgets/app_fields/custom_text_form_field.dart';
 class TraineeBodyFields extends StatelessWidget {
   final PhoneNumberInputController phoneNumberController;
   final TextEditingController fullNameController;
-
   final ValueNotifier<String?> genderNotifier;
   final ValueNotifier<String?> countryNotifier;
 

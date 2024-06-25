@@ -3,28 +3,27 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:forme_app/core/api/app_dio.dart';
-
 import 'package:forme_app/core/utils/app_theme.dart';
 import 'package:forme_app/features/Authentication/presentation/manager/auth_bloc.dart';
-
+import 'package:forme_app/features/trainee_features/preferences/presentation/manager/preferences_bloc.dart';
+import 'package:forme_app/features/trainee_features/preferences/presentation/views/preferences_screen.dart';
 import 'package:forme_app/features/trainer_features/Trainer_Profile/presentation/manager/my_profile_cubit/cubit/profile_cubit.dart';
-
 import 'package:forme_app/features/trainer_features/complete_profile_trainer/presentation/manager/cubit/trainer_complete_profile_cubit.dart';
 import 'package:forme_app/features/trainer_features/dashboard/presentation/views/manager/bloc/trainer_home_bloc.dart';
 import 'package:forme_app/features/trainer_features/trainee_profile/presentation/manager/trainee_profile_cubit.dart';
 import 'package:forme_app/features/trainee_features/home/presentation/manager/bloc/home_bloc.dart';
 import 'package:forme_app/features/trainee_features/profile/presentation/manager/cubit/my_profile_cubit.dart';
 import 'package:forme_app/features/trainer_features/trainer_preference/presentation/manager/cubit/trainer_preference_cubit.dart';
-
 import 'package:forme_app/onboarding_screens/data/bloc/onboarding_blocs.dart';
 import 'package:flutter/services.dart';
+import 'package:forme_app/onboarding_screens/views/onboarding_screen.dart';
+import 'package:forme_app/splash_screen.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'app_routing/auth_routes.dart';
 import 'app_routing/main_route.dart';
 import 'core/user_type.dart';
 import 'core/utils/functions/service_locator.dart';
 import 'core/utils/scroll_behavior.dart';
-
 import 'local_storage_data/auth_local/tokens.dart';
 import 'local_storage_data/auth_local/user_type.dart';
 
@@ -75,6 +74,9 @@ class MyApp extends StatelessWidget {
             create: (context) => TrainerPreferenceCubit(AppDio(dio: Dio())),
           ),
           BlocProvider(
+            create: (context) => PreferencesBloc(),
+          ),
+          BlocProvider(
             create: (context) =>
                 TrainerCompleteProfileCubit(AppDio(dio: Dio())),
           ),
@@ -98,17 +100,20 @@ class MyApp extends StatelessWidget {
           scrollBehavior: CustomScrollBehavior(),
           debugShowCheckedModeBanner: false,
           theme: Themes.customLightTheme,
-          onGenerateRoute: (settings) {
-            if (initialUserType == null) {
-              debugPrint('you are null');
-              return AuthRoutes().generateRoute(settings);
-            } else {
-              return AppRouter(
-                userType: initialUserType!,
-                context: context,
-              ).generateRoute(settings);
-            }
-          },
+
+          // onGenerateRoute: (settings) {
+          //   if (initialUserType == null) {
+          //     debugPrint('you are null');
+          //     return AuthRoutes().generateRoute(settings);
+          //   } else {
+          //     return AppRouter(
+          //       userType: initialUserType!,
+          //       context: context,
+          //     ).generateRoute(settings);
+          //   }
+          // },
+
+          home: const PreferencesScreen(),
         ),
       ),
     );

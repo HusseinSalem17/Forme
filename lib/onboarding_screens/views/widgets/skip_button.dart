@@ -29,19 +29,22 @@ class SkipButton extends StatelessWidget {
         } else {
           Navigator.of(context).pushReplacement(
             PageSlideTransition(
-              SignInScreen(),
+              const SignInScreen(),
             ),
           );
         }
       },
-      child: Align(
-        alignment: Alignment.topRight,
-        child: Padding(
-          padding: EdgeInsets.only(right: 25.5.w),
-          child: Text(
-            'Skip',
-            style: TextStyles.descriptionStyle.copyWith(
-              color: AppColors.primaryColor,
+      child: Padding(
+        padding: EdgeInsets.only(top: 24.h),
+        child: Align(
+          alignment: Alignment.topRight,
+          child: Padding(
+            padding: EdgeInsets.only(right: 25.5.w),
+            child: Text(
+              'Skip',
+              style: TextStyles.descriptionStyle.copyWith(
+                color: AppColors.primaryColor,
+              ),
             ),
           ),
         ),

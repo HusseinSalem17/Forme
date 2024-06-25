@@ -1,9 +1,7 @@
 // body_fields.dart
 import 'package:extended_phone_number_input/consts/enums.dart';
-import 'package:extended_phone_number_input/phone_number_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/styles.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
 import 'package:forme_app/core/widgets/app_fields/custom_data_field.dart';
@@ -12,19 +10,12 @@ import '../../../../../../core/widgets/app_fields/custom_phone_field.dart';
 import '../../../../../../core/widgets/app_fields/custom_text_field.dart';
 
 Widget buildTrainerBodyFields({
-  // this should be deleted
-  //----
   required ValueChanged<String> onNameChanged,
   required ValueChanged<String> onPhoneChanged,
-  required ValueChanged<String> onGenderChanged,
-  required ValueChanged<String> onCountryChanged,
-  required ValueChanged<String> onSportFieldChanged,
-  //----
-  required PhoneNumberInputController phoneNumberController,
-  required TextEditingController fullNameController,
-  required ValueNotifier<String?> genderNotifier,
-  required ValueNotifier<String?> countryNotifier,
-  required ValueNotifier<String?> sportsFieldNotifier,
+  required ValueChanged<String> onBrithChanged,
+  required final ValueNotifier<String?> genderNotifier,
+  required final ValueNotifier<String?> countryNotifier,
+  required final ValueNotifier<String?> sprotFieldNotifier,
 }) {
   final List<String> genderItems = ['male', 'female'];
   final List<String> countryItems = ['Egypt', 'USA'];
@@ -60,9 +51,8 @@ Widget buildTrainerBodyFields({
         title: 'Full Name',
         hintText: 'Hussein Salem Eldeskey',
         keyboardType: TextInputType.name,
+        hintStyle: TextStyles.hintStyle,
         onChanged: onNameChanged,
-        controller: fullNameController,
-        hintStyle: TextStyles.headerStyle,
       ),
       SizedBox(height: 16.h),
       CustomPhoneField(
@@ -74,7 +64,6 @@ Widget buildTrainerBodyFields({
         showSelectedFlag: false,
         border: textFieldBorder(),
         onChanged: onPhoneChanged,
-        controller: phoneNumberController,
       ),
       SizedBox(height: 16.h),
       CustomDropList(
@@ -92,10 +81,10 @@ Widget buildTrainerBodyFields({
           }
           return null;
         },
-        onChanged: (value) {
-          onGenderChanged(value ?? '');
-        },
         selectedValueNotifier: genderNotifier,
+        // onChanged: (value) {
+        //   onGenderChanged(value ?? '');
+        // },
       ),
       SizedBox(height: 16.h),
       CustomDropList(
@@ -113,11 +102,11 @@ Widget buildTrainerBodyFields({
           }
           return null;
         },
-        onChanged: (value) {
-          onCountryChanged(value ?? '');
-        },
-        onSaved: (value) {},
         selectedValueNotifier: countryNotifier,
+        // onChanged: (value) {
+        //   onCountryChanged(value ?? '');
+        // },
+        onSaved: (value) {},
       ),
       SizedBox(height: 16.h),
       CustomDropList(
@@ -135,14 +124,16 @@ Widget buildTrainerBodyFields({
           }
           return null;
         },
-        onChanged: (value) {
-          onSportFieldChanged(value ?? '');
-        },
+        selectedValueNotifier: sprotFieldNotifier,
+        // onChanged: (value) {
+        //   onSportFieldChanged(value ?? '');
+        // },
         onSaved: (value) {},
-        selectedValueNotifier: sportsFieldNotifier,
       ),
       SizedBox(height: 16.h),
-      const CustomDateField()
+      CustomDateField(
+        onChanged: onBrithChanged,
+      )
     ],
   );
 }

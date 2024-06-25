@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -14,7 +13,6 @@ import 'package:forme_app/features/trainee_features/home/presentation/views/bott
 
 import '../../../../core/transitions/page_slide.dart';
 import '../../../../core/utils/app_colors.dart';
-
 import '../../../../core/utils/check_box_bloc/checkbox_bloc.dart';
 import '../../../../core/utils/icons_image_pathes.dart';
 import '../../../../core/utils/show_snackbar.dart';
@@ -22,7 +20,6 @@ import '../../../../core/utils/text_styles.dart';
 import '../../../../core/widgets/app_fields/custom_password_form_field.dart';
 import '../../../../core/widgets/app_fields/custom_text_form_field.dart';
 import '../../../../core/widgets/loader.dart';
-
 import '../manager/auth_bloc.dart';
 import 'forgot_password_screen.dart';
 
@@ -229,13 +226,14 @@ class _SignInScreenState extends State<SignInScreen> {
                         ],
                       ),
                     ),
+                    const SizedBox(height: 150),
                     const Align(
-                      alignment: Alignment.centerRight,
+                      alignment: Alignment.bottomRight,
                       child: CustomButtonScanFace(
                         icon: 'scanFace',
                       ),
                     ),
-                    const SizedBox(height: 60),
+                   //const SizedBox(height: 60),
                   ],
                 ),
               ),
