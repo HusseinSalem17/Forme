@@ -93,6 +93,7 @@ class _TrainerCompleteProfileBodyState
               SizedBox(height: 16.0.h),
               //! picker image
               ProfileImagePicker(
+                enabled: true,
                 imageFile: context.read<TrainerCompleteProfileCubit>().image,
                 onImageSelected: (file) {
                   setState(() {
@@ -101,12 +102,14 @@ class _TrainerCompleteProfileBodyState
                 },
               ),
               SizedBox(height: 32.0.h),
-              // buildTrainerBodyFields(
-              //   onNameChanged: fullNameController,
-              //   onPhoneChanged: phoneNumberController,
-              //   genderNotifier: null,
-              //   onBrithChanged: (String value) {},
-              // ),
+              buildTrainerBodyFields(
+                // onNameChanged: fullNameController,
+                // onPhoneChanged: phoneNumberController,
+                // genderNotifier: null,
+                // onBrithChanged: (String value) {},
+                // countryNotifier: null,
+                // sprotFieldNotifier: null,
+              ),
               SizedBox(height: 32.0.h),
               CustomAppButton(
                 title: 'Complete Profile',

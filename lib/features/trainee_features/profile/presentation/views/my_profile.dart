@@ -119,14 +119,14 @@ class _MyProfileState extends State<MyProfile> {
               scrollDirection: Axis.vertical,
               children: [
                 SizedBox(height: 16.0.h),
-                ProfileImagePicker(
-                  imageFile: _imageFile,
-                  onImageSelected: (file) {
-                    setState(() {
-                      _imageFile = file;
-                    });
-                  },
-                ),
+                // ProfileImagePicker(
+                //   imageFile: _imageFile,
+                //   onImageSelected: (file) {
+                //     setState(() {
+                //       _imageFile = file;
+                //     });
+                //   },
+                // ),
                 SizedBox(height: 32.0.h),
                 CustomTextField(
                   controller: _nameController,

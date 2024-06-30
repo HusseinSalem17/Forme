@@ -23,7 +23,7 @@ class CustomHomeAppBar extends StatelessWidget {
       expandedHeight: 150,
       backgroundColor: Colors.white,
       leadingWidth: 180,
-      toolbarHeight: 70,
+      toolbarHeight: 90,
       actions: [
         GestureDetector(
           onTap: () {

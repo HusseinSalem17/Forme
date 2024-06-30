@@ -57,7 +57,7 @@ class _TrainerProfileScreenState extends State<TrainerProfileScreen> {
           children: [
             Center(
               child: Padding(
-                padding: const EdgeInsets.only(top: 24),
+                padding: const EdgeInsets.only(top: 32),
                 child: Text(
                   'Profile',
                   style: TextStyles.textStyleBold
@@ -73,7 +73,7 @@ class _TrainerProfileScreenState extends State<TrainerProfileScreen> {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(32.dg),
                   child: Image.asset(
-                    'assets/image/workout_image.jpg',
+                    'assets/image/informa.jpg',
                     fit: BoxFit.cover,
                   ),
                 ),

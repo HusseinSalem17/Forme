@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:forme_app/features/trainer_features/add_workout/presentation/view/upload_file.dart';
 import '../features/trainer_features/Revenue/presentation/views/revenue_screen.dart';
 import '../features/trainer_features/Trainee_profile/presentation/views/trainee_profile_screen_t.dart';
 import '../features/trainer_features/Trainer_Notification/presentation/views/trainer_notification_screen.dart';
@@ -91,6 +92,10 @@ class TrainerRoutes {
       case AddWorkoutScreen.routeName:
         return MaterialPageRoute(
           builder: (context) => const AddWorkoutScreen(),
+        );
+      case UploadFile.routeName:
+        return MaterialPageRoute(
+          builder: (context) => const UploadFile(),
         );
 
       default:

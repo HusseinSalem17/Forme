@@ -9,14 +9,14 @@ import '../../../../../../core/widgets/app_drop_list/custom_drop_list.dart';
 import '../../../../../../core/widgets/app_fields/custom_phone_field.dart';
 import '../../../../../../core/widgets/app_fields/custom_text_field.dart';
 
-Widget buildTrainerBodyFields({
-  required ValueChanged<String> onNameChanged,
-  required ValueChanged<String> onPhoneChanged,
-  required ValueChanged<String> onBrithChanged,
-  required final ValueNotifier<String?> genderNotifier,
-  required final ValueNotifier<String?> countryNotifier,
-  required final ValueNotifier<String?> sprotFieldNotifier,
-}) {
+Widget buildTrainerBodyFields(
+  // required ValueChanged<String> onNameChanged,
+  // required ValueChanged<String> onPhoneChanged,
+  // required ValueChanged<String> onBrithChanged,
+  // required final ValueNotifier<String?> genderNotifier,
+  // required final ValueNotifier<String?> countryNotifier,
+  // required final ValueNotifier<String?> sprotFieldNotifier,
+) {
   final List<String> genderItems = ['male', 'female'];
   final List<String> countryItems = ['Egypt', 'USA'];
   final List<String> sportFieldItems = [
@@ -52,7 +52,7 @@ Widget buildTrainerBodyFields({
         hintText: 'Hussein Salem Eldeskey',
         keyboardType: TextInputType.name,
         hintStyle: TextStyles.hintStyle,
-        onChanged: onNameChanged,
+        //onChanged: onNameChanged,
       ),
       SizedBox(height: 16.h),
       CustomPhoneField(
@@ -63,7 +63,7 @@ Widget buildTrainerBodyFields({
         countryListMode: CountryListMode.dialog,
         showSelectedFlag: false,
         border: textFieldBorder(),
-        onChanged: onPhoneChanged,
+        //onChanged: onPhoneChanged,
       ),
       SizedBox(height: 16.h),
       CustomDropList(
@@ -81,7 +81,7 @@ Widget buildTrainerBodyFields({
           }
           return null;
         },
-        selectedValueNotifier: genderNotifier,
+        selectedValueNotifier: ValueNotifier<String?>(null),
         // onChanged: (value) {
         //   onGenderChanged(value ?? '');
         // },
@@ -102,7 +102,7 @@ Widget buildTrainerBodyFields({
           }
           return null;
         },
-        selectedValueNotifier: countryNotifier,
+        selectedValueNotifier: ValueNotifier<String?>(null),
         // onChanged: (value) {
         //   onCountryChanged(value ?? '');
         // },
@@ -124,7 +124,7 @@ Widget buildTrainerBodyFields({
           }
           return null;
         },
-        selectedValueNotifier: sprotFieldNotifier,
+        selectedValueNotifier: ValueNotifier<String?>(null),
         // onChanged: (value) {
         //   onSportFieldChanged(value ?? '');
         // },
@@ -132,7 +132,7 @@ Widget buildTrainerBodyFields({
       ),
       SizedBox(height: 16.h),
       CustomDateField(
-        onChanged: onBrithChanged,
+        //onChanged:ValueNotifier<String?>(null),
       )
     ],
   );

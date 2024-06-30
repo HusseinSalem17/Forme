@@ -6,8 +6,13 @@ import 'package:forme_app/core/utils/styles.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
 
 class TargetAgeSection extends StatefulWidget {
+  final TextEditingController firstController;
+  final TextEditingController secondController;
+
   const TargetAgeSection({
     super.key,
+    required this.firstController,
+    required this.secondController,
   });
 
   @override
@@ -17,28 +22,26 @@ class TargetAgeSection extends StatefulWidget {
 class _TargetAgeSectionState extends State<TargetAgeSection> {
   late FocusNode _firstFocusNode;
   late FocusNode _secondFocusNode;
-  late TextEditingController _firstController;
-  late TextEditingController _secondController;
+
   @override
   void initState() {
     super.initState();
     _firstFocusNode = FocusNode();
     _secondFocusNode = FocusNode();
-    _firstController = TextEditingController();
-    _secondController = TextEditingController();
 
     _firstFocusNode.addListener(() {
-      if (!_firstFocusNode.hasFocus && _firstController.text.isNotEmpty) {
+      if (!_firstFocusNode.hasFocus && widget.firstController.text.isNotEmpty) {
         FocusScope.of(context).requestFocus(_secondFocusNode);
       }
     });
-    _secondController.addListener(() {
-      if (_secondController.text.isNotEmpty) {
-        final secondValue = int.tryParse(_secondController.text) ?? 0;
-        final firstValue = int.tryParse(_firstController.text) ?? 0;
+
+    widget.secondController.addListener(() {
+      if (widget.secondController.text.isNotEmpty) {
+        final secondValue = int.tryParse(widget.secondController.text) ?? 0;
+        final firstValue = int.tryParse(widget.firstController.text) ?? 0;
         if (firstValue >= secondValue) {
           // Update first field value to be less than second field value
-          _firstController.text = (secondValue - 1).toString();
+          widget.firstController.text = (secondValue - 1).toString();
         }
       }
     });
@@ -48,8 +51,6 @@ class _TargetAgeSectionState extends State<TargetAgeSection> {
   void dispose() {
     _firstFocusNode.dispose();
     _secondFocusNode.dispose();
-    _firstController.dispose();
-    _secondController.dispose();
     super.dispose();
   }
 
@@ -61,7 +62,7 @@ class _TargetAgeSectionState extends State<TargetAgeSection> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              'Enter Traget Age',
+              'Enter Target Age',
               style: TextStyles.textStyleBold
                   .copyWith(fontSize: 14.sp, color: AppColors.n400),
             ),
@@ -77,12 +78,12 @@ class _TargetAgeSectionState extends State<TargetAgeSection> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              customNumberField(_firstFocusNode, _firstController, context),
+              customNumberField(_firstFocusNode, widget.firstController, context),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 24.w),
                 child: SvgPicture.asset('assets/image/Icon/right_arrow.svg'),
               ),
-              customNumberField(_secondFocusNode, _secondController, context),
+              customNumberField(_secondFocusNode, widget.secondController, context),
             ],
           ),
         ),

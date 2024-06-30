@@ -4,6 +4,7 @@ import 'dart:typed_data';
 import 'package:dio/dio.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
+import 'package:video_player/video_player.dart';
 
 class Utils {
   Future uploadImageToAPI(XFile image) async {
@@ -68,5 +69,16 @@ class Utils {
     String formattedDate = outputFormat.format(dateTime);
 
     return formattedDate;
+  }
+  Future<String> getVideoDuration(File file) async {
+    final videoPlayerController = VideoPlayerController.file(file);
+    await videoPlayerController.initialize();
+    final duration = videoPlayerController.value.duration;
+    final minutes = duration.inMinutes;
+    final seconds = duration.inSeconds.remainder(60);
+    final formattedDuration =
+        '$minutes:${seconds.toString().padLeft(2, '0')} mins';
+    videoPlayerController.dispose();
+    return formattedDuration;
   }
 }
