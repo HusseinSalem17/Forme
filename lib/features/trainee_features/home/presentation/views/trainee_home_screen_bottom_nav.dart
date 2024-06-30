@@ -2,23 +2,23 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:forme_app/features/trainee_features/Favorite/presentation/views/favorite_screen.dart';
 import 'package:forme_app/features/trainee_features/home/presentation/manager/bloc/home_bloc.dart';
-import 'package:forme_app/features/trainee_features/home/presentation/views/home_screen.dart';
-import 'package:forme_app/features/trainee_features/home/presentation/views/widgets/custom_bottom_navigation_bar.dart';
+import 'package:forme_app/features/trainee_features/home/presentation/views/trainee_home_screen.dart';
+import 'package:forme_app/features/trainee_features/home/presentation/views/widgets/custom_bottom_van_bar.dart';
 import 'package:forme_app/features/trainee_features/maps_feature/presentation/views/map_screen.dart';
 import 'package:forme_app/features/trainee_features/profile/presentation/views/profile_screen.dart';
 
-class HomeScreen extends StatefulWidget {
+class TraineeHomeScreenBottomNav extends StatefulWidget {
   static const routeName = '/home-screen';
 
-  const HomeScreen({super.key});
+  const TraineeHomeScreenBottomNav({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<TraineeHomeScreenBottomNav> createState() => _TraineeHomeScreenBottomNavState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _TraineeHomeScreenBottomNavState extends State<TraineeHomeScreenBottomNav> {
   final List<Widget> _pages = [
-    const SafeArea(child: HomeBody()),
+    const SafeArea(child: TraineeHomeScreen()),
     const SafeArea(child: MapScreen()),
     const SafeArea(child: FavoriteScreen()),
     const SafeArea(child: Center(child: Text('4'))),
@@ -27,12 +27,12 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<HomeBloc, HomeState>(
+    return BlocBuilder<TraineeHomeBloc, TraineeHomeState>(
       builder: (context, state) {
-        int currentIndex = BlocProvider.of<HomeBloc>(context).currentIndex;
+        int currentIndex = BlocProvider.of<TraineeHomeBloc>(context).currentIndex;
         return Scaffold(
           body: _pages[currentIndex],
-          bottomNavigationBar: const CustomBottomNavigationBar(
+          bottomNavigationBar: const CustomBottomNavBar(
             isTrainer: false,
             icons: ['home', 'pin-map', 'heart', 'chat', 'profile'],
             labels: ['Home', 'Explore', 'Favorite', 'chat', 'Profile'],

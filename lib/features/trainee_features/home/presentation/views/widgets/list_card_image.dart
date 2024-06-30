@@ -27,7 +27,7 @@ class ListCardImage extends StatelessWidget {
             width: width, //size.width / 2,
             child: ClipRRect(
               borderRadius: BorderRadius.circular(4),
-              child: Image.asset(
+              child: Image.network(
                 imageUrl,
                 fit: BoxFit.cover,
               ),

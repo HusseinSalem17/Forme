@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:forme_app/core/api/dio_consumer.dart';
 import 'package:forme_app/core/utils/app_theme.dart';
 import 'package:forme_app/features/Authentication/presentation/manager/auth_bloc.dart';
+import 'package:forme_app/features/trainee_features/home/presentation/manager/bloc/special_programs_bloc/special_programs_bloc.dart';
 
 import 'package:forme_app/features/trainer_features/Trainer_Profile/presentation/manager/my_profile_cubit/cubit/my_profile_cubit.dart';
 
@@ -24,17 +25,21 @@ import 'core/user_type.dart';
 import 'core/utils/functions/service_locator.dart';
 import 'core/utils/scroll_behavior.dart';
 
+import 'di/init_debendences.dart';
+import 'features/trainee_features/preferences/presentation/manager/preferences_bloc.dart';
 import 'local_storage_data/auth_local/tokens.dart';
 import 'local_storage_data/auth_local/user_type.dart';
 
 void main() async {
   setupServiceLocator();
+  setupLocator();
   WidgetsFlutterBinding.ensureInitialized();
   // Retrieve the saved user type from local storage
   UserType? initialUserType = await RegistrationDataLocal.getUserType();
   // Check if tokens are null
   String? accessToken = await UserTokenLocal.getAccessToken();
   String? refreshToken = await UserTokenLocal.getRefreshToken();
+  print(accessToken);
   if (accessToken == null || refreshToken == null || initialUserType == null) {
     // Tokens are null, navigate to the authentication flow
     print('access of refresh of user type is null');
@@ -78,7 +83,14 @@ class MyApp extends StatelessWidget {
             create: (context) => MyProfileCubit(),
           ),
           BlocProvider(
-            create: (context) => HomeBloc(),
+            create: (_) => serviceLocator<TraineeHomeBloc>(),
+          ),
+          BlocProvider(
+            create: (_) => PreferencesBloc(),
+          ),
+
+          BlocProvider(
+            create: (_) => serviceLocator<SpecialProgramsBloc>(),
           ),
           BlocProvider(
             create: (context) => TrainerHomeBloc(),
@@ -96,7 +108,7 @@ class MyApp extends StatelessWidget {
           theme: Themes.customLightTheme,
           onGenerateRoute: (settings) {
             if (initialUserType == null) {
-              print('you are null');
+              print('you are not authenticated');
               return AuthRoutes().generateRoute(settings);
             } else {
               return AppRouter(

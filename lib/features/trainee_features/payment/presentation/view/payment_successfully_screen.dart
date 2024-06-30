@@ -8,7 +8,7 @@ import 'package:forme_app/core/widgets/custom_app_bar_arrow_button.dart';
 import 'package:forme_app/features/trainee_features/payment/presentation/view/widgets/payment_successfully_body.dart';
 
 import '../../../../../core/widgets/custom_app_button.dart';
-import '../../../home/presentation/views/bottom_bar_screens.dart';
+import '../../../home/presentation/views/trainee_home_screen_bottom_nav.dart';
 import 'ereceipt_screen.dart';
 
 class PaymentSuccessfullyScreen extends StatelessWidget {
@@ -23,7 +23,7 @@ class PaymentSuccessfullyScreen extends StatelessWidget {
         automaticallyImplyLeading: false,
         title: Row(children: [
           CustomAppBarArrowButton(onTap: () {
-            Navigator.of(context).push(PageSlideTransition(const HomeScreen()));
+            Navigator.of(context).push(PageSlideTransition(const TraineeHomeScreenBottomNav()));
           }),
         ]),
       ),
@@ -60,7 +60,7 @@ class PaymentSuccessfullyScreen extends StatelessWidget {
                     TextButton(
                         onPressed: () {
                           Navigator.of(context)
-                              .push(PageSlideTransition(const HomeScreen()));
+                              .push(PageSlideTransition(const TraineeHomeScreenBottomNav()));
                         },
                         child: Text('Go to Home',
                             style: TextStyles.textStyleRegular.copyWith(

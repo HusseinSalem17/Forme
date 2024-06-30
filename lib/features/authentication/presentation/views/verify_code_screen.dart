@@ -8,6 +8,7 @@ import 'package:forme_app/features/Authentication/presentation/views/new_passwor
 import 'package:forme_app/features/Authentication/presentation/views/widgets/custom_auth_button.dart';
 import 'package:forme_app/features/Authentication/presentation/views/widgets/custom_pin_code.dart';
 import 'package:forme_app/features/trainee_features/preferences/presentation/views/preferences_screen.dart';
+import 'package:forme_app/features/trainer_features/trainer_preference/presentation/views/trainer_preference_screen.dart';
 import '../../../../core/utils/text_styles.dart';
 import '../../../../core/widgets/loader.dart';
 import '../manager/auth_bloc.dart';
@@ -54,21 +55,34 @@ class _VerifyCodeScreenState extends State<VerifyCodeScreen> {
             }
             if (state is VerifyOTPSuccess) {
               if (state.isSignUp) {
-                context.read<AuthBloc>().add(SignUpEvent(
-                      password1: password,
-                      email: email,
-                      userType: userType,
-                    ));
+                context.read<AuthBloc>().add(
+                      SignUpEvent(
+                        password1: password,
+                        email: email,
+                        userType: userType,
+                      ),
+                    );
               } else {
                 Navigator.pushReplacementNamed(
-                    context, NewPasswordScreen.routeName);
+                  context,
+                  NewPasswordScreen.routeName,
+                );
               }
             }
             if (state is SignUpSuccess) {
-              Navigator.pushReplacementNamed(
-                context,
-                PreferencesScreen.routeName,
-              );
+              if(userType==UserType.trainee){
+                Navigator.pushReplacementNamed(
+                  context,
+                  PreferencesScreen.routeName,
+                );
+              }
+              else{
+                Navigator.pushReplacementNamed(
+                  context,
+                  TrainerPreferenceScreen.routeName,
+                );
+              }
+
             }
           },
           builder: (context, state) {

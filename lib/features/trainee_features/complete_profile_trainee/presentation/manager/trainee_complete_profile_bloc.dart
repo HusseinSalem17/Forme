@@ -4,7 +4,7 @@ import 'package:meta/meta.dart';
 import 'package:image_picker/image_picker.dart';
 import '../../../../../core/utils/functions/convert_to_base_64.dart';
 import '../../data/models/trainee_complete_profile_data_model.dart';
-import '../../data/repos/trainee_complete_profile_implementation.dart';
+import '../../data/repos/trainee_complete_profile_repo_implementation.dart';
 
 part 'trainee_complete_profile_event.dart';
 part 'trainee_complete_profile_state.dart';

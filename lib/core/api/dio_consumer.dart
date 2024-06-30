@@ -1,9 +1,9 @@
-
 import 'package:dio/dio.dart';
 import 'package:forme_app/core/api/api_consumer.dart';
 import 'package:forme_app/core/api/api_interceptors.dart';
 import 'package:forme_app/core/errors/failures.dart';
-import 'package:forme_app/core/secrets/secrets_api_keys.dart';
+
+import '../secrets_api_keys/secrets_api_keys.dart';
 
 class DioFile extends ApiConsumer {
   final Dio dio;

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:forme_app/features/Authentication/presentation/views/verify_code_screen.dart';
 import 'package:forme_app/features/trainee_features/book_appointment_with%20_trainer/presentation/views/book_appointment_screen.dart';
 import 'package:forme_app/features/trainee_features/complete_profile_trainee/presentation/views/trainee_complete_profile_screen.dart';
-import 'package:forme_app/features/trainee_features/home/presentation/views/bottom_bar_screens.dart';
+import 'package:forme_app/features/trainee_features/home/presentation/views/trainee_home_screen_bottom_nav.dart';
 import 'package:forme_app/features/trainee_features/join_program_feature/presentation/views/book_onling_coach_screen.dart';
 import 'package:forme_app/features/trainee_features/maps_feature/presentation/views/map_screen.dart';
 import 'package:forme_app/features/trainee_features/preferences/presentation/views/preferences_screen.dart';
@@ -37,9 +37,9 @@ class TraineeRoutes {
 
   Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
     switch (settings.name) {
-      case HomeScreen.routeName:
+      case TraineeHomeScreenBottomNav.routeName:
         return MaterialPageRoute(
-          builder: (context) => const HomeScreen(),
+          builder: (context) => const TraineeHomeScreenBottomNav(),
         );
       case VerifyCodeScreen.routeName:
         return MaterialPageRoute(

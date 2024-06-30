@@ -6,6 +6,16 @@ import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/features/trainee_features/home/presentation/manager/bloc/home_bloc.dart';
 
 import '../../../../../trainer_features/dashboard/presentation/views/manager/bloc/trainer_home_bloc.dart';
+/// ************************************************************
+/// ************************************************************
+/// ************************************************************
+/// ************************************************************
+/// ******************This File Must Be Deleted*****************
+/// ************************************************************
+/// ************************************************************
+/// ************************************************************
+/// ************************************************************
+/// ************************************************************
 
 class CustomBottomNavigationBar extends StatefulWidget {
   const CustomBottomNavigationBar({
@@ -35,12 +45,12 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
       ),
       currentIndex: widget.isTrainer
           ? BlocProvider.of<TrainerHomeBloc>(context).currentIndex
-          : BlocProvider.of<HomeBloc>(context).currentIndex,
+          : BlocProvider.of<TraineeHomeBloc>(context).currentIndex,
       onTap: (index) {
         setState(() {
           widget.isTrainer
               ? BlocProvider.of<TrainerHomeBloc>(context).getCurrentIndex(index)
-              : BlocProvider.of<HomeBloc>(context).getCurrentIndex(index);
+              : BlocProvider.of<TraineeHomeBloc>(context);
         });
       },
       unselectedItemColor: AppColors.n100Gray,
@@ -54,7 +64,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
     final bool isSelected = widget.isTrainer
         ? BlocProvider.of<TrainerHomeBloc>(context).currentIndex ==
             widget.icons.indexOf(icon)
-        : BlocProvider.of<HomeBloc>(context).currentIndex ==
+        : BlocProvider.of<TraineeHomeBloc>(context).currentIndex ==
             widget.icons.indexOf(icon);
     return BottomNavigationBarItem(
       icon: SvgPicture.asset(

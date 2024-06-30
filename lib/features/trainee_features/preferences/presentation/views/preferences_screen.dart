@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:forme_app/core/transitions/page_slide.dart';
 import 'package:forme_app/core/widgets/button_container.dart';
-import 'package:forme_app/features/trainee_features/home/presentation/views/bottom_bar_screens.dart';
+import 'package:forme_app/features/trainee_features/home/presentation/views/trainee_home_screen_bottom_nav.dart';
 import 'package:forme_app/features/trainee_features/preferences/presentation/views/widgets/custom_app_bar.dart';
 import 'package:forme_app/features/trainee_features/preferences/presentation/views/widgets/custom_preferences_page_veiw.dart';
 
@@ -49,12 +49,10 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
                     );
                   } else {
                     Navigator.of(context).pushReplacement(
-
                       PageSlideTransition(
-                        const HomeScreen(),
+                        const TraineeHomeScreenBottomNav(),
                       ),
                     );
-
                   }
                 },
               ))
