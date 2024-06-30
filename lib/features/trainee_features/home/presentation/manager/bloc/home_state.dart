@@ -11,6 +11,8 @@ final class HomeBottomNavigation extends TraineeHomeState {
   HomeBottomNavigation(this.currentIndex);
 }
 
+final class GetTopTrainersLoading extends TraineeHomeState {}
+
 final class GetTopTrainersSuccess extends TraineeHomeState {
   final List<TrainerProfile> trainerProfileData;
 
@@ -18,19 +20,26 @@ final class GetTopTrainersSuccess extends TraineeHomeState {
     required this.trainerProfileData,
   });
 }
-
-final class GetSpecialProgramsSuccess extends TraineeHomeState {
-  final List<TrainerProfileProgram> trainerProfileProgramData;
-
-  GetSpecialProgramsSuccess({
-    required this.trainerProfileProgramData,
-  });
-}
-
-final class HomeLoading extends TraineeHomeState {}
-
-final class HomeFailure extends TraineeHomeState {
+final class GetTopTrainersFailure extends TraineeHomeState {
   final String errorMsg;
 
-  HomeFailure(this.errorMsg);
+  GetTopTrainersFailure(this.errorMsg);
 }
+
+
+//
+// final class GetSpecialProgramsLoading extends TraineeHomeState {}
+//
+// final class GetSpecialProgramsSuccess extends TraineeHomeState {
+//   final List<TrainerProfileProgram> trainerProfileProgramData;
+//
+//   GetSpecialProgramsSuccess({
+//     required this.trainerProfileProgramData,
+//   });
+// }
+//
+// final class GetSpecialProgramsFailure extends TraineeHomeState {
+//   final String errorMsg;
+//
+//   GetSpecialProgramsFailure(this.errorMsg);
+// }

@@ -26,7 +26,9 @@ class AppRouter {
                 context,
               )
             : TraineeRoutes().generateRoute(
-                const RouteSettings(name: TraineeHomeScreenBottomNav.routeName),
+                const RouteSettings(
+                  name: TraineeHomeScreenBottomNav.routeName,
+                ),
                 context,
               );
       default:

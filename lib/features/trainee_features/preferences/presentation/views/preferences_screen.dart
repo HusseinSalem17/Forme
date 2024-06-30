@@ -49,12 +49,10 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
                     );
                   } else {
                     Navigator.of(context).pushReplacement(
-
                       PageSlideTransition(
                         const TraineeHomeScreenBottomNav(),
                       ),
                     );
-
                   }
                 },
               ))

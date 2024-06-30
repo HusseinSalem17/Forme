@@ -20,10 +20,10 @@ class CustomHomeAppBar extends StatelessWidget {
     return SliverAppBar(
       shadowColor: Colors.black.withOpacity(0.5),
       pinned: true,
-      expandedHeight: 150,
+      expandedHeight: 120.h,
       backgroundColor: Colors.white,
-      leadingWidth: 180,
-      toolbarHeight: 70,
+      leadingWidth: 180.w,
+      toolbarHeight: 60.h,
       actions: [
         GestureDetector(
           onTap: () {

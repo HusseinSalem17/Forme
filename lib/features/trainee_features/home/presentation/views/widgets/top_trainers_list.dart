@@ -47,7 +47,7 @@ class TopTrainersList extends StatelessWidget {
         ),
         BlocBuilder<TraineeHomeBloc, TraineeHomeState>(
           builder: (context, state) {
-            if (state is HomeLoading) {
+            if (state is GetTopTrainersLoading) {
               return const CircularProgressIndicator();
             } else if (state is GetTopTrainersSuccess) {
               return SizedBox(
@@ -67,10 +67,14 @@ class TopTrainersList extends StatelessWidget {
                   },
                 ),
               );
-            } else if (state is HomeFailure) {
+            } else if (state is GetTopTrainersFailure) {
               return Text('Error: ${state.errorMsg}');
             }
-            return Container();
+            return Container(
+              height: 200,
+              width: 200,
+              color: Colors.red,
+            );
           },
         ),
       ],

@@ -11,4 +11,4 @@ class HomeBottomNav extends HomeEvent {
 
 final class GetTopTrainers extends HomeEvent {}
 
-final class GetSpecialPrograms extends HomeEvent {}
+// final class GetSpecialPrograms extends HomeEvent {}

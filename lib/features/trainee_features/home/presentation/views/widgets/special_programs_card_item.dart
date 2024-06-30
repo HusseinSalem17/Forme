@@ -6,16 +6,19 @@ import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/icons_image_pathes.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
 import '../../../../../../core/test_models/top_trainers_model.dart';
+import '../../../data/models/trainer_profile_program_model.dart';
 import 'list_card_image.dart';
 import 'special_programs_card_review.dart';
 
 class SpecialProgramsCardItem extends StatelessWidget {
+  final Size size;
+  final TrainerProfileProgram trainerProfileProgram;
+
   const SpecialProgramsCardItem({
     super.key,
     required this.size,
+    required this.trainerProfileProgram,
   });
-
-  final Size size;
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +52,7 @@ class SpecialProgramsCardItem extends StatelessWidget {
                 clipBehavior: Clip.none,
                 children: [
                   ListCardImage(
-                    imageUrl: topTrainersData[1].imageUrl,
+                    imageUrl: 'https://the18.com/sites/default/files/GettyImages-83034798.jpg',
                     leftPaddingIcon: 154,
                     height: size.height / 3.75 / 2,
                     width: size.width,
@@ -62,12 +65,13 @@ class SpecialProgramsCardItem extends StatelessWidget {
                       width: 64,
                       height: 64,
                       decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(32),
-                          color: AppColors.n20FillBodyInBigCardColor),
+                        borderRadius: BorderRadius.circular(32),
+                        color: AppColors.n20FillBodyInBigCardColor,
+                      ),
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(32),
-                        child: Image.asset(
-                          topTrainersData[1].imageUrl,
+                        child: Image.network(
+                          trainerProfileProgram.user.profilePicture!,
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -84,9 +88,10 @@ class SpecialProgramsCardItem extends StatelessWidget {
                     children: [
                       const SpecialProgramsCardReview(),
                       Text(
-                        'Mindful Movement',
-                        style: TextStyles.smallBold
-                            .copyWith(color: AppColors.n900Black),
+                        trainerProfileProgram.programs![0].title,
+                        style: TextStyles.smallBold.copyWith(
+                          color: AppColors.n900Black,
+                        ),
                       ),
                       const SizedBox(
                         height: 4,
@@ -96,7 +101,7 @@ class SpecialProgramsCardItem extends StatelessWidget {
                           SvgPicture.asset(personIcon),
                           const SizedBox(width: 6),
                           Text(
-                            'Kareem Muhamed',
+                            trainerProfileProgram.user.username,
                             style: TextStyles.cardTextStyle.copyWith(
                               color: AppColors.n200Gray,
                               fontSize: 11,

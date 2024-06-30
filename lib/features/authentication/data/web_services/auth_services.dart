@@ -33,7 +33,7 @@ class AuthServices {
       );
 
       Response response = await dio.post(
-        '${SecretsApiKeys.baseUrl}/auth/request_otp/',
+        '${SecretsApiKeys.baseUrl}/auth/request-otp/',
         options: Options(
           headers: {
             'Content-Type': 'application/json', // Set the content type header
@@ -57,7 +57,7 @@ class AuthServices {
   }) async {
     try {
       Response response = await dio.post(
-        '${SecretsApiKeys.baseUrl}/auth/verify_otp/',
+        '${SecretsApiKeys.baseUrl}/auth/verify-otp/',
         options: Options(
           headers: {
             'Content-Type': 'application/json', // Set the content type header
@@ -160,7 +160,7 @@ class AuthServices {
   }) async {
     try {
       Response response = await dio.post(
-        '${SecretsApiKeys.baseUrl}/auth/forget_password/',
+        '${SecretsApiKeys.baseUrl}/auth/forget-password/',
         options: Options(
           headers: {
             'Content-Type': 'application/json',
@@ -186,7 +186,7 @@ class AuthServices {
   }) async {
     try {
       Response response = await dio.post(
-        '${SecretsApiKeys.baseUrl}/auth/verify_otp/',
+        '${SecretsApiKeys.baseUrl}/auth/verify-otp/',
         options: Options(
           headers: {
             'Content-Type': 'application/json', // Set the content type header
@@ -212,7 +212,7 @@ class AuthServices {
       print(password);
       print(email);
       Response response = await dio.put(
-        '${SecretsApiKeys.baseUrl}/auth/set_new_password/',
+        '${SecretsApiKeys.baseUrl}/auth/set-new-password/',
         options: Options(
           headers: {
             'Content-Type': 'application/json', // Set the content type header

@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:forme_app/features/trainee_features/Favorite/presentation/views/favorite_screen.dart';
 import 'package:forme_app/features/trainee_features/home/presentation/manager/bloc/home_bloc.dart';
 import 'package:forme_app/features/trainee_features/home/presentation/views/trainee_home_screen.dart';
-import 'package:forme_app/features/trainee_features/home/presentation/views/widgets/custom_bottom_navigation_bar.dart';
 import 'package:forme_app/features/trainee_features/home/presentation/views/widgets/custom_bottom_van_bar.dart';
 import 'package:forme_app/features/trainee_features/maps_feature/presentation/views/map_screen.dart';
 import 'package:forme_app/features/trainee_features/profile/presentation/views/profile_screen.dart';

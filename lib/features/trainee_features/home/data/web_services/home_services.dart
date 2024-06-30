@@ -22,6 +22,7 @@ class HomeServices {
       List<TrainerProfile> trainers = data
           .map((trainerJson) => TrainerProfile.fromJson(trainerJson))
           .toList();
+      print(trainers[0].user.profilePicture);
 
       return trainers;
     } catch (error) {
@@ -43,6 +44,7 @@ class HomeServices {
       List<TrainerProfileProgram> specialPrograms = data
           .map((trainerJson) => TrainerProfileProgram.fromJson(trainerJson))
           .toList();
+      print(specialPrograms[0].user.profilePicture);
 
       return specialPrograms;
     } catch (error) {

@@ -8,7 +8,10 @@ import '../../../data/models/trainer_profile_model.dart';
 class TopTrainerItem extends StatelessWidget {
   final TrainerProfile trainer;
 
-  const TopTrainerItem({Key? key, required this.trainer}) : super(key: key);
+  const TopTrainerItem({
+    Key? key,
+    required this.trainer,
+  }) : super(key: key);
 
   String truncateText(String text, int maxLength) {
     return (text.length <= maxLength)
