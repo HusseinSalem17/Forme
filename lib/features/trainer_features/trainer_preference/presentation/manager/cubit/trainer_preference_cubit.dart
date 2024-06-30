@@ -1,7 +1,8 @@
 import 'dart:io';
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
-import 'package:forme_app/core/api/api_consumer.dart';
+
+import 'package:forme_app/core/api/app_dio.dart';
 import 'package:forme_app/core/utils/functions/utils.dart';
 import 'package:forme_app/features/trainer_features/trainer_preference/presentation/views/widgets/two_choices.dart';
 import 'package:image_picker/image_picker.dart';
@@ -9,7 +10,7 @@ import 'package:image_picker/image_picker.dart';
 part 'trainer_preference_state.dart';
 
 class TrainerPreferenceCubit extends Cubit<TrainerPreferenceState> {
-  final ApiConsumer api;
+  final AppDio api;
   TrainerPreferenceCubit(this.api) : super(TrainerPreferenceInitial());
 
   TextEditingController bioController = TextEditingController();

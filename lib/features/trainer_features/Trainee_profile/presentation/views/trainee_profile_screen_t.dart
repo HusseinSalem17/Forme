@@ -148,7 +148,7 @@ class _TraineeProfileScreenState extends State<TraineeProfileScreen> {
                   controller: _nameController,
                   title: 'Full Name',
                   hintText: 'Hussein Salem Eldesokey',
-                  keyboardType: TextInputType.name,
+                  keyboardType: TextInputType.name, hintStyle: TextStyles.headerStyle,
                   enabled: false,
                   onChanged: (value) {
                     setState(() {
@@ -169,7 +169,7 @@ class _TraineeProfileScreenState extends State<TraineeProfileScreen> {
                         controller: _heightController,
                         title: 'Height',
                         hintText: '175',
-                        keyboardType: TextInputType.number,
+                        keyboardType: TextInputType.number, hintStyle: TextStyles.headerStyle,
                         enabled: false,
                         onChanged: (value) {
                           setState(() {
@@ -202,7 +202,7 @@ class _TraineeProfileScreenState extends State<TraineeProfileScreen> {
                         controller: _weightController,
                         title: 'weight',
                         hintText: '75',
-                        keyboardType: TextInputType.number,
+                        keyboardType: TextInputType.number, hintStyle: TextStyles.headerStyle,
                         enabled: false,
                         onChanged: (value) {
                           setState(() {

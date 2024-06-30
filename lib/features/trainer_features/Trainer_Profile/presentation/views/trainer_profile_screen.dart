@@ -57,7 +57,7 @@ class _TrainerProfileScreenState extends State<TrainerProfileScreen> {
           children: [
             Center(
               child: Padding(
-                padding: const EdgeInsets.only(top: 24),
+                padding: const EdgeInsets.only(top: 32),
                 child: Text(
                   'Profile',
                   style: TextStyles.textStyleBold
@@ -73,7 +73,7 @@ class _TrainerProfileScreenState extends State<TrainerProfileScreen> {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(32.dg),
                   child: Image.asset(
-                    'assets/image/workout_image.jpg',
+                    'assets/image/informa.jpg',
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -82,99 +82,79 @@ class _TrainerProfileScreenState extends State<TrainerProfileScreen> {
             Text('Ahmed Ramy',
                 style: TextStyles.textStyleBold.copyWith(
                     fontSize: 14.sp, color: AppColors.n900Black, height: 2)),
-            Center(
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.center,
+            Container(
+              padding: EdgeInsets.all(24.w),
+              child: Column(
                 children: [
-                  Container(
-                      margin: EdgeInsets.symmetric(vertical: 24.h),
-                      padding: EdgeInsets.all(16.h),
-                      decoration: BoxDecoration(
-                        border: Border(
-                          bottom: BorderSide(
-                            color: AppColors.n30StrokeColor,
-                            width: 1.w,
-                          ),
-                          top: BorderSide(
-                            color: AppColors.n30StrokeColor,
-                            width: 1.w,
-                          ),
-                        ),
-                      ),
-                      child: Column(
-                        children: [
-                          Text(clientsSubscriptionsCardsModel.length.toString(),
-                              style: TextStyles.textStyleBold.copyWith(
-                                  fontSize: 14.sp,
-                                  color: AppColors.n900Black,
-                                  height: 2)),
-                          Text('Subscriptions',
-                              style: TextStyles.textStyleRegular.copyWith(
-                                  fontSize: 14.sp,
-                                  color: AppColors.n900Black,
-                                  height: 2)),
-                        ],
-                      )),
-                  Container(
-                      margin: EdgeInsets.symmetric(
-                        vertical: 24.h,
-                      ),
-                      padding: EdgeInsets.symmetric(
-                          vertical: 16.h, horizontal: 24.w),
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                          color: AppColors.n30StrokeColor,
-                          width: 1.w,
-                        ),
-                      ),
-                      child: Column(
-                        children: [
-                          Text(myProgramsCardsModel.length.toString(),
-                              style: TextStyles.textStyleBold.copyWith(
-                                  fontSize: 14.sp,
-                                  color: AppColors.n900Black,
-                                  height: 2)),
-                          Text('Programs',
-                              style: TextStyles.textStyleRegular.copyWith(
-                                  fontSize: 14.sp,
-                                  color: AppColors.n900Black,
-                                  height: 2)),
-                        ],
-                      )),
-                  Container(
-                    margin: EdgeInsets.symmetric(vertical: 24.h),
-                    padding:
-                        EdgeInsets.symmetric(vertical: 16.h, horizontal: 24.w),
-                    decoration: BoxDecoration(
-                      border: Border(
-                        bottom: BorderSide(
-                          color: AppColors.n30StrokeColor,
-                          width: 1.w,
-                        ),
-                        top: BorderSide(
-                          color: AppColors.n30StrokeColor,
-                          width: 1.w,
-                        ),
-                      ),
-                    ),
-                    child: Column(
+                  Divider(
+                    thickness: 1.h,
+                    color: AppColors.n30StrokeColor,
+                  ),
+                  IntrinsicHeight(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        Text('10',
-                            style: TextStyles.textStyleBold.copyWith(
+                        Column(
+                          children: [
+                            Text(
+                                clientsSubscriptionsCardsModel.length
+                                    .toString(),
+                                style: TextStyles.textStyleBold.copyWith(
+                                    fontSize: 14.sp,
+                                    color: AppColors.n900Black,
+                                    height: 2)),
+                            Text('Subscriptions',
+                                style: TextStyles.textStyleRegular.copyWith(
+                                    fontSize: 14.sp,
+                                    color: AppColors.n900Black,
+                                    height: 2)),
+                          ],
+                        ),
+                        VerticalDivider(
+                          color: AppColors.n30StrokeColor,
+                          thickness: 1.h,
+                        ),
+                        Column(
+                          children: [
+                            Text(myProgramsCardsModel.length.toString(),
+                                style: TextStyles.textStyleBold.copyWith(
+                                    fontSize: 14.sp,
+                                    color: AppColors.n900Black,
+                                    height: 2)),
+                            Text('  Programs  ',
+                                style: TextStyles.textStyleRegular.copyWith(
+                                    fontSize: 14.sp,
+                                    color: AppColors.n900Black,
+                                    height: 2,),),
+                          ],
+                        ),
+                        VerticalDivider(
+                          color: AppColors.n30StrokeColor,
+                          thickness: 1.h,
+                        ),
+                        Column(
+                          children: [
+                            Text('10',
+                                style: TextStyles.textStyleBold.copyWith(
+                                    fontSize: 14.sp,
+                                    color: AppColors.n900Black,
+                                    height: 2)),
+                            Text(
+                              '  Sessions  ',
+                              style: TextStyles.textStyleRegular.copyWith(
                                 fontSize: 14.sp,
                                 color: AppColors.n900Black,
-                                height: 2)),
-                        Text(
-                          'Sessions',
-                          style: TextStyles.textStyleRegular.copyWith(
-                            fontSize: 14.sp,
-                            color: AppColors.n900Black,
-                            height: 2,
-                          ),
+                                height: 2,
+                              ),
+                            ),
+                          ],
                         ),
                       ],
                     ),
+                  ),
+                  Divider(
+                    thickness: 1.h,
+                    color: AppColors.n30StrokeColor,
                   ),
                 ],
               ),

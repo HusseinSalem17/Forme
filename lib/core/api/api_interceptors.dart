@@ -5,7 +5,7 @@ class ApiInterceptor extends Interceptor {
   @override
   void onRequest(RequestOptions options, RequestInterceptorHandler handler) {
     options.headers['Authorization'] =
-        'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ3OTMzMjQ2LCJpYXQiOjE3MTYzOTcyNDYsImp0aSI6IjM2ZGU2NTVjOGQ4ZTQ0MDk4NjViNjY5NDkxZTAzNDYwIiwidXNlcl9pZCI6NH0.2efHkCa5MZ6rkNdwDttp-53O-tJnY8DHjYW_Q17xcxc';
+        'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUwOTA4OTU0LCJpYXQiOjE3MTkzNzI5NTQsImp0aSI6ImY4ZWE5NzhiMmUwYTQ3YWU4ZThmOWE5ZTAxMzQzMWE1IiwidXNlcl9pZCI6NX0.sfcIzSNY0F2BuINVMLgcKmaLnM3Ug1VuyGJN6U9KizU';
     super.onRequest(options, handler);
   }
 }

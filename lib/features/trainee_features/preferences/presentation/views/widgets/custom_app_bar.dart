@@ -38,7 +38,9 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           return Row(
             children: [
               AnimatedStepperLine(state: state),
-              const SizedBox(width: 8),
+              const Spacer(
+                flex: 1,
+              ),
               Text(
                 '${state.page + 1}/5',
                 style: TextStyles.textStyleRegular.copyWith(
@@ -46,7 +48,22 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w400,
                 ),
-              )
+              ),
+              const Spacer(
+                flex: 2,
+              ),
+              GestureDetector(
+                onTap: (){},
+                child: Text(
+                  'Skip',
+                  style: TextStyles.descriptionStyle.copyWith(
+                    color: AppColors.primaryColor,
+                  ),
+                ),
+              ),
+              const Spacer(
+                flex: 1,
+              ),
             ],
           );
         },

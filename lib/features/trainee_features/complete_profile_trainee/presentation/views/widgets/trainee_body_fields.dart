@@ -8,10 +8,9 @@ import '../../../../../../core/widgets/app_drop_list/custom_drop_list.dart';
 import '../../../../../../core/widgets/app_fields/custom_phone_field.dart';
 import '../../../../../../core/widgets/app_fields/custom_text_form_field.dart';
 
-class TraineeBodyFields extends StatelessWidget {
+class TraineeBodyFields extends StatefulWidget {
   final PhoneNumberInputController phoneNumberController;
   final TextEditingController fullNameController;
-
   final ValueNotifier<String?> genderNotifier;
   final ValueNotifier<String?> countryNotifier;
 
@@ -24,13 +23,18 @@ class TraineeBodyFields extends StatelessWidget {
   });
 
   @override
+  State<TraineeBodyFields> createState() => _TraineeBodyFieldsState();
+}
+
+class _TraineeBodyFieldsState extends State<TraineeBodyFields> {
+  @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         CustomTextFromField(
           hintText: 'Kareem',
           subTitle: 'Full Name',
-          textEditingController: fullNameController,
+          textEditingController: widget.fullNameController,
           textInputType: TextInputType.name,
         ),
         SizedBox(height: 16.h),
@@ -42,16 +46,7 @@ class TraineeBodyFields extends StatelessWidget {
           countryListMode: CountryListMode.dialog,
           showSelectedFlag: false,
           border: textFieldBorder(),
-          enabledBorder: textFieldBorder(),
-          focusedBorder: textFieldBorder(
-            color: AppColors.primaryColor,
-            width: 2.0,
-          ),
-          errorBorder: textFieldBorder(
-            color: AppColors.r200ErrorColor,
-            width: 2.0,
-          ),
-          controller: phoneNumberController,
+          controller: widget.phoneNumberController,
         ),
         SizedBox(height: 16.h),
         CustomDropList(
@@ -70,7 +65,7 @@ class TraineeBodyFields extends StatelessWidget {
             return null;
           },
           onChanged: (value) {},
-          selectedValueNotifier: genderNotifier, // Add this line
+          selectedValueNotifier: widget.genderNotifier, // Add this line
         ),
         SizedBox(height: 16.h),
         CustomDropList(
@@ -90,7 +85,7 @@ class TraineeBodyFields extends StatelessWidget {
           },
           onChanged: (value) {},
           onSaved: (value) {},
-          selectedValueNotifier: countryNotifier, // Add this line
+          selectedValueNotifier: widget.countryNotifier, // Add this line
         ),
       ],
     );

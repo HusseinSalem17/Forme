@@ -119,14 +119,14 @@ class _MyProfileState extends State<MyProfile> {
               scrollDirection: Axis.vertical,
               children: [
                 SizedBox(height: 16.0.h),
-                ProfileImagePicker(
-                  imageFile: _imageFile,
-                  onImageSelected: (file) {
-                    setState(() {
-                      _imageFile = file;
-                    });
-                  },
-                ),
+                // ProfileImagePicker(
+                //   imageFile: _imageFile,
+                //   onImageSelected: (file) {
+                //     setState(() {
+                //       _imageFile = file;
+                //     });
+                //   },
+                // ),
                 SizedBox(height: 32.0.h),
                 CustomTextField(
                   controller: _nameController,
@@ -134,6 +134,7 @@ class _MyProfileState extends State<MyProfile> {
                   hintText: 'Hussein Salem Eldesokey',
                   keyboardType: TextInputType.name,
                   enabled: adjustable,
+                  hintStyle: TextStyles.headerStyle,
                   onChanged: (value) {
                     setState(() {
                       name = value;
@@ -154,7 +155,7 @@ class _MyProfileState extends State<MyProfile> {
                         title: 'Height',
                         hintText: '175',
                         keyboardType: TextInputType.number,
-                        enabled: adjustable,
+                        enabled: adjustable, hintStyle: TextStyles.headerStyle,
                         onChanged: (value) {
                           setState(() {
                             height = value;
@@ -185,7 +186,7 @@ class _MyProfileState extends State<MyProfile> {
                       child: CustomTextField(
                         controller: _weightController,
                         title: 'weight',
-                        hintText: '75',
+                        hintText: '75', hintStyle: TextStyles.headerStyle,
                         keyboardType: TextInputType.number,
                         enabled: adjustable,
                         onChanged: (value) {

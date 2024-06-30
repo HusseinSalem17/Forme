@@ -1,24 +1,38 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
+import 'package:forme_app/core/utils/functions/utils.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
 import 'package:forme_app/core/widgets/custom_build_form.dart';
-import 'package:forme_app/core/widgets/data_picker/app_date_picker.dart';
-import 'package:forme_app/features/trainer_features/complete_profile_trainer/presentation/manager/cubit/trainer_complete_profile_cubit.dart';
-import 'package:forme_app/features/trainer_features/complete_profile_trainer/presentation/views/trainer_complete_profile.dart';
-import 'package:intl/intl.dart';
+import 'package:forme_app/core/widgets/date_picker/app_date_picker.dart';
+
 
 class CustomDateField extends StatefulWidget {
-  const CustomDateField({super.key});
+  const CustomDateField({
+    super.key,
+    this.enabled = true,
+    this.initialDate,
+    this.onChanged,
+  });
+  final bool enabled;
+  final String? initialDate;
+  final ValueChanged<String>? onChanged; // New parameter for onChanged callback
 
   @override
   _CustomDateFieldState createState() => _CustomDateFieldState();
 }
 
 class _CustomDateFieldState extends State<CustomDateField> {
-  DateTime? date;
-  String formattedDate = 'dd/MM/yyyy';
+  String date = 'DD/MM/YYYY';
+
+  @override
+  void initState() {
+    super.initState();
+    if (widget.initialDate != null) {
+      date = widget.initialDate!;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return CustomBuildForm(
@@ -27,29 +41,35 @@ class _CustomDateFieldState extends State<CustomDateField> {
         optional: false,
         child: GestureDetector(
           onTap: () async {
-            final DateTime? results = await showDialog(
-                context: context,
-                builder: (BuildContext context) {
-                  return const AppDatePicker();
+            if (widget.enabled) {
+              DateTime? result = await showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return AppDatePicker(
+                      initialDate: widget.initialDate,
+                    );
+                  });
+              if (result != null) {
+                setState(() {
+                  date = Utils().convertToString(result);
                 });
-            setState(() {
-              date = DateTime.parse(results.toString());
-              DateFormat formatter = DateFormat('dd/MM/yyyy');
-              formattedDate = formatter.format(date!);
-            });
-           
-            context.read<TrainerCompleteProfileCubit>().dateOfBirth =
-                formattedDate;
+
+                if (widget.onChanged != null) {
+                  widget.onChanged!(date); // Call the onChanged callback
+                }
+              }
+            }
           },
           child: Container(
             decoration: BoxDecoration(
+              color: widget.enabled ? AppColors.background : AppColors.n20Gray,
               border: Border.all(width: 1.0, color: AppColors.n40Gray),
               borderRadius: BorderRadius.circular(4.dg),
             ),
             padding: const EdgeInsets.all(15.0),
             child: Row(
               children: [
-                Text(formattedDate,
+                Text(date,
                     style: TextStyles.textStyleRegular
                         .copyWith(fontSize: 14.sp, color: AppColors.n900Black)),
                 const Spacer(),

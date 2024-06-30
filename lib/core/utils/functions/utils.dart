@@ -3,6 +3,8 @@ import 'dart:io';
 import 'dart:typed_data';
 import 'package:dio/dio.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:intl/intl.dart';
+import 'package:video_player/video_player.dart';
 
 class Utils {
   Future uploadImageToAPI(XFile image) async {
@@ -36,5 +38,47 @@ class Utils {
 
     // Return the list of MultipartFile objects
     return dioFiles;
+  }
+
+  DateTime convertToDateTime(String dateString) {
+    final parts = dateString.split('-');
+    if (parts.length != 3) {
+      throw const FormatException("Invalid date format");
+    }
+    final day = int.parse(parts[0]);
+    final month = int.parse(parts[1]);
+    final year = int.parse(parts[2]);
+
+    return DateTime(year, month, day);
+  }
+
+  String convertToString(DateTime dateTime) {
+    final day = dateTime.day.toString();
+    final month = dateTime.month.toString();
+    final year = dateTime.year.toString();
+
+    return '$day-$month-$year';
+  }
+
+  //convert form this date string from '10-09-2002' to '2002-09-10'
+  String convertDateString(String dateString) {
+    DateFormat inputFormat = DateFormat('dd-MM-yyyy');
+    DateFormat outputFormat = DateFormat('yyyy-MM-dd');
+
+    DateTime dateTime = inputFormat.parse(dateString);
+    String formattedDate = outputFormat.format(dateTime);
+
+    return formattedDate;
+  }
+  Future<String> getVideoDuration(File file) async {
+    final videoPlayerController = VideoPlayerController.file(file);
+    await videoPlayerController.initialize();
+    final duration = videoPlayerController.value.duration;
+    final minutes = duration.inMinutes;
+    final seconds = duration.inSeconds.remainder(60);
+    final formattedDuration =
+        '$minutes:${seconds.toString().padLeft(2, '0')} mins';
+    videoPlayerController.dispose();
+    return formattedDuration;
   }
 }

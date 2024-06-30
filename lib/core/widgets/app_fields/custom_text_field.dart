@@ -17,6 +17,7 @@ class CustomTextField extends StatefulWidget {
       this.validator,
       this.confirmPasswordController,
       this.errorText,
+      required this.hintStyle,
       required this.title,
       this.subTitle = '',
       this.optional = false,
@@ -34,7 +35,7 @@ class CustomTextField extends StatefulWidget {
   final String? Function(String?)? validator;
   final Color titleColor;
   final bool enabled;
-
+  final TextStyle hintStyle;
   @override
   CustomTextFieldState createState() => CustomTextFieldState();
 }
@@ -62,7 +63,7 @@ class CustomTextFieldState extends State<CustomTextField> {
             _obscureText,
         decoration: InputDecoration(
           filled: true,
-          fillColor: Colors.white,
+          fillColor: widget.enabled ? AppColors.background : AppColors.n20Gray,
           contentPadding: EdgeInsets.only(
             left: 0.w,
             top: 8.h,
@@ -72,7 +73,7 @@ class CustomTextFieldState extends State<CustomTextField> {
             padding: EdgeInsets.only(left: 16.w),
           ),
           hintText: widget.hintText,
-          hintStyle: TextStyles.hintStyle,
+          hintStyle: widget.hintStyle,
           border: textFieldBorder(),
           enabledBorder: textFieldBorder(),
           focusedBorder: textFieldBorder(

@@ -16,6 +16,9 @@ class CustomDropList extends StatefulWidget {
   final String? Function(String?)? validator;
   final Widget? hint;
   final bool enabled;
+  final Color titleColor;
+  final String? initialValue; // Add this line
+
   final ValueNotifier<String?> selectedValueNotifier; // Add this line
 
   const CustomDropList({
@@ -28,7 +31,9 @@ class CustomDropList extends StatefulWidget {
     this.onChanged,
     this.onSaved,
     this.validator,
+    this.titleColor = AppColors.n900Black,
     this.enabled = true,
+    this.initialValue, // Add this line
     required this.selectedValueNotifier, // Add this line
   });
 
@@ -40,13 +45,14 @@ class _CustomDropListState extends State<CustomDropList> {
   @override
   void initState() {
     super.initState();
+    widget.selectedValueNotifier.value = widget.initialValue; // Set the initial value
   }
 
   @override
   Widget build(BuildContext context) {
     return CustomBuildForm(
       title: widget.title,
-      titleColor: AppColors.n900Black,
+      titleColor: widget.titleColor,
       child: ValueListenableBuilder<String?>(
         valueListenable: widget.selectedValueNotifier,
         builder: (context, selectedValue, child) {
@@ -78,11 +84,11 @@ class _CustomDropListState extends State<CustomDropList> {
             validator: widget.validator,
             onChanged: widget.enabled
                 ? (value) {
-              widget.selectedValueNotifier.value = value;
-              if (widget.onChanged != null) {
-                widget.onChanged!(value);
-              }
-            }
+                    widget.selectedValueNotifier.value = value;
+                    if (widget.onChanged != null) {
+                      widget.onChanged!(value);
+                    }
+                  }
                 : null,
             onSaved: widget.onSaved,
             buttonStyleData: const ButtonStyleData(

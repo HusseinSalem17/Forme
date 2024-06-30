@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 
-import '../../../../../core/secrets/secrets_api_keys.dart';
+import '../../../../../core/secrets_api_keys/secrets_api_keys.dart';
 
 
 

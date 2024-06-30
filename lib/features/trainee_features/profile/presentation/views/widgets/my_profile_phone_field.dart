@@ -75,15 +75,6 @@ class MyProfilePhoneField extends StatelessWidget {
                                   countryListMode: CountryListMode.dialog,
                                   showSelectedFlag: false,
                                   border: textFieldBorder(),
-                                  enabledBorder: textFieldBorder(),
-                                  focusedBorder: textFieldBorder(
-                                    color: AppColors.primaryColor,
-                                    width: 2.0,
-                                  ),
-                                  errorBorder: textFieldBorder(
-                                    color: AppColors.r200ErrorColor,
-                                    width: 2.0,
-                                  ),
                                   onChanged: (value) {
                                     newPhone = value;
                                   }),

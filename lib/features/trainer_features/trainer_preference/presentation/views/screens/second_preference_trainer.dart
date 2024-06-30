@@ -96,6 +96,7 @@ class _SecondPreferenceTrainerState extends State<SecondPreferenceTrainer> {
                 Container(
                   height: MediaQuery.sizeOf(context).height / 6.h,
                 )
+               
               ],
             ),
           ),

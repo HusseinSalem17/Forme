@@ -19,7 +19,7 @@ class AnimatedStepperLine extends StatelessWidget {
             color: Colors.grey,
             borderRadius: BorderRadius.circular(10),
           ),
-          width: 212,
+          width: MediaQuery.sizeOf(context).width/1.8,
           height: 4,
         ),
         AnimatedContainer(
