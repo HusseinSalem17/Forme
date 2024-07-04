@@ -7,6 +7,8 @@ import 'package:forme_app/features/trainee_features/home/presentation/views/widg
 import 'package:forme_app/features/trainee_features/maps_feature/presentation/views/map_screen.dart';
 import 'package:forme_app/features/trainee_features/profile/presentation/views/profile_screen.dart';
 
+import '../../../chatbot/presentation/views/chat_with_gemini_screen.dart';
+
 class TraineeHomeScreenBottomNav extends StatefulWidget {
   static const routeName = '/home-screen';
 
@@ -21,7 +23,7 @@ class _TraineeHomeScreenBottomNavState extends State<TraineeHomeScreenBottomNav>
     const SafeArea(child: TraineeHomeScreen()),
     const SafeArea(child: MapScreen()),
     const SafeArea(child: FavoriteScreen()),
-    const SafeArea(child: Center(child: Text('4'))),
+    const ChatWithGeminiScreen(),
     const SafeArea(child: ProfileScreen()),
   ];
 

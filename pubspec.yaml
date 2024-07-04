@@ -60,6 +60,11 @@ dependencies:
   video_player: ^2.8.4
   wheel_slider: ^1.1.1
   flutter_holo_date_picker: ^1.1.3
+  # chat bot with gemini api
+  flutter_gemini: ^2.0.4
+  # chat ui builder for chat with gemini
+  dash_chat_2: ^0.0.21
+
 
 dev_dependencies:
   flutter_lints: ^2.0.0
