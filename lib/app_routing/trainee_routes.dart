@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:forme_app/features/Authentication/presentation/views/verify_code_screen.dart';
+import 'package:forme_app/features/authentication/presentation/views/verify_code_screen.dart';
 import 'package:forme_app/features/trainee_features/book_appointment_with%20_trainer/presentation/views/book_appointment_screen.dart';
 import 'package:forme_app/features/trainee_features/complete_profile_trainee/presentation/views/trainee_complete_profile_screen.dart';
 import 'package:forme_app/features/trainee_features/home/presentation/views/bottom_bar_screens.dart';
 import 'package:forme_app/features/trainee_features/join_program_feature/presentation/views/book_onling_coach_screen.dart';
 import 'package:forme_app/features/trainee_features/maps_feature/presentation/views/map_screen.dart';
+import 'package:forme_app/features/trainee_features/payment/presentation/view/ereceipt_screen.dart';
 import 'package:forme_app/features/trainee_features/preferences/presentation/views/preferences_screen.dart';
 import '../features/trainee_features/Favorite/presentation/views/favorite_screen.dart';
 import '../features/trainee_features/Notification/presentation/views/notification_screen.dart';
-import '../features/trainee_features/Payment/presentation/view/ereceipt_screen.dart';
 import '../features/trainee_features/Trainer_details/presentation/views/success_story.dart';
 import '../features/trainee_features/Trainer_details/presentation/views/trainer_details_view.dart';
 import '../features/trainee_features/featured/presentation/featured_screen.dart';

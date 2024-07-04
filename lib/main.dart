@@ -5,7 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:forme_app/core/api/app_dio.dart';
 import 'package:forme_app/core/utils/app_theme.dart';
-import 'package:forme_app/features/Authentication/presentation/manager/auth_bloc.dart';
+import 'package:forme_app/features/authentication/presentation/manager/auth_bloc.dart';
 import 'package:forme_app/features/trainee_features/home/presentation/manager/bloc/home_bloc.dart';
 import 'package:forme_app/features/trainee_features/preferences/presentation/manager/preferences_bloc.dart';
 import 'package:forme_app/features/trainee_features/profile/presentation/manager/cubit/my_profile_cubit.dart';

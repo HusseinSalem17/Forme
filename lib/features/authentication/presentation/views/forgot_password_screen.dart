@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:forme_app/features/Authentication/presentation/views/verify_code_screen.dart';
-import 'package:forme_app/features/Authentication/presentation/views/widgets/custom_auth_button.dart';
+import 'package:forme_app/features/authentication/presentation/views/verify_code_screen.dart';
+import 'package:forme_app/features/authentication/presentation/views/widgets/custom_auth_button.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/icons_image_pathes.dart';
 import '../../../../core/utils/show_snackbar.dart';

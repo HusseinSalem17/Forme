@@ -4,13 +4,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:forme_app/core/user_type.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/show_snackbar.dart';
-import 'package:forme_app/features/Authentication/presentation/views/new_password_screen.dart';
-import 'package:forme_app/features/Authentication/presentation/views/widgets/custom_auth_button.dart';
-import 'package:forme_app/features/Authentication/presentation/views/widgets/custom_pin_code.dart';
+import 'package:forme_app/features/authentication/presentation/views/new_password_screen.dart';
+import 'package:forme_app/features/authentication/presentation/views/widgets/custom_auth_button.dart';
 import 'package:forme_app/features/trainee_features/preferences/presentation/views/preferences_screen.dart';
 import '../../../../core/utils/text_styles.dart';
 import '../../../../core/widgets/loader.dart';
 import '../manager/auth_bloc.dart';
+import 'widgets/custom_pin_code.dart';
 
 class VerifyCodeScreen extends StatefulWidget {
   const VerifyCodeScreen({super.key});

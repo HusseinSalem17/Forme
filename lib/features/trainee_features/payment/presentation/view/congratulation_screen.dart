@@ -5,8 +5,8 @@ import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
 import 'package:forme_app/core/widgets/custom_app_bar_arrow_button.dart';
 import 'package:forme_app/core/widgets/custom_app_button.dart';
-import 'package:forme_app/features/trainee_features/Payment/presentation/view/ereceipt_screen.dart';
 import 'package:forme_app/features/trainee_features/home/presentation/views/bottom_bar_screens.dart';
+import 'package:forme_app/features/trainee_features/payment/presentation/view/ereceipt_screen.dart';
 
 class CongratulationScreen extends StatelessWidget {
   static const routeName = '/Congratulation-screen';

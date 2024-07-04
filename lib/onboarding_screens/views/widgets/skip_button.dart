@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:forme_app/core/transitions/page_slide.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
-import 'package:forme_app/features/Authentication/presentation/views/sign_in_screen.dart';
+import 'package:forme_app/features/authentication/presentation/views/sign_in_screen.dart';
 import 'package:forme_app/onboarding_screens/data/bloc/onboarding_states.dart';
 
 import '../../../core/utils/app_colors.dart';
