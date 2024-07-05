@@ -64,6 +64,8 @@ dependencies:
   flutter_gemini: ^2.0.4
   # chat ui builder for chat with gemini
   dash_chat_2: ^0.0.21
+  location: ^6.0.1
+  flutter_polyline_points: ^2.1.0
 
 
 dev_dependencies:

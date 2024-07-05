@@ -12,6 +12,7 @@ import '../features/trainee_features/Payment/presentation/view/ereceipt_screen.d
 import '../features/trainee_features/Trainer_details/presentation/views/success_story.dart';
 import '../features/trainee_features/Trainer_details/presentation/views/trainer_details_view.dart';
 import '../features/trainee_features/featured/presentation/featured_screen.dart';
+import '../features/trainee_features/maps_feature/presentation/views/widgets/custom_google_map_2.dart';
 import '../features/trainee_features/payment/presentation/view/add_new_card_screen.dart';
 import '../features/trainee_features/payment/presentation/view/congratulation_screen.dart';
 import '../features/trainee_features/payment/presentation/view/payment_methods_screen.dart';
@@ -54,9 +55,9 @@ class TraineeRoutes {
         return MaterialPageRoute(
           builder: (context) => const BookOnlineCoachScreen(),
         );
-      case MapScreen.routeName:
+      case CustomGoogleMap.routeName:
         return MaterialPageRoute(
-          builder: (context) => const MapScreen(),
+          builder: (context) => const CustomGoogleMap(),
         );
       case PreferencesScreen.routeName:
         return MaterialPageRoute(
