@@ -232,7 +232,7 @@ class _MyProfileTrainerState extends State<MyProfileTrainer> {
                   onChanged: (value) {
                     setState(() => gender = value);
                   },
-                  selectedValueNotifier: genderNotifier,
+                  selectedValueNotifier:ValueNotifier<String?>(null),
                   onSaved: (value) {},
                 ),
                 SizedBox(height: 16.h),
@@ -258,7 +258,7 @@ class _MyProfileTrainerState extends State<MyProfileTrainer> {
                   onChanged: (value) {
                     setState(() => country = value);
                   },
-                  selectedValueNotifier: countryNotifier,
+                  selectedValueNotifier: ValueNotifier<String?>(null),
                   onSaved: (value) {},
                 ),
                 SizedBox(height: 16.h),
@@ -283,7 +283,7 @@ class _MyProfileTrainerState extends State<MyProfileTrainer> {
                   },
                   onChanged: (value) {
                     setState(() => sportField = value);
-                  },selectedValueNotifier: sportFieldNotifier,
+                  },selectedValueNotifier: ValueNotifier<String?>(null),
                   onSaved: (value) {},
                 ),
                 SizedBox(height: 16.h),

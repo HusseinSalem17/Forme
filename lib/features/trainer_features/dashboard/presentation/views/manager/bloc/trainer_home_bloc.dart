@@ -8,8 +8,9 @@ class TrainerHomeBloc extends Bloc<TrainerHomeEvent, TrainerHomeState> {
     on<TrainerHomeEvent>((event, emit) {});
   }
   int currentIndex = 0;
+  int servicesIndex =0;
   void getCurrentIndex(int index) {
-    //emit(TrainerHomeBottomNavigation());
+    emit(TrainerHomeBottomNavigation());
     currentIndex = index;
   }
 }

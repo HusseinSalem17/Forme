@@ -23,16 +23,7 @@ class WorkOutBloc extends Bloc<TrainerWorkoutEvent, WorkOutState> {
       UpdateTrainerWorkout event, Emitter<WorkOutState> emit) async {
     try {
       emit(WorkOutLoading());
-      // print(event.data.cover);
-      // print(event.data.title);
-      // print(event.data.price);
-      // print(event.data.isOffer);
-      // print(event.data.offerPrice);
-      // print(event.data.sportField);
-      // print(event.data.level);
-      // print(event.data.description);
-      // print(event.data.maxAge);
-      // print(event.data.minAge);
+      //print(event.data.toJson());
       await api.post('/trainings/workout-add/', data: event.data);
       emit(WorkOutSuccess());
     } catch (e) {

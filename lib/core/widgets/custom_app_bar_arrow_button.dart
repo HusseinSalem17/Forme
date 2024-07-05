@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../utils/app_colors.dart';
 
 class CustomAppBarArrowButton extends StatelessWidget {
@@ -11,8 +12,8 @@ class CustomAppBarArrowButton extends StatelessWidget {
     super.key,
     required this.onTap,
     this.icon = Icons.arrow_back_rounded,
-    this.color = Colors.black,
-    this.size = 17,
+    this.color = AppColors.n400color,
+    this.size = 20,
   });
 
   @override
@@ -21,15 +22,17 @@ class CustomAppBarArrowButton extends StatelessWidget {
       splashColor: Colors.transparent,
       highlightColor: Colors.transparent,
       icon: Container(
-        width: 32,
-        height: 32,
+        width: 32.w,
+        height: 32.w,
         decoration: BoxDecoration(
           color: Colors.white,
-          borderRadius: BorderRadius.circular(16),
+          border: Border.all(width: 1,color: AppColors.n40Gray),
+          borderRadius: BorderRadius.circular(16.dg),
           boxShadow: [
             BoxShadow(
               color: AppColors.n50dropShadowColor.withOpacity(0.5),
               blurRadius: 4,
+              
               offset: const Offset(0, 2),
             ),
           ],

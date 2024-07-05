@@ -13,19 +13,24 @@ import 'tabs/my_workout_tab.dart';
 
 class MyServicesScreen extends StatelessWidget {
   static const routeName = '/my-services';
-  const MyServicesScreen({super.key});
+  final int initialIndex;
+
+  const MyServicesScreen({super.key, this.initialIndex = 0});
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: DefaultTabController(
         length: 3,
+        initialIndex: initialIndex,
         child: Scaffold(
           appBar: AppBar(
             backgroundColor: AppColors.background,
             centerTitle: true,
-            title: Text("My Services",
-                style: TextStyles.heading4Bold.copyWith(fontSize: 18.sp)),
+            title: Text(
+              "My Services",
+              style: TextStyles.heading4Bold.copyWith(fontSize: 18.sp),
+            ),
             actions: [
               Padding(
                 padding: EdgeInsets.only(right: 8.h),
@@ -34,8 +39,9 @@ class MyServicesScreen extends StatelessWidget {
                   color: AppColors.primaryColor,
                   size: 30,
                   onTap: () {
-                    Navigator.of(context)
-                        .push(PageSlideTransition(const CreateSessionScreen()));
+                    Navigator.of(context).push(
+                      PageSlideTransition(const CreateSessionScreen()),
+                    );
                   },
                 ),
               ),

@@ -1,15 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:forme_app/core/transitions/page_slide.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/features/trainer_features/Revenue/presentation/views/revenue_screen.dart';
 import 'package:forme_app/features/trainer_features/Transformations/presentation/view/Transformations_screen.dart';
-import 'package:forme_app/features/trainer_features/add_program/presentation/views/add_program_screen.dart';
+import 'package:forme_app/features/trainer_features/add_program/presentation/views/add_program.dart';
 import 'package:forme_app/features/trainer_features/add_workout/presentation/view/add_workout.dart';
+import 'package:forme_app/features/trainer_features/create_sessions/presentation/views/create_session.dart';
+import 'package:forme_app/features/trainer_features/dashboard/presentation/views/manager/bloc/trainer_home_bloc.dart';
 import 'package:forme_app/features/trainer_features/dashboard/presentation/views/widgets/data_container.dart';
 import 'package:forme_app/features/trainer_features/dashboard/presentation/views/widgets/trainer_card.dart';
 import 'package:forme_app/features/trainer_features/dashboard/presentation/views/widgets/trainer_component_icon.dart';
+import 'package:forme_app/features/trainer_features/my_services/presentation/views/my_services_screen.dart';
 
 import '../../../../../core/utils/text_styles.dart';
 
@@ -41,9 +45,9 @@ class DashboardScreen extends StatelessWidget {
       'SuccessStory',
     ];
     final List<String> cardTitles = [
-      'Add Programs',
+      'Add Program',
       'Add Workout',
-      'Add Sessions',
+      'Add Session',
       'Add Transformation',
     ];
     return Scaffold(
@@ -90,7 +94,13 @@ class DashboardScreen extends StatelessWidget {
                         return trainerComponentIcon(
                             icons[index], titles[index], context, () {
                           switch (index) {
-                            case 0: //programs
+                            case 0:
+                              {
+                                BlocProvider.of<TrainerHomeBloc>(context)
+                                    .currentIndex = 1;
+                                Navigator.of(context).push(
+                                    PageSlideTransition(const MyServicesScreen(initialIndex: 0,)));
+                              }
                             case 1: //Workouts
                             case 2: //Sessions
                             case 3: //Club Subscriptions
@@ -121,7 +131,9 @@ class DashboardScreen extends StatelessWidget {
                         case 1:
                           Navigator.of(context).push(
                               PageSlideTransition(const AddWorkoutScreen()));
-                        case 2: //Sessions
+                        case 2:
+                          Navigator.of(context).push(
+                              PageSlideTransition(const CreateSessionScreen()));
                         case 3:
                           Navigator.of(context).push(PageSlideTransition(
                               const TransformationsScreen()));

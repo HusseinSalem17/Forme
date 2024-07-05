@@ -6,47 +6,46 @@ import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
 import 'package:forme_app/core/widgets/custom_app_bar_arrow_button.dart';
 import 'package:forme_app/core/widgets/import_media.dart';
+import 'package:forme_app/features/trainer_features/add_program/presentation/views/sections/add_program_body.dart';
 import 'package:forme_app/features/trainer_features/add_workout/data/models/workout_details.dart';
 import 'package:forme_app/features/trainer_features/add_workout/presentation/manager/bloc/work_out_bloc.dart';
 import 'package:forme_app/features/trainer_features/add_workout/presentation/view/sections/add_workout_body.dart';
 import 'package:image_picker/image_picker.dart';
 
-class AddWorkoutScreen extends StatefulWidget {
-  static const routeName = '/add-workout-screen';
+class AddProgramScreen extends StatefulWidget {
+  static const routeName = '/add-program-screen';
 
-  const AddWorkoutScreen({super.key});
+  const AddProgramScreen({super.key});
 
   @override
-  State<AddWorkoutScreen> createState() => _AddWorkoutScreenState();
+  State<AddProgramScreen> createState() => _AddProgramScreenState();
 }
 
-class _AddWorkoutScreenState extends State<AddWorkoutScreen> {
+class _AddProgramScreenState extends State<AddProgramScreen> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   XFile? imageFile;
   //String? imageBase64;
   late TextEditingController titleController;
-  late TextEditingController priceController;
-  late TextEditingController offerController;
   late TextEditingController descriptionController;
   late TextEditingController maxClientsController;
   late TextEditingController minAgeController;
   late TextEditingController maxAgeController;
   late ValueNotifier<String?> sportFieldNotifier;
   late ValueNotifier<String?> levelNotifier;
-  late bool isOffer = false;
+  late ValueNotifier<String?> typeNotifier;
+
   late String gender;
 
   @override
   void initState() {
     titleController = TextEditingController();
-    priceController = TextEditingController();
-    offerController = TextEditingController();
     maxClientsController = TextEditingController();
     descriptionController = TextEditingController();
     minAgeController = TextEditingController();
     maxAgeController = TextEditingController();
     sportFieldNotifier = ValueNotifier<String?>(null);
     levelNotifier = ValueNotifier<String?>(null);
+    typeNotifier = ValueNotifier<String?>(null);
 
     super.initState();
   }
@@ -54,14 +53,14 @@ class _AddWorkoutScreenState extends State<AddWorkoutScreen> {
   @override
   void dispose() {
     titleController.dispose();
-    priceController.dispose();
-    offerController.dispose();
+
     maxClientsController.dispose();
     descriptionController.dispose();
     minAgeController.dispose();
     maxAgeController.dispose();
     sportFieldNotifier.dispose();
     levelNotifier.dispose();
+    typeNotifier.dispose();
     _formKey.currentState?.dispose();
     super.dispose();
   }
@@ -88,7 +87,7 @@ class _AddWorkoutScreenState extends State<AddWorkoutScreen> {
                       ),
                       const Spacer(),
                       Text(
-                        'Add Workout',
+                        'Add Program',
                         style: TextStyles.textStyleBold.copyWith(
                             fontSize: 18.sp, color: AppColors.n900Black),
                       ),
@@ -96,24 +95,23 @@ class _AddWorkoutScreenState extends State<AddWorkoutScreen> {
                       GestureDetector(
                         onTap: () {
                           if (_formKey.currentState!.validate()) {
-                            WorkoutDataModel data = WorkoutDataModel(
-                              cover: imageFile,
-                              title: titleController.text,
-                              price: int.parse(priceController.text),
-                              sportField: sportFieldNotifier.value!,
-                              level: levelNotifier.value!,
-                              gender: gender,
-                              isOffer: isOffer,
-                              offerPrice: int.parse(offerController.text),
-                              minAge: int.parse(minAgeController.text),
-                              maxAge: int.parse(maxAgeController.text),
-                              description: descriptionController.text,
-                              //files: []
-                            );
-                            print(data.toJson());
-                            context
-                                .read<WorkOutBloc>()
-                                .add(UpdateTrainerWorkout(data));
+                            // ProgramDataModel data = ProgramDataModel(
+                            //   cover: imageFile,
+                            //   title: titleController.text,
+
+                            //   sportField: sportFieldNotifier.value!,
+                            //   level: levelNotifier.value!,
+                            //   gender: gender,
+
+                            //   minAge: int.parse(minAgeController.text),
+                            //   maxAge: int.parse(maxAgeController.text),
+                            //   description: descriptionController.text,
+                            //   //files: []
+                            // );
+
+                            // context
+                            //     .read<WorkOutBloc>()
+                            //     .add(UpdateTrainerWorkout(data));
                           }
                         },
                         child: SvgPicture.asset('assets/image/Icon/success.svg',
@@ -145,15 +143,12 @@ class _AddWorkoutScreenState extends State<AddWorkoutScreen> {
                           );
                         },
                       ),
-                      AddWorkoutBody(
+                      AddProgramBody(
                         sportFieldNotifier: sportFieldNotifier,
                         levelNotifier: levelNotifier,
+                        typeNotifier: typeNotifier,
                         titleController: titleController,
-                        priceController: priceController,
-                        offerPriceController: offerController,
-                        isOffer: (value) => isOffer = value,
                         genderNotifier: (value) => gender = value,
-                        maxClientsController: maxClientsController,
                         descriptionController: descriptionController,
                         minAgeController: minAgeController,
                         maxAgeController: maxAgeController,

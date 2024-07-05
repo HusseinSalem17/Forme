@@ -19,7 +19,7 @@ class TransformationsScreen extends StatefulWidget {
 class _TransformationsScreenState extends State<TransformationsScreen> {
   @override
   Widget build(BuildContext context) {
-    int listLenght = 4;
+    int listLength = 4;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: AppColors.background,
@@ -79,7 +79,7 @@ class _TransformationsScreenState extends State<TransformationsScreen> {
               mainAxisSpacing: 5,
               crossAxisSpacing: 5,
             ),
-            itemCount: listLenght,
+            itemCount: listLength,
             itemBuilder: (context, index) => GestureDetector(
               onTap: () {
                 Navigator.of(context).push(
@@ -91,7 +91,7 @@ class _TransformationsScreenState extends State<TransformationsScreen> {
               child: Image.asset('assets/image/temp/image$index.png'),
             ),
           ),
-          if (listLenght == 0)
+          if (listLength == 0)
             Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,

@@ -1,9 +1,7 @@
-
-import 'package:forme_app/core/gender.dart';
-import 'package:forme_app/features/trainer_features/add_workout/data/models/workout_files.dart';
+import 'package:image_picker/image_picker.dart';
 
 class WorkoutDataModel {
-  final String? cover;
+  final XFile? cover;
   final String title;
   final int price;
   final bool isOffer;
@@ -11,46 +9,49 @@ class WorkoutDataModel {
   final String sportField;
   final String level;
   final String description;
-  final Gender? gender;
+  final String? gender;
   final int? minAge;
   final int? maxAge;
-  final List<WorkOutFilesModel>? files;
+  //final List<WorkOutFilesModel>? files;
 
-  WorkoutDataModel(
-      {required this.title,
-      this.cover,
-      required this.price,
-      this.isOffer = false,
-      this.offerPrice,
-      required this.sportField,
-      required this.level,
-      required this.description,
-      this.gender,
-      this.minAge,
-      this.maxAge,
-      this.files});
+  WorkoutDataModel({
+    required this.title,
+    this.cover,
+    required this.price,
+    this.isOffer = false,
+    this.offerPrice,
+    required this.sportField,
+    required this.level,
+    required this.description,
+    this.gender,
+    this.minAge,
+    this.maxAge,
+    //this.files
+  });
 
   Map<String, dynamic> toJson() {
     return {
       'title': title,
-      'picture': cover,
+      if (cover != null) 'picture': cover,
       'price': price,
       "is_offer": isOffer,
-      "offer_price": offerPrice ?? 0,
+      if (isOffer) "offer_price": offerPrice,
       "sport_field": sportField,
       "level": level,
       "description": description,
-      "target_gender": gender,
-      "min_age": minAge,
-      "max_age": maxAge,
-      "workout_files": files
+      if (gender != null) "target_gender": gender,
+      if (minAge != null) "min_age": minAge,
+      if (maxAge != null) "max_age": maxAge,
+      "workout_files": [
+        {"title": "string", "details": "string"}
+      ]
     };
   }
 
   factory WorkoutDataModel.fromJson(Map<String, dynamic> json) {
     return WorkoutDataModel(
       title: json["title"],
-      cover: json["picture"],
+      //cover: json["picture"],
       price: json["price"],
       isOffer: json["is_offer"],
       offerPrice: json["offer_price"],
@@ -60,7 +61,7 @@ class WorkoutDataModel {
       gender: json["target_gender"],
       minAge: json["min_age"],
       maxAge: json["max_age"],
-      files: json["workout_files"],
+      //files: json["workout_files"],
     );
   }
 }

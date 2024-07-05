@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:forme_app/features/trainer_features/add_program/presentation/views/add_program.dart';
 import 'package:forme_app/features/trainer_features/add_workout/presentation/view/upload_file.dart';
+import 'package:forme_app/features/trainer_features/program_details/presentation/view/program_details.dart';
+import 'package:forme_app/features/trainer_features/workout_details/presentation/view/workout_details.dart';
 import '../features/trainer_features/Revenue/presentation/views/revenue_screen.dart';
 import '../features/trainer_features/Trainee_profile/presentation/views/trainee_profile_screen_t.dart';
 import '../features/trainer_features/Trainer_Notification/presentation/views/trainer_notification_screen.dart';
 import '../features/trainer_features/Trainer_Profile/presentation/views/trainer_profile_screen.dart';
 import '../features/trainer_features/Transformations/presentation/view/Transformations_screen.dart';
 import '../features/trainer_features/Transformations/presentation/view/screens/add_transformation.dart';
-import '../features/trainer_features/add_program/presentation/views/add_program_screen.dart';
 import '../features/trainer_features/add_workout/presentation/view/add_workout.dart';
 import '../features/trainer_features/client_list/presentation/views/client_list_screen.dart';
 import '../features/trainer_features/complete_profile_trainer/presentation/views/trainer_complete_profile.dart';
@@ -42,8 +44,12 @@ class TrainerRoutes {
           builder: (context) => const TrainerCompleteProfile(),
         );
       case MyServicesScreen.routeName:
+        final List<dynamic> args = settings.arguments as List<dynamic>;
+        final int index = args[0] as int;
         return MaterialPageRoute(
-          builder: (context) => const MyServicesScreen(),
+          builder: (context) => MyServicesScreen(
+            initialIndex: index,
+          ),
         );
       case AddProgramScreen.routeName:
         return MaterialPageRoute(
@@ -92,6 +98,14 @@ class TrainerRoutes {
       case AddWorkoutScreen.routeName:
         return MaterialPageRoute(
           builder: (context) => const AddWorkoutScreen(),
+        );
+      case WorkoutDetails.routeName:
+        return MaterialPageRoute(
+          builder: (context) => const WorkoutDetails(),
+        );
+      case ProgramDetails.routeName:
+        return MaterialPageRoute(
+          builder: (context) => const ProgramDetails(),
         );
       case UploadFile.routeName:
         return MaterialPageRoute(

@@ -11,6 +11,7 @@ import 'package:forme_app/core/widgets/import_media.dart';
 import 'package:forme_app/core/widgets/text_area.dart';
 import 'package:forme_app/features/trainer_features/add_program/presentation/views/sections/select_gender_section.dart';
 import 'package:forme_app/features/trainer_features/add_program/presentation/views/sections/target_age_section.dart';
+import 'package:forme_app/features/trainer_features/add_program/presentation/views/widgets/gender_chech_button.dart';
 import 'package:forme_app/features/trainer_features/add_workout/presentation/view/upload_file.dart';
 
 class AddWorkoutBody extends StatefulWidget {
@@ -21,20 +22,24 @@ class AddWorkoutBody extends StatefulWidget {
       required this.titleController,
       required this.priceController,
       this.offerPriceController,
-      required this.minAgeController,
-      required this.maxAgeController,
+      this.maxClientsController,
+      this.minAgeController,
+      this.maxAgeController,
       required this.isOffer,
-      required this.descriptionController,
-      this.vedios});
+      this.descriptionController,
+      this.vedios,
+      required this.genderNotifier});
   final TextEditingController titleController;
   final TextEditingController priceController;
   final ValueChanged<bool> isOffer;
   final TextEditingController? offerPriceController;
-  final TextEditingController minAgeController;
-  final TextEditingController maxAgeController;
+  final TextEditingController? minAgeController;
+  final TextEditingController? maxAgeController;
+  final TextEditingController? maxClientsController;
   final ValueNotifier<String?> sportFieldNotifier;
   final ValueNotifier<String?> levelNotifier;
-  final TextEditingController descriptionController;
+  final TextEditingController? descriptionController;
+  final void Function(String) genderNotifier;
   final List<VideoDetails>? vedios;
   @override
   State<AddWorkoutBody> createState() => _AddWorkoutBodyState();
@@ -42,6 +47,7 @@ class AddWorkoutBody extends StatefulWidget {
 
 class _AddWorkoutBodyState extends State<AddWorkoutBody> {
   bool _isChecked = false;
+  String? gender;
   List<VideoDetails>? vedios;
   List<int> files = List<int>.generate(1, (int index) => index);
   final List<String> level = [
@@ -88,6 +94,12 @@ class _AddWorkoutBodyState extends State<AddWorkoutBody> {
           hintText: 'Type here',
           hintStyle: TextStyles.hintStyle,
           controller: widget.titleController,
+          validator: (String? value) {
+            if (value == null || value.isEmpty) {
+              return 'Workout title is required';
+            }
+            return null;
+          },
         ),
         SizedBox(
           height: 16.h,
@@ -102,6 +114,12 @@ class _AddWorkoutBodyState extends State<AddWorkoutBody> {
                 keyboardType: TextInputType.number,
                 hintStyle: TextStyles.hintStyle,
                 controller: widget.priceController,
+                validator: (String? value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Workout price is required';
+                  }
+                  return null;
+                },
               ),
             ),
             Column(
@@ -145,6 +163,14 @@ class _AddWorkoutBodyState extends State<AddWorkoutBody> {
                       keyboardType: TextInputType.number,
                       hintStyle: TextStyles.hintStyle,
                       controller: widget.offerPriceController,
+                      validator: _isChecked
+                          ? (String? value) {
+                              if (value == null || value.isEmpty) {
+                                return 'offer price is required';
+                              }
+                              return null;
+                            }
+                          : null,
                     ),
                   ),
                   SizedBox(
@@ -157,6 +183,7 @@ class _AddWorkoutBodyState extends State<AddWorkoutBody> {
                       titleColor: AppColors.n400,
                       hintText: '0.0',
                       keyboardType: TextInputType.number,
+                      controller: widget.maxClientsController,
                       hintStyle: TextStyles.hintStyle,
                     ),
                   ),
@@ -213,14 +240,15 @@ class _AddWorkoutBodyState extends State<AddWorkoutBody> {
         SizedBox(
           height: 8.h,
         ),
-        //GenderSelectionWidget(),
+        SelectGenderSection(onTap: widget.genderNotifier),
+
         const Divider(
           thickness: 1,
           color: AppColors.n40Gray,
         ),
         TargetAgeSection(
-          firstController: widget.minAgeController,
-          secondController: widget.maxAgeController,
+          firstController: widget.minAgeController ?? TextEditingController(),
+          secondController: widget.maxAgeController ?? TextEditingController(),
         ),
         const Divider(
           thickness: 1,
