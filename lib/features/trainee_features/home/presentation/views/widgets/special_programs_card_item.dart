@@ -22,6 +22,7 @@ class SpecialProgramsCardItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print(" you image  is ${trainerProfileProgram.programs![0].picture}");
     return Wrap(
       children: [
         Container(
@@ -52,7 +53,8 @@ class SpecialProgramsCardItem extends StatelessWidget {
                 clipBehavior: Clip.none,
                 children: [
                   ListCardImage(
-                    imageUrl: 'https://the18.com/sites/default/files/GettyImages-83034798.jpg',
+                    isAssetsImage: false,
+                    imageUrl: trainerProfileProgram.programs![0].picture,
                     leftPaddingIcon: 154,
                     height: size.height / 3.75 / 2,
                     width: size.width,

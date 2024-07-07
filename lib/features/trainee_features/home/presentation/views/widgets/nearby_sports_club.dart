@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../../../../../core/test_models/top_trainers_model.dart';
 import 'nearby_sports_club_item.dart';
 
 class NearbySpotsClub extends StatelessWidget {
@@ -16,9 +17,12 @@ class NearbySpotsClub extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return SliverList.builder(
       itemBuilder: (context, index) {
-        return VerticalCardItem(size: size);
+        return VerticalCardItem(
+          size: size,
+          topTrainersModel: topTrainersData[index],
+        );
       },
-      itemCount: 50,
+      itemCount: topTrainersData.length,
     );
   }
 }

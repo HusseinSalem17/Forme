@@ -6,6 +6,7 @@ import '../../../../../../core/transitions/search_transition.dart';
 import '../../../../../../core/utils/app_colors.dart';
 import '../../../../../../core/utils/icons_image_pathes.dart';
 import '../../../../../../core/utils/text_styles.dart';
+import '../custom_home_search_screen.dart';
 import 'new_searcj.dart';
 
 class CustomSearchWidget extends StatelessWidget {
@@ -17,11 +18,9 @@ class CustomSearchWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Navigator.push(
-          context,
-          SearchTransition(
-            const SearchFieldSample(),
-          ),
+        showSearch(
+          context: context,
+          delegate: CustomSearchHomeScreen(),
         );
       },
       child: Container(

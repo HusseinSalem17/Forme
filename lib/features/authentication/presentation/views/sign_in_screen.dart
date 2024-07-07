@@ -23,8 +23,14 @@ import '../../../../core/widgets/app_fields/custom_password_form_field.dart';
 import '../../../../core/widgets/app_fields/custom_text_form_field.dart';
 import '../../../../core/widgets/loader.dart';
 
+import '../../../../local_storage_data/auth_local/user_type.dart';
+import '../../../trainer_features/dashboard/presentation/views/home_view.dart';
 import '../manager/auth_bloc.dart';
 import 'forgot_password_screen.dart';
+
+import 'dart:async';
+
+// Other imports...
 
 class SignInScreen extends StatefulWidget {
   static const routeName = '/trainee/singing-screen';
@@ -39,6 +45,11 @@ class _SignInScreenState extends State<SignInScreen> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   late TextEditingController emailController;
   late TextEditingController passwordController;
+
+  Future<UserType> getType() async {
+    UserType? userType = await RegistrationDataLocal.getUserType();
+    return userType!;
+  }
 
   UserType selectedUserType = UserType.trainee;
 
@@ -71,14 +82,23 @@ class _SignInScreenState extends State<SignInScreen> {
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24),
         child: BlocConsumer<AuthBloc, AuthState>(
-          listener: (context, state) {
+          listener: (context, state) async {
             if (state is SignInSuccess) {
-              // Navigate to PreferencesScreen on successful authentication
-              Navigator.of(context).push(
-                PageSlideTransition(
-                  const TraineeHomeScreenBottomNav(),
-                ),
-              );
+              // Await the user type and navigate accordingly
+              UserType userType = await getType();
+              if (userType == UserType.trainee) {
+                Navigator.of(context).pushReplacement(
+                  PageSlideTransition(
+                    const TraineeHomeScreenBottomNav(),
+                  ),
+                );
+              } else {
+                Navigator.of(context).pushReplacement(
+                  PageSlideTransition(
+                    const TrainerHomeScreen(),
+                  ),
+                );
+              }
             } else if (state is SignInFailure) {
               customSnackBar(context, state.errMsg);
             }
@@ -165,12 +185,12 @@ class _SignInScreenState extends State<SignInScreen> {
                       onPressed: () {
                         if (_formKey.currentState!.validate()) {
                           context.read<AuthBloc>().add(
-                                LoginEvent(
-                                  email: emailController.text,
-                                  password: passwordController.text,
-                                  userType: selectedUserType,
-                                ),
-                              );
+                            LoginEvent(
+                              email: emailController.text,
+                              password: passwordController.text,
+                              userType: selectedUserType,
+                            ),
+                          );
                         }
                       },
                     ),

@@ -10,11 +10,12 @@ class ListCardImage extends StatelessWidget {
     this.bottomPadding = 8,
     this.leftPaddingIcon = 140,
     this.topPaddingIcon = 5,
-    required this.imageUrl,
+    required this.imageUrl, required this.isAssetsImage,
   });
 
   final double height, width, bottomPadding, topPaddingIcon, leftPaddingIcon;
   final String imageUrl;
+  final bool isAssetsImage;
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +28,10 @@ class ListCardImage extends StatelessWidget {
             width: width, //size.width / 2,
             child: ClipRRect(
               borderRadius: BorderRadius.circular(4),
-              child: Image.network(
+              child:isAssetsImage? Image.asset(
+                imageUrl,
+                fit: BoxFit.cover,
+              ):Image.network(
                 imageUrl,
                 fit: BoxFit.cover,
               ),

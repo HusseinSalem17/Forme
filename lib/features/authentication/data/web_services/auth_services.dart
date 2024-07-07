@@ -32,18 +32,27 @@ class AuthServices {
         userType: userType,
       );
 
+      print(request.toJson()); // Verify the request payload
+
       Response response = await dio.post(
         '${SecretsApiKeys.baseUrl}/auth/request-otp/',
         options: Options(
           headers: {
-            'Content-Type': 'application/json', // Set the content type header
+            'Content-Type': 'application/json',
           },
         ),
         data: request.toJson(),
       );
+      print(response.statusCode);
+      print(response.data); // Print the response data
 
       return OtpResponseSuccessfulModel.fromJson(response.data);
     } catch (error) {
+      if (error is DioException) {
+        print('DioError: ${error.response?.data}');
+      } else {
+        print('Error: $error');
+      }
       throw CustomError(
         ServerErrorHandler.handleError(
             error, 'Error occurred while requesting OTP'),

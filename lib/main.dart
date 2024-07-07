@@ -1,10 +1,12 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_gemini/flutter_gemini.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:forme_app/core/api/dio_consumer.dart';
 import 'package:forme_app/core/utils/app_theme.dart';
 import 'package:forme_app/features/Authentication/presentation/manager/auth_bloc.dart';
+import 'package:forme_app/features/trainee_features/home/presentation/manager/bloc/featured_workouts_bloc/featured_workouts_bloc.dart';
 import 'package:forme_app/features/trainee_features/home/presentation/manager/bloc/special_programs_bloc/special_programs_bloc.dart';
 
 import 'package:forme_app/features/trainer_features/Trainer_Profile/presentation/manager/my_profile_cubit/cubit/my_profile_cubit.dart';
@@ -21,6 +23,7 @@ import 'package:forme_app/onboarding_screens/data/bloc/onboarding_blocs.dart';
 import 'package:flutter/services.dart';
 import 'app_routing/auth_routes.dart';
 import 'app_routing/main_route.dart';
+import 'core/secrets_api_keys/secrets_api_keys.dart';
 import 'core/user_type.dart';
 import 'core/utils/functions/service_locator.dart';
 import 'core/utils/scroll_behavior.dart';
@@ -33,6 +36,7 @@ import 'local_storage_data/auth_local/user_type.dart';
 void main() async {
   setupServiceLocator();
   setupLocator();
+  Gemini.init(apiKey: SecretsApiKeys.geminiApiKey);
   WidgetsFlutterBinding.ensureInitialized();
   // Retrieve the saved user type from local storage
   UserType? initialUserType = await RegistrationDataLocal.getUserType();
@@ -91,6 +95,9 @@ class MyApp extends StatelessWidget {
 
           BlocProvider(
             create: (_) => serviceLocator<SpecialProgramsBloc>(),
+          ),
+          BlocProvider(
+            create: (_) => serviceLocator<FeaturedWorkoutsBloc>(),
           ),
           BlocProvider(
             create: (context) => TrainerHomeBloc(),

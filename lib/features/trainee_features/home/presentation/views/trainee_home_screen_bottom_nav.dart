@@ -7,6 +7,9 @@ import 'package:forme_app/features/trainee_features/home/presentation/views/widg
 import 'package:forme_app/features/trainee_features/maps_feature/presentation/views/map_screen.dart';
 import 'package:forme_app/features/trainee_features/profile/presentation/views/profile_screen.dart';
 
+import '../../../chatbot/presentation/views/chat_with_gemini_screen.dart';
+import '../../../maps_feature/presentation/views/widgets/custom_google_map_2.dart';
+
 class TraineeHomeScreenBottomNav extends StatefulWidget {
   static const routeName = '/home-screen';
 
@@ -19,9 +22,12 @@ class TraineeHomeScreenBottomNav extends StatefulWidget {
 class _TraineeHomeScreenBottomNavState extends State<TraineeHomeScreenBottomNav> {
   final List<Widget> _pages = [
     const SafeArea(child: TraineeHomeScreen()),
-    const SafeArea(child: MapScreen()),
+    const SafeArea(child: CustomGoogleMap()),
     const SafeArea(child: FavoriteScreen()),
-    const SafeArea(child: Center(child: Text('4'))),
+    const SafeArea(child: Scaffold(
+      body: Center(child: Text('Future Feature...'),),
+    )),
+    
     const SafeArea(child: ProfileScreen()),
   ];
 

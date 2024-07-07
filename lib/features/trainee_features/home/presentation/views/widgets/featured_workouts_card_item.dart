@@ -5,6 +5,7 @@ import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/icons_image_pathes.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
 import '../../../../../../core/test_models/top_trainers_model.dart';
+import '../../../data/models/featured_workout_model.dart';
 import 'list_card_image.dart';
 import 'featured_card_review.dart';
 
@@ -12,9 +13,11 @@ class FeaturedWorkoutsCardItem extends StatelessWidget {
   const FeaturedWorkoutsCardItem({
     super.key,
     required this.size,
+    required this.featuredWorkoutData,
   });
 
   final Size size;
+  final FeaturedWorkoutModel featuredWorkoutData;
 
   @override
   Widget build(BuildContext context) {
@@ -48,22 +51,24 @@ class FeaturedWorkoutsCardItem extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 ListCardImage(
-                  imageUrl: topTrainersData[5].imageUrl,
+                  isAssetsImage: false,
+                  imageUrl: featuredWorkoutData.workouts.picture!,
                   height: size.height / 3.75 / 2,
                   width: size.width / 2,
                 ),
                 const FeaturedCardReview(),
                 Text(
-                  'Tennis',
-                  style:
-                      TextStyles.smallBold.copyWith(color: AppColors.n900Black),
+                  featuredWorkoutData.workouts.title,
+                  style: TextStyles.smallBold.copyWith(
+                    color: AppColors.n900Black,
+                  ),
                 ),
                 Row(
                   children: [
                     SvgPicture.asset(personIcon),
                     const SizedBox(width: 6),
                     Text(
-                      'Kareem Muhamed',
+                      featuredWorkoutData.user.username,
                       style: TextStyles.cardTextStyle.copyWith(
                         color: AppColors.n200Gray,
                         fontSize: 11,
@@ -72,7 +77,7 @@ class FeaturedWorkoutsCardItem extends StatelessWidget {
                   ],
                 ),
                 Text(
-                  'E£ 150.30 ',
+                  featuredWorkoutData.workouts.price,
                   style: TextStyles.cardTextStyle.copyWith(
                     fontSize: 12,
                     fontWeight: FontWeight.w600,

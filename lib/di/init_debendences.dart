@@ -1,3 +1,4 @@
+import 'package:forme_app/features/trainee_features/home/presentation/manager/bloc/featured_workouts_bloc/featured_workouts_bloc.dart';
 import 'package:forme_app/features/trainee_features/home/presentation/manager/bloc/special_programs_bloc/special_programs_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:forme_app/core/api_services/api_services.dart';
@@ -38,6 +39,11 @@ void setupLocator() {
   // Register Bloc for SpecialPrograms
   serviceLocator.registerFactory(
     () => SpecialProgramsBloc(
+      homeRepo: serviceLocator<HomeRepo>(),
+    ),
+  );
+  serviceLocator.registerFactory(
+    () => FeaturedWorkoutsBloc(
       homeRepo: serviceLocator<HomeRepo>(),
     ),
   );

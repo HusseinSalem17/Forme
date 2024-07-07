@@ -1,5 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:forme_app/core/errors/exceptions.dart';
+import 'package:forme_app/features/trainee_features/home/data/models/featured_workout_model.dart';
 import 'package:forme_app/features/trainee_features/home/data/models/trainer_profile_model.dart';
 import 'package:forme_app/features/trainee_features/home/data/repos/home_repo.dart';
 import 'package:forme_app/features/trainee_features/home/data/web_services/home_services.dart';
@@ -41,6 +42,23 @@ class HomeRepoImplementation extends HomeRepo {
           ServerErrorHandler.handleError(
             e,
             'Error occurred while get top special programs',
+          ),
+        ),
+      );
+    }
+  }
+
+  @override
+  Future<Either<CustomError, List<FeaturedWorkoutModel>>> getFeaturedWorkouts() async{
+    try {
+      final response = await homeServices.getFeaturedWorkout();
+      return right(response);
+    } catch (e) {
+      return left(
+        CustomError(
+          ServerErrorHandler.handleError(
+            e,
+            'Error occurred while get top featured workouts',
           ),
         ),
       );
