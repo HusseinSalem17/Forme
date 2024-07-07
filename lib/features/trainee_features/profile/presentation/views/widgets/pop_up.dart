@@ -5,6 +5,10 @@ import 'package:forme_app/core/utils/text_styles.dart';
 import 'package:forme_app/core/widgets/custom_app_button.dart';
 import 'package:forme_app/core/widgets/second_custom_app_button.dart';
 
+import '../../../../../../local_storage_data/auth_local/tokens.dart';
+import '../../../../../../local_storage_data/auth_local/user_type.dart';
+import '../../../../../Authentication/presentation/views/sign_in_screen.dart';
+
 Future<dynamic> popUp(
     BuildContext context, String title, String text, String buttonTitle) {
   return showModalBottomSheet(
@@ -44,20 +48,27 @@ Future<dynamic> popUp(
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    SecondCustomAppButton(
-                      title: 'Cancel',
-                      widthDivider: 2.2,
+                    // SecondCustomAppButton(
+                    //   title: 'Cancel',
+                    //   widthDivider: 2.2,
+                    //   onTap: () {
+                    //     Navigator.pop(context);
+                    //   },
+                    // ),
+                    InkWell(
                       onTap: () {
-                        Navigator.pop(context);
+                        RegistrationDataLocal.clearUserType();
+                        UserTokenLocal.clearTokens();
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>SignInScreen()));
                       },
-                    ),
-                    CustomAppButton(
-                      title: buttonTitle,
-                      widthDivider: 2.2,
-                      color: AppColors.d300Danger,
-                      height: 40,
-                      fontSize: 14,
-                      padding: 0,
+                      child: CustomAppButton(
+                        title: buttonTitle,
+                        widthDivider: 2.2,
+                        color: AppColors.d300Danger,
+                        height: 30,
+                        fontSize: 14,
+                        padding: 0,
+                      ),
                     ),
                   ],
                 ),

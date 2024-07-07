@@ -24,7 +24,10 @@ class _TraineeHomeScreenBottomNavState extends State<TraineeHomeScreenBottomNav>
     const SafeArea(child: TraineeHomeScreen()),
     const SafeArea(child: CustomGoogleMap()),
     const SafeArea(child: FavoriteScreen()),
-    const ChatWithGeminiScreen(),
+    const SafeArea(child: Scaffold(
+      body: Center(child: Text('Future Feature...'),),
+    )),
+    
     const SafeArea(child: ProfileScreen()),
   ];
 

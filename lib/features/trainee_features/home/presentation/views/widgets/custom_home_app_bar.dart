@@ -7,6 +7,7 @@ import '../../../../../../core/utils/icons_image_pathes.dart';
 import '../../../../../../core/utils/text_styles.dart';
 import '../../../../../../local_storage_data/auth_local/tokens.dart';
 import '../../../../../../local_storage_data/auth_local/user_type.dart';
+import '../../../../chatbot/presentation/views/chat_with_gemini_screen.dart';
 import 'custom_search_widget.dart';
 import 'map_popup_menu.dart';
 
@@ -25,11 +26,27 @@ class CustomHomeAppBar extends StatelessWidget {
       leadingWidth: 180.w,
       toolbarHeight: 60.h,
       actions: [
-        GestureDetector(
+        InkWell(
           onTap: () {
-            RegistrationDataLocal.clearUserType();
-            UserTokenLocal.clearTokens();
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) => ChatWithGeminiScreen(),
+              ),
+            );
           },
+          child: SvgPicture.asset(
+            'assets/image/chatai.svg',
+            height: 18.h,
+            colorFilter: const ColorFilter.mode(
+              Colors.black,
+              BlendMode.srcIn,
+            ),
+          ),
+        ),
+        const SizedBox(
+          width: 11,
+        ),
+        GestureDetector(
           child: Container(
             margin: const EdgeInsets.only(right: 24),
             child: SvgPicture.asset(alarmIcon),

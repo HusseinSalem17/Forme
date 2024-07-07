@@ -35,7 +35,7 @@ class _CustomAppButtonState extends State<CustomAppButton> {
       child: SizedBox(
         child: Container(
           height: widget.height.h,
-          width: MediaQuery.sizeOf(context).width / widget.widthDivider,
+          width: MediaQuery.sizeOf(context).width / 2,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(40.dg),
             color: widget.color,

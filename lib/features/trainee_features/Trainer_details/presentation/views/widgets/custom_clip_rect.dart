@@ -7,7 +7,7 @@ class CustomClipRect extends StatelessWidget {
   final double width;
   const CustomClipRect({
     super.key,
-    this.imagePath = 'assets/image/m.jpg',
+    this.imagePath = 'assets/image/youssef.jpg',
     this.height = 48,
     this.width = 48,
   });

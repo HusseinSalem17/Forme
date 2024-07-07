@@ -21,6 +21,7 @@ class _ChatWithGeminiScreenState extends State<ChatWithGeminiScreen> {
     firstName: 'Kareem',
   );
   ChatUser geminiUser = ChatUser(
+    profileImage: 'https://static.vecteezy.com/system/resources/previews/022/479/092/non_2x/system-artificial-intelligence-chatgpt-chat-bot-ai-technology-smart-robot-ai-chat-gpt-application-software-free-photo.jpg',
     id: '1',
     firstName: 'Assistant',
   );
@@ -31,7 +32,7 @@ class _ChatWithGeminiScreenState extends State<ChatWithGeminiScreen> {
       appBar: AppBar(
         centerTitle: true,
         title: const Text(
-          'Gemini Chat',
+          'Forme Chat',
         ),
       ),
       body: _buildUI(),

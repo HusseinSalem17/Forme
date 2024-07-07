@@ -5,7 +5,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/functions/validators.dart';
 import 'package:forme_app/features/trainee_features/join_program_feature/formatters/add_new_card_formatters.dart';
-
 import '../../../../../../core/widgets/app_fields/custom_text_form_field.dart';
 
 class CustomCreditCard extends StatefulWidget {
@@ -23,6 +22,21 @@ class _CustomCreditCardState extends State<CustomCreditCard> {
   bool showBackView = false;
   String data = '';
   final GlobalKey<FormState> formKey = GlobalKey();
+
+  // Controllers for each text field
+  final TextEditingController cardHolderController = TextEditingController();
+  final TextEditingController cardNumberController = TextEditingController();
+  final TextEditingController expiryDateController = TextEditingController();
+  final TextEditingController cvvController = TextEditingController();
+
+  @override
+  void dispose() {
+    cardHolderController.dispose();
+    cardNumberController.dispose();
+    expiryDateController.dispose();
+    cvvController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +61,7 @@ class _CustomCreditCardState extends State<CustomCreditCard> {
               onCreditCardWidgetChange: (value) {},
             ),
             CustomTextFromField(
-              textEditingController: TextEditingController(),
+              textEditingController: cardHolderController,
               subTitle: 'Card Holder Name',
               hintText: 'Enter Your Name',
               onChange: (val) {
@@ -56,13 +70,13 @@ class _CustomCreditCardState extends State<CustomCreditCard> {
               },
             ),
             CustomTextFromField(
-              textEditingController: TextEditingController(),
+              textEditingController: cardNumberController,
               subTitle: 'Card Number',
               hintText: 'xxxx xxxx xxxx xxxx',
               onChange: (val) {
                 // Remove any non-digit characters from the input
                 val = val.replaceAll(RegExp(r'\D'), '');
-                // Ensure the card number doesn't exceed 14 digits
+                // Ensure the card number doesn't exceed 16 digits
                 if (val.length <= 16) {
                   cardNumber = formatCardNumber(val);
                   setState(() {});
@@ -80,7 +94,7 @@ class _CustomCreditCardState extends State<CustomCreditCard> {
               children: [
                 Expanded(
                   child: CustomTextFromField(
-                    textEditingController: TextEditingController(),
+                    textEditingController: expiryDateController,
                     subTitle: 'Expiry Date',
                     hintText: '02/30',
                     inputFormats: [
@@ -95,7 +109,7 @@ class _CustomCreditCardState extends State<CustomCreditCard> {
                 const SizedBox(width: 16),
                 Expanded(
                   child: CustomTextFromField(
-                    textEditingController: TextEditingController(),
+                    textEditingController: cvvController,
                     subTitle: 'CVV',
                     hintText: '000',
                     onChange: (value) {
@@ -107,11 +121,7 @@ class _CustomCreditCardState extends State<CustomCreditCard> {
                         cvvCode = value;
                         setState(() {
                           // Check if the CVV code has been fully entered
-                          if (value.isNotEmpty) {
-                            showBackView = true;
-                          } else {
-                            showBackView = false;
-                          }
+                          showBackView = value.isNotEmpty;
                         });
                       }
                     },
@@ -126,7 +136,6 @@ class _CustomCreditCardState extends State<CustomCreditCard> {
                       FilteringTextInputFormatter.digitsOnly,
                       LengthLimitingTextInputFormatter(4),
                     ],
-                    // Remove the onSubmit callback
                   ),
                 ),
               ],
@@ -141,12 +150,13 @@ class _CustomCreditCardState extends State<CustomCreditCard> {
               cardHolderName: cardHolderName,
               cvvCode: cvvCode,
               onCreditCardModelChange: (creditCardModelData) {
-                cardNumber = creditCardModelData.cardNumber;
-                expiryDate = creditCardModelData.expiryDate;
-                cardHolderName = creditCardModelData.cardHolderName;
-                cvvCode = creditCardModelData.cvvCode;
-                showBackView = creditCardModelData.isCvvFocused;
-                setState(() {});
+                setState(() {
+                  cardNumber = creditCardModelData.cardNumber;
+                  expiryDate = creditCardModelData.expiryDate;
+                  cardHolderName = creditCardModelData.cardHolderName;
+                  cvvCode = creditCardModelData.cvvCode;
+                  showBackView = creditCardModelData.isCvvFocused;
+                });
               },
               formKey: formKey,
             ),

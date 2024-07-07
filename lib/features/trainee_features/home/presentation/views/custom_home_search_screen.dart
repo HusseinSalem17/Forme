@@ -4,38 +4,44 @@ import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
 
 import '../../../../../core/widgets/custom_app_bar_arrow_button.dart';
+import '../../../Trainer_details/presentation/views/trainer_details_view.dart';
 
 class CustomSearchHomeScreen extends SearchDelegate {
   List<String> searchTerms = [
-    'Jerry Sandusky',
-    'Jim Harbaugh',
-    'Mike Ditka',
-    'Joe Paterno',
-    'Andy Reid',
-    'Marv Levy',
-    'Bobby Bowden',
-    'Jon Gruden',
-    'United States',
-    'Germany',
-    'Washington',
-    'Paris',
-    'Jakarta',
-    'Australia',
-    'India',
-    'Czech Republic',
-    'Lorem Ipsum',
-    'United States',
-    'Germany',
-    'Washington',
-    'Paris',
-    'Jakarta',
-    'Australia',
-    'United States',
-    'Germany',
-    'Washington',
-    'Paris',
-    'Jakarta',
-    'Australia',
+    'Ahmad Ramy',
+    'kareem',
+    'saad',
+    'marwan',
+    'islam',
+    'hassan',
+    'Gold\'s Gym',
+    '24 Hour Fitness',
+    'Planet Fitness',
+    'Anytime Fitness',
+    'Equinox',
+    'LA Fitness',
+    'Snap Fitness',
+    'Crunch Fitness',
+    'YMCA',
+    'Life Time',
+    'Orangetheory Fitness',
+    'PureGym',
+    'Blink Fitness',
+    'Retro Fitness',
+    'World Gym',
+    'GoodLife Fitness',
+    'Virgin Active',
+    'F45 Training',
+    'Fitness First',
+    'Barry\'s Bootcamp',
+    'The Little Gym',
+    'SoulCycle',
+    'UFC Gym',
+    'David Lloyd Clubs',
+    'Fitness Together',
+    'Chuze Fitness',
+    'Fit4Less',
+    'Genesis Health Clubs'
   ];
 
   @override
@@ -124,8 +130,17 @@ class CustomSearchHomeScreen extends SearchDelegate {
       itemCount: matchQuery.length,
       itemBuilder: (context, index) {
         var result = matchQuery[index];
-        return ListTile(
-          title: Text(result),
+        return InkWell(
+          onTap: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) => TrainerDetailsScreen(),
+              ),
+            );
+          },
+          child: ListTile(
+            title: Text(result),
+          ),
         );
       },
     );
@@ -143,8 +158,17 @@ class CustomSearchHomeScreen extends SearchDelegate {
       itemCount: matchQuery.length,
       itemBuilder: (context, index) {
         var result = matchQuery[index];
-        return ListTile(
-          title: Text(result),
+        return InkWell(
+          onTap: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) => const TrainerDetailsScreen(),
+              ),
+            );
+          },
+          child: ListTile(
+            title: Text(result),
+          ),
         );
       },
     );

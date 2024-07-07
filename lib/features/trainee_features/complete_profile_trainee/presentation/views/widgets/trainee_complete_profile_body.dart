@@ -8,7 +8,11 @@ import 'package:image_picker/image_picker.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
 import 'package:forme_app/core/widgets/custom_app_button.dart';
+import '../../../../../../core/transitions/page_slide.dart';
+import '../../../../../../core/utils/show_snackbar.dart';
 import '../../../../../../core/widgets/image_picker/profile_image_picker.dart';
+import '../../../../../../core/widgets/loader.dart';
+import '../../../../home/presentation/views/trainee_home_screen_bottom_nav.dart';
 import '../../../data/models/trainee_complete_profile_data_model.dart';
 import '../../manager/trainee_complete_profile_bloc.dart';
 
@@ -62,6 +66,23 @@ class TraineeCompleteProfileFormState extends State<TraineeCompleteProfileForm> 
 
   @override
   Widget build(BuildContext context) {
+    return BlocConsumer<TraineeCompleteProfileBloc, TraineeCompleteProfileState>(
+  listener: (context, state) {
+    if (state is TraineeCompleteProfileSuccess) {
+
+      Navigator.of(context).pushReplacement(
+        PageSlideTransition(
+          const TraineeHomeScreenBottomNav(),
+        ),
+      );
+    } else if (state is TraineeCompleteProfileFailure) {
+      customSnackBar(context, state.errorMsg);
+    }
+  },
+  builder: (context, state) {
+    if (state is TraineeCompleteProfileLoading) {
+      return const Loader();
+    }
     return Form(
       key: _formKey,
       child: ListView(
@@ -120,11 +141,6 @@ class TraineeCompleteProfileFormState extends State<TraineeCompleteProfileForm> 
             title: 'Complete Profile',
             onTap: () {
               if (_formKey.currentState!.validate()) {
-                print(fullNameController.text);
-                print(genderNotifier.value);
-                print(countryNotifier.value);
-                print(phoneNumberController.fullPhoneNumber);
-
                 TraineeCompleteProfileDataModel data = TraineeCompleteProfileDataModel(
                   username: fullNameController.text,
                   country: countryNotifier.value!,
@@ -140,5 +156,7 @@ class TraineeCompleteProfileFormState extends State<TraineeCompleteProfileForm> 
         ],
       ),
     );
+  },
+);
   }
 }

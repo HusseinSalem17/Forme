@@ -7,6 +7,7 @@ import 'package:forme_app/features/trainee_features/payment/presentation/view/wi
 
 class PaymentMethodsScreen extends StatefulWidget {
   static const routeName = '/payment-method-screen';
+
   const PaymentMethodsScreen({Key? key}) : super(key: key);
 
   @override
@@ -26,8 +27,11 @@ class _PaymentMethodsScreenState extends State<PaymentMethodsScreen> {
             child: ButtonContainer(
               buttonTitle: 'Continue',
               onTap: () {
-                Navigator.of(context)
-                    .push(PageSlideTransition(const ReviewSummaryScreen()));
+                Navigator.of(context).push(
+                  PageSlideTransition(
+                    const ReviewSummaryScreen(),
+                  ),
+                );
               },
             ),
           )

@@ -8,8 +8,11 @@ import 'package:forme_app/features/trainee_features/workout_detail/presentation/
 import 'package:forme_app/features/trainee_features/workout_detail/presentation/views/sections/workout_review_tab.dart';
 import 'package:forme_app/features/trainee_features/workout_detail/presentation/views/sections/workout_tab.dart';
 
+import '../../../payment/presentation/view/payment_methods_screen.dart';
+
 class WorkOutDetail extends StatefulWidget {
   static const routeName = '/Workout-details-screen';
+
   const WorkOutDetail({super.key});
 
   @override
@@ -65,11 +68,18 @@ class _WorkOutDetailState extends State<WorkOutDetail> {
                     ],
                   ),
                 ),
-                const Align(
+                Align(
                   alignment: Alignment.bottomCenter,
-                  child: ButtonContainer(
-                    buttonTitle: 'Book Now',
-                    havePrice: true,
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const PaymentMethodsScreen(),
+                      ));
+                    },
+                    child: const ButtonContainer(
+                      buttonTitle: 'Book Now',
+                      havePrice: true,
+                    ),
                   ),
                 )
               ],

@@ -6,6 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:forme_app/core/api/dio_consumer.dart';
 import 'package:forme_app/core/utils/app_theme.dart';
 import 'package:forme_app/features/Authentication/presentation/manager/auth_bloc.dart';
+import 'package:forme_app/features/trainee_features/home/presentation/manager/bloc/featured_workouts_bloc/featured_workouts_bloc.dart';
 import 'package:forme_app/features/trainee_features/home/presentation/manager/bloc/special_programs_bloc/special_programs_bloc.dart';
 
 import 'package:forme_app/features/trainer_features/Trainer_Profile/presentation/manager/my_profile_cubit/cubit/my_profile_cubit.dart';
@@ -94,6 +95,9 @@ class MyApp extends StatelessWidget {
 
           BlocProvider(
             create: (_) => serviceLocator<SpecialProgramsBloc>(),
+          ),
+          BlocProvider(
+            create: (_) => serviceLocator<FeaturedWorkoutsBloc>(),
           ),
           BlocProvider(
             create: (context) => TrainerHomeBloc(),

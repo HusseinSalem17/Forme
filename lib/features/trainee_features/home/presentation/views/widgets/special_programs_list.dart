@@ -5,7 +5,6 @@ import 'package:forme_app/features/trainee_features/home/presentation/manager/bl
 import 'package:forme_app/features/trainee_features/home/presentation/views/widgets/special_programs_card_item.dart';
 import 'package:forme_app/features/trainee_features/workout_detail/presentation/views/workout_detail.dart';
 
-
 class SpecialProgramsList extends StatelessWidget {
   const SpecialProgramsList({Key? key}) : super(key: key);
 
@@ -47,11 +46,7 @@ class SpecialProgramsList extends StatelessWidget {
           } else if (state is GetSpecialProgramsFailure) {
             return Text('Error: ${state.errorMsg}');
           }
-          return Container(
-            height: 200,
-            width: 200,
-            color: Colors.red,
-          );
+          return Container();
         },
       ),
     );

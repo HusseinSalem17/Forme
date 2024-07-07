@@ -1,5 +1,6 @@
 import 'package:forme_app/core/api_services/api_services.dart';
 import 'package:forme_app/core/secrets_api_keys/secrets_api_keys.dart';
+import 'package:forme_app/features/trainee_features/home/data/models/featured_workout_model.dart';
 import 'package:forme_app/features/trainee_features/home/data/models/trainer_profile_program_model.dart';
 import '../../../../../core/errors/exceptions.dart';
 import '../../../../../core/errors/server_errors.dart';
@@ -22,11 +23,11 @@ class HomeServices {
       List<TrainerProfile> trainers = data
           .map((trainerJson) => TrainerProfile.fromJson(trainerJson))
           .toList();
-      print(trainers[0].user.profilePicture);
+      // print(trainers[0].user.profilePicture);
 
       return trainers;
     } catch (error) {
-      print(error);
+      // print(error);
       throw CustomError(
         ServerErrorHandler.handleError(
             error, 'Error occurred while get top trainers data'),
@@ -48,10 +49,31 @@ class HomeServices {
 
       return specialPrograms;
     } catch (error) {
-      print(error);
+      // print(error);
       throw CustomError(
         ServerErrorHandler.handleError(
             error, 'Error occurred while get special programs '),
+      );
+    }
+  }
+
+  Future<List<FeaturedWorkoutModel>> getFeaturedWorkout() async {
+    try {
+      final response = await apiServices
+          .get('${SecretsApiKeys.baseUrl}/trainings/workouts-home/');
+
+      List<dynamic> data = response.data;
+
+      List<FeaturedWorkoutModel> specialPrograms = data
+          .map((trainerJson) => FeaturedWorkoutModel.fromJson(trainerJson))
+          .toList();
+
+      return specialPrograms;
+    } catch (error) {
+       print(error);
+      throw CustomError(
+        ServerErrorHandler.handleError(
+            error, 'Error occurred while get featured workouts '),
       );
     }
   }

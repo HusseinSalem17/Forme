@@ -13,64 +13,25 @@ class TopTrainersModel {
 List<TopTrainersModel> topTrainersData = [
   TopTrainersModel(
     name: 'andro',
-    imageUrl: 'assets/image/andro.jpg',
+    imageUrl: 'assets/image/1 (1).jpg',
     isExpert: true,
   ),
   TopTrainersModel(
     name: 'informa',
-    imageUrl: 'assets/image/informa.jpg',
+    imageUrl: 'assets/image/1 (2).jpg',
     isExpert: false,
   ),
   TopTrainersModel(
     name: 'momen',
-    imageUrl: 'assets/image/momen.jpg',
+    imageUrl: 'assets/image/1 (3).jpg',
     isExpert: true,
   ),
   TopTrainersModel(
     name: 'Mo Salah',
-    imageUrl: 'assets/image/m.jpg',
+    imageUrl: 'assets/image/1 (4).jpg',
     isExpert: false,
-  ),
-  TopTrainersModel(
-    name: 'Cristiano',
-    imageUrl: 'assets/image/th.jpg',
-    isExpert: true,
   ),
 
-  TopTrainersModel(
-    name: 'youssef',
-    imageUrl: 'assets/image/youssef.jpg',
-    isExpert: false,
-  ),
-  TopTrainersModel(
-    name: 'Mo Salah',
-    imageUrl: 'assets/image/m.jpg',
-    isExpert: true,
-  ),
-  TopTrainersModel(
-    name: 'Cristiano',
-    imageUrl: 'assets/image/th.jpg',
-    isExpert: true,
-  ),
-  TopTrainersModel(
-    name: 'andro',
-    imageUrl: 'assets/image/andro.jpg',
-    isExpert: false,
-  ),
-  TopTrainersModel(
-    name: 'informa',
-    imageUrl: 'assets/image/informa.jpg',
-    isExpert: false,
-  ),
-  TopTrainersModel(
-    name: 'momen',
-    imageUrl: 'assets/image/momen.jpg',
-    isExpert: true,
-  ),
-  TopTrainersModel(
-    name: 'youssef',
-    imageUrl: 'assets/image/youssef.jpg',
-    isExpert: false,
-  ),
+
   // Add more trainers as needed with isExpert set to true or false
 ];

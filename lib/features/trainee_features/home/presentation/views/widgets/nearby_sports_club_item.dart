@@ -14,9 +14,11 @@ class VerticalCardItem extends StatelessWidget {
   const VerticalCardItem({
     super.key,
     required this.size,
+    required this.topTrainersModel,
   });
 
   final Size size;
+  final TopTrainersModel topTrainersModel;
 
   @override
   Widget build(BuildContext context) {
@@ -59,7 +61,8 @@ class VerticalCardItem extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   ListCardImage(
-                    imageUrl: topTrainersData[0].imageUrl,
+                    isAssetsImage: true,
+                    imageUrl: topTrainersModel.imageUrl,
                     height: size.height / 2,
                     width: size.width / 3,
                     bottomPadding: 0,
