@@ -56,15 +56,27 @@ class DashboardScreen extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: [
+              SizedBox(height: 14.h,),
               Row(
                 children: [
-                  CircleAvatar(
-                    radius: 26.r,
-                    backgroundColor: AppColors.n50BackgroundColor,
-                    child: SvgPicture.asset(
-                      "assets/image/Icon/user_avatar.svg",
+                  SizedBox(
+                    width: MediaQuery.sizeOf(context).height / 18,
+                    height: MediaQuery.sizeOf(context).height / 18,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(32.dg),
+                      child: Image.asset(
+                        'assets/image/temp/Frame1.png',
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
+                  // CircleAvatar(
+                  //   radius: 26.dg,
+                  //   backgroundColor: AppColors.n50BackgroundColor,
+                  //   child: Image.asset(
+                  //     "assets/image/temp/Frame1.png",
+                  //   ),
+                  // ),
                   SizedBox(
                     width: 8.w,
                   ),
@@ -76,45 +88,48 @@ class DashboardScreen extends StatelessWidget {
                 ],
               ),
               Padding(
-                padding: EdgeInsets.symmetric(vertical: 24.h),
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: AppColors.n20Gray,
-                    border: Border.all(width: 1.sp, color: AppColors.border30),
-                    borderRadius: BorderRadius.circular(16.dg),
-                  ),
-                  padding: EdgeInsets.all(24.h),
-                  child: Wrap(
-                    spacing: 8.h,
-                    runSpacing: 16.0.h,
-                    crossAxisAlignment: WrapCrossAlignment.start,
-                    children: List<Widget>.generate(
-                      icons.length,
-                      (int index) {
-                        return trainerComponentIcon(
-                            icons[index], titles[index], context, () {
-                          switch (index) {
-                            case 0:
-                              {
-                                BlocProvider.of<TrainerHomeBloc>(context)
-                                    .currentIndex = 1;
-                                Navigator.of(context).push(
-                                    PageSlideTransition(const MyServicesScreen(initialIndex: 0,)));
-                              }
-                            case 1: //Workouts
-                            case 2: //Sessions
-                            case 3: //Club Subscriptions
-                            case 4: //Payment Methods
-                            case 5:
+                padding: EdgeInsets.symmetric(vertical: 14.h),
+
+                child:
+              Container(
+                decoration: BoxDecoration(
+                  color: AppColors.n20Gray,
+                  border: Border.all(width: 1.sp, color: AppColors.border30),
+                  borderRadius: BorderRadius.circular(16.dg),
+                ),
+                padding: EdgeInsets.all(24.h),
+                child: Wrap(
+                  spacing: 8.h,
+                  runSpacing: 16.0.h,
+                  crossAxisAlignment: WrapCrossAlignment.start,
+                  children: List<Widget>.generate(
+                    icons.length,
+                    (int index) {
+                      return trainerComponentIcon(
+                          icons[index], titles[index], context, () {
+                        switch (index) {
+                          case 0:
+                            {
+                              BlocProvider.of<TrainerHomeBloc>(context)
+                                  .currentIndex = 1;
                               Navigator.of(context).push(
-                                  PageSlideTransition(const RevenueScreen()));
-                          }
-                        });
-                      },
-                    ),
+                                  PageSlideTransition(const MyServicesScreen(
+                                initialIndex: 0,
+                              )));
+                            }
+                          case 1: //Workouts
+                          case 2: //Sessions
+                          case 3: //Club Subscriptions
+                          case 4: //Payment Methods
+                          case 5:
+                            Navigator.of(context).push(
+                                PageSlideTransition(const RevenueScreen()));
+                        }
+                      });
+                    },
                   ),
                 ),
-              ),
+              ),),
               Wrap(
                 spacing: 16.h,
                 runSpacing: 16.0.h,

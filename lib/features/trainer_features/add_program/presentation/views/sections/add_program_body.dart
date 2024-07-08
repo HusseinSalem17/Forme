@@ -2,18 +2,15 @@ import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:forme_app/core/transitions/page_slide.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
 import 'package:forme_app/core/widgets/app_drop_list/custom_drop_list.dart';
 import 'package:forme_app/core/widgets/app_fields/custom_text_field.dart';
 import 'package:forme_app/core/widgets/app_fields/program_capacity_field.dart';
-import 'package:forme_app/core/widgets/import_media.dart';
 import 'package:forme_app/core/widgets/text_area.dart';
+import 'package:forme_app/features/trainer_features/add_program/presentation/views/sections/payment_plan_section.dart';
 import 'package:forme_app/features/trainer_features/add_program/presentation/views/sections/select_gender_section.dart';
 import 'package:forme_app/features/trainer_features/add_program/presentation/views/sections/target_age_section.dart';
-import 'package:forme_app/features/trainer_features/add_program/presentation/views/widgets/gender_chech_button.dart';
-import 'package:forme_app/features/trainer_features/add_workout/presentation/view/upload_file.dart';
 
 class AddProgramBody extends StatefulWidget {
   const AddProgramBody(
@@ -22,11 +19,13 @@ class AddProgramBody extends StatefulWidget {
       required this.levelNotifier,
       required this.typeNotifier,
       required this.titleController,
+      this.capacityController,
       this.minAgeController,
       this.maxAgeController,
       this.descriptionController,
       required this.genderNotifier});
   final TextEditingController titleController;
+  final TextEditingController? capacityController;
   final TextEditingController? minAgeController;
   final TextEditingController? maxAgeController;
 
@@ -41,9 +40,7 @@ class AddProgramBody extends StatefulWidget {
 }
 
 class _AddProgramBodyState extends State<AddProgramBody> {
-  bool _isChecked = false;
   String? gender;
-  //List<VideoDetails>? vedios;
   List<int> files = List<int>.generate(1, (int index) => index);
   final List<String> level = [
     'I am just staring',
@@ -103,7 +100,7 @@ class _AddProgramBodyState extends State<AddProgramBody> {
         SizedBox(
           height: 16.h,
         ),
-        const ProgramCapacityField(),
+        ProgramCapacityField(controller: widget.capacityController),
         SizedBox(
           height: 16.h,
         ),
@@ -132,12 +129,7 @@ class _AddProgramBodyState extends State<AddProgramBody> {
                     child: Text(e),
                   ))
               .toList(),
-          validator: (value) {
-            if (value == null) {
-              return 'Please select sport field.';
-            }
-            return null;
-          },
+
           selectedValueNotifier: widget.sportFieldNotifier,
           // onChanged: (value) {
           //   onSportFieldChanged(value ?? '');
@@ -155,12 +147,7 @@ class _AddProgramBodyState extends State<AddProgramBody> {
                     child: Text(e),
                   ))
               .toList(),
-          validator: (value) {
-            if (value == null) {
-              return 'Please select sport field.';
-            }
-            return null;
-          },
+
           selectedValueNotifier: widget.levelNotifier,
           // onChanged: (value) {
           //   onSportFieldChanged(value ?? '');
@@ -202,41 +189,48 @@ class _AddProgramBodyState extends State<AddProgramBody> {
             ],
           ),
         ),
-                  Padding(
-            padding: const EdgeInsets.symmetric(vertical: 10),
-            child: GestureDetector(
-                onTap: () {
-                  // setState(() {
-                  //   paymentItems.add(paymentItems.length + 1);
-                  // });
-                },
-                child: TextButton(
-                  onPressed: () {},
-                  child: DottedBorder(
-                    borderType: BorderType.RRect,
-                    strokeWidth: 2,
-                    radius: Radius.circular(10.dg),
-                    color: AppColors.n40Gray,
-                    padding: const EdgeInsets.all(0),
-                    child: Center(
-                      child: SizedBox(
-                        height: 48.h,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            SvgPicture.asset('assets/image/Icon/add.svg'),
-                            Text(
-                              'Add New Plan',
-                              style: TextStyles.textStyleRegular.copyWith(
-                                  fontSize: 14.sp, color: AppColors.n900Black),
-                            )
-                          ],
-                        ),
+        //   Column(
+        //   children: List<Widget>.generate(paymentItems.length, (int index) {
+        //     return PaymentPlanItem(
+        //       onTap: () {
+        //         setState(() {
+        //           paymentItems.removeAt(index);
+        //         });
+        //       },
+        //     );
+        //   }),
+        // ),
+        Padding(
+          padding: const EdgeInsets.symmetric(vertical: 10),
+          child: GestureDetector(
+              onTap: () {},
+              child: TextButton(
+                onPressed: () {},
+                child: DottedBorder(
+                  borderType: BorderType.RRect,
+                  strokeWidth: 2,
+                  radius: Radius.circular(10.dg),
+                  color: AppColors.n40Gray,
+                  padding: const EdgeInsets.all(0),
+                  child: Center(
+                    child: SizedBox(
+                      height: 48.h,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          SvgPicture.asset('assets/image/Icon/add.svg'),
+                          Text(
+                            'Add New Plan',
+                            style: TextStyles.textStyleRegular.copyWith(
+                                fontSize: 14.sp, color: AppColors.n900Black),
+                          )
+                        ],
                       ),
                     ),
                   ),
-                )),
-          )
+                ),
+              )),
+        )
       ],
     );
   }
@@ -254,38 +248,3 @@ class _AddProgramBodyState extends State<AddProgramBody> {
 //               );
 //             }),
 //           ),
-//           Padding(
-//             padding: const EdgeInsets.symmetric(vertical: 10),
-//             child: GestureDetector(
-//                 onTap: () {
-//                   setState(() {
-//                     paymentItems.add(paymentItems.length + 1);
-//                   });
-//                 },
-//                 child: TextButton(
-//                   onPressed: () {},
-//                   child: DottedBorder(
-//                     borderType: BorderType.RRect,
-//                     strokeWidth: 2,
-//                     radius: Radius.circular(10.dg),
-//                     color: AppColors.n40Gray,
-//                     padding: const EdgeInsets.all(0),
-//                     child: Center(
-//                       child: SizedBox(
-//                         height: 48.h,
-//                         child: Row(
-//                           mainAxisAlignment: MainAxisAlignment.center,
-//                           children: [
-//                             SvgPicture.asset('assets/image/Icon/add.svg'),
-//                             Text(
-//                               'Add New Plan',
-//                               style: TextStyles.textStyleRegular.copyWith(
-//                                   fontSize: 14.sp, color: AppColors.n900Black),
-//                             )
-//                           ],
-//                         ),
-//                       ),
-//                     ),
-//                   ),
-//                 )),
-//           )

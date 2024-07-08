@@ -2,14 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:forme_app/core/utils/app_colors.dart';
-import 'package:forme_app/core/utils/styles.dart';
 import 'package:forme_app/core/utils/text_styles.dart';
 import 'package:forme_app/core/widgets/custom_build_form.dart';
 
 class ProgramCapacityField extends StatelessWidget {
+  final TextEditingController? controller;
+
   const ProgramCapacityField({
-    super.key,
-  });
+    Key? key,
+    this.controller,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,14 +21,12 @@ class ProgramCapacityField extends StatelessWidget {
       optional: true,
       child: TextFormField(
         textAlign: TextAlign.start,
-        //controller: widget.controller,
+        controller: controller,
         autovalidateMode: AutovalidateMode.onUserInteraction,
         cursorColor: AppColors.primaryColor,
-        //enabled: widget.enabled,
         style: TextStyles.textStyleRegular
             .copyWith(fontSize: 14.sp, color: AppColors.n900Black),
         keyboardType: TextInputType.number,
-
         decoration: InputDecoration(
           filled: true,
           fillColor: Colors.white,
@@ -58,6 +58,15 @@ class ProgramCapacityField extends StatelessWidget {
         validator: (value) {
           return null;
         },
+      ),
+    );
+  }
+
+  OutlineInputBorder textFieldBorder({Color color = Colors.grey, double width = 1.0}) {
+    return OutlineInputBorder(
+      borderSide: BorderSide(
+        color: color,
+        width: width,
       ),
     );
   }

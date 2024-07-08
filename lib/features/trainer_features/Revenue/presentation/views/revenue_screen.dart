@@ -74,13 +74,14 @@ class _RevenueScreenState extends State<RevenueScreen>
                 RevenueCard(
                   context: context,
                   title: 'Week',
-                  value: '950.00',
+                  value: '\$ 11,250.00',
                   index: _selectedIndex,
                   spots: const [
                     FlSpot(0, 85),
                     FlSpot(1, 110),
                     FlSpot(2, 90),
                     FlSpot(3, 150),
+                    FlSpot(4, 140),
                   ],
                 ),
                 Padding(
@@ -95,23 +96,39 @@ class _RevenueScreenState extends State<RevenueScreen>
                             color: AppColors.n900Black,
                             height: 3),
                       ),
-                      SizedBox(
-                        height: MediaQuery.sizeOf(context).height / 3,
-                        child: ListView.builder(
-                          scrollDirection: Axis.vertical,
-                          itemCount: 50,
-                          itemBuilder: (context, index) {
-                            return trainerCard(
-                                context,
-                                'Mohamed salah',
-                                'assets/image/m.jpg',
-                                'Beginner',
-                                'Paypal',
-                                '+ E£250.00',
-                                '01:30 PM');
-                          },
-                        ),
-                      )
+                      trainerCard(
+                          context,
+                          'Irvin Farrell',
+                          'assets/image/m.jpg',
+                          'Beginner',
+                          'Paypal',
+                          '+ E£250.00',
+                          '01:30 PM'),
+                      trainerCard(
+                          context,
+                          'Ana Glover',
+                          'assets/image/temp/Ellipse 8.png',
+                          'Intermediate',
+                          'Paypal',
+                          '+ E£450.00',
+                          '02:30 PM'),
+                      // SizedBox(
+                      //   height: MediaQuery.sizeOf(context).height / 3,
+                      //   child: ListView.builder(
+                      //     scrollDirection: Axis.vertical,
+                      //     itemCount: 50,
+                      //     itemBuilder: (context, index) {
+                      //       return trainerCard(
+                      //           context,
+                      //           'Mohamed salah',
+                      //           'assets/image/m.jpg',
+                      //           'Beginner',
+                      //           'Paypal',
+                      //           '+ E£250.00',
+                      //           '01:30 PM');
+                      //     },
+                      //   ),
+                      // )
                     ],
                   ),
                 ),

@@ -45,7 +45,7 @@ class CustomPasswordFromField extends StatelessWidget {
           validator: validator,
           keyboardType: TextInputType.visiblePassword,
           textInputAction: TextInputAction.done,
-          obscureText: false,
+          obscureText: true,
           decoration: InputDecoration(
               contentPadding: const EdgeInsets.symmetric(
                 horizontal: 12,

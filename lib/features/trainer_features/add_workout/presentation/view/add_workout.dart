@@ -131,7 +131,7 @@ class _AddWorkoutScreenState extends State<AddWorkoutScreen> {
                     children: [
                       BlocBuilder<WorkOutBloc, WorkOutState>(
                         builder: (context, state) {
-                          if (state is WorkOutCoverSuccess) {
+                          if (state is AddWorkOutCoverSuccess) {
                             imageFile = state.image;
                             //imageBase64 = state.imageBase64;
                           }

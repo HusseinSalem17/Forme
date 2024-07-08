@@ -6,23 +6,23 @@ sealed class WorkOutState {
 
 final class WorkOutInitial extends WorkOutState {}
 
-final class WorkOutLoading extends WorkOutState {
+final class AddWorkOutLoading extends WorkOutState {
   final XFile? image;
 
-  WorkOutLoading({this.image});
+  AddWorkOutLoading({this.image});
 }
 
-final class WorkOutCoverSuccess extends WorkOutState {
+final class AddWorkOutSuccess extends WorkOutState {}
+
+final class AddWorkOutFailure extends WorkOutState {
+  final String errorMessage;
+
+  AddWorkOutFailure({required this.errorMessage});
+}
+
+final class AddWorkOutCoverSuccess extends WorkOutState {
   final XFile image;
   final String imageBase64;
 
-  WorkOutCoverSuccess(this.image, this.imageBase64);
-}
-
-final class WorkOutSuccess extends WorkOutState {}
-
-final class WorkOutFailure extends WorkOutState {
-  final String errorMessage;
-
-  WorkOutFailure({required this.errorMessage});
+  AddWorkOutCoverSuccess(this.image, this.imageBase64);
 }

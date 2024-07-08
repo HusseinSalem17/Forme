@@ -11,17 +11,19 @@ import 'package:forme_app/features/trainee_features/preferences/presentation/man
 import 'package:forme_app/features/trainee_features/profile/presentation/manager/cubit/my_profile_cubit.dart';
 import 'package:forme_app/features/trainer_features/Trainer_Profile/presentation/manager/my_profile_cubit/cubit/profile_cubit.dart';
 import 'package:forme_app/features/trainer_features/Trainer_Profile/presentation/views/screens/trainer_your_profile/edit_profile.dart';
+import 'package:forme_app/features/trainer_features/add_program/presentation/manager/bloc/add_program_bloc.dart';
 import 'package:forme_app/features/trainer_features/add_program/presentation/views/add_program.dart';
 import 'package:forme_app/features/trainer_features/add_workout/presentation/manager/bloc/work_out_bloc.dart';
 import 'package:forme_app/features/trainer_features/add_workout/presentation/view/add_workout.dart';
 import 'package:forme_app/features/trainer_features/complete_profile_trainer/presentation/manager/cubit/trainer_complete_profile_cubit.dart';
-import 'package:forme_app/features/trainer_features/complete_profile_trainer/presentation/views/trainer_complete_profile.dart';
 import 'package:forme_app/features/trainer_features/dashboard/presentation/views/home_view.dart';
 import 'package:forme_app/features/trainer_features/dashboard/presentation/views/manager/bloc/trainer_home_bloc.dart';
 import 'package:forme_app/features/trainer_features/trainee_profile/presentation/manager/trainee_profile_cubit.dart';
 import 'package:forme_app/features/trainer_features/trainer_preference/presentation/manager/cubit/trainer_preference_cubit.dart';
 import 'package:forme_app/onboarding_screens/data/bloc/onboarding_blocs.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'app_routing/auth_routes.dart';
+import 'app_routing/main_route.dart';
 import 'core/user_type.dart';
 import 'core/utils/functions/service_locator.dart';
 import 'core/utils/scroll_behavior.dart';
@@ -99,25 +101,28 @@ class MyApp extends StatelessWidget {
           BlocProvider(
             create: (_) => WorkOutBloc(AppDio(dio: Dio())),
           ),
+          BlocProvider(
+            create: (_) => AddProgramBloc(AppDio(dio: Dio())),
+          ),
         ],
         child: MaterialApp(
           scrollBehavior: CustomScrollBehavior(),
           debugShowCheckedModeBanner: false,
           theme: Themes.customLightTheme,
 
-          // onGenerateRoute: (settings) {
-          //   if (initialUserType == null) {
-          //     debugPrint('you are null');
-          //     return AuthRoutes().generateRoute(settings);
-          //   } else {
-          //     return AppRouter(
-          //       userType: initialUserType!,
-          //       context: context,
-          //     ).generateRoute(settings);
-          //   }
-          // },
+        //   onGenerateRoute: (settings) {
+        //     if (initialUserType == null) {
+        //       debugPrint('you are null');
+        //       return AuthRoutes().generateRoute(settings);
+        //     } else {
+        //       return AppRouter(
+        //         userType: initialUserType!,
+        //         context: context,
+        //       ).generateRoute(settings);
+        //     }
+        //   },
 
-          home: const AddProgramScreen(),
+          home: const TrainerHomeScreen(),
         ),
       ),
     );
